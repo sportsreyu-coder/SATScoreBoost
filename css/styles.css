@@ -330,8 +330,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   display: grid; place-items: center;
   transition: all 0.12s;
 }
-.pill.current { border-color: var(--accent); color: var(--accent); }
+.pill.current { border-color: var(--blue); color: var(--blue); }
 .pill.answered { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.pill.wrong { background: rgba(244, 101, 122, 0.12); color: var(--danger); border-color: var(--danger); }
 .pill.marked { border-color: var(--warn); color: var(--warn); }
 .pill-arrow {
   width: 26px; height: 26px;

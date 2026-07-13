@@ -124,10 +124,13 @@
   }
 
   function renderTimer() {
-    const m = Math.floor(state.secondsLeft / 60);
+    const h = Math.floor(state.secondsLeft / 3600);
+    const m = Math.floor((state.secondsLeft % 3600) / 60);
     const s = state.secondsLeft % 60;
     const el = document.getElementById("timer");
-    el.textContent = `${m}:${String(s).padStart(2, "0")}`;
+    el.textContent = h > 0
+      ? `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
+      : `${m}:${String(s).padStart(2, "0")}`;
     el.classList.toggle("low", state.secondsLeft <= 60);
   }
 
@@ -169,9 +172,12 @@
     let explanationHTML = "";
     if (showFeedback) {
       const correct = selected === q.answer;
+      const tag = correct
+        ? "✓ Correct"
+        : `✕ Incorrect — Correct answer: ${letters[q.answer]}`;
       explanationHTML = `
         <div class="explanation ${correct ? "" : "wrong"}">
-          <span class="tag">${correct ? "✓ Correct" : "✕ Not quite"}</span>
+          <span class="tag">${tag}</span>
           ${q.explanation}
         </div>`;
     }
@@ -257,8 +263,13 @@
       .map((_, offset) => {
         const i = start + offset;
         const classes = ["pill"];
+        const answered = state.answers[i] !== undefined;
+        const revealed = state.checkMode && answered;
+        const correct = revealed && state.answers[i] === state.questions[i].answer;
+
         if (i === state.current) classes.push("current");
-        else if (state.answers[i] !== undefined) classes.push("answered");
+        else if (revealed) classes.push(correct ? "answered" : "wrong");
+        else if (answered) classes.push("answered");
         if (state.marked[i]) classes.push("marked");
         return `<button class="${classes.join(" ")}" data-goto="${i}">${i + 1}</button>`;
       })
