@@ -1,11 +1,13 @@
 // Question bank for SAT ScoreBoost
-// Each question: { id, module, skill, difficulty(1-3), passage?, prompt, choices[4], answer(index), explanation }
+// Each question: { id, module, domain, skill, difficulty(1-3), passage?, prompt, choices[4], answer(index), explanation }
+// domain follows the official College Board digital SAT domain taxonomy.
 
 const QUESTIONS = [
   // ---------------- READING & WRITING ----------------
   {
     id: "rw-1",
     module: "rw",
+    domain: "Craft and Structure",
     skill: "Words in Context",
     difficulty: 1,
     passage:
@@ -19,6 +21,7 @@ const QUESTIONS = [
   {
     id: "rw-2",
     module: "rw",
+    domain: "Information and Ideas",
     skill: "Command of Evidence",
     difficulty: 2,
     passage:
@@ -38,6 +41,7 @@ const QUESTIONS = [
   {
     id: "rw-3",
     module: "rw",
+    domain: "Standard English Conventions",
     skill: "Boundaries",
     difficulty: 2,
     passage:
@@ -51,6 +55,7 @@ const QUESTIONS = [
   {
     id: "rw-4",
     module: "rw",
+    domain: "Standard English Conventions",
     skill: "Form, Structure, and Sense",
     difficulty: 2,
     passage:
@@ -64,6 +69,7 @@ const QUESTIONS = [
   {
     id: "rw-5",
     module: "rw",
+    domain: "Expression of Ideas",
     skill: "Transitions",
     difficulty: 2,
     passage:
@@ -77,6 +83,7 @@ const QUESTIONS = [
   {
     id: "rw-6",
     module: "rw",
+    domain: "Information and Ideas",
     skill: "Central Ideas",
     difficulty: 3,
     passage:
@@ -95,6 +102,7 @@ const QUESTIONS = [
   {
     id: "rw-7",
     module: "rw",
+    domain: "Craft and Structure",
     skill: "Words in Context",
     difficulty: 3,
     passage:
@@ -108,6 +116,7 @@ const QUESTIONS = [
   {
     id: "rw-8",
     module: "rw",
+    domain: "Standard English Conventions",
     skill: "Boundaries",
     difficulty: 1,
     passage:
@@ -123,6 +132,7 @@ const QUESTIONS = [
   {
     id: "m-1",
     module: "math",
+    domain: "Algebra",
     skill: "Linear equations",
     difficulty: 1,
     prompt: "If 3x + 7 = 22, what is the value of x?",
@@ -133,6 +143,7 @@ const QUESTIONS = [
   {
     id: "m-2",
     module: "math",
+    domain: "Problem-Solving and Data Analysis",
     skill: "Ratios & proportions",
     difficulty: 1,
     prompt:
@@ -145,6 +156,7 @@ const QUESTIONS = [
   {
     id: "m-3",
     module: "math",
+    domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 2,
     prompt:
@@ -157,6 +169,7 @@ const QUESTIONS = [
   {
     id: "m-4",
     module: "math",
+    domain: "Algebra",
     skill: "Systems of equations",
     difficulty: 2,
     prompt:
@@ -169,6 +182,7 @@ const QUESTIONS = [
   {
     id: "m-5",
     module: "math",
+    domain: "Advanced Math",
     skill: "Quadratics",
     difficulty: 2,
     prompt:
@@ -181,6 +195,7 @@ const QUESTIONS = [
   {
     id: "m-6",
     module: "math",
+    domain: "Algebra",
     skill: "Linear functions",
     difficulty: 2,
     prompt:
@@ -193,6 +208,7 @@ const QUESTIONS = [
   {
     id: "m-7",
     module: "math",
+    domain: "Advanced Math",
     skill: "Exponents",
     difficulty: 2,
     prompt: "If 2^(x+1) = 32, what is the value of x?",
@@ -203,6 +219,7 @@ const QUESTIONS = [
   {
     id: "m-8",
     module: "math",
+    domain: "Geometry and Trigonometry",
     skill: "Geometry",
     difficulty: 2,
     prompt:
@@ -215,6 +232,7 @@ const QUESTIONS = [
   {
     id: "m-9",
     module: "math",
+    domain: "Problem-Solving and Data Analysis",
     skill: "Statistics",
     difficulty: 2,
     prompt:
@@ -227,6 +245,7 @@ const QUESTIONS = [
   {
     id: "m-10",
     module: "math",
+    domain: "Advanced Math",
     skill: "Nonlinear functions",
     difficulty: 3,
     prompt:
@@ -239,6 +258,7 @@ const QUESTIONS = [
   {
     id: "m-11",
     module: "math",
+    domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
     prompt:
@@ -251,6 +271,7 @@ const QUESTIONS = [
   {
     id: "m-12",
     module: "math",
+    domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
     prompt:
