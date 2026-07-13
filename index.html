@@ -84,7 +84,17 @@
     <div class="exam-body" id="examBody"><!-- question renders here --></div>
 
     <div class="exam-footer">
-      <div class="progress-pills" id="progressPills"></div>
+      <div class="pill-nav">
+        <button class="pill-arrow" id="pillJumpBack" title="Back 5 questions">«</button>
+        <button class="pill-arrow" id="pillStepBack" title="Back 1 question">‹</button>
+        <div class="progress-pills" id="progressPills"></div>
+        <button class="pill-arrow" id="pillStepFwd" title="Forward 1 question">›</button>
+        <button class="pill-arrow" id="pillJumpFwd" title="Forward 5 questions">»</button>
+        <form class="pill-goto" id="pillGotoForm" title="Jump to a question number">
+          <input type="number" id="pillGotoInput" min="1" placeholder="#" inputmode="numeric" aria-label="Jump to question number" />
+          <button type="submit" class="pill-go-btn">Go</button>
+        </form>
+      </div>
       <div class="footer-nav">
         <button class="btn btn-ghost" id="prevBtn">◂ Back</button>
         <button class="btn btn-primary" id="nextBtn">Next ▸</button>

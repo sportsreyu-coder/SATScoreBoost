@@ -317,7 +317,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
   border-top: 1px solid var(--border);
   z-index: 40;
 }
-.progress-pills { display: flex; gap: 6px; flex-wrap: wrap; max-width: 60%; }
+.pill-nav { display: flex; align-items: center; gap: 6px; }
+.progress-pills { display: flex; gap: 6px; }
 .pill {
   width: 26px; height: 26px;
   border-radius: 7px;
@@ -332,6 +333,48 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .pill.current { border-color: var(--accent); color: var(--accent); }
 .pill.answered { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
 .pill.marked { border-color: var(--warn); color: var(--warn); }
+.pill-arrow {
+  width: 26px; height: 26px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.pill-arrow:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.pill-arrow:disabled { opacity: 0.35; cursor: default; }
+.pill-goto { display: flex; margin-left: 4px; }
+.pill-goto input {
+  width: 46px; height: 26px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 0 4px;
+  -moz-appearance: textfield;
+}
+.pill-goto input:focus { outline: none; border-color: var(--accent); }
+.pill-go-btn {
+  height: 26px;
+  margin-left: 4px;
+  padding: 0 10px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.pill-go-btn:hover { border-color: var(--accent); color: var(--accent); }
 .footer-nav { display: flex; gap: 12px; }
 
 /* ---------------- RESULTS ---------------- */
@@ -420,6 +463,6 @@ footer.site a { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 640px) {
   .stats-row, .breakdown { grid-template-columns: 1fr; }
-  .progress-pills { display: none; }
+  .pill-nav { display: none; }
   .exam-tools .tool-btn span { display: none; }
 }

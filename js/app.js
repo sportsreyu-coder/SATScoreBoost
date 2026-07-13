@@ -14,9 +14,27 @@
     timer: null,
     secondsLeft: 0,
     checkMode: false,  // instant-feedback per question after answering
+    pillWindowStart: 0, // first index shown in the footer's question-pill strip
   };
 
   const SECONDS_PER_Q = 90;
+  const PILL_WINDOW = 10; // how many question pills are visible at once
+
+  // ---- Question-pill window helpers ----
+  function clampWindowStart(start) {
+    const maxStart = Math.max(0, state.questions.length - PILL_WINDOW);
+    return Math.min(Math.max(0, start), maxStart);
+  }
+
+  // Re-centers the visible pill window so the current question is always
+  // shown, paging forward a full window once current reaches its last slot.
+  function ensureCurrentVisible() {
+    const start = state.pillWindowStart;
+    const end = start + PILL_WINDOW - 1;
+    if (state.current < start || state.current >= end) {
+      state.pillWindowStart = clampWindowStart(state.current);
+    }
+  }
 
   // ---- Screen elements ----
   const screens = {
@@ -72,6 +90,7 @@
     state.current = 0;
     state.eliminating = false;
     state.checkMode = false;
+    state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
 
     startTimer();
@@ -228,9 +247,15 @@
 
   // ---- Footer progress ----
   function renderFooter() {
+    const total = state.questions.length;
+    const start = state.pillWindowStart;
+    const end = Math.min(start + PILL_WINDOW, total);
+
     const pills = document.getElementById("progressPills");
     pills.innerHTML = state.questions
-      .map((_, i) => {
+      .slice(start, end)
+      .map((_, offset) => {
+        const i = start + offset;
         const classes = ["pill"];
         if (i === state.current) classes.push("current");
         else if (state.answers[i] !== undefined) classes.push("answered");
@@ -241,10 +266,32 @@
     pills.querySelectorAll(".pill").forEach((p) => {
       p.addEventListener("click", () => {
         state.current = Number(p.dataset.goto);
+        ensureCurrentVisible();
         renderQuestion();
         renderFooter();
       });
     });
+
+    document.getElementById("pillJumpBack").disabled = start === 0;
+    document.getElementById("pillStepBack").disabled = start === 0;
+    document.getElementById("pillStepFwd").disabled = end >= total;
+    document.getElementById("pillJumpFwd").disabled = end >= total;
+    document.getElementById("pillGotoInput").max = String(total);
+  }
+
+  // Pans the pill window without changing the current question.
+  function shiftPillWindow(delta) {
+    state.pillWindowStart = clampWindowStart(state.pillWindowStart + delta);
+    renderFooter();
+  }
+
+  // Jumps directly to a 1-indexed question number typed by the user.
+  function goToQuestionNumber(n) {
+    if (!Number.isInteger(n) || n < 1 || n > state.questions.length) return;
+    state.current = n - 1;
+    ensureCurrentVisible();
+    renderQuestion();
+    renderFooter();
   }
 
   // ---- Navigation ----
@@ -254,12 +301,14 @@
       return;
     }
     state.current++;
+    ensureCurrentVisible();
     renderQuestion();
     renderFooter();
   }
   function prev() {
     if (state.current === 0) return;
     state.current--;
+    ensureCurrentVisible();
     renderQuestion();
     renderFooter();
   }
@@ -365,6 +414,7 @@
       it.addEventListener("click", () => {
         state.checkMode = true;
         state.current = Number(it.dataset.review);
+        ensureCurrentVisible();
         show("exam");
         renderQuestion();
         renderFooter();
@@ -413,6 +463,17 @@
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);
+    document.getElementById("pillStepBack").addEventListener("click", () => shiftPillWindow(-1));
+    document.getElementById("pillStepFwd").addEventListener("click", () => shiftPillWindow(1));
+    document.getElementById("pillJumpBack").addEventListener("click", () => shiftPillWindow(-5));
+    document.getElementById("pillJumpFwd").addEventListener("click", () => shiftPillWindow(5));
+    document.getElementById("pillGotoForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = document.getElementById("pillGotoInput");
+      goToQuestionNumber(parseInt(input.value, 10));
+      input.value = "";
+      input.blur();
+    });
     document.getElementById("eliminateBtn").addEventListener("click", () => {
       state.eliminating = !state.eliminating;
       document.getElementById("eliminateBtn").classList.toggle("active", state.eliminating);
