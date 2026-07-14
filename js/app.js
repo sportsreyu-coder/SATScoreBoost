@@ -23,6 +23,18 @@
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
   const STREAK_KEY = "sat_streaks";
   const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
+  const LIFETIME_KEY = "sat_lifetime_answers";
+
+  // ---- Badges ----
+  const TIER_META = [
+    { name: "Bronze", medal: "🥉" },
+    { name: "Silver", medal: "🥈" },
+    { name: "Gold", medal: "🥇" },
+    { name: "Platinum", medal: "🏆" },
+    { name: "Diamond", medal: "💎" },
+  ];
+  const QUESTION_TIERS = [10, 50, 100, 500, 1000];
+  const STREAK_TIERS = [3, 7, 30, 100, 365];
 
   // ---- Question-pill window helpers ----
   function clampWindowStart(start) {
@@ -425,6 +437,7 @@
 
     renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
     saveStats(correct, total);
+    recordLifetimeAnswers();
     show("results");
   }
 
@@ -622,10 +635,82 @@
     renderStreak();
   }
 
+  // ---- Lifetime answer counts (for badges) ----
+  function defaultLifetime() {
+    return { total: 0, rw: 0, math: 0 };
+  }
+
+  function loadLifetime() {
+    try {
+      const raw = localStorage.getItem(LIFETIME_KEY);
+      if (raw) return { ...defaultLifetime(), ...JSON.parse(raw) };
+    } catch (e) { /* localStorage unavailable */ }
+    return defaultLifetime();
+  }
+
+  // Tallies this session's actually-answered (non-skipped) questions by
+  // subject and folds them into the running lifetime totals.
+  function recordLifetimeAnswers() {
+    const lifetime = loadLifetime();
+    state.questions.forEach((q, i) => {
+      if (state.answers[i] === undefined) return;
+      lifetime.total++;
+      if (q.module === "rw") lifetime.rw++;
+      else if (q.module === "math") lifetime.math++;
+    });
+    try {
+      localStorage.setItem(LIFETIME_KEY, JSON.stringify(lifetime));
+    } catch (e) { /* localStorage unavailable */ }
+  }
+
+  // ---- Badges ----
+  // Highest tier index reached for `value` against an ascending `tiers`
+  // list, or -1 if the first tier hasn't been reached yet.
+  function tierIndexFor(value, tiers) {
+    let idx = -1;
+    for (let i = 0; i < tiers.length; i++) {
+      if (value >= tiers[i]) idx = i;
+    }
+    return idx;
+  }
+
+  function badgeCardHTML(icon, label, value, valueLabel, tiers) {
+    const idx = tierIndexFor(value, tiers);
+    const tier = idx >= 0 ? TIER_META[idx] : null;
+    const nextTier = idx + 1 < tiers.length ? tiers[idx + 1] : null;
+    const floor = idx >= 0 ? tiers[idx] : 0;
+    const progressPct = nextTier
+      ? Math.min(100, Math.round(((value - floor) / (nextTier - floor)) * 100))
+      : 100;
+
+    const dotsHTML = tiers
+      .map((t, i) => {
+        const unlocked = i <= idx;
+        return `<span class="badge-dot ${unlocked ? "unlocked" : ""}" title="${TIER_META[i].name}: ${t}">${TIER_META[i].medal}</span>`;
+      })
+      .join("");
+
+    return `
+      <div class="badge-card">
+        <div class="badge-top">
+          <div class="badge-medal ${tier ? "" : "locked"}">${tier ? tier.medal : "🔒"}</div>
+          <div>
+            <div class="badge-title">${icon} ${label}</div>
+            <div class="badge-tier">${tier ? tier.name : "Unranked"}</div>
+          </div>
+        </div>
+        <div class="badge-value">${value} ${valueLabel}</div>
+        <div class="badge-progress"><div class="badge-progress-bar" style="width:${progressPct}%"></div></div>
+        <div class="badge-next">${nextTier ? `${nextTier - value} more to ${TIER_META[idx + 1].name}` : "Max tier reached!"}</div>
+        <div class="badge-dots">${dotsHTML}</div>
+      </div>`;
+  }
+
   function renderSocial() {
     const streak = loadStreak();
     const current = displayStreak(streak);
     const todayCount = loadTodayQuestionCount();
+    const lifetime = loadLifetime();
 
     let sessions = 0, acc = 0;
     try {
@@ -634,6 +719,13 @@
       sessions = s.sessions || 0;
       acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
     } catch (e) { /* localStorage unavailable */ }
+
+    const badgesHTML = [
+      badgeCardHTML("🎯", "Total Questions", lifetime.total, "answered", QUESTION_TIERS),
+      badgeCardHTML("📐", "Math", lifetime.math, "answered", QUESTION_TIERS),
+      badgeCardHTML("📖", "Reading & Writing", lifetime.rw, "answered", QUESTION_TIERS),
+      badgeCardHTML("🔥", "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
+    ].join("");
 
     function weekHTML(entry) {
       const today = todayStr();
@@ -669,6 +761,11 @@
         <div class="bd-card"><div class="v">${sessions}</div><div class="l">Sessions completed</div></div>
         <div class="bd-card"><div class="v">${acc}%</div><div class="l">Lifetime accuracy</div></div>
       </div>
+
+      <h2 class="section-title" style="font-size:1.3rem;margin-top:8px;">Badges</h2>
+      <p class="section-sub">Level up by answering more questions and building your streak.</p>
+      <div class="badge-grid">${badgesHTML}</div>
+
       <div class="results-actions">
         <button class="btn btn-primary" data-start="mixed">Keep the streak alive →</button>
       </div>

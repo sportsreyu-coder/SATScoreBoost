@@ -533,6 +533,52 @@ button.streak:hover { color: var(--accent); }
   font-weight: 700;
 }
 
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+}
+.badge-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.badge-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.badge-medal {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  font-size: 1.5rem;
+  background: var(--accent-soft);
+  flex-shrink: 0;
+}
+.badge-medal.locked { background: var(--bg-elev); filter: grayscale(1); opacity: 0.6; }
+.badge-title { font-size: 0.88rem; font-weight: 700; }
+.badge-tier { font-size: 0.78rem; color: var(--text-dim); }
+.badge-value { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+.badge-progress {
+  height: 6px;
+  border-radius: 100px;
+  background: var(--bg-elev);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.badge-progress-bar { height: 100%; background: var(--accent); border-radius: 100px; }
+.badge-next { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 14px; }
+.badge-dots { display: flex; gap: 6px; }
+.badge-dot {
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: grid; place-items: center;
+  font-size: 0.85rem;
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+.badge-dot.unlocked { filter: none; opacity: 1; background: var(--accent-soft); border-color: var(--accent); }
+
 /* ---------------- CONFIRM MODAL ---------------- */
 .modal-overlay {
   position: fixed;
@@ -568,7 +614,7 @@ footer.site {
 footer.site a { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 640px) {
-  .stats-row, .breakdown, .section-scores, .streak-grid { grid-template-columns: 1fr; }
+  .stats-row, .breakdown, .section-scores, .streak-grid, .badge-grid { grid-template-columns: 1fr; }
   .pill-nav { display: none; }
   .exam-tools .tool-btn span { display: none; }
 }

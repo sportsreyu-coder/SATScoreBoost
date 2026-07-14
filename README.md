@@ -12,6 +12,7 @@ A self-contained static site: no build step, no signup, no backend.
 - **Results screen** — animated score ring, correct/incorrect breakdown, a 200–800 section score estimate (×2 for the full test), and a clickable per-question review
 - **Lifetime stats** persisted in `localStorage` (sessions + accuracy)
 - **Social tab** — a daily streak (kept alive by answering at least one question a day), with best-streak tracking, a 7-day activity view, and today's question count
+- **Badges** — five-tier (Bronze → Diamond) achievements for total questions answered, Math questions, Reading & Writing questions, and longest streak
 - **Keyboard shortcuts** — `1`–`4` to answer, `←`/`→` to navigate, `M` to mark for review
 - Answer choices are **shuffled per question**, so the correct option isn't always in the same position
 
