@@ -15,6 +15,8 @@
     eliminating: false,
     timer: null,
     secondsLeft: 0,
+    timerHidden: false,   // user's "hide timer" preference, overridden once time is low
+    timeWarningShown: false, // whether the 5-minute toast has fired for this module
     breakTimer: null,
     breakSecondsLeft: 0,
     checkMode: false,  // instant-feedback per question after answering
@@ -26,6 +28,7 @@
   };
 
   const SECONDS_PER_Q = 90;
+  const TIME_WARNING_SECONDS = 300; // shows the red "5 minutes remaining" warning
   const PILL_WINDOW = 10; // how many question pills are visible at once
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
   const STREAK_KEY = "sat_streaks";
@@ -99,6 +102,9 @@
   function show(name) {
     Object.values(screens).forEach((s) => s.classList.add("hidden"));
     screens[name].classList.remove("hidden");
+    // The exam screen hides the top bar for extra vertical space; the exam
+    // header's own Home button covers navigating back out in that case.
+    document.getElementById("topbar").classList.toggle("hidden", name === "exam");
     window.scrollTo(0, 0);
   }
 
@@ -386,12 +392,13 @@
         : "Diagnostic";
     }
     if (m === "full-diagnostic") {
-      const base = state.fullDiagnosticIndex !== null
-        ? FULL_DIAGNOSTICS[state.fullDiagnosticIndex].label
-        : "Full Diagnostic";
-      if (state.reviewMode) return base;
-      const modLabel = FULL_DIAG_MODULE_LABELS[state.fdModuleIndex];
-      return modLabel ? `${base} — ${modLabel}` : base;
+      if (state.reviewMode) {
+        return state.fullDiagnosticIndex !== null
+          ? FULL_DIAGNOSTICS[state.fullDiagnosticIndex].label
+          : "Full Diagnostic";
+      }
+      const key = FULL_DIAG_MODULE_KEYS[state.fdModuleIndex] || "";
+      return key.startsWith("math") ? "Math" : "Reading & Writing";
     }
     return "Full Practice";
   }
@@ -407,6 +414,8 @@
   // ---- Timer ----
   function startTimer() {
     clearInterval(state.timer);
+    state.timeWarningShown = false;
+    document.getElementById("timeWarningToast").classList.remove("show");
     state.timer = setInterval(() => {
       state.secondsLeft--;
       renderTimer();
@@ -423,10 +432,31 @@
     const m = Math.floor((state.secondsLeft % 3600) / 60);
     const s = state.secondsLeft % 60;
     const el = document.getElementById("timer");
-    el.textContent = h > 0
+    const text = h > 0
       ? `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
       : `${m}:${String(s).padStart(2, "0")}`;
-    el.classList.toggle("low", state.secondsLeft <= 60);
+
+    const urgent = state.secondsLeft <= TIME_WARNING_SECONDS;
+    const concealed = state.timerHidden && !urgent;
+    el.textContent = concealed ? "⏱" : text;
+    el.classList.toggle("low", urgent);
+    el.classList.toggle("timer-concealed", concealed);
+
+    const hideBtn = document.getElementById("timerHideBtn");
+    hideBtn.disabled = urgent;
+    hideBtn.textContent = concealed ? "Show" : "Hide";
+    hideBtn.title = urgent ? "Timer shown automatically inside 5 minutes" : (concealed ? "Show timer" : "Hide timer");
+
+    if (urgent && !state.timeWarningShown) {
+      state.timeWarningShown = true;
+      showTimeWarningToast();
+    }
+  }
+
+  function showTimeWarningToast() {
+    const toast = document.getElementById("timeWarningToast");
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 5000);
   }
 
   // ---- Render current question ----
@@ -1201,6 +1231,10 @@
       input.value = "";
       input.blur();
     });
+    document.getElementById("timerHideBtn").addEventListener("click", () => {
+      state.timerHidden = !state.timerHidden;
+      renderTimer();
+    });
     document.getElementById("eliminateBtn").addEventListener("click", () => {
       state.eliminating = !state.eliminating;
       document.getElementById("eliminateBtn").classList.toggle("active", state.eliminating);
@@ -1212,14 +1246,33 @@
       renderQuestion();
     });
     const confirmModal = document.getElementById("confirmModal");
+    const confirmTitle = document.getElementById("confirmTitle");
+    const confirmText = document.getElementById("confirmText");
+    const confirmEnd = document.getElementById("confirmEnd");
+    let confirmAction = "finish";
     document.getElementById("quitBtn").addEventListener("click", () => {
+      confirmAction = "finish";
+      confirmTitle.textContent = "End this session?";
+      confirmText.textContent = "You'll see your score and question review. You can retry anytime.";
+      confirmEnd.textContent = "See results";
+      confirmModal.classList.remove("hidden");
+    });
+    document.getElementById("examHomeBtn").addEventListener("click", () => {
+      confirmAction = "home";
+      confirmTitle.textContent = "Leave without finishing?";
+      confirmText.textContent = "Your progress on this session won't be scored. You can start over anytime from the home screen.";
+      confirmEnd.textContent = "Leave to home";
       confirmModal.classList.remove("hidden");
     });
     document.getElementById("confirmCancel").addEventListener("click", () => {
       confirmModal.classList.add("hidden");
     });
-    document.getElementById("confirmEnd").addEventListener("click", () => {
+    confirmEnd.addEventListener("click", () => {
       confirmModal.classList.add("hidden");
+      if (confirmAction === "home") {
+        goHome();
+        return;
+      }
       if (state.module === "full-diagnostic" && !state.reviewMode) {
         // Score the whole 98-question attempt: record this module's
         // progress, then count every not-yet-reached module's questions
