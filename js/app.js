@@ -57,6 +57,8 @@
     landing: document.getElementById("landing"),
     exam: document.getElementById("exam"),
     results: document.getElementById("results"),
+    social: document.getElementById("social"),
+    badges: document.getElementById("badges"),
   };
 
   function show(name) {
@@ -469,7 +471,7 @@
     else tagline = "Good start. Review the explanations and run it back.";
 
     const streakBannerHTML = `
-      <button class="results-streak" data-open-profile="streak">
+      <button class="results-streak" data-nav="social">
         🔥 <b>${displayStreak(loadStreak())}</b> day streak
         · 📝 <b>${loadTodayQuestionCount()}</b> questions answered today
         <span class="results-streak-link">View streak →</span>
@@ -717,7 +719,7 @@
     return cells.join("");
   }
 
-  function renderProfileStreak() {
+  function renderSocial() {
     const streak = loadStreak();
     const current = displayStreak(streak);
     const todayCount = loadTodayQuestionCount();
@@ -730,7 +732,9 @@
       acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
     } catch (e) { /* localStorage unavailable */ }
 
-    document.getElementById("profileStreakPanel").innerHTML = `
+    document.getElementById("social").innerHTML = `
+      <h1 class="section-title">Your streak</h1>
+      <p class="section-sub">Answer at least one question every day to keep your streak alive.</p>
       <div class="streak-grid">
         <div class="streak-card">
           <div class="streak-icon">🔥</div>
@@ -752,11 +756,12 @@
       </div>
       <div class="results-actions">
         <button class="btn btn-primary" data-start="mixed">Keep the streak alive →</button>
+        <button class="btn btn-ghost" data-home>Back to Home</button>
       </div>
     `;
   }
 
-  function renderProfileBadges() {
+  function renderBadges() {
     const streak = loadStreak();
     const lifetime = loadLifetime();
 
@@ -767,27 +772,14 @@
       badgeCardHTML("🔥", "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
     ].join("");
 
-    document.getElementById("profileBadgesPanel").innerHTML = `
+    document.getElementById("badges").innerHTML = `
+      <h1 class="section-title">Your badges</h1>
       <p class="section-sub">Level up by answering more questions and building your streak.</p>
       <div class="badge-grid">${badgesHTML}</div>
+      <div class="results-actions">
+        <button class="btn btn-ghost" data-home>Back to Home</button>
+      </div>
     `;
-  }
-
-  // Opens the profile dropdown with the given section ("streak" or "badges")
-  // expanded, rendering fresh content into it.
-  function openProfileMenu(section) {
-    document.getElementById("profileDropdown").classList.remove("hidden");
-    document.querySelectorAll(".profile-summary").forEach((btn) => {
-      const isTarget = btn.dataset.toggle === section;
-      btn.classList.toggle("open", isTarget);
-      const panel = document.getElementById(
-        btn.dataset.toggle === "streak" ? "profileStreakPanel" : "profileBadgesPanel"
-      );
-      panel.classList.toggle("hidden", !isTarget);
-    });
-    if (section === "badges") renderProfileBadges();
-    else renderProfileStreak();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function closeProfileMenu() {
@@ -838,20 +830,20 @@
         closeProfileMenu();
         return;
       }
-      const openProfileBtn = e.target.closest("[data-open-profile]");
-      if (openProfileBtn) {
-        openProfileMenu(openProfileBtn.dataset.openProfile);
+      const navBtn = e.target.closest("[data-nav]");
+      if (navBtn) {
+        if (navBtn.dataset.nav === "badges") renderBadges();
+        else renderSocial();
+        show(navBtn.dataset.nav);
+        closeProfileMenu();
+        return;
+      }
+      if (e.target.closest("[data-home]")) {
+        goHome();
         return;
       }
       if (e.target.closest("#profileToggle")) {
-        const dropdown = document.getElementById("profileDropdown");
-        if (dropdown.classList.contains("hidden")) openProfileMenu("streak");
-        else closeProfileMenu();
-        return;
-      }
-      const summaryBtn = e.target.closest(".profile-summary");
-      if (summaryBtn) {
-        openProfileMenu(summaryBtn.dataset.toggle);
+        document.getElementById("profileDropdown").classList.toggle("hidden");
         return;
       }
       if (!e.target.closest(".profile-wrap")) closeProfileMenu();
@@ -893,10 +885,6 @@
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");
     });
-    document.querySelectorAll("[data-home]").forEach((b) =>
-      b.addEventListener("click", goHome)
-    );
-
     // keyboard shortcuts
     document.addEventListener("keydown", (e) => {
       if (screens.exam.classList.contains("hidden")) return;
