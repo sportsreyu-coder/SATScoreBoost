@@ -11,18 +11,6 @@
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="brand" data-home>
-      <span class="logo">SB</span>
-      <span>SAT<span class="score">ScoreBoost</span></span>
-    </div>
-    <div class="topbar-right">
-      <span class="streak hidden" id="streak"></span>
-      <button class="btn btn-primary" data-start="mixed">Start Practice</button>
-    </div>
-  </header>
-
   <!-- ===================== LANDING ===================== -->
   <main id="landing" class="landing">
     <section class="hero">
@@ -58,8 +46,8 @@
         </p>
       </div>
       <div class="diagnostic-cta-actions">
-        <button class="btn btn-primary" data-start="diagnostic">Start Diagnostic →</button>
-        <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Diagnostic →</button>
+        <button class="btn btn-primary" data-start="full-diagnostic">Start Full Diagnostic →</button>
+        <button class="btn btn-ghost" data-start="diagnostic">Start Short Diagnostic →</button>
       </div>
     </section>
 
@@ -91,13 +79,19 @@
   <section id="exam" class="hidden">
     <div class="exam-header">
       <div class="module-name" id="moduleName">Practice</div>
-      <div class="timer" id="timer">0:00</div>
+      <div class="timer-wrap">
+        <div class="timer" id="timer">0:00</div>
+        <button class="timer-hide-btn" id="timerHideBtn" title="Hide timer">Hide</button>
+      </div>
       <div class="exam-tools">
         <button class="tool-btn" id="eliminateBtn" title="Cross out answers">✕ <span>Eliminate</span></button>
         <button class="tool-btn" id="checkToggle" title="Reveal answers as you go">💡 <span>Instant Check</span></button>
         <button class="tool-btn" id="quitBtn">Finish</button>
+        <button class="tool-btn" id="examHomeBtn" title="Leave to home">Home</button>
       </div>
     </div>
+
+    <div class="time-warning-toast" id="timeWarningToast">⏰ 5 minutes remaining</div>
 
     <div class="exam-body" id="examBody"><!-- question renders here --></div>
 
@@ -129,8 +123,8 @@
   <!-- ===================== CONFIRM MODAL ===================== -->
   <div id="confirmModal" class="modal-overlay hidden">
     <div class="modal">
-      <h3>End this session?</h3>
-      <p>You'll see your score and question review. You can retry anytime.</p>
+      <h3 id="confirmTitle">End this session?</h3>
+      <p id="confirmText">You'll see your score and question review. You can retry anytime.</p>
       <div class="modal-actions">
         <button class="btn btn-ghost" id="confirmCancel">Keep going</button>
         <button class="btn btn-primary" id="confirmEnd">See results</button>
