@@ -4,7 +4,8 @@
 
   // ---- State ----
   const state = {
-    module: null,      // "rw" | "math" | "mixed"
+    module: null,      // "rw" | "math" | "mixed" | "diagnostic"
+    diagnosticIndex: null, // which entry of DIAGNOSTICS is active
     questions: [],     // active question set
     answers: {},       // qIndex -> choiceIndex
     eliminated: {},    // qIndex -> Set of choiceIndex
@@ -19,6 +20,7 @@
 
   const SECONDS_PER_Q = 90;
   const PILL_WINDOW = 10; // how many question pills are visible at once
+  const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
 
   // ---- Question-pill window helpers ----
   function clampWindowStart(start) {
@@ -83,6 +85,53 @@
     pool = pool.map(shuffleChoices);
 
     state.module = module;
+    state.diagnosticIndex = null;
+    state.questions = pool;
+    state.answers = {};
+    state.eliminated = {};
+    state.marked = {};
+    state.current = 0;
+    state.eliminating = false;
+    state.checkMode = false;
+    state.pillWindowStart = 0;
+    state.secondsLeft = pool.length * SECONDS_PER_Q;
+
+    startTimer();
+    show("exam");
+    renderQuestion();
+    renderFooter();
+    updateModuleName();
+  }
+
+  // ---- Diagnostics: fixed 10-RW + 10-Math mini practice tests ----
+  function loadLastDiagnosticIndex() {
+    try {
+      const raw = localStorage.getItem(DIAG_INDEX_KEY);
+      return raw !== null ? parseInt(raw, 10) : -1;
+    } catch (e) {
+      return -1;
+    }
+  }
+
+  function saveLastDiagnosticIndex(i) {
+    try {
+      localStorage.setItem(DIAG_INDEX_KEY, String(i));
+    } catch (e) { /* localStorage unavailable */ }
+  }
+
+  // Starts the next diagnostic in rotation (1 -> 2 -> 3 -> 1 -> ...).
+  function startDiagnostic() {
+    const nextIndex = (loadLastDiagnosticIndex() + 1) % DIAGNOSTICS.length;
+    saveLastDiagnosticIndex(nextIndex);
+
+    const set = DIAGNOSTICS[nextIndex];
+    const pool = set.questionIds
+      .map((id) => QUESTIONS.find((q) => q.id === id))
+      .filter(Boolean)
+      .map(shuffleChoices);
+
+    state.module = "diagnostic";
+    state.diagnosticIndex = nextIndex;
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
@@ -101,7 +150,14 @@
   }
 
   function moduleLabel(m) {
-    return m === "rw" ? "Reading & Writing" : m === "math" ? "Math" : "Full Practice";
+    if (m === "rw") return "Reading & Writing";
+    if (m === "math") return "Math";
+    if (m === "diagnostic") {
+      return state.diagnosticIndex !== null
+        ? DIAGNOSTICS[state.diagnosticIndex].label
+        : "Diagnostic";
+    }
+    return "Full Practice";
   }
 
   function updateModuleName() {
@@ -161,11 +217,13 @@
           classes.push("selected");
         }
         return `
-          <button class="${classes.join(" ")}" data-choice="${ci}">
-            <span class="letter">${letters[ci]}</span>
-            <span class="ctext">${c}</span>
-            <span class="choice-cross" data-cross="${ci}" title="Cross out">✕</span>
-          </button>`;
+          <div class="choice-row">
+            <button class="${classes.join(" ")}" data-choice="${ci}">
+              <span class="letter">${letters[ci]}</span>
+              <span class="ctext">${c}</span>
+            </button>
+            <button class="choice-cross" data-cross="${ci}" title="Cross out">✕</button>
+          </div>`;
       })
       .join("");
 
@@ -201,16 +259,14 @@
     // wire choices
     body.querySelectorAll(".choice").forEach((btn) => {
       const ci = Number(btn.dataset.choice);
-      btn.addEventListener("click", (e) => {
-        if (e.target.dataset.cross !== undefined) return; // handled below
+      btn.addEventListener("click", () => {
         if (elimSet.has(ci)) return; // can't select eliminated
         if (state.checkMode && answered) return; // locked after check
         selectChoice(ci);
       });
     });
     body.querySelectorAll(".choice-cross").forEach((x) => {
-      x.addEventListener("click", (e) => {
-        e.stopPropagation();
+      x.addEventListener("click", () => {
         toggleEliminate(Number(x.dataset.cross));
       });
     });
@@ -325,6 +381,11 @@
   }
 
   // ---- Finish + score ----
+  // Maps an accuracy fraction to a single SAT section band (200-800).
+  function toSectionScore(p) {
+    return Math.round((200 + p * 600) / 10) * 10;
+  }
+
   function finishExam() {
     clearInterval(state.timer);
     const total = state.questions.length;
@@ -334,22 +395,38 @@
     });
     const pct = total ? correct / total : 0;
 
-    // Scaled score estimate: map accuracy to SAT section band
-    const sectionScore = Math.round((200 + pct * 600) / 10) * 10; // 200–800
-    let overall;
-    if (state.module === "mixed") {
-      overall = sectionScore * 2; // rough two-section estimate
+    let overall, rwScore, mathScore;
+    if (state.module === "diagnostic") {
+      // Diagnostics mix RW and Math questions, so score each subject
+      // separately for a real two-section estimate, like the actual SAT.
+      let rwTotal = 0, rwCorrect = 0, mathTotal = 0, mathCorrect = 0;
+      state.questions.forEach((q, i) => {
+        const ok = state.answers[i] === q.answer;
+        if (q.module === "rw") {
+          rwTotal++;
+          if (ok) rwCorrect++;
+        } else {
+          mathTotal++;
+          if (ok) mathCorrect++;
+        }
+      });
+      rwScore = toSectionScore(rwTotal ? rwCorrect / rwTotal : 0);
+      mathScore = toSectionScore(mathTotal ? mathCorrect / mathTotal : 0);
+      overall = rwScore + mathScore;
+    } else if (state.module === "mixed") {
+      overall = toSectionScore(pct) * 2; // rough two-section estimate
     } else {
-      overall = sectionScore; // single section
+      overall = toSectionScore(pct); // single section
     }
 
-    renderResults({ total, correct, wrong: total - correct, pct, sectionScore, overall });
+    renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
     saveStats(correct, total);
     show("results");
   }
 
   function renderResults(r) {
-    const { total, correct, wrong, pct, overall } = r;
+    const { total, correct, wrong, pct, overall, rwScore, mathScore } = r;
+    const isDiagnostic = state.module === "diagnostic";
 
     // ring
     const radius = 92;
@@ -357,9 +434,17 @@
     const offset = circ * (1 - pct);
     const ringColor = pct >= 0.75 ? "var(--accent)" : pct >= 0.5 ? "var(--warn)" : "var(--danger)";
 
-    const scoreLabel = state.module === "mixed"
+    const scoreLabel = state.module === "mixed" || isDiagnostic
       ? `${overall} est. total`
       : `${overall} ${moduleLabel(state.module)}`;
+
+    const sectionScoresHTML = isDiagnostic
+      ? `
+      <div class="section-scores">
+        <div class="bd-card"><div class="v">${rwScore}</div><div class="l">Reading & Writing</div></div>
+        <div class="bd-card"><div class="v">${mathScore}</div><div class="l">Math</div></div>
+      </div>`
+      : "";
 
     let tagline;
     if (pct >= 0.85) tagline = "Elite work — you're in perfect-score territory. 🎯";
@@ -387,6 +472,8 @@
         <p class="tagline">You answered ${correct} of ${total} questions correctly.</p>
       </div>
 
+      ${sectionScoresHTML}
+
       <div class="breakdown">
         <div class="bd-card correct"><div class="v">${correct}</div><div class="l">Correct</div></div>
         <div class="bd-card wrong"><div class="v">${wrong}</div><div class="l">Incorrect</div></div>
@@ -397,7 +484,7 @@
       <div class="review-list" id="reviewList"></div>
 
       <div class="results-actions">
-        <button class="btn btn-primary" id="retryBtn">Try Again</button>
+        <button class="btn btn-primary" id="retryBtn">${isDiagnostic ? "Retake Diagnostic" : "Try Again"}</button>
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
       </div>
     `;
@@ -432,7 +519,10 @@
       });
     });
 
-    document.getElementById("retryBtn").addEventListener("click", () => startModule(state.module));
+    document.getElementById("retryBtn").addEventListener("click", () => {
+      if (isDiagnostic) startDiagnostic();
+      else startModule(state.module);
+    });
     document.getElementById("homeBtn").addEventListener("click", goHome);
   }
 
@@ -470,7 +560,10 @@
   // ---- Global wiring ----
   function init() {
     document.querySelectorAll("[data-start]").forEach((btn) => {
-      btn.addEventListener("click", () => startModule(btn.dataset.start));
+      btn.addEventListener("click", () => {
+        if (btn.dataset.start === "diagnostic") startDiagnostic();
+        else startModule(btn.dataset.start);
+      });
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);
