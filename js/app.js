@@ -57,7 +57,6 @@
     landing: document.getElementById("landing"),
     exam: document.getElementById("exam"),
     results: document.getElementById("results"),
-    social: document.getElementById("social"),
   };
 
   function show(name) {
@@ -470,7 +469,7 @@
     else tagline = "Good start. Review the explanations and run it back.";
 
     const streakBannerHTML = `
-      <button class="results-streak" data-nav="social">
+      <button class="results-streak" data-open-profile="streak">
         🔥 <b>${displayStreak(loadStreak())}</b> day streak
         · 📝 <b>${loadTodayQuestionCount()}</b> questions answered today
         <span class="results-streak-link">View streak →</span>
@@ -706,11 +705,22 @@
       </div>`;
   }
 
-  function renderSocial() {
+  function weekHTML(entry) {
+    const today = todayStr();
+    const cells = [];
+    for (let i = 6; i >= 0; i--) {
+      const day = addDaysStr(today, -i);
+      const active = entry.dates.includes(day);
+      const label = new Date(day + "T00:00:00").toLocaleDateString(undefined, { weekday: "narrow" });
+      cells.push(`<div class="cal-day ${active ? "active" : ""}" title="${day}">${label}</div>`);
+    }
+    return cells.join("");
+  }
+
+  function renderProfileStreak() {
     const streak = loadStreak();
     const current = displayStreak(streak);
     const todayCount = loadTodayQuestionCount();
-    const lifetime = loadLifetime();
 
     let sessions = 0, acc = 0;
     try {
@@ -720,28 +730,7 @@
       acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
     } catch (e) { /* localStorage unavailable */ }
 
-    const badgesHTML = [
-      badgeCardHTML("🎯", "Total Questions", lifetime.total, "answered", QUESTION_TIERS),
-      badgeCardHTML("📐", "Math", lifetime.math, "answered", QUESTION_TIERS),
-      badgeCardHTML("📖", "Reading & Writing", lifetime.rw, "answered", QUESTION_TIERS),
-      badgeCardHTML("🔥", "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
-    ].join("");
-
-    function weekHTML(entry) {
-      const today = todayStr();
-      const cells = [];
-      for (let i = 6; i >= 0; i--) {
-        const day = addDaysStr(today, -i);
-        const active = entry.dates.includes(day);
-        const label = new Date(day + "T00:00:00").toLocaleDateString(undefined, { weekday: "narrow" });
-        cells.push(`<div class="cal-day ${active ? "active" : ""}" title="${day}">${label}</div>`);
-      }
-      return cells.join("");
-    }
-
-    document.getElementById("social").innerHTML = `
-      <h1 class="section-title">Your streak</h1>
-      <p class="section-sub">Answer at least one question every day to keep your streak alive.</p>
+    document.getElementById("profileStreakPanel").innerHTML = `
       <div class="streak-grid">
         <div class="streak-card">
           <div class="streak-icon">🔥</div>
@@ -761,15 +750,48 @@
         <div class="bd-card"><div class="v">${sessions}</div><div class="l">Sessions completed</div></div>
         <div class="bd-card"><div class="v">${acc}%</div><div class="l">Lifetime accuracy</div></div>
       </div>
-
-      <h2 class="section-title" style="font-size:1.3rem;margin-top:8px;">Badges</h2>
-      <p class="section-sub">Level up by answering more questions and building your streak.</p>
-      <div class="badge-grid">${badgesHTML}</div>
-
       <div class="results-actions">
         <button class="btn btn-primary" data-start="mixed">Keep the streak alive →</button>
       </div>
     `;
+  }
+
+  function renderProfileBadges() {
+    const streak = loadStreak();
+    const lifetime = loadLifetime();
+
+    const badgesHTML = [
+      badgeCardHTML("🎯", "Total Questions", lifetime.total, "answered", QUESTION_TIERS),
+      badgeCardHTML("📐", "Math", lifetime.math, "answered", QUESTION_TIERS),
+      badgeCardHTML("📖", "Reading & Writing", lifetime.rw, "answered", QUESTION_TIERS),
+      badgeCardHTML("🔥", "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
+    ].join("");
+
+    document.getElementById("profileBadgesPanel").innerHTML = `
+      <p class="section-sub">Level up by answering more questions and building your streak.</p>
+      <div class="badge-grid">${badgesHTML}</div>
+    `;
+  }
+
+  // Opens the profile dropdown with the given section ("streak" or "badges")
+  // expanded, rendering fresh content into it.
+  function openProfileMenu(section) {
+    document.getElementById("profileDropdown").classList.remove("hidden");
+    document.querySelectorAll(".profile-summary").forEach((btn) => {
+      const isTarget = btn.dataset.toggle === section;
+      btn.classList.toggle("open", isTarget);
+      const panel = document.getElementById(
+        btn.dataset.toggle === "streak" ? "profileStreakPanel" : "profileBadgesPanel"
+      );
+      panel.classList.toggle("hidden", !isTarget);
+    });
+    if (section === "badges") renderProfileBadges();
+    else renderProfileStreak();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function closeProfileMenu() {
+    document.getElementById("profileDropdown").classList.add("hidden");
   }
 
   // ---- Stats persistence ----
@@ -806,20 +828,33 @@
 
   // ---- Global wiring ----
   function init() {
-    // Delegated so buttons rendered later (e.g. on the results or social
-    // screens) work without re-wiring.
+    // Delegated so buttons rendered later (e.g. on the results screen)
+    // work without re-wiring.
     document.addEventListener("click", (e) => {
       const startBtn = e.target.closest("[data-start]");
       if (startBtn) {
         if (startBtn.dataset.start === "diagnostic") startDiagnostic();
         else startModule(startBtn.dataset.start);
+        closeProfileMenu();
         return;
       }
-      const navBtn = e.target.closest("[data-nav]");
-      if (navBtn) {
-        if (navBtn.dataset.nav === "social") renderSocial();
-        show(navBtn.dataset.nav);
+      const openProfileBtn = e.target.closest("[data-open-profile]");
+      if (openProfileBtn) {
+        openProfileMenu(openProfileBtn.dataset.openProfile);
+        return;
       }
+      if (e.target.closest("#profileToggle")) {
+        const dropdown = document.getElementById("profileDropdown");
+        if (dropdown.classList.contains("hidden")) openProfileMenu("streak");
+        else closeProfileMenu();
+        return;
+      }
+      const summaryBtn = e.target.closest(".profile-summary");
+      if (summaryBtn) {
+        openProfileMenu(summaryBtn.dataset.toggle);
+        return;
+      }
+      if (!e.target.closest(".profile-wrap")) closeProfileMenu();
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);

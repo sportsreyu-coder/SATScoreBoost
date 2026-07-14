@@ -68,7 +68,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .brand .score { color: var(--accent); }
 
-.topnav { display: flex; align-items: center; gap: 6px; }
+.profile-wrap { position: relative; }
 .topnav-link {
   background: transparent;
   color: var(--text-dim);
@@ -76,9 +76,45 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-weight: 600;
   padding: 8px 14px;
   border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition: background 0.15s ease, color 0.15s ease;
 }
 .topnav-link:hover { color: var(--text); background: var(--bg-card); }
+.caret { font-size: 0.7em; transition: transform 0.15s ease; }
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px;
+  z-index: 60;
+}
+.profile-section + .profile-section { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 4px; }
+.profile-summary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 10px;
+  border-radius: 9px;
+}
+.profile-summary:hover { background: var(--bg-elev); }
+.profile-summary.open .caret { transform: rotate(180deg); }
+.profile-panel { padding: 4px 10px 14px; }
 
 .topbar-right { display: flex; align-items: center; gap: 18px; }
 .streak {
@@ -496,9 +532,7 @@ button.streak:hover { color: var(--accent); }
 .results-streak b { color: var(--text); }
 .results-streak-link { color: var(--accent); font-weight: 600; margin-left: 4px; }
 
-/* ---------------- SOCIAL / GAMIFICATION ---------------- */
-.social { max-width: 900px; margin: 0 auto; padding: 60px 28px 100px; }
-
+/* ---------------- PROFILE DROPDOWN CONTENT ---------------- */
 .streak-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
