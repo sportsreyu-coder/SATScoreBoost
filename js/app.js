@@ -4,9 +4,10 @@
 
   // ---- State ----
   const state = {
-    module: null,      // "rw" | "math" | "mixed" | "diagnostic"
-    diagnosticIndex: null, // which entry of DIAGNOSTICS is active
-    questions: [],     // active question set
+    module: null,      // "rw" | "math" | "mixed" | "diagnostic" | "full-diagnostic"
+    diagnosticIndex: null,     // which entry of DIAGNOSTICS is active
+    fullDiagnosticIndex: null, // which entry of FULL_DIAGNOSTICS is active
+    questions: [],     // active question set (just the current module, for full-diagnostic)
     answers: {},       // qIndex -> choiceIndex
     eliminated: {},    // qIndex -> Set of choiceIndex
     marked: {},        // qIndex -> bool
@@ -14,13 +15,30 @@
     eliminating: false,
     timer: null,
     secondsLeft: 0,
+    breakTimer: null,
+    breakSecondsLeft: 0,
     checkMode: false,  // instant-feedback per question after answering
     pillWindowStart: 0, // first index shown in the footer's question-pill strip
+    fdModules: null,      // full-diagnostic: the 4 modules' shuffled question arrays
+    fdModuleIndex: 0,     // full-diagnostic: which of the 4 modules is active
+    fdResults: [],        // full-diagnostic: flattened {q, selected} across completed modules
+    reviewMode: false,    // true once viewing a finished attempt's review-all-questions list
   };
 
   const SECONDS_PER_Q = 90;
   const PILL_WINDOW = 10; // how many question pills are visible at once
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
+  const FULL_DIAG_INDEX_KEY = "sat_full_diag_index"; // last full-diagnostic index
+  const BREAK_SECONDS = 600; // 10-minute break between RW and Math, like the real SAT
+  // Real digital SAT per-module structure and timing.
+  const FULL_DIAG_MODULE_KEYS = ["rw1", "rw2", "math1", "math2"];
+  const FULL_DIAG_MODULE_DURATIONS = [32 * 60, 32 * 60, 35 * 60, 35 * 60];
+  const FULL_DIAG_MODULE_LABELS = [
+    "Reading & Writing — Module 1",
+    "Reading & Writing — Module 2",
+    "Math — Module 1",
+    "Math — Module 2",
+  ];
 
   // ---- Question-pill window helpers ----
   function clampWindowStart(start) {
@@ -42,6 +60,7 @@
   const screens = {
     landing: document.getElementById("landing"),
     exam: document.getElementById("exam"),
+    break: document.getElementById("break"),
     results: document.getElementById("results"),
   };
 
@@ -86,6 +105,7 @@
 
     state.module = module;
     state.diagnosticIndex = null;
+    state.reviewMode = false;
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
@@ -132,6 +152,7 @@
 
     state.module = "diagnostic";
     state.diagnosticIndex = nextIndex;
+    state.reviewMode = false;
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
@@ -149,6 +170,181 @@
     updateModuleName();
   }
 
+  // ---- Full diagnostics: all four real-SAT modules, with a mid-test break ----
+  function loadLastFullDiagIndex() {
+    try {
+      const raw = localStorage.getItem(FULL_DIAG_INDEX_KEY);
+      return raw !== null ? parseInt(raw, 10) : -1;
+    } catch (e) {
+      return -1;
+    }
+  }
+
+  function saveLastFullDiagIndex(i) {
+    try {
+      localStorage.setItem(FULL_DIAG_INDEX_KEY, String(i));
+    } catch (e) { /* localStorage unavailable */ }
+  }
+
+  // Starts the next full diagnostic in rotation: RW Module 1, RW Module 2,
+  // a real break, then Math Module 1, Math Module 2 — each module its own
+  // timed session, exactly like the real digital SAT.
+  function startFullDiagnostic() {
+    const nextIndex = (loadLastFullDiagIndex() + 1) % FULL_DIAGNOSTICS.length;
+    saveLastFullDiagIndex(nextIndex);
+
+    const set = FULL_DIAGNOSTICS[nextIndex];
+    state.fdModules = FULL_DIAG_MODULE_KEYS.map((key) =>
+      set.modules[key]
+        .map((id) => QUESTIONS.find((q) => q.id === id))
+        .filter(Boolean)
+        .map(shuffleChoices)
+    );
+    state.fdResults = [];
+    state.fullDiagnosticIndex = nextIndex;
+    state.module = "full-diagnostic";
+    state.reviewMode = false;
+
+    loadFullDiagModule(0);
+  }
+
+  // Loads one module of the active full diagnostic as its own timed session.
+  function loadFullDiagModule(moduleIndex) {
+    state.fdModuleIndex = moduleIndex;
+    state.questions = state.fdModules[moduleIndex];
+    state.answers = {};
+    state.eliminated = {};
+    state.marked = {};
+    state.current = 0;
+    state.eliminating = false;
+    state.checkMode = false;
+    state.pillWindowStart = 0;
+    state.secondsLeft = FULL_DIAG_MODULE_DURATIONS[moduleIndex];
+
+    startTimer();
+    show("exam");
+    renderQuestion();
+    renderFooter();
+    updateModuleName();
+  }
+
+  // Records the module just finished, then either moves to a quick
+  // module-to-module checkpoint, the real break, or final scoring.
+  function finishFullDiagModule() {
+    clearInterval(state.timer);
+    state.questions.forEach((q, i) => {
+      state.fdResults.push({ q, selected: state.answers[i] });
+    });
+
+    const idx = state.fdModuleIndex;
+    if (idx === FULL_DIAG_MODULE_KEYS.length - 1) {
+      finishFullDiagnostic();
+    } else {
+      showModuleTransition(idx + 1);
+    }
+  }
+
+  // Shows the interstitial between modules: a real 10-minute break between
+  // the RW and Math sections, or a brief no-timer checkpoint between the
+  // two modules of the same section.
+  function showModuleTransition(nextModuleIndex) {
+    const isBreak = nextModuleIndex === 2; // finished RW2, heading into Math1
+    const nextLabel = FULL_DIAG_MODULE_LABELS[nextModuleIndex];
+    const el = document.getElementById("break");
+
+    el.innerHTML = isBreak
+      ? `
+        <div class="break-content">
+          <span class="eyebrow">Section break</span>
+          <h2>Nice work finishing Reading &amp; Writing.</h2>
+          <p>Take a short break before moving on to the Math section. It'll continue automatically when the timer runs out, or you can continue whenever you're ready.</p>
+          <div class="break-timer" id="breakTimer">10:00</div>
+          <div class="break-actions">
+            <button class="btn btn-primary" id="continueBreakBtn">Continue to ${nextLabel} →</button>
+            <button class="btn btn-ghost" id="breakHomeBtn">Exit to Home</button>
+          </div>
+        </div>`
+      : `
+        <div class="break-content">
+          <span class="eyebrow">Module complete</span>
+          <h2>You've finished this module.</h2>
+          <p>Once you continue, you won't be able to return to questions in this module — just like the real test.</p>
+          <div class="break-actions">
+            <button class="btn btn-primary" id="continueBreakBtn">Continue to ${nextLabel} →</button>
+            <button class="btn btn-ghost" id="breakHomeBtn">Exit to Home</button>
+          </div>
+        </div>`;
+
+    document.getElementById("continueBreakBtn").addEventListener("click", () => {
+      clearInterval(state.breakTimer);
+      loadFullDiagModule(nextModuleIndex);
+    });
+    document.getElementById("breakHomeBtn").addEventListener("click", goHome);
+
+    show("break");
+
+    if (isBreak) {
+      state.breakSecondsLeft = BREAK_SECONDS;
+      renderBreakTimer();
+      clearInterval(state.breakTimer);
+      state.breakTimer = setInterval(() => {
+        state.breakSecondsLeft--;
+        renderBreakTimer();
+        if (state.breakSecondsLeft <= 0) {
+          clearInterval(state.breakTimer);
+          loadFullDiagModule(nextModuleIndex);
+        }
+      }, 1000);
+    }
+  }
+
+  function renderBreakTimer() {
+    const el = document.getElementById("breakTimer");
+    if (!el) return;
+    const m = Math.floor(state.breakSecondsLeft / 60);
+    const s = state.breakSecondsLeft % 60;
+    el.textContent = `${m}:${String(s).padStart(2, "0")}`;
+  }
+
+  // Scores the full 98-question attempt from every module's recorded
+  // answers, then rebuilds a flat question/answer view (all 4 modules, in
+  // order) purely so the results screen's review-and-jump-back feature
+  // works across the whole test.
+  function finishFullDiagnostic() {
+    const items = state.fdResults;
+    const total = items.length;
+    let correct = 0;
+    let rwTotal = 0, rwCorrect = 0, mathTotal = 0, mathCorrect = 0;
+    items.forEach(({ q, selected }) => {
+      const ok = selected === q.answer;
+      if (ok) correct++;
+      if (q.module === "rw") {
+        rwTotal++;
+        if (ok) rwCorrect++;
+      } else {
+        mathTotal++;
+        if (ok) mathCorrect++;
+      }
+    });
+    const pct = total ? correct / total : 0;
+    const rwScore = toSectionScore(rwTotal ? rwCorrect / rwTotal : 0);
+    const mathScore = toSectionScore(mathTotal ? mathCorrect / mathTotal : 0);
+    const overall = rwScore + mathScore;
+
+    state.questions = items.map(({ q }) => q);
+    state.answers = {};
+    items.forEach(({ selected }, i) => {
+      if (selected !== undefined) state.answers[i] = selected;
+    });
+    state.current = 0;
+    state.pillWindowStart = 0;
+    state.reviewMode = true;
+
+    renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
+    saveStats(correct, total);
+    show("results");
+  }
+
   function moduleLabel(m) {
     if (m === "rw") return "Reading & Writing";
     if (m === "math") return "Math";
@@ -157,12 +353,23 @@
         ? DIAGNOSTICS[state.diagnosticIndex].label
         : "Diagnostic";
     }
+    if (m === "full-diagnostic") {
+      const base = state.fullDiagnosticIndex !== null
+        ? FULL_DIAGNOSTICS[state.fullDiagnosticIndex].label
+        : "Full Diagnostic";
+      if (state.reviewMode) return base;
+      const modLabel = FULL_DIAG_MODULE_LABELS[state.fdModuleIndex];
+      return modLabel ? `${base} — ${modLabel}` : base;
+    }
     return "Full Practice";
   }
 
   function updateModuleName() {
     document.getElementById("moduleName").innerHTML =
       `${moduleLabel(state.module)} <span>· ${state.questions.length} questions</span>`;
+    // Diagnostics simulate real test conditions: no per-question reveal.
+    const isDiagKind = state.module === "diagnostic" || state.module === "full-diagnostic";
+    document.getElementById("checkToggle").classList.toggle("hidden", isDiagKind);
   }
 
   // ---- Timer ----
@@ -363,6 +570,24 @@
 
   // ---- Navigation ----
   function next() {
+    // Once viewing a finished attempt's full review list, Next just pages
+    // through it — no module transitions or re-scoring.
+    if (state.reviewMode) {
+      if (state.current < state.questions.length - 1) {
+        state.current++;
+        ensureCurrentVisible();
+        renderQuestion();
+        renderFooter();
+      }
+      return;
+    }
+    // Full diagnostics run one module at a time; finishing the last
+    // question of a module hands off to the next module (or scores the
+    // whole attempt after Math Module 2), rather than ending the exam here.
+    if (state.module === "full-diagnostic" && state.current === state.questions.length - 1) {
+      finishFullDiagModule();
+      return;
+    }
     if (state.current === state.questions.length - 1) {
       finishExam();
       return;
@@ -396,7 +621,7 @@
     const pct = total ? correct / total : 0;
 
     let overall, rwScore, mathScore;
-    if (state.module === "diagnostic") {
+    if (state.module === "diagnostic" || state.module === "full-diagnostic") {
       // Diagnostics mix RW and Math questions, so score each subject
       // separately for a real two-section estimate, like the actual SAT.
       let rwTotal = 0, rwCorrect = 0, mathTotal = 0, mathCorrect = 0;
@@ -426,7 +651,7 @@
 
   function renderResults(r) {
     const { total, correct, wrong, pct, overall, rwScore, mathScore } = r;
-    const isDiagnostic = state.module === "diagnostic";
+    const isDiagnostic = state.module === "diagnostic" || state.module === "full-diagnostic";
 
     // ring
     const radius = 92;
@@ -484,7 +709,9 @@
       <div class="review-list" id="reviewList"></div>
 
       <div class="results-actions">
-        <button class="btn btn-primary" id="retryBtn">${isDiagnostic ? "Retake Diagnostic" : "Try Again"}</button>
+        <button class="btn btn-primary" id="retryBtn">${
+          state.module === "full-diagnostic" ? "Retake Full Diagnostic" : isDiagnostic ? "Retake Diagnostic" : "Try Again"
+        }</button>
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
       </div>
     `;
@@ -511,6 +738,7 @@
     list.querySelectorAll(".review-item").forEach((it) => {
       it.addEventListener("click", () => {
         state.checkMode = true;
+        state.reviewMode = true;
         state.current = Number(it.dataset.review);
         ensureCurrentVisible();
         show("exam");
@@ -520,7 +748,8 @@
     });
 
     document.getElementById("retryBtn").addEventListener("click", () => {
-      if (isDiagnostic) startDiagnostic();
+      if (state.module === "full-diagnostic") startFullDiagnostic();
+      else if (state.module === "diagnostic") startDiagnostic();
       else startModule(state.module);
     });
     document.getElementById("homeBtn").addEventListener("click", goHome);
@@ -553,6 +782,7 @@
 
   function goHome() {
     clearInterval(state.timer);
+    clearInterval(state.breakTimer);
     show("landing");
     renderStreak();
   }
@@ -562,6 +792,7 @@
     document.querySelectorAll("[data-start]").forEach((btn) => {
       btn.addEventListener("click", () => {
         if (btn.dataset.start === "diagnostic") startDiagnostic();
+        else if (btn.dataset.start === "full-diagnostic") startFullDiagnostic();
         else startModule(btn.dataset.start);
       });
     });
@@ -597,7 +828,23 @@
     });
     document.getElementById("confirmEnd").addEventListener("click", () => {
       confirmModal.classList.add("hidden");
-      finishExam();
+      if (state.module === "full-diagnostic" && !state.reviewMode) {
+        // Score the whole 98-question attempt: record this module's
+        // progress, then count every not-yet-reached module's questions
+        // as skipped, so quitting early scores "out of 98" like the rest
+        // of the app treats an early finish.
+        state.questions.forEach((q, i) => {
+          state.fdResults.push({ q, selected: state.answers[i] });
+        });
+        for (let m = state.fdModuleIndex + 1; m < state.fdModules.length; m++) {
+          state.fdModules[m].forEach((q) => {
+            state.fdResults.push({ q, selected: undefined });
+          });
+        }
+        finishFullDiagnostic();
+      } else {
+        finishExam();
+      }
     });
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");
