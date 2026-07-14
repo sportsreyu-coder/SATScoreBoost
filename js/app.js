@@ -21,6 +21,8 @@
   const SECONDS_PER_Q = 90;
   const PILL_WINDOW = 10; // how many question pills are visible at once
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
+  const STREAK_KEY = "sat_streaks";
+  const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
 
   // ---- Question-pill window helpers ----
   function clampWindowStart(start) {
@@ -43,6 +45,7 @@
     landing: document.getElementById("landing"),
     exam: document.getElementById("exam"),
     results: document.getElementById("results"),
+    social: document.getElementById("social"),
   };
 
   function show(name) {
@@ -286,6 +289,7 @@
       renderQuestion();
     }
     renderFooter();
+    recordActivity("question");
   }
 
   function toggleEliminate(ci) {
@@ -452,6 +456,14 @@
     else if (pct >= 0.5) tagline = "Solid foundation — target the misses below.";
     else tagline = "Good start. Review the explanations and run it back.";
 
+    const streaks = loadStreaks();
+    const streakBannerHTML = `
+      <button class="results-streak" data-nav="social">
+        🔥 <b>${displayStreak(streaks.login)}</b> day login streak
+        · 📝 <b>${displayStreak(streaks.question)}</b> day question streak
+        <span class="results-streak-link">View streaks →</span>
+      </button>`;
+
     document.getElementById("results").innerHTML = `
       <div class="score-ring-wrap">
         <div class="score-ring">
@@ -471,6 +483,8 @@
         <h2>${tagline}</h2>
         <p class="tagline">You answered ${correct} of ${total} questions correctly.</p>
       </div>
+
+      ${streakBannerHTML}
 
       ${sectionScoresHTML}
 
@@ -526,6 +540,130 @@
     document.getElementById("homeBtn").addEventListener("click", goHome);
   }
 
+  // ---- Daily streaks (login + doing a question) ----
+  function todayStr() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  }
+
+  function addDaysStr(dateStr, delta) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const dt = new Date(y, m - 1, d);
+    dt.setDate(dt.getDate() + delta);
+    return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
+  }
+
+  function defaultStreaks() {
+    return {
+      login: { current: 0, best: 0, lastDate: null, dates: [] },
+      question: { current: 0, best: 0, lastDate: null, dates: [] },
+    };
+  }
+
+  function loadStreaks() {
+    try {
+      const raw = localStorage.getItem(STREAK_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return { ...defaultStreaks(), ...parsed };
+      }
+    } catch (e) { /* localStorage unavailable */ }
+    return defaultStreaks();
+  }
+
+  function saveStreaks(streaks) {
+    try {
+      localStorage.setItem(STREAK_KEY, JSON.stringify(streaks));
+    } catch (e) { /* localStorage unavailable */ }
+  }
+
+  // The streak is still "alive" if it was last bumped today or yesterday;
+  // otherwise a day was missed and the current streak has reset to 0.
+  function displayStreak(entry) {
+    if (!entry.lastDate) return 0;
+    const today = todayStr();
+    if (entry.lastDate === today || entry.lastDate === addDaysStr(today, -1)) {
+      return entry.current;
+    }
+    return 0;
+  }
+
+  // Records that `kind` ("login" or "question") happened today, extending
+  // the streak if the last activity was yesterday, or resetting it to 1
+  // after a missed day. Safe to call more than once in the same day.
+  function recordActivity(kind) {
+    const streaks = loadStreaks();
+    const entry = streaks[kind];
+    const today = todayStr();
+    if (entry.lastDate !== today) {
+      entry.current = entry.lastDate === addDaysStr(today, -1) ? entry.current + 1 : 1;
+      entry.best = Math.max(entry.best || 0, entry.current);
+      entry.lastDate = today;
+    }
+    if (!entry.dates.includes(today)) {
+      entry.dates.push(today);
+      if (entry.dates.length > STREAK_HISTORY_DAYS) {
+        entry.dates = entry.dates.slice(-STREAK_HISTORY_DAYS);
+      }
+    }
+    saveStreaks(streaks);
+    renderStreak();
+  }
+
+  function renderSocial() {
+    const streaks = loadStreaks();
+    const loginCurrent = displayStreak(streaks.login);
+    const questionCurrent = displayStreak(streaks.question);
+
+    let sessions = 0, acc = 0;
+    try {
+      const raw = localStorage.getItem("sat_stats");
+      const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
+      sessions = s.sessions || 0;
+      acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
+    } catch (e) { /* localStorage unavailable */ }
+
+    function weekHTML(entry) {
+      const today = todayStr();
+      const cells = [];
+      for (let i = 6; i >= 0; i--) {
+        const day = addDaysStr(today, -i);
+        const active = entry.dates.includes(day);
+        const label = new Date(day + "T00:00:00").toLocaleDateString(undefined, { weekday: "narrow" });
+        cells.push(`<div class="cal-day ${active ? "active" : ""}" title="${day}">${label}</div>`);
+      }
+      return cells.join("");
+    }
+
+    document.getElementById("social").innerHTML = `
+      <h1 class="section-title">Your streaks</h1>
+      <p class="section-sub">Show up daily to keep your streaks alive — practice every day to build a habit.</p>
+      <div class="streak-grid">
+        <div class="streak-card">
+          <div class="streak-icon">🔥</div>
+          <div class="streak-num">${loginCurrent}</div>
+          <div class="streak-label">Day login streak</div>
+          <div class="streak-best">Best: ${streaks.login.best || 0} day${streaks.login.best === 1 ? "" : "s"}</div>
+          <div class="cal-row">${weekHTML(streaks.login)}</div>
+        </div>
+        <div class="streak-card">
+          <div class="streak-icon">📝</div>
+          <div class="streak-num">${questionCurrent}</div>
+          <div class="streak-label">Day question streak</div>
+          <div class="streak-best">Best: ${streaks.question.best || 0} day${streaks.question.best === 1 ? "" : "s"}</div>
+          <div class="cal-row">${weekHTML(streaks.question)}</div>
+        </div>
+      </div>
+      <div class="breakdown">
+        <div class="bd-card"><div class="v">${sessions}</div><div class="l">Sessions completed</div></div>
+        <div class="bd-card"><div class="v">${acc}%</div><div class="l">Lifetime accuracy</div></div>
+      </div>
+      <div class="results-actions">
+        <button class="btn btn-primary" data-start="mixed">Keep the streak alive →</button>
+      </div>
+    `;
+  }
+
   // ---- Stats persistence ----
   function saveStats(correct, total) {
     try {
@@ -541,13 +679,15 @@
 
   function renderStreak() {
     try {
-      const raw = localStorage.getItem("sat_stats");
       const el = document.getElementById("streak");
-      if (!raw) { el.classList.add("hidden"); return; }
-      const s = JSON.parse(raw);
+      const streaks = loadStreaks();
+      const loginCurrent = displayStreak(streaks.login);
+      const raw = localStorage.getItem("sat_stats");
+      if (!raw && !loginCurrent) { el.classList.add("hidden"); return; }
+      const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       const acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
       el.classList.remove("hidden");
-      el.innerHTML = `🔥 <b>${s.sessions}</b> sessions · <b>${acc}%</b> lifetime accuracy`;
+      el.innerHTML = `🔥 <b>${loginCurrent}</b> day streak · <b>${acc}%</b> accuracy`;
     } catch (e) {}
   }
 
@@ -559,11 +699,20 @@
 
   // ---- Global wiring ----
   function init() {
-    document.querySelectorAll("[data-start]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.dataset.start === "diagnostic") startDiagnostic();
-        else startModule(btn.dataset.start);
-      });
+    // Delegated so buttons rendered later (e.g. on the results or social
+    // screens) work without re-wiring.
+    document.addEventListener("click", (e) => {
+      const startBtn = e.target.closest("[data-start]");
+      if (startBtn) {
+        if (startBtn.dataset.start === "diagnostic") startDiagnostic();
+        else startModule(startBtn.dataset.start);
+        return;
+      }
+      const navBtn = e.target.closest("[data-nav]");
+      if (navBtn) {
+        if (navBtn.dataset.nav === "social") renderSocial();
+        show(navBtn.dataset.nav);
+      }
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);
@@ -617,7 +766,7 @@
       else if (e.key.toLowerCase() === "m") toggleMark();
     });
 
-    renderStreak();
+    recordActivity("login");
   }
 
   document.addEventListener("DOMContentLoaded", init);
