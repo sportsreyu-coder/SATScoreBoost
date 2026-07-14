@@ -11,7 +11,7 @@ A self-contained static site: no build step, no signup, no backend.
 - **Instant Check** — reveals the correct answer and an explanation as you go
 - **Results screen** — animated score ring, correct/incorrect breakdown, a 200–800 section score estimate (×2 for the full test), and a clickable per-question review
 - **Lifetime stats** persisted in `localStorage` (sessions + accuracy)
-- **Social tab** — daily login and daily question-answering streaks, with best-streak tracking and a 7-day activity view
+- **Social tab** — a daily streak (kept alive by answering at least one question a day), with best-streak tracking, a 7-day activity view, and today's question count
 - **Keyboard shortcuts** — `1`–`4` to answer, `←`/`→` to navigate, `M` to mark for review
 - Answer choices are **shuffled per question**, so the correct option isn't always in the same position
 

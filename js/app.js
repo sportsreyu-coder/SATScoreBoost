@@ -289,7 +289,7 @@
       renderQuestion();
     }
     renderFooter();
-    recordActivity("question");
+    recordQuestionAnswered();
   }
 
   function toggleEliminate(ci) {
@@ -456,12 +456,11 @@
     else if (pct >= 0.5) tagline = "Solid foundation — target the misses below.";
     else tagline = "Good start. Review the explanations and run it back.";
 
-    const streaks = loadStreaks();
     const streakBannerHTML = `
       <button class="results-streak" data-nav="social">
-        🔥 <b>${displayStreak(streaks.login)}</b> day login streak
-        · 📝 <b>${displayStreak(streaks.question)}</b> day question streak
-        <span class="results-streak-link">View streaks →</span>
+        🔥 <b>${displayStreak(loadStreak())}</b> day streak
+        · 📝 <b>${loadTodayQuestionCount()}</b> questions answered today
+        <span class="results-streak-link">View streak →</span>
       </button>`;
 
     document.getElementById("results").innerHTML = `
@@ -540,7 +539,9 @@
     document.getElementById("homeBtn").addEventListener("click", goHome);
   }
 
-  // ---- Daily streaks (login + doing a question) ----
+  // ---- Daily streak (logged in AND answered a question that day) ----
+  const DAILY_QUESTIONS_KEY = "sat_daily_questions";
+
   function todayStr() {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -553,27 +554,21 @@
     return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
   }
 
-  function defaultStreaks() {
-    return {
-      login: { current: 0, best: 0, lastDate: null, dates: [] },
-      question: { current: 0, best: 0, lastDate: null, dates: [] },
-    };
+  function defaultStreak() {
+    return { current: 0, best: 0, lastDate: null, dates: [] };
   }
 
-  function loadStreaks() {
+  function loadStreak() {
     try {
       const raw = localStorage.getItem(STREAK_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        return { ...defaultStreaks(), ...parsed };
-      }
+      if (raw) return { ...defaultStreak(), ...JSON.parse(raw) };
     } catch (e) { /* localStorage unavailable */ }
-    return defaultStreaks();
+    return defaultStreak();
   }
 
-  function saveStreaks(streaks) {
+  function saveStreak(streak) {
     try {
-      localStorage.setItem(STREAK_KEY, JSON.stringify(streaks));
+      localStorage.setItem(STREAK_KEY, JSON.stringify(streak));
     } catch (e) { /* localStorage unavailable */ }
   }
 
@@ -588,32 +583,49 @@
     return 0;
   }
 
-  // Records that `kind` ("login" or "question") happened today, extending
-  // the streak if the last activity was yesterday, or resetting it to 1
-  // after a missed day. Safe to call more than once in the same day.
-  function recordActivity(kind) {
-    const streaks = loadStreaks();
-    const entry = streaks[kind];
+  function loadTodayQuestionCount() {
+    try {
+      const raw = localStorage.getItem(DAILY_QUESTIONS_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return parsed.count || 0;
+      }
+    } catch (e) { /* localStorage unavailable */ }
+    return 0;
+  }
+
+  // Called every time the user (who is on the site, i.e. "logged in") answers
+  // a question — bumps today's question count and, on the first question of
+  // the day, extends the combined login+question streak.
+  function recordQuestionAnswered() {
     const today = todayStr();
-    if (entry.lastDate !== today) {
-      entry.current = entry.lastDate === addDaysStr(today, -1) ? entry.current + 1 : 1;
-      entry.best = Math.max(entry.best || 0, entry.current);
-      entry.lastDate = today;
+    try {
+      localStorage.setItem(
+        DAILY_QUESTIONS_KEY,
+        JSON.stringify({ date: today, count: loadTodayQuestionCount() + 1 })
+      );
+    } catch (e) { /* localStorage unavailable */ }
+
+    const streak = loadStreak();
+    if (streak.lastDate !== today) {
+      streak.current = streak.lastDate === addDaysStr(today, -1) ? streak.current + 1 : 1;
+      streak.best = Math.max(streak.best || 0, streak.current);
+      streak.lastDate = today;
     }
-    if (!entry.dates.includes(today)) {
-      entry.dates.push(today);
-      if (entry.dates.length > STREAK_HISTORY_DAYS) {
-        entry.dates = entry.dates.slice(-STREAK_HISTORY_DAYS);
+    if (!streak.dates.includes(today)) {
+      streak.dates.push(today);
+      if (streak.dates.length > STREAK_HISTORY_DAYS) {
+        streak.dates = streak.dates.slice(-STREAK_HISTORY_DAYS);
       }
     }
-    saveStreaks(streaks);
+    saveStreak(streak);
     renderStreak();
   }
 
   function renderSocial() {
-    const streaks = loadStreaks();
-    const loginCurrent = displayStreak(streaks.login);
-    const questionCurrent = displayStreak(streaks.question);
+    const streak = loadStreak();
+    const current = displayStreak(streak);
+    const todayCount = loadTodayQuestionCount();
 
     let sessions = 0, acc = 0;
     try {
@@ -636,22 +648,21 @@
     }
 
     document.getElementById("social").innerHTML = `
-      <h1 class="section-title">Your streaks</h1>
-      <p class="section-sub">Show up daily to keep your streaks alive — practice every day to build a habit.</p>
+      <h1 class="section-title">Your streak</h1>
+      <p class="section-sub">Answer at least one question every day to keep your streak alive.</p>
       <div class="streak-grid">
         <div class="streak-card">
           <div class="streak-icon">🔥</div>
-          <div class="streak-num">${loginCurrent}</div>
-          <div class="streak-label">Day login streak</div>
-          <div class="streak-best">Best: ${streaks.login.best || 0} day${streaks.login.best === 1 ? "" : "s"}</div>
-          <div class="cal-row">${weekHTML(streaks.login)}</div>
+          <div class="streak-num">${current}</div>
+          <div class="streak-label">Day streak</div>
+          <div class="streak-best">Best: ${streak.best || 0} day${streak.best === 1 ? "" : "s"}</div>
+          <div class="cal-row">${weekHTML(streak)}</div>
         </div>
         <div class="streak-card">
           <div class="streak-icon">📝</div>
-          <div class="streak-num">${questionCurrent}</div>
-          <div class="streak-label">Day question streak</div>
-          <div class="streak-best">Best: ${streaks.question.best || 0} day${streaks.question.best === 1 ? "" : "s"}</div>
-          <div class="cal-row">${weekHTML(streaks.question)}</div>
+          <div class="streak-num">${todayCount}</div>
+          <div class="streak-label">Questions answered today</div>
+          <div class="streak-best">${todayCount > 0 ? "Nice work — keep it up!" : "Answer a question to extend your streak"}</div>
         </div>
       </div>
       <div class="breakdown">
@@ -680,14 +691,13 @@
   function renderStreak() {
     try {
       const el = document.getElementById("streak");
-      const streaks = loadStreaks();
-      const loginCurrent = displayStreak(streaks.login);
+      const current = displayStreak(loadStreak());
       const raw = localStorage.getItem("sat_stats");
-      if (!raw && !loginCurrent) { el.classList.add("hidden"); return; }
+      if (!raw && !current) { el.classList.add("hidden"); return; }
       const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       const acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
       el.classList.remove("hidden");
-      el.innerHTML = `🔥 <b>${loginCurrent}</b> day streak · <b>${acc}%</b> accuracy`;
+      el.innerHTML = `🔥 <b>${current}</b> day streak · <b>${acc}%</b> accuracy`;
     } catch (e) {}
   }
 
@@ -766,7 +776,7 @@
       else if (e.key.toLowerCase() === "m") toggleMark();
     });
 
-    recordActivity("login");
+    renderStreak();
   }
 
   document.addEventListener("DOMContentLoaded", init);
