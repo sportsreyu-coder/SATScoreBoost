@@ -51,15 +51,20 @@
 
     <section class="diagnostic-cta">
       <div class="diagnostic-cta-text">
-        <span class="eyebrow">20 questions · ~30 min</span>
+        <span class="eyebrow">Quick check-in or a full mini-SAT</span>
         <h2>Not sure where you stand?</h2>
         <p>
-          Take a quick diagnostic — 10 Reading &amp; Writing and 10 Math questions
-          mirroring the real test's domain mix — and get a projected score for
-          both sections. Retake it anytime for a different set.
+          Take a quick 20-question diagnostic (10 Reading &amp; Writing and 10 Math,
+          ~30 min) for a fast read, or a full 40-question diagnostic across all
+          four modules — Reading &amp; Writing Module 1 &amp; 2, a break, then Math
+          Module 1 &amp; 2 — just like the real digital SAT. Either way, retake it
+          anytime for a different set.
         </p>
       </div>
-      <button class="btn btn-primary" data-start="diagnostic">Start Diagnostic →</button>
+      <div class="diagnostic-cta-actions">
+        <button class="btn btn-primary" data-start="diagnostic">Start Diagnostic →</button>
+        <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Diagnostic →</button>
+      </div>
     </section>
 
     <h2 class="section-title">Choose your practice</h2>
@@ -118,6 +123,9 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== BREAK ===================== -->
+  <section id="break" class="break-screen hidden"><!-- section-break / module-checkpoint screen renders here --></section>
 
   <!-- ===================== RESULTS ===================== -->
   <section id="results" class="results hidden"><!-- results render here --></section>

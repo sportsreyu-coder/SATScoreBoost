@@ -228,7 +228,8 @@ button.streak:hover { color: var(--accent); }
 }
 .diagnostic-cta h2 { font-size: 1.4rem; margin-bottom: 8px; }
 .diagnostic-cta p { color: var(--text-dim); font-size: 0.95rem; }
-.diagnostic-cta .btn { flex-shrink: 0; }
+.diagnostic-cta-actions { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+.diagnostic-cta-actions .btn { white-space: nowrap; }
 
 .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
 .section-sub { color: var(--text-dim); margin-bottom: 28px; }
@@ -465,6 +466,32 @@ button.streak:hover { color: var(--accent); }
 }
 .pill-go-btn:hover { border-color: var(--accent); color: var(--accent); }
 .footer-nav { display: flex; gap: 12px; }
+
+/* ---------------- BREAK ---------------- */
+.break-screen { display: flex; align-items: center; justify-content: center; min-height: 70vh; padding: 28px; }
+.break-content { max-width: 480px; text-align: center; }
+.break-content .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(77, 159, 255, 0.14);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.break-content h2 { font-size: 1.6rem; margin-bottom: 12px; }
+.break-content p { color: var(--text-dim); margin-bottom: 28px; }
+.break-timer {
+  font-size: 2.6rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--blue);
+  margin-bottom: 28px;
+}
+.break-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
 /* ---------------- RESULTS ---------------- */
 .results { max-width: 760px; margin: 0 auto; padding: 60px 28px 100px; }
