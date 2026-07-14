@@ -28,6 +28,36 @@
   const SECONDS_PER_Q = 90;
   const PILL_WINDOW = 10; // how many question pills are visible at once
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
+  const STREAK_KEY = "sat_streaks";
+  const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
+  const LIFETIME_KEY = "sat_lifetime_answers";
+  const STATS_KEY = "sat_stats";
+
+  // ---- Progress storage ----
+  // Guests get their progress tracked in sessionStorage (gone once the tab
+  // closes); logging in switches to localStorage under a per-account key so
+  // it survives across visits. This is what "log in to save your progress"
+  // actually means here.
+  function progressStore() {
+    return window.Auth && window.Auth.getCurrentUser() ? localStorage : sessionStorage;
+  }
+
+  function progressKey(base) {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    return user ? `${base}::${user.email}` : base;
+  }
+
+  // ---- Badges ----
+  const TIER_META = [
+    { name: "Bronze", medal: "🥉" },
+    { name: "Silver", medal: "🥈" },
+    { name: "Gold", medal: "🥇" },
+    { name: "Platinum", medal: "🏆" },
+    { name: "Diamond", medal: "💎" },
+  ];
+  const QUESTION_TIERS = [10, 50, 100, 500, 1000];
+  const STREAK_TIERS = [3, 7, 30, 100, 365];
+
   const FULL_DIAG_INDEX_KEY = "sat_full_diag_index"; // last full-diagnostic index
   const BREAK_SECONDS = 600; // 10-minute break between RW and Math, like the real SAT
   // Real digital SAT per-module structure and timing.
@@ -62,6 +92,8 @@
     exam: document.getElementById("exam"),
     break: document.getElementById("break"),
     results: document.getElementById("results"),
+    social: document.getElementById("social"),
+    badges: document.getElementById("badges"),
   };
 
   function show(name) {
@@ -493,6 +525,7 @@
       renderQuestion();
     }
     renderFooter();
+    recordQuestionAnswered();
   }
 
   function toggleEliminate(ci) {
@@ -646,6 +679,7 @@
 
     renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
     saveStats(correct, total);
+    recordLifetimeAnswers();
     show("results");
   }
 
@@ -677,6 +711,13 @@
     else if (pct >= 0.5) tagline = "Solid foundation — target the misses below.";
     else tagline = "Good start. Review the explanations and run it back.";
 
+    const streakBannerHTML = `
+      <button class="results-streak" data-nav="social">
+        🔥 <b>${displayStreak(loadStreak())}</b> day streak
+        · 📝 <b>${loadTodayQuestionCount()}</b> questions answered today
+        <span class="results-streak-link">View streak →</span>
+      </button>`;
+
     document.getElementById("results").innerHTML = `
       <div class="score-ring-wrap">
         <div class="score-ring">
@@ -696,6 +737,8 @@
         <h2>${tagline}</h2>
         <p class="tagline">You answered ${correct} of ${total} questions correctly.</p>
       </div>
+
+      ${streakBannerHTML}
 
       ${sectionScoresHTML}
 
@@ -755,28 +798,341 @@
     document.getElementById("homeBtn").addEventListener("click", goHome);
   }
 
+  // ---- Daily streak (logged in AND answered a question that day) ----
+  const DAILY_QUESTIONS_KEY = "sat_daily_questions";
+
+  function todayStr() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  }
+
+  function addDaysStr(dateStr, delta) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const dt = new Date(y, m - 1, d);
+    dt.setDate(dt.getDate() + delta);
+    return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
+  }
+
+  function defaultStreak() {
+    return { current: 0, best: 0, lastDate: null, dates: [] };
+  }
+
+  function loadStreak() {
+    try {
+      const raw = progressStore().getItem(progressKey(STREAK_KEY));
+      if (raw) return { ...defaultStreak(), ...JSON.parse(raw) };
+    } catch (e) { /* storage unavailable */ }
+    return defaultStreak();
+  }
+
+  function saveStreak(streak) {
+    try {
+      progressStore().setItem(progressKey(STREAK_KEY), JSON.stringify(streak));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // The streak is still "alive" if it was last bumped today or yesterday;
+  // otherwise a day was missed and the current streak has reset to 0.
+  function displayStreak(entry) {
+    if (!entry.lastDate) return 0;
+    const today = todayStr();
+    if (entry.lastDate === today || entry.lastDate === addDaysStr(today, -1)) {
+      return entry.current;
+    }
+    return 0;
+  }
+
+  function loadTodayQuestionCount() {
+    try {
+      const raw = progressStore().getItem(progressKey(DAILY_QUESTIONS_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return parsed.count || 0;
+      }
+    } catch (e) { /* storage unavailable */ }
+    return 0;
+  }
+
+  // Called every time the user answers a question — bumps today's question
+  // count and, on the first question of the day, extends the streak. Guests
+  // get this tracked for the current tab only (sessionStorage); logging in
+  // persists it across visits (localStorage, scoped to the account).
+  function recordQuestionAnswered() {
+    const today = todayStr();
+    try {
+      progressStore().setItem(
+        progressKey(DAILY_QUESTIONS_KEY),
+        JSON.stringify({ date: today, count: loadTodayQuestionCount() + 1 })
+      );
+    } catch (e) { /* storage unavailable */ }
+
+    const streak = loadStreak();
+    if (streak.lastDate !== today) {
+      streak.current = streak.lastDate === addDaysStr(today, -1) ? streak.current + 1 : 1;
+      streak.best = Math.max(streak.best || 0, streak.current);
+      streak.lastDate = today;
+    }
+    if (!streak.dates.includes(today)) {
+      streak.dates.push(today);
+      if (streak.dates.length > STREAK_HISTORY_DAYS) {
+        streak.dates = streak.dates.slice(-STREAK_HISTORY_DAYS);
+      }
+    }
+    saveStreak(streak);
+    renderStreak();
+  }
+
+  // ---- Lifetime answer counts (for badges) ----
+  function defaultLifetime() {
+    return { total: 0, rw: 0, math: 0 };
+  }
+
+  function loadLifetime() {
+    try {
+      const raw = progressStore().getItem(progressKey(LIFETIME_KEY));
+      if (raw) return { ...defaultLifetime(), ...JSON.parse(raw) };
+    } catch (e) { /* storage unavailable */ }
+    return defaultLifetime();
+  }
+
+  // Tallies this session's actually-answered (non-skipped) questions by
+  // subject and folds them into the running lifetime totals.
+  function recordLifetimeAnswers() {
+    const lifetime = loadLifetime();
+    state.questions.forEach((q, i) => {
+      if (state.answers[i] === undefined) return;
+      lifetime.total++;
+      if (q.module === "rw") lifetime.rw++;
+      else if (q.module === "math") lifetime.math++;
+    });
+    try {
+      progressStore().setItem(progressKey(LIFETIME_KEY), JSON.stringify(lifetime));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // ---- Badges ----
+  // Highest tier index reached for `value` against an ascending `tiers`
+  // list, or -1 if the first tier hasn't been reached yet.
+  function tierIndexFor(value, tiers) {
+    let idx = -1;
+    for (let i = 0; i < tiers.length; i++) {
+      if (value >= tiers[i]) idx = i;
+    }
+    return idx;
+  }
+
+  function badgeCardHTML(icon, label, value, valueLabel, tiers) {
+    const idx = tierIndexFor(value, tiers);
+    const tier = idx >= 0 ? TIER_META[idx] : null;
+    const nextTier = idx + 1 < tiers.length ? tiers[idx + 1] : null;
+    const floor = idx >= 0 ? tiers[idx] : 0;
+    const progressPct = nextTier
+      ? Math.min(100, Math.round(((value - floor) / (nextTier - floor)) * 100))
+      : 100;
+
+    const dotsHTML = tiers
+      .map((t, i) => {
+        const unlocked = i <= idx;
+        return `<span class="badge-dot ${unlocked ? "unlocked" : ""}" title="${TIER_META[i].name}: ${t}">${TIER_META[i].medal}</span>`;
+      })
+      .join("");
+
+    return `
+      <div class="badge-card">
+        <div class="badge-top">
+          <div class="badge-medal ${tier ? "" : "locked"}">${tier ? tier.medal : "🔒"}</div>
+          <div>
+            <div class="badge-title">${icon} ${label}</div>
+            <div class="badge-tier">${tier ? tier.name : "Unranked"}</div>
+          </div>
+        </div>
+        <div class="badge-value">${value} ${valueLabel}</div>
+        <div class="badge-progress"><div class="badge-progress-bar" style="width:${progressPct}%"></div></div>
+        <div class="badge-next">${nextTier ? `${nextTier - value} more to ${TIER_META[idx + 1].name}` : "Max tier reached!"}</div>
+        <div class="badge-dots">${dotsHTML}</div>
+      </div>`;
+  }
+
+  function weekHTML(entry) {
+    const today = todayStr();
+    const cells = [];
+    for (let i = 6; i >= 0; i--) {
+      const day = addDaysStr(today, -i);
+      const active = entry.dates.includes(day);
+      const label = new Date(day + "T00:00:00").toLocaleDateString(undefined, { weekday: "narrow" });
+      cells.push(`<div class="cal-day ${active ? "active" : ""}" title="${day}">${label}</div>`);
+    }
+    return cells.join("");
+  }
+
+  function guestBannerHTML() {
+    if (window.Auth && window.Auth.getCurrentUser()) return "";
+    return `
+      <div class="guest-banner">
+        <span>You're browsing as a guest — this progress disappears when you close the tab.</span>
+        <button type="button" class="btn btn-primary btn-sm" data-action="open-auth">Log in to save it</button>
+      </div>`;
+  }
+
+  function renderSocial() {
+    const streak = loadStreak();
+    const current = displayStreak(streak);
+    const todayCount = loadTodayQuestionCount();
+
+    let sessions = 0, acc = 0;
+    try {
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
+      const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
+      sessions = s.sessions || 0;
+      acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
+    } catch (e) { /* localStorage unavailable */ }
+
+    document.getElementById("social").innerHTML = `
+      <h1 class="section-title">Your streak</h1>
+      <p class="section-sub">Answer at least one question every day to keep your streak alive.</p>
+      ${guestBannerHTML()}
+      <div class="streak-grid">
+        <div class="streak-card">
+          <div class="streak-icon">🔥</div>
+          <div class="streak-num">${current}</div>
+          <div class="streak-label">Day streak</div>
+          <div class="streak-best">Best: ${streak.best || 0} day${streak.best === 1 ? "" : "s"}</div>
+          <div class="cal-row">${weekHTML(streak)}</div>
+        </div>
+        <div class="streak-card">
+          <div class="streak-icon">📝</div>
+          <div class="streak-num">${todayCount}</div>
+          <div class="streak-label">Questions answered today</div>
+          <div class="streak-best">${todayCount > 0 ? "Nice work — keep it up!" : "Answer a question to extend your streak"}</div>
+        </div>
+      </div>
+      <div class="breakdown">
+        <div class="bd-card"><div class="v">${sessions}</div><div class="l">Sessions completed</div></div>
+        <div class="bd-card"><div class="v">${acc}%</div><div class="l">Lifetime accuracy</div></div>
+      </div>
+      <div class="results-actions">
+        <button class="btn btn-primary" data-start="mixed">Keep the streak alive →</button>
+        <button class="btn btn-ghost" data-home>Back to Home</button>
+      </div>
+    `;
+  }
+
+  function renderBadges() {
+    const streak = loadStreak();
+    const lifetime = loadLifetime();
+
+    const badgesHTML = [
+      badgeCardHTML("🎯", "Total Questions", lifetime.total, "answered", QUESTION_TIERS),
+      badgeCardHTML("📐", "Math", lifetime.math, "answered", QUESTION_TIERS),
+      badgeCardHTML("📖", "Reading & Writing", lifetime.rw, "answered", QUESTION_TIERS),
+      badgeCardHTML("🔥", "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
+    ].join("");
+
+    document.getElementById("badges").innerHTML = `
+      <h1 class="section-title">Your badges</h1>
+      <p class="section-sub">Level up by answering more questions and building your streak.</p>
+      ${guestBannerHTML()}
+      <div class="badge-grid">${badgesHTML}</div>
+      <div class="results-actions">
+        <button class="btn btn-ghost" data-home>Back to Home</button>
+      </div>
+    `;
+  }
+
+  function closeProfileMenu() {
+    document.getElementById("profileDropdown").classList.add("hidden");
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  function renderProfileMenu() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const dropdown = document.getElementById("profileDropdown");
+    const userHTML = user
+      ? `
+        <div class="profile-user">
+          <div class="profile-user-name">${escapeHtml(user.name)}</div>
+          <div class="profile-user-email">${escapeHtml(user.email)}</div>
+        </div>`
+      : "";
+    const authItemHTML = user
+      ? `<button class="profile-menu-item" data-action="logout">🚪 Log out</button>`
+      : `<button class="profile-menu-item profile-menu-item-accent" data-action="open-auth">🔑 Log in / Sign up</button>`;
+
+    dropdown.innerHTML = `
+      ${userHTML}
+      <button class="profile-menu-item" data-nav="social">🔥 Streak &amp; Stats</button>
+      <button class="profile-menu-item" data-nav="badges">🏆 Badges</button>
+      <div class="profile-divider"></div>
+      ${authItemHTML}
+    `;
+  }
+
+  // ---- Auth modal ----
+  let authMode = "login";
+
+  function updateAuthModeUI() {
+    const isSignup = authMode === "signup";
+    document.getElementById("authTitle").textContent = isSignup ? "Sign up" : "Log in";
+    document.getElementById("authNameField").classList.toggle("hidden", !isSignup);
+    document.getElementById("authSubmit").textContent = isSignup ? "Create account" : "Log in";
+    document.getElementById("authSwitchText").textContent = isSignup
+      ? "Already have an account?"
+      : "Don't have an account?";
+    document.getElementById("authSwitchBtn").textContent = isSignup ? "Log in" : "Sign up";
+    document.getElementById("authPassword").autocomplete = isSignup ? "new-password" : "current-password";
+  }
+
+  function openAuthModal(mode) {
+    authMode = mode || "login";
+    updateAuthModeUI();
+    document.getElementById("authError").classList.add("hidden");
+    document.getElementById("authForm").reset();
+    document.getElementById("authModal").classList.remove("hidden");
+    closeProfileMenu();
+    document.getElementById("authEmail").focus();
+  }
+
+  function closeAuthModal() {
+    document.getElementById("authModal").classList.add("hidden");
+  }
+
+  // Refreshes everything that depends on auth state after a login,
+  // signup, or logout.
+  function afterAuthChange() {
+    renderProfileMenu();
+    renderStreak();
+    if (!screens.social.classList.contains("hidden")) renderSocial();
+    if (!screens.badges.classList.contains("hidden")) renderBadges();
+  }
+
   // ---- Stats persistence ----
   function saveStats(correct, total) {
     try {
-      const raw = localStorage.getItem("sat_stats");
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
       const stats = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       stats.sessions++;
       stats.correct += correct;
       stats.total += total;
-      localStorage.setItem("sat_stats", JSON.stringify(stats));
+      progressStore().setItem(progressKey(STATS_KEY), JSON.stringify(stats));
       renderStreak();
-    } catch (e) { /* localStorage unavailable */ }
+    } catch (e) { /* storage unavailable */ }
   }
 
   function renderStreak() {
     try {
-      const raw = localStorage.getItem("sat_stats");
       const el = document.getElementById("streak");
-      if (!raw) { el.classList.add("hidden"); return; }
-      const s = JSON.parse(raw);
+      const current = displayStreak(loadStreak());
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
+      if (!raw && !current) { el.classList.add("hidden"); return; }
+      const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       const acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
       el.classList.remove("hidden");
-      el.innerHTML = `🔥 <b>${s.sessions}</b> sessions · <b>${acc}%</b> lifetime accuracy`;
+      el.innerHTML = `🔥 <b>${current}</b> day streak · <b>${acc}%</b> accuracy`;
     } catch (e) {}
   }
 
@@ -789,12 +1145,48 @@
 
   // ---- Global wiring ----
   function init() {
-    document.querySelectorAll("[data-start]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.dataset.start === "diagnostic") startDiagnostic();
-        else if (btn.dataset.start === "full-diagnostic") startFullDiagnostic();
-        else startModule(btn.dataset.start);
-      });
+    // Delegated so buttons rendered later (e.g. on the results screen)
+    // work without re-wiring.
+    document.addEventListener("click", (e) => {
+      const startBtn = e.target.closest("[data-start]");
+      if (startBtn) {
+        if (startBtn.dataset.start === "diagnostic") startDiagnostic();
+        else if (startBtn.dataset.start === "full-diagnostic") startFullDiagnostic();
+        else startModule(startBtn.dataset.start);
+        closeProfileMenu();
+        return;
+      }
+      const navBtn = e.target.closest("[data-nav]");
+      if (navBtn) {
+        if (navBtn.dataset.nav === "badges") renderBadges();
+        else renderSocial();
+        show(navBtn.dataset.nav);
+        closeProfileMenu();
+        return;
+      }
+      if (e.target.closest("[data-home]")) {
+        goHome();
+        return;
+      }
+      const actionBtn = e.target.closest("[data-action]");
+      if (actionBtn) {
+        const action = actionBtn.dataset.action;
+        if (action === "open-auth") openAuthModal("signup");
+        else if (action === "logout") {
+          window.Auth.signOut();
+          afterAuthChange();
+          closeProfileMenu();
+        }
+        return;
+      }
+      if (e.target.closest("#profileToggle")) {
+        const dropdown = document.getElementById("profileDropdown");
+        const opening = dropdown.classList.contains("hidden");
+        if (opening) renderProfileMenu();
+        dropdown.classList.toggle("hidden", !opening);
+        return;
+      }
+      if (!e.target.closest(".profile-wrap")) closeProfileMenu();
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);
@@ -849,9 +1241,48 @@
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");
     });
-    document.querySelectorAll("[data-home]").forEach((b) =>
-      b.addEventListener("click", goHome)
-    );
+
+    const authModal = document.getElementById("authModal");
+    document.getElementById("authClose").addEventListener("click", closeAuthModal);
+    authModal.addEventListener("click", (e) => {
+      if (e.target === authModal) closeAuthModal();
+    });
+    document.getElementById("authSwitchBtn").addEventListener("click", () => {
+      openAuthModal(authMode === "signup" ? "login" : "signup");
+    });
+    document.getElementById("authForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("authEmail").value;
+      const password = document.getElementById("authPassword").value;
+      const name = document.getElementById("authName").value;
+      const errorEl = document.getElementById("authError");
+      const submitBtn = document.getElementById("authSubmit");
+      errorEl.classList.add("hidden");
+      submitBtn.disabled = true;
+      const result = authMode === "signup"
+        ? await window.Auth.signUp(email, password, name)
+        : await window.Auth.signIn(email, password);
+      submitBtn.disabled = false;
+      if (!result.ok) {
+        errorEl.textContent = result.error;
+        errorEl.classList.remove("hidden");
+        return;
+      }
+      closeAuthModal();
+      afterAuthChange();
+    });
+    document.getElementById("googleDemoBtn").addEventListener("click", () => {
+      const name = window.prompt(
+        "Demo Google Sign-In\n\nThis stands in for real Google auth (coming soon). Enter a display name to continue:",
+        "Demo User"
+      );
+      if (name === null) return;
+      const result = window.Auth.signInWithGoogleDemo(name);
+      if (result.ok) {
+        closeAuthModal();
+        afterAuthChange();
+      }
+    });
 
     // keyboard shortcuts
     document.addEventListener("keydown", (e) => {
@@ -864,6 +1295,7 @@
       else if (e.key.toLowerCase() === "m") toggleMark();
     });
 
+    renderProfileMenu();
     renderStreak();
   }
 
