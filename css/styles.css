@@ -89,7 +89,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  width: min(220px, calc(100vw - 32px));
+  width: min(250px, calc(100vw - 32px));
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -97,6 +97,16 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 6px;
   z-index: 60;
 }
+.profile-user { padding: 10px 12px 8px; }
+.profile-user-name { font-weight: 700; font-size: 0.92rem; }
+.profile-user-email {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.profile-divider { height: 1px; background: var(--border); margin: 6px 4px; }
 .profile-menu-item {
   width: 100%;
   display: block;
@@ -110,6 +120,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .profile-menu-item:hover { background: var(--bg-elev); color: var(--accent); }
 .profile-menu-item + .profile-menu-item { margin-top: 2px; }
+.profile-menu-item-accent { color: var(--accent); }
 
 .topbar-right { display: flex; align-items: center; gap: 18px; }
 .streak {
@@ -530,6 +541,22 @@ button.streak:hover { color: var(--accent); }
 /* ---------------- SOCIAL / BADGES PAGES ---------------- */
 .social { max-width: 900px; margin: 0 auto; padding: 60px 28px 100px; }
 
+.guest-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.btn-sm { padding: 8px 16px; font-size: 0.85rem; flex-shrink: 0; }
+
 .streak-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -610,7 +637,7 @@ button.streak:hover { color: var(--accent); }
 }
 .badge-dot.unlocked { filter: none; opacity: 1; background: var(--accent-soft); border-color: var(--accent); }
 
-/* ---------------- CONFIRM MODAL ---------------- */
+/* ---------------- MODALS ---------------- */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -622,6 +649,7 @@ button.streak:hover { color: var(--accent); }
   padding: 20px;
 }
 .modal {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -634,6 +662,75 @@ button.streak:hover { color: var(--accent); }
 .modal h3 { font-size: 1.25rem; margin-bottom: 8px; }
 .modal p { color: var(--text-dim); margin-bottom: 22px; }
 .modal-actions { display: flex; gap: 12px; justify-content: center; }
+.modal-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+.modal-close:hover { background: var(--bg-elev); color: var(--text); }
+
+.auth-modal { max-width: 400px; text-align: left; }
+.auth-modal h3 { text-align: center; }
+.auth-demo-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+}
+.field { display: block; margin-bottom: 14px; }
+.field span { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-dim); margin-bottom: 6px; }
+.field input {
+  width: 100%;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 11px 12px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.field input:focus { outline: none; border-color: var(--accent); }
+.auth-error {
+  background: rgba(244, 101, 122, 0.12);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  border-radius: 9px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+.auth-submit { width: 100%; justify-content: center; margin-top: 4px; }
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin: 18px 0;
+}
+.auth-divider::before, .auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.auth-google { width: 100%; justify-content: center; }
+.auth-switch { text-align: center; margin-top: 18px; margin-bottom: 0; font-size: 0.88rem; color: var(--text-dim); }
+.auth-switch button {
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 4px;
+}
 
 footer.site {
   text-align: center;

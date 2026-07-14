@@ -24,6 +24,21 @@
   const STREAK_KEY = "sat_streaks";
   const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
   const LIFETIME_KEY = "sat_lifetime_answers";
+  const STATS_KEY = "sat_stats";
+
+  // ---- Progress storage ----
+  // Guests get their progress tracked in sessionStorage (gone once the tab
+  // closes); logging in switches to localStorage under a per-account key so
+  // it survives across visits. This is what "log in to save your progress"
+  // actually means here.
+  function progressStore() {
+    return window.Auth && window.Auth.getCurrentUser() ? localStorage : sessionStorage;
+  }
+
+  function progressKey(base) {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    return user ? `${base}::${user.email}` : base;
+  }
 
   // ---- Badges ----
   const TIER_META = [
@@ -574,16 +589,16 @@
 
   function loadStreak() {
     try {
-      const raw = localStorage.getItem(STREAK_KEY);
+      const raw = progressStore().getItem(progressKey(STREAK_KEY));
       if (raw) return { ...defaultStreak(), ...JSON.parse(raw) };
-    } catch (e) { /* localStorage unavailable */ }
+    } catch (e) { /* storage unavailable */ }
     return defaultStreak();
   }
 
   function saveStreak(streak) {
     try {
-      localStorage.setItem(STREAK_KEY, JSON.stringify(streak));
-    } catch (e) { /* localStorage unavailable */ }
+      progressStore().setItem(progressKey(STREAK_KEY), JSON.stringify(streak));
+    } catch (e) { /* storage unavailable */ }
   }
 
   // The streak is still "alive" if it was last bumped today or yesterday;
@@ -599,26 +614,27 @@
 
   function loadTodayQuestionCount() {
     try {
-      const raw = localStorage.getItem(DAILY_QUESTIONS_KEY);
+      const raw = progressStore().getItem(progressKey(DAILY_QUESTIONS_KEY));
       if (raw) {
         const parsed = JSON.parse(raw);
         if (parsed.date === todayStr()) return parsed.count || 0;
       }
-    } catch (e) { /* localStorage unavailable */ }
+    } catch (e) { /* storage unavailable */ }
     return 0;
   }
 
-  // Called every time the user (who is on the site, i.e. "logged in") answers
-  // a question — bumps today's question count and, on the first question of
-  // the day, extends the combined login+question streak.
+  // Called every time the user answers a question — bumps today's question
+  // count and, on the first question of the day, extends the streak. Guests
+  // get this tracked for the current tab only (sessionStorage); logging in
+  // persists it across visits (localStorage, scoped to the account).
   function recordQuestionAnswered() {
     const today = todayStr();
     try {
-      localStorage.setItem(
-        DAILY_QUESTIONS_KEY,
+      progressStore().setItem(
+        progressKey(DAILY_QUESTIONS_KEY),
         JSON.stringify({ date: today, count: loadTodayQuestionCount() + 1 })
       );
-    } catch (e) { /* localStorage unavailable */ }
+    } catch (e) { /* storage unavailable */ }
 
     const streak = loadStreak();
     if (streak.lastDate !== today) {
@@ -643,9 +659,9 @@
 
   function loadLifetime() {
     try {
-      const raw = localStorage.getItem(LIFETIME_KEY);
+      const raw = progressStore().getItem(progressKey(LIFETIME_KEY));
       if (raw) return { ...defaultLifetime(), ...JSON.parse(raw) };
-    } catch (e) { /* localStorage unavailable */ }
+    } catch (e) { /* storage unavailable */ }
     return defaultLifetime();
   }
 
@@ -660,8 +676,8 @@
       else if (q.module === "math") lifetime.math++;
     });
     try {
-      localStorage.setItem(LIFETIME_KEY, JSON.stringify(lifetime));
-    } catch (e) { /* localStorage unavailable */ }
+      progressStore().setItem(progressKey(LIFETIME_KEY), JSON.stringify(lifetime));
+    } catch (e) { /* storage unavailable */ }
   }
 
   // ---- Badges ----
@@ -719,6 +735,15 @@
     return cells.join("");
   }
 
+  function guestBannerHTML() {
+    if (window.Auth && window.Auth.getCurrentUser()) return "";
+    return `
+      <div class="guest-banner">
+        <span>You're browsing as a guest — this progress disappears when you close the tab.</span>
+        <button type="button" class="btn btn-primary btn-sm" data-action="open-auth">Log in to save it</button>
+      </div>`;
+  }
+
   function renderSocial() {
     const streak = loadStreak();
     const current = displayStreak(streak);
@@ -726,7 +751,7 @@
 
     let sessions = 0, acc = 0;
     try {
-      const raw = localStorage.getItem("sat_stats");
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
       const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       sessions = s.sessions || 0;
       acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
@@ -735,6 +760,7 @@
     document.getElementById("social").innerHTML = `
       <h1 class="section-title">Your streak</h1>
       <p class="section-sub">Answer at least one question every day to keep your streak alive.</p>
+      ${guestBannerHTML()}
       <div class="streak-grid">
         <div class="streak-card">
           <div class="streak-icon">🔥</div>
@@ -775,6 +801,7 @@
     document.getElementById("badges").innerHTML = `
       <h1 class="section-title">Your badges</h1>
       <p class="section-sub">Level up by answering more questions and building your streak.</p>
+      ${guestBannerHTML()}
       <div class="badge-grid">${badgesHTML}</div>
       <div class="results-actions">
         <button class="btn btn-ghost" data-home>Back to Home</button>
@@ -786,24 +813,91 @@
     document.getElementById("profileDropdown").classList.add("hidden");
   }
 
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  function renderProfileMenu() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const dropdown = document.getElementById("profileDropdown");
+    const userHTML = user
+      ? `
+        <div class="profile-user">
+          <div class="profile-user-name">${escapeHtml(user.name)}</div>
+          <div class="profile-user-email">${escapeHtml(user.email)}</div>
+        </div>`
+      : "";
+    const authItemHTML = user
+      ? `<button class="profile-menu-item" data-action="logout">🚪 Log out</button>`
+      : `<button class="profile-menu-item profile-menu-item-accent" data-action="open-auth">🔑 Log in / Sign up</button>`;
+
+    dropdown.innerHTML = `
+      ${userHTML}
+      <button class="profile-menu-item" data-nav="social">🔥 Streak &amp; Stats</button>
+      <button class="profile-menu-item" data-nav="badges">🏆 Badges</button>
+      <div class="profile-divider"></div>
+      ${authItemHTML}
+    `;
+  }
+
+  // ---- Auth modal ----
+  let authMode = "login";
+
+  function updateAuthModeUI() {
+    const isSignup = authMode === "signup";
+    document.getElementById("authTitle").textContent = isSignup ? "Sign up" : "Log in";
+    document.getElementById("authNameField").classList.toggle("hidden", !isSignup);
+    document.getElementById("authSubmit").textContent = isSignup ? "Create account" : "Log in";
+    document.getElementById("authSwitchText").textContent = isSignup
+      ? "Already have an account?"
+      : "Don't have an account?";
+    document.getElementById("authSwitchBtn").textContent = isSignup ? "Log in" : "Sign up";
+    document.getElementById("authPassword").autocomplete = isSignup ? "new-password" : "current-password";
+  }
+
+  function openAuthModal(mode) {
+    authMode = mode || "login";
+    updateAuthModeUI();
+    document.getElementById("authError").classList.add("hidden");
+    document.getElementById("authForm").reset();
+    document.getElementById("authModal").classList.remove("hidden");
+    closeProfileMenu();
+    document.getElementById("authEmail").focus();
+  }
+
+  function closeAuthModal() {
+    document.getElementById("authModal").classList.add("hidden");
+  }
+
+  // Refreshes everything that depends on auth state after a login,
+  // signup, or logout.
+  function afterAuthChange() {
+    renderProfileMenu();
+    renderStreak();
+    if (!screens.social.classList.contains("hidden")) renderSocial();
+    if (!screens.badges.classList.contains("hidden")) renderBadges();
+  }
+
   // ---- Stats persistence ----
   function saveStats(correct, total) {
     try {
-      const raw = localStorage.getItem("sat_stats");
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
       const stats = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       stats.sessions++;
       stats.correct += correct;
       stats.total += total;
-      localStorage.setItem("sat_stats", JSON.stringify(stats));
+      progressStore().setItem(progressKey(STATS_KEY), JSON.stringify(stats));
       renderStreak();
-    } catch (e) { /* localStorage unavailable */ }
+    } catch (e) { /* storage unavailable */ }
   }
 
   function renderStreak() {
     try {
       const el = document.getElementById("streak");
       const current = displayStreak(loadStreak());
-      const raw = localStorage.getItem("sat_stats");
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
       if (!raw && !current) { el.classList.add("hidden"); return; }
       const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
       const acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
@@ -842,8 +936,22 @@
         goHome();
         return;
       }
+      const actionBtn = e.target.closest("[data-action]");
+      if (actionBtn) {
+        const action = actionBtn.dataset.action;
+        if (action === "open-auth") openAuthModal("signup");
+        else if (action === "logout") {
+          window.Auth.signOut();
+          afterAuthChange();
+          closeProfileMenu();
+        }
+        return;
+      }
       if (e.target.closest("#profileToggle")) {
-        document.getElementById("profileDropdown").classList.toggle("hidden");
+        const dropdown = document.getElementById("profileDropdown");
+        const opening = dropdown.classList.contains("hidden");
+        if (opening) renderProfileMenu();
+        dropdown.classList.toggle("hidden", !opening);
         return;
       }
       if (!e.target.closest(".profile-wrap")) closeProfileMenu();
@@ -885,6 +993,49 @@
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");
     });
+
+    const authModal = document.getElementById("authModal");
+    document.getElementById("authClose").addEventListener("click", closeAuthModal);
+    authModal.addEventListener("click", (e) => {
+      if (e.target === authModal) closeAuthModal();
+    });
+    document.getElementById("authSwitchBtn").addEventListener("click", () => {
+      openAuthModal(authMode === "signup" ? "login" : "signup");
+    });
+    document.getElementById("authForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("authEmail").value;
+      const password = document.getElementById("authPassword").value;
+      const name = document.getElementById("authName").value;
+      const errorEl = document.getElementById("authError");
+      const submitBtn = document.getElementById("authSubmit");
+      errorEl.classList.add("hidden");
+      submitBtn.disabled = true;
+      const result = authMode === "signup"
+        ? await window.Auth.signUp(email, password, name)
+        : await window.Auth.signIn(email, password);
+      submitBtn.disabled = false;
+      if (!result.ok) {
+        errorEl.textContent = result.error;
+        errorEl.classList.remove("hidden");
+        return;
+      }
+      closeAuthModal();
+      afterAuthChange();
+    });
+    document.getElementById("googleDemoBtn").addEventListener("click", () => {
+      const name = window.prompt(
+        "Demo Google Sign-In\n\nThis stands in for real Google auth (coming soon). Enter a display name to continue:",
+        "Demo User"
+      );
+      if (name === null) return;
+      const result = window.Auth.signInWithGoogleDemo(name);
+      if (result.ok) {
+        closeAuthModal();
+        afterAuthChange();
+      }
+    });
+
     // keyboard shortcuts
     document.addEventListener("keydown", (e) => {
       if (screens.exam.classList.contains("hidden")) return;
@@ -896,6 +1047,7 @@
       else if (e.key.toLowerCase() === "m") toggleMark();
     });
 
+    renderProfileMenu();
     renderStreak();
   }
 
