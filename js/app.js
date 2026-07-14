@@ -153,6 +153,7 @@
     state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.timerHidden = false;
 
     startTimer();
     show("exam");
@@ -200,6 +201,7 @@
     state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.timerHidden = false;
 
     startTimer();
     show("exam");
@@ -242,6 +244,7 @@
     state.fullDiagnosticIndex = nextIndex;
     state.module = "full-diagnostic";
     state.reviewMode = false;
+    state.timerHidden = false;
 
     loadFullDiagModule(0);
   }
