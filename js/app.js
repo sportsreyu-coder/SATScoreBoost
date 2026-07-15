@@ -716,6 +716,67 @@
     show("results");
   }
 
+  // Official College Board digital SAT domain taxonomy, in display order —
+  // matches the `domain` field used throughout js/questions/*.js.
+  const CATEGORY_ORDER = [
+    "Information and Ideas",
+    "Craft and Structure",
+    "Standard English Conventions",
+    "Expression of Ideas",
+    "Algebra",
+    "Advanced Math",
+    "Problem-Solving and Data Analysis",
+    "Geometry and Trigonometry",
+  ];
+
+  // Groups the just-completed attempt's questions by domain (category) so
+  // results can show what a student did well vs. poorly on, not just an
+  // overall score.
+  function computeCategoryBreakdown() {
+    const byDomain = {};
+    state.questions.forEach((q, i) => {
+      if (!byDomain[q.domain]) {
+        byDomain[q.domain] = { domain: q.domain, module: q.module, correct: 0, total: 0 };
+      }
+      byDomain[q.domain].total++;
+      if (state.answers[i] === q.answer) byDomain[q.domain].correct++;
+    });
+    return CATEGORY_ORDER.map((d) => byDomain[d]).filter(Boolean);
+  }
+
+  function categoryBreakdownHTML() {
+    const cats = computeCategoryBreakdown();
+    if (!cats.length) return "";
+    const rw = cats.filter((c) => c.module === "rw");
+    const math = cats.filter((c) => c.module === "math");
+
+    const row = (c) => {
+      const pct = c.total ? c.correct / c.total : 0;
+      const level = pct >= 0.75 ? "strong" : pct >= 0.5 ? "mid" : "weak";
+      const levelLabel = pct >= 0.75 ? "Strength" : pct >= 0.5 ? "Developing" : "Focus area";
+      return `
+        <div class="cat-row">
+          <div class="cat-row-top">
+            <span class="cat-name">${c.domain}</span>
+            <span class="cat-frac">${c.correct}/${c.total} · <span class="cat-level ${level}">${levelLabel}</span></span>
+          </div>
+          <div class="cat-bar"><div class="cat-bar-fill ${level}" style="width:${Math.round(pct * 100)}%"></div></div>
+        </div>`;
+    };
+
+    const group = (title, list) =>
+      list.length ? `<div class="cat-group"><h4>${title}</h4>${list.map(row).join("")}</div>` : "";
+
+    return `
+      <div class="category-breakdown">
+        <h3 class="section-title" style="font-size:1.2rem;margin-bottom:16px;">Category breakdown</h3>
+        <div class="cat-groups">
+          ${group("Reading & Writing", rw)}
+          ${group("Math", math)}
+        </div>
+      </div>`;
+  }
+
   function renderResults(r) {
     const { total, correct, wrong, pct, overall, rwScore, mathScore } = r;
     const isDiagnostic = state.module === "diagnostic" || state.module === "full-diagnostic";
@@ -774,6 +835,8 @@
       ${streakBannerHTML}
 
       ${sectionScoresHTML}
+
+      ${isDiagnostic ? categoryBreakdownHTML() : ""}
 
       <div class="breakdown">
         <div class="bd-card correct"><div class="v">${correct}</div><div class="l">Correct</div></div>
