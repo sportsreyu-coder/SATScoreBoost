@@ -25,6 +25,7 @@
     fdModuleIndex: 0,     // full-diagnostic: which of the 4 modules is active
     fdResults: [],        // full-diagnostic: flattened {q, selected} across completed modules
     reviewMode: false,    // true once viewing a finished attempt's review-all-questions list
+    domainFilter: null,   // set when practicing a single domain from the Study Plan
   };
 
   const SECONDS_PER_Q = 90;
@@ -35,6 +36,7 @@
   const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
   const LIFETIME_KEY = "sat_lifetime_answers";
   const STATS_KEY = "sat_stats";
+  const STUDY_PLAN_KEY = "sat_last_diagnostic"; // most recent diagnostic's category breakdown
 
   // ---- Progress storage ----
   // Guests get their progress tracked in sessionStorage (gone once the tab
@@ -97,6 +99,7 @@
     results: document.getElementById("results"),
     social: document.getElementById("social"),
     badges: document.getElementById("badges"),
+    studyPlan: document.getElementById("studyPlan"),
   };
 
   function show(name) {
@@ -129,10 +132,12 @@
     };
   }
 
-  function startModule(module) {
+  function startModule(module, domain) {
     let pool;
     if (module === "mixed") {
       pool = shuffle(QUESTIONS);
+    } else if (domain) {
+      pool = shuffle(QUESTIONS.filter((q) => q.module === module && q.domain === domain));
     } else {
       pool = shuffle(QUESTIONS.filter((q) => q.module === module));
     }
@@ -143,6 +148,7 @@
 
     state.module = module;
     state.diagnosticIndex = null;
+    state.domainFilter = domain || null;
     state.reviewMode = false;
     state.questions = pool;
     state.answers = {};
@@ -191,6 +197,7 @@
 
     state.module = "diagnostic";
     state.diagnosticIndex = nextIndex;
+    state.domainFilter = null;
     state.reviewMode = false;
     state.questions = pool;
     state.answers = {};
@@ -243,6 +250,7 @@
     state.fdResults = [];
     state.fullDiagnosticIndex = nextIndex;
     state.module = "full-diagnostic";
+    state.domainFilter = null;
     state.reviewMode = false;
     state.timerHidden = false;
 
@@ -407,8 +415,11 @@
   }
 
   function updateModuleName() {
+    const label = state.domainFilter
+      ? `${moduleLabel(state.module)} — ${state.domainFilter}`
+      : moduleLabel(state.module);
     document.getElementById("moduleName").innerHTML =
-      `${moduleLabel(state.module)} <span>· ${state.questions.length} questions</span>`;
+      `${label} <span>· ${state.questions.length} questions</span>`;
     // Diagnostics simulate real test conditions: no per-question reveal.
     const isDiagKind = state.module === "diagnostic" || state.module === "full-diagnostic";
     document.getElementById("checkToggle").classList.toggle("hidden", isDiagKind);
@@ -736,12 +747,154 @@
     const byDomain = {};
     state.questions.forEach((q, i) => {
       if (!byDomain[q.domain]) {
-        byDomain[q.domain] = { domain: q.domain, module: q.module, correct: 0, total: 0 };
+        byDomain[q.domain] = { domain: q.domain, module: q.module, correct: 0, total: 0, missedSkills: [] };
       }
-      byDomain[q.domain].total++;
-      if (state.answers[i] === q.answer) byDomain[q.domain].correct++;
+      const bucket = byDomain[q.domain];
+      bucket.total++;
+      if (state.answers[i] === q.answer) bucket.correct++;
+      else if (!bucket.missedSkills.includes(q.skill)) bucket.missedSkills.push(q.skill);
     });
     return CATEGORY_ORDER.map((d) => byDomain[d]).filter(Boolean);
+  }
+
+  // Persists the most recent diagnostic's category breakdown so the Study
+  // Plan tab can build a plan from it at any time, not just right after
+  // finishing — same storage rules as everything else in progressStore().
+  function saveDiagnosticSummary(cats) {
+    try {
+      const data = {
+        timestamp: Date.now(),
+        label: moduleLabel(state.module),
+        categories: cats,
+      };
+      progressStore().setItem(progressKey(STUDY_PLAN_KEY), JSON.stringify(data));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function loadDiagnosticSummary() {
+    try {
+      const raw = progressStore().getItem(progressKey(STUDY_PLAN_KEY));
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function timeAgo(ts) {
+    const mins = Math.round((Date.now() - ts) / 60000);
+    if (mins < 1) return "just now";
+    if (mins < 60) return `${mins} min ago`;
+    const hours = Math.round(mins / 60);
+    if (hours < 24) return `${hours} hr ago`;
+    const days = Math.round(hours / 24);
+    return `${days} day${days === 1 ? "" : "s"} ago`;
+  }
+
+  // Short, actionable guidance per College Board domain — shown on the
+  // Study Plan for whichever categories a student is weakest in.
+  const DOMAIN_TIPS = {
+    "Information and Ideas":
+      "Summarize each passage's central claim in one sentence before looking at the choices, and trace command-of-evidence questions back to the exact line that supports (or contradicts) the claim.",
+    "Craft and Structure":
+      "For words-in-context, cover the choices and predict your own word first. For structure/purpose questions, outline what each paragraph is doing before you answer.",
+    "Standard English Conventions":
+      "Review the core rules for boundaries (commas, semicolons, colons, periods) and subject-verb / pronoun agreement — these are pattern-based and improve fast with targeted rule review.",
+    "Expression of Ideas":
+      "For transitions, state the logical relationship between the two sentences in your own words before picking a choice. For synthesis questions, reread exactly what the prompt is asking for.",
+    "Algebra":
+      "Rebuild fluency with linear equations, systems of equations, and inequalities — practice translating word problems into equations before solving.",
+    "Advanced Math":
+      "Focus on factoring and quadratics, exponent rules, and function notation — practice recognizing which method (factoring, completing the square, quadratic formula) fits a given problem.",
+    "Problem-Solving and Data Analysis":
+      "Work on ratios, percentages, and reading data from tables and graphs — practice setting up a proportion or equation before solving.",
+    "Geometry and Trigonometry":
+      "Review core formulas (area, volume, the Pythagorean theorem, basic trig ratios) and practice labeling diagrams before solving.",
+  };
+
+  // Builds the Study Plan screen from the most recently saved diagnostic
+  // breakdown: weakest categories first, each with a fraction, the specific
+  // skills missed, and a one-tap link into focused practice on that domain.
+  function renderStudyPlan() {
+    const data = loadDiagnosticSummary();
+    const el = document.getElementById("studyPlan");
+
+    if (!data || !data.categories || !data.categories.length) {
+      el.innerHTML = `
+        <div class="study-empty">
+          <span class="eyebrow">Study Plan</span>
+          <h2>Take a diagnostic to build your plan</h2>
+          <p>Your study plan is generated from your diagnostic results — finish one to see exactly which categories to focus on first.</p>
+          <div class="results-actions">
+            <button class="btn btn-primary" data-start="diagnostic">Start Short Diagnostic →</button>
+            <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Diagnostic →</button>
+          </div>
+        </div>`;
+      return;
+    }
+
+    const cats = data.categories.map((c) => ({ ...c, pct: c.total ? c.correct / c.total : 0 }));
+    const sorted = cats.slice().sort((a, b) => a.pct - b.pct);
+    const tierOf = (pct) => (pct < 0.5 ? "weak" : pct < 0.75 ? "mid" : "strong");
+
+    const card = (c) => {
+      const tier = tierOf(c.pct);
+      const tip = DOMAIN_TIPS[c.domain] || "";
+      const skillsHTML =
+        c.missedSkills && c.missedSkills.length
+          ? `<div class="plan-skills">Missed: ${c.missedSkills.join(", ")}</div>`
+          : "";
+      return `
+        <div class="plan-card ${tier}">
+          <div class="plan-card-top">
+            <div>
+              <div class="plan-domain">${c.domain}</div>
+              <div class="plan-frac">${c.correct}/${c.total} correct · ${Math.round(c.pct * 100)}%</div>
+            </div>
+            <button class="btn btn-ghost btn-small" data-domain-practice="${c.domain}" data-domain-module="${c.module}">Practice →</button>
+          </div>
+          ${skillsHTML}
+          <p class="plan-tip">${tip}</p>
+        </div>`;
+    };
+
+    const section = (title, blurb, list) =>
+      list.length
+        ? `
+        <div class="plan-section">
+          <h3>${title}</h3>
+          <p class="plan-section-blurb">${blurb}</p>
+          <div class="plan-list">${list.map(card).join("")}</div>
+        </div>`
+        : "";
+
+    el.innerHTML = `
+      <div class="study-plan-header">
+        <span class="eyebrow">Study Plan</span>
+        <h2>Here's what to focus on next</h2>
+        <p class="tagline">Built from your ${data.label} · ${timeAgo(data.timestamp)}</p>
+      </div>
+
+      ${section(
+        "Priority focus",
+        "Spend most of your study time here — these categories are costing you the most points.",
+        sorted.filter((c) => tierOf(c.pct) === "weak")
+      )}
+      ${section(
+        "Keep building",
+        "You're partway there — a bit more targeted practice will lock these in.",
+        sorted.filter((c) => tierOf(c.pct) === "mid")
+      )}
+      ${section(
+        "Strengths — maintain",
+        "Solid work. A light review keeps these sharp without eating into priority time.",
+        sorted.filter((c) => tierOf(c.pct) === "strong")
+      )}
+
+      <div class="results-actions">
+        <button class="btn btn-primary" data-start="diagnostic">Retake Diagnostic →</button>
+        <button class="btn btn-ghost" data-home>Back to Home</button>
+      </div>
+    `;
   }
 
   function categoryBreakdownHTML() {
@@ -780,6 +933,7 @@
   function renderResults(r) {
     const { total, correct, wrong, pct, overall, rwScore, mathScore } = r;
     const isDiagnostic = state.module === "diagnostic" || state.module === "full-diagnostic";
+    if (isDiagnostic) saveDiagnosticSummary(computeCategoryBreakdown());
 
     // ring
     const radius = 92;
@@ -851,6 +1005,7 @@
         <button class="btn btn-primary" id="retryBtn">${
           state.module === "full-diagnostic" ? "Retake Full Diagnostic" : isDiagnostic ? "Retake Diagnostic" : "Try Again"
         }</button>
+        ${isDiagnostic ? `<button class="btn btn-ghost" data-nav="studyPlan">View Study Plan →</button>` : ""}
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
       </div>
     `;
@@ -1255,8 +1410,15 @@
       const navBtn = e.target.closest("[data-nav]");
       if (navBtn) {
         if (navBtn.dataset.nav === "badges") renderBadges();
+        else if (navBtn.dataset.nav === "studyPlan") renderStudyPlan();
         else renderSocial();
         show(navBtn.dataset.nav);
+        closeProfileMenu();
+        return;
+      }
+      const domainBtn = e.target.closest("[data-domain-practice]");
+      if (domainBtn) {
+        startModule(domainBtn.dataset.domainModule, domainBtn.dataset.domainPractice);
         closeProfileMenu();
         return;
       }

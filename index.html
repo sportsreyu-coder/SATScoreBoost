@@ -17,9 +17,12 @@
       <span class="logo">SB</span>
       <span>SAT<span class="score">ScoreBoost</span></span>
     </div>
-    <div class="profile-wrap">
-      <button class="topnav-link" id="profileToggle">👤 Profile <span class="caret">▾</span></button>
-      <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
+    <div class="topnav-center">
+      <button class="topnav-link" data-nav="studyPlan">📊 Study Plan</button>
+      <div class="profile-wrap">
+        <button class="topnav-link" id="profileToggle">👤 Profile <span class="caret">▾</span></button>
+        <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
+      </div>
     </div>
     <div class="topbar-right">
       <button class="streak hidden" id="streak" data-nav="social"></button>
@@ -141,6 +144,9 @@
 
   <!-- ===================== BADGES ===================== -->
   <section id="badges" class="social hidden"><!-- badges render here --></section>
+
+  <!-- ===================== STUDY PLAN ===================== -->
+  <section id="studyPlan" class="results hidden"><!-- study plan renders here --></section>
 
   <!-- ===================== CONFIRM MODAL ===================== -->
   <div id="confirmModal" class="modal-overlay hidden">

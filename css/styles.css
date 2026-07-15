@@ -69,7 +69,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .brand .score { color: var(--accent); }
 
-.profile-wrap { position: relative; justify-self: center; }
+.topnav-center { display: flex; align-items: center; gap: 6px; justify-self: center; }
+.profile-wrap { position: relative; }
 .topnav-link {
   background: transparent;
   color: var(--text-dim);
@@ -590,6 +591,48 @@ button.streak:hover { color: var(--accent); }
 .cat-bar-fill.strong { background: var(--accent); }
 .cat-bar-fill.mid { background: var(--warn); }
 .cat-bar-fill.weak { background: var(--danger); }
+
+.btn-small { padding: 8px 16px; font-size: 0.85rem; flex-shrink: 0; }
+
+.study-plan-header { text-align: center; margin-bottom: 40px; }
+.study-plan-header .eyebrow, .study-empty .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(77, 159, 255, 0.14);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.study-plan-header h2 { font-size: 1.8rem; margin-bottom: 6px; }
+.study-plan-header .tagline { color: var(--text-dim); }
+
+.study-empty { text-align: center; padding: 60px 0; }
+.study-empty h2 { font-size: 1.6rem; margin-bottom: 10px; }
+.study-empty p { color: var(--text-dim); max-width: 480px; margin: 0 auto 28px; }
+
+.plan-section { margin-bottom: 36px; }
+.plan-section h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.plan-section-blurb { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 16px; }
+.plan-list { display: flex; flex-direction: column; gap: 14px; }
+.plan-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+.plan-card.weak { border-left-color: var(--danger); }
+.plan-card.mid { border-left-color: var(--warn); }
+.plan-card.strong { border-left-color: var(--accent); }
+.plan-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.plan-domain { font-weight: 700; font-size: 1.02rem; }
+.plan-frac { color: var(--text-dim); font-size: 0.85rem; margin-top: 2px; }
+.plan-skills { color: var(--text-dim); font-size: 0.82rem; margin-top: 12px; }
+.plan-tip { font-size: 0.9rem; margin-top: 10px; line-height: 1.5; }
 
 .review-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
 .review-item {
