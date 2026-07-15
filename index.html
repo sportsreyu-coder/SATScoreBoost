@@ -17,15 +17,21 @@
       <span class="logo">SB</span>
       <span>SAT<span class="score">ScoreBoost</span></span>
     </div>
-    <div class="profile-wrap">
-      <button class="topnav-link" id="profileToggle">👤 Profile <span class="caret">▾</span></button>
-      <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
-    </div>
+    <nav class="topbar-center">
+      <button class="topnav-link" id="bankNavBtn" data-nav="bank"><span class="bank-tab-badge qb-badge">Q</span> Question Bank</button>
+      <div class="profile-wrap">
+        <button class="topnav-link" id="profileToggle">👤 Profile <span class="caret">▾</span></button>
+        <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
+      </div>
+    </nav>
     <div class="topbar-right">
       <button class="streak hidden" id="streak" data-nav="social"></button>
       <button class="btn btn-primary" data-start="mixed">Start Practice</button>
     </div>
   </header>
+
+  <!-- ===================== QUESTION BANK ===================== -->
+  <section id="bank" class="bank hidden"><!-- rendered by renderBank() --></section>
 
   <!-- ===================== LANDING ===================== -->
   <main id="landing" class="landing">

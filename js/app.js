@@ -25,6 +25,30 @@
     fdModuleIndex: 0,     // full-diagnostic: which of the 4 modules is active
     fdResults: [],        // full-diagnostic: flattened {q, selected} across completed modules
     reviewMode: false,    // true once viewing a finished attempt's review-all-questions list
+    categoryLabel: null,  // set when practicing a single Question Bank category
+    categoryDomain: null, // the domain string, so "retry" can restart the same category
+    bankTab: "math",      // "math" | "rw" — which Question Bank subject tab is showing
+    bankDifficulty: new Set(), // selected difficulty filters (1/2/3); empty = show all
+  };
+
+  // ---- Question Bank categories ----
+  // `key` matches the `domain` value on QUESTIONS (for filtering/counting);
+  // `label` is our own display name, distinct from the raw CB domain string.
+  // Every entry here has real, original questions — no reserved/placeholder
+  // slots for outside content.
+  const BANK_CATEGORIES = {
+    math: [
+      { key: "Algebra", label: "Linear Algebra" },
+      { key: "Advanced Math", label: "Nonlinear & Advanced Math" },
+      { key: "Problem-Solving and Data Analysis", label: "Data & Problem Solving" },
+      { key: "Geometry and Trigonometry", label: "Geometry & Trigonometry" },
+    ],
+    rw: [
+      { key: "Information and Ideas", label: "Reading Comprehension" },
+      { key: "Craft and Structure", label: "Vocabulary & Text Craft" },
+      { key: "Standard English Conventions", label: "Grammar & Punctuation" },
+      { key: "Expression of Ideas", label: "Rhetoric & Transitions" },
+    ],
   };
 
   const SECONDS_PER_Q = 90;
@@ -92,6 +116,7 @@
   // ---- Screen elements ----
   const screens = {
     landing: document.getElementById("landing"),
+    bank: document.getElementById("bank"),
     exam: document.getElementById("exam"),
     break: document.getElementById("break"),
     results: document.getElementById("results"),
@@ -105,6 +130,7 @@
     // The exam screen hides the top bar for extra vertical space; the exam
     // header's own Home button covers navigating back out in that case.
     document.getElementById("topbar").classList.toggle("hidden", name === "exam");
+    document.getElementById("bankNavBtn").classList.toggle("active", name === "bank");
     window.scrollTo(0, 0);
   }
 
@@ -144,6 +170,8 @@
     state.module = module;
     state.diagnosticIndex = null;
     state.reviewMode = false;
+    state.categoryLabel = null;
+    state.categoryDomain = null;
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
@@ -160,6 +188,147 @@
     renderQuestion();
     renderFooter();
     updateModuleName();
+  }
+
+  // ---- Question Bank: practice a single category on its own ----
+  function startBankCategory(mod, domain, label) {
+    let pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain);
+    if (state.bankDifficulty.size) {
+      pool = pool.filter((q) => state.bankDifficulty.has(q.difficulty));
+    }
+    if (!pool.length) return; // filters excluded every question — nothing to start
+
+    pool = shuffle(pool);
+    pool.sort((a, b) => a.difficulty - b.difficulty);
+    pool = pool.map(shuffleChoices);
+
+    state.module = mod;
+    state.categoryLabel = label || domain;
+    state.categoryDomain = domain;
+    state.diagnosticIndex = null;
+    state.reviewMode = false;
+    state.questions = pool;
+    state.answers = {};
+    state.eliminated = {};
+    state.marked = {};
+    state.current = 0;
+    state.eliminating = false;
+    state.checkMode = false;
+    state.pillWindowStart = 0;
+    state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.timerHidden = false;
+
+    startTimer();
+    show("exam");
+    renderQuestion();
+    renderFooter();
+    updateModuleName();
+  }
+
+  // Counts questions in a domain by difficulty, ignoring the active filter —
+  // used for the always-visible tier bar on each bank card.
+  function bankDomainCounts(mod, domain) {
+    const qs = QUESTIONS.filter((q) => q.module === mod && q.domain === domain);
+    return {
+      easy: qs.filter((q) => q.difficulty === 1).length,
+      med: qs.filter((q) => q.difficulty === 2).length,
+      hard: qs.filter((q) => q.difficulty === 3).length,
+      total: qs.length,
+    };
+  }
+
+  // Same count, but respecting the current difficulty filter — this is the
+  // number of questions a click on the card would actually start.
+  function bankFilteredCount(mod, domain) {
+    let qs = QUESTIONS.filter((q) => q.module === mod && q.domain === domain);
+    if (state.bankDifficulty.size) qs = qs.filter((q) => state.bankDifficulty.has(q.difficulty));
+    return qs.length;
+  }
+
+  function renderBank() {
+    const tab = state.bankTab;
+    const cats = BANK_CATEGORIES[tab];
+
+    const tabsHTML = `
+      <div class="bank-tabs">
+        <button class="bank-tab ${tab === "math" ? "active" : ""}" data-bank-tab="math">
+          <span class="bank-tab-badge math-badge">M</span> Math
+        </button>
+        <button class="bank-tab ${tab === "rw" ? "active" : ""}" data-bank-tab="rw">
+          <span class="bank-tab-badge rw-badge">RW</span> Reading &amp; Writing
+        </button>
+      </div>`;
+
+    const cardsHTML = cats
+      .map((c) => {
+        const { easy, med, hard, total } = bankDomainCounts(tab, c.key);
+        const shown = bankFilteredCount(tab, c.key);
+        const empty = shown === 0;
+        const pct = (n) => (total ? (n / total) * 100 : 0);
+        return `
+          <div class="bank-card ${empty ? "disabled" : ""}" ${empty ? "" : `data-bank-cat="${tab}::${c.key}" data-bank-label="${c.label}"`}>
+            <div class="bank-card-main">
+              <div class="bank-card-title">${c.label}</div>
+              <div class="bank-card-sub">${shown} question${shown === 1 ? "" : "s"} ready to practice</div>
+              <div class="tier-bar">
+                <span class="tier-seg foundational" style="width:${pct(easy)}%"></span>
+                <span class="tier-seg core" style="width:${pct(med)}%"></span>
+                <span class="tier-seg challenge" style="width:${pct(hard)}%"></span>
+              </div>
+              <div class="tier-legend">
+                <span><i class="tier-dot foundational"></i>${easy} Easy</span>
+                <span><i class="tier-dot core"></i>${med} Medium</span>
+                <span><i class="tier-dot challenge"></i>${hard} Hard</span>
+              </div>
+            </div>
+            ${empty ? `<span class="bank-soon">No questions yet</span>` : `<span class="bank-cta">Practice →</span>`}
+          </div>`;
+      })
+      .join("");
+
+    const diffChip = (val, label) => `
+      <button class="filter-chip ${state.bankDifficulty.has(val) ? "active" : ""}" data-bank-diff="${val}">${label}</button>`;
+
+    document.getElementById("bank").innerHTML = `
+      <span class="eyebrow">Practice, your way</span>
+      <h1 class="section-title">Question Bank</h1>
+      <p class="section-sub">Pick a topic, dial in the difficulty, and drill just that.</p>
+      ${tabsHTML}
+      <div class="bank-layout">
+        <div class="bank-list">${cardsHTML}</div>
+        <aside class="bank-filters">
+          <span class="eyebrow">Fine-tune</span>
+          <div class="filter-label">Difficulty</div>
+          <div class="filter-chips">
+            ${diffChip(1, "Easy")}
+            ${diffChip(2, "Medium")}
+            ${diffChip(3, "Hard")}
+          </div>
+          <p class="filter-hint">Leave all unselected to include every difficulty.</p>
+        </aside>
+      </div>
+    `;
+
+    document.querySelectorAll("[data-bank-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.bankTab = btn.dataset.bankTab;
+        renderBank();
+      });
+    });
+    document.querySelectorAll("[data-bank-diff]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const v = Number(btn.dataset.bankDiff);
+        if (state.bankDifficulty.has(v)) state.bankDifficulty.delete(v);
+        else state.bankDifficulty.add(v);
+        renderBank();
+      });
+    });
+    document.querySelectorAll("[data-bank-cat]").forEach((card) => {
+      card.addEventListener("click", () => {
+        const [mod, domain] = card.dataset.bankCat.split("::");
+        startBankCategory(mod, domain, card.dataset.bankLabel);
+      });
+    });
   }
 
   // ---- Diagnostics: fixed 10-RW + 10-Math mini practice tests ----
@@ -192,6 +361,8 @@
     state.module = "diagnostic";
     state.diagnosticIndex = nextIndex;
     state.reviewMode = false;
+    state.categoryLabel = null;
+    state.categoryDomain = null;
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
@@ -244,6 +415,8 @@
     state.fullDiagnosticIndex = nextIndex;
     state.module = "full-diagnostic";
     state.reviewMode = false;
+    state.categoryLabel = null;
+    state.categoryDomain = null;
     state.timerHidden = false;
 
     loadFullDiagModule(0);
@@ -408,7 +581,7 @@
 
   function updateModuleName() {
     document.getElementById("moduleName").innerHTML =
-      `${moduleLabel(state.module)} <span>· ${state.questions.length} questions</span>`;
+      `${state.categoryLabel || moduleLabel(state.module)} <span>· ${state.questions.length} questions</span>`;
     // Diagnostics simulate real test conditions: no per-question reveal.
     const isDiagKind = state.module === "diagnostic" || state.module === "full-diagnostic";
     document.getElementById("checkToggle").classList.toggle("hidden", isDiagKind);
@@ -728,7 +901,7 @@
 
     const scoreLabel = state.module === "mixed" || isDiagnostic
       ? `${overall} est. total`
-      : `${overall} ${moduleLabel(state.module)}`;
+      : `${overall} ${state.categoryLabel || moduleLabel(state.module)}`;
 
     const sectionScoresHTML = isDiagnostic
       ? `
@@ -826,6 +999,7 @@
     document.getElementById("retryBtn").addEventListener("click", () => {
       if (state.module === "full-diagnostic") startFullDiagnostic();
       else if (state.module === "diagnostic") startDiagnostic();
+      else if (state.categoryDomain) startBankCategory(state.module, state.categoryDomain, state.categoryLabel);
       else startModule(state.module);
     });
     document.getElementById("homeBtn").addEventListener("click", goHome);
@@ -1191,9 +1365,11 @@
       }
       const navBtn = e.target.closest("[data-nav]");
       if (navBtn) {
-        if (navBtn.dataset.nav === "badges") renderBadges();
+        const nav = navBtn.dataset.nav;
+        if (nav === "badges") renderBadges();
+        else if (nav === "bank") renderBank();
         else renderSocial();
-        show(navBtn.dataset.nav);
+        show(nav);
         closeProfileMenu();
         return;
       }

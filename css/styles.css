@@ -9,6 +9,7 @@
   --accent-hover: #25b892;
   --accent-soft: rgba(45, 212, 167, 0.12);
   --blue: #4d9fff;
+  --violet: #b48cf5;
   --danger: #f4657a;
   --warn: #f5c451;
   --radius: 14px;
@@ -69,7 +70,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .brand .score { color: var(--accent); }
 
-.profile-wrap { position: relative; justify-self: center; }
+.topbar-center { display: flex; align-items: center; gap: 8px; justify-self: center; }
+.profile-wrap { position: relative; }
 .topnav-link {
   background: transparent;
   color: var(--text-dim);
@@ -83,6 +85,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transition: background 0.15s ease, color 0.15s ease;
 }
 .topnav-link:hover { color: var(--text); background: var(--bg-card); }
+.topnav-link.active { color: var(--accent); background: var(--accent-soft); }
 .caret { font-size: 0.7em; transition: transform 0.15s ease; }
 
 .profile-dropdown {
@@ -258,6 +261,146 @@ button.streak:hover { color: var(--accent); }
 .mode-card p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; }
 .mode-card .meta { font-size: 0.82rem; color: var(--accent); font-weight: 600; }
 .mode-card.math .meta { color: var(--blue); }
+
+/* ---------------- QUESTION BANK ---------------- */
+.bank { max-width: 1080px; margin: 0 auto; padding: 60px 28px 100px; }
+.bank .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+/* Small gradient monogram badges, echoing the brand mark — used instead of
+   stock icons so the bank's subject/nav chips read as our own, not a clone
+   of any other prep site's iconography. */
+.bank-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #04140f;
+  flex-shrink: 0;
+}
+.math-badge, .qb-badge { background: linear-gradient(135deg, var(--accent), var(--blue)); }
+.rw-badge { background: linear-gradient(135deg, var(--blue), var(--violet)); }
+
+.bank-tabs { display: flex; gap: 10px; margin-bottom: 28px; }
+.bank-tab {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 11px 20px;
+  border-radius: 11px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.14s;
+}
+.bank-tab:hover { color: var(--text); border-color: var(--accent); }
+.bank-tab.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+.bank-layout { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; }
+.bank-list { display: flex; flex-direction: column; gap: 14px; }
+.bank-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s;
+}
+.bank-card:not(.disabled):hover { transform: translateY(-2px); border-color: var(--accent); }
+.bank-card.disabled { opacity: 0.55; cursor: default; }
+.bank-card-main { width: 100%; }
+.bank-card-title { font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+.bank-card-sub { color: var(--text-dim); font-size: 0.88rem; margin-top: 4px; }
+
+/* Difficulty mix shown as a proportional tri-tone bar rather than isolated
+   traffic-light dots — a distinct read at a glance, and it scales visually
+   with how many questions actually exist in each tier. */
+.tier-bar {
+  display: flex;
+  height: 6px;
+  border-radius: 100px;
+  overflow: hidden;
+  background: var(--bg-elev);
+  margin-top: 14px;
+  width: 220px;
+  max-width: 100%;
+}
+.tier-seg { height: 100%; }
+.tier-seg.foundational { background: var(--accent); }
+.tier-seg.core { background: var(--blue); }
+.tier-seg.challenge { background: var(--violet); }
+
+.tier-legend { display: flex; gap: 16px; margin-top: 9px; flex-wrap: wrap; }
+.tier-legend span { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-dim); font-weight: 600; }
+.tier-dot { width: 8px; height: 8px; border-radius: 3px; display: inline-block; flex-shrink: 0; }
+.tier-dot.foundational { background: var(--accent); }
+.tier-dot.core { background: var(--blue); }
+.tier-dot.challenge { background: var(--violet); }
+
+.bank-cta {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.14s;
+}
+.bank-card:not(.disabled):hover .bank-cta { background: var(--accent); color: #04140f; }
+.bank-soon { font-size: 0.78rem; color: var(--text-dim); font-weight: 600; flex-shrink: 0; white-space: nowrap; }
+
+.bank-filters {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  position: sticky;
+  top: 90px;
+}
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.filter-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.filter-chip {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.14s;
+}
+.filter-chip:hover { color: var(--text); border-color: var(--accent); }
+.filter-chip.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.filter-hint { font-size: 0.78rem; color: var(--text-dim); }
 
 /* ---------------- EXAM ---------------- */
 .exam-header {
@@ -816,4 +959,6 @@ footer.site a { color: var(--accent); text-decoration: none; }
   .stats-row, .breakdown, .section-scores, .streak-grid, .badge-grid { grid-template-columns: 1fr; }
   .pill-nav { display: none; }
   .exam-tools .tool-btn span { display: none; }
+  .bank-layout { grid-template-columns: 1fr; }
+  .bank-filters { position: static; }
 }
