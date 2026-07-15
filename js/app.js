@@ -834,7 +834,7 @@
 
     const cats = data.categories.map((c) => ({ ...c, pct: c.total ? c.correct / c.total : 0 }));
     const sorted = cats.slice().sort((a, b) => a.pct - b.pct);
-    const tierOf = (pct) => (pct < 0.5 ? "weak" : pct < 0.75 ? "mid" : "strong");
+    const tierOf = (pct) => (pct < 0.75 ? "weak" : pct < 0.9 ? "mid" : "strong");
 
     const card = (c) => {
       const tier = tierOf(c.pct);
@@ -905,8 +905,8 @@
 
     const row = (c) => {
       const pct = c.total ? c.correct / c.total : 0;
-      const level = pct >= 0.75 ? "strong" : pct >= 0.5 ? "mid" : "weak";
-      const levelLabel = pct >= 0.75 ? "Strength" : pct >= 0.5 ? "Developing" : "Focus area";
+      const level = pct >= 0.9 ? "strong" : pct >= 0.75 ? "mid" : "weak";
+      const levelLabel = pct >= 0.9 ? "Strength" : pct >= 0.75 ? "Developing" : "Focus area";
       return `
         <div class="cat-row">
           <div class="cat-row-top">
