@@ -18,17 +18,17 @@
       <span>SAT<span class="score">ScoreBoost</span></span>
     </div>
     <nav class="topbar-center">
-      <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">🏠 Dashboard</button>
-      <button class="topnav-link" id="bankNavBtn" data-nav="bank"><span class="bank-tab-badge qb-badge">Q</span> Question Bank</button>
-      <button class="topnav-link" data-nav="studyPlan">📊 Study Plan</button>
+      <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">Dashboard</button>
+      <button class="topnav-link" id="bankNavBtn" data-nav="bank">Question Bank</button>
+      <button class="topnav-link" data-nav="studyPlan">Study Plan</button>
       <div class="profile-wrap">
-        <button class="topnav-link" id="profileToggle">👤 Profile <span class="caret">▾</span></button>
+        <button class="topnav-link" id="profileToggle">Profile <span class="caret">▾</span></button>
         <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
       </div>
     </nav>
     <div class="topbar-right">
       <button class="streak hidden" id="streak" data-nav="social"></button>
-      <button class="btn btn-primary" data-start="mixed">Start Practice</button>
+      <button class="btn btn-primary btn-sm" data-start="mixed">Start Practice</button>
     </div>
   </header>
 
@@ -55,9 +55,9 @@
     </section>
 
     <div class="stats-row">
-      <div class="stat"><div class="num">2</div><div class="label">Sections mirrored</div></div>
-      <div class="stat"><div class="num">220+</div><div class="label">Practice questions</div></div>
-      <div class="stat"><div class="num">Instant</div><div class="label">Score estimate</div></div>
+      <div class="stat"><span class="num">2</span><span class="label">Sections mirrored</span></div>
+      <div class="stat"><span class="num">220+</span><span class="label">Practice questions</span></div>
+      <div class="stat"><span class="num">Instant</span><span class="label">Score estimate</span></div>
     </div>
 
     <section class="diagnostic-cta">
@@ -82,19 +82,16 @@
     <p class="section-sub">Jump into a focused section or take on a full mixed set.</p>
     <div class="mode-grid">
       <div class="mode-card" data-start="rw">
-        <div class="icon">📖</div>
         <h3>Reading & Writing</h3>
         <p>Words in context, command of evidence, boundaries, transitions, and central ideas.</p>
         <div class="meta">Start section →</div>
       </div>
       <div class="mode-card math" data-start="math">
-        <div class="icon">📐</div>
         <h3>Math</h3>
         <p>Algebra, advanced math, problem-solving & data analysis, and geometry.</p>
         <div class="meta">Start section →</div>
       </div>
       <div class="mode-card" data-start="mixed">
-        <div class="icon">🎯</div>
         <h3>Full Practice</h3>
         <p>A mixed adaptive-style set across both sections with a combined score estimate.</p>
         <div class="meta">Start full set →</div>
