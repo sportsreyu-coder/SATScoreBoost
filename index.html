@@ -18,6 +18,7 @@
       <span>SAT<span class="score">ScoreBoost</span></span>
     </div>
     <nav class="topbar-center">
+      <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">🏠 Dashboard</button>
       <button class="topnav-link" id="bankNavBtn" data-nav="bank"><span class="bank-tab-badge qb-badge">Q</span> Question Bank</button>
       <button class="topnav-link" data-nav="studyPlan">📊 Study Plan</button>
       <div class="profile-wrap">
@@ -30,6 +31,9 @@
       <button class="btn btn-primary" data-start="mixed">Start Practice</button>
     </div>
   </header>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <section id="dashboard" class="dashboard hidden"><!-- rendered by renderDashboard() --></section>
 
   <!-- ===================== QUESTION BANK ===================== -->
   <section id="bank" class="bank hidden"><!-- rendered by renderBank() --></section>

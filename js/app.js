@@ -61,6 +61,9 @@
   const LIFETIME_KEY = "sat_lifetime_answers";
   const STATS_KEY = "sat_stats";
   const STUDY_PLAN_KEY = "sat_last_diagnostic"; // most recent diagnostic's category breakdown
+  const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
+  const DEFAULT_GOAL = 1600;
+  const MISSION_KEY = "sat_mission"; // today's mission checklist state
 
   // ---- Progress storage ----
   // Guests get their progress tracked in sessionStorage (gone once the tab
@@ -118,6 +121,7 @@
   // ---- Screen elements ----
   const screens = {
     landing: document.getElementById("landing"),
+    dashboard: document.getElementById("dashboard"),
     bank: document.getElementById("bank"),
     exam: document.getElementById("exam"),
     break: document.getElementById("break"),
@@ -134,6 +138,7 @@
     // header's own Home button covers navigating back out in that case.
     document.getElementById("topbar").classList.toggle("hidden", name === "exam");
     document.getElementById("bankNavBtn").classList.toggle("active", name === "bank");
+    document.getElementById("dashboardNavBtn").classList.toggle("active", name === "dashboard");
     window.scrollTo(0, 0);
   }
 
@@ -1072,6 +1077,168 @@
     `;
   }
 
+  // ---- Dashboard ----
+  let dashGoalEditing = false; // whether the SAT Goal card is showing its edit form
+
+  function loadGoal() {
+    try {
+      const raw = progressStore().getItem(progressKey(GOAL_KEY));
+      return raw ? Number(raw) : DEFAULT_GOAL;
+    } catch (e) {
+      return DEFAULT_GOAL;
+    }
+  }
+
+  function saveGoal(score) {
+    try {
+      progressStore().setItem(progressKey(GOAL_KEY), String(score));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // Estimates a combined RW + Math score from the most recent diagnostic's
+  // category breakdown, the same way finishExam() scores a live diagnostic.
+  function computeCurrentEstimate() {
+    const data = loadDiagnosticSummary();
+    if (!data || !data.categories || !data.categories.length) return null;
+    let rwCorrect = 0, rwTotal = 0, mathCorrect = 0, mathTotal = 0;
+    data.categories.forEach((c) => {
+      if (c.module === "rw") { rwCorrect += c.correct; rwTotal += c.total; }
+      else { mathCorrect += c.correct; mathTotal += c.total; }
+    });
+    if (!rwTotal && !mathTotal) return null;
+    return toSectionScore(rwTotal ? rwCorrect / rwTotal : 0) + toSectionScore(mathTotal ? mathCorrect / mathTotal : 0);
+  }
+
+  // The weakest `n` categories from the most recent diagnostic, worst first.
+  function weakestDomains(n) {
+    const data = loadDiagnosticSummary();
+    if (!data || !data.categories || !data.categories.length) return [];
+    const cats = data.categories.map((c) => ({ ...c, pct: c.total ? c.correct / c.total : 0 }));
+    return cats.slice().sort((a, b) => a.pct - b.pct).slice(0, n);
+  }
+
+  // Which domain/module the "practice weakest area" mission item should
+  // point to — the worst-performing category, or a sensible default for
+  // students who haven't taken a diagnostic yet.
+  function primaryWeakDomain() {
+    const weakest = weakestDomains(1)[0];
+    return weakest ? { domain: weakest.domain, module: weakest.module } : { domain: "Algebra", module: "math" };
+  }
+
+  function defaultMissionItems() {
+    return { practice15: false, reviewMistakes: false, timedModule: false };
+  }
+
+  function loadMission() {
+    try {
+      const raw = progressStore().getItem(progressKey(MISSION_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return { ...defaultMissionItems(), ...parsed.items };
+      }
+    } catch (e) { /* storage unavailable */ }
+    return defaultMissionItems();
+  }
+
+  function saveMission(items) {
+    try {
+      progressStore().setItem(progressKey(MISSION_KEY), JSON.stringify({ date: todayStr(), items }));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function toggleMissionItem(id) {
+    const items = loadMission();
+    items[id] = !items[id];
+    saveMission(items);
+    renderDashboard();
+  }
+
+  function renderDashboard() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const name = user ? user.name : "there";
+    const goal = loadGoal();
+    const estimate = computeCurrentEstimate();
+    const weakest = weakestDomains(3);
+    const mission = loadMission();
+    const primary = primaryWeakDomain();
+
+    const goalCardHTML = dashGoalEditing
+      ? `
+        <form class="dash-goal-form" id="dashGoalForm">
+          <input type="number" id="dashGoalInput" min="400" max="1600" step="10" value="${goal}" />
+          <button type="submit" class="btn btn-primary btn-small">Save</button>
+        </form>`
+      : `
+        <div class="dash-goal-value">
+          ${goal}
+          <button type="button" class="dash-goal-edit" data-action="edit-goal" title="Edit your SAT goal">✎</button>
+        </div>`;
+
+    const missionDefs = [
+      {
+        id: "practice15",
+        label: `Complete 15 ${primary.domain} questions`,
+        go: `<button type="button" class="btn btn-ghost btn-small" data-domain-practice="${primary.domain}" data-domain-module="${primary.module}">Go →</button>`,
+      },
+      {
+        id: "reviewMistakes",
+        label: "Review 5 mistakes",
+        go: `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
+      },
+      {
+        id: "timedModule",
+        label: "Take a timed module",
+        go: `<button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button>`,
+      },
+    ];
+    const missionHTML = missionDefs
+      .map(
+        (m) => `
+        <div class="mission-item ${mission[m.id] ? "done" : ""}">
+          <input type="checkbox" id="mission-${m.id}" data-mission-toggle="${m.id}" ${mission[m.id] ? "checked" : ""} />
+          <label for="mission-${m.id}" class="mission-text">${m.label}</label>
+          ${m.go}
+        </div>`
+      )
+      .join("");
+
+    const weakestHTML = weakest.length
+      ? `<ol class="weak-list">${weakest.map((c) => `<li>${c.domain}</li>`).join("")}</ol>`
+      : `<p class="dash-empty-hint">Take a diagnostic to find your weakest areas.</p>`;
+
+    document.getElementById("dashboard").innerHTML = `
+      <div class="dash-header">
+        <span class="eyebrow">Dashboard</span>
+        <h2>Welcome back, ${escapeHtml(name)}</h2>
+      </div>
+      ${guestBannerHTML()}
+      <div class="dash-goals">
+        <div class="dash-goal-card">
+          <div class="dash-goal-label">SAT Goal</div>
+          ${goalCardHTML}
+        </div>
+        <div class="dash-goal-card">
+          <div class="dash-goal-label">Current estimate</div>
+          <div class="dash-goal-value estimate">${estimate === null ? "—" : estimate}</div>
+          ${estimate === null ? `<div class="dash-goal-hint">Take a diagnostic to see this</div>` : ""}
+        </div>
+      </div>
+      <div class="dash-section">
+        <h3>Today's Mission</h3>
+        <div class="mission-list">${missionHTML}</div>
+      </div>
+      <div class="dash-section">
+        <h3>Your weakest areas</h3>
+        ${weakestHTML}
+      </div>
+      <div class="results-actions">
+        <button class="btn btn-primary" data-start="mixed">Start practicing →</button>
+      </div>
+    `;
+
+    if (dashGoalEditing) document.getElementById("dashGoalInput")?.focus();
+  }
+
   function categoryBreakdownHTML() {
     const cats = computeCategoryBreakdown();
     if (!cats.length) return "";
@@ -1589,9 +1756,15 @@
         if (nav === "badges") renderBadges();
         else if (nav === "bank") renderBank();
         else if (nav === "studyPlan") renderStudyPlan();
+        else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
         else renderSocial();
         show(nav);
         closeProfileMenu();
+        return;
+      }
+      const missionCheckbox = e.target.closest("[data-mission-toggle]");
+      if (missionCheckbox) {
+        toggleMissionItem(missionCheckbox.dataset.missionToggle);
         return;
       }
       const domainBtn = e.target.closest("[data-domain-practice]");
@@ -1612,6 +1785,9 @@
           window.Auth.signOut();
           afterAuthChange();
           closeProfileMenu();
+        } else if (action === "edit-goal") {
+          dashGoalEditing = true;
+          renderDashboard();
         }
         return;
       }
@@ -1623,6 +1799,15 @@
         return;
       }
       if (!e.target.closest(".profile-wrap")) closeProfileMenu();
+    });
+    document.addEventListener("submit", (e) => {
+      if (e.target.id !== "dashGoalForm") return;
+      e.preventDefault();
+      const input = document.getElementById("dashGoalInput");
+      const val = Math.round(Number(input.value) / 10) * 10;
+      if (val >= 400 && val <= 1600) saveGoal(val);
+      dashGoalEditing = false;
+      renderDashboard();
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);
