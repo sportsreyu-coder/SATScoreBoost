@@ -1,23 +1,26 @@
 :root {
-  --bg: #F5EFE1;
-  --bg-elev: #ECE0C3;
-  --bg-card: #FBF7EC;
-  --border: #DDD0AC;
-  --text: #1C1B19;
-  --text-dim: #756B5C;
+  --bg: #16130F;
+  --bg-elev: #211B15;
+  --bg-card: #2B241B;
+  --border: #453724;
+  --text: #F3ECD9;
+  --text-dim: #A89A81;
   --primary: #8B1E2E;
   --primary-hover: #6F1724;
-  --primary-soft: rgba(139, 30, 46, 0.12);
+  --primary-light: #D65E76;
+  --primary-soft: rgba(214, 94, 118, 0.18);
   --accent: #C9A227;
-  --accent-hover: #A8850F;
-  --accent-soft: rgba(201, 162, 39, 0.16);
+  --accent-hover: #E3C04A;
+  --accent-soft: rgba(201, 162, 39, 0.18);
+  --on-accent: #1C1B19;
   --success: #1B4332;
-  --success-soft: rgba(27, 67, 50, 0.12);
+  --success-light: #3FA672;
+  --success-soft: rgba(63, 166, 114, 0.16);
   --danger: #D64545;
-  --danger-soft: rgba(214, 69, 69, 0.12);
+  --danger-soft: rgba(214, 69, 69, 0.16);
   --warn: #C9752B;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(28, 27, 25, 0.15);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -45,7 +48,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   align-items: center;
   padding: 16px 28px;
   border-bottom: 1px solid var(--border);
-  background: rgba(245, 239, 225, 0.85);
+  background: rgba(22, 19, 15, 0.85);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -72,7 +75,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-weight: 900;
   font-size: 0.85rem;
 }
-.brand .score { color: var(--primary); }
+.brand .score { color: var(--primary-light); }
 
 .topbar-center { display: flex; align-items: center; gap: 8px; justify-self: center; }
 .profile-wrap { position: relative; }
@@ -89,7 +92,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transition: background 0.15s ease, color 0.15s ease;
 }
 .topnav-link:hover { color: var(--text); background: var(--bg-card); }
-.topnav-link.active { color: var(--primary); background: var(--primary-soft); }
+.topnav-link.active { color: var(--primary-light); background: var(--primary-soft); }
 .caret { font-size: 0.7em; transition: transform 0.15s ease; }
 
 .profile-dropdown {
@@ -126,9 +129,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 11px 12px;
   border-radius: 9px;
 }
-.profile-menu-item:hover { background: var(--bg-elev); color: var(--primary); }
+.profile-menu-item:hover { background: var(--bg-elev); color: var(--primary-light); }
 .profile-menu-item + .profile-menu-item { margin-top: 2px; }
-.profile-menu-item-accent { color: var(--primary); }
+.profile-menu-item-accent { color: var(--primary-light); }
 
 .topbar-right { display: flex; align-items: center; gap: 18px; justify-self: end; }
 .streak {
@@ -139,7 +142,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 0;
 }
 .streak b { color: var(--text); }
-button.streak:hover { color: var(--primary); }
+button.streak:hover { color: var(--primary-light); }
 
 /* ---------------- LANDING ---------------- */
 .landing { max-width: 1080px; margin: 0 auto; padding: 72px 28px 80px; }
@@ -190,7 +193,7 @@ button.streak:hover { color: var(--primary); }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-primary:hover { background: var(--primary-hover); }
 .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
-.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+.btn-ghost:hover { border-color: var(--primary-light); color: var(--primary-light); }
 
 .stats-row {
   display: grid;
@@ -264,7 +267,7 @@ button.streak:hover { color: var(--primary); }
 .mode-card h3 { font-size: 1.2rem; margin-bottom: 6px; }
 .mode-card p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; }
 .mode-card .meta { font-size: 0.82rem; color: var(--accent-hover); font-weight: 600; }
-.mode-card.math .meta { color: var(--primary); }
+.mode-card.math .meta { color: var(--primary-light); }
 
 /* ---------------- QUESTION BANK ---------------- */
 .bank { max-width: 1080px; margin: 0 auto; padding: 60px 28px 100px; }
@@ -372,7 +375,7 @@ button.streak:hover { color: var(--primary); }
   white-space: nowrap;
   transition: all 0.14s;
 }
-.bank-card:not(.disabled):hover .bank-cta { background: var(--accent); color: var(--text); }
+.bank-card:not(.disabled):hover .bank-cta { background: var(--accent); color: var(--on-accent); }
 .bank-soon { font-size: 0.78rem; color: var(--text-dim); font-weight: 600; flex-shrink: 0; white-space: nowrap; }
 
 .bank-filters {
@@ -449,7 +452,7 @@ button.streak:hover { color: var(--primary); }
   line-height: 1.4;
   transition: all 0.14s;
 }
-.timer-hide-btn:hover { color: var(--primary); border-color: var(--primary); }
+.timer-hide-btn:hover { color: var(--primary-light); border-color: var(--primary-light); }
 .timer-hide-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 .time-warning-toast {
@@ -464,7 +467,7 @@ button.streak:hover { color: var(--primary); }
   font-size: 0.9rem;
   padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(28, 27, 25, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   z-index: 50;
   opacity: 0;
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -550,7 +553,7 @@ button.streak:hover { color: var(--primary); }
 }
 .choice:hover .letter { border-color: var(--accent); color: var(--accent-hover); }
 .choice.selected { border-color: var(--accent); background: var(--accent-soft); }
-.choice.selected .letter { background: var(--accent); color: var(--text); border-color: var(--accent); }
+.choice.selected .letter { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 .choice.correct { border-color: var(--success); background: var(--success-soft); }
 .choice.correct .letter { background: var(--success); color: #fff; border-color: var(--success); }
 .choice.incorrect { border-color: var(--danger); background: var(--danger-soft); }
@@ -582,7 +585,7 @@ button.streak:hover { color: var(--primary); }
   border: 1px solid var(--border);
   font-size: 0.96rem;
 }
-.explanation .tag { font-weight: 700; color: var(--success); margin-bottom: 6px; display: block; }
+.explanation .tag { font-weight: 700; color: var(--success-light); margin-bottom: 6px; display: block; }
 .explanation.wrong .tag { color: var(--danger); }
 
 /* ---------------- EXAM FOOTER ---------------- */
@@ -610,7 +613,7 @@ button.streak:hover { color: var(--primary); }
   display: grid; place-items: center;
   transition: all 0.12s;
 }
-.pill.current { border-color: var(--primary); color: var(--primary); }
+.pill.current { border-color: var(--primary-light); color: var(--primary-light); }
 .pill.answered { background: var(--accent-soft); color: var(--accent-hover); border-color: var(--accent); }
 .pill.wrong { background: var(--danger-soft); color: var(--danger); border-color: var(--danger); }
 .pill.marked { border-color: var(--warn); color: var(--warn); }
@@ -679,7 +682,7 @@ button.streak:hover { color: var(--primary); }
   font-size: 2.6rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
-  color: var(--primary);
+  color: var(--primary-light);
   margin-bottom: 28px;
 }
 .break-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
@@ -709,7 +712,7 @@ button.streak:hover { color: var(--primary); }
 }
 .bd-card .v { font-size: 1.8rem; font-weight: 800; }
 .bd-card .l { font-size: 0.82rem; color: var(--text-dim); }
-.bd-card.correct .v { color: var(--success); }
+.bd-card.correct .v { color: var(--success-light); }
 .bd-card.wrong .v { color: var(--danger); }
 
 .category-breakdown { margin-bottom: 40px; }
@@ -727,7 +730,7 @@ button.streak:hover { color: var(--primary); }
 .cat-name { font-weight: 600; }
 .cat-frac { color: var(--text-dim); font-size: 0.82rem; white-space: nowrap; }
 .cat-level { font-weight: 700; }
-.cat-level.strong { color: var(--success); }
+.cat-level.strong { color: var(--success-light); }
 .cat-level.mid { color: var(--warn); }
 .cat-level.weak { color: var(--danger); }
 .cat-bar {
@@ -882,7 +885,7 @@ button.streak:hover { color: var(--primary); }
   display: grid; place-items: center; font-weight: 800; flex-shrink: 0;
   font-size: 0.9rem;
 }
-.review-item .status.ok { background: var(--success-soft); color: var(--success); }
+.review-item .status.ok { background: var(--success-soft); color: var(--success-light); }
 .review-item .status.no { background: var(--danger-soft); color: var(--danger); }
 .review-item .rq { flex: 1; font-size: 0.94rem; }
 .review-item .rq .rskill { color: var(--text-dim); font-size: 0.8rem; }
@@ -943,7 +946,7 @@ button.streak:hover { color: var(--primary); }
   text-align: center;
 }
 .streak-icon { font-size: 2rem; margin-bottom: 6px; }
-.streak-num { font-size: 2.6rem; font-weight: 800; line-height: 1; color: var(--primary); }
+.streak-num { font-size: 2.6rem; font-weight: 800; line-height: 1; color: var(--primary-light); }
 .streak-label { font-size: 0.92rem; color: var(--text); font-weight: 600; margin-top: 6px; }
 .streak-best { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; margin-bottom: 18px; }
 
@@ -1013,7 +1016,7 @@ button.streak:hover { color: var(--primary); }
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(28, 27, 25, 0.55);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   display: grid;
   place-items: center;
@@ -1099,7 +1102,7 @@ button.streak:hover { color: var(--primary); }
 .auth-switch { text-align: center; margin-top: 18px; margin-bottom: 0; font-size: 0.88rem; color: var(--text-dim); }
 .auth-switch button {
   background: transparent;
-  color: var(--primary);
+  color: var(--primary-light);
   font-weight: 700;
   margin-left: 4px;
 }
@@ -1111,7 +1114,7 @@ footer.site {
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
 }
-footer.site a { color: var(--primary); text-decoration: none; }
+footer.site a { color: var(--primary-light); text-decoration: none; }
 
 @media (max-width: 640px) {
   .stats-row, .breakdown, .section-scores, .streak-grid, .badge-grid, .cat-groups, .dash-goals { grid-template-columns: 1fr; }
