@@ -93,7 +93,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .topnav-link:hover { color: var(--text); background: var(--bg-card); }
 .topnav-link.active { color: var(--accent); background: var(--accent-soft); }
-.caret { font-size: 0.7em; transition: transform 0.15s ease; }
+.caret { font-size: 1.2em; transition: transform 0.15s ease; }
 
 .profile-dropdown {
   position: absolute;
@@ -789,6 +789,7 @@ button.streak:hover { color: var(--primary-light); }
 .dash-header h2 { font-size: 1.8rem; }
 
 .dash-goals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px; }
+.dash-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .dash-goal-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -1104,8 +1105,14 @@ footer.site {
 }
 footer.site a { color: var(--accent); text-decoration: none; }
 
+@media (max-width: 900px) {
+  .diagnostic-cta-text { flex-basis: 100%; }
+  .diagnostic-cta-actions { width: 100%; align-items: center; }
+}
+
 @media (max-width: 640px) {
   .breakdown, .section-scores, .streak-grid, .badge-grid, .cat-groups, .dash-goals { grid-template-columns: 1fr; }
+  .dash-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-row { flex-direction: column; }
   .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 10px 0; }
   .stat:last-child { border-bottom: none; }

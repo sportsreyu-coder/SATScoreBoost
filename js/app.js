@@ -60,6 +60,7 @@
   const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
   const LIFETIME_KEY = "sat_lifetime_answers";
   const STATS_KEY = "sat_stats";
+  const CORRECT_STREAK_KEY = "sat_correct_streak"; // longest run of consecutive correct answers
   const STUDY_PLAN_KEY = "sat_last_diagnostic"; // most recent diagnostic's category breakdown
   const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
   const DEFAULT_GOAL = 1600;
@@ -750,6 +751,7 @@
     }
     renderFooter();
     recordQuestionAnswered();
+    recordCorrectStreak(ci === state.questions[state.current].answer);
   }
 
   function toggleEliminate(ci) {
@@ -1153,6 +1155,27 @@
     renderDashboard();
   }
 
+  // Lifetime accuracy, longest correct-answer streak, and answer/session
+  // counts for the Dashboard's stats row.
+  function computeDashboardStats() {
+    let sessions = 0, correct = 0, total = 0;
+    try {
+      const raw = progressStore().getItem(progressKey(STATS_KEY));
+      const s = raw ? JSON.parse(raw) : null;
+      if (s) {
+        sessions = s.sessions || 0;
+        correct = s.correct || 0;
+        total = s.total || 0;
+      }
+    } catch (e) { /* storage unavailable */ }
+    return {
+      accuracy: total ? Math.round((correct / total) * 100) : null,
+      bestCorrectStreak: loadCorrectStreak().best,
+      questionsAnswered: loadLifetime().total,
+      sessions,
+    };
+  }
+
   function renderDashboard() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const name = user ? user.name : "there";
@@ -1161,6 +1184,7 @@
     const weakest = weakestDomains(3);
     const mission = loadMission();
     const primary = primaryWeakDomain();
+    const stats = computeDashboardStats();
 
     const goalCardHTML = dashGoalEditing
       ? `
@@ -1206,6 +1230,14 @@
       ? `<ol class="weak-list">${weakest.map((c) => `<li>${c.domain}</li>`).join("")}</ol>`
       : `<p class="dash-empty-hint">Take a diagnostic to find your weakest areas.</p>`;
 
+    const statsHTML = `
+      <div class="dash-stats-grid">
+        <div class="bd-card"><div class="v">${stats.accuracy === null ? "—" : stats.accuracy + "%"}</div><div class="l">Accuracy</div></div>
+        <div class="bd-card"><div class="v">${stats.bestCorrectStreak}</div><div class="l">Best correct streak</div></div>
+        <div class="bd-card"><div class="v">${stats.questionsAnswered}</div><div class="l">Questions answered</div></div>
+        <div class="bd-card"><div class="v">${stats.sessions}</div><div class="l">Sessions completed</div></div>
+      </div>`;
+
     document.getElementById("dashboard").innerHTML = `
       <div class="dash-header">
         <span class="eyebrow">Dashboard</span>
@@ -1230,6 +1262,10 @@
       <div class="dash-section">
         <h3>Your weakest areas</h3>
         ${weakestHTML}
+      </div>
+      <div class="dash-section">
+        <h3>Your stats</h3>
+        ${statsHTML}
       </div>
       <div class="results-actions">
         <button class="btn btn-primary" data-start="mixed">Start practicing →</button>
@@ -1474,6 +1510,32 @@
     }
     saveStreak(streak);
     renderStreak();
+  }
+
+  // ---- Longest run of consecutive correct answers ----
+  function defaultCorrectStreak() {
+    return { current: 0, best: 0 };
+  }
+
+  function loadCorrectStreak() {
+    try {
+      const raw = progressStore().getItem(progressKey(CORRECT_STREAK_KEY));
+      if (raw) return { ...defaultCorrectStreak(), ...JSON.parse(raw) };
+    } catch (e) { /* storage unavailable */ }
+    return defaultCorrectStreak();
+  }
+
+  function recordCorrectStreak(isCorrect) {
+    const s = loadCorrectStreak();
+    if (isCorrect) {
+      s.current++;
+      s.best = Math.max(s.best, s.current);
+    } else {
+      s.current = 0;
+    }
+    try {
+      progressStore().setItem(progressKey(CORRECT_STREAK_KEY), JSON.stringify(s));
+    } catch (e) { /* storage unavailable */ }
   }
 
   // ---- Lifetime answer counts (for badges) ----
