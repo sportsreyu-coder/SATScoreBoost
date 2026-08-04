@@ -64,8 +64,13 @@
   const STUDY_PLAN_KEY = "sat_last_diagnostic"; // most recent diagnostic's category breakdown
   const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
   const DEFAULT_GOAL = 1600;
-  const QUEST_KEY = "sat_quests"; // today's quest checklist state
+  const DOMAIN_TODAY_KEY = "sat_domain_today"; // per-domain answered-question counts, today only
+  const MISTAKE_BANK_KEY = "sat_mistake_bank"; // recently missed questions, for the "review mistakes" quest
+  const MISTAKES_REVIEWED_KEY = "sat_mistakes_reviewed_today"; // count of mistakes reviewed today
+  const TIMED_MODULE_KEY = "sat_timed_module_today"; // whether a timed session was completed today
+  const MISTAKE_BANK_LIMIT = 50;
   const XP_KEY = "sat_xp"; // lifetime XP earned from completed quests
+  const QUEST_XP_AWARDED_KEY = "sat_quest_xp_awarded"; // which quests have already paid out XP today
 
   // ---- Progress storage ----
   // Guests get their progress tracked in sessionStorage (gone once the tab
@@ -83,11 +88,11 @@
 
   // ---- Badges ----
   const TIER_META = [
-    { name: "Bronze", medal: "🥉" },
-    { name: "Silver", medal: "🥈" },
-    { name: "Gold", medal: "🥇" },
-    { name: "Platinum", medal: "🏆" },
-    { name: "Diamond", medal: "💎" },
+    { name: "Bronze", color: "#c9793d" },
+    { name: "Silver", color: "#b7c1cb" },
+    { name: "Gold", color: "#e8c14d" },
+    { name: "Platinum", color: "#9fcbd6" },
+    { name: "Diamond", color: "#7dd3f0" },
   ];
   const QUESTION_TIERS = [10, 50, 100, 500, 1000];
   const STREAK_TIERS = [3, 7, 30, 100, 365];
@@ -265,10 +270,10 @@
     const tabsHTML = `
       <div class="bank-tabs">
         <button class="bank-tab ${tab === "math" ? "active" : ""}" data-bank-tab="math">
-          <span class="bank-tab-badge math-badge">M</span> Math
+          ${ICON_CALCULATOR} Math
         </button>
         <button class="bank-tab ${tab === "rw" ? "active" : ""}" data-bank-tab="rw">
-          <span class="bank-tab-badge rw-badge">RW</span> Reading &amp; Writing
+          ${ICON_BOOK} Reading &amp; Writing
         </button>
       </div>`;
 
@@ -562,6 +567,7 @@
 
     state.questions = items.map(({ q }) => q);
     state.answers = {};
+    state.checked = {};
     items.forEach(({ selected }, i) => {
       if (selected !== undefined) state.answers[i] = selected;
     });
@@ -569,6 +575,7 @@
     state.pillWindowStart = 0;
     state.reviewMode = true;
 
+    recordSessionProgress(items);
     renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
     saveStats(correct, total);
     show("results");
@@ -909,10 +916,16 @@
       rwScore = toSectionScore(rwTotal ? rwCorrect / rwTotal : 0);
       mathScore = toSectionScore(mathTotal ? mathCorrect / mathTotal : 0);
       overall = rwScore + mathScore;
-    } else if (state.module === "mixed") {
+    } else if (state.module === "mixed" || state.module === "mistakeReview") {
       overall = toSectionScore(pct) * 2; // rough two-section estimate
     } else {
       overall = toSectionScore(pct); // single section
+    }
+
+    recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i] })));
+    if (state.module === "mistakeReview") {
+      const reviewed = state.questions.filter((q, i) => state.answers[i] !== undefined).length;
+      bumpMistakesReviewedToday(reviewed);
     }
 
     renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
@@ -1139,52 +1152,192 @@
     return weakest ? { domain: weakest.domain, module: weakest.module } : { domain: "Algebra", module: "math" };
   }
 
-  // Today's quest list — what each one is worth in XP, and where its
-  // "Go →" button sends the user. Built fresh each time since the first
-  // quest's label/target depends on the user's current weakest domain.
+  // ---- Today's Quests: real progress tracking ----
+  // Per-domain count of questions answered today, across every practice
+  // mode (regular practice, question bank, diagnostics). Powers the
+  // "Complete 15 <domain> questions" quest.
+  function loadDomainTodayCounts() {
+    try {
+      const raw = progressStore().getItem(progressKey(DOMAIN_TODAY_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return parsed.counts || {};
+      }
+    } catch (e) { /* storage unavailable */ }
+    return {};
+  }
+
+  function loadDomainTodayCount(domain) {
+    return loadDomainTodayCounts()[domain] || 0;
+  }
+
+  function bumpDomainToday(domain, amount) {
+    const counts = loadDomainTodayCounts();
+    counts[domain] = (counts[domain] || 0) + amount;
+    try {
+      progressStore().setItem(progressKey(DOMAIN_TODAY_KEY), JSON.stringify({ date: todayStr(), counts }));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // A rolling bank of recently-missed questions, most recent first — the
+  // pool the "Review 5 mistakes" quest pulls its practice set from.
+  // Questions drop out once answered correctly again (mastered).
+  function loadMistakeBank() {
+    try {
+      const raw = progressStore().getItem(progressKey(MISTAKE_BANK_KEY));
+      if (raw) return JSON.parse(raw);
+    } catch (e) { /* storage unavailable */ }
+    return [];
+  }
+
+  function saveMistakeBank(bank) {
+    try {
+      progressStore().setItem(progressKey(MISTAKE_BANK_KEY), JSON.stringify(bank.slice(0, MISTAKE_BANK_LIMIT)));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function addMistakes(questions) {
+    const bank = loadMistakeBank().filter((m) => !questions.some((q) => q.id === m.id));
+    const entries = questions.map((q) => ({ id: q.id, domain: q.domain, module: q.module }));
+    saveMistakeBank([...entries, ...bank]);
+  }
+
+  function removeMistakes(ids) {
+    if (!ids.length) return;
+    const bank = loadMistakeBank().filter((m) => !ids.includes(m.id));
+    saveMistakeBank(bank);
+  }
+
+  function loadMistakesReviewedToday() {
+    try {
+      const raw = progressStore().getItem(progressKey(MISTAKES_REVIEWED_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return parsed.count || 0;
+      }
+    } catch (e) { /* storage unavailable */ }
+    return 0;
+  }
+
+  function bumpMistakesReviewedToday(amount) {
+    if (!amount) return;
+    try {
+      progressStore().setItem(
+        progressKey(MISTAKES_REVIEWED_KEY),
+        JSON.stringify({ date: todayStr(), count: loadMistakesReviewedToday() + amount })
+      );
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function loadTimedModuleToday() {
+    try {
+      const raw = progressStore().getItem(progressKey(TIMED_MODULE_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return parsed.date === todayStr();
+      }
+    } catch (e) { /* storage unavailable */ }
+    return false;
+  }
+
+  function markTimedModuleToday() {
+    try {
+      progressStore().setItem(progressKey(TIMED_MODULE_KEY), JSON.stringify({ date: todayStr() }));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // Called once per finished session (any module) with each question's
+  // {q, selected} pair — folds the attempt into today's per-domain counts
+  // and the mistake bank, and marks today's timed-module quest complete.
+  function recordSessionProgress(pairs) {
+    const domainCounts = {};
+    const missed = [];
+    const mastered = [];
+    pairs.forEach(({ q, selected }) => {
+      if (selected === undefined) return;
+      domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
+      if (selected === q.answer) mastered.push(q.id);
+      else missed.push(q);
+    });
+    Object.keys(domainCounts).forEach((domain) => bumpDomainToday(domain, domainCounts[domain]));
+    if (missed.length) addMistakes(missed);
+    if (mastered.length) removeMistakes(mastered);
+    markTimedModuleToday();
+  }
+
+  // Builds a short practice set from the mistake bank's most recent
+  // entries — the "Review 5 mistakes" quest's Go button.
+  function startMistakeReview() {
+    const bank = loadMistakeBank();
+    const pool = bank
+      .slice(0, 5)
+      .map((m) => QUESTIONS.find((q) => q.id === m.id))
+      .filter(Boolean)
+      .map(shuffleChoices);
+    if (!pool.length) {
+      renderStudyPlan();
+      show("studyPlan");
+      return;
+    }
+
+    state.module = "mistakeReview";
+    state.domainFilter = null;
+    state.reviewMode = false;
+    state.categoryLabel = "Mistake Review";
+    state.categoryDomain = null;
+    state.questions = pool;
+    state.answers = {};
+    state.checked = {};
+    state.eliminated = {};
+    state.marked = {};
+    state.current = 0;
+    state.eliminating = false;
+    state.pillWindowStart = 0;
+    state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.timerHidden = false;
+
+    startTimer();
+    show("exam");
+    renderQuestion();
+    renderFooter();
+    updateModuleName();
+  }
+
+  // Today's quest list — each one's real progress (from the tracking
+  // above), what it's worth in XP, and where its "Go →" button sends the
+  // user. Built fresh each time since progress and the weakest-domain
+  // target both change live.
   function questDefs() {
     const primary = primaryWeakDomain();
+    const mistakeBank = loadMistakeBank();
     return [
       {
         id: "practice15",
         label: `Complete 15 ${primary.domain} questions`,
         xp: 50,
+        total: 15,
+        count: Math.min(loadDomainTodayCount(primary.domain), 15),
         go: `<button type="button" class="btn btn-ghost btn-small" data-domain-practice="${primary.domain}" data-domain-module="${primary.module}">Go →</button>`,
       },
       {
         id: "reviewMistakes",
         label: "Review 5 mistakes",
         xp: 30,
-        go: `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
+        total: 5,
+        count: Math.min(loadMistakesReviewedToday(), 5),
+        go: mistakeBank.length
+          ? `<button type="button" class="btn btn-ghost btn-small" data-start="mistakeReview">Go →</button>`
+          : `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
       },
       {
         id: "timedModule",
         label: "Take a timed module",
         xp: 80,
+        total: 1,
+        count: loadTimedModuleToday() ? 1 : 0,
         go: `<button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button>`,
       },
     ];
-  }
-
-  function defaultQuestItems() {
-    return { practice15: false, reviewMistakes: false, timedModule: false };
-  }
-
-  function loadQuests() {
-    try {
-      const raw = progressStore().getItem(progressKey(QUEST_KEY));
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed.date === todayStr()) return { ...defaultQuestItems(), ...parsed.items };
-      }
-    } catch (e) { /* storage unavailable */ }
-    return defaultQuestItems();
-  }
-
-  function saveQuests(items) {
-    try {
-      progressStore().setItem(progressKey(QUEST_KEY), JSON.stringify({ date: todayStr(), items }));
-    } catch (e) { /* storage unavailable */ }
   }
 
   // ---- XP: earned by completing quests, tracked per-user right now.
@@ -1204,14 +1357,38 @@
     } catch (e) { /* storage unavailable */ }
   }
 
-  function toggleQuestItem(id) {
-    const items = loadQuests();
-    const nowDone = !items[id];
-    items[id] = nowDone;
-    saveQuests(items);
-    const quest = questDefs().find((q) => q.id === id);
-    if (quest) addXP(nowDone ? quest.xp : -quest.xp);
-    renderDashboard();
+  function loadAwardedQuestsToday() {
+    try {
+      const raw = progressStore().getItem(progressKey(QUEST_XP_AWARDED_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return parsed.ids || [];
+      }
+    } catch (e) { /* storage unavailable */ }
+    return [];
+  }
+
+  function markQuestsAwardedToday(ids) {
+    try {
+      progressStore().setItem(progressKey(QUEST_XP_AWARDED_KEY), JSON.stringify({ date: todayStr(), ids }));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // Quests complete themselves from real practice activity — there's no
+  // checkbox to click — so XP is paid out here instead: whenever a
+  // quest's progress has reached its target and hasn't been paid out yet
+  // today. Safe to call on every dashboard render.
+  function payOutCompletedQuests(quests) {
+    const awarded = loadAwardedQuestsToday();
+    let changed = false;
+    quests.forEach((q) => {
+      if (q.count >= q.total && !awarded.includes(q.id)) {
+        addXP(q.xp);
+        awarded.push(q.id);
+        changed = true;
+      }
+    });
+    if (changed) markQuestsAwardedToday(awarded);
   }
 
   // Lifetime accuracy, longest correct-answer streak, and answer/session
@@ -1241,7 +1418,8 @@
     const goal = loadGoal();
     const estimate = computeCurrentEstimate();
     const weakest = weakestDomains(3);
-    const quests = loadQuests();
+    const quests = questDefs();
+    payOutCompletedQuests(quests);
     const stats = computeDashboardStats();
     const xp = loadXP();
 
@@ -1257,16 +1435,20 @@
           <button type="button" class="dash-goal-edit" data-action="edit-goal" title="Edit your SAT goal">✎</button>
         </div>`;
 
-    const questHTML = questDefs()
-      .map(
-        (q) => `
-        <div class="quest-item ${quests[q.id] ? "done" : ""}">
-          <input type="checkbox" id="quest-${q.id}" data-quest-toggle="${q.id}" ${quests[q.id] ? "checked" : ""} />
-          <label for="quest-${q.id}" class="quest-text">${q.label}</label>
+    const questHTML = quests
+      .map((q) => {
+        const done = q.count >= q.total;
+        return `
+        <div class="quest-item ${done ? "done" : ""}">
+          <span class="quest-toggle" aria-hidden="true">${done ? ICON_CLIPBOARD_CHECK : ICON_CLIPBOARD}</span>
+          <div class="quest-body">
+            <span class="quest-text">${q.label}</span>
+            <span class="quest-progress">${q.count}/${q.total}</span>
+          </div>
           <span class="quest-xp">+${q.xp} XP</span>
           ${q.go}
-        </div>`
-      )
+        </div>`;
+      })
       .join("");
 
     const weakestHTML = weakest.length
@@ -1623,6 +1805,18 @@
     return idx;
   }
 
+  const ICON_CALCULATOR = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>`;
+  const ICON_BOOK = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>`;
+  const ICON_QUESTION = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>`;
+  const ICON_FLAME = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`;
+  const ICON_LOCK = `<svg class="badge-medal-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+  const ICON_CLIPBOARD = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`;
+  const ICON_CLIPBOARD_CHECK = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>`;
+
+  function medalIcon(size, color) {
+    return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
+  }
+
   function badgeCardHTML(icon, label, value, valueLabel, tiers) {
     const idx = tierIndexFor(value, tiers);
     const tier = idx >= 0 ? TIER_META[idx] : null;
@@ -1635,14 +1829,14 @@
     const dotsHTML = tiers
       .map((t, i) => {
         const unlocked = i <= idx;
-        return `<span class="badge-dot ${unlocked ? "unlocked" : ""}" title="${TIER_META[i].name}: ${t}">${TIER_META[i].medal}</span>`;
+        return `<span class="badge-dot ${unlocked ? "unlocked" : ""}" title="${TIER_META[i].name}: ${t}">${medalIcon(15, TIER_META[i].color)}</span>`;
       })
       .join("");
 
     return `
       <div class="badge-card">
         <div class="badge-top">
-          <div class="badge-medal ${tier ? "" : "locked"}">${tier ? tier.medal : "🔒"}</div>
+          <div class="badge-medal ${tier ? "" : "locked"}">${tier ? medalIcon(22, tier.color) : ICON_LOCK}</div>
           <div>
             <div class="badge-title">${icon} ${label}</div>
             <div class="badge-tier">${tier ? tier.name : "Unranked"}</div>
@@ -1724,10 +1918,10 @@
     const lifetime = loadLifetime();
 
     const badgesHTML = [
-      badgeCardHTML("🎯", "Total Questions", lifetime.total, "answered", QUESTION_TIERS),
-      badgeCardHTML("📐", "Math", lifetime.math, "answered", QUESTION_TIERS),
-      badgeCardHTML("📖", "Reading & Writing", lifetime.rw, "answered", QUESTION_TIERS),
-      badgeCardHTML("🔥", "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
+      badgeCardHTML(ICON_QUESTION, "Total Questions", lifetime.total, "answered", QUESTION_TIERS),
+      badgeCardHTML(ICON_CALCULATOR, "Math", lifetime.math, "answered", QUESTION_TIERS),
+      badgeCardHTML(ICON_BOOK, "Reading & Writing", lifetime.rw, "answered", QUESTION_TIERS),
+      badgeCardHTML(ICON_FLAME, "Streak", streak.best || 0, `day${streak.best === 1 ? "" : "s"} (best)`, STREAK_TIERS),
     ].join("");
 
     document.getElementById("badges").innerHTML = `
@@ -1872,6 +2066,7 @@
       if (startBtn) {
         if (startBtn.dataset.start === "diagnostic") startDiagnostic();
         else if (startBtn.dataset.start === "full-diagnostic") startFullDiagnostic();
+        else if (startBtn.dataset.start === "mistakeReview") startMistakeReview();
         else startModule(startBtn.dataset.start);
         closeProfileMenu();
         return;
@@ -1886,11 +2081,6 @@
         else renderSocial();
         show(nav);
         closeProfileMenu();
-        return;
-      }
-      const questCheckbox = e.target.closest("[data-quest-toggle]");
-      if (questCheckbox) {
-        toggleQuestItem(questCheckbox.dataset.questToggle);
         return;
       }
       const domainBtn = e.target.closest("[data-domain-practice]");

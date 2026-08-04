@@ -18,9 +18,18 @@
       <span>SAT<span class="score">ScoreBoost</span></span>
     </div>
     <nav class="topbar-center">
-      <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">Dashboard</button>
-      <button class="topnav-link" id="bankNavBtn" data-nav="bank">Question Bank</button>
-      <button class="topnav-link" data-nav="studyPlan">Study Plan</button>
+      <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </button>
+      <button class="topnav-link" id="bankNavBtn" data-nav="bank">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>
+        Question Bank
+      </button>
+      <button class="topnav-link" data-nav="studyPlan">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Study Plan
+      </button>
     </nav>
     <div class="topbar-right">
       <div class="profile-wrap">
@@ -46,7 +55,7 @@
         mark-for-review, a live timer, and instant explanations on every question.
       </p>
       <div class="hero-cta">
-        <button class="btn btn-primary" data-start="mixed">Start Full Practice →</button>
+        <button class="btn btn-primary" data-start="diagnostic">Start Diagnostic →</button>
         <button class="btn btn-ghost" data-start="rw">Reading & Writing</button>
         <button class="btn btn-ghost" data-start="math">Math</button>
       </div>
@@ -60,19 +69,16 @@
 
     <section class="diagnostic-cta">
       <div class="diagnostic-cta-text">
-        <span class="eyebrow">Quick check-in or a full mini-SAT</span>
-        <h2>Not sure where you stand?</h2>
+        <span class="eyebrow">Skip the diagnostic</span>
+        <h2>Already know where you stand?</h2>
         <p>
-          Take a quick 20-question diagnostic (10 Reading &amp; Writing and 10 Math,
-          ~30 min) for a fast read, or a full 40-question diagnostic across all
-          four modules — Reading &amp; Writing Module 1 &amp; 2, a break, then Math
-          Module 1 &amp; 2 — just like the real digital SAT. Either way, retake it
-          anytime for a different set.
+          Head straight to the question bank and pick exactly what to practice —
+          filter by domain, skill, and difficulty across Reading &amp; Writing and
+          Math, no diagnostic required.
         </p>
       </div>
       <div class="diagnostic-cta-actions">
-        <button class="btn btn-primary" data-start="full-diagnostic">Start Full Diagnostic →</button>
-        <button class="btn btn-ghost" data-start="diagnostic">Start Short Diagnostic →</button>
+        <button class="btn btn-primary" data-nav="bank">Browse Question Bank →</button>
       </div>
     </section>
 
