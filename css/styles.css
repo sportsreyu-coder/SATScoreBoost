@@ -46,7 +46,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 14px 40px;
+  padding: 16px 40px;
   border-bottom: 1px solid var(--border);
   background: rgba(22, 19, 15, 0.85);
   backdrop-filter: blur(10px);
@@ -77,22 +77,23 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .brand .score { color: var(--primary-light); }
 
-.topbar-center { display: flex; align-items: center; gap: 8px; justify-self: center; }
+.topbar-center { display: flex; align-items: center; gap: 10px; justify-self: center; }
 .profile-wrap { position: relative; }
 .topnav-link {
   background: transparent;
   color: var(--text-dim);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 500;
-  padding: 7px 13px;
-  border-radius: 7px;
+  padding: 11px 18px;
+  border-radius: 9px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: background 0.15s ease, color 0.15s ease;
 }
 .topnav-link:hover { color: var(--text); background: var(--bg-card); }
 .topnav-link.active { color: var(--accent); background: var(--accent-soft); }
+.nav-icon { flex-shrink: 0; }
 .caret { font-size: 1.2em; transition: transform 0.15s ease; }
 
 .profile-dropdown {
@@ -143,6 +144,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .streak b { color: var(--text); }
 button.streak:hover { color: var(--primary-light); }
+.topbar-cta { padding: 12px 22px; font-size: 15px; gap: 8px; }
 
 /* ---------------- LANDING ---------------- */
 .landing { max-width: 1040px; margin: 0 auto; padding: 0 64px 64px; }
@@ -271,24 +273,6 @@ button.streak:hover { color: var(--primary-light); }
   border-radius: 100px;
   margin-bottom: 14px;
 }
-
-/* Small gradient monogram badges, echoing the brand mark — used instead of
-   stock icons so the bank's subject/nav chips read as our own, not a clone
-   of any other prep site's iconography. */
-.bank-tab-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 7px;
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: #fff;
-  flex-shrink: 0;
-}
-.math-badge, .qb-badge { background: linear-gradient(135deg, var(--primary), var(--accent)); }
-.rw-badge { background: linear-gradient(135deg, var(--accent), var(--primary)); }
 
 .bank-tabs { display: flex; gap: 10px; margin-bottom: 28px; }
 .bank-tab {
@@ -845,15 +829,24 @@ button.streak:hover { color: var(--primary-light); }
   border-radius: 11px;
   padding: 14px 16px;
 }
-.mission-item input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--primary);
+.mission-toggle {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
   flex-shrink: 0;
-  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
-.mission-text { flex: 1; font-size: 0.94rem; cursor: pointer; }
+.mission-item.done .mission-toggle { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.mission-body { flex: 1; display: flex; align-items: baseline; gap: 10px; }
+.mission-text { font-size: 0.94rem; }
+.mission-progress { font-size: 0.82rem; color: var(--text-dim); font-weight: 600; flex-shrink: 0; }
 .mission-item.done .mission-text { color: var(--text-dim); text-decoration: line-through; }
+.mission-item.done .mission-progress { color: var(--accent); }
 
 .weak-list { list-style: decimal; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
 .weak-list li { font-size: 0.98rem; font-weight: 600; }
@@ -976,10 +969,12 @@ button.streak:hover { color: var(--primary-light); }
   background: var(--accent-soft);
   flex-shrink: 0;
 }
-.badge-medal.locked { background: var(--bg-elev); filter: grayscale(1); opacity: 0.6; }
-.badge-title { font-size: 0.88rem; font-weight: 700; }
+.badge-medal.locked { background: var(--bg-elev); opacity: 0.6; }
+.badge-medal-icon { color: var(--text-dim); }
+.badge-title { font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.badge-icon { flex-shrink: 0; color: var(--accent); }
 .badge-tier { font-size: 0.78rem; color: var(--text-dim); }
-.badge-value { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+.badge-value { font-size: 1.4rem; font-weight: 600; margin-bottom: 10px; }
 .badge-progress {
   height: 6px;
   border-radius: 100px;
