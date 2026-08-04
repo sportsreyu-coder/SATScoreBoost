@@ -1494,7 +1494,6 @@
       }
     }
     saveStreak(streak);
-    renderStreak();
   }
 
   // ---- Longest run of consecutive correct answers ----
@@ -1690,6 +1689,28 @@
     return div.innerHTML;
   }
 
+  // Corner auth control: a "Log in" CTA when signed out, a default
+  // profile-picture avatar (opens the account dropdown) when signed in.
+  function renderProfileToggle() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const toggle = document.getElementById("profileToggle");
+    if (user) {
+      toggle.className = "profile-toggle profile-avatar";
+      toggle.removeAttribute("data-action");
+      toggle.title = user.name || user.email;
+      toggle.innerHTML = `
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c1.4-4.2 4.7-6.5 8-6.5s6.6 2.3 8 6.5" />
+        </svg>`;
+    } else {
+      toggle.className = "profile-toggle btn btn-primary btn-sm";
+      toggle.dataset.action = "open-auth";
+      toggle.removeAttribute("title");
+      toggle.textContent = "Log in";
+    }
+  }
+
   function renderProfileMenu() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const dropdown = document.getElementById("profileDropdown");
@@ -1745,8 +1766,8 @@
   // Refreshes everything that depends on auth state after a login,
   // signup, or logout.
   function afterAuthChange() {
+    renderProfileToggle();
     renderProfileMenu();
-    renderStreak();
     if (!screens.social.classList.contains("hidden")) renderSocial();
     if (!screens.badges.classList.contains("hidden")) renderBadges();
   }
@@ -1760,28 +1781,13 @@
       stats.correct += correct;
       stats.total += total;
       progressStore().setItem(progressKey(STATS_KEY), JSON.stringify(stats));
-      renderStreak();
     } catch (e) { /* storage unavailable */ }
-  }
-
-  function renderStreak() {
-    try {
-      const el = document.getElementById("streak");
-      const current = displayStreak(loadStreak());
-      const raw = progressStore().getItem(progressKey(STATS_KEY));
-      if (!raw && !current) { el.classList.add("hidden"); return; }
-      const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
-      const acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
-      el.classList.remove("hidden");
-      el.innerHTML = `🔥 <b>${current}</b> day streak · <b>${acc}%</b> accuracy`;
-    } catch (e) {}
   }
 
   function goHome() {
     clearInterval(state.timer);
     clearInterval(state.breakTimer);
     show("landing");
-    renderStreak();
   }
 
   // ---- Global wiring ----
@@ -1952,8 +1958,8 @@
       else if (e.key.toLowerCase() === "m") toggleMark();
     });
 
+    renderProfileToggle();
     renderProfileMenu();
-    renderStreak();
   }
 
   document.addEventListener("DOMContentLoaded", init);

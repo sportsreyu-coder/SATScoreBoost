@@ -95,11 +95,24 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .topnav-link.active { color: var(--accent); background: var(--accent-soft); }
 .caret { font-size: 1.2em; transition: transform 0.15s ease; }
 
+.profile-toggle.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: all 0.14s;
+}
+.profile-toggle.profile-avatar:hover { color: var(--text); border-color: var(--accent); }
+
 .profile-dropdown {
   position: absolute;
   top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
   width: min(250px, calc(100vw - 32px));
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -134,15 +147,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .profile-menu-item-accent { color: var(--primary-light); }
 
 .topbar-right { display: flex; align-items: center; gap: 18px; justify-self: end; }
-.streak {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  display: flex; align-items: center; gap: 6px;
-  background: transparent;
-  padding: 0;
-}
-.streak b { color: var(--text); }
-button.streak:hover { color: var(--primary-light); }
 
 /* ---------------- LANDING ---------------- */
 .landing { max-width: 1040px; margin: 0 auto; padding: 0 64px 64px; }

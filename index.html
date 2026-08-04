@@ -21,14 +21,12 @@
       <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">Dashboard</button>
       <button class="topnav-link" id="bankNavBtn" data-nav="bank">Question Bank</button>
       <button class="topnav-link" data-nav="studyPlan">Study Plan</button>
-      <div class="profile-wrap">
-        <button class="topnav-link" id="profileToggle">Profile <span class="caret">▾</span></button>
-        <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
-      </div>
     </nav>
     <div class="topbar-right">
-      <button class="streak hidden" id="streak" data-nav="social"></button>
-      <button class="btn btn-primary btn-sm" data-start="mixed">Start Practice</button>
+      <div class="profile-wrap">
+        <button class="profile-toggle" id="profileToggle"><!-- rendered by renderProfileToggle() --></button>
+        <div class="profile-dropdown hidden" id="profileDropdown"><!-- rendered by renderProfileMenu() --></div>
+      </div>
     </div>
   </header>
 
