@@ -9,6 +9,7 @@
     fullDiagnosticIndex: null, // which entry of FULL_DIAGNOSTICS is active
     questions: [],     // active question set (just the current module, for full-diagnostic)
     answers: {},       // qIndex -> choiceIndex
+    checked: {},       // qIndex -> bool, true once "Check Answer" has revealed it
     eliminated: {},    // qIndex -> Set of choiceIndex
     marked: {},        // qIndex -> bool
     current: 0,
@@ -63,7 +64,8 @@
   const STUDY_PLAN_KEY = "sat_last_diagnostic"; // most recent diagnostic's category breakdown
   const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
   const DEFAULT_GOAL = 1600;
-  const MISSION_KEY = "sat_mission"; // today's mission checklist state
+  const QUEST_KEY = "sat_quests"; // today's quest checklist state
+  const XP_KEY = "sat_xp"; // lifetime XP earned from completed quests
 
   // ---- Progress storage ----
   // Guests get their progress tracked in sessionStorage (gone once the tab
@@ -186,6 +188,7 @@
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -220,6 +223,7 @@
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -376,6 +380,7 @@
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -438,6 +443,7 @@
     state.questions = state.fdModules[moduleIndex];
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -659,14 +665,14 @@
     const selected = state.answers[i];
     const elimSet = state.eliminated[i] || new Set();
     const answered = selected !== undefined;
-    const showFeedback = answered;
+    const checked = !!state.checked[i];
 
     const letters = ["A", "B", "C", "D"];
     const choicesHTML = q.choices
       .map((c, ci) => {
         const classes = ["choice"];
         if (elimSet.has(ci)) classes.push("eliminated");
-        if (showFeedback) {
+        if (checked) {
           if (ci === q.answer) classes.push("correct");
           else if (ci === selected) classes.push("incorrect");
         } else if (ci === selected) {
@@ -683,8 +689,12 @@
       })
       .join("");
 
+    const checkButtonHTML = !checked
+      ? `<button class="btn btn-primary check-answer-btn" id="checkAnswerBtn" ${answered ? "" : "disabled"}>Check Answer</button>`
+      : "";
+
     let explanationHTML = "";
-    if (showFeedback) {
+    if (checked) {
       const correct = selected === q.answer;
       const tag = correct
         ? "✓ Correct"
@@ -709,6 +719,7 @@
       <div class="choices ${state.eliminating ? "eliminating" : ""}" id="choices">
         ${choicesHTML}
       </div>
+      ${checkButtonHTML}
       ${explanationHTML}
     `;
 
@@ -717,7 +728,7 @@
       const ci = Number(btn.dataset.choice);
       btn.addEventListener("click", () => {
         if (elimSet.has(ci)) return; // can't select eliminated
-        if (answered) return; // locked after answering
+        if (checked) return; // locked after checking
         selectChoice(ci);
       });
     });
@@ -727,6 +738,7 @@
       });
     });
     document.getElementById("markBtn").addEventListener("click", toggleMark);
+    document.getElementById("checkAnswerBtn")?.addEventListener("click", checkAnswer);
 
     // nav buttons
     document.getElementById("prevBtn").disabled = i === 0;
@@ -735,11 +747,23 @@
   }
 
   function selectChoice(ci) {
-    state.answers[state.current] = ci;
-    renderQuestion(); // reveal feedback
+    const i = state.current;
+    const firstAnswer = state.answers[i] === undefined;
+    state.answers[i] = ci;
+    renderQuestion();
     renderFooter();
-    recordQuestionAnswered();
-    recordCorrectStreak(ci === state.questions[state.current].answer);
+    if (firstAnswer) {
+      recordQuestionAnswered();
+      recordCorrectStreak(ci === state.questions[i].answer);
+    }
+  }
+
+  function checkAnswer() {
+    const i = state.current;
+    if (state.answers[i] === undefined || state.checked[i]) return;
+    state.checked[i] = true;
+    renderQuestion();
+    renderFooter();
   }
 
   function toggleEliminate(ci) {
@@ -774,10 +798,12 @@
         const i = start + offset;
         const classes = ["pill"];
         const answered = state.answers[i] !== undefined;
-        const correct = answered && state.answers[i] === state.questions[i].answer;
+        const checked = !!state.checked[i];
+        const correct = checked && state.answers[i] === state.questions[i].answer;
 
         if (i === state.current) classes.push("current");
-        else if (answered) classes.push(correct ? "answered" : "wrong");
+        else if (checked) classes.push(correct ? "correct" : "wrong");
+        else if (answered) classes.push("answered");
         if (state.marked[i]) classes.push("marked");
         return `<button class="${classes.join(" ")}" data-goto="${i}">${i + 1}</button>`;
       })
@@ -1105,39 +1131,86 @@
     return cats.slice().sort((a, b) => a.pct - b.pct).slice(0, n);
   }
 
-  // Which domain/module the "practice weakest area" mission item should
-  // point to — the worst-performing category, or a sensible default for
+  // Which domain/module the "practice weakest area" quest should point
+  // to — the worst-performing category, or a sensible default for
   // students who haven't taken a diagnostic yet.
   function primaryWeakDomain() {
     const weakest = weakestDomains(1)[0];
     return weakest ? { domain: weakest.domain, module: weakest.module } : { domain: "Algebra", module: "math" };
   }
 
-  function defaultMissionItems() {
+  // Today's quest list — what each one is worth in XP, and where its
+  // "Go →" button sends the user. Built fresh each time since the first
+  // quest's label/target depends on the user's current weakest domain.
+  function questDefs() {
+    const primary = primaryWeakDomain();
+    return [
+      {
+        id: "practice15",
+        label: `Complete 15 ${primary.domain} questions`,
+        xp: 50,
+        go: `<button type="button" class="btn btn-ghost btn-small" data-domain-practice="${primary.domain}" data-domain-module="${primary.module}">Go →</button>`,
+      },
+      {
+        id: "reviewMistakes",
+        label: "Review 5 mistakes",
+        xp: 30,
+        go: `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
+      },
+      {
+        id: "timedModule",
+        label: "Take a timed module",
+        xp: 80,
+        go: `<button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button>`,
+      },
+    ];
+  }
+
+  function defaultQuestItems() {
     return { practice15: false, reviewMistakes: false, timedModule: false };
   }
 
-  function loadMission() {
+  function loadQuests() {
     try {
-      const raw = progressStore().getItem(progressKey(MISSION_KEY));
+      const raw = progressStore().getItem(progressKey(QUEST_KEY));
       if (raw) {
         const parsed = JSON.parse(raw);
-        if (parsed.date === todayStr()) return { ...defaultMissionItems(), ...parsed.items };
+        if (parsed.date === todayStr()) return { ...defaultQuestItems(), ...parsed.items };
       }
     } catch (e) { /* storage unavailable */ }
-    return defaultMissionItems();
+    return defaultQuestItems();
   }
 
-  function saveMission(items) {
+  function saveQuests(items) {
     try {
-      progressStore().setItem(progressKey(MISSION_KEY), JSON.stringify({ date: todayStr(), items }));
+      progressStore().setItem(progressKey(QUEST_KEY), JSON.stringify({ date: todayStr(), items }));
     } catch (e) { /* storage unavailable */ }
   }
 
-  function toggleMissionItem(id) {
-    const items = loadMission();
-    items[id] = !items[id];
-    saveMission(items);
+  // ---- XP: earned by completing quests, tracked per-user right now.
+  // Nothing spends it yet — that comes later.
+  function loadXP() {
+    try {
+      const raw = progressStore().getItem(progressKey(XP_KEY));
+      return raw ? Number(raw) || 0 : 0;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  function addXP(amount) {
+    try {
+      progressStore().setItem(progressKey(XP_KEY), String(Math.max(0, loadXP() + amount)));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function toggleQuestItem(id) {
+    const items = loadQuests();
+    const nowDone = !items[id];
+    items[id] = nowDone;
+    saveQuests(items);
+    const quest = questDefs().find((q) => q.id === id);
+    if (quest) addXP(nowDone ? quest.xp : -quest.xp);
     renderDashboard();
   }
 
@@ -1168,9 +1241,9 @@
     const goal = loadGoal();
     const estimate = computeCurrentEstimate();
     const weakest = weakestDomains(3);
-    const mission = loadMission();
-    const primary = primaryWeakDomain();
+    const quests = loadQuests();
     const stats = computeDashboardStats();
+    const xp = loadXP();
 
     const goalCardHTML = dashGoalEditing
       ? `
@@ -1184,30 +1257,14 @@
           <button type="button" class="dash-goal-edit" data-action="edit-goal" title="Edit your SAT goal">✎</button>
         </div>`;
 
-    const missionDefs = [
-      {
-        id: "practice15",
-        label: `Complete 15 ${primary.domain} questions`,
-        go: `<button type="button" class="btn btn-ghost btn-small" data-domain-practice="${primary.domain}" data-domain-module="${primary.module}">Go →</button>`,
-      },
-      {
-        id: "reviewMistakes",
-        label: "Review 5 mistakes",
-        go: `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
-      },
-      {
-        id: "timedModule",
-        label: "Take a timed module",
-        go: `<button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button>`,
-      },
-    ];
-    const missionHTML = missionDefs
+    const questHTML = questDefs()
       .map(
-        (m) => `
-        <div class="mission-item ${mission[m.id] ? "done" : ""}">
-          <input type="checkbox" id="mission-${m.id}" data-mission-toggle="${m.id}" ${mission[m.id] ? "checked" : ""} />
-          <label for="mission-${m.id}" class="mission-text">${m.label}</label>
-          ${m.go}
+        (q) => `
+        <div class="quest-item ${quests[q.id] ? "done" : ""}">
+          <input type="checkbox" id="quest-${q.id}" data-quest-toggle="${q.id}" ${quests[q.id] ? "checked" : ""} />
+          <label for="quest-${q.id}" class="quest-text">${q.label}</label>
+          <span class="quest-xp">+${q.xp} XP</span>
+          ${q.go}
         </div>`
       )
       .join("");
@@ -1242,8 +1299,11 @@
         </div>
       </div>
       <div class="dash-section">
-        <h3>Today's Mission</h3>
-        <div class="mission-list">${missionHTML}</div>
+        <div class="dash-section-header">
+          <h3>Today's Quests</h3>
+          <span class="quest-xp-total">${xp} XP earned</span>
+        </div>
+        <div class="quest-list">${questHTML}</div>
       </div>
       <div class="dash-section">
         <h3>Your weakest areas</h3>
@@ -1395,8 +1455,10 @@
     // review click -> jump back into that question with feedback
     list.querySelectorAll(".review-item").forEach((it) => {
       it.addEventListener("click", () => {
+        const i = Number(it.dataset.review);
         state.reviewMode = true;
-        state.current = Number(it.dataset.review);
+        state.current = i;
+        if (state.answers[i] !== undefined) state.checked[i] = true;
         ensureCurrentVisible();
         show("exam");
         renderQuestion();
@@ -1711,6 +1773,17 @@
     }
   }
 
+  const ICON_FIRE = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M15.36 5.21A8.25 8.25 0 0 1 12 21a8.25 8.25 0 0 1-5.96-13.95A8.29 8.29 0 0 0 9 9.6a9 9 0 0 1 3.36-6.87 8.21 8.21 0 0 0 3 2.48Z" />
+      <path d="M12 18a3.75 3.75 0 0 0 .5-7.47 6 6 0 0 0-1.93 3.55 6 6 0 0 1-2.13-1A3.75 3.75 0 0 0 12 18Z" />
+    </svg>`;
+  const ICON_BADGE = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="9" r="5" />
+      <path d="M9 13.5 7 21l5-3 5 3-2-7.5" />
+    </svg>`;
+
   function renderProfileMenu() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const dropdown = document.getElementById("profileDropdown");
@@ -1721,16 +1794,16 @@
           <div class="profile-user-email">${escapeHtml(user.email)}</div>
         </div>`
       : "";
-    const authItemHTML = user
-      ? `<button class="profile-menu-item" data-action="logout">🚪 Log out</button>`
-      : `<button class="profile-menu-item profile-menu-item-accent" data-action="open-auth">🔑 Log in / Sign up</button>`;
+    const logoutHTML = user
+      ? `<button class="profile-menu-item" data-action="logout">Log out</button>`
+      : "";
 
     dropdown.innerHTML = `
       ${userHTML}
-      <button class="profile-menu-item" data-nav="social">🔥 Streak &amp; Stats</button>
-      <button class="profile-menu-item" data-nav="badges">🏆 Badges</button>
+      <button class="profile-menu-item" data-nav="social">Streak &amp; Stats ${ICON_FIRE}</button>
+      <button class="profile-menu-item" data-nav="badges">Badges ${ICON_BADGE}</button>
       <div class="profile-divider"></div>
-      ${authItemHTML}
+      ${logoutHTML}
     `;
   }
 
@@ -1815,9 +1888,9 @@
         closeProfileMenu();
         return;
       }
-      const missionCheckbox = e.target.closest("[data-mission-toggle]");
-      if (missionCheckbox) {
-        toggleMissionItem(missionCheckbox.dataset.missionToggle);
+      const questCheckbox = e.target.closest("[data-quest-toggle]");
+      if (questCheckbox) {
+        toggleQuestItem(questCheckbox.dataset.questToggle);
         return;
       }
       const domainBtn = e.target.closest("[data-domain-practice]");
