@@ -19,7 +19,6 @@
     timeWarningShown: false, // whether the 5-minute toast has fired for this module
     breakTimer: null,
     breakSecondsLeft: 0,
-    checkMode: false,  // instant-feedback per question after answering
     pillWindowStart: 0, // first index shown in the footer's question-pill strip
     fdModules: null,      // full-diagnostic: the 4 modules' shuffled question arrays
     fdModuleIndex: 0,     // full-diagnostic: which of the 4 modules is active
@@ -190,7 +189,6 @@
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -225,7 +223,6 @@
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -382,7 +379,6 @@
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -445,7 +441,6 @@
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = FULL_DIAG_MODULE_DURATIONS[moduleIndex];
 
@@ -601,9 +596,6 @@
       : moduleLabel(state.module);
     document.getElementById("moduleName").innerHTML =
       `${label} <span>· ${state.questions.length} questions</span>`;
-    // Diagnostics simulate real test conditions: no per-question reveal.
-    const isDiagKind = state.module === "diagnostic" || state.module === "full-diagnostic";
-    document.getElementById("checkToggle").classList.toggle("hidden", isDiagKind);
   }
 
   // ---- Timer ----
@@ -667,7 +659,7 @@
     const selected = state.answers[i];
     const elimSet = state.eliminated[i] || new Set();
     const answered = selected !== undefined;
-    const showFeedback = state.checkMode && answered;
+    const showFeedback = answered;
 
     const letters = ["A", "B", "C", "D"];
     const choicesHTML = q.choices
@@ -725,7 +717,7 @@
       const ci = Number(btn.dataset.choice);
       btn.addEventListener("click", () => {
         if (elimSet.has(ci)) return; // can't select eliminated
-        if (state.checkMode && answered) return; // locked after check
+        if (answered) return; // locked after answering
         selectChoice(ci);
       });
     });
@@ -744,11 +736,7 @@
 
   function selectChoice(ci) {
     state.answers[state.current] = ci;
-    if (state.checkMode) {
-      renderQuestion(); // reveal feedback
-    } else {
-      renderQuestion();
-    }
+    renderQuestion(); // reveal feedback
     renderFooter();
     recordQuestionAnswered();
     recordCorrectStreak(ci === state.questions[state.current].answer);
@@ -786,12 +774,10 @@
         const i = start + offset;
         const classes = ["pill"];
         const answered = state.answers[i] !== undefined;
-        const revealed = state.checkMode && answered;
-        const correct = revealed && state.answers[i] === state.questions[i].answer;
+        const correct = answered && state.answers[i] === state.questions[i].answer;
 
         if (i === state.current) classes.push("current");
-        else if (revealed) classes.push(correct ? "answered" : "wrong");
-        else if (answered) classes.push("answered");
+        else if (answered) classes.push(correct ? "answered" : "wrong");
         if (state.marked[i]) classes.push("marked");
         return `<button class="${classes.join(" ")}" data-goto="${i}">${i + 1}</button>`;
       })
@@ -1409,7 +1395,6 @@
     // review click -> jump back into that question with feedback
     list.querySelectorAll(".review-item").forEach((it) => {
       it.addEventListener("click", () => {
-        state.checkMode = true;
         state.reviewMode = true;
         state.current = Number(it.dataset.review);
         ensureCurrentVisible();
@@ -1893,25 +1878,11 @@
       document.getElementById("eliminateBtn").classList.toggle("active", state.eliminating);
       document.getElementById("choices")?.classList.toggle("eliminating", state.eliminating);
     });
-    document.getElementById("checkToggle").addEventListener("click", () => {
-      state.checkMode = !state.checkMode;
-      document.getElementById("checkToggle").classList.toggle("active", state.checkMode);
-      renderQuestion();
-    });
     const confirmModal = document.getElementById("confirmModal");
     const confirmTitle = document.getElementById("confirmTitle");
     const confirmText = document.getElementById("confirmText");
     const confirmEnd = document.getElementById("confirmEnd");
-    let confirmAction = "finish";
-    document.getElementById("quitBtn").addEventListener("click", () => {
-      confirmAction = "finish";
-      confirmTitle.textContent = "End this session?";
-      confirmText.textContent = "You'll see your score and question review. You can retry anytime.";
-      confirmEnd.textContent = "See results";
-      confirmModal.classList.remove("hidden");
-    });
     document.getElementById("examHomeBtn").addEventListener("click", () => {
-      confirmAction = "home";
       confirmTitle.textContent = "Leave without finishing?";
       confirmText.textContent = "Your progress on this session won't be scored. You can start over anytime from the home screen.";
       confirmEnd.textContent = "Leave to home";
@@ -1922,27 +1893,7 @@
     });
     confirmEnd.addEventListener("click", () => {
       confirmModal.classList.add("hidden");
-      if (confirmAction === "home") {
-        goHome();
-        return;
-      }
-      if (state.module === "full-diagnostic" && !state.reviewMode) {
-        // Score the whole 98-question attempt: record this module's
-        // progress, then count every not-yet-reached module's questions
-        // as skipped, so quitting early scores "out of 98" like the rest
-        // of the app treats an early finish.
-        state.questions.forEach((q, i) => {
-          state.fdResults.push({ q, selected: state.answers[i] });
-        });
-        for (let m = state.fdModuleIndex + 1; m < state.fdModules.length; m++) {
-          state.fdModules[m].forEach((q) => {
-            state.fdResults.push({ q, selected: undefined });
-          });
-        }
-        finishFullDiagnostic();
-      } else {
-        finishExam();
-      }
+      goHome();
     });
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");

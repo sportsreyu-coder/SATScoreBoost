@@ -476,6 +476,16 @@ button.streak:hover { color: var(--primary-light); }
 }
 .tool-btn:hover { color: var(--text); border-color: var(--accent); }
 .tool-btn.active { color: var(--accent-hover); border-color: var(--accent); background: var(--accent-soft); }
+.tool-btn.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
 
 .exam-body { max-width: 900px; margin: 0 auto; padding: 40px 28px 120px; }
 
@@ -1117,7 +1127,6 @@ footer.site a { color: var(--accent); text-decoration: none; }
   .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 10px 0; }
   .stat:last-child { border-bottom: none; }
   .pill-nav { display: none; }
-  .exam-tools .tool-btn span { display: none; }
   .bank-layout { grid-template-columns: 1fr; }
   .bank-filters { position: static; }
 }
