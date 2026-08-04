@@ -9,6 +9,7 @@
     fullDiagnosticIndex: null, // which entry of FULL_DIAGNOSTICS is active
     questions: [],     // active question set (just the current module, for full-diagnostic)
     answers: {},       // qIndex -> choiceIndex
+    checked: {},       // qIndex -> bool, true once "Check Answer" has revealed it
     eliminated: {},    // qIndex -> Set of choiceIndex
     marked: {},        // qIndex -> bool
     current: 0,
@@ -19,7 +20,6 @@
     timeWarningShown: false, // whether the 5-minute toast has fired for this module
     breakTimer: null,
     breakSecondsLeft: 0,
-    checkMode: false,  // instant-feedback per question after answering
     pillWindowStart: 0, // first index shown in the footer's question-pill strip
     fdModules: null,      // full-diagnostic: the 4 modules' shuffled question arrays
     fdModuleIndex: 0,     // full-diagnostic: which of the 4 modules is active
@@ -65,10 +65,12 @@
   const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
   const DEFAULT_GOAL = 1600;
   const DOMAIN_TODAY_KEY = "sat_domain_today"; // per-domain answered-question counts, today only
-  const MISTAKE_BANK_KEY = "sat_mistake_bank"; // recently missed questions, for the "review mistakes" mission
+  const MISTAKE_BANK_KEY = "sat_mistake_bank"; // recently missed questions, for the "review mistakes" quest
   const MISTAKES_REVIEWED_KEY = "sat_mistakes_reviewed_today"; // count of mistakes reviewed today
   const TIMED_MODULE_KEY = "sat_timed_module_today"; // whether a timed session was completed today
   const MISTAKE_BANK_LIMIT = 50;
+  const XP_KEY = "sat_xp"; // lifetime XP earned from completed quests
+  const QUEST_XP_AWARDED_KEY = "sat_quest_xp_awarded"; // which quests have already paid out XP today
 
   // ---- Progress storage ----
   // Guests get their progress tracked in sessionStorage (gone once the tab
@@ -191,10 +193,10 @@
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -226,10 +228,10 @@
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -383,10 +385,10 @@
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -446,10 +448,10 @@
     state.questions = state.fdModules[moduleIndex];
     state.answers = {};
     state.eliminated = {};
+    state.checked = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = FULL_DIAG_MODULE_DURATIONS[moduleIndex];
 
@@ -565,6 +567,7 @@
 
     state.questions = items.map(({ q }) => q);
     state.answers = {};
+    state.checked = {};
     items.forEach(({ selected }, i) => {
       if (selected !== undefined) state.answers[i] = selected;
     });
@@ -606,9 +609,6 @@
       : moduleLabel(state.module);
     document.getElementById("moduleName").innerHTML =
       `${label} <span>· ${state.questions.length} questions</span>`;
-    // Diagnostics simulate real test conditions: no per-question reveal.
-    const isDiagKind = state.module === "diagnostic" || state.module === "full-diagnostic";
-    document.getElementById("checkToggle").classList.toggle("hidden", isDiagKind);
   }
 
   // ---- Timer ----
@@ -672,14 +672,14 @@
     const selected = state.answers[i];
     const elimSet = state.eliminated[i] || new Set();
     const answered = selected !== undefined;
-    const showFeedback = state.checkMode && answered;
+    const checked = !!state.checked[i];
 
     const letters = ["A", "B", "C", "D"];
     const choicesHTML = q.choices
       .map((c, ci) => {
         const classes = ["choice"];
         if (elimSet.has(ci)) classes.push("eliminated");
-        if (showFeedback) {
+        if (checked) {
           if (ci === q.answer) classes.push("correct");
           else if (ci === selected) classes.push("incorrect");
         } else if (ci === selected) {
@@ -696,8 +696,12 @@
       })
       .join("");
 
+    const checkButtonHTML = !checked
+      ? `<button class="btn btn-primary check-answer-btn" id="checkAnswerBtn" ${answered ? "" : "disabled"}>Check Answer</button>`
+      : "";
+
     let explanationHTML = "";
-    if (showFeedback) {
+    if (checked) {
       const correct = selected === q.answer;
       const tag = correct
         ? "✓ Correct"
@@ -722,6 +726,7 @@
       <div class="choices ${state.eliminating ? "eliminating" : ""}" id="choices">
         ${choicesHTML}
       </div>
+      ${checkButtonHTML}
       ${explanationHTML}
     `;
 
@@ -730,7 +735,7 @@
       const ci = Number(btn.dataset.choice);
       btn.addEventListener("click", () => {
         if (elimSet.has(ci)) return; // can't select eliminated
-        if (state.checkMode && answered) return; // locked after check
+        if (checked) return; // locked after checking
         selectChoice(ci);
       });
     });
@@ -740,6 +745,7 @@
       });
     });
     document.getElementById("markBtn").addEventListener("click", toggleMark);
+    document.getElementById("checkAnswerBtn")?.addEventListener("click", checkAnswer);
 
     // nav buttons
     document.getElementById("prevBtn").disabled = i === 0;
@@ -748,15 +754,23 @@
   }
 
   function selectChoice(ci) {
-    state.answers[state.current] = ci;
-    if (state.checkMode) {
-      renderQuestion(); // reveal feedback
-    } else {
-      renderQuestion();
-    }
+    const i = state.current;
+    const firstAnswer = state.answers[i] === undefined;
+    state.answers[i] = ci;
+    renderQuestion();
     renderFooter();
-    recordQuestionAnswered();
-    recordCorrectStreak(ci === state.questions[state.current].answer);
+    if (firstAnswer) {
+      recordQuestionAnswered();
+      recordCorrectStreak(ci === state.questions[i].answer);
+    }
+  }
+
+  function checkAnswer() {
+    const i = state.current;
+    if (state.answers[i] === undefined || state.checked[i]) return;
+    state.checked[i] = true;
+    renderQuestion();
+    renderFooter();
   }
 
   function toggleEliminate(ci) {
@@ -791,11 +805,11 @@
         const i = start + offset;
         const classes = ["pill"];
         const answered = state.answers[i] !== undefined;
-        const revealed = state.checkMode && answered;
-        const correct = revealed && state.answers[i] === state.questions[i].answer;
+        const checked = !!state.checked[i];
+        const correct = checked && state.answers[i] === state.questions[i].answer;
 
         if (i === state.current) classes.push("current");
-        else if (revealed) classes.push(correct ? "answered" : "wrong");
+        else if (checked) classes.push(correct ? "correct" : "wrong");
         else if (answered) classes.push("answered");
         if (state.marked[i]) classes.push("marked");
         return `<button class="${classes.join(" ")}" data-goto="${i}">${i + 1}</button>`;
@@ -1130,18 +1144,18 @@
     return cats.slice().sort((a, b) => a.pct - b.pct).slice(0, n);
   }
 
-  // Which domain/module the "practice weakest area" mission item should
-  // point to — the worst-performing category, or a sensible default for
+  // Which domain/module the "practice weakest area" quest should point
+  // to — the worst-performing category, or a sensible default for
   // students who haven't taken a diagnostic yet.
   function primaryWeakDomain() {
     const weakest = weakestDomains(1)[0];
     return weakest ? { domain: weakest.domain, module: weakest.module } : { domain: "Algebra", module: "math" };
   }
 
-  // ---- Today's Mission: real progress tracking ----
+  // ---- Today's Quests: real progress tracking ----
   // Per-domain count of questions answered today, across every practice
   // mode (regular practice, question bank, diagnostics). Powers the
-  // "Complete 15 <domain> questions" mission.
+  // "Complete 15 <domain> questions" quest.
   function loadDomainTodayCounts() {
     try {
       const raw = progressStore().getItem(progressKey(DOMAIN_TODAY_KEY));
@@ -1166,7 +1180,7 @@
   }
 
   // A rolling bank of recently-missed questions, most recent first — the
-  // pool the "Review 5 mistakes" mission pulls its practice set from.
+  // pool the "Review 5 mistakes" quest pulls its practice set from.
   // Questions drop out once answered correctly again (mastered).
   function loadMistakeBank() {
     try {
@@ -1234,7 +1248,7 @@
 
   // Called once per finished session (any module) with each question's
   // {q, selected} pair — folds the attempt into today's per-domain counts
-  // and the mistake bank, and marks today's timed-module mission complete.
+  // and the mistake bank, and marks today's timed-module quest complete.
   function recordSessionProgress(pairs) {
     const domainCounts = {};
     const missed = [];
@@ -1252,7 +1266,7 @@
   }
 
   // Builds a short practice set from the mistake bank's most recent
-  // entries — the "Review 5 mistakes" mission's Go button.
+  // entries — the "Review 5 mistakes" quest's Go button.
   function startMistakeReview() {
     const bank = loadMistakeBank();
     const pool = bank
@@ -1273,11 +1287,11 @@
     state.categoryDomain = null;
     state.questions = pool;
     state.answers = {};
+    state.checked = {};
     state.eliminated = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
-    state.checkMode = false;
     state.pillWindowStart = 0;
     state.secondsLeft = pool.length * SECONDS_PER_Q;
     state.timerHidden = false;
@@ -1287,6 +1301,94 @@
     renderQuestion();
     renderFooter();
     updateModuleName();
+  }
+
+  // Today's quest list — each one's real progress (from the tracking
+  // above), what it's worth in XP, and where its "Go →" button sends the
+  // user. Built fresh each time since progress and the weakest-domain
+  // target both change live.
+  function questDefs() {
+    const primary = primaryWeakDomain();
+    const mistakeBank = loadMistakeBank();
+    return [
+      {
+        id: "practice15",
+        label: `Complete 15 ${primary.domain} questions`,
+        xp: 50,
+        total: 15,
+        count: Math.min(loadDomainTodayCount(primary.domain), 15),
+        go: `<button type="button" class="btn btn-ghost btn-small" data-domain-practice="${primary.domain}" data-domain-module="${primary.module}">Go →</button>`,
+      },
+      {
+        id: "reviewMistakes",
+        label: "Review 5 mistakes",
+        xp: 30,
+        total: 5,
+        count: Math.min(loadMistakesReviewedToday(), 5),
+        go: mistakeBank.length
+          ? `<button type="button" class="btn btn-ghost btn-small" data-start="mistakeReview">Go →</button>`
+          : `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
+      },
+      {
+        id: "timedModule",
+        label: "Take a timed module",
+        xp: 80,
+        total: 1,
+        count: loadTimedModuleToday() ? 1 : 0,
+        go: `<button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button>`,
+      },
+    ];
+  }
+
+  // ---- XP: earned by completing quests, tracked per-user right now.
+  // Nothing spends it yet — that comes later.
+  function loadXP() {
+    try {
+      const raw = progressStore().getItem(progressKey(XP_KEY));
+      return raw ? Number(raw) || 0 : 0;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  function addXP(amount) {
+    try {
+      progressStore().setItem(progressKey(XP_KEY), String(Math.max(0, loadXP() + amount)));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function loadAwardedQuestsToday() {
+    try {
+      const raw = progressStore().getItem(progressKey(QUEST_XP_AWARDED_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.date === todayStr()) return parsed.ids || [];
+      }
+    } catch (e) { /* storage unavailable */ }
+    return [];
+  }
+
+  function markQuestsAwardedToday(ids) {
+    try {
+      progressStore().setItem(progressKey(QUEST_XP_AWARDED_KEY), JSON.stringify({ date: todayStr(), ids }));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // Quests complete themselves from real practice activity — there's no
+  // checkbox to click — so XP is paid out here instead: whenever a
+  // quest's progress has reached its target and hasn't been paid out yet
+  // today. Safe to call on every dashboard render.
+  function payOutCompletedQuests(quests) {
+    const awarded = loadAwardedQuestsToday();
+    let changed = false;
+    quests.forEach((q) => {
+      if (q.count >= q.total && !awarded.includes(q.id)) {
+        addXP(q.xp);
+        awarded.push(q.id);
+        changed = true;
+      }
+    });
+    if (changed) markQuestsAwardedToday(awarded);
   }
 
   // Lifetime accuracy, longest correct-answer streak, and answer/session
@@ -1316,9 +1418,10 @@
     const goal = loadGoal();
     const estimate = computeCurrentEstimate();
     const weakest = weakestDomains(3);
-    const primary = primaryWeakDomain();
+    const quests = questDefs();
+    payOutCompletedQuests(quests);
     const stats = computeDashboardStats();
-    const mistakeBank = loadMistakeBank();
+    const xp = loadXP();
 
     const goalCardHTML = dashGoalEditing
       ? `
@@ -1332,42 +1435,18 @@
           <button type="button" class="dash-goal-edit" data-action="edit-goal" title="Edit your SAT goal">✎</button>
         </div>`;
 
-    const missionDefs = [
-      {
-        id: "practice15",
-        label: `Complete 15 ${primary.domain} questions`,
-        total: 15,
-        count: Math.min(loadDomainTodayCount(primary.domain), 15),
-        go: `<button type="button" class="btn btn-ghost btn-small" data-domain-practice="${primary.domain}" data-domain-module="${primary.module}">Go →</button>`,
-      },
-      {
-        id: "reviewMistakes",
-        label: "Review 5 mistakes",
-        total: 5,
-        count: Math.min(loadMistakesReviewedToday(), 5),
-        go: mistakeBank.length
-          ? `<button type="button" class="btn btn-ghost btn-small" data-start="mistakeReview">Go →</button>`
-          : `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
-      },
-      {
-        id: "timedModule",
-        label: "Take a timed module",
-        total: 1,
-        count: loadTimedModuleToday() ? 1 : 0,
-        go: `<button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button>`,
-      },
-    ];
-    const missionHTML = missionDefs
-      .map((m) => {
-        const done = m.count >= m.total;
+    const questHTML = quests
+      .map((q) => {
+        const done = q.count >= q.total;
         return `
-        <div class="mission-item ${done ? "done" : ""}">
-          <span class="mission-toggle" aria-hidden="true">${done ? ICON_CLIPBOARD_CHECK : ICON_CLIPBOARD}</span>
-          <div class="mission-body">
-            <span class="mission-text">${m.label}</span>
-            <span class="mission-progress">${m.count}/${m.total}</span>
+        <div class="quest-item ${done ? "done" : ""}">
+          <span class="quest-toggle" aria-hidden="true">${done ? ICON_CLIPBOARD_CHECK : ICON_CLIPBOARD}</span>
+          <div class="quest-body">
+            <span class="quest-text">${q.label}</span>
+            <span class="quest-progress">${q.count}/${q.total}</span>
           </div>
-          ${m.go}
+          <span class="quest-xp">+${q.xp} XP</span>
+          ${q.go}
         </div>`;
       })
       .join("");
@@ -1402,8 +1481,11 @@
         </div>
       </div>
       <div class="dash-section">
-        <h3>Today's Mission</h3>
-        <div class="mission-list">${missionHTML}</div>
+        <div class="dash-section-header">
+          <h3>Today's Quests</h3>
+          <span class="quest-xp-total">${xp} XP earned</span>
+        </div>
+        <div class="quest-list">${questHTML}</div>
       </div>
       <div class="dash-section">
         <h3>Your weakest areas</h3>
@@ -1555,9 +1637,10 @@
     // review click -> jump back into that question with feedback
     list.querySelectorAll(".review-item").forEach((it) => {
       it.addEventListener("click", () => {
-        state.checkMode = true;
+        const i = Number(it.dataset.review);
         state.reviewMode = true;
-        state.current = Number(it.dataset.review);
+        state.current = i;
+        if (state.answers[i] !== undefined) state.checked[i] = true;
         ensureCurrentVisible();
         show("exam");
         renderQuestion();
@@ -1655,7 +1738,6 @@
       }
     }
     saveStreak(streak);
-    renderStreak();
   }
 
   // ---- Longest run of consecutive correct answers ----
@@ -1728,8 +1810,8 @@
   const ICON_QUESTION = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>`;
   const ICON_FLAME = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`;
   const ICON_LOCK = `<svg class="badge-medal-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
-  const ICON_CLIPBOARD = `<svg class="mission-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`;
-  const ICON_CLIPBOARD_CHECK = `<svg class="mission-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>`;
+  const ICON_CLIPBOARD = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`;
+  const ICON_CLIPBOARD_CHECK = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>`;
 
   function medalIcon(size, color) {
     return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
@@ -1863,6 +1945,39 @@
     return div.innerHTML;
   }
 
+  // Corner auth control: a "Log in" CTA when signed out, a default
+  // profile-picture avatar (opens the account dropdown) when signed in.
+  function renderProfileToggle() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const toggle = document.getElementById("profileToggle");
+    if (user) {
+      toggle.className = "profile-toggle profile-avatar";
+      toggle.removeAttribute("data-action");
+      toggle.title = user.name || user.email;
+      toggle.innerHTML = `
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c1.4-4.2 4.7-6.5 8-6.5s6.6 2.3 8 6.5" />
+        </svg>`;
+    } else {
+      toggle.className = "profile-toggle btn btn-primary btn-sm";
+      toggle.dataset.action = "open-auth";
+      toggle.removeAttribute("title");
+      toggle.textContent = "Log in";
+    }
+  }
+
+  const ICON_FIRE = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M15.36 5.21A8.25 8.25 0 0 1 12 21a8.25 8.25 0 0 1-5.96-13.95A8.29 8.29 0 0 0 9 9.6a9 9 0 0 1 3.36-6.87 8.21 8.21 0 0 0 3 2.48Z" />
+      <path d="M12 18a3.75 3.75 0 0 0 .5-7.47 6 6 0 0 0-1.93 3.55 6 6 0 0 1-2.13-1A3.75 3.75 0 0 0 12 18Z" />
+    </svg>`;
+  const ICON_BADGE = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="9" r="5" />
+      <path d="M9 13.5 7 21l5-3 5 3-2-7.5" />
+    </svg>`;
+
   function renderProfileMenu() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const dropdown = document.getElementById("profileDropdown");
@@ -1873,16 +1988,16 @@
           <div class="profile-user-email">${escapeHtml(user.email)}</div>
         </div>`
       : "";
-    const authItemHTML = user
-      ? `<button class="profile-menu-item" data-action="logout">🚪 Log out</button>`
-      : `<button class="profile-menu-item profile-menu-item-accent" data-action="open-auth">🔑 Log in / Sign up</button>`;
+    const logoutHTML = user
+      ? `<button class="profile-menu-item" data-action="logout">Log out</button>`
+      : "";
 
     dropdown.innerHTML = `
       ${userHTML}
-      <button class="profile-menu-item" data-nav="social">🔥 Streak &amp; Stats</button>
-      <button class="profile-menu-item" data-nav="badges">🏆 Badges</button>
+      <button class="profile-menu-item" data-nav="social">Streak &amp; Stats ${ICON_FIRE}</button>
+      <button class="profile-menu-item" data-nav="badges">Badges ${ICON_BADGE}</button>
       <div class="profile-divider"></div>
-      ${authItemHTML}
+      ${logoutHTML}
     `;
   }
 
@@ -1918,8 +2033,8 @@
   // Refreshes everything that depends on auth state after a login,
   // signup, or logout.
   function afterAuthChange() {
+    renderProfileToggle();
     renderProfileMenu();
-    renderStreak();
     if (!screens.social.classList.contains("hidden")) renderSocial();
     if (!screens.badges.classList.contains("hidden")) renderBadges();
   }
@@ -1933,28 +2048,13 @@
       stats.correct += correct;
       stats.total += total;
       progressStore().setItem(progressKey(STATS_KEY), JSON.stringify(stats));
-      renderStreak();
     } catch (e) { /* storage unavailable */ }
-  }
-
-  function renderStreak() {
-    try {
-      const el = document.getElementById("streak");
-      const current = displayStreak(loadStreak());
-      const raw = progressStore().getItem(progressKey(STATS_KEY));
-      if (!raw && !current) { el.classList.add("hidden"); return; }
-      const s = raw ? JSON.parse(raw) : { sessions: 0, correct: 0, total: 0 };
-      const acc = s.total ? Math.round((s.correct / s.total) * 100) : 0;
-      el.classList.remove("hidden");
-      el.innerHTML = `🔥 <b>${current}</b> day streak · <b>${acc}%</b> accuracy`;
-    } catch (e) {}
   }
 
   function goHome() {
     clearInterval(state.timer);
     clearInterval(state.breakTimer);
     show("landing");
-    renderStreak();
   }
 
   // ---- Global wiring ----
@@ -2047,25 +2147,11 @@
       document.getElementById("eliminateBtn").classList.toggle("active", state.eliminating);
       document.getElementById("choices")?.classList.toggle("eliminating", state.eliminating);
     });
-    document.getElementById("checkToggle").addEventListener("click", () => {
-      state.checkMode = !state.checkMode;
-      document.getElementById("checkToggle").classList.toggle("active", state.checkMode);
-      renderQuestion();
-    });
     const confirmModal = document.getElementById("confirmModal");
     const confirmTitle = document.getElementById("confirmTitle");
     const confirmText = document.getElementById("confirmText");
     const confirmEnd = document.getElementById("confirmEnd");
-    let confirmAction = "finish";
-    document.getElementById("quitBtn").addEventListener("click", () => {
-      confirmAction = "finish";
-      confirmTitle.textContent = "End this session?";
-      confirmText.textContent = "You'll see your score and question review. You can retry anytime.";
-      confirmEnd.textContent = "See results";
-      confirmModal.classList.remove("hidden");
-    });
     document.getElementById("examHomeBtn").addEventListener("click", () => {
-      confirmAction = "home";
       confirmTitle.textContent = "Leave without finishing?";
       confirmText.textContent = "Your progress on this session won't be scored. You can start over anytime from the home screen.";
       confirmEnd.textContent = "Leave to home";
@@ -2076,27 +2162,7 @@
     });
     confirmEnd.addEventListener("click", () => {
       confirmModal.classList.add("hidden");
-      if (confirmAction === "home") {
-        goHome();
-        return;
-      }
-      if (state.module === "full-diagnostic" && !state.reviewMode) {
-        // Score the whole 98-question attempt: record this module's
-        // progress, then count every not-yet-reached module's questions
-        // as skipped, so quitting early scores "out of 98" like the rest
-        // of the app treats an early finish.
-        state.questions.forEach((q, i) => {
-          state.fdResults.push({ q, selected: state.answers[i] });
-        });
-        for (let m = state.fdModuleIndex + 1; m < state.fdModules.length; m++) {
-          state.fdModules[m].forEach((q) => {
-            state.fdResults.push({ q, selected: undefined });
-          });
-        }
-        finishFullDiagnostic();
-      } else {
-        finishExam();
-      }
+      goHome();
     });
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");
@@ -2155,8 +2221,8 @@
       else if (e.key.toLowerCase() === "m") toggleMark();
     });
 
+    renderProfileToggle();
     renderProfileMenu();
-    renderStreak();
   }
 
   document.addEventListener("DOMContentLoaded", init);
