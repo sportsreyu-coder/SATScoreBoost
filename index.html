@@ -7,7 +7,7 @@
   <meta name="description" content="Free, Bluebook-style digital SAT practice. Real questions, instant explanations, and a score estimate. No signup." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -53,60 +53,164 @@
 
   <!-- ===================== LANDING ===================== -->
   <main id="landing" class="landing">
-    <section class="hero">
-      <span class="eyebrow">Free · No signup · Bluebook-style</span>
-      <h1>Aim for a <span class="grad">1600</span>.<br />Practice like it's the real thing.</h1>
-      <p>
-        Digital-SAT practice that mirrors the real testing app — answer elimination,
-        mark-for-review, a live timer, and instant explanations on every question.
-      </p>
-      <div class="hero-cta">
-        <button class="btn btn-primary" data-start="diagnostic">Start Diagnostic →</button>
-        <button class="btn btn-ghost" data-start="rw">Reading & Writing</button>
-        <button class="btn btn-ghost" data-start="math">Math</button>
+    <section class="l-hero">
+      <div>
+        <div class="l-eyebrow">Free · No signup to start</div>
+        <h1 class="l-hero-h1">Practice the digital SAT in a <em>real test</em> environment.</h1>
+      </div>
+      <div>
+        <p class="l-hero-p">
+          ScoreBoost mirrors the testing app you'll sit in front of on exam day — the same tools,
+          the same pacing, the same question formats — then explains every answer as soon as you submit it.
+        </p>
+        <div class="l-hero-cta">
+          <button class="btn btn-primary" data-start="diagnostic">Start diagnostic →</button>
+          <button class="btn btn-ghost" data-nav="bank">Browse question bank</button>
+        </div>
+        <p class="l-hero-note">Takes about 20 minutes. Your first score estimate comes at the end.</p>
+      </div>
+    </section>
+    <div class="l-rule"></div>
+
+    <section class="l-glance-grid">
+      <div>
+        <div class="l-eyebrow">At a glance</div>
+        <div class="l-glance-list">
+          <div class="l-glance-card">
+            <div><div class="l-glance-title">Sections mirrored</div><div class="l-glance-sub">Reading &amp; Writing, Math</div></div>
+            <div class="l-glance-num">2</div>
+          </div>
+          <div class="l-glance-card">
+            <div><div class="l-glance-title">Practice questions</div><div class="l-glance-sub">Filter by domain, skill, difficulty</div></div>
+            <div class="l-glance-num">220+</div>
+          </div>
+          <div class="l-glance-card">
+            <div><div class="l-glance-title">Cost</div><div class="l-glance-sub">Free to use, no ads</div></div>
+            <div class="l-glance-num l-green">$0</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="l-eyebrow">Start here</div>
+        <div class="l-start-card">
+          <div class="l-start-tag">Recommended</div>
+          <div class="l-start-top">
+            <div>
+              <div class="l-start-title">Take the diagnostic</div>
+              <p>A short mixed set across both sections that produces your first score estimate and a ranked list of weak areas.</p>
+            </div>
+            <div class="l-start-minutes">
+              <div class="l-start-num">~20</div>
+              <div class="l-start-tag">Minutes</div>
+            </div>
+          </div>
+          <div class="l-start-rule"></div>
+          <div class="l-start-bottom">
+            <span>Instant score estimate at the end</span>
+            <button class="btn l-btn-outline-white" data-start="diagnostic">Start diagnostic →</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="stats-row">
-      <div class="stat"><span class="num">2</span><span class="label">Sections mirrored</span></div>
-      <div class="stat"><span class="num">220+</span><span class="label">Practice questions</span></div>
-      <div class="stat"><span class="num">Instant</span><span class="label">Score estimate</span></div>
-    </div>
-
-    <section class="diagnostic-cta">
-      <div class="diagnostic-cta-text">
-        <span class="eyebrow">Skip the diagnostic</span>
-        <h2>Already know where you stand?</h2>
+    <section id="features" class="l-features">
+      <div class="l-features-head">
+        <div>
+          <div class="l-eyebrow">Built to match the real thing</div>
+          <h2>Every tool you get on test day, in every practice question</h2>
+        </div>
         <p>
-          Head straight to the question bank and pick exactly what to practice —
-          filter by domain, skill, and difficulty across Reading &amp; Writing and
-          Math, no diagnostic required.
+          Most prep sites hand you a quiz. The digital SAT is an application with its own controls,
+          and getting fluent in them is part of scoring well. These four are on screen from your first question.
         </p>
       </div>
-      <div class="diagnostic-cta-actions">
-        <button class="btn btn-primary" data-nav="bank">Browse Question Bank →</button>
+      <div class="l-feature-list">
+        <div class="l-feature-row">
+          <span class="l-feature-num">01</span>
+          <div>
+            <span class="l-feature-title">Answer elimination</span>
+            <span class="l-feature-body">Cross out choices you've ruled out and they stay struck through while you work the rest. The same toggle, the same keyboard shortcut, the same visual state as the real app.</span>
+          </div>
+          <span class="l-feature-tag">Persists on review</span>
+        </div>
+        <div class="l-feature-row">
+          <span class="l-feature-num">02</span>
+          <div>
+            <span class="l-feature-title">Mark for review</span>
+            <span class="l-feature-body">Flag anything you want to come back to and it shows up in the question navigator with the rest of your module. Practising the skip-and-return habit is what keeps you from burning four minutes on one item.</span>
+          </div>
+          <span class="l-feature-tag">Navigator included</span>
+        </div>
+        <div class="l-feature-row">
+          <span class="l-feature-num">03</span>
+          <div>
+            <span class="l-feature-title">A live module timer</span>
+            <span class="l-feature-body">Each module runs on the clock, with a warning as time gets short and the option to hide the countdown when it's in your head more than on the screen. Sessions end the way real modules do.</span>
+          </div>
+          <span class="l-feature-tag">5-minute warning</span>
+        </div>
+        <div class="l-feature-row">
+          <span class="l-feature-num">04</span>
+          <div>
+            <span class="l-feature-title">Instant explanations</span>
+            <span class="l-feature-body">Submit and the reasoning appears immediately — what the correct answer turns on, and why the choice you picked was tempting. No waiting for a scored report to find out what went wrong.</span>
+          </div>
+          <span class="l-feature-tag">Both sections</span>
+        </div>
       </div>
     </section>
 
-    <h2 class="section-title">Choose your practice</h2>
-    <p class="section-sub">Jump into a focused section or take on a full mixed set.</p>
-    <div class="mode-grid">
-      <div class="mode-card" data-start="rw">
-        <h3>Reading & Writing</h3>
-        <p>Words in context, command of evidence, boundaries, transitions, and central ideas.</p>
-        <div class="meta">Start section →</div>
+    <section class="l-paths">
+      <div class="l-eyebrow">Four ways in</div>
+      <h2>Start wherever you are</h2>
+      <p class="l-paths-sub">Nothing here is gated. Pick the entry point that matches how much you already know about your own weak spots.</p>
+      <div class="l-paths-grid">
+        <button class="l-path-card" data-start="diagnostic">
+          <div class="l-path-top"><span class="l-eyebrow">Recommended</span><span class="l-path-arrow">→</span></div>
+          <div class="l-path-title">Take the diagnostic</div>
+          <p>A short mixed set across both sections that produces your first score estimate and a ranked list of weak areas.</p>
+          <div class="l-path-go">Start diagnostic</div>
+        </button>
+        <button class="l-path-card" data-nav="bank">
+          <div class="l-path-top"><span class="l-eyebrow">Self-directed</span><span class="l-path-arrow">→</span></div>
+          <div class="l-path-title">Browse the question bank</div>
+          <p>Filter by domain, skill, and difficulty and drill exactly the thing you came here for.</p>
+          <div class="l-path-go">Open question bank</div>
+        </button>
+        <button class="l-path-card" data-action="open-auth">
+          <div class="l-path-top"><span class="l-eyebrow">Keep your progress</span><span class="l-path-arrow">→</span></div>
+          <div class="l-path-title">Create an account</div>
+          <p>Free, and the only difference is that your streak, stats, and study plan are still there tomorrow.</p>
+          <div class="l-path-go">Sign up</div>
+        </button>
+        <a class="l-path-card" href="#features">
+          <div class="l-path-top"><span class="l-eyebrow">Just looking</span><span class="l-path-arrow">→</span></div>
+          <div class="l-path-title">See how it works</div>
+          <p>A walkthrough of the tools, timer, and explanations — with nothing to answer yet.</p>
+          <div class="l-path-go">Take the tour</div>
+        </a>
       </div>
-      <div class="mode-card math" data-start="math">
-        <h3>Math</h3>
-        <p>Algebra, advanced math, problem-solving & data analysis, and geometry.</p>
-        <div class="meta">Start section →</div>
+    </section>
+
+    <section class="l-cta-grid">
+      <div class="l-cta-card">
+        <h2>You can start in the next thirty seconds.</h2>
+        <p>No account, no email, no card. Answer a question, see the explanation, and decide from there whether it's worth coming back.</p>
+        <div class="l-hero-cta">
+          <button class="btn btn-primary" data-start="diagnostic">Start diagnostic →</button>
+          <button class="btn btn-ghost" data-action="open-auth">Create a free account</button>
+        </div>
       </div>
-      <div class="mode-card" data-start="mixed">
-        <h3>Full Practice</h3>
-        <p>A mixed adaptive-style set across both sections with a combined score estimate.</p>
-        <div class="meta">Start full set →</div>
+      <div class="l-parents-card">
+        <span class="l-parents-tag">For parents</span>
+        <ul class="l-parents-list">
+          <li><span class="l-dot"></span>Free to use, with no ads anywhere in the product.</li>
+          <li><span class="l-dot"></span>An account is optional — it only saves progress.</li>
+          <li><span class="l-dot"></span>Practice mirrors the official digital format, so time spent here is time spent on the real thing.</li>
+          <li><span class="l-dot"></span>Progress, accuracy, and weak areas are visible on one dashboard.</li>
+        </ul>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- ===================== EXAM ===================== -->
@@ -237,7 +341,7 @@
     </div>
   </div>
 
-  <footer class="site">
+  <footer class="site" id="siteFooter">
     Built as a study tool inspired by <a href="https://1600.lol" target="_blank" rel="noopener">1600.lol</a>.
     Not affiliated with the College Board. SAT® is a trademark of the College Board.
   </footer>

@@ -148,6 +148,7 @@
     // The exam screen hides the top bar for extra vertical space; the exam
     // header's own Home button covers navigating back out in that case.
     document.getElementById("topbar").classList.toggle("hidden", name === "exam");
+    document.getElementById("siteFooter").classList.toggle("hidden", name === "exam");
     document.getElementById("bankNavBtn").classList.toggle("active", name === "bank");
     document.getElementById("dashboardNavBtn").classList.toggle("active", name === "dashboard");
     document.getElementById("lessonsNavBtn").classList.toggle("active", name === "lessons");
