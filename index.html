@@ -6,7 +6,8 @@
   <title>SAT ScoreBoost — Free Digital SAT Practice</title>
   <meta name="description" content="Free, Bluebook-style digital SAT practice. Real questions, instant explanations, and a score estimate. No signup." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -29,6 +30,11 @@
       <button class="topnav-link" data-nav="studyPlan">
         <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Study Plan
+      </button>
+      <button class="topnav-link" id="lessonsNavBtn" data-nav="lessons">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+        Lessons
+        <span class="nav-pro-badge" id="lessonsProBadge">PRO</span>
       </button>
     </nav>
     <div class="topbar-right">
@@ -112,6 +118,21 @@
       </div>
       <button class="timer-hide-btn" id="timerHideBtn" title="Hide timer">Hide</button>
       <div class="exam-tools">
+        <button class="tool-btn icon-btn hidden" id="calculatorBtn" title="Graphing calculator">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="2" width="16" height="20" rx="2" />
+            <line x1="8" y1="6" x2="16" y2="6" />
+            <line x1="8" y1="10" x2="8.01" y2="10" />
+            <line x1="12" y1="10" x2="12.01" y2="10" />
+            <line x1="16" y1="10" x2="16.01" y2="10" />
+            <line x1="8" y1="14" x2="8.01" y2="14" />
+            <line x1="12" y1="14" x2="12.01" y2="14" />
+            <line x1="16" y1="14" x2="16.01" y2="14" />
+            <line x1="8" y1="18" x2="8.01" y2="18" />
+            <line x1="12" y1="18" x2="12.01" y2="18" />
+            <line x1="16" y1="18" x2="16.01" y2="18" />
+          </svg>
+        </button>
         <button class="tool-btn icon-btn" id="eliminateBtn" title="Cross out answers">✕</button>
         <button class="tool-btn icon-btn" id="examHomeBtn" title="Leave to home">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -143,6 +164,16 @@
         <button class="btn btn-primary" id="nextBtn">Next ▸</button>
       </div>
     </div>
+
+    <div class="calc-panel hidden" id="calcPanel">
+      <div class="calc-panel-header" id="calcPanelHeader">
+        <span>Graphing Calculator</span>
+        <button class="calc-panel-close" id="calcPanelClose" title="Close calculator">✕</button>
+      </div>
+      <div class="calc-panel-body">
+        <iframe id="calcFrame" title="Desmos graphing calculator" loading="lazy"></iframe>
+      </div>
+    </div>
   </section>
 
   <!-- ===================== BREAK ===================== -->
@@ -159,6 +190,9 @@
 
   <!-- ===================== STUDY PLAN ===================== -->
   <section id="studyPlan" class="results hidden"><!-- study plan renders here --></section>
+
+  <!-- ===================== LESSONS ===================== -->
+  <section id="lessons" class="lessons hidden"><!-- lessons render here --></section>
 
   <!-- ===================== CONFIRM MODAL ===================== -->
   <div id="confirmModal" class="modal-overlay hidden">
@@ -218,6 +252,7 @@
   <script src="js/questions/math-problem-solving-data.js"></script>
   <script src="js/questions/math-geometry-trig.js"></script>
   <script src="js/diagnostics.js"></script>
+  <script src="js/lessons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabaseClient.js"></script>
   <script src="js/auth.js"></script>

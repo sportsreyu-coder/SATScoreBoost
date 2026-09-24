@@ -30,6 +30,9 @@
     bankTab: "math",      // "math" | "rw" — which Question Bank subject tab is showing
     bankDifficulty: new Set(), // selected difficulty filters (1/2/3); empty = show all
     domainFilter: null,   // set when practicing a single domain from the Study Plan
+    skillFilter: null,    // set when practicing a single skill from a Lesson
+    activeLesson: null,   // { domain, skill } of the lesson currently open, or null for the list view
+    lessonChatLog: [],    // transient {from, text} messages for the active lesson's AI Tutor panel
   };
 
   // ---- Question Bank categories ----
@@ -136,6 +139,7 @@
     social: document.getElementById("social"),
     badges: document.getElementById("badges"),
     studyPlan: document.getElementById("studyPlan"),
+    lessons: document.getElementById("lessons"),
   };
 
   function show(name) {
@@ -146,7 +150,14 @@
     document.getElementById("topbar").classList.toggle("hidden", name === "exam");
     document.getElementById("bankNavBtn").classList.toggle("active", name === "bank");
     document.getElementById("dashboardNavBtn").classList.toggle("active", name === "dashboard");
+    document.getElementById("lessonsNavBtn").classList.toggle("active", name === "lessons");
+    if (name !== "exam") closeCalculatorPanel();
     window.scrollTo(0, 0);
+  }
+
+  function closeCalculatorPanel() {
+    document.getElementById("calcPanel").classList.add("hidden");
+    document.getElementById("calculatorBtn")?.classList.remove("active");
   }
 
   // ---- Build question set ----
@@ -223,6 +234,39 @@
     state.module = mod;
     state.categoryLabel = label || domain;
     state.categoryDomain = domain;
+    state.diagnosticIndex = null;
+    state.reviewMode = false;
+    state.questions = pool;
+    state.answers = {};
+    state.eliminated = {};
+    state.checked = {};
+    state.marked = {};
+    state.current = 0;
+    state.eliminating = false;
+    state.pillWindowStart = 0;
+    state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.timerHidden = false;
+
+    startTimer();
+    show("exam");
+    renderQuestion();
+    renderFooter();
+    updateModuleName();
+  }
+
+  // ---- Lessons: practice just the questions matching one specific skill ----
+  function startSkillPractice(mod, domain, skill) {
+    let pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill);
+    if (!pool.length) return;
+
+    pool = shuffle(pool);
+    pool.sort((a, b) => a.difficulty - b.difficulty);
+    pool = pool.map(shuffleChoices);
+
+    state.module = mod;
+    state.categoryLabel = skill;
+    state.categoryDomain = domain;
+    state.skillFilter = skill;
     state.diagnosticIndex = null;
     state.reviewMode = false;
     state.questions = pool;
@@ -575,10 +619,42 @@
     state.pillWindowStart = 0;
     state.reviewMode = true;
 
-    recordSessionProgress(items);
-    renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
-    saveStats(correct, total);
-    show("results");
+    showScoringTransition(() => {
+      recordSessionProgress(items);
+      renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
+      saveStats(correct, total);
+      show("results");
+    });
+  }
+
+  // Brief in-context "scoring" transition shown between finishing an attempt
+  // and seeing results — a slim progress bar inside the same card-style
+  // interface used for module breaks, not a full-page loading screen, so it
+  // reads as "your results are already here, just settling in" rather than
+  // a stall.
+  const SCORING_STEPS = ["Grading your answers…", "Calculating section scores…", "Finding your focus areas…"];
+  const SCORING_STEP_MS = 380;
+
+  function showScoringTransition(onDone) {
+    const el = document.getElementById("break");
+    el.innerHTML = `
+      <div class="break-content scoring-content">
+        <span class="eyebrow">Scoring</span>
+        <h2 id="scoringStatus">${SCORING_STEPS[0]}</h2>
+        <div class="scoring-bar-track"><div class="scoring-bar-fill" id="scoringBarFill"></div></div>
+      </div>`;
+    show("break");
+
+    const fill = document.getElementById("scoringBarFill");
+    requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.width = "100%"; }));
+    SCORING_STEPS.forEach((text, i) => {
+      if (i === 0) return;
+      setTimeout(() => {
+        const status = document.getElementById("scoringStatus");
+        if (status) status.textContent = text;
+      }, SCORING_STEP_MS * i);
+    });
+    setTimeout(onDone, SCORING_STEP_MS * SCORING_STEPS.length);
   }
 
   function moduleLabel(m) {
@@ -746,6 +822,8 @@
     });
     document.getElementById("markBtn").addEventListener("click", toggleMark);
     document.getElementById("checkAnswerBtn")?.addEventListener("click", checkAnswer);
+
+    document.getElementById("calculatorBtn").classList.toggle("hidden", q.module !== "math");
 
     // nav buttons
     document.getElementById("prevBtn").disabled = i === 0;
@@ -922,16 +1000,18 @@
       overall = toSectionScore(pct); // single section
     }
 
-    recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i] })));
-    if (state.module === "mistakeReview") {
-      const reviewed = state.questions.filter((q, i) => state.answers[i] !== undefined).length;
-      bumpMistakesReviewedToday(reviewed);
-    }
+    showScoringTransition(() => {
+      recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i] })));
+      if (state.module === "mistakeReview") {
+        const reviewed = state.questions.filter((q, i) => state.answers[i] !== undefined).length;
+        bumpMistakesReviewedToday(reviewed);
+      }
 
-    renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
-    saveStats(correct, total);
-    recordLifetimeAnswers();
-    show("results");
+      renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
+      saveStats(correct, total);
+      recordLifetimeAnswers();
+      show("results");
+    });
   }
 
   // Official College Board digital SAT domain taxonomy, in display order —
@@ -1021,6 +1101,20 @@
   // Builds the Study Plan screen from the most recently saved diagnostic
   // breakdown: weakest categories first, each with a fraction, the specific
   // skills missed, and a one-tap link into focused practice on that domain.
+  // Finds the Lesson topic a Study Plan card should link to for a given
+  // domain — the specific skill the student missed when it has a lesson,
+  // otherwise that domain's first available lesson.
+  function findLessonTopic(domain, preferredSkill) {
+    const group = LESSONS.find((g) => g.domain === domain);
+    if (!group || !group.topics.length) return null;
+    if (preferredSkill) {
+      const match = group.topics.find((t) => t.skill === preferredSkill);
+      if (match) return { domain, skill: match.skill };
+    }
+    const ready = group.topics.find((t) => t.ready);
+    return { domain, skill: (ready || group.topics[0]).skill };
+  }
+
   function renderStudyPlan() {
     const data = loadDiagnosticSummary();
     const el = document.getElementById("studyPlan");
@@ -1050,6 +1144,10 @@
         c.missedSkills && c.missedSkills.length
           ? `<div class="plan-skills">Missed: ${c.missedSkills.join(", ")}</div>`
           : "";
+      const lesson = findLessonTopic(c.domain, c.missedSkills && c.missedSkills[0]);
+      const learnBtn = lesson
+        ? `<button class="btn btn-ghost btn-small" data-lesson-domain="${escapeHtml(lesson.domain)}" data-lesson-skill="${escapeHtml(lesson.skill)}">Learn →</button>`
+        : "";
       return `
         <div class="plan-card ${tier}">
           <div class="plan-card-top">
@@ -1057,7 +1155,10 @@
               <div class="plan-domain">${c.domain}</div>
               <div class="plan-frac">${c.correct}/${c.total} correct · ${Math.round(c.pct * 100)}%</div>
             </div>
-            <button class="btn btn-ghost btn-small" data-domain-practice="${c.domain}" data-domain-module="${c.module}">Practice →</button>
+            <div class="plan-card-actions">
+              ${learnBtn}
+              <button class="btn btn-ghost btn-small" data-domain-practice="${c.domain}" data-domain-module="${c.module}">Practice →</button>
+            </div>
           </div>
           ${skillsHTML}
           <p class="plan-tip">${tip}</p>
@@ -1099,9 +1200,202 @@
 
       <div class="results-actions">
         <button class="btn btn-primary" data-start="diagnostic">Retake Diagnostic →</button>
+        <button class="btn btn-ghost" data-nav="lessons">Browse Lessons →</button>
         <button class="btn btn-ghost" data-home>Back to Home</button>
       </div>
     `;
+  }
+
+  // ---- Lessons ----
+  // Counts how many bank questions exist for one specific skill — a lesson's
+  // "Practice this skill" link is only shown when this is > 0, and every
+  // lesson topic is generated from real skill values so it always is.
+  function skillQuestionCount(mod, domain, skill) {
+    return QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill).length;
+  }
+
+  function openLesson(domain, skill) {
+    state.activeLesson = { domain, skill };
+    renderLessons();
+  }
+
+  function renderLessons() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const premium = window.Auth && window.Auth.isPremium();
+    const el = document.getElementById("lessons");
+
+    if (!premium) {
+      el.innerHTML = `
+        <div class="lessons-paywall">
+          <div class="lessons-paywall-icon">${ICON_GRADCAP}</div>
+          <span class="eyebrow">Lessons · Premium</span>
+          <h2>In-depth lessons for every SAT topic</h2>
+          <p>
+            Go beyond practice questions with a written lesson for every College Board domain and
+            skill — key concepts, a worked example, and the mistakes students actually make — plus
+            an AI Tutor to ask about anything you're stuck on.
+          </p>
+          <ul class="lessons-paywall-list">
+            <li>${ICON_GRADCAP} A lesson for every domain and skill on the digital SAT</li>
+            <li>${ICON_CHAT} AI Tutor chat inside every lesson</li>
+            <li>${ICON_BOOK} One tap from any lesson straight into matching practice questions</li>
+          </ul>
+          ${
+            user
+              ? `<button class="btn btn-primary" data-action="upgrade-premium">Upgrade to Premium →</button>
+                 <p class="lessons-paywall-note">Demo upgrade — no payment required. Real billing is coming soon.</p>`
+              : `<button class="btn btn-primary" data-action="open-auth">Log in to upgrade →</button>`
+          }
+        </div>`;
+      return;
+    }
+
+    if (state.activeLesson) {
+      renderLessonDetail(state.activeLesson.domain, state.activeLesson.skill);
+      return;
+    }
+
+    const domainGroup = (group) => {
+      const chips = group.topics
+        .map((t) => {
+          const count = skillQuestionCount(group.module, group.domain, t.skill);
+          if (t.ready) {
+            return `<button class="lesson-chip ready" data-lesson-domain="${escapeHtml(group.domain)}" data-lesson-skill="${escapeHtml(t.skill)}">
+              <span>${t.skill}</span><span class="lesson-chip-cta">Open lesson →</span>
+            </button>`;
+          }
+          return `<div class="lesson-chip soon" title="${count} practice question${count === 1 ? "" : "s"} available">
+            <span>${t.skill}</span><span class="lesson-chip-tag">Coming soon</span>
+          </div>`;
+        })
+        .join("");
+      return `
+        <div class="lesson-domain-group">
+          <h3>${group.domain}</h3>
+          <div class="lesson-chip-list">${chips}</div>
+        </div>`;
+    };
+
+    const rw = LESSONS.filter((g) => g.module === "rw");
+    const math = LESSONS.filter((g) => g.module === "math");
+
+    el.innerHTML = `
+      <span class="eyebrow">Lessons</span>
+      <h1 class="section-title">Learn every topic on the digital SAT</h1>
+      <p class="section-sub">Pick a skill to read the lesson, then jump straight into matching practice questions.</p>
+
+      <div class="lessons-subject">
+        <h2>${ICON_BOOK} Reading &amp; Writing</h2>
+        <div class="lessons-domains">${rw.map(domainGroup).join("")}</div>
+      </div>
+      <div class="lessons-subject">
+        <h2>${ICON_CALCULATOR} Math</h2>
+        <div class="lessons-domains">${math.map(domainGroup).join("")}</div>
+      </div>
+    `;
+  }
+
+  function renderLessonDetail(domain, skill) {
+    const group = LESSONS.find((g) => g.domain === domain);
+    const topic = group && group.topics.find((t) => t.skill === skill);
+    const el = document.getElementById("lessons");
+    if (!group || !topic) {
+      state.activeLesson = null;
+      renderLessons();
+      return;
+    }
+
+    const count = skillQuestionCount(group.module, domain, skill);
+    const practiceBtnHTML = count
+      ? `<button class="btn btn-primary" data-practice-skill="${escapeHtml(skill)}" data-practice-domain="${escapeHtml(domain)}" data-practice-module="${group.module}">Practice this skill (${count}) →</button>`
+      : "";
+
+    let bodyHTML;
+    if (topic.ready) {
+      const c = topic.content;
+      const conceptsHTML = c.concepts.map((x) => `<li>${x}</li>`).join("");
+      const mistakesHTML = c.mistakes.map((x) => `<li>${x}</li>`).join("");
+      const letters = ["A", "B", "C", "D"];
+      const choicesHTML = c.example.choices
+        .map(
+          (choice, i) =>
+            `<li class="${i === c.example.correctIndex ? "correct" : ""}">
+              <span class="ex-letter">${letters[i]}</span>${choice}${i === c.example.correctIndex ? " ✓" : ""}
+            </li>`
+        )
+        .join("");
+      bodyHTML = `
+        <p class="lesson-summary">${c.summary}</p>
+
+        <h3>Key concepts</h3>
+        <ul class="lesson-list">${conceptsHTML}</ul>
+
+        <h3>Worked example</h3>
+        <div class="lesson-example">
+          <p class="ex-prompt">${c.example.prompt}</p>
+          <ul class="ex-choices">${choicesHTML}</ul>
+          <p class="ex-walkthrough">${c.example.walkthrough}</p>
+        </div>
+
+        <h3>Common mistakes</h3>
+        <ul class="lesson-list">${mistakesHTML}</ul>
+      `;
+    } else {
+      bodyHTML = `
+        <div class="lesson-soon-card">
+          ${ICON_GRADCAP}
+          <p>We're still writing the full lesson for this skill. In the meantime, jump straight into real practice questions below.</p>
+        </div>
+      `;
+    }
+
+    el.innerHTML = `
+      <button class="lesson-back" data-lesson-back>← Back to Lessons</button>
+      <span class="eyebrow">${domain}</span>
+      <h1 class="section-title">${skill}</h1>
+      ${bodyHTML}
+      <div class="results-actions lesson-actions">${practiceBtnHTML}</div>
+      ${lessonChatHTML()}
+    `;
+
+    const chatLog = document.getElementById("lessonChatLog");
+    if (chatLog) chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  // ---- Lessons: AI Tutor (UI only for now — no model is wired up yet, so
+  // every reply is a canned placeholder rather than a real API call) ----
+  function lessonChatHTML() {
+    const bubbles = state.lessonChatLog
+      .map(
+        (m) =>
+          `<div class="chat-bubble ${m.from}">${m.from === "bot" ? ICON_CHAT : ""}<span>${escapeHtml(m.text)}</span></div>`
+      )
+      .join("");
+    return `
+      <div class="lesson-chat">
+        <div class="lesson-chat-header">${ICON_CHAT} AI Tutor <span class="lesson-chat-beta">Preview</span></div>
+        <div class="lesson-chat-log" id="lessonChatLog">
+          ${bubbles || `<div class="chat-bubble bot">${ICON_CHAT}<span>Ask me anything about this topic — I'm still in early preview, so I can't reason about your exact question yet, but I'll point you to the right part of the lesson.</span></div>`}
+        </div>
+        <form class="lesson-chat-form" id="lessonChatForm">
+          <input type="text" id="lessonChatInput" placeholder="Ask about this topic…" autocomplete="off" />
+          <button type="submit" class="btn btn-primary btn-sm">Send</button>
+        </form>
+      </div>`;
+  }
+
+  function sendLessonChatMessage(text) {
+    text = text.trim();
+    if (!text || !state.activeLesson) return;
+    state.lessonChatLog.push({ from: "user", text });
+    renderLessons();
+    setTimeout(() => {
+      state.lessonChatLog.push({
+        from: "bot",
+        text: `The AI Tutor isn't fully set up yet, so I can't answer that directly — for now, check the Key Concepts and Common Mistakes above for "${state.activeLesson.skill}," or try a practice question and read its explanation.`,
+      });
+      renderLessons();
+    }, 500);
   }
 
   // ---- Dashboard ----
@@ -1503,6 +1797,31 @@
     if (dashGoalEditing) document.getElementById("dashGoalInput")?.focus();
   }
 
+  // Calls out the specific domain(s) a diagnostic went worst on, right at
+  // the top of the results screen — the category breakdown below already
+  // labels every domain, but this makes the single most useful takeaway
+  // ("you did poorest on X") impossible to miss.
+  function weakestSectionCalloutHTML(cats) {
+    if (!cats.length) return "";
+    const scored = cats.map((c) => ({ ...c, pct: c.total ? c.correct / c.total : 0 }));
+    const weak = scored.filter((c) => c.pct < 0.75).sort((a, b) => a.pct - b.pct).slice(0, 2);
+    if (!weak.length) return "";
+    const rows = weak
+      .map(
+        (c) =>
+          `<li><b>${c.domain}</b> — ${c.correct}/${c.total} correct (${Math.round(c.pct * 100)}%)</li>`
+      )
+      .join("");
+    return `
+      <div class="weak-callout">
+        ${ICON_ALERT}
+        <div>
+          <div class="weak-callout-title">You did poorest on:</div>
+          <ul class="weak-callout-list">${rows}</ul>
+        </div>
+      </div>`;
+  }
+
   function categoryBreakdownHTML() {
     const cats = computeCategoryBreakdown();
     if (!cats.length) return "";
@@ -1560,15 +1879,17 @@
       : "";
 
     let tagline;
-    if (pct >= 0.85) tagline = "Elite work — you're in perfect-score territory. 🎯";
+    if (pct >= 0.85) tagline = "Elite work — you're in perfect-score territory.";
     else if (pct >= 0.7) tagline = "Strong performance. A little polish and you're there.";
     else if (pct >= 0.5) tagline = "Solid foundation — target the misses below.";
     else tagline = "Good start. Review the explanations and run it back.";
 
+    const weakCalloutHTML = isDiagnostic ? weakestSectionCalloutHTML(computeCategoryBreakdown()) : "";
+
     const streakBannerHTML = `
       <button class="results-streak" data-nav="social">
-        🔥 <b>${displayStreak(loadStreak())}</b> day streak
-        · 📝 <b>${loadTodayQuestionCount()}</b> questions answered today
+        ${ICON_FLAME} <b>${displayStreak(loadStreak())}</b> day streak
+        · ${ICON_NOTE} <b>${loadTodayQuestionCount()}</b> questions answered today
         <span class="results-streak-link">View streak →</span>
       </button>`;
 
@@ -1591,6 +1912,8 @@
         <h2>${tagline}</h2>
         <p class="tagline">You answered ${correct} of ${total} questions correctly.</p>
       </div>
+
+      ${weakCalloutHTML}
 
       ${streakBannerHTML}
 
@@ -1812,6 +2135,10 @@
   const ICON_LOCK = `<svg class="badge-medal-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
   const ICON_CLIPBOARD = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`;
   const ICON_CLIPBOARD_CHECK = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>`;
+  const ICON_NOTE = `<svg class="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>`;
+  const ICON_ALERT = `<svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>`;
+  const ICON_GRADCAP = `<svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>`;
+  const ICON_CHAT = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
 
   function medalIcon(size, color) {
     return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
@@ -1889,14 +2216,14 @@
       ${guestBannerHTML()}
       <div class="streak-grid">
         <div class="streak-card">
-          <div class="streak-icon">🔥</div>
+          <div class="streak-icon">${ICON_FLAME}</div>
           <div class="streak-num">${current}</div>
           <div class="streak-label">Day streak</div>
           <div class="streak-best">Best: ${streak.best || 0} day${streak.best === 1 ? "" : "s"}</div>
           <div class="cal-row">${weekHTML(streak)}</div>
         </div>
         <div class="streak-card">
-          <div class="streak-icon">📝</div>
+          <div class="streak-icon">${ICON_NOTE}</div>
           <div class="streak-num">${todayCount}</div>
           <div class="streak-label">Questions answered today</div>
           <div class="streak-best">${todayCount > 0 ? "Nice work — keep it up!" : "Answer a question to extend your streak"}</div>
@@ -2035,8 +2362,17 @@
   function afterAuthChange() {
     renderProfileToggle();
     renderProfileMenu();
+    updateLessonsNavBadge();
     if (!screens.social.classList.contains("hidden")) renderSocial();
     if (!screens.badges.classList.contains("hidden")) renderBadges();
+    if (!screens.lessons.classList.contains("hidden")) renderLessons();
+  }
+
+  // Shows the "PRO" tag next to the Lessons nav link for anyone who hasn't
+  // upgraded yet; hides it once they have.
+  function updateLessonsNavBadge() {
+    const badge = document.getElementById("lessonsProBadge");
+    if (badge) badge.classList.toggle("hidden", !!(window.Auth && window.Auth.isPremium()));
   }
 
   // ---- Stats persistence ----
@@ -2078,6 +2414,7 @@
         else if (nav === "bank") renderBank();
         else if (nav === "studyPlan") renderStudyPlan();
         else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
+        else if (nav === "lessons") { state.activeLesson = null; state.lessonChatLog = []; renderLessons(); }
         else renderSocial();
         show(nav);
         closeProfileMenu();
@@ -2087,6 +2424,29 @@
       if (domainBtn) {
         startModule(domainBtn.dataset.domainModule, domainBtn.dataset.domainPractice);
         closeProfileMenu();
+        return;
+      }
+      const lessonBtn = e.target.closest("[data-lesson-domain]");
+      if (lessonBtn) {
+        state.lessonChatLog = [];
+        openLesson(lessonBtn.dataset.lessonDomain, lessonBtn.dataset.lessonSkill);
+        show("lessons");
+        closeProfileMenu();
+        return;
+      }
+      if (e.target.closest("[data-lesson-back]")) {
+        state.activeLesson = null;
+        state.lessonChatLog = [];
+        renderLessons();
+        return;
+      }
+      const practiceSkillBtn = e.target.closest("[data-practice-skill]");
+      if (practiceSkillBtn) {
+        startSkillPractice(
+          practiceSkillBtn.dataset.practiceModule,
+          practiceSkillBtn.dataset.practiceDomain,
+          practiceSkillBtn.dataset.practiceSkill
+        );
         return;
       }
       if (e.target.closest("[data-home]")) {
@@ -2104,6 +2464,10 @@
         } else if (action === "edit-goal") {
           dashGoalEditing = true;
           renderDashboard();
+        } else if (action === "upgrade-premium") {
+          window.Auth.upgradeToPremium();
+          afterAuthChange();
+          renderLessons();
         }
         return;
       }
@@ -2117,13 +2481,22 @@
       if (!e.target.closest(".profile-wrap")) closeProfileMenu();
     });
     document.addEventListener("submit", (e) => {
-      if (e.target.id !== "dashGoalForm") return;
-      e.preventDefault();
-      const input = document.getElementById("dashGoalInput");
-      const val = Math.round(Number(input.value) / 10) * 10;
-      if (val >= 400 && val <= 1600) saveGoal(val);
-      dashGoalEditing = false;
-      renderDashboard();
+      if (e.target.id === "dashGoalForm") {
+        e.preventDefault();
+        const input = document.getElementById("dashGoalInput");
+        const val = Math.round(Number(input.value) / 10) * 10;
+        if (val >= 400 && val <= 1600) saveGoal(val);
+        dashGoalEditing = false;
+        renderDashboard();
+        return;
+      }
+      if (e.target.id === "lessonChatForm") {
+        e.preventDefault();
+        const input = document.getElementById("lessonChatInput");
+        sendLessonChatMessage(input.value);
+        input.value = "";
+        return;
+      }
     });
     document.getElementById("nextBtn").addEventListener("click", next);
     document.getElementById("prevBtn").addEventListener("click", prev);
@@ -2147,6 +2520,44 @@
       document.getElementById("eliminateBtn").classList.toggle("active", state.eliminating);
       document.getElementById("choices")?.classList.toggle("eliminating", state.eliminating);
     });
+
+    const calcPanel = document.getElementById("calcPanel");
+    const calcBtn = document.getElementById("calculatorBtn");
+    const calcFrame = document.getElementById("calcFrame");
+    calcBtn.addEventListener("click", () => {
+      const opening = calcPanel.classList.contains("hidden");
+      if (opening && !calcFrame.src) calcFrame.src = "https://www.desmos.com/calculator";
+      calcPanel.classList.toggle("hidden", !opening);
+      calcBtn.classList.toggle("active", opening);
+    });
+    document.getElementById("calcPanelClose").addEventListener("click", closeCalculatorPanel);
+
+    // Drag the calculator panel by its header, like a floating window.
+    (function () {
+      const header = document.getElementById("calcPanelHeader");
+      let dragging = false, startX = 0, startY = 0, startLeft = 0, startTop = 0;
+      header.addEventListener("mousedown", (e) => {
+        dragging = true;
+        const rect = calcPanel.getBoundingClientRect();
+        startX = e.clientX;
+        startY = e.clientY;
+        startLeft = rect.left;
+        startTop = rect.top;
+        calcPanel.style.right = "auto";
+        document.body.style.userSelect = "none";
+      });
+      document.addEventListener("mousemove", (e) => {
+        if (!dragging) return;
+        const maxLeft = window.innerWidth - calcPanel.offsetWidth;
+        const maxTop = window.innerHeight - calcPanel.offsetHeight;
+        calcPanel.style.left = `${Math.min(Math.max(0, startLeft + e.clientX - startX), maxLeft)}px`;
+        calcPanel.style.top = `${Math.min(Math.max(0, startTop + e.clientY - startY), maxTop)}px`;
+      });
+      document.addEventListener("mouseup", () => {
+        dragging = false;
+        document.body.style.userSelect = "";
+      });
+    })();
     const confirmModal = document.getElementById("confirmModal");
     const confirmTitle = document.getElementById("confirmTitle");
     const confirmText = document.getElementById("confirmText");
@@ -2223,6 +2634,7 @@
 
     renderProfileToggle();
     renderProfileMenu();
+    updateLessonsNavBadge();
   }
 
   document.addEventListener("DOMContentLoaded", init);

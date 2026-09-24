@@ -64,9 +64,9 @@
     const users = loadUsers();
     if (users[email]) return { ok: false, error: "An account with that email already exists." };
     const displayName = (name || "").trim() || email.split("@")[0];
-    users[email] = { name: displayName, passwordHash: await hashPassword(password), provider: "email" };
+    users[email] = { name: displayName, passwordHash: await hashPassword(password), provider: "email", plan: "free" };
     saveUsers(users);
-    const user = { email, name: displayName, provider: "email" };
+    const user = { email, name: displayName, provider: "email", plan: "free" };
     setSession(user);
     return { ok: true, user };
   }
@@ -80,7 +80,7 @@
     }
     const hash = await hashPassword(password || "");
     if (hash !== record.passwordHash) return { ok: false, error: "Incorrect password." };
-    const user = { email, name: record.name, provider: "email" };
+    const user = { email, name: record.name, provider: "email", plan: record.plan || "free" };
     setSession(user);
     return { ok: true, user };
   }
@@ -93,12 +93,32 @@
     const email = `${slug}@demo.google`;
     const users = loadUsers();
     if (!users[email]) {
-      users[email] = { name: displayName, provider: "google-demo" };
+      users[email] = { name: displayName, provider: "google-demo", plan: "free" };
       saveUsers(users);
     }
-    const user = { email, name: users[email].name, provider: "google-demo" };
+    const user = { email, name: users[email].name, provider: "google-demo", plan: users[email].plan || "free" };
     setSession(user);
     return { ok: true, user };
+  }
+
+  // Demo stand-in for a real upgrade flow (Stripe checkout, etc.) — just
+  // flips the current user's plan locally. No payment is collected.
+  function upgradeToPremium() {
+    const user = getCurrentUser();
+    if (!user) return { ok: false, error: "Log in first." };
+    const users = loadUsers();
+    if (users[user.email]) {
+      users[user.email].plan = "premium";
+      saveUsers(users);
+    }
+    const updated = { ...user, plan: "premium" };
+    setSession(updated);
+    return { ok: true, user: updated };
+  }
+
+  function isPremium() {
+    const user = getCurrentUser();
+    return !!user && user.plan === "premium";
   }
 
   function signOut() {
@@ -120,5 +140,7 @@
     getCurrentUser,
     onChange,
     isValidEmail,
+    upgradeToPremium,
+    isPremium,
   };
 })();
