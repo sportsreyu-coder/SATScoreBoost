@@ -31,8 +31,9 @@
     bankDifficulty: new Set(), // selected difficulty filters (1/2/3); empty = show all
     domainFilter: null,   // set when practicing a single domain from the Study Plan
     skillFilter: null,    // set when practicing a single skill from a Lesson
-    activeLesson: null,   // { domain, skill } of the lesson currently open, or null for the list view
+    activeLesson: null,   // { domain, index } of the lesson currently open, or null for the list view
     lessonChatLog: [],    // transient {from, text} messages for the active lesson's AI Tutor panel
+    game: null,           // "math-blitz" | "vocab-rush" | "word-match" | null (which game is on screen)
   };
 
   // ---- Question Bank categories ----
@@ -140,6 +141,7 @@
     badges: document.getElementById("badges"),
     studyPlan: document.getElementById("studyPlan"),
     lessons: document.getElementById("lessons"),
+    games: document.getElementById("games"),
   };
 
   function show(name) {
@@ -152,7 +154,9 @@
     document.getElementById("bankNavBtn").classList.toggle("active", name === "bank");
     document.getElementById("dashboardNavBtn").classList.toggle("active", name === "dashboard");
     document.getElementById("lessonsNavBtn").classList.toggle("active", name === "lessons");
+    document.getElementById("gamesNavBtn").classList.toggle("active", name === "games");
     if (name !== "exam") closeCalculatorPanel();
+    if (name !== "games") stopActiveGame();
     window.scrollTo(0, 0);
   }
 
@@ -1107,13 +1111,16 @@
   // otherwise that domain's first available lesson.
   function findLessonTopic(domain, preferredSkill) {
     const group = LESSONS.find((g) => g.domain === domain);
-    if (!group || !group.topics.length) return null;
+    if (!group || !group.lessons.length) return null;
+    const premium = !!(window.Auth && window.Auth.isPremium());
+    const accessible = (l) => l.tier === "free" || premium;
     if (preferredSkill) {
-      const match = group.topics.find((t) => t.skill === preferredSkill);
-      if (match) return { domain, skill: match.skill };
+      const matches = group.lessons.filter((l) => l.skill === preferredSkill);
+      const best = matches.find(accessible) || matches[0];
+      if (best) return { domain, index: group.lessons.indexOf(best) };
     }
-    const ready = group.topics.find((t) => t.ready);
-    return { domain, skill: (ready || group.topics[0]).skill };
+    const freeIdx = group.lessons.findIndex((l) => l.tier === "free");
+    return { domain, index: freeIdx >= 0 ? freeIdx : 0 };
   }
 
   function renderStudyPlan() {
@@ -1147,7 +1154,7 @@
           : "";
       const lesson = findLessonTopic(c.domain, c.missedSkills && c.missedSkills[0]);
       const learnBtn = lesson
-        ? `<button class="btn btn-ghost btn-small" data-lesson-domain="${escapeHtml(lesson.domain)}" data-lesson-skill="${escapeHtml(lesson.skill)}">Learn →</button>`
+        ? `<button class="btn btn-ghost btn-small" data-lesson-domain="${escapeHtml(lesson.domain)}" data-lesson-index="${lesson.index}">Learn →</button>`
         : "";
       return `
         <div class="plan-card ${tier}">
@@ -1215,59 +1222,53 @@
     return QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill).length;
   }
 
-  function openLesson(domain, skill) {
-    state.activeLesson = { domain, skill };
+  function openLesson(domain, index) {
+    state.activeLesson = { domain, index };
+    state.lessonChatLog = [];
     renderLessons();
   }
 
+  // Every domain has one free lesson plus three Pro lessons — the tab itself
+  // is always open (no full-page paywall); individual Pro lessons show a
+  // locked card with an upgrade prompt instead of their content.
   function renderLessons() {
     const user = window.Auth && window.Auth.getCurrentUser();
-    const premium = window.Auth && window.Auth.isPremium();
+    const premium = !!(window.Auth && window.Auth.isPremium());
     const el = document.getElementById("lessons");
 
-    if (!premium) {
-      el.innerHTML = `
-        <div class="lessons-paywall">
-          <div class="lessons-paywall-icon">${ICON_GRADCAP}</div>
-          <span class="eyebrow">Lessons · Premium</span>
-          <h2>In-depth lessons for every SAT topic</h2>
-          <p>
-            Go beyond practice questions with a written lesson for every College Board domain and
-            skill — key concepts, a worked example, and the mistakes students actually make — plus
-            an AI Tutor to ask about anything you're stuck on.
-          </p>
-          <ul class="lessons-paywall-list">
-            <li>${ICON_GRADCAP} A lesson for every domain and skill on the digital SAT</li>
-            <li>${ICON_CHAT} AI Tutor chat inside every lesson</li>
-            <li>${ICON_BOOK} One tap from any lesson straight into matching practice questions</li>
-          </ul>
+    if (state.activeLesson) {
+      renderLessonDetail(state.activeLesson.domain, state.activeLesson.index);
+      return;
+    }
+
+    const upsellHTML = premium
+      ? ""
+      : `
+        <div class="lessons-upsell-banner">
+          ${ICON_GRADCAP}
+          <div class="lessons-upsell-text">
+            <div class="lessons-upsell-title">Every topic includes one free lesson</div>
+            <div class="lessons-upsell-sub">Premium unlocks 3 more per topic — the deeper dives and sub-lessons.</div>
+          </div>
           ${
             user
-              ? `<button class="btn btn-primary" data-action="upgrade-premium">Upgrade to Premium →</button>
-                 <p class="lessons-paywall-note">Demo upgrade — no payment required. Real billing is coming soon.</p>`
-              : `<button class="btn btn-primary" data-action="open-auth">Log in to upgrade →</button>`
+              ? `<button class="btn btn-primary btn-sm" data-action="upgrade-premium">Upgrade →</button>`
+              : `<button class="btn btn-primary btn-sm" data-action="open-auth">Log in →</button>`
           }
         </div>`;
-      return;
-    }
-
-    if (state.activeLesson) {
-      renderLessonDetail(state.activeLesson.domain, state.activeLesson.skill);
-      return;
-    }
 
     const domainGroup = (group) => {
-      const chips = group.topics
-        .map((t) => {
-          const count = skillQuestionCount(group.module, group.domain, t.skill);
-          if (t.ready) {
-            return `<button class="lesson-chip ready" data-lesson-domain="${escapeHtml(group.domain)}" data-lesson-skill="${escapeHtml(t.skill)}">
-              <span>${t.skill}</span><span class="lesson-chip-cta">Open lesson →</span>
-            </button>`;
-          }
-          return `<div class="lesson-chip soon" title="${count} practice question${count === 1 ? "" : "s"} available">
-            <span>${t.skill}</span><span class="lesson-chip-tag">Coming soon</span>
-          </div>`;
+      const chips = group.lessons
+        .map((l, i) => {
+          const locked = l.tier === "pro" && !premium;
+          const tagHTML =
+            l.tier === "free"
+              ? `<span class="lesson-chip-tag free">Free</span>`
+              : `<span class="lesson-chip-tag pro ${locked ? "locked" : ""}">${locked ? ICON_LOCK_SM : ""}Pro</span>`;
+          return `<button class="lesson-chip ${locked ? "locked" : "ready"}" data-lesson-domain="${escapeHtml(group.domain)}" data-lesson-index="${i}">
+            <span>${escapeHtml(l.title)}</span>
+            <span class="lesson-chip-right">${tagHTML}${locked ? "" : `<span class="lesson-chip-cta">Open lesson →</span>`}</span>
+          </button>`;
         })
         .join("");
       return `
@@ -1283,7 +1284,9 @@
     el.innerHTML = `
       <span class="eyebrow">Lessons</span>
       <h1 class="section-title">Learn every topic on the digital SAT</h1>
-      <p class="section-sub">Pick a skill to read the lesson, then jump straight into matching practice questions.</p>
+      <p class="section-sub">Pick a lesson to read it, then jump straight into matching practice questions.</p>
+
+      ${upsellHTML}
 
       <div class="lessons-subject">
         <h2>${ICON_BOOK} Reading &amp; Writing</h2>
@@ -1296,64 +1299,79 @@
     `;
   }
 
-  function renderLessonDetail(domain, skill) {
+  function renderLessonDetail(domain, index) {
     const group = LESSONS.find((g) => g.domain === domain);
-    const topic = group && group.topics.find((t) => t.skill === skill);
+    const lesson = group && group.lessons[index];
     const el = document.getElementById("lessons");
-    if (!group || !topic) {
+    if (!group || !lesson) {
       state.activeLesson = null;
       renderLessons();
       return;
     }
 
+    const premium = !!(window.Auth && window.Auth.isPremium());
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const locked = lesson.tier === "pro" && !premium;
+    const skill = lesson.skill;
     const count = skillQuestionCount(group.module, domain, skill);
+
+    if (locked) {
+      el.innerHTML = `
+        <button class="lesson-back" data-lesson-back>← Back to Lessons</button>
+        <span class="eyebrow">${domain}</span>
+        <h1 class="section-title">${escapeHtml(lesson.title)}</h1>
+        <div class="lesson-locked-card">
+          ${ICON_GRADCAP}
+          <h2>This lesson is part of ScoreBoost Pro</h2>
+          <p>Unlock this lesson plus the other Pro lessons in every topic — deeper dives and sub-lessons beyond the free basics.</p>
+          ${
+            user
+              ? `<button class="btn btn-primary" data-action="upgrade-premium">Upgrade to Premium →</button>
+                 <p class="lessons-paywall-note">Demo upgrade — no payment required. Real billing is coming soon.</p>`
+              : `<button class="btn btn-primary" data-action="open-auth">Log in to upgrade →</button>`
+          }
+        </div>
+      `;
+      return;
+    }
+
     const practiceBtnHTML = count
       ? `<button class="btn btn-primary" data-practice-skill="${escapeHtml(skill)}" data-practice-domain="${escapeHtml(domain)}" data-practice-module="${group.module}">Practice this skill (${count}) →</button>`
       : "";
 
-    let bodyHTML;
-    if (topic.ready) {
-      const c = topic.content;
-      const conceptsHTML = c.concepts.map((x) => `<li>${x}</li>`).join("");
-      const mistakesHTML = c.mistakes.map((x) => `<li>${x}</li>`).join("");
-      const letters = ["A", "B", "C", "D"];
-      const choicesHTML = c.example.choices
-        .map(
-          (choice, i) =>
-            `<li class="${i === c.example.correctIndex ? "correct" : ""}">
-              <span class="ex-letter">${letters[i]}</span>${choice}${i === c.example.correctIndex ? " ✓" : ""}
-            </li>`
-        )
-        .join("");
-      bodyHTML = `
-        <p class="lesson-summary">${c.summary}</p>
+    const c = lesson.content;
+    const conceptsHTML = c.concepts.map((x) => `<li>${x}</li>`).join("");
+    const mistakesHTML = c.mistakes.map((x) => `<li>${x}</li>`).join("");
+    const letters = ["A", "B", "C", "D"];
+    const choicesHTML = c.example.choices
+      .map(
+        (choice, i) =>
+          `<li class="${i === c.example.correctIndex ? "correct" : ""}">
+            <span class="ex-letter">${letters[i]}</span>${choice}${i === c.example.correctIndex ? " ✓" : ""}
+          </li>`
+      )
+      .join("");
+    const bodyHTML = `
+      <p class="lesson-summary">${c.summary}</p>
 
-        <h3>Key concepts</h3>
-        <ul class="lesson-list">${conceptsHTML}</ul>
+      <h3>Key concepts</h3>
+      <ul class="lesson-list">${conceptsHTML}</ul>
 
-        <h3>Worked example</h3>
-        <div class="lesson-example">
-          <p class="ex-prompt">${c.example.prompt}</p>
-          <ul class="ex-choices">${choicesHTML}</ul>
-          <p class="ex-walkthrough">${c.example.walkthrough}</p>
-        </div>
+      <h3>Worked example</h3>
+      <div class="lesson-example">
+        <p class="ex-prompt">${c.example.prompt.replace(/\n/g, "<br>")}</p>
+        <ul class="ex-choices">${choicesHTML}</ul>
+        <p class="ex-walkthrough">${c.example.walkthrough}</p>
+      </div>
 
-        <h3>Common mistakes</h3>
-        <ul class="lesson-list">${mistakesHTML}</ul>
-      `;
-    } else {
-      bodyHTML = `
-        <div class="lesson-soon-card">
-          ${ICON_GRADCAP}
-          <p>We're still writing the full lesson for this skill. In the meantime, jump straight into real practice questions below.</p>
-        </div>
-      `;
-    }
+      <h3>Common mistakes</h3>
+      <ul class="lesson-list">${mistakesHTML}</ul>
+    `;
 
     el.innerHTML = `
       <button class="lesson-back" data-lesson-back>← Back to Lessons</button>
-      <span class="eyebrow">${domain}</span>
-      <h1 class="section-title">${skill}</h1>
+      <span class="eyebrow">${domain}${lesson.tier === "pro" ? ` · <span class="lesson-pro-tag">Pro</span>` : ""}</span>
+      <h1 class="section-title">${escapeHtml(lesson.title)}</h1>
       ${bodyHTML}
       <div class="results-actions lesson-actions">${practiceBtnHTML}</div>
       ${lessonChatHTML()}
@@ -1397,6 +1415,325 @@
       });
       renderLessons();
     }, 500);
+  }
+
+  // ---- Games ----
+  const GAME_BLITZ_SECONDS = 60;
+  const GAME_BEST_KEY = "sat_game_best"; // {mathBlitz, vocabRush, wordMatchMoves}
+
+  // A small curated SAT-vocabulary list for the Word Match memory game —
+  // standalone word/definition pairs, distinct from the question bank.
+  const VOCAB_WORDS = [
+    { word: "Ambiguous", def: "Open to more than one interpretation" },
+    { word: "Candid", def: "Direct and honest, even if blunt" },
+    { word: "Diligent", def: "Showing careful, persistent effort" },
+    { word: "Eloquent", def: "Fluent and persuasive in speech or writing" },
+    { word: "Frugal", def: "Careful with money; not wasteful" },
+    { word: "Gregarious", def: "Fond of company; sociable" },
+    { word: "Impartial", def: "Treating all sides equally; unbiased" },
+    { word: "Meticulous", def: "Showing great attention to detail" },
+    { word: "Novel", def: "New and original; not seen before" },
+    { word: "Pragmatic", def: "Dealing with things sensibly and realistically" },
+    { word: "Skeptical", def: "Not easily convinced; having doubts" },
+    { word: "Tenacious", def: "Persistent; not easily giving up" },
+  ];
+
+  function loadGameBest() {
+    try {
+      const raw = progressStore().getItem(progressKey(GAME_BEST_KEY));
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveGameBest(key, value, higherIsBetter) {
+    try {
+      const best = loadGameBest();
+      const current = best[key];
+      const better = current === undefined || (higherIsBetter ? value > current : value < current);
+      if (better) {
+        best[key] = value;
+        progressStore().setItem(progressKey(GAME_BEST_KEY), JSON.stringify(best));
+      }
+      return better;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Stops any running game timer — called whenever navigation leaves the
+  // Games screen (or switches between games) so intervals never leak.
+  function stopActiveGame() {
+    if (state.gameTimer) clearInterval(state.gameTimer);
+    state.gameTimer = null;
+    state.game = null;
+  }
+
+  function renderGamesHub() {
+    const best = loadGameBest();
+    const el = document.getElementById("games");
+    const card = (id, icon, title, blurb, bestLabel) => `
+      <div class="game-card" data-game-start="${id}">
+        <div class="game-card-icon">${icon}</div>
+        <h3>${title}</h3>
+        <p>${blurb}</p>
+        <div class="game-card-foot">
+          <span class="game-card-best">${bestLabel}</span>
+          <span class="game-card-play">Play →</span>
+        </div>
+      </div>`;
+
+    el.innerHTML = `
+      <span class="eyebrow">Games</span>
+      <h1 class="section-title">Take a break, keep sharpening</h1>
+      <p class="section-sub">Quick, replayable games built from real SAT content — good for a five-minute study break.</p>
+      <div class="game-grid">
+        ${card(
+          "math-blitz",
+          ICON_CALCULATOR,
+          "Math Blitz",
+          "Answer as many math questions as you can before the clock runs out. Chain correct answers for a combo bonus.",
+          best.mathBlitz ? `Best: ${best.mathBlitz} pts` : "No best score yet"
+        )}
+        ${card(
+          "vocab-rush",
+          ICON_BOOK,
+          "Vocab Rush",
+          "A 60-second sprint through Words-in-Context blanks. Same combo scoring, all vocabulary.",
+          best.vocabRush ? `Best: ${best.vocabRush} pts` : "No best score yet"
+        )}
+        ${card(
+          "word-match",
+          ICON_GRADCAP,
+          "Word Match",
+          "A memory game pairing SAT vocabulary words with their definitions. Fewer moves is better.",
+          best.wordMatchMoves ? `Best: ${best.wordMatchMoves} moves` : "No best score yet"
+        )}
+      </div>
+    `;
+  }
+
+  // ---- Games: Math Blitz / Vocab Rush (shared timed multiple-choice engine) ----
+  function startBlitzGame(kind) {
+    const filter =
+      kind === "math-blitz"
+        ? (q) => q.module === "math"
+        : (q) => q.module === "rw" && q.skill === "Words in Context";
+    let pool = shuffle(QUESTIONS.filter(filter)).map(shuffleChoices);
+    if (!pool.length) return;
+
+    state.game = kind;
+    state.gamePool = pool;
+    state.gameQIndex = 0;
+    state.gameScore = 0;
+    state.gameCombo = 0;
+    state.gameBestCombo = 0;
+    state.gameCorrect = 0;
+    state.gameTotal = 0;
+    state.gameLocked = false;
+    state.gameTimeLeft = GAME_BLITZ_SECONDS;
+
+    renderBlitzQuestion();
+    clearInterval(state.gameTimer);
+    state.gameTimer = setInterval(() => {
+      state.gameTimeLeft--;
+      const timeEl = document.getElementById("gameTimeLeft");
+      if (timeEl) {
+        timeEl.textContent = state.gameTimeLeft;
+        timeEl.classList.toggle("low", state.gameTimeLeft <= 10);
+      }
+      if (state.gameTimeLeft <= 0) endBlitzGame();
+    }, 1000);
+  }
+
+  function blitzTitle(kind) {
+    return kind === "math-blitz" ? "Math Blitz" : "Vocab Rush";
+  }
+
+  function renderBlitzQuestion() {
+    const el = document.getElementById("games");
+    if (state.gameQIndex >= state.gamePool.length) {
+      state.gamePool = shuffle(state.gamePool).map(shuffleChoices);
+      state.gameQIndex = 0;
+    }
+    const q = state.gamePool[state.gameQIndex];
+    const letters = ["A", "B", "C", "D"];
+    const choicesHTML = q.choices
+      .map(
+        (c, ci) =>
+          `<div class="choice-row">
+            <button class="choice" data-game-choice="${ci}">
+              <span class="letter">${letters[ci]}</span>
+              <span class="ctext">${c}</span>
+            </button>
+          </div>`
+      )
+      .join("");
+
+    el.innerHTML = `
+      <div class="game-hud">
+        <button class="game-quit" data-game-quit>← Quit</button>
+        <div class="game-hud-stats">
+          <span class="game-stat">${ICON_FLAME} <span id="gameCombo">${state.gameCombo}</span> combo</span>
+          <span class="game-stat">${state.gameScore} pts</span>
+          <span class="game-stat game-timer" id="gameTimeLeft">${state.gameTimeLeft}</span>
+        </div>
+      </div>
+      <div class="game-title">${blitzTitle(state.game)}</div>
+      ${q.passage ? `<div class="passage">${q.passage}</div>` : ""}
+      <div class="prompt game-prompt">${q.prompt.replace(/\n/g, "<br>")}</div>
+      <div class="choices" id="gameChoices">${choicesHTML}</div>
+    `;
+  }
+
+  function answerBlitz(choiceIndex) {
+    if (state.gameLocked || !state.game) return;
+    const q = state.gamePool[state.gameQIndex];
+    const ok = choiceIndex === q.answer;
+    state.gameLocked = true;
+    state.gameTotal++;
+
+    const buttons = document.querySelectorAll("#gameChoices .choice");
+    buttons.forEach((b) => {
+      const ci = Number(b.dataset.gameChoice);
+      if (ci === q.answer) b.classList.add("correct");
+      else if (ci === choiceIndex) b.classList.add("incorrect");
+    });
+
+    if (ok) {
+      state.gameCorrect++;
+      state.gameCombo++;
+      state.gameBestCombo = Math.max(state.gameBestCombo, state.gameCombo);
+      state.gameScore += 10 + Math.min(state.gameCombo - 1, 5) * 5;
+    } else {
+      state.gameCombo = 0;
+    }
+
+    setTimeout(() => {
+      if (!state.game) return; // quit or timer ended mid-flash
+      state.gameQIndex++;
+      state.gameLocked = false;
+      renderBlitzQuestion();
+    }, 500);
+  }
+
+  function endBlitzGame() {
+    clearInterval(state.gameTimer);
+    state.gameTimer = null;
+    const kind = state.game;
+    const key = kind === "math-blitz" ? "mathBlitz" : "vocabRush";
+    const isBest = saveGameBest(key, state.gameScore, true);
+    state.game = null;
+
+    const el = document.getElementById("games");
+    el.innerHTML = `
+      <div class="game-result">
+        <span class="eyebrow">${blitzTitle(kind)} — time's up</span>
+        <h2>${state.gameScore} points</h2>
+        ${isBest ? `<p class="game-result-best">New best score! ${ICON_FLAME}</p>` : ""}
+        <div class="game-result-stats">
+          <div class="bd-card"><div class="v">${state.gameCorrect}</div><div class="l">Correct</div></div>
+          <div class="bd-card"><div class="v">${state.gameTotal - state.gameCorrect}</div><div class="l">Missed</div></div>
+          <div class="bd-card"><div class="v">${state.gameBestCombo}</div><div class="l">Best combo</div></div>
+        </div>
+        <div class="results-actions">
+          <button class="btn btn-primary" data-game-start="${kind}">Play again →</button>
+          <button class="btn btn-ghost" data-nav="games">Back to Games</button>
+        </div>
+      </div>
+    `;
+  }
+
+  // ---- Games: Word Match (memory game) ----
+  function startWordMatch() {
+    state.game = "word-match";
+    const pairs = shuffle(VOCAB_WORDS).slice(0, 8);
+    const cards = [];
+    pairs.forEach((p, i) => {
+      cards.push({ pairId: i, kind: "word", text: p.word, flipped: false, matched: false });
+      cards.push({ pairId: i, kind: "def", text: p.def, flipped: false, matched: false });
+    });
+    state.memoryCards = shuffle(cards);
+    state.memoryFirstIndex = null;
+    state.memoryMoves = 0;
+    state.memoryBusy = false;
+    renderWordMatch();
+  }
+
+  function renderWordMatch() {
+    const el = document.getElementById("games");
+    const matchedCount = state.memoryCards.filter((c) => c.matched).length;
+    const won = matchedCount === state.memoryCards.length;
+
+    const cardsHTML = state.memoryCards
+      .map((c, i) => {
+        const classes = ["memory-card"];
+        if (c.flipped || c.matched) classes.push("flipped");
+        if (c.matched) classes.push("matched");
+        return `
+          <button class="${classes.join(" ")}" data-memory-card="${i}" ${c.matched ? "disabled" : ""}>
+            <span class="memory-card-face memory-card-back">?</span>
+            <span class="memory-card-face memory-card-front ${c.kind}">${c.text}</span>
+          </button>`;
+      })
+      .join("");
+
+    const moveLabel = `${state.memoryMoves} move${state.memoryMoves === 1 ? "" : "s"}`;
+    const wonBanner = won
+      ? `<div class="game-result-best game-result-inline">You matched every pair in ${moveLabel}! ${ICON_FLAME}</div>`
+      : "";
+
+    el.innerHTML = `
+      <div class="game-hud">
+        <button class="game-quit" data-game-quit>← Quit</button>
+        <div class="game-hud-stats">
+          <span class="game-stat">${moveLabel}</span>
+          <span class="game-stat">${matchedCount / 2}/${state.memoryCards.length / 2} pairs</span>
+        </div>
+      </div>
+      <div class="game-title">Word Match</div>
+      ${wonBanner}
+      <div class="memory-grid">${cardsHTML}</div>
+      <div class="results-actions">
+        <button class="btn btn-ghost" data-game-start="word-match">New game</button>
+      </div>
+    `;
+
+    if (won) saveGameBest("wordMatchMoves", state.memoryMoves, false);
+  }
+
+  function flipMemoryCard(index) {
+    if (state.memoryBusy) return;
+    const card = state.memoryCards[index];
+    if (!card || card.flipped || card.matched) return;
+
+    card.flipped = true;
+
+    if (state.memoryFirstIndex === null) {
+      state.memoryFirstIndex = index;
+      renderWordMatch();
+      return;
+    }
+
+    state.memoryMoves++;
+    const first = state.memoryCards[state.memoryFirstIndex];
+    if (first.pairId === card.pairId && first.kind !== card.kind) {
+      first.matched = true;
+      card.matched = true;
+      state.memoryFirstIndex = null;
+      renderWordMatch();
+    } else {
+      state.memoryBusy = true;
+      renderWordMatch();
+      setTimeout(() => {
+        first.flipped = false;
+        card.flipped = false;
+        state.memoryFirstIndex = null;
+        state.memoryBusy = false;
+        renderWordMatch();
+      }, 700);
+    }
   }
 
   // ---- Dashboard ----
@@ -2134,6 +2471,7 @@
   const ICON_QUESTION = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>`;
   const ICON_FLAME = `<svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`;
   const ICON_LOCK = `<svg class="badge-medal-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+  const ICON_LOCK_SM = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
   const ICON_CLIPBOARD = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`;
   const ICON_CLIPBOARD_CHECK = `<svg class="quest-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>`;
   const ICON_NOTE = `<svg class="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>`;
@@ -2416,6 +2754,7 @@
         else if (nav === "studyPlan") renderStudyPlan();
         else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
         else if (nav === "lessons") { state.activeLesson = null; state.lessonChatLog = []; renderLessons(); }
+        else if (nav === "games") { stopActiveGame(); renderGamesHub(); }
         else renderSocial();
         show(nav);
         closeProfileMenu();
@@ -2429,8 +2768,7 @@
       }
       const lessonBtn = e.target.closest("[data-lesson-domain]");
       if (lessonBtn) {
-        state.lessonChatLog = [];
-        openLesson(lessonBtn.dataset.lessonDomain, lessonBtn.dataset.lessonSkill);
+        openLesson(lessonBtn.dataset.lessonDomain, Number(lessonBtn.dataset.lessonIndex));
         show("lessons");
         closeProfileMenu();
         return;
@@ -2448,6 +2786,29 @@
           practiceSkillBtn.dataset.practiceDomain,
           practiceSkillBtn.dataset.practiceSkill
         );
+        return;
+      }
+      const gameStartBtn = e.target.closest("[data-game-start]");
+      if (gameStartBtn) {
+        stopActiveGame();
+        const kind = gameStartBtn.dataset.gameStart;
+        if (kind === "word-match") startWordMatch();
+        else startBlitzGame(kind);
+        return;
+      }
+      const gameChoiceBtn = e.target.closest("[data-game-choice]");
+      if (gameChoiceBtn) {
+        answerBlitz(Number(gameChoiceBtn.dataset.gameChoice));
+        return;
+      }
+      const memoryCardBtn = e.target.closest("[data-memory-card]");
+      if (memoryCardBtn) {
+        flipMemoryCard(Number(memoryCardBtn.dataset.memoryCard));
+        return;
+      }
+      if (e.target.closest("[data-game-quit]")) {
+        stopActiveGame();
+        renderGamesHub();
         return;
       }
       if (e.target.closest("[data-home]")) {
