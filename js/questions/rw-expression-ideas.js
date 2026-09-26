@@ -430,5 +430,141 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Choice A directly describes the specific resting behavior (holding hands) requested by the prompt.",
+  },
+  {
+    id: "ei-26",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The bridge was closed for repairs for six months. ______ , traffic congestion in the downtown area noticeably worsened.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["As a result,", "However,", "For instance,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The closure caused the congestion, so a result/consequence transition is needed: 'As a result.'",
+  },
+  {
+    id: "ei-27",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Octopuses have three hearts.\n• Two hearts pump blood to the gills.\n• One heart pumps blood to the rest of the body.",
+    prompt:
+      "The student wants to specify how many hearts octopuses have. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Octopuses have three hearts: two that pump blood to the gills and one that pumps blood to the rest of the body.",
+      "Octopuses are known for their unusual circulatory systems.",
+      "Blood is pumped differently in octopuses than in most animals.",
+      "Octopuses have gills that allow them to breathe underwater.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A states the specific number of hearts (three) and their functions, directly accomplishing the stated goal.",
+  },
+  {
+    id: "ei-28",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The novelist rarely gives interviews. ______ whenever she does speak publicly, journalists scrutinize every word.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Consequently,", "Nevertheless,", "Similarly,", "For example,"],
+    answer: 0,
+    explanation:
+      "Her rarely speaking publicly is the cause of the intense scrutiny when she does — a consequence relationship, signaled by 'Consequently.'",
+  },
+  {
+    id: "ei-29",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• City A implemented a bike-share program in 2015; ridership reached 2 million trips per year by 2020.\n• City B implemented a similar program in 2016; ridership reached 800,000 trips per year by 2020.\n• Both cities have similar populations and climates.",
+    prompt:
+      "The student wants to highlight a key difference in outcomes between the two cities' programs. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Despite similar populations and climates, City A's bike-share program achieved far higher ridership than City B's by 2020.",
+      "Both cities launched bike-share programs in the mid-2010s.",
+      "City A and City B have similar populations and climates.",
+      "City B's program began one year after City A's.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A both highlights the ridership gap (2 million vs. 800,000) and uses the similar-conditions detail to show the difference isn't explained by population or climate.",
+  },
+  {
+    id: "ei-30",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "Proponents argue that the new tax would primarily affect large corporations. ______ , an independent analysis found that over 60% of the tax's burden would ultimately fall on consumers through higher prices.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["However,", "Similarly,", "In addition,", "Specifically,"],
+    answer: 0,
+    explanation:
+      "The independent analysis contradicts the proponents' claim, so a contrast transition, 'However,' is required.",
+  },
+  {
+    id: "ei-31",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• A city replaced its streetlights with LED bulbs in 2018.\n• Energy costs for street lighting fell by 40% over the next two years.\n• Some residents complained the new lights were too bright.",
+    prompt:
+      "The student wants to acknowledge both a benefit and a drawback of the streetlight replacement. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Although the LED streetlights cut energy costs by 40% within two years, some residents found them uncomfortably bright.",
+      "The city replaced its streetlights with LED bulbs in 2018.",
+      "Energy costs for street lighting fell significantly after 2018.",
+      "Some residents were unhappy with the new streetlights.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A combines both the benefit (lower energy costs) and the drawback (complaints about brightness) that the prompt asks for.",
+  },
+  {
+    id: "ei-32",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The committee reviewed dozens of proposals before selecting a finalist. ______ , the selected proposal still required several rounds of revision before approval.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even so,", "Therefore,", "For example,", "Moreover,"],
+    answer: 0,
+    explanation:
+      "Despite being chosen as the finalist, the proposal still needed revision — a concession relationship signaled by 'Even so.'",
+  },
+  {
+    id: "ei-33",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Venus rotates in the opposite direction from most planets in the solar system.\n• A day on Venus is longer than its year.\n• Scientists are unsure exactly why Venus's rotation is reversed.",
+    prompt:
+      "The student wants to emphasize how unusual Venus's rotation is compared to other planets. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Unlike most planets in the solar system, Venus rotates in the opposite direction, a mystery scientists have yet to fully explain.",
+      "Venus is the second planet from the sun.",
+      "A day on Venus lasts longer than a Venusian year.",
+      "Scientists continue to study the planets in the solar system.",
+    ],
+    answer: 0,
+    explanation:
+      "Choice A directly emphasizes the unusual reversed rotation and its unexplained cause, matching the student's stated goal.",
   }
 );

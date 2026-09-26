@@ -28,6 +28,7 @@
     categoryLabel: null,  // set when practicing a single Question Bank category
     categoryDomain: null, // the domain string, so "retry" can restart the same category
     bankTab: "math",      // "math" | "rw" — which Question Bank subject tab is showing
+    lessonsTab: "rw",     // "rw" | "math" — which Lessons subject tab is showing
     bankDifficulty: new Set(), // selected difficulty filters (1/2/3); empty = show all
     domainFilter: null,   // set when practicing a single domain from the Study Plan
     skillFilter: null,    // set when practicing a single skill from a Lesson
@@ -101,6 +102,80 @@
   const QUESTION_TIERS = [10, 50, 100, 500, 1000];
   const STREAK_TIERS = [3, 7, 30, 100, 365];
 
+  // ---- Battle Pass ----
+  // Brawl Stars-style two-lane pass: spends the same lifetime XP that
+  // quests already pay into (see XP_KEY below) as levels on a reward
+  // track. Every level costs the same amount of XP and unlocks a Free
+  // reward automatically; the Premium lane needs both the level AND a
+  // Pro upgrade to actually claim. Rewards below are placeholders until
+  // real ones are set up.
+  const BATTLE_PASS_XP_PER_LEVEL = 100;
+  const BATTLE_PASS_FREE_REWARDS = [
+    "Rising Scholar title",
+    "Streak sticker",
+    "Dashboard theme: Slate",
+    "Answer-review flair",
+    { milestone: true, label: "Bronze profile frame" },
+    "Focused Learner title",
+    "Math whiz sticker",
+    "Grammar guardian sticker",
+    "Reading ace sticker",
+    { milestone: true, label: "Silver profile frame" },
+    "Consistent Closer title",
+    "Data cruncher sticker",
+    "Speedrunner sticker",
+    "Dashboard theme: Forest",
+    { milestone: true, label: "Gold profile frame" },
+    "Top of the Class title",
+    "Perfect streak sticker",
+    "Vocabulary victor sticker",
+    "Dashboard theme: Midnight",
+    { milestone: true, label: "Platinum profile frame" },
+    "Marathon Mind title",
+    "Precision player sticker",
+    "Early bird sticker",
+    "Dashboard theme: Sunrise",
+    { milestone: true, label: "Diamond profile frame" },
+    "Night owl title",
+    "Comeback kid sticker",
+    "Century club sticker",
+    "Dashboard theme: Chalkboard",
+    { milestone: true, label: "Champion profile frame" },
+  ];
+  const BATTLE_PASS_PREMIUM_REWARDS = [
+    "Exclusive title: Pass Starter",
+    "Gold streak sticker",
+    "Premium dashboard theme: Aurora",
+    "Bonus XP token",
+    { milestone: true, label: "Exclusive frame: Vanguard" },
+    "Exclusive title: Overachiever",
+    "Premium sticker pack: Math Elite",
+    "Premium sticker pack: Verbal Elite",
+    "Bonus XP token",
+    { milestone: true, label: "Exclusive frame: Luminary" },
+    "Exclusive title: Relentless",
+    "Premium sticker: Iron Focus",
+    "Premium dashboard theme: Nebula",
+    "Bonus XP token",
+    { milestone: true, label: "Exclusive frame: Paragon" },
+    "Exclusive title: Score Chaser",
+    "Premium sticker: Flawless Run",
+    "Premium dashboard theme: Ember",
+    "Bonus XP token",
+    { milestone: true, label: "Exclusive frame: Sovereign" },
+    "Exclusive title: Elite Scholar",
+    "Premium sticker: Unstoppable",
+    "Premium dashboard theme: Glacier",
+    "Bonus XP token",
+    { milestone: true, label: "Exclusive frame: Mythic" },
+    "Exclusive title: Grandmaster",
+    "Premium sticker: Perfectionist",
+    "Premium dashboard theme: Solstice",
+    "Bonus XP token",
+    { milestone: true, label: "Exclusive frame: Legend" },
+  ];
+  const BATTLE_PASS_MAX_LEVEL = BATTLE_PASS_FREE_REWARDS.length;
+
   const FULL_DIAG_INDEX_KEY = "sat_full_diag_index"; // last full-diagnostic index
   const BREAK_SECONDS = 600; // 10-minute break between RW and Math, like the real SAT
   // Real digital SAT per-module structure and timing.
@@ -139,6 +214,7 @@
     results: document.getElementById("results"),
     social: document.getElementById("social"),
     badges: document.getElementById("badges"),
+    battlepass: document.getElementById("battlepass"),
     studyPlan: document.getElementById("studyPlan"),
     lessons: document.getElementById("lessons"),
     games: document.getElementById("games"),
@@ -1278,8 +1354,7 @@
         </div>`;
     };
 
-    const rw = LESSONS.filter((g) => g.module === "rw");
-    const math = LESSONS.filter((g) => g.module === "math");
+    const groups = LESSONS.filter((g) => g.module === state.lessonsTab);
 
     el.innerHTML = `
       <span class="eyebrow">Lessons</span>
@@ -1288,15 +1363,24 @@
 
       ${upsellHTML}
 
-      <div class="lessons-subject">
-        <h2>${ICON_BOOK} Reading &amp; Writing</h2>
-        <div class="lessons-domains">${rw.map(domainGroup).join("")}</div>
+      <div class="bank-tabs">
+        <button class="bank-tab ${state.lessonsTab === "rw" ? "active" : ""}" data-lessons-tab="rw">
+          ${ICON_BOOK} Reading &amp; Writing
+        </button>
+        <button class="bank-tab ${state.lessonsTab === "math" ? "active" : ""}" data-lessons-tab="math">
+          ${ICON_CALCULATOR} Math
+        </button>
       </div>
-      <div class="lessons-subject">
-        <h2>${ICON_CALCULATOR} Math</h2>
-        <div class="lessons-domains">${math.map(domainGroup).join("")}</div>
-      </div>
+
+      <div class="lessons-domains">${groups.map(domainGroup).join("")}</div>
     `;
+
+    document.querySelectorAll("[data-lessons-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.lessonsTab = btn.dataset.lessonsTab;
+        renderLessons();
+      });
+    });
   }
 
   function renderLessonDetail(domain, index) {
@@ -2023,6 +2107,129 @@
     if (changed) markQuestsAwardedToday(awarded);
   }
 
+  // Turns lifetime XP into a Battle Pass level (capped at the reward
+  // track's length) plus progress toward the next level.
+  function battlePassProgress(xp) {
+    const level = Math.min(BATTLE_PASS_MAX_LEVEL, Math.floor(xp / BATTLE_PASS_XP_PER_LEVEL) + 1);
+    const xpIntoLevel = xp - (level - 1) * BATTLE_PASS_XP_PER_LEVEL;
+    const maxed = level >= BATTLE_PASS_MAX_LEVEL;
+    return {
+      level,
+      xpIntoLevel: maxed ? BATTLE_PASS_XP_PER_LEVEL : xpIntoLevel,
+      xpForNext: BATTLE_PASS_XP_PER_LEVEL,
+      progressPct: maxed ? 100 : Math.round((xpIntoLevel / BATTLE_PASS_XP_PER_LEVEL) * 100),
+      maxed,
+    };
+  }
+
+  function rewardLabel(reward) {
+    return typeof reward === "string" ? reward : reward.label;
+  }
+
+  // One reward slot in a tier column. Free rewards only need the level;
+  // Premium rewards need the level AND a Pro upgrade, so a reached-but-
+  // not-purchased tier renders as "pending" instead of fully unlocked.
+  function bpSlotHTML(lane, reward, levelReached, claimable) {
+    const milestone = typeof reward === "object" && reward.milestone;
+    const state = claimable ? "unlocked" : levelReached ? "pending" : "locked";
+    const icon = state === "unlocked" ? ICON_GIFT : ICON_LOCK_SM;
+    return `
+      <div class="bp-slot ${lane} ${state} ${milestone ? "milestone" : ""}">
+        <div class="bp-slot-icon">${icon}</div>
+        <div class="bp-slot-label">${rewardLabel(reward)}</div>
+      </div>`;
+  }
+
+  function renderBattlePass() {
+    const xp = loadXP();
+    const progress = battlePassProgress(xp);
+    const premium = !!(window.Auth && window.Auth.isPremium());
+    const user = window.Auth && window.Auth.getCurrentUser();
+
+    const upsellHTML = premium
+      ? ""
+      : `
+        <div class="lessons-upsell-banner bp-upsell">
+          ${ICON_TROPHY}
+          <div class="lessons-upsell-text">
+            <div class="lessons-upsell-title">Unlock the Premium lane</div>
+            <div class="lessons-upsell-sub">Every tier you level also has an exclusive Premium reward — upgrade to claim them as you go.</div>
+          </div>
+          ${
+            user
+              ? `<button class="btn btn-primary btn-sm" data-action="upgrade-premium">Upgrade →</button>`
+              : `<button class="btn btn-primary btn-sm" data-action="open-auth">Log in →</button>`
+          }
+        </div>`;
+
+    const previewHTML = progress.maxed
+      ? ""
+      : `
+        <div class="bp-preview-row">
+          <div class="bp-preview-card premium">
+            <div class="bp-preview-tag">Premium · Tier ${progress.level + 1}</div>
+            <div class="bp-preview-body">${ICON_GIFT}<span>${rewardLabel(BATTLE_PASS_PREMIUM_REWARDS[progress.level])}</span></div>
+          </div>
+          <div class="bp-preview-card free">
+            <div class="bp-preview-tag">Free · Tier ${progress.level + 1}</div>
+            <div class="bp-preview-body">${ICON_GIFT}<span>${rewardLabel(BATTLE_PASS_FREE_REWARDS[progress.level])}</span></div>
+          </div>
+        </div>`;
+
+    const trackHTML = BATTLE_PASS_FREE_REWARDS.map((freeReward, i) => {
+      const level = i + 1;
+      const levelReached = level <= progress.level;
+      const current = level === progress.level && !progress.maxed;
+      const premiumReward = BATTLE_PASS_PREMIUM_REWARDS[i];
+      return `
+        <div class="bp-tier-col ${current ? "current" : ""}">
+          ${bpSlotHTML("premium", premiumReward, levelReached, levelReached && premium)}
+          <div class="bp-tier-node ${levelReached ? "unlocked" : ""}">${level}</div>
+          ${bpSlotHTML("free", freeReward, levelReached, levelReached)}
+        </div>`;
+    }).join("");
+
+    document.getElementById("battlepass").innerHTML = `
+      <div class="bp-season-eyebrow">Season 1</div>
+      <h1 class="section-title">Battle Pass</h1>
+      <p class="section-sub">Earn XP from Today's Quests to level up — every tier unlocks a Free reward, plus a Premium one once you've upgraded.</p>
+      ${guestBannerHTML()}
+      ${upsellHTML}
+      <div class="bp-header">
+        <div class="bp-level-badge">${ICON_TROPHY}<span>Level ${progress.level}</span></div>
+        <div class="bp-header-progress">
+          <div class="badge-progress"><div class="badge-progress-bar" style="width:${progress.progressPct}%"></div></div>
+          <div class="badge-next">${
+            progress.maxed
+              ? "Season complete — more rewards coming soon."
+              : `${progress.xpForNext - progress.xpIntoLevel} XP to Level ${progress.level + 1}`
+          }</div>
+        </div>
+        <div class="bp-xp-total">${xp} XP total</div>
+      </div>
+      ${previewHTML}
+      <div class="bp-lane-labels">
+        <span class="bp-lane-label premium">${ICON_TROPHY} Premium</span>
+        <span class="bp-lane-label free">Free</span>
+      </div>
+      <div class="bp-track-wrap"><div class="bp-track">${trackHTML}</div></div>
+      <div class="results-actions">
+        <button class="btn btn-primary" data-nav="dashboard">Earn more XP →</button>
+        <button class="btn btn-ghost" data-home>Back to Home</button>
+      </div>
+    `;
+
+    // Deferred a frame because this runs before show() un-hides the
+    // section, so the track has no layout (and thus no scroll width) yet.
+    requestAnimationFrame(() => {
+      const trackWrap = document.querySelector("#battlepass .bp-track-wrap");
+      const currentCol = document.querySelector("#battlepass .bp-tier-col.current");
+      if (trackWrap && currentCol) {
+        trackWrap.scrollLeft = Math.max(0, currentCol.offsetLeft - trackWrap.clientWidth / 2 + currentCol.clientWidth / 2);
+      }
+    });
+  }
+
   // Lifetime accuracy, longest correct-answer streak, and answer/session
   // counts for the Dashboard's stats row.
   function computeDashboardStats() {
@@ -2054,6 +2261,7 @@
     payOutCompletedQuests(quests);
     const stats = computeDashboardStats();
     const xp = loadXP();
+    const bpProgress = battlePassProgress(xp);
 
     const goalCardHTML = dashGoalEditing
       ? `
@@ -2119,6 +2327,16 @@
         </div>
         <div class="quest-list">${questHTML}</div>
       </div>
+      <button type="button" class="dash-bp-card" data-nav="battlepass">
+        <div class="bp-level-badge">${ICON_TROPHY}<span>Level ${bpProgress.level}</span></div>
+        <div class="bp-header-progress">
+          <div class="badge-progress"><div class="badge-progress-bar" style="width:${bpProgress.progressPct}%"></div></div>
+          <div class="badge-next">${
+            bpProgress.maxed ? "Max level reached" : `${bpProgress.xpForNext - bpProgress.xpIntoLevel} XP to Level ${bpProgress.level + 1}`
+          }</div>
+        </div>
+        <span class="dash-bp-link">View Battle Pass →</span>
+      </button>
       <div class="dash-section">
         <h3>Your weakest areas</h3>
         ${weakestHTML}
@@ -2643,6 +2861,18 @@
       <circle cx="12" cy="9" r="5" />
       <path d="M9 13.5 7 21l5-3 5 3-2-7.5" />
     </svg>`;
+  const ICON_TROPHY = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M8 21h8" /><path d="M12 17v4" />
+      <path d="M7 4h10v5a5 5 0 0 1-10 0z" />
+      <path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4" />
+      <path d="M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4" />
+    </svg>`;
+  const ICON_GIFT = `
+    <svg class="badge-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="8" width="18" height="4" rx="1" /><path d="M12 8v13" /><path d="M19 12v7a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7" />
+      <path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5" />
+    </svg>`;
 
   function renderProfileMenu() {
     const user = window.Auth && window.Auth.getCurrentUser();
@@ -2662,6 +2892,7 @@
       ${userHTML}
       <button class="profile-menu-item" data-nav="social">Streak &amp; Stats ${ICON_FIRE}</button>
       <button class="profile-menu-item" data-nav="badges">Badges ${ICON_BADGE}</button>
+      <button class="profile-menu-item" data-nav="battlepass">Battle Pass ${ICON_TROPHY}</button>
       <div class="profile-divider"></div>
       ${logoutHTML}
     `;
@@ -2704,6 +2935,7 @@
     updateLessonsNavBadge();
     if (!screens.social.classList.contains("hidden")) renderSocial();
     if (!screens.badges.classList.contains("hidden")) renderBadges();
+    if (!screens.battlepass.classList.contains("hidden")) renderBattlePass();
     if (!screens.lessons.classList.contains("hidden")) renderLessons();
   }
 
@@ -2750,6 +2982,7 @@
       if (navBtn) {
         const nav = navBtn.dataset.nav;
         if (nav === "badges") renderBadges();
+        else if (nav === "battlepass") renderBattlePass();
         else if (nav === "bank") renderBank();
         else if (nav === "studyPlan") renderStudyPlan();
         else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
@@ -2970,16 +3203,19 @@
       closeAuthModal();
       afterAuthChange();
     });
-    document.getElementById("googleDemoBtn").addEventListener("click", () => {
-      const name = window.prompt(
-        "Demo Google Sign-In\n\nThis stands in for real Google auth (coming soon). Enter a display name to continue:",
-        "Demo User"
-      );
-      if (name === null) return;
-      const result = window.Auth.signInWithGoogleDemo(name);
-      if (result.ok) {
-        closeAuthModal();
-        afterAuthChange();
+    document.getElementById("googleSignInBtn").addEventListener("click", async () => {
+      const errorEl = document.getElementById("authError");
+      const googleBtn = document.getElementById("googleSignInBtn");
+      errorEl.classList.add("hidden");
+      googleBtn.disabled = true;
+      const result = await window.Auth.signInWithGoogle();
+      googleBtn.disabled = false;
+      // On success the page is already navigating to Google's consent
+      // screen; this only returns early (with an error) if that couldn't
+      // even start, e.g. the provider isn't enabled in Supabase yet.
+      if (!result.ok) {
+        errorEl.textContent = result.error;
+        errorEl.classList.remove("hidden");
       }
     });
 
@@ -2997,6 +3233,11 @@
     renderProfileToggle();
     renderProfileMenu();
     updateLessonsNavBadge();
+
+    // Google sign-in resolves asynchronously (Supabase adopts the session
+    // after the redirect back, or on a later visit) — this is the only
+    // subscriber, and it's what makes that update actually show up in the UI.
+    if (window.Auth && window.Auth.onChange) window.Auth.onChange(afterAuthChange);
   }
 
   document.addEventListener("DOMContentLoaded", init);

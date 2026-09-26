@@ -286,5 +286,103 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "The original edge length is 3 (since 3³ = 27). Doubling gives an edge of 6, so the new volume is 6³ = 216.",
+  },
+  {
+    id: "geo-26",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Circles",
+    difficulty: 3,
+    prompt: "A circle in the xy-plane has equation x² + y² − 6x + 8y = 0. What is the radius of the circle?",
+    choices: ["5", "25", "3", "4"],
+    answer: 0,
+    explanation:
+      "Completing the square: (x² − 6x + 9) + (y² + 8y + 16) = 9 + 16 → (x − 3)² + (y + 4)² = 25, so r² = 25 and r = 5.",
+  },
+  {
+    id: "geo-27",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Right triangle trigonometry",
+    difficulty: 3,
+    prompt:
+      "In a right triangle, one angle measures 30° and the side opposite that angle has length 5. What is the length of the hypotenuse?",
+    choices: ["10", "5√3", "15", "20"],
+    answer: 0,
+    explanation: "sin(30°) = opposite/hypotenuse = 5/hyp, and sin(30°) = 0.5, so hyp = 5/0.5 = 10.",
+  },
+  {
+    id: "geo-28",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Similar triangles",
+    difficulty: 3,
+    prompt:
+      "Triangle ABC is similar to triangle DEF, with a scale factor of 3/2 from DEF to ABC. If the area of triangle DEF is 16, what is the area of triangle ABC?",
+    choices: ["36", "24", "32", "48"],
+    answer: 0,
+    explanation:
+      "Area scales by the square of the linear scale factor: (3/2)² = 9/4. So the area of ABC is 16 × 9/4 = 36.",
+  },
+  {
+    id: "geo-29",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Special right triangles",
+    difficulty: 3,
+    prompt: "The diagonal of a square has length 8√2. What is the area of the square?",
+    choices: ["64", "32", "128", "16"],
+    answer: 0,
+    explanation:
+      "For a square with side s, the diagonal equals s√2. So s√2 = 8√2 → s = 8, and the area is s² = 64.",
+  },
+  {
+    id: "geo-30",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Triangle angles",
+    difficulty: 2,
+    prompt:
+      "In triangle ABC, angle A measures 50° and angle B measures 70°. What is the measure of the exterior angle at vertex C?",
+    choices: ["120°", "60°", "110°", "130°"],
+    answer: 0,
+    explanation:
+      "The interior angle at C is 180° − 50° − 70° = 60°, so the exterior angle is 180° − 60° = 120° (equivalently, the sum of the two remote interior angles, 50° + 70°).",
+  },
+  {
+    id: "geo-31",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Lines and angles",
+    difficulty: 2,
+    prompt:
+      "Two parallel lines are cut by a transversal. One angle formed measures 65°. What is the measure of its corresponding angle?",
+    choices: ["65°", "115°", "25°", "155°"],
+    answer: 0,
+    explanation: "Corresponding angles formed by a transversal crossing parallel lines are always equal.",
+  },
+  {
+    id: "geo-32",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Right triangles",
+    difficulty: 3,
+    prompt:
+      "A ladder 13 feet long leans against a wall, with its base 5 feet from the wall. How many feet up the wall does the ladder reach?",
+    choices: ["12", "11", "10", "13"],
+    answer: 0,
+    explanation:
+      "By the Pythagorean theorem: height = √(13² − 5²) = √(169 − 25) = √144 = 12 (a 5-12-13 right triangle).",
+  },
+  {
+    id: "geo-33",
+    module: "math",
+    domain: "Geometry and Trigonometry",
+    skill: "Coordinate geometry",
+    difficulty: 2,
+    prompt: "What is the midpoint of the segment with endpoints (−2, 5) and (6, −1)?",
+    choices: ["(2, 2)", "(4, 4)", "(2, 3)", "(−2, 2)"],
+    answer: 0,
+    explanation: "Midpoint = ((−2 + 6)/2, (5 + (−1))/2) = (4/2, 4/2) = (2, 2).",
   }
 );

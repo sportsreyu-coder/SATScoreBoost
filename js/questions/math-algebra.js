@@ -298,5 +298,102 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Let a + c = 5 and 12a + 8c = 52. Substituting c = 5 − a: 12a + 8(5 − a) = 52 → 4a = 12 → a = 3.",
+  },
+  {
+    id: "alg-26",
+    module: "math",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    difficulty: 3,
+    prompt: "If 3x − 2y = 12 and x + y = 9, what is the value of xy?",
+    choices: ["18", "27", "15", "12"],
+    answer: 0,
+    explanation:
+      "From x + y = 9, y = 9 − x. Substituting: 3x − 2(9 − x) = 12 → 5x = 30 → x = 6, so y = 3. Then xy = 18.",
+  },
+  {
+    id: "alg-27",
+    module: "math",
+    domain: "Algebra",
+    skill: "Word problems",
+    difficulty: 3,
+    prompt:
+      "The sum of two numbers is 42. The larger number is 2 more than 3 times the smaller number. What is the larger number?",
+    choices: ["32", "10", "36", "28"],
+    answer: 0,
+    explanation:
+      "Let the smaller number be x, so the larger is 3x + 2. Then x + (3x + 2) = 42 → 4x = 40 → x = 10, and the larger number is 3(10) + 2 = 32.",
+  },
+  {
+    id: "alg-28",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: 3,
+    prompt:
+      "A phone plan charges a flat monthly fee plus a constant rate per minute of calls. A 40-minute call costs $14, and a 70-minute call costs $20. What is the flat monthly fee?",
+    choices: ["$6", "$8", "$4", "$10"],
+    answer: 0,
+    explanation:
+      "The rate per minute is (20 − 14)/(70 − 40) = 6/30 = $0.20. Using the 40-minute call: 14 = fee + 0.20(40) = fee + 8, so the fee is $6.",
+  },
+  {
+    id: "alg-29",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in two variables",
+    difficulty: 2,
+    prompt: "If 2x + 3y ≤ 18 and x = 3, what is the maximum possible value of y?",
+    choices: ["4", "6", "3", "5"],
+    answer: 0,
+    explanation: "Substituting x = 3: 6 + 3y ≤ 18 → 3y ≤ 12 → y ≤ 4, so the maximum value of y is 4.",
+  },
+  {
+    id: "alg-30",
+    module: "math",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    difficulty: 3,
+    prompt:
+      "For what value of k does the system of equations 2x + 3y = 6 and 4x + ky = 10 have no solution?",
+    choices: ["6", "5", "8", "12"],
+    answer: 0,
+    explanation:
+      "A system has no solution when the lines are parallel but distinct: the coefficient ratios must match while the constant ratio differs. Setting 2/4 = 3/k gives k = 6; since 6/10 ≠ 2/4, the lines are parallel and distinct.",
+  },
+  {
+    id: "alg-31",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    difficulty: 2,
+    prompt: "The equation 5x − 2y = 20 is graphed in the xy-plane. What is the x-intercept of the graph?",
+    choices: ["4", "10", "−4", "20"],
+    answer: 0,
+    explanation: "The x-intercept occurs where y = 0: 5x = 20 → x = 4.",
+  },
+  {
+    id: "alg-32",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in one variable",
+    difficulty: 2,
+    prompt: "What is the largest integer value of x that satisfies −4x + 9 > −11?",
+    choices: ["4", "5", "3", "−4"],
+    answer: 0,
+    explanation:
+      "−4x + 9 > −11 → −4x > −20 → x < 5 (the inequality flips when dividing by a negative number). The largest integer less than 5 is 4.",
+  },
+  {
+    id: "alg-33",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: 3,
+    prompt: "Line ℓ has an x-intercept of 4 and a y-intercept of −8. What is the slope of line ℓ?",
+    choices: ["2", "−2", "1/2", "−1/2"],
+    answer: 0,
+    explanation:
+      "The line passes through (4, 0) and (0, −8). Slope = (0 − (−8)) / (4 − 0) = 8/4 = 2.",
   }
 );

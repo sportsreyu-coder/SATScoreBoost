@@ -357,5 +357,122 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "When comparing exactly two things, the comparative form 'more' is required rather than the superlative 'most,' which is used for three or more.",
+  },
+  {
+    id: "conv-26",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The storm knocked out power across the county______residents relied on generators for nearly a week.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " ", " and, "],
+    answer: 0,
+    explanation:
+      "Two independent clauses ('The storm knocked out power...' and 'residents relied on generators...') must be joined with a semicolon (or a comma plus conjunction); only the semicolon is offered correctly here.",
+  },
+  {
+    id: "conv-27",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The committee, along with its three advisors,______meeting every Thursday afternoon.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["holds", "hold", "holding", "have held"],
+    answer: 0,
+    explanation:
+      "'Along with its three advisors' is a parenthetical phrase, not part of the subject. The true subject is the singular 'committee,' which requires the singular verb 'holds.'",
+  },
+  {
+    id: "conv-28",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Having rehearsed the presentation a dozen times______the intern still felt nervous walking into the boardroom.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " and "],
+    answer: 0,
+    explanation:
+      "An introductory participial phrase ('Having rehearsed...times') must be separated from the main clause with a comma.",
+  },
+  {
+    id: "conv-29",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The city council recommended that the new ordinance______before the next fiscal year begins.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["take effect", "takes effect", "will take effect", "taking effect"],
+    answer: 0,
+    explanation:
+      "'Recommended that' triggers the subjunctive mood, which uses the base form of the verb ('take effect') regardless of the subject's number.",
+  },
+  {
+    id: "conv-30",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "Only the applicants______submitted every required document were invited to interview.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["who", "who, ", ", who", ", who,"],
+    answer: 0,
+    explanation:
+      "The clause 'who submitted every required document' is essential (restrictive) to identifying which applicants are meant, so it takes no surrounding commas.",
+  },
+  {
+    id: "conv-31",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The workshop teaches participants not only how to write persuasive essays but also______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [
+      "how to revise them effectively",
+      "effective revision techniques being taught",
+      "how effective revision is",
+      "revising them is effective",
+    ],
+    answer: 0,
+    explanation:
+      "'Not only...but also' requires parallel structure. Since the first part is 'how to write persuasive essays,' the second part must match that form: 'how to revise them effectively.'",
+  },
+  {
+    id: "conv-32",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The recipe calls for three ingredients______flour, sugar, and butter.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list that follows a complete independent clause ('The recipe calls for three ingredients').",
+  },
+  {
+    id: "conv-33",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Neither the manager nor the employees______aware of the policy change until the memo arrived.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "In 'neither...nor' constructions, the verb agrees with the nearer subject. Since 'employees' (plural) is nearer, the plural verb 'were' is correct.",
   }
 );

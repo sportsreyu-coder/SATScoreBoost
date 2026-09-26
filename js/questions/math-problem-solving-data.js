@@ -335,5 +335,115 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "A random sample drawn from the entire employee roster is representative of the whole population, unlike the biased methods in the other choices.",
+  },
+  {
+    id: "pd-26",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 3,
+    prompt:
+      "A scatterplot shows a linear relationship between hours studied (x) and exam score (y), modeled by y = 55 + 4x. Based on this model, how many additional hours of studying are needed to raise a predicted score from 75 to 91?",
+    choices: ["4", "5", "9", "16"],
+    answer: 0,
+    explanation:
+      "Solving 75 = 55 + 4x gives x = 5; solving 91 = 55 + 4x gives x = 9. The additional hours needed is 9 − 5 = 4.",
+  },
+  {
+    id: "pd-27",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 3,
+    prompt:
+      "A survey of 200 students found that 120 play a sport and 80 play an instrument, with 30 students doing both. What is the probability that a randomly selected student who plays a sport also plays an instrument?",
+    choices: ["1/4", "3/20", "1/6", "2/5"],
+    answer: 0,
+    explanation:
+      "This is a conditional probability: P(instrument | sport) = (students who do both) / (students who play a sport) = 30/120 = 1/4.",
+  },
+  {
+    id: "pd-28",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 3,
+    prompt: "A data set has a mean of 50 and a standard deviation of 4. Which value is exactly 2 standard deviations above the mean?",
+    choices: ["58", "54", "46", "62"],
+    answer: 0,
+    explanation: "2 standard deviations above the mean is 50 + 2(4) = 58.",
+  },
+  {
+    id: "pd-29",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 3,
+    prompt:
+      "A factory produces widgets at a constant rate. If it produces 450 widgets in 6 hours, how many widgets does it produce in 1 minute?",
+    choices: ["1.25", "0.75", "1.5", "2"],
+    answer: 0,
+    explanation: "The rate is 450/6 = 75 widgets per hour, and 75/60 = 1.25 widgets per minute.",
+  },
+  {
+    id: "pd-30",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 2,
+    prompt:
+      "A map has a scale of 1 inch to 15 miles. If two cities are 4.5 inches apart on the map, how many miles apart are they in reality?",
+    choices: ["67.5", "60", "75", "54"],
+    answer: 0,
+    explanation: "4.5 inches × 15 miles per inch = 67.5 miles.",
+  },
+  {
+    id: "pd-31",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 3,
+    prompt:
+      "A random sample of 50 voters from a city found that 60% support a proposed measure, with a margin of error of 5 percentage points. Which is the most reasonable conclusion?",
+    choices: [
+      "Between about 55% and 65% of all city voters likely support the measure.",
+      "Exactly 60% of all city voters support the measure.",
+      "Fewer than half of all city voters support the measure.",
+      "The sample is too small to draw any conclusion.",
+    ],
+    answer: 0,
+    explanation:
+      "A margin of error defines a plausible range around the sample estimate: 60% ± 5 percentage points gives an interval of about 55% to 65% for the full population.",
+  },
+  {
+    id: "pd-32",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 2,
+    prompt:
+      "A store increases the price of an item by 20% and then applies a 20% discount to the new price. Compared to the original price, the final price is:",
+    choices: [
+      "4% less than the original price",
+      "The same as the original price",
+      "4% more than the original price",
+      "20% less than the original price",
+    ],
+    answer: 0,
+    explanation:
+      "Multiplying by 1.20 then 0.80 gives an overall factor of 0.96, which is 4% less than the original price.",
+  },
+  {
+    id: "pd-33",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 3,
+    prompt:
+      "A line of best fit for a data set is given by y = 3x + 2. If the actual y-value for x = 5 is 20, what is the residual?",
+    choices: ["3", "−3", "17", "20"],
+    answer: 0,
+    explanation:
+      "The predicted value is 3(5) + 2 = 17. The residual is actual minus predicted: 20 − 17 = 3.",
   }
 );

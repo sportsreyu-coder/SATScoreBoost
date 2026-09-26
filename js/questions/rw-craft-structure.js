@@ -402,5 +402,142 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Researcher B's null result differs from Researcher A's positive result, but the passage notes B's smaller sample size, a detail that qualifies rather than fully undermines the comparison.",
+  },
+  {
+    id: "cs-26",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "The critic praised the film's ______ pacing, noting that not a single scene felt rushed or drawn out.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["measured", "erratic", "frantic", "careless"],
+    answer: 0,
+    explanation:
+      "The pacing is described as never feeling 'rushed or drawn out,' meaning it was carefully controlled — 'measured' captures that balance.",
+  },
+  {
+    id: "cs-27",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "The article opens by describing a single beekeeper's declining honey yields, then broadens to examine regional pollinator population data, and finally proposes several conservation policies.",
+    prompt: "Which choice best describes the overall structure of the text?",
+    choices: [
+      "It moves from a specific example to broader evidence to proposed solutions.",
+      "It presents two competing theories and evaluates each in turn.",
+      "It begins with a general policy proposal and ends with a specific anecdote.",
+      "It compares beekeeping practices in two different countries.",
+    ],
+    answer: 0,
+    explanation:
+      "The text follows a clear progression: one beekeeper's story, then regional data, then policy proposals — moving from specific to general to solution-oriented.",
+  },
+  {
+    id: "cs-28",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Despite the coach's ______ demeanor during practice, players said she became remarkably calm and focused once a game actually began.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["intense", "relaxed", "indifferent", "calm"],
+    answer: 0,
+    explanation:
+      "'Despite' signals a contrast with the calm, focused demeanor described in games, so her practice demeanor must be the opposite — 'intense.'",
+  },
+  {
+    id: "cs-29",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Urban economist A argues that rising downtown rents are driven primarily by increased demand from remote workers seeking city amenities without daily commutes.\n\nText 2: Urban economist B argues that rising downtown rents are driven primarily by restrictive zoning laws that have limited new housing construction for decades, regardless of recent shifts in work patterns.",
+    prompt: "Which choice best describes how Economist B would likely respond to Economist A's argument?",
+    choices: [
+      "B would contend that zoning restrictions, not recent remote-work trends, are the more fundamental cause of rising rents.",
+      "B would agree entirely that remote work is the primary driver of rent increases.",
+      "B would argue that rents have not actually increased in most cities.",
+      "B would claim that zoning laws were only recently enacted.",
+    ],
+    answer: 0,
+    explanation:
+      "Economist B attributes the trend to long-standing zoning restrictions 'regardless of recent shifts in work patterns,' directly countering A's remote-work explanation.",
+  },
+  {
+    id: "cs-30",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "A profile of a retired engineer begins with an extended account of a bridge collapse she witnessed as a child, an event she says first drew her to structural engineering. The piece then details her decades-long career, and closes by returning to a bridge — this time one she designed — noting the echo between the two structures without stating it directly.",
+    prompt: "Which choice best describes how the closing paragraph functions in the text as a whole?",
+    choices: [
+      "It creates a deliberate parallel with the opening anecdote, implicitly connecting her early experience to her later achievement.",
+      "It introduces a new critique of the engineer's design choices.",
+      "It shifts the focus entirely away from bridges to her personal life.",
+      "It contradicts the claim made in the opening paragraph.",
+    ],
+    answer: 0,
+    explanation:
+      "The closing paragraph revisits the bridge imagery from the opening 'without stating it directly,' which is a structural echo linking her origin story to her career, matching choice A.",
+  },
+  {
+    id: "cs-31",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Rather than refuting her colleague's data outright, the scientist offered a more ______ critique, suggesting the sample size was too small to support such a broad conclusion.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["measured", "scathing", "dismissive", "hostile"],
+    answer: 0,
+    explanation:
+      "'Rather than refuting...outright' signals a restrained approach, contrasted with the harsher tone implied by the other options — 'measured' fits a careful, moderate critique.",
+  },
+  {
+    id: "cs-32",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: A film critic argues that a director's use of long, uninterrupted takes creates a sense of realism that quick editing cannot match.\n\nText 2: A film editor counters that skillful editing can create an even stronger illusion of continuous time than an actual unbroken take, since editing lets a director remove imperfections.",
+    prompt: "Which choice best describes the relationship between the two texts?",
+    choices: [
+      "Text 2 challenges the assumption in Text 1 that long takes are inherently more effective at conveying realism.",
+      "Text 2 fully agrees with the claim made in Text 1.",
+      "Text 1 and Text 2 both argue that editing should be avoided entirely.",
+      "Text 2 focuses on a completely unrelated aspect of filmmaking.",
+    ],
+    answer: 0,
+    explanation:
+      "Text 2 directly disputes Text 1's premise, arguing editing can achieve what Text 1 claims only unedited long takes can — a direct challenge to Text 1's assumption.",
+  },
+  {
+    id: "cs-33",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "The essay's final paragraph returns to a question posed in the first paragraph, this time answering it directly after several paragraphs of supporting evidence.",
+    prompt: "Which choice best describes the function of the final paragraph?",
+    choices: [
+      "It resolves the question raised at the start of the essay, now supported by the evidence presented.",
+      "It introduces a brand-new argument unrelated to the rest of the essay.",
+      "It undermines the evidence presented earlier in the essay.",
+      "It restates the essay's introduction without adding new information.",
+    ],
+    answer: 0,
+    explanation:
+      "The final paragraph directly answers the question from the introduction, now backed by the evidence built up through the essay — a resolving function.",
   }
 );

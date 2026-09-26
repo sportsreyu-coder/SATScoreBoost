@@ -481,5 +481,157 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "The claim has two parts — water savings and preserved yield — and only choice A reports data addressing both, matching the study's actual figures.",
+  },
+  {
+    id: "ii-26",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "A city planner proposed replacing several downtown parking lots with a public park, arguing that green space would attract more visitors than parking ever did. Local business owners initially opposed the plan, fearing lost customers, but many later reported increased foot traffic once the park opened.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A park built in place of parking lots ended up benefiting nearby businesses despite initial opposition.",
+      "Business owners were correct that removing parking lots would hurt sales.",
+      "City planners rarely listen to the concerns of local business owners.",
+      "Public parks are always more popular than parking lots.",
+    ],
+    answer: 0,
+    explanation:
+      "The text describes initial opposition followed by increased foot traffic once the park opened — a benefit to businesses despite their early concerns.",
+  },
+  {
+    id: "ii-27",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "The museum's new wing was designed with movable walls so that exhibits could be rearranged without construction crews. Curators say this flexibility lets them respond quickly to loaned collections that arrive on short notice.",
+    prompt: "It can most reasonably be inferred from the text that",
+    choices: [
+      "the museum can adapt its exhibit space quickly when new collections become available.",
+      "the museum's new wing cost more than any previous renovation.",
+      "curators prefer permanent exhibits over rotating ones.",
+      "construction crews are frequently on site at the museum.",
+    ],
+    answer: 0,
+    explanation:
+      "The movable walls let curators respond quickly to short-notice loans without construction, directly supporting the inference that the museum can adapt quickly.",
+  },
+  {
+    id: "ii-28",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "A novelist claims that her hometown's harsh winters shaped her writing style, citing how she once wrote, 'I learned to say more with less, the way a bare tree says everything about winter without a single leaf.'",
+    prompt: "Which quotation from the novelist best supports the claim that harsh winters shaped her writing style?",
+    choices: [
+      "'I learned to say more with less, the way a bare tree says everything about winter without a single leaf.'",
+      "'I have always loved reading mystery novels.'",
+      "'My publisher suggested I write a sequel.'",
+      "'Winters where I live now are much milder.'",
+    ],
+    answer: 0,
+    explanation:
+      "This quotation directly links a winter image (a bare tree) to her spare writing style, supporting the claim that winter shaped her style.",
+  },
+  {
+    id: "ii-29",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Public libraries have begun lending more than books: seed libraries let patrons borrow packets of vegetable seeds to plant at home, then return seeds harvested from their own gardens at the end of the season.",
+    prompt: "Which choice best states the main purpose of the text?",
+    choices: [
+      "To describe how libraries have expanded their lending programs to include garden seeds.",
+      "To argue that libraries should stop lending books.",
+      "To explain why vegetable gardening has declined in popularity.",
+      "To compare public libraries in different cities.",
+    ],
+    answer: 0,
+    explanation:
+      "The text's sole focus is describing the seed-library lending program, matching choice A; none of the other choices reflect its content.",
+  },
+  {
+    id: "ii-30",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A nutritionist claims that a new granola bar contains meaningfully less added sugar than leading competitors. Lab tests found the new bar contains 4 grams of added sugar per serving, compared to an average of 11 grams among the five best-selling competitor bars.",
+    prompt: "Which finding most directly supports the nutritionist's claim?",
+    choices: [
+      "The new granola bar contains less than half the added sugar of the average competitor bar.",
+      "The new granola bar is sold in fewer stores than its competitors.",
+      "The five competitor bars have been on the market longer.",
+      "The new granola bar contains more fiber than some competitors.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is specifically about reduced added sugar, and 4 grams versus an average of 11 grams is less than half — direct quantitative support.",
+  },
+  {
+    id: "ii-31",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "Researchers tracking a coral reef noticed that sections shaded by floating mats of algae recovered more quickly from a bleaching event than unshaded sections, even though water temperatures were identical across the reef.",
+    prompt: "The information in the text most strongly suggests that",
+    choices: [
+      "shade from algae mats may help coral recover from bleaching independent of water temperature.",
+      "water temperature has no effect on coral bleaching.",
+      "algae mats always damage coral reefs.",
+      "unshaded coral sections never recover from bleaching.",
+    ],
+    answer: 0,
+    explanation:
+      "Since shaded sections recovered faster despite identical temperatures, shade itself — not temperature — appears linked to faster recovery.",
+  },
+  {
+    id: "ii-32",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 3,
+    passage:
+      "Two studies of urban tree cover reached different emphases: one concluded that tree canopy primarily reduces summer temperatures, while the other concluded that canopy loss primarily increases stormwater runoff. Taken together, the studies suggest that urban trees serve multiple, largely independent environmental functions, and losing them creates compounding problems rather than a single, isolated one.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Considered together, the two studies indicate that urban trees provide several distinct benefits whose loss creates multiple simultaneous problems.",
+      "The two studies directly contradict each other and cannot both be correct.",
+      "Reducing summer temperatures is more important than managing stormwater runoff.",
+      "Urban tree cover has no measurable effect on stormwater runoff.",
+    ],
+    answer: 0,
+    explanation:
+      "The text explicitly states the studies, 'taken together,' show trees serve 'multiple, largely independent' functions whose loss 'compounds' — matching choice A, not a contradiction.",
+  },
+  {
+    id: "ii-33",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "A historian argues that a 19th-century trade agreement was less influential than commonly believed, presenting a diary entry from a merchant of the era: 'The new treaty was signed with great ceremony, yet our trade routes and prices continued exactly as before, as though the ink had dried on paper no one troubled to read.'",
+    prompt: "Which quotation from the merchant's diary best supports the historian's argument?",
+    choices: [
+      "'yet our trade routes and prices continued exactly as before, as though the ink had dried on paper no one troubled to read.'",
+      "'The new treaty was signed with great ceremony.'",
+      "'I have kept this diary since I was young.'",
+      "'Merchants travel widely in search of goods.'",
+    ],
+    answer: 0,
+    explanation:
+      "The historian argues the treaty had little real effect; this quotation directly shows trade continued unchanged, supporting that argument.",
   }
 );

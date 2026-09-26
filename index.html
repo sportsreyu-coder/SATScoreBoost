@@ -296,6 +296,9 @@
   <!-- ===================== BADGES ===================== -->
   <section id="badges" class="social hidden"><!-- badges render here --></section>
 
+  <!-- ===================== BATTLE PASS ===================== -->
+  <section id="battlepass" class="social hidden"><!-- battle pass renders here --></section>
+
   <!-- ===================== STUDY PLAN ===================== -->
   <section id="studyPlan" class="results hidden"><!-- study plan renders here --></section>
 
@@ -322,7 +325,7 @@
     <div class="modal auth-modal">
       <button class="modal-close" id="authClose" aria-label="Close">✕</button>
       <h3 id="authTitle">Log in</h3>
-      <p class="auth-demo-note">Demo login — accounts are stored only in this browser for testing. Real accounts (including Google) are coming soon.</p>
+      <p class="auth-demo-note">Email/password accounts are a demo — stored only in this browser for testing. Google sign-in is real.</p>
       <form id="authForm" novalidate>
         <label class="field hidden" id="authNameField">
           <span>Name</span>
@@ -340,7 +343,7 @@
         <button type="submit" class="btn btn-primary auth-submit" id="authSubmit">Log in</button>
       </form>
       <div class="auth-divider"><span>or</span></div>
-      <button type="button" class="btn btn-ghost auth-google" id="googleDemoBtn">Continue with Google (demo)</button>
+      <button type="button" class="btn btn-ghost auth-google" id="googleSignInBtn">Continue with Google</button>
       <p class="auth-switch">
         <span id="authSwitchText">Don't have an account?</span>
         <button type="button" id="authSwitchBtn">Sign up</button>
