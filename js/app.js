@@ -1304,9 +1304,10 @@
     renderLessons();
   }
 
-  // Every domain has one free lesson plus three Pro lessons — the tab itself
-  // is always open (no full-page paywall); individual Pro lessons show a
-  // locked card with an upgrade prompt instead of their content.
+  // Every skill has a free foundations lesson plus two Pro deep-dive
+  // sub-lessons — the tab itself is always open (no full-page paywall);
+  // individual Pro lessons show a locked card with an upgrade prompt
+  // instead of their content.
   function renderLessons() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const premium = !!(window.Auth && window.Auth.isPremium());
@@ -1323,8 +1324,8 @@
         <div class="lessons-upsell-banner">
           ${ICON_GRADCAP}
           <div class="lessons-upsell-text">
-            <div class="lessons-upsell-title">Every topic includes one free lesson</div>
-            <div class="lessons-upsell-sub">Premium unlocks 3 more per topic — the deeper dives and sub-lessons.</div>
+            <div class="lessons-upsell-title">Every skill includes a free foundations lesson</div>
+            <div class="lessons-upsell-sub">Premium unlocks the deep-dive sub-lessons — advanced strategies, edge cases, and harder examples for every skill.</div>
           </div>
           ${
             user
@@ -1407,7 +1408,7 @@
         <div class="lesson-locked-card">
           ${ICON_GRADCAP}
           <h2>This lesson is part of ScoreBoost Pro</h2>
-          <p>Unlock this lesson plus the other Pro lessons in every topic — deeper dives and sub-lessons beyond the free basics.</p>
+          <p>Unlock this deep-dive sub-lesson plus every other Pro lesson — advanced strategies, edge cases, and harder practice beyond the free foundations lesson for this skill.</p>
           ${
             user
               ? `<button class="btn btn-primary" data-action="upgrade-premium">Upgrade to Premium →</button>
@@ -1435,11 +1436,18 @@
           </li>`
       )
       .join("");
+    const deepDiveHTML =
+      c.deepDive && c.deepDive.length
+        ? `<h3>Going deeper</h3>
+           <div class="lesson-deepdive">${c.deepDive.map((p) => `<p>${p}</p>`).join("")}</div>`
+        : "";
     const bodyHTML = `
       <p class="lesson-summary">${c.summary}</p>
 
       <h3>Key concepts</h3>
       <ul class="lesson-list">${conceptsHTML}</ul>
+
+      ${deepDiveHTML}
 
       <h3>Worked example</h3>
       <div class="lesson-example">

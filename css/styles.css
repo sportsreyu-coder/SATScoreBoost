@@ -1575,6 +1575,16 @@ footer.site a { color: var(--accent); text-decoration: none; }
 .lesson-list { display: flex; flex-direction: column; gap: 10px; padding-left: 20px; }
 .lesson-list li { color: var(--text); line-height: 1.5; }
 
+.lesson-deepdive {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 4px 20px;
+}
+.lesson-deepdive p { color: var(--text); line-height: 1.65; margin: 14px 0; }
+.lesson-deepdive p:first-child { margin-top: 14px; }
+.lesson-deepdive p:last-child { margin-bottom: 14px; }
+
 .lesson-example { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
 .ex-prompt { font-weight: 600; margin-bottom: 14px; }
 .ex-choices { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }

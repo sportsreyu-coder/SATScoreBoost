@@ -4,8 +4,8 @@
     {
       "name": "static-server",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8934"],
-      "port": 8934
+      "runtimeArgs": ["-m", "http.server", "8935", "--directory", "/Users/reyu/Documents/GitHub/SATScoreBoost"],
+      "port": 8935
     }
   ]
 }
