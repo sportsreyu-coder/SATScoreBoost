@@ -633,5 +633,541 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "The historian argues the treaty had little real effect; this quotation directly shows trade continued unchanged, supporting that argument.",
+  },
+  {
+    id: "ii-34",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Engineers studying the aqueducts that once supplied ancient Rome have found that many stretches descend at a gradient of less than one inch per hundred feet, a level of precision achieved without modern surveying instruments. The find has led historians to credit Roman engineers with a far more sophisticated grasp of hydraulics than earlier scholars assumed.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Roman engineers achieved a level of hydraulic precision in aqueduct design that surprises modern historians.",
+      "Modern surveying instruments are more accurate than those used by the Romans.",
+      "Roman aqueducts were built primarily to transport goods rather than water.",
+      "Historians have always recognized the sophistication of Roman hydraulics.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage states the precise gradient finding led historians to credit Romans with more sophisticated hydraulics than 'earlier scholars assumed,' matching choice A; choice D contradicts this reversal.",
+  },
+  {
+    id: "ii-35",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "An architect argues that a new type of insulation panel, made from recycled denim fibers, retains heat more effectively than traditional fiberglass insulation, citing a building manager's log entry: 'Since we replaced the fiberglass with the denim panels last winter, our heating bills have dropped nearly a third, even during the coldest weeks in January.'",
+    prompt:
+      "Which quotation from the building manager's log best supports the architect's claim?",
+    choices: [
+      "'Since we replaced the fiberglass with the denim panels last winter, our heating bills have dropped nearly a third, even during the coldest weeks in January.'",
+      "'Denim insulation panels are made from recycled fabric scraps.'",
+      "'We plan to install the same panels in a second building next year.'",
+      "'Fiberglass insulation has been used in construction for decades.'",
+    ],
+    answer: 0,
+    explanation:
+      "Only this quotation reports an actual outcome — reduced heating bills after the switch — that supports the claim of superior heat retention.",
+  },
+  {
+    id: "ii-36",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A sleep researcher claims that students who sleep at least eight hours the night before an exam perform better than those who sleep less. In a study of 150 students, those who slept eight or more hours averaged 85 on the exam, while those who slept less than six hours averaged 71.",
+    prompt:
+      "Which choice best describes data from the study that supports the researcher's claim?",
+    choices: [
+      "Students who slept eight or more hours averaged 14 points higher on the exam than those who slept less than six hours.",
+      "The study included 150 students total.",
+      "The exam covered material from an entire semester.",
+      "Some students reported feeling anxious before the exam.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim links sleep duration to exam performance, and only choice A reports the actual point gap between the two sleep groups.",
+  },
+  {
+    id: "ii-37",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "Ornithologists tracking a songbird species that migrates at night have found that birds passing over brightly lit cities now arrive at their breeding grounds, on average, four days later than birds that follow darker rural flight paths, even though the two routes are nearly identical in distance.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "Artificial light along migration routes may disrupt or delay birds' nighttime navigation.",
+      "Birds that migrate over cities travel a much longer distance than those on rural routes.",
+      "Nighttime migration has been abandoned by this songbird species.",
+      "Rural flight paths are more dangerous for migrating birds than urban ones.",
+    ],
+    answer: 0,
+    explanation:
+      "Since the routes are nearly identical in distance, the delay associated with the lit route points to the light itself as a likely disruptive factor, not the distance traveled.",
+  },
+  {
+    id: "ii-38",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Contemporary composer Hana Ito has become known for compositions that include extended passages of near-total silence, sometimes lasting a full minute within an otherwise conventional orchestral piece. Rather than treating silence as an absence of music, Ito describes it as a compositional tool as deliberate and expressive as any note she writes.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Composer Hana Ito treats silence as an intentional, expressive element of her music rather than a mere gap.",
+      "Ito's compositions contain no traditional orchestral instruments.",
+      "Silence in music is generally considered a technical flaw by composers.",
+      "Ito's use of silence has made her music unpopular with orchestras.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage directly states Ito 'describes silence as a compositional tool as deliberate and expressive as any note,' matching choice A.",
+  },
+  {
+    id: "ii-39",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "An astronomer argues that a distant exoplanet likely has a thick atmosphere capable of retaining heat, citing an analysis note from the observing team: 'Temperature readings on the planet's night side remain nearly as high as on its sunlit side, a pattern we would not expect unless heat were being trapped and redistributed by a substantial atmosphere.'",
+    prompt:
+      "Which quotation from the analysis note best supports the astronomer's argument?",
+    choices: [
+      "'Temperature readings on the planet's night side remain nearly as high as on its sunlit side, a pattern we would not expect unless heat were being trapped and redistributed by a substantial atmosphere.'",
+      "'The exoplanet orbits its star once every nine days.'",
+      "'This system was first observed by a space telescope launched a decade ago.'",
+      "'The planet is roughly the same size as Neptune.'",
+    ],
+    answer: 0,
+    explanation:
+      "Only this quotation ties an observed pattern — even night/day temperatures — to the presence of a heat-trapping atmosphere, directly supporting the claim.",
+  },
+  {
+    id: "ii-40",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage:
+      "A city council member claims that a door-to-door outreach campaign increased household participation in the recycling program. Before the campaign, 42% of households in the pilot neighborhood recycled regularly; six months after the campaign, that figure rose to 68%.",
+    prompt: "Which finding most directly supports the council member's claim?",
+    choices: [
+      "Household recycling participation in the pilot neighborhood rose from 42% to 68% after the campaign.",
+      "The pilot neighborhood contains about 900 households.",
+      "The outreach campaign used flyers printed on recycled paper.",
+      "The city has run similar campaigns in the past.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is about increased participation, and only choice A reports the actual before-and-after participation rates.",
+  },
+  {
+    id: "ii-41",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "Divers exploring a shipwreck off the coast of Sicily recovered amphorae bearing pottery marks from workshops in North Africa, Spain, and the eastern Mediterranean, all packed together in the same cargo hold.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The ship was likely involved in trade connecting multiple distant regions rather than a single route.",
+      "The amphorae were manufactured entirely in Sicily.",
+      "The ship sank before it was ever loaded with cargo.",
+      "North Africa and Spain had no trade contact with the eastern Mediterranean.",
+    ],
+    answer: 0,
+    explanation:
+      "Cargo from three distant regions found together suggests a ship engaged in multi-region trade, not a route confined to one origin point.",
+  },
+  {
+    id: "ii-42",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Director Marcus Ade has spent the last five years staging plays by 17th-century women playwrights whose work vanished from theater repertoires after their deaths. Audiences, he says, are often surprised to learn these comedies and tragedies predate more famous works long credited with originating certain now-common stage techniques.",
+    prompt: "Which choice best states the main purpose of the text?",
+    choices: [
+      "To describe an effort to bring overlooked historical plays back to the stage and highlight their overlooked influence.",
+      "To argue that modern plays are inferior to those written in the 17th century.",
+      "To criticize audiences for being unfamiliar with theater history.",
+      "To summarize the plot of a specific 17th-century comedy.",
+    ],
+    answer: 0,
+    explanation:
+      "The text describes Ade's revival project and the surprising historical influence of these plays, matching choice A; it does not compare eras' quality or summarize a specific plot.",
+  },
+  {
+    id: "ii-43",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "An economist argues that expanded broadband access has slowed population decline in small rural towns, citing a resident survey response: 'I moved my consulting business back home last year because I could finally get a reliable connection — before that, staying here for work simply wasn't an option.'",
+    prompt: "Which quotation from the survey best supports the economist's argument?",
+    choices: [
+      "'I moved my consulting business back home last year because I could finally get a reliable connection — before that, staying here for work simply wasn't an option.'",
+      "'I grew up in this town and still visit for the holidays.'",
+      "'The town recently repaved its main street.'",
+      "'Broadband service became available in most of the county last year.'",
+    ],
+    answer: 0,
+    explanation:
+      "This quotation directly connects new broadband access to a resident's decision to remain in town for work, supporting the claim that access slowed population decline.",
+  },
+  {
+    id: "ii-44",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "A materials engineer claims that a new anti-reflective coating increases solar panel energy output without added cost. Panels with the coating produced an average of 6.8% more electricity over one year than uncoated panels of the same model, while manufacturing costs per panel increased by less than 1%.",
+    prompt: "Which finding from the study most directly supports the engineer's claim?",
+    choices: [
+      "Coated panels produced 6.8% more electricity annually while costing less than 1% more to manufacture.",
+      "The study compared panels installed in a desert climate.",
+      "Solar panels of this model have been sold since 2015.",
+      "The coating was developed over three years of laboratory testing.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim has two parts — higher output and negligible added cost — and only choice A reports data addressing both figures from the study.",
+  },
+  {
+    id: "ii-45",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "After a chef replaced his restaurant's fixed year-round menu with one that changes weekly based on available local produce, reservation requests rose sharply, and many diners began returning multiple times within a single season to try new dishes.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The rotating, produce-based menu likely gave diners a reason to visit the restaurant more than once per season.",
+      "Diners preferred the restaurant's food before the menu changed.",
+      "The chef stopped using local produce entirely after the change.",
+      "Reservation requests declined after the new menu was introduced.",
+    ],
+    answer: 0,
+    explanation:
+      "Diners returning multiple times to try 'new dishes' implies the changing menu itself, not just the food quality, drove repeat visits.",
+  },
+  {
+    id: "ii-46",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 3,
+    passage:
+      "For thirty years, linguist Dara Feld has recorded elderly speakers of a language with fewer than twenty remaining fluent speakers, compiling not just vocabulary but the specific idioms, jokes, and songs that dictionaries alone would never preserve. She argues that a language's grammar can survive in academic papers, but its humor and music die with its last speakers unless someone listens in time.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Feld's decades of recording work aim to preserve aspects of a dying language, like humor and song, that formal documentation alone would miss.",
+      "Dictionaries are sufficient to preserve every aspect of an endangered language.",
+      "The language Feld studies has already gone completely extinct.",
+      "Feld primarily focuses on translating academic grammar papers.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage's point is that Feld's recordings capture idioms, jokes, and songs that 'dictionaries alone would never preserve' — directly matching choice A and contradicting choice B.",
+  },
+  {
+    id: "ii-47",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "A historian argues that a 19th-century expedition's slow progress across a mountain range resulted from unusually severe terrain rather than poor planning, pointing to the expedition leader's journal: 'We advanced barely two miles today, cutting steps into ice with hand axes the entire way, our supplies far heavier than any trail we had crossed before.'",
+    prompt: "Which quotation from the journal best supports the historian's argument?",
+    choices: [
+      "'We advanced barely two miles today, cutting steps into ice with hand axes the entire way, our supplies far heavier than any trail we had crossed before.'",
+      "'We departed from the coastal town on the fourth of March.'",
+      "'Several members of the team had crossed mountains before.'",
+      "'Our maps were purchased from a reputable cartographer.'",
+    ],
+    answer: 0,
+    explanation:
+      "This quotation describes physically severe conditions directly slowing progress, supporting the claim that terrain, not planning, caused the delay.",
+  },
+  {
+    id: "ii-48",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage:
+      "A transportation official claims that a new congestion pricing toll reduced downtown traffic without significantly hurting local businesses. In the six months after the toll began, average downtown commute times fell by 18%, while total sales reported by downtown businesses fell by less than 1%.",
+    prompt: "Which finding most directly supports the official's claim?",
+    choices: [
+      "Commute times fell by 18% while downtown business sales dropped by less than 1%.",
+      "The toll costs drivers $4 during peak hours.",
+      "Downtown contains over 200 small businesses.",
+      "The toll program was modeled on one used in another city.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim has two parts — reduced traffic and minimal harm to business — and only choice A provides data on both.",
+  },
+  {
+    id: "ii-49",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "A trackway of fossilized footprints, preserved in what was once soft mud, shows dozens of same-sized dinosaur prints moving in the same direction at a steady pace, with no evidence of prints crossing, doubling back, or scattering.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "These dinosaurs may have traveled together as a coordinated group rather than individually.",
+      "The dinosaurs that made these tracks were of many different species.",
+      "The trackway shows evidence of a predator attack.",
+      "The footprints were made by dinosaurs moving in random directions.",
+    ],
+    answer: 0,
+    explanation:
+      "Same-sized prints moving together, at a steady pace, in one direction without scattering suggests coordinated group movement rather than individual, random travel.",
+  },
+  {
+    id: "ii-50",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "Photographer Iris Kwan is known for images that require exposures lasting several hours, during which passing clouds, moving water, and shifting light blur into soft, dreamlike streaks. Kwan insists the resulting images are not distortions of reality but reveal a passage of time that the human eye, limited to an instant, can never directly perceive.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Kwan's long-exposure technique captures a dimension of time that ordinary human vision cannot perceive.",
+      "Kwan's photographs are widely considered inaccurate representations of her subjects.",
+      "Long exposure photography requires exposures lasting only a few seconds.",
+      "The human eye can naturally perceive the passage of time in the way Kwan's camera does.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage states Kwan's images reveal 'a passage of time' invisible to 'the human eye, limited to an instant,' directly matching choice A.",
+  },
+  {
+    id: "ii-51",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "A business journalist argues that a company's new four-day workweek policy improved employee morale beyond what leadership expected, citing an internal memo from the CEO: 'I anticipated some improvement in morale, but I did not expect nearly every department head to report their teams asking to keep the schedule permanently, even those who were skeptical before we began the trial.'",
+    prompt: "Which quotation from the CEO's memo best supports the journalist's argument?",
+    choices: [
+      "'I anticipated some improvement in morale, but I did not expect nearly every department head to report their teams asking to keep the schedule permanently, even those who were skeptical before we began the trial.'",
+      "'We began the four-day workweek trial at the start of the fiscal year.'",
+      "'The company employs about 600 people across three offices.'",
+      "'Other companies have experimented with similar schedules.'",
+    ],
+    answer: 0,
+    explanation:
+      "This quotation explicitly contrasts the CEO's expectations with the stronger-than-expected positive response, directly supporting the claim of morale improvement beyond expectations.",
+  },
+  {
+    id: "ii-52",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "An agronomist claims that a slow-release fertilizer increases crop yield while reducing nutrient runoff into nearby waterways. Fields treated with the slow-release fertilizer yielded 12% more corn per acre than fields using standard fertilizer, while nitrogen runoff measured in nearby streams dropped by 30%.",
+    prompt: "Which finding most directly supports the agronomist's claim?",
+    choices: [
+      "Slow-release fertilizer fields yielded 12% more corn while nearby nitrogen runoff fell 30%.",
+      "The study was conducted over a single growing season.",
+      "Standard fertilizer has been used by farmers for many decades.",
+      "The slow-release fertilizer costs more per bag than standard fertilizer.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim requires both higher yield and reduced runoff, and only choice A reports data on both outcomes measured in the study.",
+  },
+  {
+    id: "ii-53",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "Chemists analyzing a painting attributed to a 17th-century master detected traces of a synthetic pigment that was not invented until the 20th century.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The painting was likely not created by the artist to whom it has been attributed.",
+      "The 17th-century master invented synthetic pigments ahead of his time.",
+      "All 17th-century paintings contain modern synthetic pigments.",
+      "The chemists were unable to determine anything about the painting's pigments.",
+    ],
+    answer: 0,
+    explanation:
+      "A pigment that did not exist until centuries after the claimed creation date implies the painting cannot genuinely date to the 17th century.",
+  },
+  {
+    id: "ii-54",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "A city's bike-share program initially concentrated its docking stations in wealthier downtown districts. After residents in outlying neighborhoods petitioned for equal access, the city added dozens of new stations across the city, and ridership among lower-income residents rose substantially within a year.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Expanding bike-share stations beyond wealthy areas led to a substantial rise in ridership among lower-income residents.",
+      "The bike-share program was canceled due to low ridership.",
+      "Wealthier neighborhoods no longer have any bike-share stations.",
+      "Residents in outlying neighborhoods opposed the bike-share expansion.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage describes the petition-driven expansion and its result — rising ridership among lower-income residents — matching choice A.",
+  },
+  {
+    id: "ii-55",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "A biographer argues that a poet's years living alone on a remote coastline directly shaped the spare, isolated imagery of her later collections, citing a letter the poet wrote to a friend: 'Out here, with no one to talk to but gulls and the tide, my lines have gotten shorter, as if the ocean edited out every unnecessary word.'",
+    prompt: "Which quotation from the poet's letter best supports the biographer's argument?",
+    choices: [
+      "'Out here, with no one to talk to but gulls and the tide, my lines have gotten shorter, as if the ocean edited out every unnecessary word.'",
+      "'I have always enjoyed reading poetry by the fire in winter.'",
+      "'My friend wrote back within the month.'",
+      "'The coastline here is known for its rocky cliffs.'",
+    ],
+    answer: 0,
+    explanation:
+      "This quotation directly connects the poet's isolated coastal life to a change in her writing style, supporting the biographer's argument.",
+  },
+  {
+    id: "ii-56",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "A school district claims that a new small-group reading intervention improved literacy scores specifically among struggling readers rather than students overall. Among students who began below grade level, average reading scores rose 22 points after the intervention, while students who began at or above grade level saw scores rise by only 3 points on average.",
+    prompt:
+      "Which finding most directly supports the district's claim that the intervention specifically helped struggling readers?",
+    choices: [
+      "Below-grade-level students gained 22 points on average, compared with a 3-point gain for at-or-above-grade-level students.",
+      "The intervention program ran for one full school year.",
+      "The district serves students across twelve elementary schools.",
+      "Teachers received training before implementing the program.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is about a difference in benefit between two groups, and only choice A reports the gap in score gains between struggling and non-struggling readers.",
+  },
+  {
+    id: "ii-57",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "Chemical analysis of pottery fragments found at an inland settlement revealed clay compositions matching coastal deposits over 150 miles away, despite the settlement having local clay sources readily available.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The settlement likely obtained the pottery through trade or exchange with coastal communities rather than producing it locally.",
+      "The settlement had no local clay sources of any kind.",
+      "Coastal communities never traveled inland.",
+      "The pottery fragments were all manufactured at the inland settlement.",
+    ],
+    answer: 0,
+    explanation:
+      "Since local clay was available yet the pottery matches distant coastal deposits, the pottery most plausibly reached the settlement through trade rather than local production.",
+  },
+  {
+    id: "ii-58",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "Rather than extending a centralized power grid across difficult mountain terrain, engineers have begun installing small, independent solar-and-battery microgrids in remote villages. Each microgrid serves only a few dozen households but can be installed in weeks rather than the years often required to build long-distance transmission lines.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Small, localized microgrids offer a faster alternative to extending centralized power grids into remote areas.",
+      "Centralized power grids are always faster to build than microgrids.",
+      "Remote mountain villages have rejected all forms of electrification.",
+      "Microgrids can supply electricity to entire large cities.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage contrasts slow, centralized grid extension with quickly installed microgrids serving a few dozen households — matching choice A's emphasis on speed and scale.",
+  },
+  {
+    id: "ii-59",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "A science historian argues that an overlooked 19th-century engineer, not the inventor typically credited, first designed the mechanism later used in modern refrigeration, citing a letter the engineer wrote to a colleague: 'I have built a working model that cools a sealed chamber using compressed gas, and I am certain the principle could one day replace ice entirely for food storage.'",
+    prompt: "Which quotation from the engineer's letter best supports the historian's argument?",
+    choices: [
+      "'I have built a working model that cools a sealed chamber using compressed gas, and I am certain the principle could one day replace ice entirely for food storage.'",
+      "'I corresponded with this colleague for many years.'",
+      "'Ice has long been used to preserve food in warmer months.'",
+      "'My workshop is located near the harbor.'",
+    ],
+    answer: 0,
+    explanation:
+      "This quotation describes a working refrigeration mechanism the engineer built, directly supporting the claim that he designed the underlying principle first.",
+  },
+  {
+    id: "ii-60",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A workplace wellness researcher claims that a brief daily meditation program reduces employee stress levels. Employees who completed a 10-minute guided meditation each workday for eight weeks reported a 27% drop in self-assessed stress scores, while a comparison group with no program reported only a 4% drop over the same period.",
+    prompt: "Which finding most directly supports the researcher's claim?",
+    choices: [
+      "The meditation group's stress scores fell 27%, compared with a 4% drop in the comparison group over the same period.",
+      "The meditation sessions were guided by a recorded audio program.",
+      "The study included employees from several different departments.",
+      "Employees were allowed to choose the time of day for their session.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is comparative, and only choice A reports the actual difference in stress-score reduction between the meditation group and the comparison group.",
+  },
+  {
+    id: "ii-61",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "Researchers who have recorded the same population of humpback whales for over thirty years found that the population's songs change gradually year to year, yet whales in a neighboring, rarely-contacted population continue to sing a version of the song nearly identical to recordings from three decades ago.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "Contact between whale populations may play a role in how quickly their songs change over time.",
+      "Humpback whale songs never change within a single population.",
+      "The neighboring population has stopped singing entirely.",
+      "All whale populations sing identical songs regardless of contact with other groups.",
+    ],
+    answer: 0,
+    explanation:
+      "The population with frequent contact/study shows gradual change while the more isolated population's song stayed nearly static, suggesting contact between groups relates to how songs evolve over time.",
   }
 );

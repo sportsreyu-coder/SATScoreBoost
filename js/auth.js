@@ -107,22 +107,44 @@
   }
 
   // Mirrors a Supabase session (from a fresh Google sign-in redirect, or an
-  // existing session found on page load) into our own {email, name,
+  // existing session found on page load) into our own {id, email, name,
   // provider, plan} shape and persists it under our normal SESSION_KEY —
   // this is what makes getCurrentUser() work for Google users without
   // every other call site needing to know Supabase exists.
-  function syncSupabaseSession(session) {
+  //
+  // The plan/name of record for a Google user lives in the `profiles`
+  // table (a row auto-created by a DB trigger on first sign-in — see
+  // supabase/schema.sql), not localStorage, so it follows the user across
+  // browsers/devices. localStorage still gets a copy for the synchronous
+  // getCurrentUser() reads the rest of the app relies on.
+  async function syncSupabaseSession(session) {
     const authUser = session && session.user;
     const email = authUser && authUser.email && authUser.email.toLowerCase();
     if (!email) return;
     const meta = authUser.user_metadata || {};
     const displayName = meta.full_name || meta.name || email.split("@")[0];
-    const users = loadUsers();
-    if (!users[email]) {
-      users[email] = { name: displayName, provider: "google", plan: "free" };
-      saveUsers(users);
+    let name = displayName;
+    let plan = "free";
+    if (window.supabaseClient) {
+      try {
+        const { data } = await window.supabaseClient
+          .from("profiles")
+          .select("name, plan")
+          .eq("id", authUser.id)
+          .maybeSingle();
+        if (data) {
+          name = data.name || displayName;
+          plan = data.plan || "free";
+        }
+      } catch (e) {
+        // Offline, or the trigger hasn't created the row yet — fall back
+        // to defaults; this self-heals on the next successful sync.
+      }
     }
-    setSession({ email, name: users[email].name, provider: "google", plan: users[email].plan || "free" });
+    const users = loadUsers();
+    users[email] = { name, provider: "google", plan };
+    saveUsers(users);
+    setSession({ id: authUser.id, email, name, provider: "google", plan });
   }
 
   // On load, adopt any Supabase session already on file (a returning
@@ -141,8 +163,10 @@
   }
 
   // Demo stand-in for a real upgrade flow (Stripe checkout, etc.) — just
-  // flips the current user's plan locally. No payment is collected.
-  function upgradeToPremium() {
+  // flips the current user's plan. No payment is collected. For a Google
+  // user this also writes through to their `profiles` row so the plan
+  // sticks across browsers/devices, not just this one's localStorage.
+  async function upgradeToPremium() {
     const user = getCurrentUser();
     if (!user) return { ok: false, error: "Log in first." };
     const users = loadUsers();
@@ -152,6 +176,14 @@
     }
     const updated = { ...user, plan: "premium" };
     setSession(updated);
+    if (user.provider === "google" && user.id && window.supabaseClient) {
+      try {
+        await window.supabaseClient.from("profiles").update({ plan: "premium" }).eq("id", user.id);
+      } catch (e) {
+        // Best-effort — localStorage is already updated, so the current
+        // session still sees "premium"; this just didn't follow to Supabase.
+      }
+    }
     return { ok: true, user: updated };
   }
 

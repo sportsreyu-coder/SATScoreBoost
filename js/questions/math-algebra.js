@@ -395,5 +395,327 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "The line passes through (4, 0) and (0, −8). Slope = (0 − (−8)) / (4 − 0) = 8/4 = 2.",
+  },
+  {
+    id: "alg-34",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    difficulty: 1,
+    prompt: "If 5x + 7 = 32, what is the value of x?",
+    choices: ["5", "3", "7", "25"],
+    answer: 0,
+    explanation: "5x + 7 = 32 → 5x = 25 → x = 5.",
+  },
+  {
+    id: "alg-35",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    difficulty: 2,
+    prompt:
+      "The equation for converting Celsius to Fahrenheit is F = (9/5)C + 32. Which expression gives C in terms of F?",
+    choices: ["(5/9)(F − 32)", "(9/5)(F − 32)", "(5/9)F − 32", "(5/9)F + 32"],
+    answer: 0,
+    explanation: "F − 32 = (9/5)C → C = (5/9)(F − 32).",
+  },
+  {
+    id: "alg-36",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: 3,
+    prompt:
+      "The function g is linear. The table shows g(1) = 7 and g(4) = 19. What is g(10)?",
+    choices: ["43", "40", "46", "37"],
+    answer: 0,
+    explanation:
+      "Slope = (19 − 7)/(4 − 1) = 4, so g(x) = 4x + 3. Then g(10) = 4(10) + 3 = 43.",
+  },
+  {
+    id: "alg-37",
+    module: "math",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    difficulty: 1,
+    prompt: "If 2x + y = 15 and y = x − 3, what is the value of x?",
+    choices: ["6", "3", "9", "5"],
+    answer: 0,
+    explanation:
+      "Substitute y = x − 3 into 2x + y = 15: 2x + (x − 3) = 15 → 3x = 18 → x = 6.",
+  },
+  {
+    id: "alg-38",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in one variable",
+    difficulty: 2,
+    prompt:
+      "A vendor sells popcorn bags for $4 each after paying a $30 booth fee. What is the minimum number of bags the vendor must sell to make a profit greater than $50?",
+    choices: ["21", "20", "19", "30"],
+    answer: 0,
+    explanation:
+      "4n − 30 > 50 → 4n > 80 → n > 20, so the minimum whole number of bags is 21.",
+  },
+  {
+    id: "alg-39",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in two variables",
+    difficulty: 3,
+    prompt:
+      "Which of the following ordered pairs is NOT a solution to the inequality 4x − 3y > 12?",
+    choices: ["(0, 0)", "(5, 2)", "(6, 0)", "(10, 5)"],
+    answer: 0,
+    explanation:
+      "Testing (0, 0): 4(0) − 3(0) = 0, which is not greater than 12, so (0, 0) is not a solution. The other points each satisfy the inequality: for example, 4(5) − 3(2) = 14 > 12.",
+  },
+  {
+    id: "alg-40",
+    module: "math",
+    domain: "Algebra",
+    skill: "Word problems",
+    difficulty: 1,
+    prompt:
+      "A taxi charges a $3 flat fee plus $2.50 per mile. If a ride costs $15.50, how many miles was the ride?",
+    choices: ["5", "6", "4", "12.5"],
+    answer: 0,
+    explanation: "3 + 2.5m = 15.5 → 2.5m = 12.5 → m = 5.",
+  },
+  {
+    id: "alg-41",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    difficulty: 2,
+    prompt: "If (2/3)(x − 6) = 10, what is the value of x?",
+    choices: ["21", "9", "6", "15"],
+    answer: 0,
+    explanation: "(2/3)(x − 6) = 10 → x − 6 = 15 → x = 21.",
+  },
+  {
+    id: "alg-42",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    difficulty: 3,
+    prompt:
+      "The equation for the perimeter of a rectangle is P = 2l + 2w. Which expression gives w in terms of P and l?",
+    choices: ["(P − 2l)/2", "(P − l)/2", "P − 2l", "(P + 2l)/2"],
+    answer: 0,
+    explanation: "P = 2l + 2w → 2w = P − 2l → w = (P − 2l)/2.",
+  },
+  {
+    id: "alg-43",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: 1,
+    prompt:
+      "A line has a slope of 4 and passes through the point (0, −3). What is the equation of the line?",
+    choices: ["y = 4x − 3", "y = 4x + 3", "y = −3x + 4", "y = 4x"],
+    answer: 0,
+    explanation:
+      "Using slope-intercept form y = mx + b with m = 4 and y-intercept b = −3 (from the point (0, −3)): y = 4x − 3.",
+  },
+  {
+    id: "alg-44",
+    module: "math",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    difficulty: 2,
+    prompt:
+      "A store sells pens for $2 and notebooks for $5. Maria bought a total of 8 items for $25. How many notebooks did she buy?",
+    choices: ["3", "5", "2", "4"],
+    answer: 0,
+    explanation:
+      "Let p + n = 8 and 2p + 5n = 25. Substituting p = 8 − n: 2(8 − n) + 5n = 25 → 16 + 3n = 25 → n = 3.",
+  },
+  {
+    id: "alg-45",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in one variable",
+    difficulty: 3,
+    prompt:
+      "For which value of x is the inequality 5 − 2x ≥ 3x − 10 NOT satisfied?",
+    choices: ["4", "3", "0", "−2"],
+    answer: 0,
+    explanation:
+      "Solve the inequality: 5 − 2x ≥ 3x − 10 → 15 ≥ 5x → x ≤ 3. Since 4 > 3, x = 4 does not satisfy the inequality, while the other values do.",
+  },
+  {
+    id: "alg-46",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in two variables",
+    difficulty: 1,
+    prompt: "Which ordered pair is a solution to the inequality y > x + 1?",
+    choices: ["(2, 5)", "(2, 3)", "(0, −1)", "(3, 2)"],
+    answer: 0,
+    explanation:
+      "For (2, 5): 5 > 2 + 1 = 3, which is true. The other points fail the inequality when substituted.",
+  },
+  {
+    id: "alg-47",
+    module: "math",
+    domain: "Algebra",
+    skill: "Word problems",
+    difficulty: 2,
+    prompt:
+      "A tank initially contains 15 gallons of water and is being filled at a rate of 4 gallons per minute. How many minutes will it take for the tank to contain 75 gallons?",
+    choices: ["15", "20", "12", "60"],
+    answer: 0,
+    explanation: "15 + 4m = 75 → 4m = 60 → m = 15.",
+  },
+  {
+    id: "alg-48",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    difficulty: 3,
+    prompt: "If 3(2x − 1) − 4(x + 2) = 15, what is the value of x?",
+    choices: ["13", "6.5", "−13", "2.6"],
+    answer: 0,
+    explanation:
+      "3(2x − 1) − 4(x + 2) = 15 → 6x − 3 − 4x − 8 = 15 → 2x − 11 = 15 → 2x = 26 → x = 13.",
+  },
+  {
+    id: "alg-49",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    difficulty: 1,
+    prompt:
+      "What is the y-intercept of the line given by the equation y = −2x + 7?",
+    choices: ["7", "−2", "−7", "2"],
+    answer: 0,
+    explanation: "In the form y = mx + b, the y-intercept is b = 7.",
+  },
+  {
+    id: "alg-50",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: 2,
+    prompt:
+      "A line passes through (−2, 3) and (2, 11). What is the equation of the line?",
+    choices: ["y = 2x + 7", "y = 2x + 3", "y = 4x + 7", "y = 2x − 7"],
+    answer: 0,
+    explanation:
+      "Slope = (11 − 3)/(2 − (−2)) = 8/4 = 2. Using point (−2, 3): y − 3 = 2(x + 2) → y = 2x + 7.",
+  },
+  {
+    id: "alg-51",
+    module: "math",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    difficulty: 3,
+    prompt:
+      "For what value of c does the system 3x + 4y = 12 and 6x + 8y = c have infinitely many solutions?",
+    choices: ["24", "12", "6", "48"],
+    answer: 0,
+    explanation:
+      "Multiplying the first equation by 2 gives 6x + 8y = 24. For the system to have infinitely many solutions, the second equation must be identical, so c = 24.",
+  },
+  {
+    id: "alg-52",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in one variable",
+    difficulty: 1,
+    prompt:
+      "What is the smallest integer value of x that satisfies 2x + 3 ≥ 9?",
+    choices: ["3", "4", "2", "6"],
+    answer: 0,
+    explanation:
+      "2x + 3 ≥ 9 → 2x ≥ 6 → x ≥ 3, so the smallest integer value is 3.",
+  },
+  {
+    id: "alg-53",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in two variables",
+    difficulty: 2,
+    prompt:
+      "If x − 2y ≥ 8 and x = 0, what is the maximum possible value of y?",
+    choices: ["−4", "4", "−8", "8"],
+    answer: 0,
+    explanation:
+      "Substituting x = 0: −2y ≥ 8 → y ≤ −4 (the inequality flips when dividing by a negative number), so the maximum value of y is −4.",
+  },
+  {
+    id: "alg-54",
+    module: "math",
+    domain: "Algebra",
+    skill: "Word problems",
+    difficulty: 3,
+    prompt:
+      "A jar contains only nickels and dimes worth $3.75 in total. There are 45 coins altogether. How many dimes are in the jar?",
+    choices: ["30", "15", "20", "25"],
+    answer: 0,
+    explanation:
+      "Let n + d = 45 and 0.05n + 0.10d = 3.75. Substituting n = 45 − d: 0.05(45 − d) + 0.10d = 3.75 → 2.25 + 0.05d = 3.75 → d = 30.",
+  },
+  {
+    id: "alg-55",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    difficulty: 1,
+    prompt: "If 7x − 2 = 5x + 12, what is the value of x?",
+    choices: ["7", "14", "5", "−7"],
+    answer: 0,
+    explanation: "7x − 2 = 5x + 12 → 2x = 14 → x = 7.",
+  },
+  {
+    id: "alg-56",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    difficulty: 2,
+    prompt: "If 3x + 4y = 24 and x = 4, what is the value of y?",
+    choices: ["3", "4", "6", "2"],
+    answer: 0,
+    explanation:
+      "Substituting x = 4: 3(4) + 4y = 24 → 12 + 4y = 24 → 4y = 12 → y = 3.",
+  },
+  {
+    id: "alg-57",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: 3,
+    prompt:
+      "The function h is linear. If h(2) = 3 and h(−1) = 12, what is the value of h(0)?",
+    choices: ["9", "3", "6", "12"],
+    answer: 0,
+    explanation:
+      "Slope = (12 − 3)/(−1 − 2) = 9/(−3) = −3, so h(x) = −3x + b. Using h(2) = 3: 3 = −6 + b → b = 9. Then h(0) = 9.",
+  },
+  {
+    id: "alg-58",
+    module: "math",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    difficulty: 1,
+    prompt: "If x = 3y and 2x + y = 21, what is the value of y?",
+    choices: ["3", "9", "7", "6"],
+    answer: 0,
+    explanation:
+      "Substitute x = 3y into 2x + y = 21: 2(3y) + y = 21 → 7y = 21 → y = 3.",
+  },
+  {
+    id: "alg-59",
+    module: "math",
+    domain: "Algebra",
+    skill: "Linear inequalities in one variable",
+    difficulty: 2,
+    prompt:
+      "A student needs an average of at least 90 on three tests to earn an A. The student scored 85 and 92 on the first two tests. What is the minimum score needed on the third test to earn an A?",
+    choices: ["93", "90", "88", "95"],
+    answer: 0,
+    explanation:
+      "(85 + 92 + x)/3 ≥ 90 → 177 + x ≥ 270 → x ≥ 93, so the minimum score needed is 93.",
   }
 );

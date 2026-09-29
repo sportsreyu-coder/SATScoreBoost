@@ -539,5 +539,487 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "The final paragraph directly answers the question from the introduction, now backed by the evidence built up through the essay — a resolving function.",
+  },
+  {
+    id: "cs-34",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Amateur astronomers were initially ______ about the newly reported comet, since similar sightings in the past had turned out to be reflections from satellites.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["doubtful", "delighted", "indifferent", "certain"],
+    answer: 0,
+    explanation:
+      "Past false sightings would reasonably make astronomers doubtful of a new report, not delighted or certain about it.",
+  },
+  {
+    id: "cs-35",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "An article on glassblowing opens with a description of molten glass being gathered on a blowpipe, then explains the physics of viscosity that makes the technique possible, and closes by noting how modern glassblowers still rely on centuries-old hand gestures.",
+    prompt: "Which choice best describes the overall structure of the text?",
+    choices: [
+      "It moves from a vivid process description to scientific explanation to a reflection on tradition.",
+      "It presents two rival theories of glass chemistry and refutes one of them.",
+      "It opens with a conclusion and works backward to the evidence supporting it.",
+      "It compares glassblowing to an unrelated craft throughout the article.",
+    ],
+    answer: 0,
+    explanation:
+      "The article's stated progression — process, then physics, then a closing reflection on tradition — matches choice A exactly.",
+  },
+  {
+    id: "cs-36",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Ornithologist A argues that migratory songbirds primarily rely on the Earth's magnetic field to navigate during long flights, citing displacement experiments in which birds still found their route after being moved off course.\n\nText 2: Ornithologist B argues that star patterns are the dominant cue, citing that birds raised under artificial night skies later misjudge migratory direction accordingly.",
+    prompt: "Which choice best describes a key difference between the two ornithologists' views?",
+    choices: [
+      "Ornithologist A emphasizes a magnetic cue, while Ornithologist B emphasizes a celestial cue.",
+      "Both ornithologists agree that magnetic fields are irrelevant to migration.",
+      "Ornithologist B relies exclusively on displacement experiments.",
+      "Ornithologist A argues that star patterns guide migration.",
+    ],
+    answer: 0,
+    explanation:
+      "Ornithologist A points to the magnetic field, while Ornithologist B points to star patterns — the physical-versus-celestial contrast in choice A.",
+  },
+  {
+    id: "cs-37",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Marine biologists described the reef's recovery as ______, noting that coral cover rebounded to pre-bleaching levels within just two years.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["remarkable", "negligible", "predictable", "artificial"],
+    answer: 0,
+    explanation:
+      "Coral cover rebounding to prior levels within only two years is a notably fast recovery, which 'remarkable' captures.",
+  },
+  {
+    id: "cs-38",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "A biography of a jazz pianist spends its opening chapter on her childhood piano lessons, then devotes a full chapter to a single recording session that critics call her masterpiece, treating it as the turning point of her career.",
+    prompt: "Which choice best describes the function of the chapter devoted to the recording session?",
+    choices: [
+      "It highlights a pivotal moment that the biography treats as central to her artistic development.",
+      "It disproves the claims made earlier about her childhood lessons.",
+      "It shifts entirely away from music to focus on her personal life.",
+      "It summarizes her whole career before any details are given.",
+    ],
+    answer: 0,
+    explanation:
+      "The text explicitly frames the recording session as 'the turning point of her career,' so the chapter functions to highlight a pivotal moment, matching choice A.",
+  },
+  {
+    id: "cs-39",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Translator A argues that a translation should prioritize preserving the original's exact word order and syntax, even if the resulting English sounds unusual, so readers experience the source language's rhythm.\n\nText 2: Translator B argues that a translation should prioritize natural, fluent English, contending that awkward syntax distracts readers from the meaning the original author intended to convey.",
+    prompt: "Based on the texts, how would Translator B most likely respond to Translator A's approach?",
+    choices: [
+      "By arguing that preserving unusual syntax distracts readers from the author's intended meaning.",
+      "By agreeing that unusual syntax is the most important goal of translation.",
+      "By claiming that word order never affects a reader's experience.",
+      "By stating that fluency is irrelevant to good translation.",
+    ],
+    answer: 0,
+    explanation:
+      "Translator B's stated position — that awkward syntax distracts from meaning — directly counters Translator A's preference for preserving unusual syntax.",
+  },
+  {
+    id: "cs-40",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "The volcanologist's report was notably ______, avoiding any firm prediction and instead listing several equally plausible outcomes for the volcano's activity over the coming months.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["hedged", "definitive", "alarmist", "dismissive"],
+    answer: 0,
+    explanation:
+      "Avoiding a firm prediction and listing multiple plausible outcomes describes a hedged report, not a definitive or alarmist one.",
+  },
+  {
+    id: "cs-41",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "An essay on the history of the typewriter spends its first two paragraphs celebrating the machine's role in expanding clerical employment for women in the late nineteenth century, then devotes its final paragraph to noting that the same machines standardized and constrained the pace at which those workers were expected to type.",
+    prompt: "Which choice best describes the function of the final paragraph in the text as a whole?",
+    choices: [
+      "It complicates the earlier celebration by introducing a less positive consequence of the same technology.",
+      "It repeats the praise offered in the first two paragraphs without adding anything new.",
+      "It shifts the topic entirely away from typewriters and clerical work.",
+      "It proves that the typewriter had no effect on women's employment.",
+    ],
+    answer: 0,
+    explanation:
+      "After celebrating the typewriter's benefits, the final paragraph introduces a constraining effect of the same machines, complicating rather than repeating the earlier praise.",
+  },
+  {
+    id: "cs-42",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Paleontologist A argues that a single asteroid impact was the primary cause of the mass extinction, citing an iridium layer found worldwide at the same geological boundary.\n\nText 2: Paleontologist B argues that prolonged volcanic activity over hundreds of thousands of years was the primary cause, citing that many species were already declining before the iridium layer was deposited.",
+    prompt: "Which choice best describes a key difference between the two paleontologists' views?",
+    choices: [
+      "Paleontologist A points to a sudden single event, while Paleontologist B points to a gradual, prolonged process.",
+      "Both paleontologists agree the extinction left no geological evidence.",
+      "Paleontologist B relies exclusively on the iridium layer.",
+      "Paleontologist A argues that species were declining long before the extinction.",
+    ],
+    answer: 0,
+    explanation:
+      "Paleontologist A attributes the extinction to a sudden asteroid impact, while Paleontologist B attributes it to gradual volcanic decline — the contrast described in choice A.",
+  },
+  {
+    id: "cs-43",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "The new conductor's rehearsals were ______, running exactly sixty minutes with no time wasted on repeated passages.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["efficient", "chaotic", "leisurely", "unplanned"],
+    answer: 0,
+    explanation:
+      "Rehearsals that run exactly sixty minutes with no wasted time describe an efficient process, not a chaotic or leisurely one.",
+  },
+  {
+    id: "cs-44",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "An article on early cartography begins by describing a medieval map that places Jerusalem at the center of the world, then explains that such maps prioritized religious symbolism over geographic accuracy.",
+    prompt: "Which choice best describes the function of the second sentence in the text as a whole?",
+    choices: [
+      "It explains the reasoning behind the unusual feature described in the first sentence.",
+      "It contradicts the description given in the first sentence.",
+      "It introduces a completely unrelated map from a different era.",
+      "It proves that medieval maps were more accurate than modern ones.",
+    ],
+    answer: 0,
+    explanation:
+      "The second sentence accounts for why Jerusalem was placed at the center — religious symbolism over accuracy — explaining the feature the first sentence describes.",
+  },
+  {
+    id: "cs-45",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Food scientist A found that fermenting vegetables at a lower temperature produced a milder, less acidic flavor preferred by most tasters in her study.\n\nText 2: Food scientist B found that fermentation temperature made no noticeable difference to taste in his study, though his tasting panel was much smaller than Scientist A's.",
+    prompt: "Which choice best describes the relationship between the findings of the two scientists?",
+    choices: [
+      "Scientist B's results do not confirm Scientist A's findings, though the smaller panel size may limit that comparison.",
+      "Scientist B's findings exactly replicate Scientist A's results.",
+      "Both scientists studied baking rather than fermentation.",
+      "Scientist A found that temperature made no difference in taste.",
+    ],
+    answer: 0,
+    explanation:
+      "Scientist B's null result differs from Scientist A's positive result, but the passage notes B's smaller panel, a detail that qualifies rather than fully undermines the comparison.",
+  },
+  {
+    id: "cs-46",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Despite brutal conditions, the expedition's supply chain remained ______, delivering fuel and food to each camp exactly on schedule for the entire six-month journey.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["reliable", "erratic", "delayed", "improvised"],
+    answer: 0,
+    explanation:
+      "Delivering supplies exactly on schedule for six months despite brutal conditions describes a reliable supply chain, not an erratic or delayed one.",
+  },
+  {
+    id: "cs-47",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "A museum essay on medieval stained glass opens by describing the vivid colors visible from inside a cathedral, then explains that many of these windows were originally designed to be read as a sequence, telling a biblical story from left to right across the nave.",
+    prompt: "Which choice best describes the function of the second sentence in the text as a whole?",
+    choices: [
+      "It reveals a structural, narrative purpose behind the windows that goes beyond their visual color.",
+      "It disputes the claim that the windows are colorful.",
+      "It argues that the windows were purely decorative with no narrative purpose.",
+      "It shifts the essay's focus to an unrelated medieval artform.",
+    ],
+    answer: 0,
+    explanation:
+      "The second sentence moves beyond the windows' color to explain their sequential storytelling function, adding a structural purpose rather than disputing or ignoring the first sentence.",
+  },
+  {
+    id: "cs-48",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Marine biologist A argues that satellite tagging shows individual whales returning to the same feeding grounds year after year, suggesting strong site fidelity.\n\nText 2: Marine biologist B argues that some tagged whales shifted feeding grounds substantially within a single decade, suggesting migration routes are more flexible than previously believed.",
+    prompt: "Based on the texts, how would Marine biologist B most likely respond to Marine biologist A's claim?",
+    choices: [
+      "By pointing to observed shifts in feeding grounds as evidence that migration routes are not as fixed as A suggests.",
+      "By agreeing that all whales return to identical feeding grounds every year.",
+      "By arguing that satellite tagging cannot track whales at all.",
+      "By claiming that whales do not migrate in any consistent pattern.",
+    ],
+    answer: 0,
+    explanation:
+      "Marine biologist B's finding of substantial shifts in feeding grounds directly counters A's claim of strong site fidelity, matching choice A's description of the response.",
+  },
+  {
+    id: "cs-49",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Rather than following the rigid conventions of formal calligraphy, the artist developed a style so ______ that no two of her letters were ever formed exactly the same way twice.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["idiosyncratic", "standardized", "illegible", "traditional"],
+    answer: 0,
+    explanation:
+      "A style in which 'no two letters were ever formed exactly the same way' describes a highly individual, or idiosyncratic, approach, in contrast to rigid conventions.",
+  },
+  {
+    id: "cs-50",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "A history of cryptography devotes its opening section to ciphers used in ancient warfare, its middle section to the mechanical codebreaking machines of the twentieth century, and its final section to a discussion of the mathematical problems that make modern encryption difficult to break.",
+    prompt: "Which choice best describes the overall structure of the text?",
+    choices: [
+      "It traces the development of a practice chronologically from ancient methods to modern mathematical foundations.",
+      "It presents a single case study and analyzes it from multiple perspectives.",
+      "It begins with modern encryption and works backward to ancient ciphers.",
+      "It argues that ancient ciphers were more secure than modern encryption.",
+    ],
+    answer: 0,
+    explanation:
+      "The three sections move in chronological order from ancient ciphers to twentieth-century machines to modern mathematics, matching choice A.",
+  },
+  {
+    id: "cs-51",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Historian A argues that lighthouse automation in the twentieth century was driven primarily by advances in electrical engineering that made unmanned lights reliable.\n\nText 2: Historian B argues that automation was driven primarily by the rising cost of paying human keepers, noting that the necessary technology existed for years before it was widely adopted for that financial reason.",
+    prompt: "Which choice best describes a key difference between the two historians' views?",
+    choices: [
+      "Historian A emphasizes a technological cause, while Historian B emphasizes an economic cause.",
+      "Both historians agree the technology was unavailable until the twentieth century.",
+      "Historian B argues that engineering advances were irrelevant to automation.",
+      "Historian A claims that cost was the primary driver of automation.",
+    ],
+    answer: 0,
+    explanation:
+      "Historian A points to engineering advances (a technological cause), while Historian B points to the cost of paying keepers (an economic cause) — the contrast in choice A.",
+  },
+  {
+    id: "cs-52",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "The exhibit praised the quilt's ______ pattern, in which the same small triangle repeated hundreds of times to form a single unbroken design.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["repetitive", "random", "faded", "asymmetrical"],
+    answer: 0,
+    explanation:
+      "A single small triangle repeated 'hundreds of times' to form the design describes a repetitive pattern, not a random or asymmetrical one.",
+  },
+  {
+    id: "cs-53",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "A report on a retreating glacier opens with striking photographs taken forty years apart, then presents temperature and ice-core data collected over the same period to explain the visible change.",
+    prompt: "Which choice best describes the function of the second sentence in the text as a whole?",
+    choices: [
+      "It supplies quantitative evidence that accounts for the visual change shown in the photographs.",
+      "It contradicts the visual evidence shown in the photographs.",
+      "It introduces an unrelated glacier in a different region.",
+      "It concludes the report before any data has been presented.",
+    ],
+    answer: 0,
+    explanation:
+      "The temperature and ice-core data are presented specifically to explain the change the photographs show, functioning as supporting evidence rather than contradiction.",
+  },
+  {
+    id: "cs-54",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Mycologist A recommends identifying wild mushrooms primarily by spore print color, arguing it is the most reliable single trait for distinguishing similar-looking species.\n\nText 2: Mycologist B recommends relying on a combination of habitat, smell, and cap texture, arguing that spore prints alone can be misleading for beginners without a microscope.",
+    prompt: "Which choice best describes the relationship between the two mycologists' recommendations?",
+    choices: [
+      "Mycologist B favors a multi-trait approach over the single method Mycologist A considers most reliable.",
+      "Both mycologists agree that spore prints should never be used.",
+      "Mycologist A recommends relying only on smell and texture.",
+      "Mycologist B argues that habitat is irrelevant to identification.",
+    ],
+    answer: 0,
+    explanation:
+      "Mycologist B's combination approach is offered as an alternative to the single-trait method Mycologist A recommends, matching the contrast in choice A.",
+  },
+  {
+    id: "cs-55",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "The artisan's papermaking technique remained ______ despite decades of industrial automation elsewhere, as she still pulled each sheet by hand from a wooden frame.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["traditional", "mechanized", "obsolete", "digital"],
+    answer: 0,
+    explanation:
+      "Pulling each sheet by hand from a wooden frame, despite automation elsewhere, describes a traditional technique, not a mechanized or digital one.",
+  },
+  {
+    id: "cs-56",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "An essay on the Silk Road opens by listing the goods that traveled along it — silk, spices, glassware — then argues that ideas and technologies, not just objects, moved along the same routes, and spends its remaining paragraphs tracing how papermaking techniques spread westward this way.",
+    prompt: "Which choice best describes the main purpose of the text?",
+    choices: [
+      "To broaden a narrow view of the Silk Road as only a route for physical goods",
+      "To argue that the Silk Road carried no physical goods at all",
+      "To provide a complete inventory of every good traded historically",
+      "To criticize papermaking as an inferior technology",
+    ],
+    answer: 0,
+    explanation:
+      "The essay starts with goods, then explicitly argues for a broader view that includes ideas and technologies, matching choice A's description of the purpose.",
+  },
+  {
+    id: "cs-57",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Perfumer A argues that synthetic fragrance compounds can replicate natural scents so precisely that trained noses cannot reliably tell the difference in blind tests.\n\nText 2: Perfumer B argues that natural extracts retain a subtle complexity that synthetic compounds still lack, citing blind tests in which expert panels consistently identified the synthetic samples.",
+    prompt: "Which choice best describes the relationship between the two perfumers' claims?",
+    choices: [
+      "Perfumer B's cited results directly contradict the claim made by Perfumer A.",
+      "Perfumer B's findings confirm exactly what Perfumer A argues.",
+      "Both perfumers agree that synthetic compounds cannot be distinguished from natural ones.",
+      "Perfumer A argues that natural extracts are always superior.",
+    ],
+    answer: 0,
+    explanation:
+      "Perfumer A claims trained noses cannot tell synthetic from natural scents, while Perfumer B cites tests in which panels reliably did — a direct contradiction.",
+  },
+  {
+    id: "cs-58",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Even as flood warnings poured in through the night, the broadcaster's voice remained ______, never wavering into panic despite the escalating danger.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["steady", "frantic", "hesitant", "indifferent"],
+    answer: 0,
+    explanation:
+      "A voice that 'never wavered into panic' amid escalating danger is best described as steady, the opposite of frantic or hesitant.",
+  },
+  {
+    id: "cs-59",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "A science article begins by asserting that life cannot exist without sunlight, then describes the discovery of thriving ecosystems around deep-sea hydrothermal vents that rely on chemical energy instead, using the vents to overturn the assumption stated at the outset.",
+    prompt: "Which choice best describes the function of the description of the deep-sea vents in the text as a whole?",
+    choices: [
+      "It provides a counterexample that overturns the assumption presented in the opening sentence.",
+      "It confirms the assumption presented in the opening sentence.",
+      "It introduces a topic unrelated to the article's opening claim.",
+      "It summarizes the article's conclusion before any evidence is given.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage states directly that the vents are used 'to overturn the assumption stated at the outset,' making choice A the accurate description of their function.",
+  },
+  {
+    id: "cs-60",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Linguist A argues that an endangered language is best revitalized through immersion schools, where children are taught primarily in that language from an early age.\n\nText 2: Linguist B argues that mobile apps and self-directed digital tools are more effective for revitalization today, since they can reach far more learners than a small number of physical schools can.",
+    prompt: "Which choice best describes a key difference between the two linguists' approaches?",
+    choices: [
+      "Linguist A favors intensive, in-person immersion, while Linguist B favors scalable digital tools.",
+      "Both linguists agree that digital tools are ineffective for language learning.",
+      "Linguist B argues that immersion schools reach more learners than apps do.",
+      "Linguist A argues against teaching endangered languages to children.",
+    ],
+    answer: 0,
+    explanation:
+      "Linguist A recommends in-person immersion schools, while Linguist B recommends digital tools that reach more learners — the contrast captured in choice A.",
+  },
+  {
+    id: "cs-61",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "The restorer said the antique book's binding was surprisingly ______, still holding every page firmly in place after two centuries of handling.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["durable", "fragile", "loose", "damaged"],
+    answer: 0,
+    explanation:
+      "A binding that still holds every page firmly in place after two centuries of handling is durable, not fragile, loose, or damaged.",
   }
 );
