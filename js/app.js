@@ -29,6 +29,7 @@
     categoryDomain: null, // the domain string, so "retry" can restart the same category
     bankTab: "math",      // "math" | "rw" — which Question Bank subject tab is showing
     lessonsTab: "rw",     // "rw" | "math" — which Lessons subject tab is showing
+    lessonsFreeOnly: false, // true = Lessons list is filtered down to free-tier lessons only
     bankDifficulty: new Set(), // selected difficulty filters (1/2/3); empty = show all
     domainFilter: null,   // set when practicing a single domain from the Study Plan
     skillFilter: null,    // set when practicing a single skill from a Lesson
@@ -1334,9 +1335,14 @@
           }
         </div>`;
 
+    const freeOnly = state.lessonsFreeOnly;
+
     const domainGroup = (group) => {
-      const chips = group.lessons
-        .map((l, i) => {
+      const lessons = freeOnly ? group.lessons.filter((l) => l.tier === "free") : group.lessons;
+      if (!lessons.length) return "";
+      const chips = lessons
+        .map((l) => {
+          const i = group.lessons.indexOf(l);
           const locked = l.tier === "pro" && !premium;
           const tagHTML =
             l.tier === "free"
@@ -1364,12 +1370,17 @@
 
       ${upsellHTML}
 
-      <div class="bank-tabs">
-        <button class="bank-tab ${state.lessonsTab === "rw" ? "active" : ""}" data-lessons-tab="rw">
-          ${ICON_BOOK} Reading &amp; Writing
-        </button>
-        <button class="bank-tab ${state.lessonsTab === "math" ? "active" : ""}" data-lessons-tab="math">
-          ${ICON_CALCULATOR} Math
+      <div class="lessons-toolbar">
+        <div class="bank-tabs">
+          <button class="bank-tab ${state.lessonsTab === "rw" ? "active" : ""}" data-lessons-tab="rw">
+            ${ICON_BOOK} Reading &amp; Writing
+          </button>
+          <button class="bank-tab ${state.lessonsTab === "math" ? "active" : ""}" data-lessons-tab="math">
+            ${ICON_CALCULATOR} Math
+          </button>
+        </div>
+        <button class="btn btn-ghost btn-sm lessons-free-toggle ${freeOnly ? "active" : ""}" data-lessons-free-toggle>
+          ${freeOnly ? "Show all lessons" : "Show all free lessons"}
         </button>
       </div>
 
@@ -1382,6 +1393,14 @@
         renderLessons();
       });
     });
+
+    const freeToggleBtn = document.querySelector("[data-lessons-free-toggle]");
+    if (freeToggleBtn) {
+      freeToggleBtn.addEventListener("click", () => {
+        state.lessonsFreeOnly = !state.lessonsFreeOnly;
+        renderLessons();
+      });
+    }
   }
 
   function renderLessonDetail(domain, index) {

@@ -1487,6 +1487,17 @@ footer.site a { color: var(--accent); text-decoration: none; }
   margin-bottom: 14px;
 }
 
+.lessons-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.lessons-toolbar .bank-tabs { margin-bottom: 0; }
+.lessons-free-toggle.active { color: var(--accent-hover); border-color: var(--accent); background: var(--accent-soft); }
+
 .lessons-domains { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
 .lesson-domain-group h3 { font-size: 0.98rem; color: var(--text-dim); margin-bottom: 10px; }
 .lesson-chip-list { display: flex; flex-direction: column; gap: 8px; }
