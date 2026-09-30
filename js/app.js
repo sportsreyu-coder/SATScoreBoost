@@ -5,9 +5,10 @@
   // ---- State ----
   const state = {
     module: null,      // "rw" | "math" | "mixed" | "diagnostic" | "full-diagnostic"
-    diagnosticIndex: null,     // which entry of DIAGNOSTICS is active
-    fullDiagnosticIndex: null, // which entry of FULL_DIAGNOSTICS is active
-    questions: [],     // active question set (just the current module, for full-diagnostic)
+    diagnosticIndex: null,     // which entry of PRACTICE_SAT is active (state.module === "diagnostic")
+    fullDiagnosticIndex: null, // unused — kept for storage-key compatibility
+    diagKind: null,     // "practice" | "full-scale" — which multi-module engine is driving diagnostic/full-diagnostic
+    questions: [],     // active question set (just the current module, for diagnostic/full-diagnostic)
     answers: {},       // qIndex -> choiceIndex
     checked: {},       // qIndex -> bool, true once "Check Answer" has revealed it
     eliminated: {},    // qIndex -> Set of choiceIndex
@@ -21,9 +22,11 @@
     breakTimer: null,
     breakSecondsLeft: 0,
     pillWindowStart: 0, // first index shown in the footer's question-pill strip
-    fdModules: null,      // full-diagnostic: the 4 modules' shuffled question arrays
-    fdModuleIndex: 0,     // full-diagnostic: which of the 4 modules is active
-    fdResults: [],        // full-diagnostic: flattened {q, selected} across completed modules
+    fdModules: null,      // diagnostic/full-diagnostic: the 4 modules' shuffled question arrays (Module 2 of each subject may be null until adaptively built)
+    fdModuleIndex: 0,     // diagnostic/full-diagnostic: which of the 4 modules is active
+    fdResults: [],        // diagnostic/full-diagnostic: flattened {q, selected} across completed modules
+    fdUsedIds: null,       // full-scale test only: Set of question ids already used this attempt, so Module 2 never repeats Module 1
+    fdTier: {},            // full-scale test only: { rw: "harder"|"easier", math: "harder"|"easier" } — which way Module 2 was adaptively routed
     reviewMode: false,    // true once viewing a finished attempt's review-all-questions list
     categoryLabel: null,  // set when practicing a single Question Bank category
     categoryDomain: null, // the domain string, so "retry" can restart the same category
@@ -177,16 +180,30 @@
   ];
   const BATTLE_PASS_MAX_LEVEL = BATTLE_PASS_FREE_REWARDS.length;
 
-  const FULL_DIAG_INDEX_KEY = "sat_full_diag_index"; // last full-diagnostic index
   const BREAK_SECONDS = 600; // 10-minute break between RW and Math, like the real SAT
-  // Real digital SAT per-module structure and timing.
-  const FULL_DIAG_MODULE_KEYS = ["rw1", "rw2", "math1", "math2"];
-  const FULL_DIAG_MODULE_DURATIONS = [32 * 60, 32 * 60, 35 * 60, 35 * 60];
-  const FULL_DIAG_MODULE_LABELS = [
+  // Both the free Full Practice SAT (state.module === "diagnostic") and the
+  // Pro Full Scale Test (state.module === "full-diagnostic") run the same
+  // 4-module shape — RW Module 1/2, a break, then Math Module 1/2 — just at
+  // different sizes and timings. See diagModuleDurations()/diagModuleLabels().
+  const DIAG_MODULE_KEYS = ["rw1", "rw2", "math1", "math2"];
+
+  // Free Full Practice SAT: real digital SAT per-module structure and timing.
+  const PRACTICE_SAT_MODULE_DURATIONS = [32 * 60, 32 * 60, 35 * 60, 35 * 60];
+  const PRACTICE_SAT_MODULE_LABELS = [
     "Reading & Writing — Module 1",
     "Reading & Writing — Module 2",
     "Math — Module 1",
     "Math — Module 2",
+  ];
+
+  // Pro Full Scale Test: 50 questions/module (100/subject, 200 total), so
+  // modules run longer — scaled from the real test's per-question pacing.
+  const FULL_SCALE_MODULE_DURATIONS = [60 * 60, 60 * 60, 80 * 60, 80 * 60];
+  const FULL_SCALE_MODULE_LABELS = [
+    "Reading & Writing — Module 1",
+    "Reading & Writing — Module 2 (Adaptive)",
+    "Math — Module 1",
+    "Math — Module 2 (Adaptive)",
   ];
 
   // ---- Question-pill window helpers ----
@@ -216,6 +233,7 @@
     social: document.getElementById("social"),
     badges: document.getElementById("badges"),
     battlepass: document.getElementById("battlepass"),
+    profile: document.getElementById("profile"),
     studyPlan: document.getElementById("studyPlan"),
     lessons: document.getElementById("lessons"),
     games: document.getElementById("games"),
@@ -475,7 +493,7 @@
     });
   }
 
-  // ---- Diagnostics: fixed 10-RW + 10-Math mini practice tests ----
+  // ---- Full Practice SAT (free): all four real-SAT modules, with a mid-test break ----
   function loadLastDiagnosticIndex() {
     try {
       const raw = localStorage.getItem(DIAG_INDEX_KEY);
@@ -491,73 +509,136 @@
     } catch (e) { /* localStorage unavailable */ }
   }
 
-  // Starts the next diagnostic in rotation (1 -> 2 -> 3 -> 1 -> ...).
+  // Starts the next Full Practice SAT in rotation: RW Module 1, RW Module 2,
+  // a real break, then Math Module 1, Math Module 2 — each module its own
+  // timed session, exactly like the real digital SAT. Free, no upgrade needed.
   function startDiagnostic() {
-    const nextIndex = (loadLastDiagnosticIndex() + 1) % DIAGNOSTICS.length;
+    const nextIndex = (loadLastDiagnosticIndex() + 1) % PRACTICE_SAT.length;
     saveLastDiagnosticIndex(nextIndex);
 
-    const set = DIAGNOSTICS[nextIndex];
-    const pool = set.questionIds
-      .map((id) => QUESTIONS.find((q) => q.id === id))
-      .filter(Boolean)
-      .map(shuffleChoices);
-
-    state.module = "diagnostic";
-    state.diagnosticIndex = nextIndex;
-    state.domainFilter = null;
-    state.reviewMode = false;
-    state.categoryLabel = null;
-    state.categoryDomain = null;
-    state.questions = pool;
-    state.answers = {};
-    state.eliminated = {};
-    state.checked = {};
-    state.marked = {};
-    state.current = 0;
-    state.eliminating = false;
-    state.pillWindowStart = 0;
-    state.secondsLeft = pool.length * SECONDS_PER_Q;
-    state.timerHidden = false;
-
-    startTimer();
-    show("exam");
-    renderQuestion();
-    renderFooter();
-    updateModuleName();
-  }
-
-  // ---- Full diagnostics: all four real-SAT modules, with a mid-test break ----
-  function loadLastFullDiagIndex() {
-    try {
-      const raw = localStorage.getItem(FULL_DIAG_INDEX_KEY);
-      return raw !== null ? parseInt(raw, 10) : -1;
-    } catch (e) {
-      return -1;
-    }
-  }
-
-  function saveLastFullDiagIndex(i) {
-    try {
-      localStorage.setItem(FULL_DIAG_INDEX_KEY, String(i));
-    } catch (e) { /* localStorage unavailable */ }
-  }
-
-  // Starts the next full diagnostic in rotation: RW Module 1, RW Module 2,
-  // a real break, then Math Module 1, Math Module 2 — each module its own
-  // timed session, exactly like the real digital SAT.
-  function startFullDiagnostic() {
-    const nextIndex = (loadLastFullDiagIndex() + 1) % FULL_DIAGNOSTICS.length;
-    saveLastFullDiagIndex(nextIndex);
-
-    const set = FULL_DIAGNOSTICS[nextIndex];
-    state.fdModules = FULL_DIAG_MODULE_KEYS.map((key) =>
+    const set = PRACTICE_SAT[nextIndex];
+    state.fdModules = DIAG_MODULE_KEYS.map((key) =>
       set.modules[key]
         .map((id) => QUESTIONS.find((q) => q.id === id))
         .filter(Boolean)
         .map(shuffleChoices)
     );
     state.fdResults = [];
-    state.fullDiagnosticIndex = nextIndex;
+    state.fdTier = {};
+    state.diagnosticIndex = nextIndex;
+    state.diagKind = "practice";
+    state.module = "diagnostic";
+    state.domainFilter = null;
+    state.reviewMode = false;
+    state.categoryLabel = null;
+    state.categoryDomain = null;
+    state.timerHidden = false;
+
+    loadDiagModule(0);
+  }
+
+  // ---- Full Scale Test (ScoreBoost Pro): 100 RW + 100 Math, adaptive ----
+  // Domain mix, tier weights, and FULL_SCALE_MODULE_SIZE live in diagnostics.js.
+
+  // Picks `count` questions for one domain at the given difficulty tier,
+  // excluding ids already used elsewhere in this attempt. Falls back to
+  // any remaining difficulty within the domain, then to whatever's left in
+  // the domain, so a thin difficulty bucket never comes up short.
+  function pickDomainQuestions(subjectModule, domain, count, tier, usedIds) {
+    const candidates = QUESTIONS.filter(
+      (q) => q.module === subjectModule && q.domain === domain && !usedIds.has(q.id)
+    );
+    const buckets = { 1: [], 2: [], 3: [] };
+    candidates.forEach((q) => {
+      if (buckets[q.difficulty]) buckets[q.difficulty].push(q);
+    });
+    [1, 2, 3].forEach((d) => {
+      buckets[d] = shuffle(buckets[d]);
+    });
+
+    const weights = FULL_SCALE_TIER_WEIGHTS[tier];
+    const w1 = Math.round(count * weights[1]);
+    const w2 = Math.round(count * weights[2]);
+    const wanted = { 1: w1, 2: w2, 3: count - w1 - w2 };
+
+    const picked = [];
+    [1, 2, 3].forEach((d) => {
+      picked.push(...buckets[d].splice(0, wanted[d]));
+    });
+    if (picked.length < count) {
+      const leftover = shuffle([].concat(buckets[1], buckets[2], buckets[3]));
+      picked.push(...leftover.slice(0, count - picked.length));
+    }
+    return picked.slice(0, count);
+  }
+
+  // Builds one 50-question Full Scale Test module: a College-Board-like
+  // domain mix within the given subject, sampled at the requested
+  // difficulty tier, never repeating a question already used earlier in
+  // this attempt (usedIds is shared and mutated across the whole test).
+  function buildAdaptiveModule(subjectModule, tier, usedIds, totalCount) {
+    const mix = FULL_SCALE_DOMAIN_MIX[subjectModule];
+    let questions = [];
+    mix.forEach(([domain, count]) => {
+      questions = questions.concat(pickDomainQuestions(subjectModule, domain, count, tier, usedIds));
+    });
+    // Top up from the whole subject pool if any domain came up short.
+    if (questions.length < totalCount) {
+      const have = new Set(questions.map((q) => q.id));
+      const rest = shuffle(
+        QUESTIONS.filter((q) => q.module === subjectModule && !usedIds.has(q.id) && !have.has(q.id))
+      );
+      questions = questions.concat(rest.slice(0, totalCount - questions.length));
+    }
+    questions = shuffle(questions).slice(0, totalCount);
+    questions.forEach((q) => usedIds.add(q.id));
+    return questions.map(shuffleChoices);
+  }
+
+  // Shows a locked-card upsell in place of the exam, mirroring the Pro
+  // lesson lock pattern — the Full Scale Test never starts for a
+  // non-Premium account.
+  function showFullScaleTestPaywall() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const el = document.getElementById("break");
+    el.innerHTML = `
+      <div class="break-content">
+        <span class="eyebrow">ScoreBoost Pro</span>
+        <h2>The Full Scale Test is part of ScoreBoost Pro</h2>
+        <p>200 questions across two full, adaptive sections — 100 Reading &amp; Writing and 100 Math. Module 2 of each section gets harder or easier based on how you did on Module 1, just like the real adaptive digital SAT, but with a deeper question set and a sharper score estimate.</p>
+        <div class="break-actions">
+          ${
+            user
+              ? `<button class="btn btn-primary" data-action="upgrade-premium-fst">Upgrade to Premium →</button>`
+              : `<button class="btn btn-primary" data-action="open-auth">Log in to upgrade →</button>`
+          }
+          <button class="btn btn-ghost" id="breakHomeBtn">Exit to Home</button>
+        </div>
+        ${user ? `<p class="lessons-paywall-note">Demo upgrade — no payment required. Real billing is coming soon.</p>` : ""}
+      </div>`;
+    document.getElementById("breakHomeBtn").addEventListener("click", goHome);
+    show("break");
+  }
+
+  // Starts a Full Scale Test attempt: Module 1 of each subject is built
+  // immediately (medium difficulty spread); Module 2 of each subject is
+  // built adaptively, right after its Module 1 is scored, in finishDiagModule().
+  function startFullDiagnostic() {
+    const premium = !!(window.Auth && window.Auth.isPremium());
+    if (!premium) {
+      showFullScaleTestPaywall();
+      return;
+    }
+
+    state.fdUsedIds = new Set();
+    state.fdTier = {};
+    const rw1 = buildAdaptiveModule("rw", "medium", state.fdUsedIds, FULL_SCALE_MODULE_SIZE);
+    const math1 = buildAdaptiveModule("math", "medium", state.fdUsedIds, FULL_SCALE_MODULE_SIZE);
+    state.fdModules = [rw1, null, math1, null];
+    state.fdResults = [];
+    state.diagnosticIndex = null;
+    state.fullDiagnosticIndex = null;
+    state.diagKind = "full-scale";
     state.module = "full-diagnostic";
     state.domainFilter = null;
     state.reviewMode = false;
@@ -565,11 +646,20 @@
     state.categoryDomain = null;
     state.timerHidden = false;
 
-    loadFullDiagModule(0);
+    loadDiagModule(0);
   }
 
-  // Loads one module of the active full diagnostic as its own timed session.
-  function loadFullDiagModule(moduleIndex) {
+  function diagModuleDurations() {
+    return state.diagKind === "full-scale" ? FULL_SCALE_MODULE_DURATIONS : PRACTICE_SAT_MODULE_DURATIONS;
+  }
+
+  function diagModuleLabels() {
+    return state.diagKind === "full-scale" ? FULL_SCALE_MODULE_LABELS : PRACTICE_SAT_MODULE_LABELS;
+  }
+
+  // Loads one module of the active diagnostic (Full Practice SAT or Full
+  // Scale Test) as its own timed session.
+  function loadDiagModule(moduleIndex) {
     state.fdModuleIndex = moduleIndex;
     state.questions = state.fdModules[moduleIndex];
     state.answers = {};
@@ -579,7 +669,7 @@
     state.current = 0;
     state.eliminating = false;
     state.pillWindowStart = 0;
-    state.secondsLeft = FULL_DIAG_MODULE_DURATIONS[moduleIndex];
+    state.secondsLeft = diagModuleDurations()[moduleIndex];
 
     startTimer();
     show("exam");
@@ -588,16 +678,29 @@
     updateModuleName();
   }
 
-  // Records the module just finished, then either moves to a quick
-  // module-to-module checkpoint, the real break, or final scoring.
-  function finishFullDiagModule() {
+  // Records the module just finished, adaptively builds the next module's
+  // content for the Full Scale Test (Module 2 of a subject is routed
+  // harder/easier based on Module 1's accuracy), then either moves to a
+  // quick module-to-module checkpoint, the real break, or final scoring.
+  function finishDiagModule() {
     clearInterval(state.timer);
     state.questions.forEach((q, i) => {
       state.fdResults.push({ q, selected: state.answers[i] });
     });
 
     const idx = state.fdModuleIndex;
-    if (idx === FULL_DIAG_MODULE_KEYS.length - 1) {
+
+    if (state.diagKind === "full-scale" && (idx === 0 || idx === 2)) {
+      const justFinished = state.fdModules[idx];
+      const correct = justFinished.reduce((n, q, i) => n + (state.answers[i] === q.answer ? 1 : 0), 0);
+      const pct = justFinished.length ? correct / justFinished.length : 0;
+      const tier = pct >= 0.6 ? "harder" : "easier";
+      const subject = idx === 0 ? "rw" : "math";
+      state.fdTier[subject] = tier;
+      state.fdModules[idx + 1] = buildAdaptiveModule(subject, tier, state.fdUsedIds, FULL_SCALE_MODULE_SIZE);
+    }
+
+    if (idx === DIAG_MODULE_KEYS.length - 1) {
       finishFullDiagnostic();
     } else {
       showModuleTransition(idx + 1);
@@ -609,7 +712,7 @@
   // two modules of the same section.
   function showModuleTransition(nextModuleIndex) {
     const isBreak = nextModuleIndex === 2; // finished RW2, heading into Math1
-    const nextLabel = FULL_DIAG_MODULE_LABELS[nextModuleIndex];
+    const nextLabel = diagModuleLabels()[nextModuleIndex];
     const el = document.getElementById("break");
 
     el.innerHTML = isBreak
@@ -637,7 +740,7 @@
 
     document.getElementById("continueBreakBtn").addEventListener("click", () => {
       clearInterval(state.breakTimer);
-      loadFullDiagModule(nextModuleIndex);
+      loadDiagModule(nextModuleIndex);
     });
     document.getElementById("breakHomeBtn").addEventListener("click", goHome);
 
@@ -652,7 +755,7 @@
         renderBreakTimer();
         if (state.breakSecondsLeft <= 0) {
           clearInterval(state.breakTimer);
-          loadFullDiagModule(nextModuleIndex);
+          loadDiagModule(nextModuleIndex);
         }
       }, 1000);
     }
@@ -666,10 +769,22 @@
     el.textContent = `${m}:${String(s).padStart(2, "0")}`;
   }
 
-  // Scores the full 98-question attempt from every module's recorded
-  // answers, then rebuilds a flat question/answer view (all 4 modules, in
-  // order) purely so the results screen's review-and-jump-back feature
-  // works across the whole test.
+  // Maps a subject's accuracy to a section score. For the Full Scale Test,
+  // this also folds in which way Module 2 was adaptively routed — reaching
+  // the harder Module 2 nudges the score up, being routed to the easier one
+  // nudges it down — the same way the real adaptive SAT's routing affects
+  // your score ceiling/floor, not just raw accuracy.
+  function scoreSectionForDiag(subject, pct) {
+    if (state.diagKind !== "full-scale") return toSectionScore(pct);
+    const tier = state.fdTier && state.fdTier[subject];
+    const bonus = tier === "harder" ? 0.05 : tier === "easier" ? -0.05 : 0;
+    return toSectionScore(Math.min(1, Math.max(0, pct + bonus)));
+  }
+
+  // Scores the full attempt from every module's recorded answers, then
+  // rebuilds a flat question/answer view (all 4 modules, in order) purely
+  // so the results screen's review-and-jump-back feature works across the
+  // whole test.
   function finishFullDiagnostic() {
     const items = state.fdResults;
     const total = items.length;
@@ -687,8 +802,8 @@
       }
     });
     const pct = total ? correct / total : 0;
-    const rwScore = toSectionScore(rwTotal ? rwCorrect / rwTotal : 0);
-    const mathScore = toSectionScore(mathTotal ? mathCorrect / mathTotal : 0);
+    const rwScore = scoreSectionForDiag("rw", rwTotal ? rwCorrect / rwTotal : 0);
+    const mathScore = scoreSectionForDiag("math", mathTotal ? mathCorrect / mathTotal : 0);
     const overall = rwScore + mathScore;
 
     state.questions = items.map(({ q }) => q);
@@ -743,17 +858,15 @@
     if (m === "rw") return "Reading & Writing";
     if (m === "math") return "Math";
     if (m === "diagnostic") {
-      return state.diagnosticIndex !== null
-        ? DIAGNOSTICS[state.diagnosticIndex].label
-        : "Diagnostic";
+      if (state.reviewMode) {
+        return state.diagnosticIndex !== null ? PRACTICE_SAT[state.diagnosticIndex].label : "Full Practice SAT";
+      }
+      const key = DIAG_MODULE_KEYS[state.fdModuleIndex] || "";
+      return key.startsWith("math") ? "Math" : "Reading & Writing";
     }
     if (m === "full-diagnostic") {
-      if (state.reviewMode) {
-        return state.fullDiagnosticIndex !== null
-          ? FULL_DIAGNOSTICS[state.fullDiagnosticIndex].label
-          : "Full Diagnostic";
-      }
-      const key = FULL_DIAG_MODULE_KEYS[state.fdModuleIndex] || "";
+      if (state.reviewMode) return "Full Scale Test";
+      const key = DIAG_MODULE_KEYS[state.fdModuleIndex] || "";
       return key.startsWith("math") ? "Math" : "Reading & Writing";
     }
     return "Full Practice";
@@ -1019,11 +1132,15 @@
       }
       return;
     }
-    // Full diagnostics run one module at a time; finishing the last
-    // question of a module hands off to the next module (or scores the
-    // whole attempt after Math Module 2), rather than ending the exam here.
-    if (state.module === "full-diagnostic" && state.current === state.questions.length - 1) {
-      finishFullDiagModule();
+    // The Full Practice SAT and Full Scale Test run one module at a time;
+    // finishing the last question of a module hands off to the next module
+    // (or scores the whole attempt after Math Module 2), rather than ending
+    // the exam here.
+    if (
+      (state.module === "diagnostic" || state.module === "full-diagnostic") &&
+      state.current === state.questions.length - 1
+    ) {
+      finishDiagModule();
       return;
     }
     if (state.current === state.questions.length - 1) {
@@ -1049,6 +1166,10 @@
     return Math.round((200 + p * 600) / 10) * 10;
   }
 
+  // Used by every single-module practice session (rw/math/mixed/mistake
+  // review/question-bank category). The Full Practice SAT and Full Scale
+  // Test never reach this — they score across all 4 modules in
+  // finishFullDiagnostic() instead.
   function finishExam() {
     clearInterval(state.timer);
     const total = state.questions.length;
@@ -1058,29 +1179,10 @@
     });
     const pct = total ? correct / total : 0;
 
-    let overall, rwScore, mathScore;
-    if (state.module === "diagnostic" || state.module === "full-diagnostic") {
-      // Diagnostics mix RW and Math questions, so score each subject
-      // separately for a real two-section estimate, like the actual SAT.
-      let rwTotal = 0, rwCorrect = 0, mathTotal = 0, mathCorrect = 0;
-      state.questions.forEach((q, i) => {
-        const ok = state.answers[i] === q.answer;
-        if (q.module === "rw") {
-          rwTotal++;
-          if (ok) rwCorrect++;
-        } else {
-          mathTotal++;
-          if (ok) mathCorrect++;
-        }
-      });
-      rwScore = toSectionScore(rwTotal ? rwCorrect / rwTotal : 0);
-      mathScore = toSectionScore(mathTotal ? mathCorrect / mathTotal : 0);
-      overall = rwScore + mathScore;
-    } else if (state.module === "mixed" || state.module === "mistakeReview") {
-      overall = toSectionScore(pct) * 2; // rough two-section estimate
-    } else {
-      overall = toSectionScore(pct); // single section
-    }
+    const overall =
+      state.module === "mixed" || state.module === "mistakeReview"
+        ? toSectionScore(pct) * 2 // rough two-section estimate
+        : toSectionScore(pct); // single section
 
     showScoringTransition(() => {
       recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i] })));
@@ -1089,7 +1191,7 @@
         bumpMistakesReviewedToday(reviewed);
       }
 
-      renderResults({ total, correct, wrong: total - correct, pct, overall, rwScore, mathScore });
+      renderResults({ total, correct, wrong: total - correct, pct, overall });
       saveStats(correct, total);
       recordLifetimeAnswers();
       show("results");
@@ -1203,6 +1305,7 @@
   function renderStudyPlan() {
     const data = loadDiagnosticSummary();
     const el = document.getElementById("studyPlan");
+    const premium = !!(window.Auth && window.Auth.isPremium());
 
     if (!data || !data.categories || !data.categories.length) {
       el.innerHTML = `
@@ -1211,8 +1314,8 @@
           <h2>Take a diagnostic to build your plan</h2>
           <p>Your study plan is generated from your diagnostic results — finish one to see exactly which categories to focus on first.</p>
           <div class="results-actions">
-            <button class="btn btn-primary" data-start="diagnostic">Start Short Diagnostic →</button>
-            <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Diagnostic →</button>
+            <button class="btn btn-primary" data-start="diagnostic">Start Full Practice SAT →</button>
+            <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Scale Test${premium ? "" : " (Pro)"} →</button>
           </div>
         </div>`;
       return;
@@ -1284,7 +1387,7 @@
       )}
 
       <div class="results-actions">
-        <button class="btn btn-primary" data-start="diagnostic">Retake Diagnostic →</button>
+        <button class="btn btn-primary" data-start="diagnostic">Retake Full Practice SAT →</button>
         <button class="btn btn-ghost" data-nav="lessons">Browse Lessons →</button>
         <button class="btn btn-ghost" data-home>Back to Home</button>
       </div>
@@ -2515,7 +2618,7 @@
 
       <div class="results-actions">
         <button class="btn btn-primary" id="retryBtn">${
-          state.module === "full-diagnostic" ? "Retake Full Diagnostic" : isDiagnostic ? "Retake Diagnostic" : "Try Again"
+          state.module === "full-diagnostic" ? "Retake Full Scale Test" : isDiagnostic ? "Retake Practice SAT" : "Try Again"
         }</button>
         ${isDiagnostic ? `<button class="btn btn-ghost" data-nav="studyPlan">View Study Plan →</button>` : ""}
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
@@ -2856,20 +2959,44 @@
     return div.innerHTML;
   }
 
-  // Corner auth control: a "Log in" CTA when signed out, a default
-  // profile-picture avatar (opens the account dropdown) when signed in.
+  // A small fixed palette for the initials avatar's background — picked
+  // deterministically from the user's email so it's stable across
+  // sessions/devices even before they ever choose one themselves.
+  const AVATAR_COLORS = ["#3b82f6", "#10b981", "#8b5cf6", "#f43f5e", "#f97316", "#14b8a6", "#eab308", "#64748b"];
+
+  function hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) hash = (hash * 31 + str.charCodeAt(i)) | 0;
+    return Math.abs(hash);
+  }
+
+  function defaultAvatarColor(user) {
+    return AVATAR_COLORS[hashString(user.email || user.name || "") % AVATAR_COLORS.length];
+  }
+
+  // Renders the account's avatar at a given pixel size: the uploaded photo
+  // if there is one, otherwise a colored circle with the user's first
+  // initial (their own chosen color, or a stable default derived from
+  // their email).
+  function avatarHTML(user, size) {
+    if (user.avatarUrl) {
+      return `<img class="avatar-circle" src="${escapeHtml(user.avatarUrl)}" alt="" style="width:${size}px;height:${size}px;font-size:${Math.round(size * 0.42)}px" />`;
+    }
+    const initial = (user.name || user.email || "?").trim().charAt(0).toUpperCase();
+    const color = user.avatarColor || defaultAvatarColor(user);
+    return `<div class="avatar-circle avatar-initials" style="width:${size}px;height:${size}px;font-size:${Math.round(size * 0.42)}px;background:${color}">${escapeHtml(initial)}</div>`;
+  }
+
+  // Corner auth control: a "Log in" CTA when signed out, the account's
+  // avatar (opens the account dropdown) when signed in.
   function renderProfileToggle() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const toggle = document.getElementById("profileToggle");
     if (user) {
-      toggle.className = "profile-toggle profile-avatar";
+      toggle.className = "profile-toggle profile-avatar-btn";
       toggle.removeAttribute("data-action");
       toggle.title = user.name || user.email;
-      toggle.innerHTML = `
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="8" r="4" />
-          <path d="M4 20c1.4-4.2 4.7-6.5 8-6.5s6.6 2.3 8 6.5" />
-        </svg>`;
+      toggle.innerHTML = avatarHTML(user, 36);
     } else {
       toggle.className = "profile-toggle btn btn-primary btn-sm";
       toggle.dataset.action = "open-auth";
@@ -2900,6 +3027,11 @@
       <rect x="3" y="8" width="18" height="4" rx="1" /><path d="M12 8v13" /><path d="M19 12v7a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7" />
       <path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5" />
     </svg>`;
+  const ICON_USER = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c1.4-4.2 4.7-6.5 8-6.5s6.6 2.3 8 6.5" />
+    </svg>`;
 
   function renderProfileMenu() {
     const user = window.Auth && window.Auth.getCurrentUser();
@@ -2907,8 +3039,11 @@
     const userHTML = user
       ? `
         <div class="profile-user">
-          <div class="profile-user-name">${escapeHtml(user.name)}</div>
-          <div class="profile-user-email">${escapeHtml(user.email)}</div>
+          ${avatarHTML(user, 40)}
+          <div class="profile-user-text">
+            <div class="profile-user-name">${escapeHtml(user.name)}</div>
+            <div class="profile-user-email">${escapeHtml(user.email)}</div>
+          </div>
         </div>`
       : "";
     const logoutHTML = user
@@ -2917,12 +3052,175 @@
 
     dropdown.innerHTML = `
       ${userHTML}
+      <button class="profile-menu-item" data-nav="profile">Edit Profile ${ICON_USER}</button>
       <button class="profile-menu-item" data-nav="social">Streak &amp; Stats ${ICON_FIRE}</button>
       <button class="profile-menu-item" data-nav="badges">Badges ${ICON_BADGE}</button>
       <button class="profile-menu-item" data-nav="battlepass">Battle Pass ${ICON_TROPHY}</button>
       <div class="profile-divider"></div>
       ${logoutHTML}
     `;
+  }
+
+  // Reads an image file, downscales it to fit within maxSize×maxSize (never
+  // upscales), and resolves a compact JPEG data URL — keeps avatars small
+  // enough to live comfortably in localStorage and in a Supabase text column.
+  function resizeImageFile(file, maxSize) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = () => reject(new Error("Couldn't read that file."));
+      reader.onload = () => {
+        const img = new Image();
+        img.onerror = () => reject(new Error("That doesn't look like a valid image."));
+        img.onload = () => {
+          const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+          const w = Math.max(1, Math.round(img.width * scale));
+          const h = Math.max(1, Math.round(img.height * scale));
+          const canvas = document.createElement("canvas");
+          canvas.width = w;
+          canvas.height = h;
+          canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL("image/jpeg", 0.85));
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // ---- Profile ----
+  function renderProfile() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const el = document.getElementById("profile");
+    if (!user) {
+      el.innerHTML = `
+        <span class="eyebrow">Profile</span>
+        <h1 class="section-title">You're not logged in</h1>
+        <p class="section-sub">Log in to edit your profile.</p>
+        <div class="results-actions">
+          <button class="btn btn-primary" data-action="open-auth">Log in →</button>
+        </div>
+      `;
+      return;
+    }
+
+    const premium = !!(window.Auth && window.Auth.isPremium());
+    const memberSince = user.createdAt
+      ? new Date(user.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long" })
+      : null;
+    const providerLabel = user.provider === "google" ? "Google account" : "Email &amp; password (demo)";
+    const activeColor = user.avatarColor || defaultAvatarColor(user);
+
+    const swatchesHTML = AVATAR_COLORS.map(
+      (c) =>
+        `<button type="button" class="avatar-swatch ${c === activeColor ? "active" : ""}" style="background:${c}" data-avatar-color="${c}" aria-label="Choose avatar color"></button>`
+    ).join("");
+
+    el.innerHTML = `
+      <span class="eyebrow">Profile</span>
+      <h1 class="section-title">Your profile</h1>
+      <p class="section-sub">Update your photo, name, and plan.</p>
+
+      <div class="profile-card">
+        <div class="profile-avatar-row">
+          ${avatarHTML(user, 96)}
+          <div class="profile-avatar-actions">
+            <label class="btn btn-ghost btn-sm profile-upload-btn">
+              Upload photo
+              <input type="file" accept="image/*" id="profileAvatarInput" hidden />
+            </label>
+            ${user.avatarUrl ? `<button type="button" class="btn btn-ghost btn-sm" data-remove-avatar>Remove photo</button>` : ""}
+          </div>
+        </div>
+        <div class="auth-error hidden" id="profileAvatarError"></div>
+        <p class="profile-field-label">Avatar color (shown when there's no photo)</p>
+        <div class="profile-swatches">${swatchesHTML}</div>
+      </div>
+
+      <div class="profile-card">
+        <form id="profileNameForm" class="profile-form">
+          <label class="field">
+            <span>Display name</span>
+            <input type="text" id="profileNameInput" value="${escapeHtml(user.name)}" required />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="text" value="${escapeHtml(user.email)}" disabled />
+          </label>
+          <div class="auth-error hidden" id="profileNameStatus"></div>
+          <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+        </form>
+        <p class="profile-meta">${providerLabel}${memberSince ? ` · Member since ${memberSince}` : ""}</p>
+      </div>
+
+      <div class="profile-card profile-plan-card">
+        <div>
+          <div class="profile-field-label">Plan</div>
+          <div class="profile-plan-badge ${premium ? "premium" : ""}">${premium ? "ScoreBoost Pro" : "Free"}</div>
+        </div>
+        ${premium ? "" : `<button class="btn btn-primary btn-sm" data-action="upgrade-premium">Upgrade →</button>`}
+      </div>
+
+      <div class="results-actions profile-actions">
+        <button class="btn btn-ghost" data-action="logout">Log out</button>
+      </div>
+    `;
+
+    const fileInput = document.getElementById("profileAvatarInput");
+    if (fileInput) {
+      fileInput.addEventListener("change", async () => {
+        const file = fileInput.files && fileInput.files[0];
+        fileInput.value = "";
+        if (!file) return;
+        const errEl = document.getElementById("profileAvatarError");
+        if (!file.type.startsWith("image/")) {
+          errEl.textContent = "Please choose an image file.";
+          errEl.classList.remove("hidden");
+          return;
+        }
+        try {
+          const dataUrl = await resizeImageFile(file, 256);
+          const res = await window.Auth.updateAvatar(dataUrl);
+          if (!res.ok) throw new Error(res.error || "Couldn't save that photo.");
+          errEl.classList.add("hidden");
+          afterAuthChange();
+        } catch (e) {
+          errEl.textContent = e.message || "Couldn't process that image.";
+          errEl.classList.remove("hidden");
+        }
+      });
+    }
+
+    document.querySelectorAll("[data-avatar-color]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        await window.Auth.setAvatarColor(btn.dataset.avatarColor);
+        afterAuthChange();
+      });
+    });
+
+    const removeBtn = document.querySelector("[data-remove-avatar]");
+    if (removeBtn) {
+      removeBtn.addEventListener("click", async () => {
+        await window.Auth.removeAvatar();
+        afterAuthChange();
+      });
+    }
+
+    const nameForm = document.getElementById("profileNameForm");
+    if (nameForm) {
+      nameForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const input = document.getElementById("profileNameInput");
+        const statusEl = document.getElementById("profileNameStatus");
+        const res = await window.Auth.updateName(input.value);
+        if (!res.ok) {
+          statusEl.textContent = res.error;
+          statusEl.classList.remove("hidden");
+          return;
+        }
+        statusEl.classList.add("hidden");
+        afterAuthChange();
+      });
+    }
   }
 
   // ---- Auth modal ----
@@ -2964,6 +3262,7 @@
     if (!screens.badges.classList.contains("hidden")) renderBadges();
     if (!screens.battlepass.classList.contains("hidden")) renderBattlePass();
     if (!screens.lessons.classList.contains("hidden")) renderLessons();
+    if (!screens.profile.classList.contains("hidden")) renderProfile();
   }
 
   // Shows the "PRO" tag next to the Lessons nav link for anyone who hasn't
@@ -3015,6 +3314,7 @@
         else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
         else if (nav === "lessons") { state.activeLesson = null; state.lessonChatLog = []; renderLessons(); }
         else if (nav === "games") { stopActiveGame(); renderGamesHub(); }
+        else if (nav === "profile") renderProfile();
         else renderSocial();
         show(nav);
         closeProfileMenu();
@@ -3090,6 +3390,10 @@
           window.Auth.upgradeToPremium();
           afterAuthChange();
           renderLessons();
+        } else if (action === "upgrade-premium-fst") {
+          window.Auth.upgradeToPremium();
+          afterAuthChange();
+          startFullDiagnostic();
         }
         return;
       }

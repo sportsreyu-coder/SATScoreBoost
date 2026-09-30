@@ -55,9 +55,14 @@ create table if not exists public.profiles (
   email text,
   name text,
   plan text not null default 'free' check (plan in ('free', 'premium')),
+  avatar_url text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+
+-- Re-running this file on a project whose `profiles` table predates the
+-- Profile tab: add the column it's missing without touching existing rows.
+alter table public.profiles add column if not exists avatar_url text;
 
 alter table public.profiles enable row level security;
 
@@ -115,3 +120,46 @@ drop trigger if exists set_profiles_updated_at on public.profiles;
 create trigger set_profiles_updated_at
   before update on public.profiles
   for each row execute function public.set_updated_at();
+
+-- ---------------------------------------------------------------------
+-- avatars (Storage) -- profile pictures for Google-authenticated users
+-- ---------------------------------------------------------------------
+-- Public bucket: anyone can view an avatar (they're profile pictures, not
+-- sensitive), but a user can only write to the folder named after their
+-- own auth uid -- js/auth.js uploads to `${user.id}/avatar.jpg`, so this
+-- policy shape keeps users from overwriting each other's files.
+-- Email/password demo accounts store their photo as a data URL directly
+-- in localStorage instead (see js/auth.js) -- they never touch this bucket.
+
+insert into storage.buckets (id, name, public)
+values ('avatars', 'avatars', true)
+on conflict (id) do nothing;
+
+drop policy if exists "Public can view avatars" on storage.objects;
+create policy "Public can view avatars"
+  on storage.objects
+  for select
+  to public
+  using (bucket_id = 'avatars');
+
+drop policy if exists "Users can upload their own avatar" on storage.objects;
+create policy "Users can upload their own avatar"
+  on storage.objects
+  for insert
+  to authenticated
+  with check (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+
+drop policy if exists "Users can update their own avatar" on storage.objects;
+create policy "Users can update their own avatar"
+  on storage.objects
+  for update
+  to authenticated
+  using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text)
+  with check (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+
+drop policy if exists "Users can delete their own avatar" on storage.objects;
+create policy "Users can delete their own avatar"
+  on storage.objects
+  for delete
+  to authenticated
+  using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);

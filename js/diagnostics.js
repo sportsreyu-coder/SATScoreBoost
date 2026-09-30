@@ -1,84 +1,25 @@
-// Fixed mini-SAT diagnostics — 10 Reading & Writing + 10 Math questions each,
-// mirroring the real digital SAT's per-module structure so a "Start Diagnostic"
-// run gives a meaningful projected score rather than a random grab-bag.
-//
-// Each diagnostic pulls a distinct, non-overlapping set of question ids so
-// retaking gives genuinely different content, with a College-Board-like
-// domain mix per subject (roughly 3/3/2/2 across the four domains in each
-// subject) and a spread of difficulty within each domain.
-
-const DIAGNOSTICS = [
-  {
-    id: "diag1",
-    label: "Diagnostic 1",
-    questionIds: [
-      // Reading & Writing (10)
-      "ii-1", "ii-4", "ii-7",
-      "cs-1", "cs-4", "cs-20",
-      "conv-1", "conv-12",
-      "ei-1", "ei-10",
-      // Math (10)
-      "alg-1", "alg-7", "alg-11",
-      "adv-1", "adv-4", "adv-7",
-      "pd-1", "pd-9",
-      "geo-1", "geo-22",
-    ],
-  },
-  {
-    id: "diag2",
-    label: "Diagnostic 2",
-    questionIds: [
-      // Reading & Writing (10)
-      "ii-2", "ii-5", "ii-8",
-      "cs-2", "cs-5", "cs-22",
-      "conv-2", "conv-17",
-      "ei-2", "ei-18",
-      // Math (10)
-      "alg-2", "alg-8", "alg-19",
-      "adv-3", "adv-8", "adv-9",
-      "pd-2", "pd-16",
-      "geo-2", "geo-25",
-    ],
-  },
-  {
-    id: "diag3",
-    label: "Diagnostic 3",
-    questionIds: [
-      // Reading & Writing (10)
-      "ii-3", "ii-6", "ii-9",
-      "cs-3", "cs-6", "cs-23",
-      "conv-4", "conv-21",
-      "ei-3", "ei-22",
-      // Math (10)
-      "alg-3", "alg-9", "alg-22",
-      "adv-5", "adv-11", "adv-10",
-      "pd-3", "pd-6",
-      "geo-3", "geo-5",
-    ],
-  },
-];
-
-// Full-length diagnostics — a true clone of the real digital SAT's structure:
+// Full Practice SAT — a true clone of the real digital SAT's structure:
 // RW Module 1 (27 questions) + RW Module 2 (27 questions), a 10-minute break,
 // then Math Module 1 (22 questions) + Math Module 2 (22 questions), 98
 // questions total. Domain mix within each module roughly matches the real
 // test's published weighting (RW: Information and Ideas / Craft and
 // Structure / Standard English Conventions / Expression of Ideas; Math:
 // Algebra / Advanced Math / Problem-Solving and Data Analysis / Geometry
-// and Trigonometry).
+// and Trigonometry). This is the free entry point — no account or upgrade
+// needed.
 //
-// Between the two full diagnostics, every Reading & Writing question in the
-// bank is used exactly once (54 + 54 = 108) and roughly half the Math bank
+// Between the two sets, every Reading & Writing question in the bank is
+// used exactly once (54 + 54 = 108) and roughly half the Math bank
 // (44 + 44 = 88 of 112) — there's currently not enough distinct content for
-// two full-length runs without dipping into ids also used by the shorter
-// DIAGNOSTICS above, so some of that overlap is unavoidable until the bank
-// grows. The two full diagnostics never repeat a question against each
-// other, though.
+// two full-length runs without dipping into ids also used elsewhere, so
+// some overlap with the Full Scale Test below is unavoidable until the
+// bank grows. The two sets never repeat a question against each other,
+// though.
 
-const FULL_DIAGNOSTICS = [
+const PRACTICE_SAT = [
   {
-    id: "full1",
-    label: "Full Diagnostic 1",
+    id: "practice1",
+    label: "Full Practice SAT 1",
     modules: {
       rw1: [
         "ii-1", "ii-2", "ii-3", "ii-4", "ii-5", "ii-6", "ii-7",
@@ -107,8 +48,8 @@ const FULL_DIAGNOSTICS = [
     },
   },
   {
-    id: "full2",
-    label: "Full Diagnostic 2",
+    id: "practice2",
+    label: "Full Practice SAT 2",
     modules: {
       rw1: [
         "ii-15", "ii-16", "ii-17", "ii-18", "ii-19", "ii-20", "ii-21",
@@ -137,3 +78,44 @@ const FULL_DIAGNOSTICS = [
     },
   },
 ];
+
+// Full Scale Test — a bigger, adaptive, ScoreBoost-Pro-only test: 100
+// Reading & Writing questions + 100 Math questions (200 total), each
+// subject split into two 50-question modules. Module 1 of each subject
+// draws from a College-Board-like domain mix at a medium difficulty
+// spread; Module 2 is then routed adaptively — harder if Module 1 went
+// well, easier if it didn't — exactly like the real adaptive digital SAT,
+// just scaled up and covering more of the question bank per attempt.
+//
+// Unlike PRACTICE_SAT above, this isn't a fixed set of question ids: it's
+// assembled at run time (see buildAdaptiveModule() in app.js) so every
+// attempt pulls a fresh, non-repeating mix and the routing can actually
+// react to how the student did on Module 1.
+
+const FULL_SCALE_MODULE_SIZE = 50; // questions per module -> 100 per subject, 200 total
+
+// Question counts per 50-question module, approximating the real digital
+// SAT's published domain weighting for each subject.
+const FULL_SCALE_DOMAIN_MIX = {
+  rw: [
+    ["Information and Ideas", 13],
+    ["Craft and Structure", 14],
+    ["Standard English Conventions", 13],
+    ["Expression of Ideas", 10],
+  ],
+  math: [
+    ["Algebra", 17],
+    ["Advanced Math", 17],
+    ["Problem-Solving and Data Analysis", 8],
+    ["Geometry and Trigonometry", 8],
+  ],
+};
+
+// Relative difficulty weights (1 = easiest, 3 = hardest) used when
+// sampling each module. "medium" is Module 1's natural spread; "harder"
+// and "easier" are where Module 2 gets routed adaptively.
+const FULL_SCALE_TIER_WEIGHTS = {
+  medium: { 1: 0.3, 2: 0.4, 3: 0.3 },
+  harder: { 1: 0.1, 2: 0.3, 3: 0.6 },
+  easier: { 1: 0.5, 2: 0.35, 3: 0.15 },
+};
