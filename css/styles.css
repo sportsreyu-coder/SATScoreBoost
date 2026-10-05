@@ -907,6 +907,24 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .study-empty h2 { font-size: 1.6rem; margin-bottom: 10px; }
 .study-empty p { color: var(--text-dim); max-width: 480px; margin: 0 auto 28px; }
 
+.diag-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.diag-choice-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-card);
+  padding: 20px;
+  text-align: center;
+}
+.diag-choice-title { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px; }
+.diag-choice-meta { color: var(--text-dimmer); font-size: 0.8rem; margin: 0 0 16px; }
+.diag-choice-card .btn { width: 100%; justify-content: center; }
+
 .plan-section { margin-bottom: 36px; }
 .plan-section h3 { font-size: 1.15rem; margin-bottom: 4px; }
 .plan-section-blurb { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 16px; }
@@ -1816,3 +1834,226 @@ footer.site a { color: var(--accent); text-decoration: none; }
 .memory-card.flipped { border-color: var(--accent); background: var(--accent-soft); }
 .memory-card.matched { border-color: var(--success); background: var(--success-soft); }
 .memory-card.matched .memory-card-front { color: var(--success); }
+
+/* Dungeon Quest RPG */
+.rpg-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--accent-soft), var(--bg-card));
+  border: 1px solid var(--accent);
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin-top: 28px;
+  cursor: pointer;
+  transition: transform 0.14s ease;
+}
+.rpg-feature-card:hover { transform: translateY(-2px); }
+.rpg-feature-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #fff;
+}
+.rpg-feature-icon svg { width: 26px; height: 26px; color: #fff; }
+.rpg-feature-body { flex: 1; min-width: 0; }
+.rpg-feature-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-hover);
+  margin-bottom: 6px;
+}
+.rpg-feature-body h3 { font-family: var(--font-serif); font-weight: 400; font-size: 1.4rem; margin-bottom: 6px; }
+.rpg-feature-body p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 14px; max-width: 70ch; }
+.rpg-feature-stats { display: flex; gap: 16px; flex-wrap: wrap; }
+.rpg-feature-play { flex-shrink: 0; color: var(--accent-hover); font-weight: 700; }
+
+.rpg-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+.rpg-topbar-stats { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.rpg-shop-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; font-size: 0.82rem; }
+.rpg-title { margin-bottom: 8px; }
+
+.rpg-player-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+.rpg-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rpg-bar-row:last-of-type { margin-bottom: 0; }
+.rpg-bar-label { width: 28px; flex-shrink: 0; font-size: 0.78rem; font-weight: 700; color: var(--text-dim); }
+.rpg-bar { flex: 1; height: 10px; border-radius: 100px; background: var(--bg-elev); overflow: hidden; }
+.rpg-bar-fill { height: 100%; border-radius: 100px; transition: width 0.25s ease; }
+.rpg-bar-fill.rpg-bar-hp { background: var(--success); }
+.rpg-bar-fill.rpg-bar-xp { background: var(--accent); }
+.rpg-bar-fill.rpg-bar-enemy { background: var(--danger); }
+.rpg-bar-value { width: 64px; flex-shrink: 0; text-align: right; font-size: 0.78rem; font-weight: 700; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+.rpg-player-meta { display: flex; gap: 18px; margin-top: 14px; font-size: 0.85rem; color: var(--text-dim); flex-wrap: wrap; }
+.rpg-player-meta svg { color: var(--accent); vertical-align: -2px; }
+
+.rpg-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 24px; }
+.rpg-node {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s;
+}
+.rpg-node:hover { transform: translateY(-2px); border-color: var(--accent); }
+.rpg-node.done { border-color: var(--success); background: var(--success-soft); }
+.rpg-node.locked { cursor: not-allowed; opacity: 0.55; }
+.rpg-node-icon { width: 36px; height: 36px; margin: 0 auto 10px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.rpg-node.done .rpg-node-icon { background: var(--success-soft); color: var(--success); }
+.rpg-node.locked .rpg-node-icon { background: var(--bg-elev); color: var(--text-dimmer); }
+.rpg-node-icon svg { width: 18px; height: 18px; }
+.rpg-node-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+.rpg-node-progress { font-size: 0.78rem; color: var(--text-dimmer); }
+
+.rpg-floor-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 24px; }
+.rpg-floor-node {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s;
+}
+.rpg-floor-node:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--accent); }
+.rpg-floor-node:disabled { cursor: not-allowed; opacity: 0.5; }
+.rpg-floor-node.boss { border-color: var(--warn); background: var(--warn-soft); }
+.rpg-floor-node.done { border-color: var(--success); }
+.rpg-floor-icon { display: block; margin: 0 auto 8px; color: var(--accent); }
+.rpg-floor-node.boss .rpg-floor-icon { color: var(--warn); }
+.rpg-floor-icon svg { width: 20px; height: 20px; }
+.rpg-floor-label { display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 2px; }
+.rpg-floor-enemy { display: block; font-size: 0.78rem; color: var(--text-dimmer); }
+.rpg-floor-done { position: absolute; top: 10px; right: 10px; color: var(--success); }
+.rpg-floor-done svg { width: 14px; height: 14px; }
+
+.rpg-battlefield { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+.rpg-combatant { flex: 1; min-width: 0; }
+.rpg-combatant-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; }
+.rpg-vs { flex-shrink: 0; font-family: var(--font-serif); color: var(--text-dimmer); font-size: 1rem; }
+.rpg-log {
+  background: var(--bg-elev);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.rpg-shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+.rpg-shop-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 26px;
+  text-align: center;
+}
+.rpg-shop-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.rpg-shop-icon svg { width: 22px; height: 22px; }
+.rpg-shop-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 1.2rem; margin-bottom: 8px; }
+.rpg-shop-card p { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 16px; }
+.rpg-shop-maxed { color: var(--success); font-weight: 700; font-size: 0.85rem; }
+
+@media (max-width: 640px) {
+  .rpg-battlefield { flex-direction: column; }
+  .rpg-vs { order: 2; }
+}
+
+/* Study Tycoon (idle game) */
+.idle-feature-card { background: linear-gradient(135deg, var(--success-soft), var(--bg-card)); border-color: var(--success); }
+.idle-feature-icon { background: var(--success); }
+.idle-feature-icon svg { color: #fff; }
+
+.idle-offline-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--success-soft);
+  border: 1px solid var(--success);
+  color: var(--success);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+.idle-offline-banner svg { flex-shrink: 0; color: var(--success); }
+.idle-offline-banner strong { font-weight: 800; }
+
+.idle-bp-banner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.idle-bp-main { font-family: var(--font-serif); font-size: 2rem; }
+.idle-bp-label { font-family: var(--font); font-size: 0.85rem; font-weight: 600; color: var(--text-dim); margin-left: 8px; }
+.idle-bp-rate { font-weight: 700; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+
+.idle-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
+.idle-shop-title { font-size: 1.3rem; }
+.idle-shop-sub { margin-bottom: 16px; }
+
+.idle-gen-list { display: flex; flex-direction: column; gap: 10px; }
+.idle-gen-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.idle-gen-row.locked { opacity: 0.55; }
+.idle-gen-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.idle-gen-icon svg { width: 18px; height: 18px; }
+.idle-gen-info { flex: 1; min-width: 0; }
+.idle-gen-name { font-weight: 700; font-size: 0.92rem; }
+.idle-gen-owned { color: var(--accent-hover); font-weight: 700; }
+.idle-gen-meta { font-size: 0.78rem; color: var(--text-dimmer); margin-top: 2px; }
+.idle-gen-buy { flex-shrink: 0; padding: 8px 14px; font-size: 0.82rem; white-space: nowrap; }
+.idle-gen-locked-tag { flex-shrink: 0; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-dimmer); font-weight: 600; }
+
+@media (max-width: 860px) {
+  .idle-layout { grid-template-columns: 1fr; }
+}

@@ -38,7 +38,13 @@
     skillFilter: null,    // set when practicing a single skill from a Lesson
     activeLesson: null,   // { domain, index } of the lesson currently open, or null for the list view
     lessonChatLog: [],    // transient {from, text} messages for the active lesson's AI Tutor panel
-    game: null,           // "math-blitz" | "vocab-rush" | "word-match" | null (which game is on screen)
+    game: null,           // "math-blitz" | "vocab-rush" | "word-match" | "dungeon-quest" | "study-tycoon" | null (which game is on screen)
+    rpgScreen: null,       // "overworld" | "zone" | "battle" | "victory" | "defeat" | "shop" (dungeon quest sub-screen)
+    rpgZoneKey: null,      // domain key of the zone currently open on the zone screen / just battled in
+    rpgBattle: null,       // { zoneKey, floorIndex, isBoss, enemyName, enemyHp, enemyMaxHp, pool, qIndex, log, locked, reward }
+    idlePool: null,        // Study Tycoon: shuffled question pool for the current session
+    idleQIndex: 0,         // Study Tycoon: index into idlePool of the question on screen
+    idleLocked: false,     // Study Tycoon: true while an answer's correct/incorrect flash is showing
   };
 
   // ---- Question Bank categories ----
@@ -80,6 +86,10 @@
   const MISTAKE_BANK_LIMIT = 50;
   const XP_KEY = "sat_xp"; // lifetime XP earned from completed quests
   const QUEST_XP_AWARDED_KEY = "sat_quest_xp_awarded"; // which quests have already paid out XP today
+  const RPG_KEY = "sat_rpg_state"; // Dungeon Quest save: level, xp, hp, gold, gear tiers, zone progress
+  const IDLE_KEY = "sat_idle_state"; // Study Tycoon save: Brainpower, lifetime stats, owned generators
+  const IDLE_OFFLINE_CAP_MS = 4 * 60 * 60 * 1000; // offline earnings cap out at 4 hours away
+  const IDLE_TICK_MS = 1000;
 
   // ---- Progress storage ----
   // Guests get their progress tracked in sessionStorage (gone once the tab
@@ -181,13 +191,13 @@
   const BATTLE_PASS_MAX_LEVEL = BATTLE_PASS_FREE_REWARDS.length;
 
   const BREAK_SECONDS = 600; // 10-minute break between RW and Math, like the real SAT
-  // Both the free Full Practice SAT (state.module === "diagnostic") and the
+  // Both the free Short Diagnostic (state.module === "diagnostic") and the
   // Pro Full Scale Test (state.module === "full-diagnostic") run the same
   // 4-module shape — RW Module 1/2, a break, then Math Module 1/2 — just at
   // different sizes and timings. See diagModuleDurations()/diagModuleLabels().
   const DIAG_MODULE_KEYS = ["rw1", "rw2", "math1", "math2"];
 
-  // Free Full Practice SAT: real digital SAT per-module structure and timing.
+  // Free Short Diagnostic: real digital SAT per-module structure and timing.
   const PRACTICE_SAT_MODULE_DURATIONS = [32 * 60, 32 * 60, 35 * 60, 35 * 60];
   const PRACTICE_SAT_MODULE_LABELS = [
     "Reading & Writing — Module 1",
@@ -493,7 +503,7 @@
     });
   }
 
-  // ---- Full Practice SAT (free): all four real-SAT modules, with a mid-test break ----
+  // ---- Short Diagnostic (free): all four real-SAT modules, with a mid-test break ----
   function loadLastDiagnosticIndex() {
     try {
       const raw = localStorage.getItem(DIAG_INDEX_KEY);
@@ -509,7 +519,7 @@
     } catch (e) { /* localStorage unavailable */ }
   }
 
-  // Starts the next Full Practice SAT in rotation: RW Module 1, RW Module 2,
+  // Starts the next Short Diagnostic in rotation: RW Module 1, RW Module 2,
   // a real break, then Math Module 1, Math Module 2 — each module its own
   // timed session, exactly like the real digital SAT. Free, no upgrade needed.
   function startDiagnostic() {
@@ -657,7 +667,7 @@
     return state.diagKind === "full-scale" ? FULL_SCALE_MODULE_LABELS : PRACTICE_SAT_MODULE_LABELS;
   }
 
-  // Loads one module of the active diagnostic (Full Practice SAT or Full
+  // Loads one module of the active diagnostic (Short Diagnostic or Full
   // Scale Test) as its own timed session.
   function loadDiagModule(moduleIndex) {
     state.fdModuleIndex = moduleIndex;
@@ -859,7 +869,7 @@
     if (m === "math") return "Math";
     if (m === "diagnostic") {
       if (state.reviewMode) {
-        return state.diagnosticIndex !== null ? PRACTICE_SAT[state.diagnosticIndex].label : "Full Practice SAT";
+        return state.diagnosticIndex !== null ? PRACTICE_SAT[state.diagnosticIndex].label : "Short Diagnostic";
       }
       const key = DIAG_MODULE_KEYS[state.fdModuleIndex] || "";
       return key.startsWith("math") ? "Math" : "Reading & Writing";
@@ -1132,7 +1142,7 @@
       }
       return;
     }
-    // The Full Practice SAT and Full Scale Test run one module at a time;
+    // The Short Diagnostic and Full Scale Test run one module at a time;
     // finishing the last question of a module hands off to the next module
     // (or scores the whole attempt after Math Module 2), rather than ending
     // the exam here.
@@ -1167,7 +1177,7 @@
   }
 
   // Used by every single-module practice session (rw/math/mixed/mistake
-  // review/question-bank category). The Full Practice SAT and Full Scale
+  // review/question-bank category). The Short Diagnostic and Full Scale
   // Test never reach this — they score across all 4 modules in
   // finishFullDiagnostic() instead.
   function finishExam() {
@@ -1313,9 +1323,17 @@
           <span class="eyebrow">Study Plan</span>
           <h2>Take a diagnostic to build your plan</h2>
           <p>Your study plan is generated from your diagnostic results — finish one to see exactly which categories to focus on first.</p>
-          <div class="results-actions">
-            <button class="btn btn-primary" data-start="diagnostic">Start Full Practice SAT →</button>
-            <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Scale Test${premium ? "" : " (Pro)"} →</button>
+          <div class="diag-choice-grid">
+            <div class="diag-choice-card">
+              <div class="diag-choice-title">Short Diagnostic</div>
+              <p class="diag-choice-meta">4 modules · 98 questions · ~2h 15m · free</p>
+              <button class="btn btn-primary" data-start="diagnostic">Start Short Diagnostic →</button>
+            </div>
+            <div class="diag-choice-card">
+              <div class="diag-choice-title">Full Scale Test</div>
+              <p class="diag-choice-meta">4 modules · 200 questions · ~4h · adaptive Module 2${premium ? "" : " · Pro"}</p>
+              <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Scale Test${premium ? "" : " (Pro)"} →</button>
+            </div>
           </div>
         </div>`;
       return;
@@ -1387,7 +1405,7 @@
       )}
 
       <div class="results-actions">
-        <button class="btn btn-primary" data-start="diagnostic">Retake Full Practice SAT →</button>
+        <button class="btn btn-primary" data-start="diagnostic">Retake Short Diagnostic →</button>
         <button class="btn btn-ghost" data-nav="lessons">Browse Lessons →</button>
         <button class="btn btn-ghost" data-home>Back to Home</button>
       </div>
@@ -1686,6 +1704,11 @@
 
   function renderGamesHub() {
     const best = loadGameBest();
+    const rpg = loadRpgState();
+    const rpgStats = rpgComputedStats(rpg);
+    const idle = loadIdleState();
+    const idleRate = idleTotalRate(idle);
+    const idleGenCount = IDLE_GENERATORS.filter((g) => (idle.owned[g.key] || 0) > 0).length;
     const el = document.getElementById("games");
     const card = (id, icon, title, blurb, bestLabel) => `
       <div class="game-card" data-game-start="${id}">
@@ -1698,10 +1721,44 @@
         </div>
       </div>`;
 
+    const zonesCleared = RPG_ZONES.filter((z) => (rpg.cleared[z.key] || 0) >= rpgZoneFloorCount(z)).length;
+
     el.innerHTML = `
       <span class="eyebrow">Games</span>
       <h1 class="section-title">Take a break, keep sharpening</h1>
       <p class="section-sub">Quick, replayable games built from real SAT content — good for a five-minute study break.</p>
+
+      <div class="rpg-feature-card" data-game-start="dungeon-quest">
+        <div class="rpg-feature-icon">${ICON_SWORD}</div>
+        <div class="rpg-feature-body">
+          <span class="rpg-feature-tag">Flagship RPG</span>
+          <h3>Dungeon Quest</h3>
+          <p>Battle your way through 8 dungeons — one per SAT skill domain — by answering real questions to land hits. Level up, earn gold, and gear up between fights.</p>
+          <div class="rpg-feature-stats">
+            <span class="game-stat">${ICON_GRADCAP} Lv. ${rpg.level}</span>
+            <span class="game-stat">${rpgStats.maxHp} HP</span>
+            <span class="game-stat">${ICON_COIN} ${rpg.gold} gold</span>
+            <span class="game-stat">${zonesCleared}/${RPG_ZONES.length} dungeons cleared</span>
+          </div>
+        </div>
+        <span class="rpg-feature-play">Enter →</span>
+      </div>
+
+      <div class="rpg-feature-card idle-feature-card" data-game-start="study-tycoon">
+        <div class="rpg-feature-icon idle-feature-icon">${ICON_COIN}</div>
+        <div class="rpg-feature-body">
+          <span class="rpg-feature-tag">Idle game</span>
+          <h3>Study Tycoon</h3>
+          <p>Answer real SAT questions to earn Brainpower, then spend it on tutors, workbooks, and study halls that keep producing even after you close the tab.</p>
+          <div class="rpg-feature-stats">
+            <span class="game-stat">${ICON_COIN} ${formatIdleNumber(idle.bp)} BP</span>
+            <span class="game-stat">${formatIdleNumber(idleRate)} BP/sec</span>
+            <span class="game-stat">${idleGenCount}/${IDLE_GENERATORS.length} generators</span>
+          </div>
+        </div>
+        <span class="rpg-feature-play">Enter →</span>
+      </div>
+
       <div class="game-grid">
         ${card(
           "math-blitz",
@@ -1948,6 +2005,696 @@
         renderWordMatch();
       }, 700);
     }
+  }
+
+  // ---- Games: Dungeon Quest (RPG) ----
+  // A persistent turn-based RPG: 8 dungeons, one per SAT skill domain.
+  // Answering a question correctly attacks the monster; missing lets it
+  // attack back. Clearing a dungeon's boss unlocks the next one. Gold
+  // earned in battle buys permanent weapon/armor upgrades in the Shop.
+  const RPG_BASE_MAX_HP = 50;
+  const RPG_BASE_ATK = 8;
+  const RPG_WEAPON_NAMES = ["Practice Pencil", "Sharpened No. 2", "Graphite Blade", "Mechanical Edge", "Steel Stylus", "Golden Quill", "Ascended Pen"];
+  const RPG_ARMOR_NAMES = ["Hoodie", "Letter Jacket", "Lab Coat", "Honor Robe", "Scholar's Mail", "Valedictorian Plate", "Ascended Cap"];
+  const RPG_MAX_TIER = RPG_WEAPON_NAMES.length - 1;
+
+  const RPG_ZONES = [
+    { key: "Algebra", module: "math", name: "Linear Woods", blurb: "A tangled forest where every path is an equation.",
+      enemies: ["Variable Wisp", "Coefficient Crawler", "Slope Serpent", "Inequality Imp", "Equation Ent"], boss: "The Balance Keeper" },
+    { key: "Advanced Math", module: "math", name: "Quadratic Caverns", blurb: "Twisting tunnels shaped like parabolas.",
+      enemies: ["Exponent Bat", "Radical Rat", "Polynomial Golem", "Function Phantom", "Root Reaper"], boss: "The Nonlinear Dragon" },
+    { key: "Problem-Solving and Data Analysis", module: "math", name: "Data Marsh", blurb: "A foggy swamp of scatterplots and percentages.",
+      enemies: ["Ratio Leech", "Percent Piranha", "Outlier Ooze", "Sample Sprite", "Mean Mudcrawler"], boss: "The Statistics Siren" },
+    { key: "Geometry and Trigonometry", module: "math", name: "Geometry Peaks", blurb: "Jagged summits built from triangles and circles.",
+      enemies: ["Angle Gargoyle", "Circle Golem", "Tangent Harpy", "Vertex Vulture", "Hypotenuse Hydra"], boss: "The Pythagorean Titan" },
+    { key: "Information and Ideas", module: "rw", name: "Reading Ruins", blurb: "Crumbling halls of half-buried arguments.",
+      enemies: ["Inference Wraith", "Evidence Eel", "Claim Crawler", "Detail Demon", "Summary Specter"], boss: "The Central Idea Colossus" },
+    { key: "Craft and Structure", module: "rw", name: "Vocabulary Vale", blurb: "A shifting valley where every word has a double meaning.",
+      enemies: ["Synonym Sprite", "Context Ghoul", "Tone Troll", "Nuance Nymph", "Diction Djinn"], boss: "The Lexicon Leviathan" },
+    { key: "Standard English Conventions", module: "rw", name: "Grammar Gorge", blurb: "A canyon littered with stray commas and dangling clauses.",
+      enemies: ["Comma Kobold", "Fragment Fiend", "Apostrophe Asp", "Modifier Mite", "Punctuation Phantom"], boss: "The Syntax Sovereign" },
+    { key: "Expression of Ideas", module: "rw", name: "Rhetoric Reach", blurb: "A windswept bluff of transitions and topic sentences.",
+      enemies: ["Transition Troll", "Redundancy Rat", "Tone Shifter", "Structure Siren", "Clarity Cultist"], boss: "The Rhetoric Warden" },
+  ];
+
+  function rpgZoneFloorCount(zone) { return zone.enemies.length + 1; } // 5 regular floors + 1 boss
+
+  function defaultRpgState() {
+    return { level: 1, xp: 0, hp: RPG_BASE_MAX_HP, gold: 0, weaponTier: 0, armorTier: 0, cleared: {} };
+  }
+
+  function loadRpgState() {
+    try {
+      const raw = progressStore().getItem(progressKey(RPG_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return { ...defaultRpgState(), ...parsed, cleared: parsed.cleared || {} };
+      }
+    } catch (e) { /* storage unavailable */ }
+    return defaultRpgState();
+  }
+
+  function saveRpgState(rpg) {
+    try {
+      progressStore().setItem(progressKey(RPG_KEY), JSON.stringify(rpg));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function rpgComputedStats(rpg) {
+    return {
+      maxHp: RPG_BASE_MAX_HP + (rpg.level - 1) * 8 + rpg.armorTier * 12,
+      atk: RPG_BASE_ATK + (rpg.level - 1) * 2 + rpg.weaponTier * 3,
+    };
+  }
+
+  function rpgXpToNext(level) { return level * 50; }
+
+  // Applies XP, rolling over multiple level-ups if earned at once; a
+  // level-up fully heals the player. Returns whether any level was gained.
+  function rpgGainXp(rpg, amount) {
+    rpg.xp += amount;
+    let leveled = false;
+    while (rpg.xp >= rpgXpToNext(rpg.level)) {
+      rpg.xp -= rpgXpToNext(rpg.level);
+      rpg.level++;
+      leveled = true;
+    }
+    if (leveled) rpg.hp = rpgComputedStats(rpg).maxHp;
+    return leveled;
+  }
+
+  function rpgUpgradeCost(tier) { return 50 + tier * 40; }
+
+  function rpgZoneUnlocked(rpg, zoneIndex) {
+    if (zoneIndex === 0) return true;
+    const prev = RPG_ZONES[zoneIndex - 1];
+    return (rpg.cleared[prev.key] || 0) >= rpgZoneFloorCount(prev);
+  }
+
+  // A floor is reachable once the previous one in its zone is cleared;
+  // already-cleared floors stay reachable too, so players can replay them.
+  function rpgFloorUnlocked(rpg, zone, floorIndex) {
+    return floorIndex <= (rpg.cleared[zone.key] || 0);
+  }
+
+  function rpgEnemyStats(zoneIndex, floorIndex, isBoss) {
+    let hp = 24 + zoneIndex * 10 + floorIndex * 6;
+    let atk = 3 + zoneIndex * 1.5 + floorIndex * 0.8;
+    if (isBoss) { hp *= 1.7; atk += 3; }
+    return { hp: Math.round(hp), atk: Math.round(atk) };
+  }
+
+  function rpgFloorReward(zoneIndex, floorIndex, isBoss) {
+    let xp = 15 + zoneIndex * 5 + floorIndex * 3;
+    let gold = 10 + zoneIndex * 4 + floorIndex * 2;
+    if (isBoss) { xp *= 1.6; gold *= 1.8; }
+    return { xp: Math.round(xp), gold: Math.round(gold) };
+  }
+
+  function startDungeonQuest() {
+    state.game = "dungeon-quest";
+    state.rpgZoneKey = null;
+    state.rpgBattle = null;
+    state.rpgScreen = "overworld";
+    renderRpgOverworld();
+  }
+
+  function renderRpgOverworld() {
+    state.rpgScreen = "overworld";
+    const rpg = loadRpgState();
+    const stats = rpgComputedStats(rpg);
+    const xpNeed = rpgXpToNext(rpg.level);
+    const el = document.getElementById("games");
+
+    const nodesHTML = RPG_ZONES.map((zone, i) => {
+      const unlocked = rpgZoneUnlocked(rpg, i);
+      const cleared = rpg.cleared[zone.key] || 0;
+      const total = rpgZoneFloorCount(zone);
+      const done = cleared >= total;
+      const classes = ["rpg-node"];
+      if (!unlocked) classes.push("locked");
+      if (done) classes.push("done");
+      return `
+        <div class="${classes.join(" ")}" ${unlocked ? `data-rpg-nav="zone" data-rpg-zone="${zone.key}"` : ""}>
+          <div class="rpg-node-icon">${!unlocked ? ICON_LOCK_SM : done ? "&#10003;" : ICON_SWORD}</div>
+          <div class="rpg-node-name">${zone.name}</div>
+          <div class="rpg-node-progress">${unlocked ? `${cleared}/${total} floors` : "Locked"}</div>
+        </div>`;
+    }).join("");
+
+    el.innerHTML = `
+      <div class="rpg-topbar">
+        <button class="game-quit" data-game-quit>← Exit Dungeon</button>
+        <div class="rpg-topbar-stats">
+          <span class="game-stat">${ICON_GRADCAP} Lv. ${rpg.level}</span>
+          <span class="game-stat">${ICON_COIN} ${rpg.gold}</span>
+          <button class="btn btn-ghost rpg-shop-btn" data-rpg-nav="shop">${ICON_SHIELD} Shop</button>
+        </div>
+      </div>
+      <div class="rpg-player-card">
+        <div class="rpg-bar-row">
+          <span class="rpg-bar-label">HP</span>
+          <div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-hp" style="width:${Math.max(0, (rpg.hp / stats.maxHp) * 100)}%"></div></div>
+          <span class="rpg-bar-value">${Math.max(0, rpg.hp)}/${stats.maxHp}</span>
+        </div>
+        <div class="rpg-bar-row">
+          <span class="rpg-bar-label">XP</span>
+          <div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-xp" style="width:${Math.min(100, (rpg.xp / xpNeed) * 100)}%"></div></div>
+          <span class="rpg-bar-value">${rpg.xp}/${xpNeed}</span>
+        </div>
+        <div class="rpg-player-meta">
+          <span>${ICON_SWORD} ${RPG_WEAPON_NAMES[rpg.weaponTier]} &middot; ATK ${stats.atk}</span>
+          <span>${ICON_SHIELD} ${RPG_ARMOR_NAMES[rpg.armorTier]}</span>
+        </div>
+      </div>
+      <span class="eyebrow">Dungeon Quest</span>
+      <h1 class="section-title rpg-title">Choose your dungeon</h1>
+      <p class="section-sub">Eight dungeons, one per SAT skill domain. Answer correctly to attack — miss, and the monster strikes back. Beat a dungeon's boss to unlock the next.</p>
+      <div class="rpg-map">${nodesHTML}</div>
+    `;
+  }
+
+  function renderRpgZone(zoneKey) {
+    const zone = RPG_ZONES.find((z) => z.key === zoneKey);
+    if (!zone) { renderRpgOverworld(); return; }
+    state.rpgScreen = "zone";
+    state.rpgZoneKey = zoneKey;
+    const rpg = loadRpgState();
+    const cleared = rpg.cleared[zone.key] || 0;
+    const total = rpgZoneFloorCount(zone);
+    const el = document.getElementById("games");
+
+    const floorsHTML = Array.from({ length: total }).map((_, i) => {
+      const isBoss = i === total - 1;
+      const unlocked = rpgFloorUnlocked(rpg, zone, i);
+      const done = i < cleared;
+      const classes = ["rpg-floor-node"];
+      if (isBoss) classes.push("boss");
+      if (!unlocked) classes.push("locked");
+      if (done) classes.push("done");
+      const enemyName = isBoss ? zone.boss : zone.enemies[i];
+      return `
+        <button class="${classes.join(" ")}" ${unlocked ? `data-rpg-floor="${i}"` : "disabled"}>
+          <span class="rpg-floor-icon">${!unlocked ? ICON_LOCK_SM : isBoss ? ICON_SKULL : ICON_SWORD}</span>
+          <span class="rpg-floor-label">${isBoss ? "Boss" : `Floor ${i + 1}`}</span>
+          <span class="rpg-floor-enemy">${enemyName}</span>
+          ${done ? `<span class="rpg-floor-done">${ICON_FLAME}</span>` : ""}
+        </button>`;
+    }).join("");
+
+    el.innerHTML = `
+      <div class="rpg-topbar">
+        <button class="game-quit" data-rpg-nav="overworld">← Map</button>
+      </div>
+      <span class="eyebrow">${zone.module === "math" ? "Math" : "Reading &amp; Writing"} dungeon</span>
+      <h1 class="section-title rpg-title">${zone.name}</h1>
+      <p class="section-sub">${zone.blurb}</p>
+      <div class="rpg-floor-list">${floorsHTML}</div>
+    `;
+  }
+
+  function startRpgBattle(zoneKey, floorIndex) {
+    const zoneIndex = RPG_ZONES.findIndex((z) => z.key === zoneKey);
+    const zone = RPG_ZONES[zoneIndex];
+    if (!zone) return;
+    const rpg = loadRpgState();
+    if (!rpgFloorUnlocked(rpg, zone, floorIndex)) return;
+    const total = rpgZoneFloorCount(zone);
+    const isBoss = floorIndex === total - 1;
+    const enemyName = isBoss ? zone.boss : zone.enemies[floorIndex];
+    const enemyStats = rpgEnemyStats(zoneIndex, floorIndex, isBoss);
+
+    const pool = shuffle(QUESTIONS.filter((q) => q.domain === zone.key && q.module === zone.module)).map(shuffleChoices);
+    if (!pool.length) return;
+
+    state.game = "dungeon-quest";
+    state.rpgScreen = "battle";
+    state.rpgZoneKey = zoneKey;
+    state.rpgBattle = {
+      zoneIndex, zoneKey, floorIndex, isBoss, enemyName,
+      enemyHp: enemyStats.hp, enemyMaxHp: enemyStats.hp, enemyAtk: enemyStats.atk,
+      pool, qIndex: 0, log: `A wild ${enemyName} blocks your path!`, locked: false,
+    };
+    renderRpgBattle();
+  }
+
+  function renderRpgBattle() {
+    const b = state.rpgBattle;
+    if (!b) return;
+    const rpg = loadRpgState();
+    const stats = rpgComputedStats(rpg);
+    if (b.qIndex >= b.pool.length) {
+      b.pool = shuffle(b.pool).map(shuffleChoices);
+      b.qIndex = 0;
+    }
+    const q = b.pool[b.qIndex];
+    const letters = ["A", "B", "C", "D"];
+    const choicesHTML = q.choices
+      .map(
+        (c, ci) =>
+          `<div class="choice-row">
+            <button class="choice" data-rpg-choice="${ci}" ${b.locked ? "disabled" : ""}>
+              <span class="letter">${letters[ci]}</span>
+              <span class="ctext">${c}</span>
+            </button>
+          </div>`
+      )
+      .join("");
+
+    const el = document.getElementById("games");
+    el.innerHTML = `
+      <div class="rpg-topbar">
+        <button class="game-quit" data-rpg-flee>← Flee</button>
+      </div>
+      <div class="rpg-battlefield">
+        <div class="rpg-combatant">
+          <div class="rpg-combatant-name">You</div>
+          <div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-hp" style="width:${Math.max(0, (rpg.hp / stats.maxHp) * 100)}%"></div></div>
+          <div class="rpg-bar-value">${Math.max(0, rpg.hp)}/${stats.maxHp}</div>
+        </div>
+        <div class="rpg-vs">VS</div>
+        <div class="rpg-combatant">
+          <div class="rpg-combatant-name">${b.enemyName}${b.isBoss ? " (Boss)" : ""}</div>
+          <div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-enemy" style="width:${Math.max(0, (b.enemyHp / b.enemyMaxHp) * 100)}%"></div></div>
+          <div class="rpg-bar-value">${Math.max(0, b.enemyHp)}/${b.enemyMaxHp}</div>
+        </div>
+      </div>
+      <div class="rpg-log">${b.log}</div>
+      ${q.passage ? `<div class="passage">${q.passage}</div>` : ""}
+      <div class="prompt game-prompt">${q.prompt.replace(/\n/g, "<br>")}</div>
+      <div class="choices" id="rpgChoices">${choicesHTML}</div>
+    `;
+  }
+
+  function answerRpgQuestion(choiceIndex) {
+    const b = state.rpgBattle;
+    if (!b || b.locked || state.rpgScreen !== "battle") return;
+    const rpg = loadRpgState();
+    const stats = rpgComputedStats(rpg);
+    const q = b.pool[b.qIndex];
+    const ok = choiceIndex === q.answer;
+    b.locked = true;
+
+    const buttons = document.querySelectorAll("#rpgChoices .choice");
+    buttons.forEach((btn) => {
+      const ci = Number(btn.dataset.rpgChoice);
+      if (ci === q.answer) btn.classList.add("correct");
+      else if (ci === choiceIndex) btn.classList.add("incorrect");
+    });
+
+    if (ok) {
+      const dmg = stats.atk + Math.floor(Math.random() * 3);
+      b.enemyHp = Math.max(0, b.enemyHp - dmg);
+      b.log = `You hit ${b.enemyName} for ${dmg} damage!`;
+    } else {
+      const dmg = b.enemyAtk + Math.floor(Math.random() * 2);
+      rpg.hp = Math.max(0, rpg.hp - dmg);
+      saveRpgState(rpg);
+      b.log = `${b.enemyName} hits you for ${dmg} damage!`;
+    }
+
+    setTimeout(() => {
+      if (state.rpgScreen !== "battle" || state.rpgBattle !== b) return; // fled, or left mid-flash
+      if (b.enemyHp <= 0) { resolveRpgVictory(); return; }
+      if (rpg.hp <= 0) { resolveRpgDefeat(); return; }
+      b.qIndex++;
+      b.locked = false;
+      renderRpgBattle();
+    }, 600);
+  }
+
+  function resolveRpgVictory() {
+    const b = state.rpgBattle;
+    const rpg = loadRpgState();
+    const reward = rpgFloorReward(b.zoneIndex, b.floorIndex, b.isBoss);
+    rpg.gold += reward.gold;
+    const leveled = rpgGainXp(rpg, reward.xp);
+    const zone = RPG_ZONES[b.zoneIndex];
+    rpg.cleared[zone.key] = Math.max(rpg.cleared[zone.key] || 0, b.floorIndex + 1);
+    saveRpgState(rpg);
+    b.reward = reward;
+    b.leveled = leveled;
+    state.rpgScreen = "victory";
+    renderRpgVictoryScreen();
+  }
+
+  function renderRpgVictoryScreen() {
+    const b = state.rpgBattle;
+    const zone = RPG_ZONES[b.zoneIndex];
+    const total = rpgZoneFloorCount(zone);
+    const nextFloorIndex = b.floorIndex + 1;
+    const hasNext = nextFloorIndex < total;
+    const el = document.getElementById("games");
+    el.innerHTML = `
+      <div class="game-result">
+        <span class="eyebrow">${b.isBoss ? "Boss defeated!" : "Floor cleared"}</span>
+        <h2>${b.enemyName} is defeated!</h2>
+        ${b.leveled ? `<p class="game-result-best">Level up! You're now level ${loadRpgState().level}. ${ICON_FLAME}</p>` : ""}
+        <div class="game-result-stats">
+          <div class="bd-card"><div class="v">+${b.reward.xp}</div><div class="l">XP</div></div>
+          <div class="bd-card"><div class="v">+${b.reward.gold}</div><div class="l">Gold</div></div>
+        </div>
+        ${b.isBoss ? `<p class="section-sub">${zone.name} cleared! A new dungeon has opened on the map.</p>` : ""}
+        <div class="results-actions">
+          ${hasNext ? `<button class="btn btn-primary" data-rpg-floor="${nextFloorIndex}">Next floor →</button>` : ""}
+          <button class="btn btn-ghost" data-rpg-nav="zone" data-rpg-zone="${zone.key}">Back to dungeon map</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function resolveRpgDefeat() {
+    const rpg = loadRpgState();
+    rpg.hp = rpgComputedStats(rpg).maxHp; // full heal — no permanent penalty, just try again
+    saveRpgState(rpg);
+    state.rpgScreen = "defeat";
+    renderRpgDefeatScreen();
+  }
+
+  function renderRpgDefeatScreen() {
+    const b = state.rpgBattle;
+    const zone = RPG_ZONES[b.zoneIndex];
+    const el = document.getElementById("games");
+    el.innerHTML = `
+      <div class="game-result">
+        <span class="eyebrow">Defeated...</span>
+        <h2>${b.enemyName} was too strong</h2>
+        <p class="section-sub">You've been healed back to full HP. Study up and try again — or grab better gear at the Shop first.</p>
+        <div class="results-actions">
+          <button class="btn btn-primary" data-rpg-floor="${b.floorIndex}">Try again →</button>
+          <button class="btn btn-ghost" data-rpg-nav="shop">Visit shop</button>
+          <button class="btn btn-ghost" data-rpg-nav="zone" data-rpg-zone="${zone.key}">Back to dungeon map</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function rpgFlee() {
+    const zoneKey = state.rpgZoneKey;
+    state.rpgBattle = null;
+    renderRpgZone(zoneKey);
+  }
+
+  function renderRpgShop() {
+    state.rpgScreen = "shop";
+    const rpg = loadRpgState();
+    const stats = rpgComputedStats(rpg);
+    const el = document.getElementById("games");
+
+    const weaponMaxed = rpg.weaponTier >= RPG_MAX_TIER;
+    const armorMaxed = rpg.armorTier >= RPG_MAX_TIER;
+    const weaponCost = rpgUpgradeCost(rpg.weaponTier);
+    const armorCost = rpgUpgradeCost(rpg.armorTier);
+
+    el.innerHTML = `
+      <div class="rpg-topbar">
+        <button class="game-quit" data-rpg-nav="overworld">← Map</button>
+        <div class="rpg-topbar-stats"><span class="game-stat">${ICON_COIN} ${rpg.gold} gold</span></div>
+      </div>
+      <span class="eyebrow">Shop</span>
+      <h1 class="section-title rpg-title">Gear up</h1>
+      <p class="section-sub">Spend gold earned in battle on permanent upgrades.</p>
+      <div class="rpg-shop-grid">
+        <div class="rpg-shop-card">
+          <div class="rpg-shop-icon">${ICON_SWORD}</div>
+          <h3>${RPG_WEAPON_NAMES[rpg.weaponTier]}</h3>
+          <p>Attack: ${stats.atk}${!weaponMaxed ? ` &rarr; ${stats.atk + 3}` : ""}</p>
+          ${
+            weaponMaxed
+              ? `<span class="rpg-shop-maxed">Max tier reached</span>`
+              : `<button class="btn btn-primary" data-rpg-buy="weapon" ${rpg.gold < weaponCost ? "disabled" : ""}>Upgrade — ${weaponCost} gold</button>`
+          }
+        </div>
+        <div class="rpg-shop-card">
+          <div class="rpg-shop-icon">${ICON_SHIELD}</div>
+          <h3>${RPG_ARMOR_NAMES[rpg.armorTier]}</h3>
+          <p>Max HP: ${stats.maxHp}${!armorMaxed ? ` &rarr; ${stats.maxHp + 12}` : ""}</p>
+          ${
+            armorMaxed
+              ? `<span class="rpg-shop-maxed">Max tier reached</span>`
+              : `<button class="btn btn-primary" data-rpg-buy="armor" ${rpg.gold < armorCost ? "disabled" : ""}>Upgrade — ${armorCost} gold</button>`
+          }
+        </div>
+      </div>
+    `;
+  }
+
+  function buyRpgUpgrade(kind) {
+    const rpg = loadRpgState();
+    const tier = kind === "weapon" ? rpg.weaponTier : rpg.armorTier;
+    if (tier >= RPG_MAX_TIER) return;
+    const cost = rpgUpgradeCost(tier);
+    if (rpg.gold < cost) return;
+    rpg.gold -= cost;
+    if (kind === "weapon") {
+      rpg.weaponTier++;
+    } else {
+      const before = rpgComputedStats(rpg).maxHp;
+      rpg.armorTier++;
+      rpg.hp += rpgComputedStats(rpg).maxHp - before;
+    }
+    saveRpgState(rpg);
+    renderRpgShop();
+  }
+
+  // ---- Games: Study Tycoon (idle) ----
+  // A persistent incremental game: answer real SAT questions to earn
+  // Brainpower directly, and spend it on generators that keep producing
+  // Brainpower on their own — including while the tab is closed, via an
+  // offline-earnings credit applied the next time the game is opened.
+  const IDLE_GENERATORS = [
+    { key: "flashcards", name: "Flashcard Deck", baseCost: 15, rate: 0.1, unlockAt: 0 },
+    { key: "studyBuddy", name: "Study Buddy", baseCost: 100, rate: 1, unlockAt: 0 },
+    { key: "workbook", name: "Practice Workbook", baseCost: 500, rate: 4, unlockAt: 5 },
+    { key: "tutor", name: "Private Tutor", baseCost: 2500, rate: 12, unlockAt: 15 },
+    { key: "studyHall", name: "Study Hall", baseCost: 10000, rate: 40, unlockAt: 30 },
+    { key: "aiTutor", name: "AI Tutor Bot", baseCost: 50000, rate: 120, unlockAt: 50 },
+    { key: "reviewCourse", name: "Review Course", baseCost: 250000, rate: 400, unlockAt: 80 },
+    { key: "prepAcademy", name: "Prep Academy", baseCost: 1000000, rate: 1500, unlockAt: 120 },
+  ];
+  const IDLE_GEN_COST_GROWTH = 1.15;
+
+  function idleIconFor(key) {
+    switch (key) {
+      case "flashcards": return ICON_NOTE;
+      case "studyBuddy": return ICON_CHAT;
+      case "workbook": return ICON_BOOK;
+      case "tutor": return ICON_GRADCAP;
+      case "studyHall": return ICON_BUILDING;
+      case "aiTutor": return ICON_ROBOT;
+      case "reviewCourse": return ICON_CLIPBOARD_CHECK;
+      case "prepAcademy": return ICON_TROPHY;
+      default: return ICON_COIN;
+    }
+  }
+
+  function defaultIdleState() {
+    return { bp: 0, totalEarned: 0, totalCorrect: 0, totalAnswered: 0, combo: 0, owned: {}, lastSeen: Date.now() };
+  }
+
+  function loadIdleState() {
+    try {
+      const raw = progressStore().getItem(progressKey(IDLE_KEY));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return { ...defaultIdleState(), ...parsed, owned: parsed.owned || {} };
+      }
+    } catch (e) { /* storage unavailable */ }
+    return defaultIdleState();
+  }
+
+  function saveIdleState(idle) {
+    idle.lastSeen = Date.now();
+    try {
+      progressStore().setItem(progressKey(IDLE_KEY), JSON.stringify(idle));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function idleGeneratorCost(gen, owned) {
+    return Math.ceil(gen.baseCost * Math.pow(IDLE_GEN_COST_GROWTH, owned));
+  }
+
+  function idleTotalRate(idle) {
+    return IDLE_GENERATORS.reduce((sum, gen) => sum + gen.rate * (idle.owned[gen.key] || 0), 0);
+  }
+
+  // Abbreviates large Brainpower totals (1.2K, 3.4M, ...); small amounts
+  // keep enough decimal precision to show sub-1 BP/sec generator rates.
+  function formatIdleNumber(n) {
+    n = Math.max(0, n);
+    if (n < 1000) return n % 1 === 0 ? String(Math.floor(n)) : n.toFixed(n < 10 ? 2 : 1);
+    const units = ["K", "M", "B", "T", "Qa", "Qi"];
+    let v = n, u = -1;
+    while (v >= 1000 && u < units.length - 1) { v /= 1000; u++; }
+    return `${v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1) : v.toFixed(2)}${units[u]}`;
+  }
+
+  function startIdleGame() {
+    state.game = "study-tycoon";
+    state.idlePool = shuffle(QUESTIONS).map(shuffleChoices);
+    state.idleQIndex = 0;
+    state.idleLocked = false;
+
+    const idle = loadIdleState();
+    const rate = idleTotalRate(idle);
+    const elapsedMs = Math.max(0, Math.min(Date.now() - (idle.lastSeen || Date.now()), IDLE_OFFLINE_CAP_MS));
+    let offlineEarned = 0;
+    if (elapsedMs > 20000 && rate > 0) {
+      offlineEarned = Math.floor((elapsedMs / 1000) * rate);
+      idle.bp += offlineEarned;
+      idle.totalEarned += offlineEarned;
+    }
+    saveIdleState(idle);
+    renderIdleGame(offlineEarned);
+
+    clearInterval(state.gameTimer);
+    state.gameTimer = setInterval(() => {
+      if (state.game !== "study-tycoon") return;
+      const cur = loadIdleState();
+      const r = idleTotalRate(cur);
+      cur.bp += r;
+      cur.totalEarned += r;
+      saveIdleState(cur);
+      updateIdleHud(cur);
+    }, IDLE_TICK_MS);
+  }
+
+  function updateIdleHud(idle) {
+    const bpEl = document.getElementById("idleBPValue");
+    if (bpEl) bpEl.textContent = formatIdleNumber(idle.bp);
+    const rateEl = document.getElementById("idleRateValue");
+    if (rateEl) rateEl.textContent = formatIdleNumber(idleTotalRate(idle));
+    document.querySelectorAll("[data-idle-buy]").forEach((btn) => {
+      const gen = IDLE_GENERATORS.find((g) => g.key === btn.dataset.idleBuy);
+      if (!gen) return;
+      const owned = idle.owned[gen.key] || 0;
+      btn.disabled = idle.bp < idleGeneratorCost(gen, owned);
+    });
+  }
+
+  function renderIdleGame(offlineEarned) {
+    const idle = loadIdleState();
+    const rate = idleTotalRate(idle);
+
+    if (!state.idlePool || state.idleQIndex >= state.idlePool.length) {
+      state.idlePool = shuffle(state.idlePool && state.idlePool.length ? state.idlePool : QUESTIONS).map(shuffleChoices);
+      state.idleQIndex = 0;
+    }
+    const q = state.idlePool[state.idleQIndex];
+    const letters = ["A", "B", "C", "D"];
+    const choicesHTML = q.choices
+      .map(
+        (c, ci) =>
+          `<div class="choice-row">
+            <button class="choice" data-idle-choice="${ci}" ${state.idleLocked ? "disabled" : ""}>
+              <span class="letter">${letters[ci]}</span>
+              <span class="ctext">${c}</span>
+            </button>
+          </div>`
+      )
+      .join("");
+
+    const shopHTML = IDLE_GENERATORS.map((gen) => {
+      const owned = idle.owned[gen.key] || 0;
+      const unlocked = idle.totalCorrect >= gen.unlockAt;
+      const cost = idleGeneratorCost(gen, owned);
+      const classes = ["idle-gen-row"];
+      if (!unlocked) classes.push("locked");
+      return `
+        <div class="${classes.join(" ")}">
+          <div class="idle-gen-icon">${unlocked ? idleIconFor(gen.key) : ICON_LOCK_SM}</div>
+          <div class="idle-gen-info">
+            <div class="idle-gen-name">${gen.name}${owned ? ` <span class="idle-gen-owned">&times;${owned}</span>` : ""}</div>
+            <div class="idle-gen-meta">${unlocked ? `${formatIdleNumber(gen.rate)} BP/s each` : `Unlocks at ${gen.unlockAt} correct answers`}</div>
+          </div>
+          ${
+            unlocked
+              ? `<button class="btn btn-primary idle-gen-buy" data-idle-buy="${gen.key}" ${idle.bp < cost ? "disabled" : ""}>${formatIdleNumber(cost)} BP</button>`
+              : `<span class="idle-gen-locked-tag">${ICON_LOCK_SM} Locked</span>`
+          }
+        </div>`;
+    }).join("");
+
+    const offlineBannerHTML = offlineEarned
+      ? `<div class="idle-offline-banner">${ICON_GIFT} Welcome back! You earned <strong>${formatIdleNumber(offlineEarned)} BP</strong> while you were away.</div>`
+      : "";
+
+    const el = document.getElementById("games");
+    el.innerHTML = `
+      <div class="game-hud">
+        <button class="game-quit" data-game-quit>← Quit</button>
+        <div class="game-hud-stats">
+          <span class="game-stat">${ICON_FLAME} ${idle.combo} combo</span>
+          <span class="game-stat">${idle.totalCorrect} correct</span>
+        </div>
+      </div>
+      ${offlineBannerHTML}
+      <div class="idle-bp-banner">
+        <div class="idle-bp-main"><span id="idleBPValue">${formatIdleNumber(idle.bp)}</span><span class="idle-bp-label">Brainpower</span></div>
+        <div class="idle-bp-rate"><span id="idleRateValue">${formatIdleNumber(rate)}</span> BP/sec</div>
+      </div>
+      <div class="idle-layout">
+        <div class="idle-question-col">
+          <div class="game-title">Answer to earn a boost</div>
+          ${q.passage ? `<div class="passage">${q.passage}</div>` : ""}
+          <div class="prompt game-prompt">${q.prompt.replace(/\n/g, "<br>")}</div>
+          <div class="choices" id="idleChoices">${choicesHTML}</div>
+        </div>
+        <div class="idle-shop-col">
+          <div class="game-title idle-shop-title">Study generators</div>
+          <p class="section-sub idle-shop-sub">Buy generators to earn Brainpower automatically, even while you're away.</p>
+          <div class="idle-gen-list">${shopHTML}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  function answerIdleQuestion(choiceIndex) {
+    if (state.idleLocked || state.game !== "study-tycoon") return;
+    const q = state.idlePool[state.idleQIndex];
+    const ok = choiceIndex === q.answer;
+    state.idleLocked = true;
+
+    const buttons = document.querySelectorAll("#idleChoices .choice");
+    buttons.forEach((b) => {
+      const ci = Number(b.dataset.idleChoice);
+      if (ci === q.answer) b.classList.add("correct");
+      else if (ci === choiceIndex) b.classList.add("incorrect");
+    });
+
+    const idle = loadIdleState();
+    idle.totalAnswered++;
+    if (ok) {
+      idle.totalCorrect++;
+      idle.combo++;
+      const reward = 15 + Math.min(idle.combo, 9) * 6 + Math.floor(idleTotalRate(idle) * 3);
+      idle.bp += reward;
+      idle.totalEarned += reward;
+    } else {
+      idle.combo = 0;
+    }
+    saveIdleState(idle);
+
+    setTimeout(() => {
+      if (state.game !== "study-tycoon") return;
+      state.idleQIndex++;
+      state.idleLocked = false;
+      renderIdleGame();
+    }, 500);
+  }
+
+  function buyIdleGenerator(key) {
+    const gen = IDLE_GENERATORS.find((g) => g.key === key);
+    if (!gen) return;
+    const idle = loadIdleState();
+    if (idle.totalCorrect < gen.unlockAt) return;
+    const owned = idle.owned[gen.key] || 0;
+    const cost = idleGeneratorCost(gen, owned);
+    if (idle.bp < cost) return;
+    idle.bp -= cost;
+    idle.owned[gen.key] = owned + 1;
+    saveIdleState(idle);
+    renderIdleGame();
   }
 
   // ---- Dashboard ----
@@ -2618,7 +3365,7 @@
 
       <div class="results-actions">
         <button class="btn btn-primary" id="retryBtn">${
-          state.module === "full-diagnostic" ? "Retake Full Scale Test" : isDiagnostic ? "Retake Practice SAT" : "Try Again"
+          state.module === "full-diagnostic" ? "Retake Full Scale Test" : isDiagnostic ? "Retake Short Diagnostic" : "Try Again"
         }</button>
         ${isDiagnostic ? `<button class="btn btn-ghost" data-nav="studyPlan">View Study Plan →</button>` : ""}
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
@@ -2826,6 +3573,12 @@
   const ICON_ALERT = `<svg class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>`;
   const ICON_GRADCAP = `<svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>`;
   const ICON_CHAT = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
+  const ICON_SWORD = `<svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="m13 19 6-6"/><path d="m16 16 4 4"/><path d="m19 21 2-2"/></svg>`;
+  const ICON_SHIELD = `<svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`;
+  const ICON_COIN = `<svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v10"/><path d="M9.5 9.5c0-1.1 1.1-2 2.5-2s2.5.8 2.5 1.8c0 2.4-5 1.4-5 4 0 1 1.1 1.8 2.5 1.8s2.5-.9 2.5-2"/></svg>`;
+  const ICON_SKULL = `<svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="M12.5 17h-1a7 7 0 1 1 6.17-3.65A1.7 1.7 0 0 0 17 14.84v1.14a1 1 0 0 1-1 1h-.17a1.7 1.7 0 0 0-1.63 1.2l-.5 1.66a1 1 0 0 1-.96.72h-.48a1 1 0 0 1-.96-.72l-.5-1.66a1.7 1.7 0 0 0-1.63-1.2H8.2a1 1 0 0 1-1-1v-1.14a1.7 1.7 0 0 0-.67-1.49A7 7 0 1 1 12.5 17"/></svg>`;
+  const ICON_ROBOT = `<svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`;
+  const ICON_BUILDING = `<svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>`;
 
   function medalIcon(size, color) {
     return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
@@ -3353,6 +4106,8 @@
         stopActiveGame();
         const kind = gameStartBtn.dataset.gameStart;
         if (kind === "word-match") startWordMatch();
+        else if (kind === "dungeon-quest") startDungeonQuest();
+        else if (kind === "study-tycoon") startIdleGame();
         else startBlitzGame(kind);
         return;
       }
@@ -3361,9 +4116,46 @@
         answerBlitz(Number(gameChoiceBtn.dataset.gameChoice));
         return;
       }
+      const idleChoiceBtn = e.target.closest("[data-idle-choice]");
+      if (idleChoiceBtn) {
+        answerIdleQuestion(Number(idleChoiceBtn.dataset.idleChoice));
+        return;
+      }
+      const idleBuyBtn = e.target.closest("[data-idle-buy]");
+      if (idleBuyBtn) {
+        buyIdleGenerator(idleBuyBtn.dataset.idleBuy);
+        return;
+      }
       const memoryCardBtn = e.target.closest("[data-memory-card]");
       if (memoryCardBtn) {
         flipMemoryCard(Number(memoryCardBtn.dataset.memoryCard));
+        return;
+      }
+      const rpgFloorBtn = e.target.closest("[data-rpg-floor]");
+      if (rpgFloorBtn) {
+        startRpgBattle(state.rpgZoneKey, Number(rpgFloorBtn.dataset.rpgFloor));
+        return;
+      }
+      const rpgChoiceBtn = e.target.closest("[data-rpg-choice]");
+      if (rpgChoiceBtn) {
+        answerRpgQuestion(Number(rpgChoiceBtn.dataset.rpgChoice));
+        return;
+      }
+      const rpgBuyBtn = e.target.closest("[data-rpg-buy]");
+      if (rpgBuyBtn) {
+        buyRpgUpgrade(rpgBuyBtn.dataset.rpgBuy);
+        return;
+      }
+      if (e.target.closest("[data-rpg-flee]")) {
+        rpgFlee();
+        return;
+      }
+      const rpgNavEl = e.target.closest("[data-rpg-nav]");
+      if (rpgNavEl) {
+        const dest = rpgNavEl.dataset.rpgNav;
+        if (dest === "overworld") renderRpgOverworld();
+        else if (dest === "zone") renderRpgZone(rpgNavEl.dataset.rpgZone || state.rpgZoneKey);
+        else if (dest === "shop") renderRpgShop();
         return;
       }
       if (e.target.closest("[data-game-quit]")) {

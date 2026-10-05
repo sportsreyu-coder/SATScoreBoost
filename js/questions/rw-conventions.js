@@ -843,5 +843,4043 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "The verb 'proceeded' must be modified by an adverb, not an adjective, so 'more smoothly' is correct; 'smoother' and 'more smooth' are adjective forms.",
+  },
+  {
+    id: "conv-60",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "After centuries of naked-eye observation______astronomers finally photographed a black hole directly.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'After centuries of naked-eye observation' is an introductory prepositional phrase and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-61",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The school of herring______toward deeper water every evening.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["moves", "move", "have moved", "are moving"],
+    answer: 0,
+    explanation:
+      "'School' is a singular collective noun, so it takes the singular verb 'moves.'",
+  },
+  {
+    id: "conv-62",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The cathedral's stained-glass windows survived two world wars______a stray ember from a nearby fire nearly destroyed them in 1970.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-63",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Last spring, archaeologists excavated the site and______several intact pottery shards.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["uncovered", "uncover", "will uncover", "uncovering"],
+    answer: 0,
+    explanation:
+      "The sentence is in past tense ('excavated'), so the second verb must also be past tense, 'uncovered,' to remain consistent.",
+  },
+  {
+    id: "conv-64",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The central bank's decision______a quarter-point rate cut—surprised most analysts who had expected no change.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a quarter-point rate cut' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-65",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The research team ensured that______data collection methods met ethical standards.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["its", "their", "his", "one's"],
+    answer: 0,
+    explanation:
+      "'Team' functions as a singular collective noun acting as one unit, so it takes the singular possessive 'its,' not the plural 'their.'",
+  },
+  {
+    id: "conv-66",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Because the wetland absorbs excess rainfall______nearby towns rarely experience severe flooding.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Because the wetland absorbs excess rainfall' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-67",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The chef's morning routine includes tasting sauces, plating desserts, and______the walk-in cooler.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["restocking", "restock", "to restock", "she restocks"],
+    answer: 0,
+    explanation:
+      "The list requires parallel gerunds ('tasting,' 'plating,' and ___), so 'restocking' matches the established form.",
+  },
+  {
+    id: "conv-68",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The expedition relied on three specialists______Dr. Nkemelu, a glaciologist; Ms. Petrova, a mountaineer; and Mr. Diallo, a logistics coordinator.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+  },
+  {
+    id: "conv-69",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "There______several dialects spoken across the small island chain.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["are", "is", "was", "has been"],
+    answer: 0,
+    explanation:
+      "The subject that follows, 'several dialects,' is plural, so the verb must agree with it: 'are.'",
+  },
+  {
+    id: "conv-70",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Adjusting the aperture for low light______the photographer captured the dim alleyway in sharp detail.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Adjusting the aperture for low light' is an introductory participial phrase and must be followed by a comma before the main clause.",
+  },
+  {
+    id: "conv-71",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Of the two compounds tested, the second proved the______stable under heat.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["more", "most", "much", "many"],
+    answer: 0,
+    explanation:
+      "When comparing exactly two things, the comparative form 'more' is required rather than the superlative 'most,' which is used for three or more.",
+  },
+  {
+    id: "conv-72",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The fault line, ______ runs beneath three counties, has not produced a major earthquake in decades.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential (set off by commas) and refers to a thing, the fault line, so 'which' is correct; 'that' is reserved for restrictive clauses.",
+  },
+  {
+    id: "conv-73",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The board insisted that every member______the annual report before the vote.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["review", "reviews", "reviewed", "will review"],
+    answer: 0,
+    explanation:
+      "'Insisted that' triggers the subjunctive mood, which uses the base form of the verb ('review') regardless of the subject's number.",
+  },
+  {
+    id: "conv-74",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The flight was rerouted due to turbulence______and passengers arrived nearly an hour late.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'And' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-75",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Researchers______the ancient manuscript for nearly a decade, and they have yet to translate it fully.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have studied", "studied", "study", "will study"],
+    answer: 0,
+    explanation:
+      "The action began in the past and continues into the present ('for nearly a decade...have yet to'), so the present perfect 'have studied' is correct.",
+  },
+  {
+    id: "conv-76",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Plants______native to arid climates often store water in thick, fleshy leaves.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Native to arid climates' is a restrictive (essential) phrase identifying which plants are meant, so no comma is needed before it.",
+  },
+  {
+    id: "conv-77",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Designed to withstand extreme temperatures, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the rover continued transmitting data from the Martian surface.",
+      "the Martian surface received data from the rover.",
+      "data continued to be transmitted by the rover from Mars.",
+      "extreme temperatures were withstood by the Martian surface.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Designed to withstand extreme temperatures' describes the rover, not the surface or the data, so the noun immediately following the comma must be 'the rover.'",
+  },
+  {
+    id: "conv-78",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Inflation slowed in the first quarter______unemployment climbed to its highest level in five years.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with a contrast in meaning but no coordinating conjunction must be joined with a semicolon.",
+  },
+  {
+    id: "conv-79",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "City planners asked residents to submit______feedback on the proposed bike lanes.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["their", "his", "its", "one's"],
+    answer: 0,
+    explanation:
+      "The antecedent 'residents' is plural, so the plural possessive pronoun 'their' is required for agreement.",
+  },
+  {
+    id: "conv-80",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "After tuning each string by ear______the violinist began the rehearsal.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'After tuning each string by ear' is an introductory phrase and requires a comma before the main clause.",
+  },
+  {
+    id: "conv-81",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The number of stray cats in the neighborhood______significantly since the shelter opened.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["has decreased", "have decreased", "decrease", "are decreasing"],
+    answer: 0,
+    explanation:
+      "'The number of' is treated as singular, so it takes the singular verb 'has decreased'; this differs from 'a number of,' which takes a plural verb.",
+  },
+  {
+    id: "conv-82",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The coin______a rare 1943 copper penny—sold at auction for more than one million dollars.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a rare 1943 copper penny' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-83",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The entomologist observed the colony for three days and then______her findings in a field journal.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["recorded", "records", "will record", "recording"],
+    answer: 0,
+    explanation:
+      "The sentence is in past tense ('observed'), so the second verb must also be past tense, 'recorded,' to remain consistent.",
+  },
+  {
+    id: "conv-84",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The old-growth forest had never been logged______conservationists fought hard to keep it that way.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " so, ", ": "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-85",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The majority of the ballots______already been counted by midnight.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had", "has", "having", "was"],
+    answer: 0,
+    explanation:
+      "In 'the majority of the ballots,' the verb agrees with the plural noun 'ballots,' so the plural 'had' is correct, not the singular 'has.'",
+  },
+  {
+    id: "conv-86",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The cipher revealed a single truth______the message had been hidden in plain sight all along.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the truth was, following a complete independent clause.",
+  },
+  {
+    id: "conv-87",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The dough had______for two hours before the baker shaped it into loaves.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["risen", "raised", "rose", "raise"],
+    answer: 0,
+    explanation:
+      "The intransitive verb 'rise' (to go up on its own) takes the past participle 'risen' after 'had'; 'raised' is the past participle of the transitive verb 'raise,' which requires a direct object.",
+  },
+  {
+    id: "conv-88",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The marathon route wound through the historic district______but organizers rerouted it after the storm.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'But' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-89",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The exhibit's centerpiece was praised as bold, inventive, and______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["thought-provoking", "provoking thought", "thoughts were provoked", "provoker of thought"],
+    answer: 0,
+    explanation:
+      "The list requires parallel adjectives ('bold, inventive, and ___'), and 'thought-provoking' matches that adjectival form.",
+  },
+  {
+    id: "conv-90",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The novel______won the award last year has been translated into a dozen languages.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["that", "which", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause 'won the award last year' is essential to identifying which novel is meant and has no surrounding commas, so the restrictive pronoun 'that' is correct.",
+  },
+  {
+    id: "conv-91",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "If the sample______contaminated, the results would have shown far greater variance.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had been", "was", "were", "has been"],
+    answer: 0,
+    explanation:
+      "The main clause 'would have shown' signals a past unreal conditional, which requires the past perfect 'had been' in the if-clause.",
+  },
+  {
+    id: "conv-92",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Consumer demand for sustainable fabrics grew rapidly______nonetheless, many manufacturers were slow to adapt.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Nonetheless' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-93",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The volcano erupted without warning, and ash______the sky for nearly a week afterward.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["darkened", "darkens", "will darken", "darkening"],
+    answer: 0,
+    explanation:
+      "The sentence is in past tense ('erupted'), so the second verb must also be past tense, 'darkened,' to remain consistent.",
+  },
+  {
+    id: "conv-94",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The author's debut work______a slim volume of interconnected short stories—went largely unnoticed until decades after her death.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a slim volume of interconnected short stories' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-95",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The newly discovered fossil is older than______specimen found in the region.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["any other", "any", "all", "every"],
+    answer: 0,
+    explanation:
+      "Because the fossil is itself a specimen found in the region, it must be compared to 'any other specimen' to exclude itself from the comparison; 'any,' 'all,' and 'every' would illogically include the fossil among the things it is being compared to.",
+  },
+  {
+    id: "conv-96",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The beekeeper checked the hive every week______the colony's honey production still declined sharply in late summer.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  }
+);
+
+QUESTIONS.push(
+  {
+    id: "conv-97",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Although the bridge had been inspected twice______engineers still worried about its structural integrity.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Although the bridge had been inspected twice' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-98",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The warehouse lost power during the storm______the backup generators kicked in within seconds.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both clauses are independent with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-99",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The jury reached a unanimous decision______the defendant was guilty beyond a reasonable doubt.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the decision was, following a complete independent clause.",
+  },
+  {
+    id: "conv-100",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Volunteers______available on weekends were assigned to the overnight shift.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Available on weekends' is a restrictive (essential) phrase identifying which volunteers are meant, so no comma is needed before it.",
+  },
+  {
+    id: "conv-101",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The lighthouse, ______ has guided ships since 1887, was recently restored by local volunteers.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential (set off by commas) and refers to a thing, the lighthouse, so 'which' is correct; 'that' is reserved for restrictive clauses.",
+  },
+  {
+    id: "conv-102",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The proposal lacked sufficient funding______moreover, it ignored community feedback entirely.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Moreover' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-103",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Drenched by the sudden downpour______the hikers sought shelter under a rocky outcrop.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Drenched by the sudden downpour' is an introductory participial phrase and must be followed by a comma before the main clause.",
+  },
+  {
+    id: "conv-104",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The gallery's new exhibit features three mediums______oil painting, charcoal sketching, and mixed-media collage.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", ""],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list of items following the complete independent clause.",
+  },
+  {
+    id: "conv-105",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The forecast predicted clear skies all weekend______a sudden storm rolled in Saturday afternoon.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with a contrast in meaning but no coordinating conjunction must be joined with a semicolon.",
+  },
+  {
+    id: "conv-106",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The lighthouse keeper's logbook, ______ kept meticulously since 1901, records every ship that has passed the point.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which has been", "that has been", "who has been", "being"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a thing (the logbook) and needs a complete verb phrase, so 'which has been' is correct.",
+  },
+  {
+    id: "conv-107",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The negotiations dragged on for months______yet both sides eventually reached a fair settlement.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Yet' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-108",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The sculpture's base______a slab of unpolished granite—weighs nearly two tons.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a slab of unpolished granite' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-109",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The itinerary included stops in three cities______Lisbon, a coastal capital; Porto, a riverside hub; and Braga, a historic university town.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+  },
+  {
+    id: "conv-110",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The results were, indeed______surprising to everyone on the research team.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Indeed' interrupts a single independent clause rather than joining two clauses, so it must be enclosed in a pair of commas; since the first comma is already given, a matching comma is needed here.",
+  },
+  {
+    id: "conv-111",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Even though the airline added extra flights for the holidays______demand still outpaced the available seats.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", ". "],
+    answer: 0,
+    explanation:
+      "'Even though the airline added extra flights for the holidays' is a dependent clause; ending it with a period would create a sentence fragment, so it must be joined to the independent clause with a comma.",
+  },
+  {
+    id: "conv-112",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The software update______fixed the security flaw was released without any public announcement.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["that", "which", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause 'fixed the security flaw' is essential to identifying which update is meant and has no surrounding commas, so the restrictive pronoun 'that' is correct.",
+  },
+  {
+    id: "conv-113",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The______testimony contradicted the physical evidence presented at trial.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["witness's", "witnesses'", "witnesses", "witness"],
+    answer: 0,
+    explanation:
+      "Only one witness is referenced here, so the singular possessive is formed by adding an apostrophe and 's': 'witness's.'",
+  },
+  {
+    id: "conv-114",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The______complaints finally prompted the city to repave the entire street.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["residents'", "resident's", "residents", "residents's"],
+    answer: 0,
+    explanation:
+      "Since many residents are complaining, the plural possessive 'residents'' is required, formed by adding only an apostrophe after the final s.",
+  },
+  {
+    id: "conv-115",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "______research on coral bleaching was published in a leading science journal after three years of fieldwork.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["Maria and Carlos's", "Maria's and Carlos's", "Maria and Carlo's", "Marias and Carlos's"],
+    answer: 0,
+    explanation:
+      "Because Maria and Carlos jointly produced one shared piece of research, only the final name takes the apostrophe and s; marking both names as possessive would incorrectly suggest two separate studies.",
+  },
+  {
+    id: "conv-116",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The company revised______return policy after receiving dozens of customer complaints.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["its", "it's", "its'", "it is"],
+    answer: 0,
+    explanation:
+      "The possessive 'its' (no apostrophe) shows that the policy belongs to the company; 'it's' is a contraction of 'it is,' and 'its'' is not a standard word.",
+  },
+  {
+    id: "conv-117",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The committee could not determine______proposal had been submitted first.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whose", "who's", "who", "whom"],
+    answer: 0,
+    explanation:
+      "'Whose' is the possessive form needed here, since the proposal belongs to someone; 'who's' is a contraction of 'who is,' which does not fit this context.",
+  },
+  {
+    id: "conv-118",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "Many city parks have cut back their watering schedules this summer______for example, the botanical garden now waters its lawns only twice a week.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'For example' introduces a second independent clause, so like a conjunctive adverb it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-119",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The ferry service was suspended due to high winds______so passengers had to wait at the terminal overnight.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'So' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-120",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The chef plated the dessert with great precision______and the diners applauded as it arrived at the table.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'And' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-121",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The keynote speaker______a leading expert in renewable energy, discussed the future of solar storage technology.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'A leading expert in renewable energy' is a nonessential appositive renaming 'the keynote speaker,' so it must be set off with a pair of commas; since the closing comma is already given, the opening comma is needed here.",
+  },
+  {
+    id: "conv-122",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The scholarship committee selected the applicant______the faculty panel had unanimously recommended.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whom", "who", "which", "that"],
+    answer: 0,
+    explanation:
+      "Within the clause, the pronoun functions as the object of 'recommended' ('the panel had recommended whom'), so the objective case 'whom' is required; 'which' is reserved for things, not people.",
+  },
+  {
+    id: "conv-123",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The recipe requires______flour, sugar, and eggs, all of which must be measured precisely.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ": ", "; ", ", "],
+    answer: 0,
+    explanation:
+      "'Flour, sugar, and eggs' serves as the direct object of 'requires,' so nothing should separate the verb from its object; inserting a colon, semicolon, or comma here would incorrectly separate a verb from its direct object.",
+  },
+  {
+    id: "conv-124",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The construction crew finished the east wing ahead of schedule______meanwhile, the west wing fell further behind.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Meanwhile' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-125",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Whenever the river crests above flood stage______the town opens its emergency shelters without delay.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Whenever the river crests above flood stage' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-126",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Since the archive had no digital backup of the records______staff spent weeks re-scanning every page by hand.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", ". "],
+    answer: 0,
+    explanation:
+      "'Since the archive had no digital backup of the records' is a dependent clause; ending it with a period would create a sentence fragment, so a comma is needed to join it to the main clause.",
+  },
+  {
+    id: "conv-127",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Everyone in the office dreaded the______latest round of budget cuts.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["boss's", "bosses'", "boss'", "bosses"],
+    answer: 0,
+    explanation:
+      "For a singular noun ending in 's' ('boss'), Standard English still adds 's to form the possessive: 'boss's'; 'boss'' omits the required s.",
+  },
+  {
+    id: "conv-128",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The committee's final report—delayed for nearly a year by budget disputes______was finally released to the public.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'delayed for nearly a year by budget disputes' is a nonessential interrupter already opened with a dash, so it must be closed with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-129",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Dr. Alvarez, ______ has led the clinic for over a decade, announced her retirement last week.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["who", "that", "which", "whom"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a person, Dr. Alvarez, and functions as the subject of 'has led,' so the subjective case 'who' is correct.",
+  },
+  {
+    id: "conv-130",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The archivist digitized the entire photo collection______preserving images that had begun to fade badly.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Preserving images that had begun to fade badly' is a participial phrase modifying the whole preceding clause, so it must be set off with a comma.",
+  },
+  {
+    id: "conv-131",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The inspector's report identified a single cause of the collapse______corroded support beams.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the cause was, following a complete independent clause.",
+  },
+  {
+    id: "conv-132",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "She finished her shift at midnight______she drove straight home without stopping.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both clauses are independent with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-133",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The password______protects the company's servers must be changed every ninety days.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["that", "which", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause 'protects the company's servers' is essential to identifying which password is meant and has no surrounding commas, so the restrictive pronoun 'that' is correct rather than 'which.'",
+  },
+  {
+    id: "conv-134",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The manager and the head chef______responsible for approving the new seasonal menu.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["are", "is", "was", "has been"],
+    answer: 0,
+    explanation:
+      "A compound subject joined by 'and' ('the manager and the head chef') is plural, so it takes the plural verb 'are.'",
+  },
+  {
+    id: "conv-135",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Either the plumber or the electricians______available to come by tomorrow morning.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["are", "is", "was", "has been"],
+    answer: 0,
+    explanation:
+      "In an 'either/or' construction, the verb agrees with the nearer subject, 'electricians,' which is plural, so 'are' is correct.",
+  },
+  {
+    id: "conv-136",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "None of the cake______left by the time the guests arrived at the party.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["was", "were", "are", "have been"],
+    answer: 0,
+    explanation:
+      "'Cake' here is a noncount (mass) noun referring to a single whole, so 'none' takes the singular verb 'was.'",
+  },
+  {
+    id: "conv-137",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "None of the volunteers______willing to work the overnight shift on such short notice.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "'Volunteers' is a plural count noun, so 'none of the volunteers' takes the plural verb 'were.'",
+  },
+  {
+    id: "conv-138",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The nonprofit updated______mission statement to reflect its expanded community programs.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["its", "their", "his", "one's"],
+    answer: 0,
+    explanation:
+      "'Nonprofit' is a singular organization, so it takes the singular possessive pronoun 'its,' not the plural 'their.'",
+  },
+  {
+    id: "conv-139",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The disagreement about the budget was strictly between the treasurer and______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["me", "I", "myself", "mine"],
+    answer: 0,
+    explanation:
+      "As the object of the preposition 'between,' the objective case 'me' is required, not the subjective 'I.'",
+  },
+  {
+    id: "conv-140",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The director asked Priya and______to present the quarterly results.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["me", "myself", "I", "mine"],
+    answer: 0,
+    explanation:
+      "As the object of the verb 'asked,' the objective pronoun 'me' is required; 'myself' is a reflexive pronoun and cannot stand in as a simple object here.",
+  },
+  {
+    id: "conv-141",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The new assembly line produces______defective parts than the old one did.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["fewer", "less", "lesser", "little"],
+    answer: 0,
+    explanation:
+      "'Defective parts' is a countable plural noun, so the countable modifier 'fewer' is required rather than 'less,' which modifies noncount nouns.",
+  },
+  {
+    id: "conv-142",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The council must either approve the new zoning law or______it back to committee for revision.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["send", "sending", "the sending of", "to send"],
+    answer: 0,
+    explanation:
+      "'Either...or' requires parallel structure; since the first element is the base verb 'approve,' the second must match with the base verb 'send.'",
+  },
+  {
+    id: "conv-143",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The clinic______over three thousand patients since it opened its doors in 2015.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["has treated", "treated", "treats", "will treat"],
+    answer: 0,
+    explanation:
+      "An action that began in the past and continues up to the present, marked by 'since,' requires the present perfect tense, 'has treated.'",
+  },
+  {
+    id: "conv-144",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The pilot reported that the storm______by the time the plane reached cruising altitude.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had already passed", "already passed", "has already passed", "was already passing"],
+    answer: 0,
+    explanation:
+      "Because the storm passed before another past event (the plane's reaching altitude), the past perfect 'had already passed' is required to show the earlier action.",
+  },
+  {
+    id: "conv-145",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The new lighting system did not______the plants' growth rate in any measurable way.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["affect", "effect", "affects", "effected"],
+    answer: 0,
+    explanation:
+      "'Affect' is the verb meaning 'to influence,' which fits the sentence; 'effect' is primarily a noun meaning 'a result.'",
+  },
+  {
+    id: "conv-146",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The second applicant was far more qualified______the first.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["than", "then", "that", "when"],
+    answer: 0,
+    explanation:
+      "'Than' is used to introduce a comparison; 'then' refers to time and does not fit this context.",
+  },
+  {
+    id: "conv-147",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Every department submitted its budget report______the marketing team, which requested an extension.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["except", "accept", "excepting for", "excepted"],
+    answer: 0,
+    explanation:
+      "'Except' means 'excluding,' which fits the meaning here; 'accept' means 'to receive or agree to' and does not make sense in this context.",
+  },
+  {
+    id: "conv-148",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The warranty______covers manufacturing defects, not damage caused by misuse.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["only", "the only", "only that", "that only"],
+    answer: 0,
+    explanation:
+      "Placing 'only' immediately before the verb 'covers' correctly limits the meaning to manufacturing defects alone, matching the contrast drawn in the second half of the sentence.",
+  },
+  {
+    id: "conv-149",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Either the judge or the jury______the final say on the sentencing recommendation.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["has", "have", "having", "had been having"],
+    answer: 0,
+    explanation:
+      "In an 'either/or' construction, the verb agrees with the nearer subject, the singular 'jury,' so 'has' is correct.",
+  },
+  {
+    id: "conv-150",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Two-thirds of the orchard______damaged by the early frost last spring.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["was", "were", "has been", "is"],
+    answer: 0,
+    explanation:
+      "With fractions, the verb agrees with the noun in the 'of' phrase; 'orchard' is singular, so the singular verb 'was' is correct.",
+  },
+  {
+    id: "conv-151",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The veteran guide______the hikers safely down the mountain before the storm hit.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["led", "lead", "leaded", "has lead"],
+    answer: 0,
+    explanation:
+      "The past-tense form of the verb 'lead' is spelled 'led'; 'lead' is either the present tense or the name of the metal, neither of which fits this past-tense sentence.",
+  },
+  {
+    id: "conv-152",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The audience showed______appreciation with a long standing ovation.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["its", "their", "it's", "them"],
+    answer: 0,
+    explanation:
+      "'Audience' is a singular collective noun acting as one unit, so it takes the singular possessive 'its,' not the plural 'their.'",
+  },
+  {
+    id: "conv-153",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The detective finally identified______had tampered with the evidence.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["who", "whom", "whoever's", "which"],
+    answer: 0,
+    explanation:
+      "The pronoun functions as the subject of 'had tampered,' so the subjective case 'who' is required, not the objective 'whom.'",
+  },
+  {
+    id: "conv-154",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The internship involved shadowing senior engineers, documenting lab results, and______client presentations.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["reviewing", "review", "to review", "the review of"],
+    answer: 0,
+    explanation:
+      "The list requires parallel gerunds ('shadowing,' 'documenting,' and ___), so 'reviewing' matches the established form.",
+  },
+  {
+    id: "conv-155",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Among the finalists______two former Olympic swimmers from the same training club.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "In this inverted sentence, the true subject, 'two former Olympic swimmers,' follows the verb and is plural, so the plural verb 'were' is required even though it comes first.",
+  },
+  {
+    id: "conv-156",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "When the results______from the lab, the research team will schedule a press conference.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["arrive", "will arrive", "would arrive", "arriving"],
+    answer: 0,
+    explanation:
+      "In a future time clause introduced by 'when,' Standard English uses the simple present tense, 'arrive,' rather than 'will arrive,' even though the overall meaning is future.",
+  },
+  {
+    id: "conv-157",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The hikers decided to travel ten miles______before setting up camp for the night.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["farther", "further", "farthest", "furthest"],
+    answer: 0,
+    explanation:
+      "'Farther' refers to physical distance, which fits this context, while 'further' is generally reserved for figurative or additional extent.",
+  },
+  {
+    id: "conv-158",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The farm reported a significant______of crop losses after the unexpected hailstorm.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["number", "amount", "quantity of", "numbering"],
+    answer: 0,
+    explanation:
+      "'Crop losses' is a countable plural noun, so 'number' is the correct modifier; 'amount' is reserved for noncount nouns.",
+  },
+  {
+    id: "conv-159",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Although the volcano had been dormant for nearly two centuries______geologists continued to monitor its seismic activity.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Although the volcano had been dormant for nearly two centuries' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-160",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Blending seamlessly into the coral______the octopus evaded the diver's camera for several minutes.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Blending seamlessly into the coral' is an introductory participial phrase and must be followed by a comma before the main clause.",
+  },
+  {
+    id: "conv-161",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The library's renovation took far longer than planned______the reading room did not reopen until late autumn.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-162",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Merchants along the Silk Road carried a range of valuable goods______silk, spices, and precious stones.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", ""],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list of items following the complete independent clause.",
+  },
+  {
+    id: "conv-163",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The stock's price rebounded quickly after the announcement______however, analysts remained skeptical of its long-term growth.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'However' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-164",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The food truck's line stretched around the block all afternoon______but the owners ran out of ingredients by five o'clock.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'But' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-165",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The antique clock, ______ had not kept accurate time in decades, was finally repaired by a local craftsman.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential (set off by commas) and refers to a thing, the clock, so 'which' is correct; 'that' is reserved for restrictive clauses.",
+  },
+  {
+    id: "conv-166",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The satellite's final component______a solar panel engineered to unfold in orbit—was tested rigorously before launch.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a solar panel engineered to unfold in orbit' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-167",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "During her solo, the______bow suddenly snapped, forcing her to borrow one from the concertmaster.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["violinist's", "violinists'", "violinists", "violinist"],
+    answer: 0,
+    explanation:
+      "The pronoun 'her' earlier in the sentence shows that only one violinist is being discussed, so the singular possessive 'violinist's' is required.",
+  },
+  {
+    id: "conv-168",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The______lockers were inspected after several reports of missing textbooks.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["students'", "student's", "students", "students's"],
+    answer: 0,
+    explanation:
+      "Since many students' lockers are involved, the plural possessive 'students'' is required, formed by adding only an apostrophe after the final s.",
+  },
+  {
+    id: "conv-169",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The sensor______malfunctioned during testing was replaced before the device shipped.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["that", "which", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause 'malfunctioned during testing' is essential to identifying which sensor is meant and has no surrounding commas, so the restrictive pronoun 'that' is correct rather than 'which.'",
+  },
+  {
+    id: "conv-170",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Climbers______attempting the north face must register with the ranger station in advance.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Attempting the north face' is a restrictive (essential) phrase identifying which climbers are meant, so no comma is needed before it.",
+  },
+  {
+    id: "conv-171",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The mural, ______ repainted twice since its unveiling, has become a symbol of the neighborhood.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which has been", "that has been", "who has been", "being"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a thing (the mural) and needs a complete verb phrase, so 'which has been' is correct.",
+  },
+  {
+    id: "conv-172",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Firefighters contained the blaze within two days______the surrounding hillsides remained charred for months.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with a contrast in meaning but no coordinating conjunction must be joined with a semicolon.",
+  },
+  {
+    id: "conv-173",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Regulators raised concerns about the exchange's security practices______therefore, several investors withdrew their funds.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Therefore' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-174",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "She shaped the clay carefully on the wheel______and the instructor praised her steady hands.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'And' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-175",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The Antarctic station housed three researchers______Dr. Lindqvist, a climatologist; Mr. Oyelaran, a mechanic; and Ms. Voss, a physician.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+  },
+  {
+    id: "conv-176",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Because the tsunami warning system detected the tremor within seconds______coastal towns had time to evacuate.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Because the tsunami warning system detected the tremor within seconds' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-177",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "After decades buried beneath the peat bog______the Viking ship's timbers were finally excavated intact.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'After decades buried beneath the peat bog' is an introductory prepositional phrase and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-178",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The orchestra's new conductor—trained at a conservatory in Vienna______surprised the board by programming an entirely contemporary season.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'trained at a conservatory in Vienna' is a nonessential interrupter already opened with a dash, so it must be closed with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-179",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The expedition's lead scientist______a marine biologist specializing in deep-sea ecosystems, briefed the crew before the dive.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'A marine biologist specializing in deep-sea ecosystems' is a nonessential appositive renaming 'the lead scientist,' so it must be set off with a pair of commas; since the closing comma is already given, the opening comma is needed here.",
+  },
+  {
+    id: "conv-180",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The committee dedicated the award to the volunteer______they credited with founding the animal shelter.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whom", "who", "which", "that"],
+    answer: 0,
+    explanation:
+      "Within the clause, the pronoun functions as the object of 'credited' ('they credited whom'), so the objective case 'whom' is required; 'which' is reserved for things, not people.",
+  },
+  {
+    id: "conv-181",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Professor Alemu, ______ has studied medieval trade guilds for thirty years, published her findings last month.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["who", "that", "which", "whom"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a person, Professor Alemu, and functions as the subject of 'has studied,' so the subjective case 'who' is correct.",
+  },
+  {
+    id: "conv-182",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Pedaling against a fierce headwind______the cyclist fell behind the lead pack during the final stretch.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Pedaling against a fierce headwind' is an introductory participial phrase and must be followed by a comma before the main clause.",
+  },
+  {
+    id: "conv-183",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The startup's app crashed repeatedly during the demo______investors still expressed interest in funding the project.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both clauses are independent with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-184",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The planetarium's new show reveals a startling fact______most stars visible at night no longer exist in their observed form.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the fact was, following a complete independent clause.",
+  },
+  {
+    id: "conv-185",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The brewery's new recipe sold out within hours______so the owners doubled production for the following week.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'So' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-186",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The troupe's final rehearsal______a full run-through in costume—convinced the director the show was ready.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a full run-through in costume' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-187",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The traffic study revealed severe congestion downtown______consequently, the city fast-tracked the new bus rapid transit line.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Consequently' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-188",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Since the blood bank's reserves had dropped to a critical low______the hospital organized an emergency donation drive.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Since the blood bank's reserves had dropped to a critical low' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-189",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The ingredient______triggered the allergic reaction was removed from the recipe immediately.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["that", "which", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause 'triggered the allergic reaction' is essential to identifying which ingredient is meant and has no surrounding commas, so the restrictive pronoun 'that' is correct.",
+  },
+  {
+    id: "conv-190",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The suspension bridge, ______ engineered to withstand hurricane-force winds, has never sustained structural damage.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which was", "that was", "who was", "being"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a thing (the bridge) and needs a complete verb phrase, so 'which was' is correct.",
+  },
+  {
+    id: "conv-191",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "______proposal for the new wing was approved unanimously by the board.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["Chen and Okafor's", "Chen's and Okafor's", "Chen and Okafor's'", "Chens and Okafor's"],
+    answer: 0,
+    explanation:
+      "Because Chen and Okafor jointly produced one shared proposal, only the final name takes the apostrophe and s; marking both names as possessive would incorrectly suggest two separate proposals.",
+  },
+  {
+    id: "conv-192",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Drivers______caught speeding in the school zone will receive an automatic fine.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Caught speeding in the school zone' is a restrictive (essential) phrase identifying which drivers are meant, so no comma is needed before it.",
+  },
+  {
+    id: "conv-193",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The curator and her assistant______responsible for cataloging every artifact in the new wing.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["are", "is", "was", "has been"],
+    answer: 0,
+    explanation:
+      "A compound subject joined by 'and' ('the curator and her assistant') is plural, so it takes the plural verb 'are.'",
+  },
+  {
+    id: "conv-194",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The researchers reviewed______data before submitting the paper for publication.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["their", "his", "its", "one's"],
+    answer: 0,
+    explanation:
+      "The antecedent 'researchers' is plural, so the plural possessive pronoun 'their' is required for agreement.",
+  },
+  {
+    id: "conv-195",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The panel of judges______unanimous in awarding first prize to the young violinist.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["was", "were", "are", "have been"],
+    answer: 0,
+    explanation:
+      "'Panel' is a singular collective noun, so it takes the singular verb 'was,' regardless of the plural noun 'judges' in the prepositional phrase that follows it.",
+  },
+  {
+    id: "conv-196",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The praise for the championship win was shared equally between the team captain and______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["me", "I", "myself", "mine"],
+    answer: 0,
+    explanation:
+      "As the object of the preposition 'between,' the objective case 'me' is required, not the subjective 'I.'",
+  },
+  {
+    id: "conv-197",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The exhibit was praised not only for its striking visuals but also for______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [
+      "its clear explanation of complex science",
+      "explaining complex science clearly was done",
+      "how clearly complex science was explained",
+      "complex science was explained clearly",
+    ],
+    answer: 0,
+    explanation:
+      "'Not only...but also' requires parallel structure. Since the first element is the noun phrase 'its striking visuals,' the second must match that form: 'its clear explanation of complex science.'",
+  },
+  {
+    id: "conv-198",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The diver descended slowly and then______for the shipwreck visible below.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["searched", "searches", "will search", "searching"],
+    answer: 0,
+    explanation:
+      "The sentence is in past tense ('descended'), so the second verb must also be past tense, 'searched,' to remain consistent.",
+  },
+  {
+    id: "conv-199",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Carving late into the night, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the sculptor finally finished the marble bust.",
+      "the marble bust was finally finished.",
+      "the night brought the sculptor close to finishing.",
+      "the studio grew quiet as the bust was finished.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Carving late into the night' describes a person performing the action, so the noun immediately following the comma must be that person: 'the sculptor.'",
+  },
+  {
+    id: "conv-200",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The board recommended that the policy______revised before the next fiscal quarter.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["be", "is", "was", "will be"],
+    answer: 0,
+    explanation:
+      "'Recommended that' triggers the subjunctive mood, which uses the base form of the verb ('be') regardless of the subject's number or the sentence's tense.",
+  },
+  {
+    id: "conv-201",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Everybody at the conference______asked to wear a name badge at all times.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["was", "were", "are", "have been"],
+    answer: 0,
+    explanation:
+      "The indefinite pronoun 'everybody' is grammatically singular, so it takes the singular verb 'was.'",
+  },
+  {
+    id: "conv-202",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "By the time the train reached the station, the passengers______for nearly three hours.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had been waiting", "waited", "wait", "are waiting"],
+    answer: 0,
+    explanation:
+      "Because the waiting began before and continued up to another past event (the train's arrival), the past perfect progressive 'had been waiting' is required.",
+  },
+  {
+    id: "conv-203",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The grant will go to______submits the most innovative proposal.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whoever", "whomever", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The pronoun functions as the subject of 'submits' within its own clause, so the subjective case 'whoever' is correct even though the entire clause follows the preposition 'to.'",
+  },
+  {
+    id: "conv-204",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Of the two bridges spanning the river, the older one is the______traveled.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["more", "most", "much", "many"],
+    answer: 0,
+    explanation:
+      "When comparing exactly two things, the comparative form 'more' is required rather than the superlative 'most,' which is used for three or more.",
+  },
+  {
+    id: "conv-205",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Of the three trails leading up the ridge, the eastern one is the______difficult.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["most", "more", "much", "many"],
+    answer: 0,
+    explanation:
+      "When comparing three or more items, the superlative form 'most' is required rather than the comparative 'more,' which is used for exactly two.",
+  },
+  {
+    id: "conv-206",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "A number of residents______attended the town hall to voice their concerns.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have", "has", "having", "is"],
+    answer: 0,
+    explanation:
+      "'A number of' is treated as plural, so it takes the plural verb 'have'; this differs from 'the number of,' which takes a singular verb.",
+  },
+  {
+    id: "conv-207",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The tools had______on the workbench untouched since the shop's relocation last spring.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["sat", "set", "sitten", "setted"],
+    answer: 0,
+    explanation:
+      "The intransitive verb 'sit' (to rest in a place) takes the past participle 'sat' after 'had'; 'set' is the past participle of the transitive verb 'set,' which requires a direct object.",
+  },
+  {
+    id: "conv-208",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The coupon______applies to online purchases, not in-store ones.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["only", "the only", "only that", "that only"],
+    answer: 0,
+    explanation:
+      "Placing 'only' immediately before the verb 'applies' correctly limits the meaning to online purchases alone, matching the contrast drawn in the second half of the sentence.",
+  },
+  {
+    id: "conv-209",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Her role as project manager involves tracking budgets, scheduling inspections, and______client questions.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["answering", "answer", "to answer", "the answering of"],
+    answer: 0,
+    explanation:
+      "The list requires parallel gerunds ('tracking,' 'scheduling,' and ___), so 'answering' matches the established form.",
+  },
+  {
+    id: "conv-210",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The new recipe contains______sugar than the original version.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["less", "fewer", "lesser", "little"],
+    answer: 0,
+    explanation:
+      "'Sugar' is a noncount (mass) noun, so the noncount modifier 'less' is required rather than 'fewer,' which modifies countable plural nouns.",
+  },
+  {
+    id: "conv-211",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The new tax policy had a significant______on small businesses.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["effect", "affect", "effects", "affecting"],
+    answer: 0,
+    explanation:
+      "'Effect' is the noun meaning 'a result,' which fits the sentence; 'affect' is primarily a verb meaning 'to influence.'",
+  },
+  {
+    id: "conv-212",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The results of the second exam were better______anyone had predicted.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["than", "then", "that", "when"],
+    answer: 0,
+    explanation:
+      "'Than' is used to introduce a comparison; 'then' refers to time and does not fit this context.",
+  },
+  {
+    id: "conv-213",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Someone left______umbrella in the lobby after the meeting.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["their", "his", "its", "one's"],
+    answer: 0,
+    explanation:
+      "With an indefinite singular antecedent like 'someone' whose gender is unspecified, Standard English uses the pronoun 'their'; 'its' is reserved for things, not people.",
+  },
+  {
+    id: "conv-214",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "By the time the critic arrived, the chef______the entire tasting menu.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had already prepared", "already prepared", "has already prepared", "was already preparing"],
+    answer: 0,
+    explanation:
+      "Because the menu was prepared before another past event (the critic's arrival), the past perfect 'had already prepared' is required.",
+  },
+  {
+    id: "conv-215",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The teacher insisted that each student______their essay before the deadline.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["submit", "submits", "submitted", "will submit"],
+    answer: 0,
+    explanation:
+      "'Insisted that' triggers the subjunctive mood, which uses the base form of the verb ('submit') regardless of the subject's number.",
+  },
+  {
+    id: "conv-216",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Hoping to capture the eclipse, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the photographer set up her tripod before dawn.",
+      "the tripod was set up before dawn.",
+      "dawn arrived before the eclipse could be captured.",
+      "the eclipse was captured by careful planning.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Hoping to capture the eclipse' describes a person, not the tripod, the dawn, or the eclipse, so the noun immediately following the comma must be that person: 'the photographer.'",
+  },
+  {
+    id: "conv-217",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "There______dozens of species native to this single valley.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["are", "is", "was", "has been"],
+    answer: 0,
+    explanation:
+      "The subject that follows, 'dozens of species,' is plural, so the verb must agree with it: 'are.'",
+  },
+  {
+    id: "conv-218",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The committee could not agree on______to send to the conference.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whom", "who", "whoever", "which"],
+    answer: 0,
+    explanation:
+      "The pronoun functions as the object of the infinitive 'to send,' so the objective case 'whom' is required, not the subjective 'who.'",
+  },
+  {
+    id: "conv-219",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The new curriculum aims both to challenge advanced students and to______struggling ones.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["support", "supporting", "the support of", "supportive of"],
+    answer: 0,
+    explanation:
+      "'Both...and' requires parallel structure; since the first element is the infinitive 'to challenge,' the second must match with the base verb 'support' after 'to.'",
+  },
+  {
+    id: "conv-220",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The two attorneys agreed to discuss the settlement______before presenting it to the judge.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["further", "farther", "furthest", "farthest"],
+    answer: 0,
+    explanation:
+      "'Further' refers to figurative or additional extent, which fits this context, while 'farther' is generally reserved for physical distance.",
+  },
+  {
+    id: "conv-221",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Because the blacksmith tempered the blade slowly______the metal gained unusual flexibility.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Because the blacksmith tempered the blade slowly' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-222",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Measuring the hem twice before cutting______the tailor avoided a costly mistake.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Measuring the hem twice before cutting' is an introductory participial phrase and must be followed by a comma before the main clause.",
+  },
+  {
+    id: "conv-223",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The vineyard's harvest was delayed by a week of rain______workers picked the grapes in a single frantic weekend.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-224",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The subway line lost signal power downtown______riders waited on the platform for nearly an hour.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with no coordinating conjunction must be joined with a semicolon rather than a comma, which would create a comma splice.",
+  },
+  {
+    id: "conv-225",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The greenhouse cultivates three varieties of orchid______the moth orchid, the lady's slipper, and the vanda.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", ""],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list of items following the complete independent clause.",
+  },
+  {
+    id: "conv-226",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The cartographer discovered the error at last______the coastline had been drawn nearly a mile off.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the error was, following a complete independent clause.",
+  },
+  {
+    id: "conv-227",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The turbine, ______ stands nearly four hundred feet tall, generates enough power for two thousand homes.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential (set off by commas) and refers to a thing, the turbine, so 'which' is correct; 'that' is reserved for restrictive clauses.",
+  },
+  {
+    id: "conv-228",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Chisels______left out in the rain overnight had begun to rust by morning.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Left out in the rain overnight' is a restrictive (essential) phrase identifying which chisels are meant, so no comma is needed before it.",
+  },
+  {
+    id: "conv-229",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The bylaw______the board passed by a single vote takes effect next month.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["that", "which", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause 'the board passed by a single vote' is essential to identifying which bylaw is meant and has no surrounding commas, so the restrictive pronoun 'that' is correct.",
+  },
+  {
+    id: "conv-230",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The scholarship is awarded to______the selection committee judges most committed to public service.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whomever", "whoever", "whom", "who"],
+    answer: 0,
+    explanation:
+      "Within the clause, the pronoun functions as the object of 'judges' ('the committee judges whom'), so the objective case 'whomever' is required even though the whole clause follows the preposition 'to.'",
+  },
+  {
+    id: "conv-231",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The party selected a candidate______voters already trusted.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whom", "who", "whoever", "whomever"],
+    answer: 0,
+    explanation:
+      "The pronoun is the object of 'trusted' ('voters trusted whom'), so the objective case 'whom' is correct.",
+  },
+  {
+    id: "conv-232",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The company's new headquarters______a repurposed textile mill—opened to employees six months ahead of schedule.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a repurposed textile mill' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-233",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The senator's proposal______a modest increase in the minimum wage—drew fierce opposition from business groups.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a modest increase in the minimum wage' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-234",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The gem's one imperfection______a faint cloud near its center—reduced its appraised value significantly.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a faint cloud near its center' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-235",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The architect's final sketch______a sweeping glass atrium—became the building's most celebrated feature.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a sweeping glass atrium' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-236",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The factory's output rose sharply after the upgrade______however, training for the new machines lagged behind.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'However' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-237",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The clinic's wait times grew longer every month______moreover, several nurses resigned in frustration.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Moreover' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-238",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Sales slowed on the east coast throughout the winter______meanwhile, the western branch posted record numbers.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Meanwhile' is a conjunctive adverb joining two independent clauses, so it must be preceded by a semicolon and followed by a comma.",
+  },
+  {
+    id: "conv-239",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The cruise ship departed ten minutes late______but it still reached the harbor before the tide turned.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'But' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-240",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The students could present their findings in class______or they could submit a written report instead.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Or' is a coordinating conjunction joining two independent clauses, so a comma must precede it.",
+  },
+  {
+    id: "conv-241",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "After the stagehands finished setting the props______the actors ran through their final scene.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'After the stagehands finished setting the props' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-242",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Weighed down by a stack of packages______the courier struggled up the icy steps.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Weighed down by a stack of packages' is an introductory participial phrase and must be followed by a comma before the main clause.",
+  },
+  {
+    id: "conv-243",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Once the auditors finished reviewing the accounts______they flagged three irregular transactions.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Once the auditors finished reviewing the accounts' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-244",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Despite months of careful planning______the product launch was postponed at the last minute.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Despite months of careful planning' is an introductory prepositional phrase and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-245",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The printing press broke down twice during the run______the morning edition still reached every newsstand on time.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-246",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The region's main reservoir dropped to half its usual level______farmers downstream began rationing irrigation water.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with no coordinating conjunction must be joined with a semicolon rather than a comma, which would create a comma splice.",
+  },
+  {
+    id: "conv-247",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The new phone's reviews were mixed at best______pre-orders still shattered the company's previous sales record.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with a contrast in meaning but no coordinating conjunction must be joined with a semicolon.",
+  },
+  {
+    id: "conv-248",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "A software bug disabled the booking system for six hours______call-center staff processed every reservation by hand.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction joining them, so a semicolon is required; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-249",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The hardware store restocked three essential items before the storm______batteries, bottled water, and plywood.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", ""],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list of items following the complete independent clause.",
+  },
+  {
+    id: "conv-250",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The conference featured three keynote speakers______Dr. Hassan, an immunologist; Ms. Okafor, a biostatistician; and Mr. Weiss, a public policy advisor.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+  },
+  {
+    id: "conv-251",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The investigators reached a single conclusion after months of analysis______the leak had originated in the server room.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the conclusion was, following a complete independent clause.",
+  },
+  {
+    id: "conv-252",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The treaty, ______ took nearly a decade to negotiate, finally ended the dispute over fishing rights.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential (set off by commas) and refers to a thing, the treaty, so 'which' is correct; 'that' is reserved for restrictive clauses.",
+  },
+  {
+    id: "conv-253",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The dam, ______ operating continuously since 1950, underwent its first major inspection last year.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which has been", "that has been", "who has been", "being"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a thing (the dam) and needs a complete verb phrase, so 'which has been' is correct.",
+  },
+  {
+    id: "conv-254",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Only the nurses______had completed the advanced certification were assigned to the trauma unit.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["who", "who, ", ", who", ", who,"],
+    answer: 0,
+    explanation:
+      "The clause 'who had completed the advanced certification' is essential (restrictive) to identifying which nurses are meant, so it takes no surrounding commas.",
+  },
+  {
+    id: "conv-255",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The choir______every Tuesday evening in the chapel basement.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["practices", "practice", "have practiced", "are practicing"],
+    answer: 0,
+    explanation:
+      "'Choir' is a singular collective noun, so it takes the singular verb 'practices.'",
+  },
+  {
+    id: "conv-256",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Nobody on the construction crew______aware of the schedule change until the foreman announced it.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["was", "were", "are", "have been"],
+    answer: 0,
+    explanation:
+      "The indefinite pronoun 'nobody' is grammatically singular, so it takes the singular verb 'was.'",
+  },
+  {
+    id: "conv-257",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "One of the paintings in the gallery______damaged during shipping.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["was", "were", "are", "have been"],
+    answer: 0,
+    explanation:
+      "The subject of the sentence is the singular pronoun 'one,' not the object of the preposition 'paintings,' so the singular verb 'was' is correct.",
+  },
+  {
+    id: "conv-258",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Neither the pilot nor the flight attendants______informed of the delay until boarding had already begun.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "In 'neither...nor' constructions, the verb agrees with the nearer subject. Since 'flight attendants' (plural) is nearer, the plural verb 'were' is correct.",
+  },
+  {
+    id: "conv-259",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Either the landlord or the tenants______responsible for the fence repair when the inspector visited last week.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "In an 'either/or' construction, the verb agrees with the nearer subject, 'tenants,' which is plural, so 'were' is correct.",
+  },
+  {
+    id: "conv-260",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "A number of volunteers______already signed up for the weekend cleanup.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have", "has", "having", "is"],
+    answer: 0,
+    explanation:
+      "'A number of' is treated as plural, so it takes the plural verb 'have'; this differs from 'the number of,' which takes a singular verb.",
+  },
+  {
+    id: "conv-261",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The number of applicants this year______higher than last year's total.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["is", "are", "were", "have been"],
+    answer: 0,
+    explanation:
+      "'The number of' is treated as singular, so it takes the singular verb 'is'; this differs from 'a number of,' which takes a plural verb.",
+  },
+  {
+    id: "conv-262",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Ten minutes______plenty of time to cross the busy intersection safely, according to the crossing guard.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["is", "are", "were", "have been"],
+    answer: 0,
+    explanation:
+      "When a span of time is treated as a single unit rather than individual minutes, it takes a singular verb, so 'is' is correct.",
+  },
+  {
+    id: "conv-263",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The passengers gathered______belongings before exiting the train.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["their", "his", "its", "one's"],
+    answer: 0,
+    explanation:
+      "The antecedent 'passengers' is plural, so the plural possessive pronoun 'their' is required for agreement.",
+  },
+  {
+    id: "conv-264",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The task force submitted______recommendations to the governor.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["its", "their", "his", "one's"],
+    answer: 0,
+    explanation:
+      "'Task force' functions as a singular collective noun acting as one unit, so it takes the singular possessive 'its,' not the plural 'their.'",
+  },
+  {
+    id: "conv-265",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The award was shared equally between the lead engineer and______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["me", "I", "myself", "mine"],
+    answer: 0,
+    explanation:
+      "The pronoun is the object of the preposition 'between,' so the objective case 'me' is correct, not the subjective 'I.'",
+  },
+  {
+    id: "conv-266",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The director asked the lead actor and______to rehearse the final scene privately.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["me", "I", "myself", "mine"],
+    answer: 0,
+    explanation:
+      "The pronoun is the object of 'asked,' so the objective case 'me' is correct, not the subjective 'I.'",
+  },
+  {
+    id: "conv-267",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The interns completed the audit by______, without any supervision.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["themselves", "theirselves", "their self", "them"],
+    answer: 0,
+    explanation:
+      "The plural reflexive pronoun 'themselves' correctly refers back to 'the interns'; 'theirselves' and 'their self' are nonstandard forms.",
+  },
+  {
+    id: "conv-268",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "By the time the ambulance arrived, the paramedic______the bleeding.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had already stopped", "already stopped", "have already stopped", "were already stopping"],
+    answer: 0,
+    explanation:
+      "Because the bleeding was stopped before another past event (the ambulance's arrival), the past perfect 'had already stopped' is required.",
+  },
+  {
+    id: "conv-269",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "By the time the lease ends, the tenants______in the apartment for exactly five years.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["will have been living", "live", "lived", "are living"],
+    answer: 0,
+    explanation:
+      "'By the time' with a future event signals the future perfect progressive tense, 'will have been living,' to show an action continuing up to that future point.",
+  },
+  {
+    id: "conv-270",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Technicians______the pipeline for leaks since the inspection began, and they have found none so far.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have examined", "examined", "examine", "will examine"],
+    answer: 0,
+    explanation:
+      "The action began in the past and continues into the present ('since...have found'), so the present perfect 'have examined' is correct.",
+  },
+  {
+    id: "conv-271",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The physician recommended that the patient______more water each day.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["drink", "drinks", "will drink", "drank"],
+    answer: 0,
+    explanation:
+      "'Recommended that' triggers the subjunctive mood, which uses the base form of the verb ('drink') regardless of the subject's number.",
+  },
+  {
+    id: "conv-272",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "If the forecast______accurate, the festival organizers would have moved the event indoors.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["had been", "was", "were", "has been"],
+    answer: 0,
+    explanation:
+      "The main clause 'would have moved' signals a past unreal conditional, which requires the past perfect 'had been' in the if-clause.",
+  },
+  {
+    id: "conv-273",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Last winter, the crew cleared the trail and______three fallen trees along the way.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["removed", "removes", "will remove", "removing"],
+    answer: 0,
+    explanation:
+      "The sentence is in past tense ('cleared'), so the second verb must also be past tense, 'removed,' to remain consistent.",
+  },
+  {
+    id: "conv-274",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Squinting against the glare off the snow, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the skier adjusted her goggles before the next run.",
+      "her goggles were adjusted before the next run.",
+      "the next run required adjusted goggles.",
+      "the glare off the snow was reduced by goggles.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Squinting against the glare off the snow' describes a person, so the noun immediately following the comma must be that person: 'the skier.'",
+  },
+  {
+    id: "conv-275",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Eager to beat the closing bell, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the trader placed one last order.",
+      "one last order was placed by the trader.",
+      "the closing bell prompted one last order.",
+      "the stock exchange recorded one last order.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Eager to beat the closing bell' describes a person, not the order or the exchange, so the noun immediately following the comma must be 'the trader.'",
+  },
+  {
+    id: "conv-276",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Freshly painted and still smelling of varnish, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the fence looked brand new to the neighbors.",
+      "the neighbors admired the fence.",
+      "varnish was smelled by the neighbors.",
+      "a brand-new look was given to the fence.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Freshly painted and still smelling of varnish' describes the fence, so the noun immediately following the comma must be 'the fence.'",
+  },
+  {
+    id: "conv-277",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Her daily routine includes feeding the chickens, mending fences, and______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["chopping firewood", "to chop firewood", "she chops firewood", "firewood is chopped"],
+    answer: 0,
+    explanation:
+      "The list requires parallel gerunds ('feeding,' 'mending,' and ___), so 'chopping firewood' matches the established form.",
+  },
+  {
+    id: "conv-278",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The reviewers described the novel as ambitious, moving, and______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["beautifully written", "written with beauty", "beauty in writing", "the writing was beautiful"],
+    answer: 0,
+    explanation:
+      "The list requires parallel adjective phrases ('ambitious, moving, and ___'), and 'beautifully written' matches that adjectival form.",
+  },
+  {
+    id: "conv-279",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The grant supports not only scientists studying climate change but also______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [
+      "policymakers drafting new regulations",
+      "the drafting of new regulations by policymakers",
+      "new regulations are drafted by policymakers",
+      "policymakers who are drafting is encouraged",
+    ],
+    answer: 0,
+    explanation:
+      "'Not only...but also' requires parallel structure. Since the first part is 'scientists studying climate change,' the second part must match that form: 'policymakers drafting new regulations.'",
+  },
+  {
+    id: "conv-280",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The new software is designed both to streamline billing and to______customer complaints.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["reduce", "reducing", "the reduction of", "reduction in"],
+    answer: 0,
+    explanation:
+      "'Both...and' requires parallel structure; since the first element is the infinitive 'to streamline,' the second must match with the base verb 'reduce' after 'to.'",
+  },
+  {
+    id: "conv-281",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Between the two job offers, the smaller firm's offer was the______generous.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["more", "most", "much", "many"],
+    answer: 0,
+    explanation:
+      "When comparing exactly two things, the comparative form 'more' is required rather than the superlative 'most,' which is used for three or more.",
+  },
+  {
+    id: "conv-282",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The new engine produces more torque than______engine in its class.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["any other", "any", "all", "every"],
+    answer: 0,
+    explanation:
+      "Because the engine is itself a member of its class, it must be compared to 'any other engine' to exclude itself from the comparison; 'any,' 'all,' and 'every' would illogically include the engine among the things it is being compared to.",
+  },
+  {
+    id: "conv-283",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "After the telescope was recalibrated______astronomers detected the faint signal again.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'After the telescope was recalibrated' is an introductory dependent clause and must be set off from the main clause with a comma.",
+  },
+  {
+    id: "conv-284",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The bridge had been closed for repairs______traffic backed up for miles every morning.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " so, ", ": "],
+    answer: 0,
+    explanation:
+      "Both parts are independent clauses with no coordinating conjunction, so they must be joined with a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-285",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The chef finally revealed the secret to the dish's flavor______a generous spoonful of smoked paprika.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the secret was, following a complete independent clause.",
+  },
+  {
+    id: "conv-286",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Volunteers______who arrive before sunrise will help set up the aid station.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Who arrive before sunrise' is a restrictive clause identifying which volunteers, so no comma should separate it from the noun it modifies.",
+  },
+  {
+    id: "conv-287",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The violin, ______ had belonged to her grandmother, was insured for an enormous sum.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential, set off by commas, and refers to a thing, the violin, so 'which' is correct; 'that' is reserved for restrictive clauses.",
+  },
+  {
+    id: "conv-288",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The satellite lost contact with mission control______however, engineers restored the signal within an hour.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "A conjunctive adverb like 'however' joining two independent clauses requires a semicolon before it and a comma after it.",
+  },
+  {
+    id: "conv-289",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Startled by the sudden thunder______the horses bolted across the pasture.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Startled by the sudden thunder' is an introductory participial phrase and must be followed by a comma.",
+  },
+  {
+    id: "conv-290",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The archive digitized thousands of brittle documents______researchers could finally search them by keyword.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " and, ", ": "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with no conjunction must be joined with a semicolon; linking them with only a comma would create a comma splice.",
+  },
+  {
+    id: "conv-291",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The expedition packed only the essentials______a tent, a water filter, and a satellite phone.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", ""],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list of items that follows the complete independent clause.",
+  },
+  {
+    id: "conv-292",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Beneath the city's oldest cathedral______archaeologists discovered a network of sealed tunnels.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Beneath the city's oldest cathedral' is an introductory phrase and requires a comma before the main clause.",
+  },
+  {
+    id: "conv-293",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The lighthouse keeper______a quiet man who rarely left the island—kept meticulous weather logs for forty years.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The phrase 'a quiet man who rarely left the island' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+  },
+  {
+    id: "conv-294",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The survey revealed one clear trend______younger voters overwhelmingly preferred mail-in ballots.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", ", ", "; ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of the trend, following a complete independent clause.",
+  },
+  {
+    id: "conv-295",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The museum's rarest exhibit______a 400-year-old astrolabe, draws visitors from around the world.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "The appositive 'a 400-year-old astrolabe' is nonessential and already closed with a comma, so it must be opened with a matching comma.",
+  },
+  {
+    id: "conv-296",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Interest rates fell sharply last quarter______consumer borrowing rose for the first time in years.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " so, ", ": "],
+    answer: 0,
+    explanation:
+      "Both clauses are independent and closely related, so a semicolon correctly joins them without a coordinating conjunction.",
+  },
+  {
+    id: "conv-297",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The sprinter crossed the finish line______and immediately collapsed from exhaustion.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'Crossed the finish line' and 'collapsed from exhaustion' share the same subject and form a compound predicate, so no comma is needed before 'and.'",
+  },
+  {
+    id: "conv-298",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The app crashed repeatedly______so the developers rushed out an emergency patch.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "A comma is required before the coordinating conjunction 'so' when it joins two independent clauses.",
+  },
+  {
+    id: "conv-299",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The CEO's turnaround strategy came down to one word______focus.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon can introduce a single word for emphasis when it follows a complete independent clause.",
+  },
+  {
+    id: "conv-300",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Its wings folded tightly against its body______the falcon plummeted toward its prey.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Its wings folded tightly against its body' is an introductory absolute phrase and must be followed by a comma.",
+  },
+  {
+    id: "conv-301",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "The manuscript______that the librarian found in a sealed box turned out to be a lost first draft.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [" ", ", ", "; ", ": "],
+    answer: 0,
+    explanation:
+      "'That the librarian found in a sealed box' is a restrictive clause identifying which manuscript, so it takes no comma.",
+  },
+  {
+    id: "conv-302",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The sculptor, ______ had never formally studied art, won the competition's top prize.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["who", "that", "whom", "which"],
+    answer: 0,
+    explanation:
+      "The nonessential clause set off by commas refers to a person and functions as the subject of 'had never studied,' so the subject pronoun 'who' is correct.",
+  },
+  {
+    id: "conv-303",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The control group showed no measurable change______therefore, the researchers concluded the treatment was ineffective.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", ": ", " "],
+    answer: 0,
+    explanation:
+      "A conjunctive adverb like 'therefore' joining two independent clauses requires a semicolon before it and a comma after it.",
+  },
+  {
+    id: "conv-304",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The tower's spire—reconstructed using the original fifteenth-century blueprints______finally returned to the skyline after a decade of restoration.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["—", ", ", ": ", "; "],
+    answer: 0,
+    explanation:
+      "The interrupting phrase 'reconstructed using the original fifteenth-century blueprints' is already opened with a dash, so it must be closed with a matching dash.",
+  },
+  {
+    id: "conv-305",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "To avoid the morning rush______she started leaving for work an hour earlier.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'To avoid the morning rush' is an introductory infinitive phrase and must be followed by a comma.",
+  },
+  {
+    id: "conv-306",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 1,
+    passage:
+      "Before the storm hit, they stocked up on the basics______water, batteries, and canned food.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", ""],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the list of items that follows the complete independent clause.",
+  },
+  {
+    id: "conv-307",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "The prototype, ______ took engineers nearly three years to perfect, finally entered mass production.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["which", "that", "who", "whom"],
+    answer: 0,
+    explanation:
+      "The clause is nonessential, set off by commas, and refers to a thing, the prototype, so 'which' is correct; 'that' introduces restrictive clauses only.",
+  },
+  {
+    id: "conv-308",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 2,
+    passage:
+      "Glacial melt accelerated throughout the decade______coastal cities began investing heavily in sea walls.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " so, ", ": "],
+    answer: 0,
+    explanation:
+      "Two independent clauses with no coordinating conjunction must be joined by a semicolon; a comma alone would create a comma splice.",
+  },
+  {
+    id: "conv-309",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "The post went viral within hours______the company's marketing team had not even finished drafting a response.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["; ", ", ", " so, ", ": "],
+    answer: 0,
+    explanation:
+      "Both clauses are independent with no coordinating conjunction, so they must be separated by a semicolon rather than joined with only a comma.",
+  },
+  {
+    id: "conv-310",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "Although the treaty was signed within weeks of the ceasefire______many of its provisions were not enforced for years.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [", ", "; ", ": ", " "],
+    answer: 0,
+    explanation:
+      "'Although the treaty was signed within weeks of the ceasefire' is an introductory dependent clause and must be followed by a single comma, not a semicolon, colon, or no punctuation at all.",
+  },
+  {
+    id: "conv-311",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Boundaries",
+    difficulty: 3,
+    passage:
+      "Critics agreed on the mural's central flaw______the perspective collapsed entirely in the lower-left corner.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: [": ", "; ", ", ", " "],
+    answer: 0,
+    explanation:
+      "A colon correctly introduces the explanation of what the flaw was, following a complete independent clause.",
+  },
+  {
+    id: "conv-312",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The research team______preparing its final report for the grant committee.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["is", "are", "were", "have been"],
+    answer: 0,
+    explanation:
+      "'Team' is a singular collective noun, so it takes the singular verb 'is.'",
+  },
+  {
+    id: "conv-313",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Each of the students______expected to submit a lab notebook at the end of the semester.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["is", "are", "were", "have been"],
+    answer: 0,
+    explanation:
+      "'Each' is singular, regardless of the plural noun in the prepositional phrase that follows it, so the singular verb 'is' is correct.",
+  },
+  {
+    id: "conv-314",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Neither the manager nor the players______happy with the umpire's final call.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "In a 'neither/nor' construction, the verb agrees with the nearer subject, 'players,' which is plural, so 'were' is correct.",
+  },
+  {
+    id: "conv-315",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The collection of rare orchids in the botanical garden's east wing______watered by hand every morning.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["is", "are", "were", "have been"],
+    answer: 0,
+    explanation:
+      "The subject is the singular noun 'collection'; the prepositional phrases that follow do not change its number, so the singular verb 'is' is correct.",
+  },
+  {
+    id: "conv-316",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "By the time the train arrives, she______on the platform for nearly two hours.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["will have been waiting", "waits", "waited", "is waiting"],
+    answer: 0,
+    explanation:
+      "'By the time' with a future event signals the future perfect progressive tense, 'will have been waiting,' to show an action continuing up to that future point.",
+  },
+  {
+    id: "conv-317",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The criteria for approving the new drug______far stricter than those used a decade ago.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["are", "is", "was", "has been"],
+    answer: 0,
+    explanation:
+      "'Criteria' is the plural form of 'criterion,' so it takes the plural verb 'are.'",
+  },
+  {
+    id: "conv-318",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The hikers left______water bottles at the trailhead by mistake.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["their", "his", "its", "one's"],
+    answer: 0,
+    explanation:
+      "The antecedent 'hikers' is plural, so the plural possessive pronoun 'their' is required for agreement.",
+  },
+  {
+    id: "conv-319",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The startup announced that______new app would launch nationwide next month.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["its", "it's", "its'", "their"],
+    answer: 0,
+    explanation:
+      "The possessive form 'its' (no apostrophe) is required here, not the contraction 'it's,' which means 'it is.'",
+  },
+  {
+    id: "conv-320",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The neighbors said______planning to repaint the fence over the long weekend.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["they're", "their", "there", "there's"],
+    answer: 0,
+    explanation:
+      "'They're' is the contraction for 'they are' and is needed before the verb 'planning'; 'their' and 'there' are homophones that do not fit this grammatical role.",
+  },
+  {
+    id: "conv-321",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The detective finally identified______the witness had seen leaving the building.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whom", "who", "whoever", "whomever"],
+    answer: 0,
+    explanation:
+      "'Whom' is the object of the verb 'had seen' ('the witness had seen whom'), so the object pronoun is required rather than the subject pronoun 'who.'",
+  },
+  {
+    id: "conv-322",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Migrating thousands of miles each winter, ______",
+    prompt: "Which choice most logically and clearly completes the sentence?",
+    choices: [
+      "the arctic tern travels farther than almost any other bird.",
+      "the journey of the arctic tern covers an enormous distance.",
+      "scientists have long studied the arctic tern's migration.",
+      "an enormous distance is covered by the arctic tern.",
+    ],
+    answer: 0,
+    explanation:
+      "The introductory phrase 'Migrating thousands of miles each winter' describes a traveler, so the subject of the main clause must be the one migrating: 'the arctic tern.'",
+  },
+  {
+    id: "conv-323",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The exhibit celebrates artists who not only reshaped modern sculpture but also______entire movements in architecture.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["inspired", "inspiring", "have been inspiring", "the inspiration of"],
+    answer: 0,
+    explanation:
+      "'Not only...but also' requires parallel structure; since the first element is the past-tense verb 'reshaped,' the second must match with 'inspired.'",
+  },
+  {
+    id: "conv-324",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The new platform is designed both to simplify checkout and to______fraud in real time.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["flag", "flagging", "the flagging of", "flags"],
+    answer: 0,
+    explanation:
+      "'Both...and' requires parallel structure; since the first element is the infinitive 'to simplify,' the second must match with the base verb 'flag' after 'to.'",
+  },
+  {
+    id: "conv-325",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Of the two apartments they toured, the one downtown was the______expensive.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["more", "most", "much", "many"],
+    answer: 0,
+    explanation:
+      "When comparing exactly two things, the comparative form 'more' is required rather than the superlative 'most,' which is reserved for three or more.",
+  },
+  {
+    id: "conv-326",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "This processor runs cooler than______chip in its price range.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["any other", "any", "all", "every"],
+    answer: 0,
+    explanation:
+      "Because the processor is itself a member of its price range, it must be compared to 'any other chip' to exclude itself from the comparison; 'any,' 'all,' and 'every' would illogically include it among the things it is being compared to.",
+  },
+  {
+    id: "conv-327",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The______uniforms were donated to the regimental museum after the ceremony.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["soldiers'", "soldier's", "soldiers's", "soldiers"],
+    answer: 0,
+    explanation:
+      "Because the uniforms belong to multiple soldiers, the plural possessive 'soldiers'' (apostrophe after the s) is required.",
+  },
+  {
+    id: "conv-328",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "No one could identify______umbrella had been left behind in the lecture hall.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["whose", "who's", "whom's", "who is"],
+    answer: 0,
+    explanation:
+      "The possessive 'whose' is needed to show ownership of the umbrella; 'who's' is a contraction of 'who is' and does not fit here.",
+  },
+  {
+    id: "conv-329",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "By the time help arrived, the pipe had already______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["burst", "bursted", "bursting", "burst'd"],
+    answer: 0,
+    explanation:
+      "'Burst' is an irregular verb whose past participle is identical to its base form; 'bursted' is a nonstandard form.",
+  },
+  {
+    id: "conv-330",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "Scattered across the hillside______dozens of wildflowers no one had planted.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "is", "has been"],
+    answer: 0,
+    explanation:
+      "The sentence is inverted, but the subject is still the plural noun 'wildflowers,' which follows the verb, so the plural verb 'were' is required.",
+  },
+  {
+    id: "conv-331",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "My brother and______decided to repaint the garage over the weekend.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["I", "me", "myself", "us"],
+    answer: 0,
+    explanation:
+      "'My brother and I' functions as the subject of the sentence, so the subject pronoun 'I' is required rather than the object pronoun 'me.'",
+  },
+  {
+    id: "conv-332",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The treaty established new borders and______the region's first independent currency.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["created", "creates", "creating", "will create"],
+    answer: 0,
+    explanation:
+      "The sentence describes past events, so the verb must stay in the past tense, 'created,' to match 'established.'",
+  },
+  {
+    id: "conv-333",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The firm's new policy focuses on reducing waste and______employee morale.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["improving", "to improve", "improves", "improvement of"],
+    answer: 0,
+    explanation:
+      "The verb 'focuses on' takes the gerund 'reducing,' so the second item in the series must match with the parallel gerund 'improving.'",
+  },
+  {
+    id: "conv-334",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "The last person to leave the laboratory that night was______.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["she", "her", "herself", "hers"],
+    answer: 0,
+    explanation:
+      "The pronoun follows the linking verb 'was' and renames the subject, so the subject-case pronoun 'she' is required rather than the object-case 'her.'",
+  },
+  {
+    id: "conv-335",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "She is one of the few researchers who______ever successfully cloned this species of coral.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have", "has", "having", "is having"],
+    answer: 0,
+    explanation:
+      "The relative clause 'who have ever successfully cloned' modifies 'researchers,' a plural noun, so the plural verb 'have' is required, not the singular 'has.'",
+  },
+  {
+    id: "conv-336",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The manager asked Priya and______to present the quarterly report.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["me", "myself", "I", "mine"],
+    answer: 0,
+    explanation:
+      "The pronoun is the object of the verb 'asked,' so the object pronoun 'me' is required; 'myself' cannot substitute for 'me' without a prior reference to the speaker in the same clause.",
+  },
+  {
+    id: "conv-337",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "A number of employees______requested the option to work remotely on Fridays.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have", "has", "having", "is"],
+    answer: 0,
+    explanation:
+      "'A number of' is followed by a plural verb because the emphasis is on the individual employees, unlike 'the number of,' which takes a singular verb.",
+  },
+  {
+    id: "conv-338",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "The baker and the florist______next door to each other for twenty years.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["have worked", "has worked", "working", "works"],
+    answer: 0,
+    explanation:
+      "'The baker and the florist' is a compound subject joined by 'and,' so it requires the plural verb 'have worked.'",
+  },
+  {
+    id: "conv-339",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "Either the twins or their cousin______bringing dessert to the reunion.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["is", "are", "were", "have been"],
+    answer: 0,
+    explanation:
+      "In an 'either/or' construction, the verb agrees with the nearer subject, the singular 'cousin,' so 'is' is correct.",
+  },
+  {
+    id: "conv-340",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "The charity renovated the______playground behind the old shelter.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["children's", "childrens'", "childs'", "children"],
+    answer: 0,
+    explanation:
+      "'Children' is already plural, so its possessive form adds only an apostrophe and s: 'children's'; 'childrens'' incorrectly treats 'children' as if it ended in s.",
+  },
+  {
+    id: "conv-341",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "She should______the form before the deadline.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["submit", "submits", "to submit", "submitting"],
+    answer: 0,
+    explanation:
+      "The modal verb 'should' must be followed by the base form of the verb, 'submit,' not an inflected or infinitive form.",
+  },
+  {
+    id: "conv-342",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 3,
+    passage:
+      "If I______taller, I would try out for the team.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["were", "was", "am", "be"],
+    answer: 0,
+    explanation:
+      "This hypothetical condition requires the subjunctive mood, which uses 'were' with 'I' rather than the indicative 'was.'",
+  },
+  {
+    id: "conv-343",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 1,
+    passage:
+      "Every morning she wakes early, brews coffee, and______the newspaper.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["reads", "reading", "to read", "read"],
+    answer: 0,
+    explanation:
+      "The verb must be parallel with and agree with the subject the same way 'wakes' and 'brews' do, so 'reads' is required.",
+  },
+  {
+    id: "conv-344",
+    module: "rw",
+    domain: "Standard English Conventions",
+    skill: "Form, Structure, and Sense",
+    difficulty: 2,
+    passage:
+      "After the long hike, the dog immediately______down by the fireplace.",
+    prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    choices: ["lay", "laid", "lied", "has lain"],
+    answer: 0,
+    explanation:
+      "'Lay' is the simple past tense of 'lie' (to recline); 'laid' is the past tense of the different verb 'lay' (to place something), and 'lied' means to tell a falsehood.",
   }
 );
