@@ -11,6 +11,7 @@
     questions: [],     // active question set (just the current module, for diagnostic/full-diagnostic)
     answers: {},       // qIndex -> choiceIndex
     checked: {},       // qIndex -> bool, true once "Check Answer" has revealed it
+    missReasons: {},   // qIndex -> reason key (see MISTAKE_REASONS), tagged after a wrong answer
     eliminated: {},    // qIndex -> Set of choiceIndex
     marked: {},        // qIndex -> bool
     current: 0,
@@ -70,6 +71,7 @@
   const SECONDS_PER_Q = 90;
   const TIME_WARNING_SECONDS = 300; // shows the red "5 minutes remaining" warning
   const PILL_WINDOW = 10; // how many question pills are visible at once
+  const SAVED_SESSION_KEY = "sat_saved_session"; // snapshot of an exam left mid-way, so it can be resumed
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
   const STREAK_KEY = "sat_streaks";
   const STREAK_HISTORY_DAYS = 60; // how many activity dates to keep per streak
@@ -80,10 +82,28 @@
   const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
   const DEFAULT_GOAL = 1600;
   const DOMAIN_TODAY_KEY = "sat_domain_today"; // per-domain answered-question counts, today only
-  const MISTAKE_BANK_KEY = "sat_mistake_bank"; // recently missed questions, for the "review mistakes" quest
+  const MISTAKE_BANK_KEY = "sat_mistake_bank"; // missed questions on the redo queue, with their spaced-repetition box/due date
   const MISTAKES_REVIEWED_KEY = "sat_mistakes_reviewed_today"; // count of mistakes reviewed today
+  const MISTAKE_REASON_TALLY_KEY = "sat_mistake_reason_tally"; // lifetime counts per tagged miss reason, for the Study Plan insight
   const TIMED_MODULE_KEY = "sat_timed_module_today"; // whether a timed session was completed today
   const MISTAKE_BANK_LIMIT = 50;
+  const DAY_MS = 24 * 60 * 60 * 1000;
+  // Leitner-style spaced repetition: index = the box a mistake is in, value
+  // = days to wait before it's due again after being answered correctly
+  // from that box. Reaching an index past the end of this array means it's
+  // been answered correctly that many times in a row and is mastered —
+  // it drops out of the redo queue entirely instead of getting a 4th wait.
+  const MISTAKE_REDO_INTERVALS_DAYS = [0, 1, 3];
+  const MISTAKE_MASTERY_BOX = MISTAKE_REDO_INTERVALS_DAYS.length;
+  // Why a question was missed, tagged right after a wrong answer — powers
+  // the "why you're missing points" breakdown on the Study Plan page.
+  const MISTAKE_REASONS = {
+    misread: "Misread the question",
+    careless: "Careless slip",
+    concept: "Didn't know it",
+    time: "Ran out of time",
+    guess: "Guessed",
+  };
   const XP_KEY = "sat_xp"; // lifetime XP earned from completed quests
   const QUEST_XP_AWARDED_KEY = "sat_quest_xp_awarded"; // which quests have already paid out XP today
   const RPG_KEY = "sat_rpg_state"; // Dungeon Quest save: level, xp, hp, gold, gear tiers, zone progress
@@ -191,13 +211,13 @@
   const BATTLE_PASS_MAX_LEVEL = BATTLE_PASS_FREE_REWARDS.length;
 
   const BREAK_SECONDS = 600; // 10-minute break between RW and Math, like the real SAT
-  // Both the free Short Diagnostic (state.module === "diagnostic") and the
+  // Both the free Full-Length Practice Test (state.module === "diagnostic") and the
   // Pro Full Scale Test (state.module === "full-diagnostic") run the same
   // 4-module shape — RW Module 1/2, a break, then Math Module 1/2 — just at
   // different sizes and timings. See diagModuleDurations()/diagModuleLabels().
   const DIAG_MODULE_KEYS = ["rw1", "rw2", "math1", "math2"];
 
-  // Free Short Diagnostic: real digital SAT per-module structure and timing.
+  // Free Full-Length Practice Test: real digital SAT per-module structure and timing.
   const PRACTICE_SAT_MODULE_DURATIONS = [32 * 60, 32 * 60, 35 * 60, 35 * 60];
   const PRACTICE_SAT_MODULE_LABELS = [
     "Reading & Writing — Module 1",
@@ -262,12 +282,16 @@
     document.getElementById("gamesNavBtn").classList.toggle("active", name === "games");
     if (name !== "exam") closeCalculatorPanel();
     if (name !== "games") stopActiveGame();
+    document.getElementById("topbarCenter")?.classList.remove("open");
+    document.getElementById("navToggle")?.setAttribute("aria-expanded", "false");
+    if (name === "landing") renderResumeBanner();
     window.scrollTo(0, 0);
   }
 
   function closeCalculatorPanel() {
     document.getElementById("calcPanel").classList.add("hidden");
     document.getElementById("calculatorBtn")?.classList.remove("active");
+    document.getElementById("exam")?.classList.remove("calc-open");
   }
 
   // ---- Build question set ----
@@ -291,30 +315,32 @@
     };
   }
 
-  function startModule(module, domain) {
-    let pool;
-    if (module === "mixed") {
-      pool = shuffle(QUESTIONS);
-    } else if (domain) {
-      pool = shuffle(QUESTIONS.filter((q) => q.module === module && q.domain === domain));
-    } else {
-      pool = shuffle(QUESTIONS.filter((q) => q.module === module));
-    }
-    // sort by difficulty for a natural ramp, keeping shuffle within tiers
+  // Shared by every single-module practice entry point (mixed/rw/math,
+  // a Question Bank category, a Study Plan domain, or a Lessons skill):
+  // takes an already-filtered pool, optionally caps it to `count`
+  // questions, then shuffles/sorts/starts it. `count` of null/undefined
+  // means "use the whole pool" — only the Dashboard's open-ended "mixed"
+  // practice does that; every filtered entry point asks the student first
+  // via openSessionSizePicker so a single bank category doesn't silently
+  // start a multi-hour, whole-bank timer.
+  function beginPracticeSession(fullPool, count, meta) {
+    let pool = shuffle(fullPool);
+    if (count && count < pool.length) pool = pool.slice(0, count);
     pool.sort((a, b) => a.difficulty - b.difficulty);
-    // randomize answer positions within each question
     pool = pool.map(shuffleChoices);
 
-    state.module = module;
+    state.module = meta.module;
     state.diagnosticIndex = null;
-    state.domainFilter = domain || null;
+    state.domainFilter = meta.domainFilter || null;
+    state.skillFilter = meta.skillFilter || null;
+    state.categoryLabel = meta.categoryLabel || null;
+    state.categoryDomain = meta.categoryDomain || null;
     state.reviewMode = false;
-    state.categoryLabel = null;
-    state.categoryDomain = null;
     state.questions = pool;
     state.answers = {};
     state.eliminated = {};
     state.checked = {};
+    state.missReasons = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -327,6 +353,52 @@
     renderQuestion();
     renderFooter();
     updateModuleName();
+  }
+
+  // Lets the student choose a set size instead of always starting the
+  // entire filtered pool (e.g. all 351 questions in a domain, with a
+  // multi-hour timer to match). Presets below the pool size plus "All".
+  function openSessionSizePicker(poolLength, label, onPick) {
+    const modal = document.getElementById("sessionSizeModal");
+    const sub = document.getElementById("sessionSizeSub");
+    const optionsEl = document.getElementById("sessionSizeOptions");
+    sub.textContent = `${label ? label + " — " : ""}${poolLength} question${poolLength === 1 ? "" : "s"} available. Choose how many to practice.`;
+
+    const presets = [10, 20, 40].filter((n) => n < poolLength);
+    presets.push(poolLength);
+    optionsEl.innerHTML = presets
+      .map(
+        (n) =>
+          `<button type="button" class="session-size-btn" data-size="${n}">${n === poolLength ? `All (${n})` : n}</button>`
+      )
+      .join("");
+
+    function handleClick(e) {
+      const btn = e.target.closest("[data-size]");
+      if (!btn) return;
+      cleanup();
+      onPick(Number(btn.dataset.size));
+    }
+    function cleanup() {
+      modal.classList.add("hidden");
+      optionsEl.removeEventListener("click", handleClick);
+    }
+    optionsEl.addEventListener("click", handleClick);
+    document.getElementById("sessionSizeCancel").onclick = cleanup;
+    modal.classList.remove("hidden");
+  }
+
+  function startModule(module, domain) {
+    if (domain) {
+      const pool = QUESTIONS.filter((q) => q.module === module && q.domain === domain);
+      if (!pool.length) return;
+      openSessionSizePicker(pool.length, domain, (count) => {
+        beginPracticeSession(pool, count, { module, domainFilter: domain });
+      });
+      return;
+    }
+    const pool = module === "mixed" ? QUESTIONS : QUESTIONS.filter((q) => q.module === module);
+    beginPracticeSession(pool, null, { module });
   }
 
   // ---- Question Bank: practice a single category on its own ----
@@ -337,64 +409,19 @@
     }
     if (!pool.length) return; // filters excluded every question — nothing to start
 
-    pool = shuffle(pool);
-    pool.sort((a, b) => a.difficulty - b.difficulty);
-    pool = pool.map(shuffleChoices);
-
-    state.module = mod;
-    state.categoryLabel = label || domain;
-    state.categoryDomain = domain;
-    state.diagnosticIndex = null;
-    state.reviewMode = false;
-    state.questions = pool;
-    state.answers = {};
-    state.eliminated = {};
-    state.checked = {};
-    state.marked = {};
-    state.current = 0;
-    state.eliminating = false;
-    state.pillWindowStart = 0;
-    state.secondsLeft = pool.length * SECONDS_PER_Q;
-    state.timerHidden = false;
-
-    startTimer();
-    show("exam");
-    renderQuestion();
-    renderFooter();
-    updateModuleName();
+    openSessionSizePicker(pool.length, label || domain, (count) => {
+      beginPracticeSession(pool, count, { module: mod, categoryLabel: label || domain, categoryDomain: domain });
+    });
   }
 
   // ---- Lessons: practice just the questions matching one specific skill ----
   function startSkillPractice(mod, domain, skill) {
-    let pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill);
+    const pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill);
     if (!pool.length) return;
 
-    pool = shuffle(pool);
-    pool.sort((a, b) => a.difficulty - b.difficulty);
-    pool = pool.map(shuffleChoices);
-
-    state.module = mod;
-    state.categoryLabel = skill;
-    state.categoryDomain = domain;
-    state.skillFilter = skill;
-    state.diagnosticIndex = null;
-    state.reviewMode = false;
-    state.questions = pool;
-    state.answers = {};
-    state.eliminated = {};
-    state.checked = {};
-    state.marked = {};
-    state.current = 0;
-    state.eliminating = false;
-    state.pillWindowStart = 0;
-    state.secondsLeft = pool.length * SECONDS_PER_Q;
-    state.timerHidden = false;
-
-    startTimer();
-    show("exam");
-    renderQuestion();
-    renderFooter();
-    updateModuleName();
+    openSessionSizePicker(pool.length, skill, (count) => {
+      beginPracticeSession(pool, count, { module: mod, categoryLabel: skill, categoryDomain: domain, skillFilter: skill });
+    });
   }
 
   // Counts questions in a domain by difficulty, ignoring the active filter —
@@ -503,7 +530,7 @@
     });
   }
 
-  // ---- Short Diagnostic (free): all four real-SAT modules, with a mid-test break ----
+  // ---- Full-Length Practice Test (free): all four real-SAT modules, with a mid-test break ----
   function loadLastDiagnosticIndex() {
     try {
       const raw = localStorage.getItem(DIAG_INDEX_KEY);
@@ -519,7 +546,7 @@
     } catch (e) { /* localStorage unavailable */ }
   }
 
-  // Starts the next Short Diagnostic in rotation: RW Module 1, RW Module 2,
+  // Starts the next Full-Length Practice Test in rotation: RW Module 1, RW Module 2,
   // a real break, then Math Module 1, Math Module 2 — each module its own
   // timed session, exactly like the real digital SAT. Free, no upgrade needed.
   function startDiagnostic() {
@@ -667,7 +694,7 @@
     return state.diagKind === "full-scale" ? FULL_SCALE_MODULE_LABELS : PRACTICE_SAT_MODULE_LABELS;
   }
 
-  // Loads one module of the active diagnostic (Short Diagnostic or Full
+  // Loads one module of the active diagnostic (Full-Length Practice Test or Full
   // Scale Test) as its own timed session.
   function loadDiagModule(moduleIndex) {
     state.fdModuleIndex = moduleIndex;
@@ -675,6 +702,7 @@
     state.answers = {};
     state.eliminated = {};
     state.checked = {};
+    state.missReasons = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -695,7 +723,7 @@
   function finishDiagModule() {
     clearInterval(state.timer);
     state.questions.forEach((q, i) => {
-      state.fdResults.push({ q, selected: state.answers[i] });
+      state.fdResults.push({ q, selected: state.answers[i], reason: state.missReasons[i] });
     });
 
     const idx = state.fdModuleIndex;
@@ -869,7 +897,7 @@
     if (m === "math") return "Math";
     if (m === "diagnostic") {
       if (state.reviewMode) {
-        return state.diagnosticIndex !== null ? PRACTICE_SAT[state.diagnosticIndex].label : "Short Diagnostic";
+        return state.diagnosticIndex !== null ? PRACTICE_SAT[state.diagnosticIndex].label : "Full-Length Practice Test";
       }
       const key = DIAG_MODULE_KEYS[state.fdModuleIndex] || "";
       return key.startsWith("math") ? "Math" : "Reading & Writing";
@@ -968,11 +996,11 @@
         }
         return `
           <div class="choice-row">
-            <button class="${classes.join(" ")}" data-choice="${ci}">
+            <button class="${classes.join(" ")}" data-choice="${ci}" aria-label="Choice ${letters[ci]}: ${escapeHtml(c)}">
               <span class="letter">${letters[ci]}</span>
-              <span class="ctext">${c}</span>
+              <span class="ctext">${formatMathText(c)}</span>
             </button>
-            <button class="choice-cross" data-cross="${ci}" title="Cross out">✕</button>
+            <button class="choice-cross" data-cross="${ci}" title="Cross out" aria-label="Cross out choice ${letters[ci]}">✕</button>
           </div>`;
       })
       .join("");
@@ -987,10 +1015,25 @@
       const tag = correct
         ? "✓ Correct"
         : `✕ Incorrect — Correct answer: ${letters[q.answer]}`;
+      const reasonHTML = correct || state.reviewMode
+        ? ""
+        : `
+        <div class="miss-reason">
+          <span class="miss-reason-label">Why did you miss this?</span>
+          <div class="miss-reason-chips">
+            ${Object.entries(MISTAKE_REASONS)
+              .map(
+                ([key, label]) =>
+                  `<button type="button" class="chip-reason ${state.missReasons[i] === key ? "active" : ""}" data-reason="${key}">${label}</button>`
+              )
+              .join("")}
+          </div>
+        </div>`;
       explanationHTML = `
         <div class="explanation ${correct ? "" : "wrong"}">
           <span class="tag">${tag}</span>
-          ${q.explanation}
+          ${formatMathText(q.explanation)}
+          ${reasonHTML}
         </div>`;
     }
 
@@ -1003,7 +1046,7 @@
         </button>
       </div>
       ${passageHTML}
-      <div class="prompt">${q.prompt}</div>
+      <div class="prompt">${formatMathText(q.prompt)}</div>
       <div class="choices ${state.eliminating ? "eliminating" : ""}" id="choices">
         ${choicesHTML}
       </div>
@@ -1018,6 +1061,12 @@
         if (elimSet.has(ci)) return; // can't select eliminated
         if (checked) return; // locked after checking
         selectChoice(ci);
+      });
+    });
+    body.querySelectorAll(".chip-reason").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.missReasons[i] = btn.dataset.reason;
+        renderQuestion();
       });
     });
     body.querySelectorAll(".choice-cross").forEach((x) => {
@@ -1142,7 +1191,7 @@
       }
       return;
     }
-    // The Short Diagnostic and Full Scale Test run one module at a time;
+    // The Full-Length Practice Test and Full Scale Test run one module at a time;
     // finishing the last question of a module hands off to the next module
     // (or scores the whole attempt after Math Module 2), rather than ending
     // the exam here.
@@ -1177,11 +1226,12 @@
   }
 
   // Used by every single-module practice session (rw/math/mixed/mistake
-  // review/question-bank category). The Short Diagnostic and Full Scale
+  // review/question-bank category). The Full-Length Practice Test and Full Scale
   // Test never reach this — they score across all 4 modules in
   // finishFullDiagnostic() instead.
   function finishExam() {
     clearInterval(state.timer);
+    clearSavedSession();
     const total = state.questions.length;
     let correct = 0;
     state.questions.forEach((q, i) => {
@@ -1195,7 +1245,7 @@
         : toSectionScore(pct); // single section
 
     showScoringTransition(() => {
-      recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i] })));
+      recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i], reason: state.missReasons[i] })));
       if (state.module === "mistakeReview") {
         const reviewed = state.questions.filter((q, i) => state.answers[i] !== undefined).length;
         bumpMistakesReviewedToday(reviewed);
@@ -1312,10 +1362,69 @@
     return { domain, index: freeIdx >= 0 ? freeIdx : 0 };
   }
 
+  // How long until a redo-queue question is due again, in plain English —
+  // used by the Study Plan's "all caught up" state.
+  function formatDueIn(ms) {
+    if (ms <= 0) return "now";
+    const days = Math.round(ms / DAY_MS);
+    if (days <= 0) return "later today";
+    if (days === 1) return "tomorrow";
+    return `in ${days} days`;
+  }
+
+  // The redo-queue status card: what's due right now, or when the next
+  // review opens up if everything's caught up. Omitted entirely once the
+  // queue is empty (nothing's ever been missed, or it's all been mastered).
+  function redoQueueCardHTML() {
+    const bank = loadMistakeBank();
+    if (!bank.length) return "";
+    const due = dueMistakes();
+    const body = due.length
+      ? `
+        <p>${due.length} question${due.length === 1 ? "" : "s"} ready to redo — spaced out from your past mistakes so they stick.</p>
+        <button type="button" class="btn btn-primary btn-small" data-start="mistakeReview">Start redo queue →</button>`
+      : `<p>All caught up — ${bank.length} question${bank.length === 1 ? "" : "s"} on the queue, next one due ${formatDueIn(
+          Math.min(...bank.map((m) => m.dueAt || 0)) - Date.now()
+        )}.</p>`;
+    return `<div class="plan-section redo-queue-card"><h3>Redo queue</h3>${body}</div>`;
+  }
+
+  // "Why you're missing points" — a breakdown of tagged miss reasons
+  // (see MISTAKE_REASONS), lifetime, regardless of whether those
+  // questions have since been mastered off the redo queue. Omitted until
+  // there's at least one tagged mistake to show a pattern from.
+  function missReasonInsightHTML() {
+    const tally = loadMistakeReasonTally();
+    const reasonEntries = Object.keys(MISTAKE_REASONS)
+      .map((key) => ({ key, label: MISTAKE_REASONS[key], count: tally[key] || 0 }))
+      .filter((r) => r.count > 0)
+      .sort((a, b) => b.count - a.count);
+    const taggedSum = reasonEntries.reduce((n, r) => n + r.count, 0);
+    if (!taggedSum) return "";
+    const rows = reasonEntries
+      .map((r) => {
+        const pct = Math.round((r.count / taggedSum) * 100);
+        return `
+          <div class="reason-row">
+            <div class="reason-row-top"><span>${r.label}</span><span>${pct}%</span></div>
+            <div class="reason-bar"><div class="reason-bar-fill" style="width:${pct}%"></div></div>
+          </div>`;
+      })
+      .join("");
+    return `
+      <div class="plan-section">
+        <h3>Why you're missing points</h3>
+        <p class="plan-section-blurb">Based on ${taggedSum} tagged mistake${taggedSum === 1 ? "" : "s"}.</p>
+        ${rows}
+      </div>`;
+  }
+
   function renderStudyPlan() {
     const data = loadDiagnosticSummary();
     const el = document.getElementById("studyPlan");
     const premium = !!(window.Auth && window.Auth.isPremium());
+    const queueHTML = redoQueueCardHTML();
+    const reasonHTML = missReasonInsightHTML();
 
     if (!data || !data.categories || !data.categories.length) {
       el.innerHTML = `
@@ -1325,9 +1434,9 @@
           <p>Your study plan is generated from your diagnostic results — finish one to see exactly which categories to focus on first.</p>
           <div class="diag-choice-grid">
             <div class="diag-choice-card">
-              <div class="diag-choice-title">Short Diagnostic</div>
+              <div class="diag-choice-title">Full-Length Practice Test</div>
               <p class="diag-choice-meta">4 modules · 98 questions · ~2h 15m · free</p>
-              <button class="btn btn-primary" data-start="diagnostic">Start Short Diagnostic →</button>
+              <button class="btn btn-primary" data-start="diagnostic">Start Full-Length Test →</button>
             </div>
             <div class="diag-choice-card">
               <div class="diag-choice-title">Full Scale Test</div>
@@ -1335,7 +1444,9 @@
               <button class="btn btn-ghost" data-start="full-diagnostic">Start Full Scale Test${premium ? "" : " (Pro)"} →</button>
             </div>
           </div>
-        </div>`;
+        </div>
+        ${queueHTML}
+        ${reasonHTML}`;
       return;
     }
 
@@ -1388,6 +1499,9 @@
         <p class="tagline">Built from your ${data.label} · ${timeAgo(data.timestamp)}</p>
       </div>
 
+      ${queueHTML}
+      ${reasonHTML}
+
       ${section(
         "Priority focus",
         "Spend most of your study time here — these categories are costing you the most points.",
@@ -1405,7 +1519,7 @@
       )}
 
       <div class="results-actions">
-        <button class="btn btn-primary" data-start="diagnostic">Retake Short Diagnostic →</button>
+        <button class="btn btn-primary" data-start="diagnostic">Retake Full-Length Test →</button>
         <button class="btn btn-ghost" data-nav="lessons">Browse Lessons →</button>
         <button class="btn btn-ghost" data-home>Back to Home</button>
       </div>
@@ -1733,7 +1847,7 @@
         <div class="rpg-feature-body">
           <span class="rpg-feature-tag">Flagship RPG</span>
           <h3>Dungeon Quest</h3>
-          <p>Battle your way through 8 dungeons — one per SAT skill domain — by answering real questions to land hits. Level up, earn gold, and gear up between fights.</p>
+          <p>Battle your way through 8 dungeons — one per SAT skill domain — by answering practice questions to land hits. Level up, earn gold, and gear up between fights.</p>
           <div class="rpg-feature-stats">
             <span class="game-stat">${ICON_GRADCAP} Lv. ${rpg.level}</span>
             <span class="game-stat">${rpgStats.maxHp} HP</span>
@@ -1749,7 +1863,7 @@
         <div class="rpg-feature-body">
           <span class="rpg-feature-tag">Idle game</span>
           <h3>Study Tycoon</h3>
-          <p>Answer real SAT questions to earn Brainpower, then spend it on tutors, workbooks, and study halls that keep producing even after you close the tab.</p>
+          <p>Answer SAT-format practice questions to earn Brainpower, then spend it on tutors, workbooks, and study halls that keep producing even after you close the tab.</p>
           <div class="rpg-feature-stats">
             <span class="game-stat">${ICON_COIN} ${formatIdleNumber(idle.bp)} BP</span>
             <span class="game-stat">${formatIdleNumber(idleRate)} BP/sec</span>
@@ -2772,9 +2886,11 @@
     } catch (e) { /* storage unavailable */ }
   }
 
-  // A rolling bank of recently-missed questions, most recent first — the
-  // pool the "Review 5 mistakes" quest pulls its practice set from.
-  // Questions drop out once answered correctly again (mastered).
+  // The redo queue: missed questions tracked with a Leitner box (0, 1, 2 —
+  // see MISTAKE_REDO_INTERVALS_DAYS) and a dueAt timestamp. A question only
+  // surfaces in the queue once it's due; answering it correctly advances
+  // the box and pushes dueAt further out, until MISTAKE_MASTERY_BOX removes
+  // it entirely. Missing it again resets the box to 0 — back to square one.
   function loadMistakeBank() {
     try {
       const raw = progressStore().getItem(progressKey(MISTAKE_BANK_KEY));
@@ -2789,16 +2905,81 @@
     } catch (e) { /* storage unavailable */ }
   }
 
-  function addMistakes(questions) {
-    const bank = loadMistakeBank().filter((m) => !questions.some((q) => q.id === m.id));
-    const entries = questions.map((q) => ({ id: q.id, domain: q.domain, module: q.module }));
-    saveMistakeBank([...entries, ...bank]);
+  // `missed` is an array of {q, reason}. A question missed again after
+  // already being on the queue regresses all the way back to box 0 —
+  // spaced repetition only works if a later miss costs you the progress
+  // you'd made on it.
+  function addMistakes(missed) {
+    if (!missed.length) return;
+    const now = Date.now();
+    const byId = {};
+    loadMistakeBank().forEach((m) => { byId[m.id] = m; });
+    missed.forEach(({ q, reason }) => {
+      const existing = byId[q.id];
+      byId[q.id] = {
+        id: q.id,
+        domain: q.domain,
+        module: q.module,
+        reason: reason || (existing && existing.reason) || null,
+        box: 0,
+        dueAt: now,
+        missedAt: now,
+      };
+    });
+    saveMistakeBank(Object.values(byId).sort((a, b) => b.missedAt - a.missedAt));
   }
 
-  function removeMistakes(ids) {
+  // A correct answer on a question that's on the queue advances its box
+  // and schedules the next review further out — or, past the last box,
+  // removes it as mastered. Questions not on the queue are no-ops.
+  function advanceMistakes(ids) {
     if (!ids.length) return;
-    const bank = loadMistakeBank().filter((m) => !ids.includes(m.id));
-    saveMistakeBank(bank);
+    const now = Date.now();
+    const next = [];
+    loadMistakeBank().forEach((m) => {
+      if (!ids.includes(m.id)) {
+        next.push(m);
+        return;
+      }
+      const box = (m.box || 0) + 1;
+      if (box >= MISTAKE_MASTERY_BOX) return; // mastered — drops off the queue
+      next.push({ ...m, box, dueAt: now + MISTAKE_REDO_INTERVALS_DAYS[box] * DAY_MS });
+    });
+    saveMistakeBank(next);
+  }
+
+  // The subset of the redo queue that's actually due right now, soonest
+  // (most overdue) first — this is what the "Review 5 mistakes" quest and
+  // the Study Plan's redo-queue card actually offer to practice.
+  function dueMistakes() {
+    const now = Date.now();
+    return loadMistakeBank()
+      .filter((m) => (m.dueAt || 0) <= now)
+      .sort((a, b) => (a.dueAt || 0) - (b.dueAt || 0));
+  }
+
+  // Lifetime tally of tagged miss reasons (see MISTAKE_REASONS), kept
+  // separately from the redo queue so the "why you're missing points"
+  // breakdown survives a question being mastered and dropping off the
+  // queue — the behavioral pattern is still worth knowing about.
+  function loadMistakeReasonTally() {
+    try {
+      const raw = progressStore().getItem(progressKey(MISTAKE_REASON_TALLY_KEY));
+      if (raw) return JSON.parse(raw);
+    } catch (e) { /* storage unavailable */ }
+    return { total: 0 };
+  }
+
+  function bumpMistakeReasonTally(missed) {
+    if (!missed.length) return;
+    const tally = loadMistakeReasonTally();
+    missed.forEach(({ reason }) => {
+      tally.total = (tally.total || 0) + 1;
+      if (reason) tally[reason] = (tally[reason] || 0) + 1;
+    });
+    try {
+      progressStore().setItem(progressKey(MISTAKE_REASON_TALLY_KEY), JSON.stringify(tally));
+    } catch (e) { /* storage unavailable */ }
   }
 
   function loadMistakesReviewedToday() {
@@ -2840,29 +3021,34 @@
   }
 
   // Called once per finished session (any module) with each question's
-  // {q, selected} pair — folds the attempt into today's per-domain counts
-  // and the mistake bank, and marks today's timed-module quest complete.
+  // {q, selected, reason} — folds the attempt into today's per-domain
+  // counts, the redo queue, and the miss-reason tally, and marks today's
+  // timed-module quest complete. `reason` (from MISTAKE_REASONS) is only
+  // present when the question was missed and the student tagged why.
   function recordSessionProgress(pairs) {
     const domainCounts = {};
     const missed = [];
-    const mastered = [];
-    pairs.forEach(({ q, selected }) => {
+    const masteredIds = [];
+    pairs.forEach(({ q, selected, reason }) => {
       if (selected === undefined) return;
       domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
-      if (selected === q.answer) mastered.push(q.id);
-      else missed.push(q);
+      if (selected === q.answer) masteredIds.push(q.id);
+      else missed.push({ q, reason });
     });
     Object.keys(domainCounts).forEach((domain) => bumpDomainToday(domain, domainCounts[domain]));
-    if (missed.length) addMistakes(missed);
-    if (mastered.length) removeMistakes(mastered);
+    if (missed.length) {
+      addMistakes(missed);
+      bumpMistakeReasonTally(missed);
+    }
+    if (masteredIds.length) advanceMistakes(masteredIds);
     markTimedModuleToday();
   }
 
-  // Builds a short practice set from the mistake bank's most recent
-  // entries — the "Review 5 mistakes" quest's Go button.
+  // Builds a practice set from whatever's due on the redo queue right now
+  // — the "Review 5 mistakes" quest's Go button.
   function startMistakeReview() {
-    const bank = loadMistakeBank();
-    const pool = bank
+    const due = dueMistakes();
+    const pool = due
       .slice(0, 5)
       .map((m) => QUESTIONS.find((q) => q.id === m.id))
       .filter(Boolean)
@@ -2876,11 +3062,12 @@
     state.module = "mistakeReview";
     state.domainFilter = null;
     state.reviewMode = false;
-    state.categoryLabel = "Mistake Review";
+    state.categoryLabel = "Redo Queue";
     state.categoryDomain = null;
     state.questions = pool;
     state.answers = {};
     state.checked = {};
+    state.missReasons = {};
     state.eliminated = {};
     state.marked = {};
     state.current = 0;
@@ -2902,7 +3089,7 @@
   // target both change live.
   function questDefs() {
     const primary = primaryWeakDomain();
-    const mistakeBank = loadMistakeBank();
+    const due = dueMistakes();
     return [
       {
         id: "practice15",
@@ -2918,7 +3105,7 @@
         xp: 30,
         total: 5,
         count: Math.min(loadMistakesReviewedToday(), 5),
-        go: mistakeBank.length
+        go: due.length
           ? `<button type="button" class="btn btn-ghost btn-small" data-start="mistakeReview">Go →</button>`
           : `<button type="button" class="btn btn-ghost btn-small" data-nav="studyPlan">Go →</button>`,
       },
@@ -3130,7 +3317,7 @@
 
   function renderDashboard() {
     const user = window.Auth && window.Auth.getCurrentUser();
-    const name = user ? user.name : "there";
+    const name = user ? user.name : null;
     const goal = loadGoal();
     const estimate = computeCurrentEstimate();
     const weakest = weakestDomains(3);
@@ -3183,7 +3370,7 @@
     document.getElementById("dashboard").innerHTML = `
       <div class="dash-header">
         <span class="eyebrow">Dashboard</span>
-        <h2>Welcome back, ${escapeHtml(name)}</h2>
+        <h2>${name ? `Welcome back, ${escapeHtml(name)}` : "Welcome"}</h2>
       </div>
       ${guestBannerHTML()}
       <div class="dash-goals">
@@ -3194,7 +3381,7 @@
         <div class="dash-goal-card">
           <div class="dash-goal-label">Current estimate</div>
           <div class="dash-goal-value estimate">${estimate === null ? "—" : estimate}</div>
-          ${estimate === null ? `<div class="dash-goal-hint">Take a diagnostic to see this</div>` : ""}
+          ${estimate === null ? `<div class="dash-goal-hint">Take a diagnostic to see this <button type="button" class="dash-goal-hint-btn" data-start="diagnostic">Start →</button></div>` : ""}
         </div>
       </div>
       <div class="dash-section">
@@ -3365,7 +3552,7 @@
 
       <div class="results-actions">
         <button class="btn btn-primary" id="retryBtn">${
-          state.module === "full-diagnostic" ? "Retake Full Scale Test" : isDiagnostic ? "Retake Short Diagnostic" : "Try Again"
+          state.module === "full-diagnostic" ? "Retake Full Scale Test" : isDiagnostic ? "Retake Full-Length Test" : "Try Again"
         }</button>
         ${isDiagnostic ? `<button class="btn btn-ghost" data-nav="studyPlan">View Study Plan →</button>` : ""}
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
@@ -3712,6 +3899,31 @@
     return div.innerHTML;
   }
 
+  // Swaps the regular spaces around a math operator for non-breaking ones,
+  // so a line wrap can't land between "2x +" and "y = -9" mid-expression —
+  // question text has no markup to hang a <span> on, so this is the
+  // lightest fix that doesn't touch the content files themselves.
+  function nbspMath(str) {
+    if (str == null) return "";
+    return String(str).replace(/ ([=+\-−×÷≤≥<>]) /g, " $1 ");
+  }
+
+  // Renders a plain "1/5" as a stacked numerator/denominator, the way the
+  // real test typesets fractions — short of pulling in a full math
+  // typesetting library, this covers the vast majority of this content
+  // (simple integer fractions), which is what the review flagged.
+  function stackFractions(str) {
+    if (str == null) return "";
+    return String(str).replace(
+      /\b(\d+)\/(\d+)\b/g,
+      '<span class="frac"><span class="num">$1</span><span class="den">$2</span></span>'
+    );
+  }
+
+  function formatMathText(str) {
+    return stackFractions(nbspMath(str));
+  }
+
   // A small fixed palette for the initials avatar's background — picked
   // deterministically from the user's email so it's stable across
   // sessions/devices even before they ever choose one themselves.
@@ -3995,6 +4207,7 @@
     authMode = mode || "login";
     updateAuthModeUI();
     document.getElementById("authError").classList.add("hidden");
+    document.getElementById("authSuccess").classList.add("hidden");
     document.getElementById("authForm").reset();
     document.getElementById("authModal").classList.remove("hidden");
     closeProfileMenu();
@@ -4037,6 +4250,115 @@
     } catch (e) { /* storage unavailable */ }
   }
 
+  // ---- Resuming a session left mid-way ----
+  // Saved only for single-module sessions (mixed/rw/math, a bank category,
+  // a domain, or a skill) when the student explicitly leaves with at least
+  // one answer recorded — the Short/Full diagnostics carry extra
+  // multi-module routing state (fdModules/fdTier/...) that isn't captured
+  // here, so they're intentionally left out rather than resumed into a
+  // broken module hand-off. Cleared once a session finishes normally.
+  function serializeEliminated(elim) {
+    const out = {};
+    Object.keys(elim).forEach((k) => {
+      out[k] = Array.from(elim[k]);
+    });
+    return out;
+  }
+  function deserializeEliminated(obj) {
+    const out = {};
+    Object.keys(obj || {}).forEach((k) => {
+      out[k] = new Set(obj[k]);
+    });
+    return out;
+  }
+
+  function saveSessionSnapshot() {
+    if (state.module === "diagnostic" || state.module === "full-diagnostic") return;
+    if (!state.questions.length || !Object.keys(state.answers).length) return;
+
+    const snapshot = {
+      module: state.module,
+      questions: state.questions,
+      answers: state.answers,
+      checked: state.checked,
+      missReasons: state.missReasons,
+      eliminated: serializeEliminated(state.eliminated),
+      marked: state.marked,
+      current: state.current,
+      secondsLeft: state.secondsLeft,
+      timerHidden: state.timerHidden,
+      categoryLabel: state.categoryLabel,
+      categoryDomain: state.categoryDomain,
+      domainFilter: state.domainFilter,
+      skillFilter: state.skillFilter,
+      savedAt: Date.now(),
+    };
+    try {
+      progressStore().setItem(progressKey(SAVED_SESSION_KEY), JSON.stringify(snapshot));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function getSavedSession() {
+    try {
+      const raw = progressStore().getItem(progressKey(SAVED_SESSION_KEY));
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function clearSavedSession() {
+    try {
+      progressStore().removeItem(progressKey(SAVED_SESSION_KEY));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function resumeSavedSession() {
+    const snap = getSavedSession();
+    if (!snap || !snap.questions || !snap.questions.length) return;
+
+    state.module = snap.module;
+    state.diagnosticIndex = null;
+    state.questions = snap.questions;
+    state.answers = snap.answers || {};
+    state.checked = snap.checked || {};
+    state.missReasons = snap.missReasons || {};
+    state.eliminated = deserializeEliminated(snap.eliminated);
+    state.marked = snap.marked || {};
+    state.current = snap.current || 0;
+    state.secondsLeft = snap.secondsLeft || 0;
+    state.timerHidden = !!snap.timerHidden;
+    state.categoryLabel = snap.categoryLabel || null;
+    state.categoryDomain = snap.categoryDomain || null;
+    state.domainFilter = snap.domainFilter || null;
+    state.skillFilter = snap.skillFilter || null;
+    state.reviewMode = false;
+    state.eliminating = false;
+
+    clearSavedSession();
+    startTimer();
+    show("exam");
+    ensureCurrentVisible();
+    renderQuestion();
+    renderFooter();
+    updateModuleName();
+  }
+
+  function renderResumeBanner() {
+    const banner = document.getElementById("resumeBanner");
+    if (!banner) return;
+    const snap = getSavedSession();
+    if (!snap || !snap.questions || !snap.questions.length) {
+      banner.classList.add("hidden");
+      return;
+    }
+    const answered = Object.keys(snap.answers || {}).length;
+    const label = snap.categoryLabel || snap.domainFilter || "your practice session";
+    document.getElementById("resumeBannerSub").textContent =
+      `${label} — ${answered} of ${snap.questions.length} questions answered`;
+    banner.classList.remove("hidden");
+  }
+
   function goHome() {
     clearInterval(state.timer);
     clearInterval(state.breakTimer);
@@ -4045,6 +4367,26 @@
 
   // ---- Global wiring ----
   function init() {
+    const landingCountEl = document.getElementById("landingQuestionCount");
+    if (landingCountEl) {
+      const rounded = Math.floor(QUESTIONS.length / 100) * 100;
+      landingCountEl.textContent = `${rounded.toLocaleString()}+`;
+    }
+
+    document.getElementById("navToggle")?.addEventListener("click", () => {
+      const nav = document.getElementById("topbarCenter");
+      const open = !nav.classList.contains("open");
+      nav.classList.toggle("open", open);
+      document.getElementById("navToggle").setAttribute("aria-expanded", String(open));
+    });
+
+    renderResumeBanner();
+    document.getElementById("resumeBannerGo")?.addEventListener("click", resumeSavedSession);
+    document.getElementById("resumeBannerDismiss")?.addEventListener("click", () => {
+      clearSavedSession();
+      renderResumeBanner();
+    });
+
     // Delegated so buttons rendered later (e.g. on the results screen)
     // work without re-wiring.
     document.addEventListener("click", (e) => {
@@ -4071,6 +4413,13 @@
         else renderSocial();
         show(nav);
         closeProfileMenu();
+        return;
+      }
+      const scrollBtn = e.target.closest("[data-scroll-to]");
+      if (scrollBtn) {
+        const target = document.getElementById(scrollBtn.dataset.scrollTo);
+        if (screens.landing.classList.contains("hidden")) show("landing");
+        requestAnimationFrame(() => target?.scrollIntoView({ behavior: "smooth", block: "start" }));
         return;
       }
       const domainBtn = e.target.closest("[data-domain-practice]");
@@ -4242,11 +4591,14 @@
     const calcPanel = document.getElementById("calcPanel");
     const calcBtn = document.getElementById("calculatorBtn");
     const calcFrame = document.getElementById("calcFrame");
+    const calcLoading = document.getElementById("calcLoading");
+    calcFrame.addEventListener("load", () => calcLoading?.classList.add("hidden"));
     calcBtn.addEventListener("click", () => {
       const opening = calcPanel.classList.contains("hidden");
       if (opening && !calcFrame.src) calcFrame.src = "https://www.desmos.com/calculator";
       calcPanel.classList.toggle("hidden", !opening);
       calcBtn.classList.toggle("active", opening);
+      document.getElementById("exam")?.classList.toggle("calc-open", opening);
     });
     document.getElementById("calcPanelClose").addEventListener("click", closeCalculatorPanel);
 
@@ -4281,8 +4633,12 @@
     const confirmText = document.getElementById("confirmText");
     const confirmEnd = document.getElementById("confirmEnd");
     document.getElementById("examHomeBtn").addEventListener("click", () => {
+      const resumable =
+        state.module !== "diagnostic" && state.module !== "full-diagnostic" && Object.keys(state.answers).length > 0;
       confirmTitle.textContent = "Leave without finishing?";
-      confirmText.textContent = "Your progress on this session won't be scored. You can start over anytime from the home screen.";
+      confirmText.textContent = resumable
+        ? "This session won't be scored, but your answers are saved — resume it from the home screen whenever you're ready."
+        : "Your progress on this session won't be scored. You can start over anytime from the home screen.";
       confirmEnd.textContent = "Leave to home";
       confirmModal.classList.remove("hidden");
     });
@@ -4291,6 +4647,7 @@
     });
     confirmEnd.addEventListener("click", () => {
       confirmModal.classList.add("hidden");
+      saveSessionSnapshot();
       goHome();
     });
     confirmModal.addEventListener("click", (e) => {
@@ -4311,8 +4668,10 @@
       const password = document.getElementById("authPassword").value;
       const name = document.getElementById("authName").value;
       const errorEl = document.getElementById("authError");
+      const successEl = document.getElementById("authSuccess");
       const submitBtn = document.getElementById("authSubmit");
       errorEl.classList.add("hidden");
+      successEl.classList.add("hidden");
       submitBtn.disabled = true;
       const result = authMode === "signup"
         ? await window.Auth.signUp(email, password, name)
@@ -4321,6 +4680,14 @@
       if (!result.ok) {
         errorEl.textContent = result.error;
         errorEl.classList.remove("hidden");
+        return;
+      }
+      if (result.pendingConfirmation) {
+        openAuthModal("login");
+        document.getElementById("authEmail").value = email;
+        document.getElementById("authSuccess").textContent =
+          "Account created — check your email for a confirmation link, then log in.";
+        document.getElementById("authSuccess").classList.remove("hidden");
         return;
       }
       closeAuthModal();

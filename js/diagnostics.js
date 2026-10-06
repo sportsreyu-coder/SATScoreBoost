@@ -1,4 +1,4 @@
-// Short Diagnostic — a true clone of the real digital SAT's structure:
+// Full-Length Practice Test — a true clone of the real digital SAT's structure:
 // RW Module 1 (27 questions) + RW Module 2 (27 questions), a 10-minute break,
 // then Math Module 1 (22 questions) + Math Module 2 (22 questions), 98
 // questions total. Domain mix within each module roughly matches the real
@@ -19,7 +19,7 @@
 const PRACTICE_SAT = [
   {
     id: "practice1",
-    label: "Short Diagnostic 1",
+    label: "Full-Length Practice Test 1",
     modules: {
       rw1: [
         "ii-1", "ii-2", "ii-3", "ii-4", "ii-5", "ii-6", "ii-7",
@@ -49,7 +49,7 @@ const PRACTICE_SAT = [
   },
   {
     id: "practice2",
-    label: "Short Diagnostic 2",
+    label: "Full-Length Practice Test 2",
     modules: {
       rw1: [
         "ii-15", "ii-16", "ii-17", "ii-18", "ii-19", "ii-20", "ii-21",

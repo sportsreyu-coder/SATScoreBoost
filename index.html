@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAT ScoreBoost — Free Digital SAT Practice</title>
-  <meta name="description" content="Free, Bluebook-style digital SAT practice. Real questions, instant explanations, and a score estimate. No signup." />
+  <meta name="description" content="Free, Bluebook-style digital SAT practice. Original, SAT-format questions, instant explanations, and a score estimate. No signup." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
@@ -18,7 +18,10 @@
       <span class="logo">SB</span>
       <span>SAT<span class="score">ScoreBoost</span></span>
     </div>
-    <nav class="topbar-center">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="topbarCenter">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="topbar-center" id="topbarCenter">
       <button class="topnav-link" id="dashboardNavBtn" data-nav="dashboard">
         <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
         Dashboard
@@ -36,7 +39,7 @@
         Lessons
         <span class="nav-pro-badge" id="lessonsProBadge">PRO</span>
       </button>
-      <button class="topnav-link" id="gamesNavBtn" data-nav="games">
+      <button class="topnav-link" id="gamesNavBtn" data-nav="games" title="Quick, replayable games built from SAT-format questions">
         <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.152A4 4 0 0 0 17.32 5Z"/></svg>
         Games
       </button>
@@ -57,6 +60,16 @@
 
   <!-- ===================== LANDING ===================== -->
   <main id="landing" class="landing">
+    <div class="resume-banner hidden" id="resumeBanner">
+      <div>
+        <div class="resume-banner-title" id="resumeBannerTitle">Resume where you left off</div>
+        <div class="resume-banner-sub" id="resumeBannerSub"></div>
+      </div>
+      <div class="resume-banner-actions">
+        <button class="btn btn-ghost btn-sm" id="resumeBannerDismiss">Discard</button>
+        <button class="btn btn-primary btn-sm" id="resumeBannerGo">Resume →</button>
+      </div>
+    </div>
     <section class="l-hero">
       <div>
         <div class="l-eyebrow">Free · No signup to start</div>
@@ -68,7 +81,7 @@
           the same pacing, the same question formats — then explains every answer as soon as you submit it.
         </p>
         <div class="l-hero-cta">
-          <button class="btn btn-primary" data-start="diagnostic">Start Short Diagnostic →</button>
+          <button class="btn btn-primary" data-start="diagnostic">Start Full-Length Test →</button>
           <button class="btn btn-ghost" data-nav="bank">Browse question bank</button>
         </div>
         <p class="l-hero-note">Real-format SAT — 4 modules, 98 questions (Reading &amp; Writing + Math), a built-in 10-minute break. Free, no signup, about 2 hours 15 minutes.</p>
@@ -86,7 +99,7 @@
           </div>
           <div class="l-glance-card">
             <div><div class="l-glance-title">Practice questions</div><div class="l-glance-sub">Filter by domain, skill, difficulty</div></div>
-            <div class="l-glance-num">500+</div>
+            <div class="l-glance-num" id="landingQuestionCount">500+</div>
           </div>
           <div class="l-glance-card">
             <div><div class="l-glance-title">Cost</div><div class="l-glance-sub">Free to use, no ads</div></div>
@@ -100,7 +113,7 @@
           <div class="l-start-tag">Recommended</div>
           <div class="l-start-top">
             <div>
-              <div class="l-start-title">Take the Short Diagnostic</div>
+              <div class="l-start-title">Take the Full-Length Test</div>
               <p>A real-format test across both sections — 4 timed modules, 98 questions, with a real break — that produces your first score estimate and a ranked list of weak areas.</p>
             </div>
             <div class="l-start-minutes">
@@ -111,7 +124,7 @@
           <div class="l-start-rule"></div>
           <div class="l-start-bottom">
             <span>Instant score estimate at the end</span>
-            <button class="btn l-btn-outline-white" data-start="diagnostic">Start Short Diagnostic →</button>
+            <button class="btn l-btn-outline-white" data-start="diagnostic">Start Full-Length Test →</button>
           </div>
         </div>
       </div>
@@ -125,7 +138,7 @@
         </div>
         <p>
           Most prep sites hand you a quiz. The digital SAT is an application with its own controls,
-          and getting fluent in them is part of scoring well. These four are on screen from your first question.
+          and getting fluent in them is part of scoring well. These five are on screen from your first question.
         </p>
       </div>
       <div class="l-feature-list">
@@ -157,9 +170,17 @@
           <span class="l-feature-num">04</span>
           <div>
             <span class="l-feature-title">Instant explanations</span>
-            <span class="l-feature-body">Submit and the reasoning appears immediately — what the correct answer turns on, and why the choice you picked was tempting. No waiting for a scored report to find out what went wrong.</span>
+            <span class="l-feature-body">Submit and the reasoning appears immediately — what the correct answer turns on and where it comes from. No waiting for a scored report to find out what went wrong.</span>
           </div>
           <span class="l-feature-tag">Both sections</span>
+        </div>
+        <div class="l-feature-row">
+          <span class="l-feature-num">05</span>
+          <div>
+            <span class="l-feature-title">Graphing calculator</span>
+            <span class="l-feature-body">A full Desmos calculator opens alongside every Math question, the same tool you get in the real exam — no separate app, no leaving the question.</span>
+          </div>
+          <span class="l-feature-tag">Math modules</span>
         </div>
       </div>
     </section>
@@ -171,9 +192,9 @@
       <div class="l-paths-grid">
         <button class="l-path-card" data-start="diagnostic">
           <div class="l-path-top"><span class="l-eyebrow">Recommended · Free</span><span class="l-path-arrow">→</span></div>
-          <div class="l-path-title">Take the Short Diagnostic</div>
+          <div class="l-path-title">Take the Full-Length Test</div>
           <p>4 timed modules across both sections — 98 questions, about 2 hours 15 minutes — producing your first score estimate and a ranked list of weak areas.</p>
-          <div class="l-path-go">Start Short Diagnostic</div>
+          <div class="l-path-go">Start Full-Length Test</div>
         </button>
         <button class="l-path-card" data-start="full-diagnostic">
           <div class="l-path-top"><span class="l-eyebrow">ScoreBoost Pro</span><span class="l-path-arrow">→</span></div>
@@ -207,11 +228,11 @@
         <h2>You can start in the next thirty seconds.</h2>
         <p>No account, no email, no card. Answer a question, see the explanation, and decide from there whether it's worth coming back.</p>
         <div class="l-hero-cta">
-          <button class="btn btn-primary" data-start="diagnostic">Start Short Diagnostic →</button>
+          <button class="btn btn-primary" data-start="diagnostic">Start Full-Length Test →</button>
           <button class="btn btn-ghost" data-action="open-auth">Create a free account</button>
         </div>
       </div>
-      <div class="l-parents-card">
+      <div class="l-parents-card" id="for-parents">
         <span class="l-parents-tag">For parents</span>
         <ul class="l-parents-list">
           <li><span class="l-dot"></span>Free to use, with no ads anywhere in the product.</li>
@@ -247,7 +268,7 @@
             <line x1="16" y1="18" x2="16.01" y2="18" />
           </svg>
         </button>
-        <button class="tool-btn icon-btn" id="eliminateBtn" title="Cross out answers">✕</button>
+        <button class="tool-btn icon-btn" id="eliminateBtn" title="Cross out answer choices" aria-label="Cross out answer choices"><span class="eliminate-icon">ABC</span></button>
         <button class="tool-btn icon-btn" id="examHomeBtn" title="Leave to home">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 11.5 12 4l9 7.5" />
@@ -285,6 +306,7 @@
         <button class="calc-panel-close" id="calcPanelClose" title="Close calculator">✕</button>
       </div>
       <div class="calc-panel-body">
+        <div class="calc-loading" id="calcLoading"><span class="spinner" aria-hidden="true"></span>Loading calculator…</div>
         <iframe id="calcFrame" title="Desmos graphing calculator" loading="lazy"></iframe>
       </div>
     </div>
@@ -329,12 +351,23 @@
     </div>
   </div>
 
+  <!-- ===================== SESSION SIZE MODAL ===================== -->
+  <div id="sessionSizeModal" class="modal-overlay hidden">
+    <div class="modal">
+      <h3>How many questions?</h3>
+      <p id="sessionSizeSub">Choose how many to practice.</p>
+      <div class="session-size-options" id="sessionSizeOptions"></div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="sessionSizeCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== AUTH MODAL ===================== -->
   <div id="authModal" class="modal-overlay hidden">
     <div class="modal auth-modal">
       <button class="modal-close" id="authClose" aria-label="Close">✕</button>
       <h3 id="authTitle">Log in</h3>
-      <p class="auth-demo-note">Email/password accounts are a demo — stored only in this browser for testing. Google sign-in is real.</p>
       <form id="authForm" novalidate>
         <label class="field hidden" id="authNameField">
           <span>Name</span>
@@ -349,6 +382,7 @@
           <input type="password" id="authPassword" placeholder="••••••••" autocomplete="current-password" required />
         </label>
         <div class="auth-error hidden" id="authError"></div>
+        <div class="auth-success hidden" id="authSuccess"></div>
         <button type="submit" class="btn btn-primary auth-submit" id="authSubmit">Log in</button>
       </form>
       <div class="auth-divider"><span>or</span></div>
@@ -361,8 +395,7 @@
   </div>
 
   <footer class="site" id="siteFooter">
-    Built as a study tool inspired by <a href="https://1600.lol" target="_blank" rel="noopener">1600.lol</a>.
-    Not affiliated with the College Board. SAT® is a trademark of the College Board.
+    <button type="button" class="footer-link" data-scroll-to="for-parents">For parents</button> · Not affiliated with the College Board. SAT® is a trademark of the College Board.
   </footer>
 
   <script src="js/questions.js"></script>

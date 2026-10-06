@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "static-server",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8935", "--directory", "/Users/reyu/Documents/GitHub/SATScoreBoost"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/reyu/Documents/GitHub/SATScoreBoost/.claude/static-serve.js"],
       "port": 8935
     }
   ]
