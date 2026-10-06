@@ -4558,7 +4558,7 @@
   function renderThemeToggle() {
     const btn = document.getElementById("themeToggle");
     if (!btn) return;
-    btn.innerHTML = getTheme() === "dark" ? ICON_SUN : ICON_MOON;
+    btn.innerHTML = getTheme() === "dark" ? ICON_MOON : ICON_SUN;
   }
 
   // Reads an image file, downscales it to fit within maxSize×maxSize (never

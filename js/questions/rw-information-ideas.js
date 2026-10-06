@@ -6729,5 +6729,1210 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Only choice A reports the direct before-and-after ridership comparison, which is the evidence for the claim.",
+  },
+  {
+    id: "ii-351",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Community seed libraries, where neighbors borrow and return open-pollinated seeds instead of money, have spread across small towns in the past several years. Members plant a portion of what they grow specifically to collect new seeds for the next season, which keeps the library's collection replenished without any purchases.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Community seed libraries let neighbors share seeds and keep themselves stocked by growing seeds to return.",
+      "Seed libraries have replaced farmers' markets in most small towns.",
+      "Every member of a seed library is required to grow seeds for the collection.",
+      "Open-pollinated seeds are more expensive than seeds sold in stores.",
+    ],
+    answer: 0,
+    explanation:
+      "The text explains how seed libraries function: members borrow seeds and replenish the collection by growing some for seed, matching choice A. The other choices are unsupported or contradicted by details in the passage.",
+  },
+  {
+    id: "ii-352",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "An entomologist argues that a sharp decline in a wild bee population near orchard fields was caused primarily by pesticide drift rather than habitat loss, citing a field report: 'Hives placed more than two miles from the orchards, where pesticide drift was negligible, maintained stable populations even though their surrounding habitat was just as fragmented as hives closer to the orchards.'",
+    prompt:
+      "Which quotation from the field report best supports the entomologist's argument?",
+    choices: [
+      "'Hives placed more than two miles from the orchards, where pesticide drift was negligible, maintained stable populations even though their surrounding habitat was just as fragmented as hives closer to the orchards.'",
+      "'The orchards span roughly 400 acres of fruit trees.'",
+      "'Wild bee populations have declined in many regions over the past decade.'",
+      "'Pesticide drift can travel several miles under windy conditions.'",
+    ],
+    answer: 0,
+    explanation:
+      "The entomologist's claim isolates pesticide drift from habitat loss. Only the first quotation shows stable populations away from drift despite similar habitat fragmentation, directly supporting that drift explains the decline.",
+  },
+  {
+    id: "ii-353",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage:
+      "A human-resources director claims that a revised employee onboarding program reduced first-year turnover. Before the revised program, 28% of new hires left within their first year; after the program was introduced, only 14% of new hires left within their first year.",
+    prompt: "Which choice best describes data that supports the director's claim?",
+    choices: [
+      "First-year turnover fell from 28% to 14% after the revised onboarding program began.",
+      "The onboarding program includes a two-day orientation session.",
+      "The company hired more new employees last year than in previous years.",
+      "New hires are assigned a mentor for their first month.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim concerns a reduction in turnover. Only choice A reports the actual before-and-after turnover percentages, which is the direct evidence for the claim.",
+  },
+  {
+    id: "ii-354",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "Archaeologists excavating a burial site hundreds of miles from the coast uncovered polished shell ornaments and carved coral beads, materials that do not occur naturally anywhere near the site.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The people buried at the site likely had access to long-distance trade networks reaching the coast.",
+      "The burial site was located directly on the coastline.",
+      "Shell ornaments were manufactured at the burial site itself.",
+      "Coral beads were more valuable than any other material in the region.",
+    ],
+    answer: 0,
+    explanation:
+      "Since the shell and coral materials 'do not occur naturally anywhere near the site,' their presence hundreds of miles inland most reasonably implies they arrived through trade with coastal communities.",
+  },
+  {
+    id: "ii-355",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Throughout the twentieth century, most lighthouses switched from human keepers to automated lighting systems, a shift that eliminated a once-essential profession but also removed a reliable source of weather reports and rescue assistance for sailors in remote areas.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Lighthouse automation ended a traditional job and also took away services keepers once provided to sailors.",
+      "Automated lighthouses are less reliable than lighthouses run by human keepers.",
+      "Sailors no longer face dangers at sea because of automated lighting systems.",
+      "Lighthouse keeping remains a common profession in remote coastal areas.",
+    ],
+    answer: 0,
+    explanation:
+      "The text highlights two effects of automation: the loss of the keeper profession and the loss of weather and rescue help, matching choice A. The passage never claims automation is unreliable, that danger has ended, or that keeping remains common.",
+  },
+  {
+    id: "ii-356",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "A teacher argues that structured group projects improve students' long-term retention of material more than individual study does, citing a classroom note: 'On the unit test given six weeks after the project ended, students who had worked in groups still answered the key concept questions correctly far more often than students who studied the same material alone, even though both groups had scored similarly on the quiz given right after the unit.'",
+    prompt:
+      "Which quotation from the classroom note best supports the teacher's argument?",
+    choices: [
+      "'On the unit test given six weeks after the project ended, students who had worked in groups still answered the key concept questions correctly far more often than students who studied the same material alone, even though both groups had scored similarly on the quiz given right after the unit.'",
+      "'The group projects were assigned during the second week of the unit.'",
+      "'Group sizes ranged from three to five students.'",
+      "'Individual study time was not formally tracked by the teacher.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is about long-term retention specifically. Only the first quotation compares performance weeks later while noting the groups started equal, directly supporting the claim that group work aids retention over time.",
+  },
+  {
+    id: "ii-357",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage:
+      "A library director claims that extending weekday hours increased overall visits to the branch. Before the extended hours, the branch averaged 340 visits per day; after the hours were extended, it averaged 510 visits per day.",
+    prompt: "Which choice best describes data that supports the director's claim?",
+    choices: [
+      "Average daily visits rose from 340 to 510 after weekday hours were extended.",
+      "The branch added a children's reading room last year.",
+      "The library is open on weekends as well as weekdays.",
+      "The extended hours apply only to the reference section.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A presents the direct before-and-after visit counts tied to the change in hours, which is the evidence needed to support the claim.",
+  },
+  {
+    id: "ii-358",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "After a company installed new customer-service software, average response times to support tickets dropped sharply, and the number of complaints about slow service fell in the following months.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "Faster response times likely contributed to the reduction in complaints about slow service.",
+      "The company's product quality improved as a result of the new software.",
+      "Customers stopped contacting support altogether after the software was installed.",
+      "The new software eliminated all complaints about the company.",
+    ],
+    answer: 0,
+    explanation:
+      "Since complaints specifically about slow service fell alongside faster response times, it's reasonable to infer a connection between the two. The passage never claims product quality changed, that contact stopped entirely, or that all complaints vanished.",
+  },
+  {
+    id: "ii-359",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Volunteer-run 'repair cafes,' where community members bring broken bicycles and household items for free fixing help from local hobbyists, have opened in dozens of towns. Organizers say the events reduce waste by extending the life of items that might otherwise be thrown away, while also teaching basic repair skills to attendees.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Repair cafes help reduce waste and teach repair skills by fixing items for free.",
+      "Repair cafes primarily focus on repairing automobiles.",
+      "Most communities have replaced professional repair shops with repair cafes.",
+      "Repair cafes charge a small fee for their services.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage states the events are free, reduce waste, and teach skills, matching choice A. It never mentions automobiles, replacing professional shops, or charging fees.",
+  },
+  {
+    id: "ii-360",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "A zoologist argues that artificial light near a wetland has pushed a population of nocturnal frogs to become active later at night, citing a field log: 'In sections of the wetland closest to the new roadway lights, frog calling activity now peaks nearly two hours later than it does in the unlit sections just a quarter mile away, a gap that did not exist in recordings taken before the lights were installed.'",
+    prompt: "Which quotation from the field log best supports the zoologist's argument?",
+    choices: [
+      "'In sections of the wetland closest to the new roadway lights, frog calling activity now peaks nearly two hours later than it does in the unlit sections just a quarter mile away, a gap that did not exist in recordings taken before the lights were installed.'",
+      "'The wetland covers approximately 50 acres.'",
+      "'Frog calling is typically used to attract mates.'",
+      "'The roadway lights were installed to improve driver visibility.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is that artificial light shifted the frogs' activity timing. Only the first quotation reports the timing gap appearing near the lights and being absent before installation, directly tying the light to the behavioral shift.",
+  },
+  {
+    id: "ii-361",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage:
+      "A principal claims that adding fifteen minutes of daily recess improved students' performance on standardized tests. Before the change, the school's average test score was 72; after a full year with the added recess time, the average rose to 79.",
+    prompt: "Which choice best describes data that supports the principal's claim?",
+    choices: [
+      "The school's average test score rose from 72 to 79 after a year with the added recess time.",
+      "Recess is held on the school's outdoor playground.",
+      "The school has about 500 students enrolled.",
+      "Teachers supervise students during recess in shifts.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A provides the before-and-after score comparison tied to the added recess time, which is the evidence for the claim.",
+  },
+  {
+    id: "ii-362",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "A particular species of frog has only ever been documented living near streams with very low levels of chemical pollutants; researchers have never found the species near streams with moderate or high pollutant levels, even in otherwise similar habitats.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "This frog species is likely sensitive to chemical pollutants in its stream habitat.",
+      "This frog species can survive in any type of stream environment.",
+      "Pollutant levels in streams have increased in recent years.",
+      "No other animal species are affected by chemical pollutants in streams.",
+    ],
+    answer: 0,
+    explanation:
+      "Since the species appears only near low-pollutant streams despite otherwise similar habitats being available, it's reasonable to infer sensitivity to pollutants. The other choices go beyond or contradict what the text supports.",
+  },
+  {
+    id: "ii-363",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "Lightweight satellite trackers attached to migratory songbirds have revealed that some species fly nonstop for days over open ocean, a feat researchers previously doubted was possible given the birds' small size and limited fat reserves.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Satellite tracking has shown that some small songbirds make longer nonstop ocean flights than researchers had believed possible.",
+      "All migratory birds are now tracked using satellite technology.",
+      "Songbirds cannot survive long flights over open ocean.",
+      "Fat reserves are irrelevant to a bird's ability to migrate.",
+    ],
+    answer: 0,
+    explanation:
+      "The text's point is that tracking revealed longer, doubted flights, matching choice A. It doesn't claim all birds are tracked, and it contradicts B and D, which misstate the findings.",
+  },
+  {
+    id: "ii-364",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "A baker argues that the age of a sourdough starter meaningfully affects the flavor of the finished bread, citing kitchen notes: 'Loaves made from the five-year-old starter consistently received more comments about a pleasant tanginess from taste testers than loaves made the same week from a starter only two weeks old, even when the recipe, flour, and baking time were identical.'",
+    prompt: "Which quotation from the kitchen notes best supports the baker's argument?",
+    choices: [
+      "'Loaves made from the five-year-old starter consistently received more comments about a pleasant tanginess from taste testers than loaves made the same week from a starter only two weeks old, even when the recipe, flour, and baking time were identical.'",
+      "'Sourdough starters require regular feeding with flour and water.'",
+      "'The bakery uses organic flour sourced from a local mill.'",
+      "'Bread baked at a higher temperature develops a darker crust.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim concerns starter age affecting flavor. Only the first quotation compares flavor feedback between two starter ages while holding other variables constant, directly supporting the claim.",
+  },
+  {
+    id: "ii-365",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage:
+      "A clinic manager claims that sending text message reminders increased the rate at which patients kept their scheduled appointments. Before sending reminders, 68% of scheduled patients showed up; after reminders began, 85% of scheduled patients showed up.",
+    prompt: "Which choice best describes data that supports the manager's claim?",
+    choices: [
+      "The appointment attendance rate rose from 68% to 85% after text reminders began.",
+      "The clinic is open five days a week.",
+      "Reminder texts are sent 24 hours before each appointment.",
+      "The clinic added two new doctors to its staff.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A reports the direct before-and-after attendance rates connected to the reminder texts, which is the evidence supporting the claim.",
+  },
+  {
+    id: "ii-366",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "A restaurant added a single new vegetarian entree to its menu as a small experiment, expecting it to account for a modest share of orders; within a month, it had become the second-best-selling dish on the entire menu.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "Customer interest in the new vegetarian entree exceeded what the restaurant had anticipated.",
+      "The restaurant removed all meat dishes from its menu.",
+      "The new entree was more expensive than every other dish on the menu.",
+      "Vegetarian dishes had never before been offered at the restaurant.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage contrasts the restaurant's modest expectation with the dish becoming the second-best seller, implying interest exceeded expectations. The other choices make claims the passage never supports.",
+  },
+  {
+    id: "ii-367",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage:
+      "A multi-year effort to run fiber-optic cable to rural households has connected tens of thousands of homes that previously relied on slow satellite internet, enabling residents to work remotely, attend online classes, and access telehealth appointments that were impractical with their old connections.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Expanding fiber-optic access to rural homes has opened up new remote work, education, and healthcare options for residents.",
+      "Satellite internet is faster than fiber-optic cable in rural areas.",
+      "Rural households no longer need internet access of any kind.",
+      "Telehealth appointments were common in rural areas before fiber-optic cable arrived.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage ties the fiber-optic expansion to new opportunities in work, education, and healthcare, matching choice A. It states the opposite of B, and D contradicts the passage's claim that telehealth was 'impractical' before.",
+  },
+  {
+    id: "ii-368",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage:
+      "A meteorologist argues that tall, closely spaced buildings intensify heat in a city's downtown core more than in its suburbs, citing a sensor log: 'On a day when the suburban weather station read 88 degrees at 3 p.m., sensors mounted between the downtown towers read 97 degrees at the same hour, and the gap between downtown and suburban readings was largest on the calmest, least windy afternoons.'",
+    prompt:
+      "Which quotation from the sensor log best supports the meteorologist's argument?",
+    choices: [
+      "'On a day when the suburban weather station read 88 degrees at 3 p.m., sensors mounted between the downtown towers read 97 degrees at the same hour, and the gap between downtown and suburban readings was largest on the calmest, least windy afternoons.'",
+      "'The downtown towers range from twenty to forty stories tall.'",
+      "'The suburban weather station has been in operation for fifteen years.'",
+      "'Wind speeds in the region vary by season.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is that building density intensifies downtown heat more than in suburbs. Only the first quotation directly compares simultaneous downtown and suburban temperatures and ties the gap to calm conditions consistent with trapped heat.",
+  },
+  {
+    id: "ii-369",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage:
+      "A medieval manuscript contains several passages where words are crossed out and rewritten in a noticeably different ink color than the surrounding text, with the corrected wording matching the style of a scribe known to have worked at the monastery decades after the manuscript was first copied.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The manuscript was likely revised by a later scribe after its original copying.",
+      "The manuscript was destroyed shortly after it was written.",
+      "The original scribe made no errors while copying the text.",
+      "The monastery stopped producing manuscripts after this one was completed.",
+    ],
+    answer: 0,
+    explanation:
+      "Different ink and a later scribe's style in the corrections suggest the manuscript was revised after its initial copying. The other choices are unsupported or contradicted by the text.",
+  },
+  {
+    id: "ii-370",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "An architect converted a century-old textile warehouse into apartments, preserving the original brick walls and timber beams rather than replacing them with modern materials. She argues that the building's industrial character, not just its lower construction cost, is what attracted tenants willing to pay a premium for units that most new developments cannot replicate.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "An architect's preservation of a warehouse's industrial features, not merely cost savings, drew tenants to the converted apartments.",
+      "Tenants prefer apartments in brand-new buildings over converted warehouses.",
+      "The conversion was less expensive than constructing a new apartment building.",
+      "Timber beams are structurally weaker than modern building materials.",
+    ],
+    answer: 0,
+    explanation:
+      "The architect's argument is specifically that character, beyond cost, drove demand, matching choice A. Choice B contradicts the passage, C is only part of the picture the architect downplays, and D is never discussed.",
+  },
+  {
+    id: "ii-371",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "An economist argues that the shift to remote work, rather than a general decline in consumer spending, is the main reason downtown lunch-hour retail sales fell in a mid-sized city, citing a retail survey: 'Downtown lunch-hour sales fell 22% in neighborhoods with the highest share of office workers now working from home, while downtown blocks with few office buildings and little remote-work impact saw sales fall by less than 3% over the same period, even though both areas faced identical local tax and pricing conditions.'",
+    prompt: "Which quotation from the retail survey best supports the economist's argument?",
+    choices: [
+      "'Downtown lunch-hour sales fell 22% in neighborhoods with the highest share of office workers now working from home, while downtown blocks with few office buildings and little remote-work impact saw sales fall by less than 3% over the same period, even though both areas faced identical local tax and pricing conditions.'",
+      "'The city's downtown core covers about thirty blocks.'",
+      "'Several new restaurants opened downtown last year.'",
+      "'Consumer spending nationally dipped slightly during the survey period.'",
+    ],
+    answer: 0,
+    explanation:
+      "The economist isolates remote work from general spending decline. Only the first quotation shows sales fell far more where remote work is concentrated, under otherwise identical conditions, directly supporting that remote work explains the drop.",
+  },
+  {
+    id: "ii-372",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A vineyard manager claims that a new canopy-thinning technique increased the sugar content of harvested grapes without reducing the overall yield. After adopting the technique, average sugar content rose from 22 to 25 degrees Brix, while yield per acre changed only slightly, from 4.1 to 4.0 tons.",
+    prompt: "Which finding most directly supports the vineyard manager's claim?",
+    choices: [
+      "Sugar content rose from 22 to 25 degrees Brix while yield per acre stayed nearly the same, at 4.1 versus 4.0 tons.",
+      "Canopy thinning is typically done in early summer.",
+      "The vineyard grows three different grape varieties.",
+      "Grape harvesting is done by hand at the vineyard.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim requires both a sugar increase and stable yield. Only choice A reports data on both outcomes, with yield essentially unchanged.",
+  },
+  {
+    id: "ii-373",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "A small town's largest employer, a manufacturing plant that had operated for forty years, closed after relocating production overseas. In the following months, several shops along the town's main street reported noticeably fewer customers, and two longtime storefronts shut down.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The plant's closure likely reduced local spending enough to hurt nearby businesses.",
+      "The plant's closure had no effect on the town's economy.",
+      "The town's remaining businesses were already struggling before the plant closed.",
+      "The plant relocated because local businesses were underperforming.",
+    ],
+    answer: 0,
+    explanation:
+      "The timing of fewer customers and closures following the plant's departure supports inferring a link between lost local income and struggling shops. The other choices contradict the sequence described or invent causes not in the text.",
+  },
+  {
+    id: "ii-374",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "A chef who trained in classical French technique has built her restaurant's menu around fermented vegetables, a practice she first encountered not in culinary school but while helping her grandmother preserve the family garden's surplus harvest each autumn. She insists the dishes are not a trend she adopted but a return to methods she grew up with.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A chef's fermentation-focused menu stems from family tradition rather than a culinary trend.",
+      "The chef learned fermentation techniques primarily in culinary school.",
+      "Fermented vegetables are a recent invention in the restaurant industry.",
+      "The chef no longer uses any classical French techniques.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage emphasizes the chef's grandmother and family history as the true source of her approach, distinguishing it from trend-following, matching choice A. Choices B and C contradict the passage, and D is never stated.",
+  },
+  {
+    id: "ii-375",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "A track coach argues that requiring athletes to track and report their sleep duration improved their race times more than any change to the training schedule, citing a season log: 'Runners who increased average nightly sleep by at least an hour during the monitoring period improved their mile times by an average of eleven seconds, while runners whose sleep duration stayed the same showed no meaningful change in times, even though all runners followed the identical training plan.'",
+    prompt: "Which quotation from the season log best supports the coach's argument?",
+    choices: [
+      "'Runners who increased average nightly sleep by at least an hour during the monitoring period improved their mile times by an average of eleven seconds, while runners whose sleep duration stayed the same showed no meaningful change in times, even though all runners followed the identical training plan.'",
+      "'The team practices six days a week during the season.'",
+      "'Mile times were recorded using a handheld stopwatch.'",
+      "'Several runners joined the team as freshmen this year.'",
+    ],
+    answer: 0,
+    explanation:
+      "The coach isolates sleep from training as the cause of improvement. Only the first quotation shows a performance gap tied to sleep changes while training stayed identical for everyone, directly supporting the claim.",
+  },
+  {
+    id: "ii-376",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A hospital administrator claims that a new hand-hygiene campaign reduced the rate of hospital-acquired infections among surgical patients. In the quarter before the campaign, the infection rate was 4.8%; in the quarter after the campaign launched, it fell to 2.1%, even as the number of surgeries performed increased slightly.",
+    prompt: "Which finding most directly supports the administrator's claim?",
+    choices: [
+      "The infection rate fell from 4.8% to 2.1% after the campaign launched, despite a slight increase in surgeries performed.",
+      "The campaign included posters placed throughout the surgical wing.",
+      "The hospital has operated for over sixty years.",
+      "Surgical patients stay in the hospital for an average of three days.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A reports the direct before-and-after infection rates, and notes the drop occurred even as surgery volume rose slightly, which strengthens the link to the campaign rather than reduced caseload.",
+  },
+  {
+    id: "ii-377",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "In a heavily industrialized region where decades of soot had darkened tree bark, researchers found that a local beetle species was almost entirely dark-colored, while the same species in a nearby unpolluted forest with lighter bark was predominantly pale-colored.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The beetle population's coloring likely shifted to better match the bark color in each environment.",
+      "The beetle species cannot survive in unpolluted forests.",
+      "Soot pollution has increased in the unpolluted forest in recent years.",
+      "All beetle species show the same coloring pattern regardless of environment.",
+    ],
+    answer: 0,
+    explanation:
+      "The correlation between bark color and beetle color in two different environments suggests coloring adapted to match local bark, likely for camouflage. The other choices are unsupported or contradicted by the text.",
+  },
+  {
+    id: "ii-378",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "City officials who mandated vegetation on new commercial rooftops expected the policy mainly to reduce summer cooling costs for building owners. Several years in, however, monitoring data shows the policy's largest measurable effect has been a drop in nearby street-level temperatures during heat waves, a benefit that extends well beyond the buildings themselves.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A green-roof policy meant to cut cooling costs has turned out to most notably lower nearby street temperatures.",
+      "The green-roof policy has failed to produce any measurable benefits.",
+      "Officials designed the policy specifically to cool city streets.",
+      "Building owners have refused to comply with the vegetation mandate.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage contrasts the policy's original intent, cooling costs, with its biggest actual effect, street-level cooling, matching choice A. It contradicts B and C, and D is never mentioned.",
+  },
+  {
+    id: "ii-379",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "A museum curator argues that a newly adopted cleaning solvent preserved a painting's original pigments better than the solvent used in a previous restoration decades earlier, citing a conservation report: 'Spectral analysis of the repainted section cleaned with the new solvent showed pigment composition nearly identical to unrestored areas of the canvas, whereas sections cleaned decades ago with the earlier solvent showed measurable pigment loss when compared to the same unrestored reference areas.'",
+    prompt: "Which quotation from the conservation report best supports the curator's argument?",
+    choices: [
+      "'Spectral analysis of the repainted section cleaned with the new solvent showed pigment composition nearly identical to unrestored areas of the canvas, whereas sections cleaned decades ago with the earlier solvent showed measurable pigment loss when compared to the same unrestored reference areas.'",
+      "'The painting was created in the late eighteenth century.'",
+      "'The museum displays the painting under controlled lighting.'",
+      "'The earlier restoration took place during a renovation of the gallery.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim compares two solvents' effects on pigment preservation. Only the first quotation directly compares pigment loss between sections cleaned with each solvent, supporting the claim that the new solvent preserved pigments better.",
+  },
+  {
+    id: "ii-380",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A transportation researcher claims that a ride-share app's carpool option reduced average per-rider commute emissions in a city. Before the carpool option was introduced, average emissions per commute trip were 2.4 kilograms of carbon dioxide; after the option became available and was used by a third of riders, average emissions per trip fell to 1.7 kilograms.",
+    prompt: "Which finding most directly supports the researcher's claim?",
+    choices: [
+      "Average emissions per commute trip fell from 2.4 to 1.7 kilograms of carbon dioxide after the carpool option became available.",
+      "The ride-share app operates in over a dozen cities.",
+      "Riders can rate their drivers after each trip.",
+      "The carpool option matches riders heading in similar directions.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A reports the before-and-after emissions data tied to the carpool option's introduction, which is the direct evidence for the claim.",
+  },
+  {
+    id: "ii-381",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "A wildlife biologist who has recorded the arrival dates of a migratory butterfly species for over twenty years has observed that each decade, the butterflies arrive at their northern breeding grounds several days earlier than the decade before, a trend that closely tracks rising average spring temperatures in the region.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "Warming spring temperatures are likely influencing the timing of the butterflies' migration.",
+      "The butterfly species will stop migrating within the next decade.",
+      "Spring temperatures in the region have remained constant for twenty years.",
+      "The butterflies have changed their migration route rather than their timing.",
+    ],
+    answer: 0,
+    explanation:
+      "The close tracking between earlier arrivals and rising spring temperatures supports inferring a temperature influence on timing. The other choices contradict or go beyond the text's focus on timing, not route or future behavior.",
+  },
+  {
+    id: "ii-382",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "For decades, most paleontologists assumed feathers evolved primarily for flight. The discovery of several small, clearly flightless dinosaur species covered in simple feather-like structures has led many researchers to argue instead that feathers first evolved for insulation or display, with flight emerging as a later use of an already-existing feature.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Fossil evidence has shifted scientific opinion toward feathers evolving for purposes other than flight before later being used for it.",
+      "All dinosaurs were capable of flight.",
+      "Feathers evolved exclusively for display purposes.",
+      "Paleontologists have always agreed that feathers evolved for insulation.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage traces a shift from a flight-first assumption to an insulation-or-display-first view, matching choice A. Choices B and C overstate single explanations, and D contradicts the passage's description of a long-held different assumption.",
+  },
+  {
+    id: "ii-383",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "A journalist argues that a technology startup's sudden layoffs resulted from overly aggressive expansion rather than from a broader industry downturn, citing internal hiring records: 'The company tripled its headcount in eighteen months while revenue grew by only 40% over the same period, and competitors of similar size who expanded more cautiously during that stretch conducted no layoffs at all.'",
+    prompt: "Which quotation from the hiring records best supports the journalist's argument?",
+    choices: [
+      "'The company tripled its headcount in eighteen months while revenue grew by only 40% over the same period, and competitors of similar size who expanded more cautiously during that stretch conducted no layoffs at all.'",
+      "'The company was founded nine years ago.'",
+      "'The startup's headquarters relocated to a larger office last year.'",
+      "'Several employees received promotions during the expansion period.'",
+    ],
+    answer: 0,
+    explanation:
+      "The journalist isolates overexpansion from an industry-wide cause. Only the first quotation shows the mismatch between headcount growth and revenue growth, plus the contrast with cautious competitors avoiding layoffs, directly supporting the overexpansion explanation.",
+  },
+  {
+    id: "ii-384",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A bakery owner claims that a newly installed convection oven reduced the amount of energy used per loaf of bread baked. Before installing the new oven, the bakery used an average of 1.8 kilowatt-hours per loaf; after installation, it used an average of 1.1 kilowatt-hours per loaf, while daily loaf output stayed about the same.",
+    prompt: "Which finding most directly supports the owner's claim?",
+    choices: [
+      "Energy use per loaf fell from 1.8 to 1.1 kilowatt-hours after the new oven was installed, with daily output staying about the same.",
+      "The new oven has a larger interior capacity than the old one.",
+      "The bakery sells its bread to several local cafes.",
+      "The old oven had been in use for twelve years before replacement.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is about energy use per loaf. Only choice A reports the direct before-and-after energy figures per loaf while noting output held steady, which is the needed evidence.",
+  },
+  {
+    id: "ii-385",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "X-ray imaging of a famous portrait revealed an earlier sketch beneath the visible paint layer showing the subject in a markedly different pose, facing away from the viewer rather than toward them, with none of the finished portrait's symbolic objects included in the hidden sketch.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The artist likely revised the composition significantly after the initial sketch was made.",
+      "The visible portrait and the hidden sketch were painted by different artists.",
+      "The symbolic objects in the finished portrait were added by a later restorer.",
+      "The subject of the portrait posed for the artist on only one occasion.",
+    ],
+    answer: 0,
+    explanation:
+      "A hidden sketch with a different pose and missing symbolic objects, compared to the finished work, most reasonably suggests the artist changed the composition during the painting process. The other choices introduce claims the text does not support.",
+  },
+  {
+    id: "ii-386",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "A small island nation once entirely dependent on imported diesel fuel for electricity has, within a decade, shifted to generating most of its power from solar panels and wind turbines, a transition that officials say was driven less by environmental concern than by the simple fact that shipping diesel to the island had become unreliable and increasingly expensive.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Practical fuel-supply problems, more than environmental concerns, drove an island nation's shift to renewable energy.",
+      "The island nation still relies primarily on imported diesel for electricity.",
+      "Environmental activism was the main force behind the island's energy transition.",
+      "Solar and wind power have proven less reliable than diesel on the island.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage explicitly attributes the shift to supply and cost problems with diesel rather than environmental motives, matching choice A. Choices B, C, and D contradict details in the passage.",
+  },
+  {
+    id: "ii-387",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "A marine ecologist argues that a kelp forest restoration project successfully reestablished a self-sustaining ecosystem rather than merely creating a temporary bloom, citing a monitoring report: 'Three years after the last kelp seedlings were planted, the restored area is producing new kelp growth entirely on its own, and fish and invertebrate populations within it now match densities found in kelp forests that were never damaged.'",
+    prompt: "Which quotation from the monitoring report best supports the ecologist's argument?",
+    choices: [
+      "'Three years after the last kelp seedlings were planted, the restored area is producing new kelp growth entirely on its own, and fish and invertebrate populations within it now match densities found in kelp forests that were never damaged.'",
+      "'The restoration project began with funding from a coastal conservation grant.'",
+      "'Kelp forests provide habitat for many marine species.'",
+      "'Divers planted the initial kelp seedlings over several weeks.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is that the ecosystem is self-sustaining, not temporary. Only the first quotation shows ongoing, unassisted growth and population densities matching undamaged forests years after planting stopped, directly supporting self-sustaining success.",
+  },
+  {
+    id: "ii-388",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A city council claims that replacing downtown streetlights with LED fixtures reduced the city's annual lighting energy costs. In the year before the replacement, the city spent $410,000 on streetlight electricity; in the year after full replacement, it spent $240,000, even though the number of streetlights in operation increased slightly.",
+    prompt: "Which finding most directly supports the council's claim?",
+    choices: [
+      "Annual streetlight electricity costs fell from $410,000 to $240,000 after full LED replacement, despite a slight increase in the number of streetlights.",
+      "LED fixtures are manufactured by several different companies.",
+      "The replacement project took eighteen months to complete.",
+      "Downtown streetlights are inspected twice a year.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A reports the direct before-and-after cost figures, strengthened by noting the drop occurred despite slightly more streetlights, which is the evidence needed to support the claim.",
+  },
+  {
+    id: "ii-389",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "After several investors expressed doubt about its original product focus, a startup shifted its core offering to address a narrower problem one investor had specifically raised. Within two quarters of the pivot, the company's user base grew faster than it had during its entire previous year on the original product.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The narrower problem the startup addressed after pivoting likely had stronger market demand than its original focus.",
+      "The investors who raised concerns withdrew their funding entirely.",
+      "The startup's original product had no users at all.",
+      "User growth was unrelated to the change in product focus.",
+    ],
+    answer: 0,
+    explanation:
+      "Faster growth following a pivot toward a specific problem investors flagged suggests that problem had more demand. The other choices are unsupported or contradicted by the timing described.",
+  },
+  {
+    id: "ii-390",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "A linguist spending her summers recording conversations with the last fluent speakers of an endangered language insists her goal is not to preserve the language in archives alone but to create teaching materials that a new generation of children in the community can actually learn from, since a language without living speakers can still be studied but not truly spoken.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A linguist aims to produce materials that let children actively learn the endangered language, not just archive it.",
+      "The linguist believes archiving a language is more valuable than teaching it to children.",
+      "The endangered language already has many young fluent speakers.",
+      "The linguist has given up on preserving the language in any form.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage emphasizes the linguist's priority on living, spoken use by children over mere archiving, matching choice A. Choices B, C, and D contradict stated details.",
+  },
+  {
+    id: "ii-391",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "An archaeologist argues that a set of ruins long assumed to be a religious temple was more likely a public marketplace, citing an excavation log: 'The structure's central courtyard contains dozens of small stone counters arranged in rows, worn smooth in patterns consistent with repeated handling of goods, and the surrounding rooms held broken pottery and tools from several different trades rather than any single religious artifact.'",
+    prompt: "Which quotation from the excavation log best supports the archaeologist's argument?",
+    choices: [
+      "'The structure's central courtyard contains dozens of small stone counters arranged in rows, worn smooth in patterns consistent with repeated handling of goods, and the surrounding rooms held broken pottery and tools from several different trades rather than any single religious artifact.'",
+      "'The ruins were first discovered by local farmers a century ago.'",
+      "'The site sits near the remains of an ancient roadway.'",
+      "'Similar stone structures have been found in neighboring regions.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim reinterprets the site as commercial rather than religious. Only the first quotation describes features, worn counters and varied trade tools with no religious artifacts, consistent with a marketplace rather than a temple.",
+  },
+  {
+    id: "ii-392",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A supplement company claims its new protein powder causes greater muscle gain than a standard protein powder when combined with regular strength training.",
+    prompt:
+      "Which finding, if true, would most directly weaken the company's claim?",
+    choices: [
+      "In a controlled trial, participants using the new powder and those using the standard powder gained statistically indistinguishable amounts of muscle mass over twelve weeks of identical training.",
+      "The new protein powder contains added vitamins not found in the standard powder.",
+      "The new protein powder is more expensive than the standard powder.",
+      "Participants in the trial trained for one hour, four days a week.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is that the new powder produces greater muscle gain. A finding showing no meaningful difference in gains between the two powders directly undercuts that claim, while the other choices are irrelevant to muscle gain outcomes.",
+  },
+  {
+    id: "ii-393",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage:
+      "For several years, a village's main well tested unsafe for drinking due to high mineral contamination. After a filtration system was installed at the wellhead, water quality tests over the following year consistently came back within safe limits, and reports of the stomach illnesses once common in the village dropped substantially.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The filtration system likely contributed to both safer water and fewer illnesses in the village.",
+      "The well's contamination was never actually a health risk.",
+      "The filtration system eliminated all illness in the village.",
+      "Village residents stopped using the well after filtration began.",
+    ],
+    answer: 0,
+    explanation:
+      "The timing of improved water quality and reduced illness following filtration installation supports inferring the system's role in both outcomes. The other choices overstate or contradict details in the passage.",
+  },
+  {
+    id: "ii-394",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "A playwright known for serious historical dramas surprised audiences with her latest work, a production that intersperses scenes of court intrigue with moments of broad physical comedy. Reviewers disagree about whether the tonal shifts undermine the drama's weight or make its tragedy land harder by contrast, but most agree the blending is deliberate rather than accidental.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A playwright's deliberate mixing of comedy and drama in her new work has divided critics on its effect, though not on its intent.",
+      "Critics unanimously agree the new play's comedy ruins its dramatic impact.",
+      "The playwright has abandoned historical subjects entirely in her new work.",
+      "The tonal shifts in the play were the result of an editing mistake.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage notes disagreement about effect but agreement that the blend is intentional, matching choice A. Choice B overstates with 'unanimously,' C misstates the setting since court intrigue is historical, and D contradicts 'deliberate rather than accidental.'",
+  },
+  {
+    id: "ii-395",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage:
+      "A literary scholar argues that a novelist's famous theme of isolation emerged largely through her editor's suggestions rather than from the author's original vision, citing a letter the novelist wrote to a friend: 'I had written the ending with the whole family reunited, but my editor insisted the manuscript was stronger if the protagonist remained alone, and reluctantly, I rewrote the final three chapters exactly as she proposed.'",
+    prompt: "Which quotation from the novelist's letter best supports the scholar's argument?",
+    choices: [
+      "'I had written the ending with the whole family reunited, but my editor insisted the manuscript was stronger if the protagonist remained alone, and reluctantly, I rewrote the final three chapters exactly as she proposed.'",
+      "'The novel took nearly four years to complete.'",
+      "'My editor and I have worked together on three previous books.'",
+      "'The protagonist is loosely based on a cousin of mine.'",
+    ],
+    answer: 0,
+    explanation:
+      "The scholar's claim is that the isolation theme came from the editor, not the author. Only the first quotation shows the author originally wrote a reunited ending and changed it specifically at the editor's insistence, directly supporting that the theme was editorially driven.",
+  },
+  {
+    id: "ii-396",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage:
+      "A school district claims that a new peer-tutoring program improved graduation rates among students who struggled in their first year of high school. Before the program began, 61% of struggling first-year students eventually graduated on time; after the program was introduced, 78% of similarly struggling students graduated on time.",
+    prompt: "Which finding most directly supports the district's claim?",
+    choices: [
+      "On-time graduation among struggling first-year students rose from 61% to 78% after the tutoring program began.",
+      "The tutoring program pairs students with upperclassmen volunteers.",
+      "The district serves about 3,000 high school students total.",
+      "Tutoring sessions are held twice a week after school.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A presents the direct before-and-after graduation-rate comparison for the specific group targeted by the program, which is the evidence needed to support the claim.",
+  },
+  {
+    id: "ii-397",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage:
+      "When a city introduced a fee for driving into its downtown core during peak hours, officials expected the main effect to be reduced traffic congestion. Three years of data instead show the more significant change has been a shift in commuting habits, with far more residents now taking trains and buses than before the fee existed, even on routes congestion pricing was never meant to affect.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A downtown driving fee intended to ease congestion has mainly produced a broader shift toward public transit use.",
+      "The driving fee has had no effect on commuting patterns in the city.",
+      "Officials designed the fee specifically to increase public transit ridership.",
+      "Traffic congestion in the downtown core has worsened since the fee began.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage contrasts the fee's intended effect of less congestion with its larger actual effect of more transit use, matching choice A. The other choices contradict details given in the passage.",
+  },
+  {
+    id: "ii-398",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 3,
+    passage:
+      "Conventional accounts of a mid-century trade agreement credit it primarily with boosting the manufacturing sector of the smaller signatory nation. A revisionist economist contends that archival shipping records tell a more complicated story: the agreement's biggest beneficiary was actually the smaller nation's agricultural exporters, who gained preferential tariff treatment that manufacturing firms never secured, while manufacturing growth during the period stemmed largely from unrelated domestic investment.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Archival evidence suggests a trade agreement's credited benefit to manufacturing has been overstated, with agriculture actually gaining more from it.",
+      "The trade agreement provided no benefits to either signatory nation.",
+      "Manufacturing firms received the same tariff treatment as agricultural exporters.",
+      "Domestic investment played no role in the smaller nation's economic growth.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage presents a revisionist claim that agriculture, not manufacturing, was the agreement's real beneficiary, with manufacturing growth traced to unrelated investment, matching choice A. The other choices contradict specific details given.",
+  },
+  {
+    id: "ii-399",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "A historian argues that a nineteenth-century border treaty collapsed within a year primarily because of a mistranslation rather than bad faith by either side, citing a diplomat's private correspondence: 'Both delegations signed believing the disputed river marked the boundary, but the translator rendered the original document's phrase as referring to the river's eastern bank when the drafters on the other side had always intended the western bank, a discrepancy neither party noticed until border posts were physically placed the following spring.'",
+    prompt:
+      "Which quotation from the diplomat's correspondence best supports the historian's argument?",
+    choices: [
+      "'Both delegations signed believing the disputed river marked the boundary, but the translator rendered the original document's phrase as referring to the river's eastern bank when the drafters on the other side had always intended the western bank, a discrepancy neither party noticed until border posts were physically placed the following spring.'",
+      "'The treaty negotiations lasted nearly eight months.'",
+      "'Both nations had disputed the border for several decades before the treaty.'",
+      "'The river in question was used for trade by both nations.'",
+    ],
+    answer: 0,
+    explanation:
+      "The historian isolates mistranslation, not bad faith, as the cause. Only the first quotation shows both sides agreeing in good faith to a boundary that a translation error then rendered differently for each side, directly supporting the mistranslation explanation.",
+  },
+  {
+    id: "ii-400",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "An airline claims that a new back-to-front boarding procedure reduced average flight departure delays caused by boarding time. In the six months before the procedure was introduced, flights departed an average of 11 minutes late due to boarding; in the six months after, average boarding-related delay fell to 4 minutes, even as average passenger loads per flight rose slightly.",
+    prompt: "Which finding most directly supports the airline's claim?",
+    choices: [
+      "Average boarding-related departure delay fell from 11 to 4 minutes after the new procedure began, despite a slight rise in passenger loads.",
+      "The airline operates flights to over 100 destinations.",
+      "Passengers are assigned boarding groups printed on their tickets.",
+      "The airline introduced a new loyalty program the same year.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A reports the direct before-and-after delay figures, and the fact that the drop occurred despite slightly fuller flights strengthens the link to the new procedure rather than lighter passenger loads.",
+  },
+  {
+    id: "ii-401",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "A shipwreck identified by its manifest as having departed from a southern port carried, among its cargo, a type of glazed pottery that archaeologists have only ever found produced in a northern region hundreds of miles away, along with ballast stones whose mineral composition matches quarries near that same northern region.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The ship likely made a stop in the northern region before its final, documented departure, contrary to what the manifest alone suggests.",
+      "The pottery was manufactured at the southern port listed in the manifest.",
+      "The ballast stones were purely decorative and served no functional purpose.",
+      "The manifest's listed port of departure was deliberately falsified by the crew.",
+    ],
+    answer: 0,
+    explanation:
+      "Cargo and ballast tied to a northern region, despite a manifest listing a southern departure port, most reasonably suggests an unlisted stop in the north rather than fabrication or coincidence. The other choices are unsupported or contradicted by the text.",
+  },
+  {
+    id: "ii-402",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 3,
+    passage:
+      "Early spectral readings of a distant exoplanet's atmosphere were interpreted by some astronomers as strong evidence of water vapor, fueling speculation about habitability. A later reanalysis using refined calibration methods found that much of the original signal likely came from instrument interference, leaving the water vapor finding uncertain rather than disproven, a distinction some popular coverage of the reanalysis failed to make clear.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "A reanalysis has cast doubt on an exoplanet's water vapor signal without fully disproving it, a nuance some coverage missed.",
+      "Astronomers have definitively confirmed water vapor on the exoplanet.",
+      "The reanalysis proved the exoplanet has no atmosphere at all.",
+      "Popular coverage of the reanalysis accurately captured its uncertain conclusions.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage distinguishes 'uncertain rather than disproven' and notes coverage blurred that distinction, matching choice A. The other choices overstate or contradict the passage's careful framing.",
+  },
+  {
+    id: "ii-403",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "A glaciologist argues that industrial soot deposited on a mountain glacier's surface, not rising air temperature alone, accelerated its recent retreat, citing field measurements: 'Sections of the glacier with visibly darkened, soot-coated surfaces retreated nearly three times faster over the study period than sections of the same glacier at similar elevation and sun exposure that remained relatively clean, despite both sections experiencing identical air temperatures throughout.'",
+    prompt:
+      "Which quotation from the field measurements best supports the glaciologist's argument?",
+    choices: [
+      "'Sections of the glacier with visibly darkened, soot-coated surfaces retreated nearly three times faster over the study period than sections of the same glacier at similar elevation and sun exposure that remained relatively clean, despite both sections experiencing identical air temperatures throughout.'",
+      "'The glacier has been monitored by researchers for over thirty years.'",
+      "'Nearby industrial activity has existed in the region for a century.'",
+      "'The glacier feeds into a river used for regional irrigation.'",
+    ],
+    answer: 0,
+    explanation:
+      "The claim isolates soot from air temperature as the accelerating factor. Only the first quotation compares retreat rates between soot-coated and clean sections under identical temperatures, directly supporting soot as the key variable.",
+  },
+  {
+    id: "ii-404",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "A fertilizer company claims that its new product increases corn yield compared to a standard fertilizer when applied at recommended rates.",
+    prompt:
+      "Which finding, if true, would most directly weaken the company's claim?",
+    choices: [
+      "In side-by-side field trials using recommended application rates, fields treated with the new fertilizer and fields treated with standard fertilizer produced statistically identical corn yields.",
+      "The new fertilizer is sold in fifty-pound bags.",
+      "Corn prices fluctuated significantly during the growing season of the trial.",
+      "The new fertilizer was tested on three different corn varieties.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim is that the new fertilizer increases yield relative to the standard. A finding of statistically identical yields directly undermines that claim, while the other choices have no bearing on the yield comparison.",
+  },
+  {
+    id: "ii-405",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "Pottery fragments from two historically rival civilizations show starkly different decorative styles in layers dated to their early history, but fragments from layers dated several generations later display motifs and glazing techniques that borrow heavily from both traditions, appearing in settlements on both sides of their shared border.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "Cultural exchange likely occurred between the two civilizations despite their historical rivalry.",
+      "The two civilizations merged into a single political state.",
+      "One civilization completely abandoned its original pottery traditions.",
+      "The shared border between the civilizations was closed to all travel.",
+    ],
+    answer: 0,
+    explanation:
+      "Blended motifs appearing in settlements on both sides of the border, despite rivalry, most reasonably suggests some form of cultural exchange occurred. The other choices make claims well beyond what the pottery evidence supports.",
+  },
+  {
+    id: "ii-406",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 3,
+    passage:
+      "A diary long read by historians as a straightforward account of a soldier's wartime experiences has, under closer scrutiny of its dated entries, revealed inconsistencies suggesting many passages were written well after the events they describe, possibly during the soldier's later years. This has led some historians to argue the diary should be treated less as a contemporary record and more as a reconstructed memoir shaped by hindsight.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Evidence of delayed writing has led historians to reconsider a diary as a hindsight-shaped memoir rather than a contemporary account.",
+      "The diary has been proven to be entirely fabricated.",
+      "All historians now agree the diary was written during the war itself.",
+      "The soldier's later years were undocumented before this diary was found.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage describes a shift in interpretation from contemporary record to later reconstruction, matching choice A. Choice B overstates with 'entirely fabricated,' C contradicts the passage's description of new doubt, and D is not discussed.",
+  },
+  {
+    id: "ii-407",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "A sociologist argues that a neighborhood watch program, rather than an unrelated citywide dip in burglary that year, accounted for the sharp drop in break-ins within one particular neighborhood, citing police records: 'Burglary reports in the watch program's neighborhood fell 52% the year the program began, while burglary reports citywide, excluding that neighborhood, fell only 6% over the same period, and no other neighborhood of comparable size recorded a drop larger than 10%.'",
+    prompt: "Which quotation from the police records best supports the sociologist's argument?",
+    choices: [
+      "'Burglary reports in the watch program's neighborhood fell 52% the year the program began, while burglary reports citywide, excluding that neighborhood, fell only 6% over the same period, and no other neighborhood of comparable size recorded a drop larger than 10%.'",
+      "'The neighborhood has approximately 1,200 households.'",
+      "'The watch program holds monthly meetings at a community center.'",
+      "'Citywide burglary rates have fluctuated over the past decade.'",
+    ],
+    answer: 0,
+    explanation:
+      "The sociologist isolates the program's effect from a citywide trend. Only the first quotation shows the program's neighborhood far outpacing the citywide and comparable-neighborhood declines, directly supporting that the program, not a general dip, caused the drop.",
+  },
+  {
+    id: "ii-408",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "A conservation group claims that a decade-long reforestation project increased the diversity of bird species nesting in a previously cleared valley. Before the project began, surveys recorded 14 nesting bird species in the valley; ten years after planting began, surveys recorded 37 nesting species, including several species not previously documented anywhere in the surrounding region.",
+    prompt: "Which finding most directly supports the conservation group's claim?",
+    choices: [
+      "Nesting bird species in the valley rose from 14 to 37 over the ten years after planting began, including species new to the surrounding region.",
+      "The reforestation project planted native tree species exclusively.",
+      "The valley covers approximately 2,000 acres.",
+      "Volunteers planted most of the trees during weekend events.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim concerns increased species diversity. Only choice A reports the direct before-and-after species counts, strengthened by noting some species were new to the whole region, which is the needed evidence.",
+  },
+  {
+    id: "ii-409",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "A detector at one physics laboratory recorded an unexpected signal that did not match predictions of the standard model. Initially dismissed as equipment error, the same anomalous signal, at a statistically similar magnitude, was later recorded by two independent laboratories using differently designed detectors, though none of the three results alone reached the statistical threshold considered conclusive.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The anomalous signal is less likely to be a simple equipment error than the first laboratory initially assumed.",
+      "The anomalous signal has been conclusively confirmed as a new physical phenomenon.",
+      "All three laboratories used identical detector designs.",
+      "The standard model has been proven incorrect by these results.",
+    ],
+    answer: 0,
+    explanation:
+      "Independent replication across differently designed detectors makes a simple equipment-error explanation less likely, even though the passage explicitly notes the results are not yet conclusive. The other choices overstate what the passage supports.",
+  },
+  {
+    id: "ii-410",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 3,
+    passage:
+      "After three decades creating static bronze figures, a sculptor began building large-scale kinetic sculptures driven by wind and water rather than fixed in place. Critics initially dismissed the shift as a gimmick meant to attract media attention, but a close look at the sculptor's notebooks from that period shows years of private experiments with motion predating any public exhibition, suggesting the change grew from sustained personal curiosity rather than a calculated publicity move.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: [
+      "Private notebooks undercut the view that a sculptor's shift to kinetic art was a publicity gimmick, pointing instead to years of genuine experimentation.",
+      "The sculptor abandoned bronze sculpture after a single failed exhibition.",
+      "Critics universally praised the sculptor's new kinetic works from the start.",
+      "The notebooks reveal the kinetic sculptures were created primarily by assistants.",
+    ],
+    answer: 0,
+    explanation:
+      "The passage uses notebook evidence to counter the gimmick narrative with genuine, sustained experimentation, matching choice A. Choice B misstates the reason for the shift, C contradicts the initial dismissal described, and D is never mentioned.",
+  },
+  {
+    id: "ii-411",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 3,
+    passage:
+      "An engineer argues that a seismic retrofit completed two years before a major earthquake, rather than the bridge's original design, prevented a highway overpass from collapsing, citing a structural inspection report: 'Steel reinforcement sleeves added during the retrofit showed significant deformation consistent with absorbing the earthquake's lateral forces, while an identical, unretrofitted overpass eleven miles away that experienced comparable shaking suffered a partial structural collapse at the same support columns the retrofit had reinforced.'",
+    prompt:
+      "Which quotation from the inspection report best supports the engineer's argument?",
+    choices: [
+      "'Steel reinforcement sleeves added during the retrofit showed significant deformation consistent with absorbing the earthquake's lateral forces, while an identical, unretrofitted overpass eleven miles away that experienced comparable shaking suffered a partial structural collapse at the same support columns the retrofit had reinforced.'",
+      "'The overpass was originally constructed over fifty years ago.'",
+      "'The retrofit project took approximately eight months to complete.'",
+      "'The region has a documented history of seismic activity.'",
+    ],
+    answer: 0,
+    explanation:
+      "The engineer isolates the retrofit, not the original design, as the reason the overpass survived. Only the first quotation directly compares the retrofitted overpass's performance to an unretrofitted, comparably shaken twin that partially collapsed at the very columns the retrofit reinforced.",
+  },
+  {
+    id: "ii-412",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 3,
+    passage:
+      "A manufacturing manager claims that installing robotic arms on an assembly line increased daily output without increasing the rate of defective units. Before installation, the line produced an average of 850 units per day with a 2.1% defect rate; after installation, it produced an average of 1,300 units per day with a defect rate of 2.0%.",
+    prompt: "Which finding most directly supports the manager's claim?",
+    choices: [
+      "Daily output rose from 850 to 1,300 units while the defect rate stayed essentially flat, from 2.1% to 2.0%, after the robotic arms were installed.",
+      "The robotic arms were purchased from an overseas manufacturer.",
+      "The assembly line operates in three daily shifts.",
+      "Workers received training on the new robotic arms before installation.",
+    ],
+    answer: 0,
+    explanation:
+      "The claim requires both higher output and an unchanged defect rate. Only choice A reports data on both measures, showing output rising substantially while the defect rate remained essentially flat.",
+  },
+  {
+    id: "ii-413",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 3,
+    passage:
+      "Tree-ring samples from a forest near a region whose historical chronicles describe a decade of unusually abundant harvests instead show unusually narrow growth rings during those same years, a pattern tree-ring researchers typically associate with drought conditions rather than favorable growing weather.",
+    prompt: "Which choice is the most logical inference based on the text?",
+    choices: [
+      "The historical chronicles' description of abundant harvests during that decade may be inaccurate or reflect conditions other than favorable weather.",
+      "Tree-ring data is always a less reliable indicator of climate than written chronicles.",
+      "The forest sampled was located in a different region from the one described in the chronicles.",
+      "Drought conditions always produce abundant agricultural harvests.",
+    ],
+    answer: 0,
+    explanation:
+      "A conflict between narrow, drought-associated rings and chronicled abundance most reasonably suggests the written record may not accurately reflect growing conditions in that decade. The other choices overstate general reliability claims or contradict the stated pattern.",
   }
 );

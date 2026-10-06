@@ -4694,5 +4694,871 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Total adults who sleep 7 or more hours = 273 + 78 = 351. Of those, 273 also exercise at least 3 times per week, so the probability is 273/351 = 7/9.",
+  },
+  {
+    id: "pd-350",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 1,
+    prompt:
+      "A school's chess club has a ratio of returning members to new members of 5:3. If there are 18 new members, how many returning members are there?",
+    choices: ["30", "18", "10.8", "48"],
+    answer: 0,
+    explanation: "Returning members = new members × (5/3) = 18 × 5/3 = 30.",
+  },
+  {
+    id: "pd-351",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 1,
+    prompt:
+      "On a map, 2 centimeters represents 15 kilometers of actual distance. If two cities are 6 centimeters apart on the map, what is the actual distance between them, in kilometers?",
+    choices: ["45", "90", "21", "0.8"],
+    answer: 0,
+    explanation:
+      "Actual distance = 6 × (15/2) = 45 kilometers. (Multiplying 6 by 15 without dividing by 2 gives the incorrect 90; inverting the scale gives 0.8.)",
+  },
+  {
+    id: "pd-352",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 2,
+    prompt:
+      "A fruit punch recipe combines orange juice, pineapple juice, and sparkling water in the ratio 3:2:5. If a batch uses 10 liters of pineapple juice, how many total liters of punch are in the batch?",
+    choices: ["50", "25", "40", "35"],
+    answer: 0,
+    explanation:
+      "Pineapple juice is 2 parts and equals 10 liters, so each part is 5 liters. Orange juice = 3 × 5 = 15 L, sparkling water = 5 × 5 = 25 L. Total = 15 + 10 + 25 = 50 liters.",
+  },
+  {
+    id: "pd-353",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 2,
+    prompt:
+      "At a bakery, the ratio of chocolate chip cookies to oatmeal cookies on a tray is 7:4. After a batch of oatmeal cookies is added, the ratio becomes 7:6, and there are still 28 chocolate chip cookies on the tray. How many oatmeal cookies were added?",
+    choices: ["8", "24", "16", "20"],
+    answer: 0,
+    explanation:
+      "Chocolate chip count stays at 28, which is 7 parts, so each part = 4. Originally oatmeal = 4 parts = 16; after the addition, oatmeal = 6 parts = 24. Cookies added = 24 − 16 = 8.",
+  },
+  {
+    id: "pd-354",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 2,
+    prompt:
+      "A scale drawing of a park uses a scale where 3 inches represents 12 feet. If a path in the drawing is 7 inches long, how long is the actual path, in feet?",
+    choices: ["28", "84", "21", "16"],
+    answer: 0,
+    explanation:
+      "Scale factor = 12 ÷ 3 = 4 feet per inch. Actual length = 7 × 4 = 28 feet.",
+  },
+  {
+    id: "pd-355",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 3,
+    prompt:
+      "At a company, the ratio of managers to engineers is 2:9, and the ratio of engineers to technicians is 9:5. If there are 18 managers, how many technicians are there?",
+    choices: ["45", "81", "162", "10"],
+    answer: 0,
+    explanation:
+      "Managers = 18 is 2 parts of the 2:9 ratio, so each part = 9 and engineers = 9 × 9 = 81. Engineers = 81 is 9 parts of the 9:5 ratio, so each part = 9 and technicians = 5 × 9 = 45. (Stopping at the engineer count gives 81; applying the final ratio directly to the manager count, 18 × 5/9, gives the incorrect 10.)",
+  },
+  {
+    id: "pd-356",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Ratios and proportions",
+    difficulty: 3,
+    prompt:
+      "A jar contains red and blue marbles in the ratio 3:2. After 10 red marbles are removed, the ratio of red to blue becomes 1:2, and the number of blue marbles has not changed. How many blue marbles are in the jar?",
+    choices: ["10", "15", "5", "20"],
+    answer: 0,
+    explanation:
+      "Let red = 3k and blue = 2k originally. After removing 10 red marbles, (3k − 10)/(2k) = 1/2, so 6k − 20 = 2k, giving 4k = 20 and k = 5. Blue = 2k = 10 (unchanged, as stated); red becomes 3(5) − 10 = 5, and 5:10 = 1:2, confirming the setup.",
+  },
+  {
+    id: "pd-357",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 1,
+    prompt: "A canning plant fills 540 jars in 9 hours at a constant rate. How many jars does it fill in 5 hours?",
+    choices: ["300", "270", "60", "2700"],
+    answer: 0,
+    explanation: "Rate = 540/9 = 60 jars per hour. In 5 hours: 60 × 5 = 300 jars.",
+  },
+  {
+    id: "pd-358",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 1,
+    prompt: "Water flows from a tank at a constant rate of 15 liters per minute. How many liters flow out in 2 hours?",
+    choices: ["1800", "900", "30", "3600"],
+    answer: 0,
+    explanation: "2 hours = 120 minutes. 15 L/min × 120 min = 1,800 liters.",
+  },
+  {
+    id: "pd-359",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 2,
+    prompt:
+      "A delivery drone travels at a constant speed of 44 feet per second. What is its speed in miles per hour? (1 mile = 5,280 feet, 1 hour = 3,600 seconds)",
+    choices: ["30", "44", "88", "15"],
+    answer: 0,
+    explanation:
+      "44 ft/s × 3,600 s/hr = 158,400 ft/hr. Converting to miles: 158,400 ÷ 5,280 = 30 miles per hour.",
+  },
+  {
+    id: "pd-360",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 2,
+    prompt:
+      "A cyclist bikes 18 miles in 72 minutes at a constant pace. At this same pace, how many minutes would it take to bike 30 miles?",
+    choices: ["120", "90", "108", "150"],
+    answer: 0,
+    explanation: "Pace = 72 min ÷ 18 miles = 4 min/mile. Time for 30 miles = 4 × 30 = 120 minutes.",
+  },
+  {
+    id: "pd-361",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 2,
+    prompt:
+      "A tank holds 1,800 gallons when full. A pump fills it at a constant rate, completing the job in 6 hours. After the pump has run for 2 hours, how many more gallons are needed to fill the tank?",
+    choices: ["1200", "600", "1500", "300"],
+    answer: 0,
+    explanation:
+      "Rate = 1800/6 = 300 gallons per hour. After 2 hours, 300 × 2 = 600 gallons have been added. Remaining = 1800 − 600 = 1,200 gallons.",
+  },
+  {
+    id: "pd-362",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 3,
+    prompt:
+      "Working alone, Mia can mow a lawn in 40 minutes, and Noah can mow the same lawn in 60 minutes. If they work together at their respective rates, how many minutes will it take them to mow the lawn together?",
+    choices: ["24", "50", "20", "100"],
+    answer: 0,
+    explanation:
+      "Combined rate = 1/40 + 1/60 = 3/120 + 2/120 = 5/120 = 1/24 lawn per minute. Time = 24 minutes.",
+  },
+  {
+    id: "pd-363",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Rates and units",
+    difficulty: 3,
+    prompt:
+      "A train travels at 80 miles per hour for 2 hours and then at 60 miles per hour for 1 hour. What is the train's average speed, in miles per hour, for the entire trip?",
+    choices: ["≈73.3", "70", "75", "80"],
+    answer: 0,
+    explanation:
+      "Total distance = 80×2 + 60×1 = 220 miles. Total time = 2+1 = 3 hours. Average speed = 220/3 ≈ 73.3 mph. (Averaging the two speeds directly, (80+60)/2 = 70, is incorrect here because the time spent at each speed is not equal.)",
+  },
+  {
+    id: "pd-364",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 1,
+    prompt: "An $80 jacket is marked down by 25%. What is the sale price?",
+    choices: ["$60", "$55", "$20", "$65"],
+    answer: 0,
+    explanation: "Discount = 25% of 80 = 20. Sale price = 80 − 20 = $60.",
+  },
+  {
+    id: "pd-365",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 1,
+    prompt: "A survey of 250 people found that 40% own a pet. How many people in the survey own a pet?",
+    choices: ["100", "150", "60", "40"],
+    answer: 0,
+    explanation: "40% of 250 = 0.40 × 250 = 100.",
+  },
+  {
+    id: "pd-366",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 2,
+    prompt:
+      "A price increased from $120 to $150, and then decreased by 20% from the new price. What is the final price?",
+    choices: ["$120", "$150", "$96", "$130"],
+    answer: 0,
+    explanation:
+      "After the increase, the price is $150. A 20% decrease from $150 is 0.20×150 = $30, giving a final price of 150 − 30 = $120. (Applying the 20% decrease to the original $120 instead of the new $150 gives the incorrect $96.)",
+  },
+  {
+    id: "pd-367",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 2,
+    prompt: "A town's population grew by 8% in one year to reach 27,000. What was the population before the increase?",
+    choices: ["25,000", "24,840", "26,000", "29,160"],
+    answer: 0,
+    explanation:
+      "Let P be the original population. P × 1.08 = 27,000, so P = 27,000/1.08 = 25,000. (Subtracting 8% of 27,000 instead of dividing gives the incorrect 24,840.)",
+  },
+  {
+    id: "pd-368",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 2,
+    prompt: "A retailer buys a lamp for $40 and sells it for $58. What is the markup percentage, based on the retailer's cost?",
+    choices: ["45%", "31%", "18%", "69%"],
+    answer: 0,
+    explanation:
+      "Markup = (58 − 40)/40 = 18/40 = 0.45 = 45%. Using the sale price as the base (18/58 ≈ 31%) is a common error.",
+  },
+  {
+    id: "pd-369",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 3,
+    prompt:
+      "A solution is 30% acid by volume. If 4 liters of pure water are added to 6 liters of this solution, what is the new acid concentration, by volume?",
+    choices: ["18%", "30%", "12%", "24%"],
+    answer: 0,
+    explanation:
+      "Acid present = 0.30 × 6 = 1.8 liters. New total volume = 6 + 4 = 10 liters. New concentration = 1.8/10 = 18%.",
+  },
+  {
+    id: "pd-370",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Percentages",
+    difficulty: 3,
+    prompt:
+      "A company's revenue increased by 25% in Year 1 and then decreased by 20% in Year 2. What was the overall percent change in revenue from the start of Year 1 to the end of Year 2?",
+    choices: ["0%", "5% increase", "5% decrease", "45% increase"],
+    answer: 0,
+    explanation:
+      "Multiply the growth factors: 1.25 × 0.80 = 1.00, meaning revenue returns to its original value — a 0% overall change. Simply subtracting or adding the percentages (25−20=5 or 25+20=45) is incorrect because percent changes compound multiplicatively, not additively.",
+  },
+  {
+    id: "pd-371",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 1,
+    prompt: "A data set has values 4, 8, 8, 10, 15. What is the mode of this data set?",
+    choices: ["8", "10", "9", "15"],
+    answer: 0,
+    explanation: "8 appears twice, more often than any other value, so it is the mode. (The mean is 45/5=9.)",
+  },
+  {
+    id: "pd-372",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 1,
+    prompt:
+      "The weekly sales (in units) for a store over 5 weeks are 20, 22, 25, 22, 26. What is the median number of units sold?",
+    choices: ["22", "23", "25", "20"],
+    answer: 0,
+    explanation: "Sorted: 20, 22, 22, 25, 26. The middle value is 22. (The mean is 115/5=23.)",
+  },
+  {
+    id: "pd-373",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 2,
+    prompt:
+      "A data set of 7 exam scores has a mean of 82. If one score of 68 is removed, what is the mean of the remaining 6 scores?",
+    choices: ["≈84.3", "82", "78", "86"],
+    answer: 0,
+    explanation:
+      "Total of 7 scores = 82×7 = 574. Removing 68 leaves 574−68=506 over 6 scores: 506/6 ≈ 84.3.",
+  },
+  {
+    id: "pd-374",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 2,
+    prompt:
+      "Two sections of a course have the same mean score of 78 on a test, but Section A's scores range from 70 to 86 while Section B's scores range from 40 to 116. Which best describes the difference between the sections?",
+    choices: [
+      "Section B's scores are more spread out (greater variability) than Section A's, even though both have the same mean.",
+      "Section B has a higher average score than Section A.",
+      "Section A's scores are more spread out than Section B's.",
+      "The two sections have identical score distributions.",
+    ],
+    answer: 0,
+    explanation:
+      "Equal means don't imply equal spread. Section B's wider range (40 to 116) indicates greater variability (standard deviation) than Section A's narrower range (70 to 86).",
+  },
+  {
+    id: "pd-375",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 2,
+    prompt: "A set of 10 numbers has a mean of 15. A new number, 15, is added to the set. What is the mean of the new set of 11 numbers?",
+    choices: ["15", "15.5", "16", "14.5"],
+    answer: 0,
+    explanation:
+      "Adding a value equal to the existing mean does not change the mean: the new total is 150+15=165, divided by 11 = 15.",
+  },
+  {
+    id: "pd-376",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 3,
+    prompt:
+      "A class of 20 students has a mean test score of 74. After the teacher discovers a grading error, 5 students' scores each increase by 6 points, and the rest remain the same. What is the new mean score for the class?",
+    choices: ["75.5", "75", "80", "74.3"],
+    answer: 0,
+    explanation:
+      "Original total = 74×20=1480. Total increase = 5×6=30, so the new total = 1,510. New mean = 1510/20 = 75.5.",
+  },
+  {
+    id: "pd-377",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "One-variable data",
+    difficulty: 3,
+    prompt:
+      "Data set P has a standard deviation of 7, and data set Q is created by adding 12 to every value in data set P. How does the standard deviation of data set Q compare to that of data set P?",
+    choices: [
+      "It is the same, 7, because adding a constant to every value shifts the data but does not change its spread.",
+      "It increases to 19, because 12 is added to every value.",
+      "It increases to 84, because the deviation scales with the added value.",
+      "It becomes 0, because every value changes by the same amount.",
+    ],
+    answer: 0,
+    explanation:
+      "Adding a constant to every value in a data set shifts the mean but does not change the spread of values around the mean, so the standard deviation is unchanged at 7.",
+  },
+  {
+    id: "pd-378",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 1,
+    prompt:
+      "A scatterplot shows a strong negative linear relationship between the age of a car and its resale value. Which best describes this relationship?",
+    choices: [
+      "As a car's age increases, its resale value tends to decrease.",
+      "As a car's age increases, its resale value tends to increase.",
+      "A car's age and resale value are unrelated.",
+      "Older cars always have lower resale value than every newer car.",
+    ],
+    answer: 0,
+    explanation:
+      "A strong negative relationship means the two variables move in opposite directions: as age increases, resale value tends to decrease.",
+  },
+  {
+    id: "pd-379",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 1,
+    prompt:
+      "A line of best fit for a scatterplot of hours worked (x) versus pay earned in dollars (y) is y = 18x + 5. According to this model, what is the predicted pay for working 0 hours?",
+    choices: ["$5", "$18", "$0", "$23"],
+    answer: 0,
+    explanation: "The y-intercept of the line of best fit, 5, is the predicted value of y when x = 0.",
+  },
+  {
+    id: "pd-380",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 2,
+    prompt:
+      "A scatterplot of advertising spending (x, in thousands of dollars) versus monthly sales (y, in thousands of dollars) has a line of best fit y = 2.5x + 30. Based on this model, what is the predicted increase in monthly sales for each additional $1,000 spent on advertising?",
+    choices: ["$2,500", "$30,000", "$250", "$2,500,000"],
+    answer: 0,
+    explanation:
+      "The slope, 2.5, means that for each additional $1,000 (one unit of x) spent on advertising, predicted monthly sales increase by 2.5 thousand dollars, or $2,500.",
+  },
+  {
+    id: "pd-381",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 2,
+    prompt:
+      "A scatterplot plots the number of employees (x) at a company against annual revenue (y) in millions of dollars. The data shows a strong positive correlation. A news report claims, 'Hiring more employees causes a company's revenue to increase.' What is the main issue with this claim?",
+    choices: [
+      "Correlation alone does not establish causation; larger revenue could allow more hiring, or another factor could drive both.",
+      "The correlation coefficient must be negative for the claim to be questioned.",
+      "A strong positive correlation always proves a causal relationship.",
+      "Scatterplots cannot be used to study company data.",
+    ],
+    answer: 0,
+    explanation:
+      "A strong correlation shows the two variables tend to move together, but it does not show that one causes the other — reverse causation or a confounding variable (such as company size) could explain the pattern.",
+  },
+  {
+    id: "pd-382",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 2,
+    prompt:
+      "A scatterplot of weekly screen time (x, in hours) versus weekly outdoor physical activity (y, in hours) has a correlation coefficient of r = −0.82. Which statement correctly interprets this value?",
+    choices: [
+      "There is a strong negative linear relationship: more screen time is associated with less outdoor physical activity.",
+      "There is a strong positive linear relationship between screen time and outdoor activity.",
+      "There is a weak relationship between screen time and outdoor activity.",
+      "Screen time has no effect on outdoor activity.",
+    ],
+    answer: 0,
+    explanation:
+      "r = −0.82 is close to −1, indicating a strong negative linear association: as screen time increases, outdoor physical activity tends to decrease.",
+  },
+  {
+    id: "pd-383",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 3,
+    prompt:
+      "A botanist fits a line of best fit to a scatterplot of a tomato plant's height (y, in centimeters) versus weeks since planting (x), getting y = 4.2x + 8, based on data collected during weeks 1 through 12. Why would it be unreliable to use this equation to predict the plant's height at week 150?",
+    choices: [
+      "Week 150 is far outside the range of the data used to build the model, so extrapolating that far is unreliable — plants don't keep growing taller forever.",
+      "The slope of 4.2 is too small to apply to any week.",
+      "Linear models can only be used for whole numbers of weeks.",
+      "The y-intercept of 8 means the model is invalid for any week after week 1.",
+    ],
+    answer: 0,
+    explanation:
+      "Using a model to predict far beyond the range of the original data (extrapolation) is unreliable; the linear relationship observed in weeks 1–12 is unlikely to continue indefinitely, so predicting at week 150 is not justified.",
+  },
+  {
+    id: "pd-384",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Two-variable data",
+    difficulty: 3,
+    prompt:
+      "A scatterplot of 8 data points has a line of best fit y = 4x + 12. One point, (10, 95), lies far above the line, while the rest of the points lie close to the line. If this point is removed and the line of best fit is recalculated, what is the most likely effect?",
+    choices: [
+      "The new line's slope and intercept will change, and the new line will fit the remaining points more closely than before.",
+      "The line of best fit will stay exactly the same, since one point cannot affect a line fit to 8 points.",
+      "All remaining points will now lie exactly on the new line.",
+      "The correlation coefficient will become weaker after removing the outlier.",
+    ],
+    answer: 0,
+    explanation:
+      "An outlier like (10, 95), which lies far from the pattern of the other points, can pull the line of best fit toward it. Removing it typically changes the slope and intercept and improves (strengthens) the fit for the remaining points.",
+  },
+  {
+    id: "pd-385",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Probability",
+    difficulty: 1,
+    prompt:
+      "A bag contains 5 red marbles, 3 blue marbles, and 2 green marbles. If one marble is drawn at random, what is the probability that it is blue?",
+    choices: ["3/10", "1/3", "2/10", "5/10"],
+    answer: 0,
+    explanation: "P(blue) = number of blue marbles / total marbles = 3/10.",
+  },
+  {
+    id: "pd-386",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Probability",
+    difficulty: 1,
+    prompt: "A spinner is divided into 9 equal sections numbered 1 through 9. What is the probability that a single spin lands on a multiple of 3?",
+    choices: ["1/3", "4/9", "1/9", "2/9"],
+    answer: 0,
+    explanation: "The multiples of 3 from 1-9 are 3, 6, and 9 — 3 out of 9 equally likely outcomes, so the probability is 3/9 = 1/3.",
+  },
+  {
+    id: "pd-387",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Probability",
+    difficulty: 2,
+    prompt: "A standard six-sided die is rolled twice. What is the probability that the sum of the two rolls is 9?",
+    choices: ["1/9", "1/6", "1/12", "4/6"],
+    answer: 0,
+    explanation:
+      "There are 36 equally likely outcomes. The pairs summing to 9 are (3,6), (4,5), (5,4), (6,3) — 4 outcomes. Probability = 4/36 = 1/9.",
+  },
+  {
+    id: "pd-388",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Probability",
+    difficulty: 2,
+    prompt:
+      "A jar has 12 chips numbered 1 through 12. Two chips are drawn at random without replacement. What is the probability that both chips show even numbers?",
+    choices: ["5/22", "1/4", "1/2", "25/144"],
+    answer: 0,
+    explanation:
+      "P(first even) = 6/12. Without replacement, P(second even | first even) = 5/11. P(both even) = (6/12)(5/11) = 30/132 = 5/22. (Treating the draws as independent with replacement would incorrectly give (6/12)² = 1/4.)",
+  },
+  {
+    id: "pd-389",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Probability",
+    difficulty: 2,
+    prompt:
+      "At a school fair, a game gives a prize to 1 in 20 players, independently each time. If a student plays the game twice, what is the probability that the student wins at least once?",
+    choices: ["39/400", "1/10", "19/20", "361/400"],
+    answer: 0,
+    explanation:
+      "P(no win in one play) = 19/20. P(no win in two plays) = (19/20)² = 361/400. P(at least one win) = 1 − 361/400 = 39/400.",
+  },
+  {
+    id: "pd-390",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Probability",
+    difficulty: 3,
+    prompt:
+      "A box contains 4 defective and 16 working light bulbs. Two bulbs are selected at random without replacement. What is the probability that at least one of the two selected bulbs is defective?",
+    choices: ["7/19", "4/19", "1/5", "12/19"],
+    answer: 0,
+    explanation:
+      "P(neither defective) = (16/20)(15/19) = 240/380 = 12/19. P(at least one defective) = 1 − 12/19 = 7/19.",
+  },
+  {
+    id: "pd-391",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 1,
+    prompt:
+      "A survey of 90 students found that 60 take a foreign language class and, of those, 24 also take a music class. What is the probability that a randomly selected student who takes a foreign language class also takes a music class?",
+    choices: ["2/5", "24/90", "1/3", "60/90"],
+    answer: 0,
+    explanation:
+      "Given that the student takes a foreign language class (60 students), 24 of them also take a music class, so the probability is 24/60 = 2/5.",
+  },
+  {
+    id: "pd-392",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 2,
+    prompt:
+      "A survey of 300 adults found that 180 own a smart speaker. Of those who own a smart speaker, 108 also own a smart thermostat. Of the 120 adults who do not own a smart speaker, 24 own a smart thermostat. What is the probability that a randomly selected adult who owns a smart thermostat also owns a smart speaker?",
+    choices: ["9/11", "108/180", "108/300", "24/132"],
+    answer: 0,
+    explanation:
+      "Total thermostat owners = 108 + 24 = 132. Of those, 108 also own a smart speaker, so the probability is 108/132 = 9/11.",
+  },
+  {
+    id: "pd-393",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 2,
+    prompt:
+      "A diagnostic screening program tests 400 patients for a condition. 100 patients test positive. Of those who test positive, 90 actually have the condition. Of the 300 who test negative, 15 actually have the condition. What is the probability that a randomly selected patient who has the condition tested positive?",
+    choices: ["6/7", "90/100", "90/400", "15/105"],
+    answer: 0,
+    explanation:
+      "Total patients with the condition = 90 + 15 = 105. Of those, 90 tested positive, so the probability is 90/105 = 6/7.",
+  },
+  {
+    id: "pd-394",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 2,
+    prompt:
+      "A survey of 500 library patrons found that 300 borrow e-books. Of those who borrow e-books, 210 also borrow audiobooks. Of the 200 patrons who do not borrow e-books, 40 borrow audiobooks. What is the probability that a randomly selected patron who borrows audiobooks also borrows e-books?",
+    choices: ["21/25", "210/300", "210/500", "40/250"],
+    answer: 0,
+    explanation:
+      "Total audiobook borrowers = 210 + 40 = 250. Of those, 210 also borrow e-books, so the probability is 210/250 = 21/25.",
+  },
+  {
+    id: "pd-395",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 2,
+    prompt:
+      "A streaming service's data shows 360 subscribers, of whom 240 watch on a smart TV. Of those who watch on a smart TV, 180 also watch on a mobile device. Of the 120 subscribers who do not watch on a smart TV, 12 also watch on a mobile device. What is the probability that a randomly selected subscriber who watches on a mobile device also watches on a smart TV?",
+    choices: ["15/16", "180/240", "180/360", "12/192"],
+    answer: 0,
+    explanation:
+      "Total mobile-device viewers = 180 + 12 = 192. Of those, 180 also watch on a smart TV, so the probability is 180/192 = 15/16.",
+  },
+  {
+    id: "pd-396",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 3,
+    prompt:
+      "An airline reviews 450 flights, of which 300 departed on time. Of the flights that departed on time, 270 also arrived on time. Of the 150 flights that did not depart on time, 15 arrived on time. What is the probability that a randomly selected flight that did NOT arrive on time departed on time?",
+    choices: ["2/11", "270/300", "30/450", "135/165"],
+    answer: 0,
+    explanation:
+      "Among the 300 flights that departed on time, 300 − 270 = 30 did not arrive on time; among the 150 that did not depart on time, 150 − 15 = 135 did not arrive on time. Total that did not arrive on time = 30 + 135 = 165. The probability that such a flight departed on time = 30/165 = 2/11.",
+  },
+  {
+    id: "pd-397",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Conditional probability",
+    difficulty: 3,
+    prompt:
+      "An electronics retailer receives 600 tablets from two suppliers. Supplier X delivered 400 units, of which 20 are defective. Supplier Y delivered 200 units, of which 30 are defective. If a unit is selected at random from the defective units only, what is the probability that it came from Supplier Y?",
+    choices: ["3/5", "30/200", "30/600", "20/50"],
+    answer: 0,
+    explanation:
+      "Total defective units = 20 + 30 = 50. Of those, 30 came from Supplier Y, so the probability is 30/50 = 3/5.",
+  },
+  {
+    id: "pd-398",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 1,
+    prompt:
+      "A random sample of 160 podcast listeners found that 96 subscribe to a premium ad-free plan. Based on this sample, what is the best estimate of the percentage of all podcast listeners who subscribe to a premium plan?",
+    choices: ["60%", "96%", "160%", "40%"],
+    answer: 0,
+    explanation: "96/160 = 0.60 = 60%.",
+  },
+  {
+    id: "pd-399",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 1,
+    prompt:
+      "A random sample of 80 households in a city found an average monthly electricity bill of $142. Based on this sample, which is the best estimate of the average monthly electricity bill for all households in the city?",
+    choices: [
+      "$142",
+      "$80",
+      "$142 times 80",
+      "It cannot be estimated without surveying every household",
+    ],
+    answer: 0,
+    explanation:
+      "The sample mean, $142, is the best available point estimate for the population mean when the sample is random.",
+  },
+  {
+    id: "pd-400",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 2,
+    prompt:
+      "A random sample of 200 students at a university found that 70% plan to attend graduate school. If the university has 8,000 students, what is the best estimate of the number of students who plan to attend graduate school?",
+    choices: ["5,600", "140", "8,000", "4,000"],
+    answer: 0,
+    explanation: "70% of 8,000 = 0.70 × 8,000 = 5,600.",
+  },
+  {
+    id: "pd-401",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 2,
+    prompt:
+      "A random sample of 60 packages shipped by a warehouse had a mean weight of 4.2 pounds. Based on this sample, what is the best estimate of the total weight, in pounds, of all 9,000 packages shipped by the warehouse that month?",
+    choices: ["37,800", "4.2", "252", "2,143"],
+    answer: 0,
+    explanation: "Estimated total weight = sample mean × population count = 4.2 × 9,000 = 37,800 pounds.",
+  },
+  {
+    id: "pd-402",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 2,
+    prompt:
+      "Two random samples are taken from the same large population: Sample A has 50 people, and Sample B has 500 people. Both samples are used to estimate the same population proportion. Which statement is most accurate?",
+    choices: [
+      "Sample B's estimate is likely more precise (smaller margin of error) than Sample A's, because larger random samples tend to produce more reliable estimates.",
+      "Sample A's estimate is automatically more accurate because it is a smaller, more manageable sample.",
+      "Both samples will produce exactly the same estimate, since both are random.",
+      "Sample size does not affect the precision of an estimate, only the sampling method does.",
+    ],
+    answer: 0,
+    explanation:
+      "All else equal, larger random samples tend to yield estimates with smaller margins of error, making them more precise.",
+  },
+  {
+    id: "pd-403",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 2,
+    prompt:
+      "A quality inspector randomly samples 60 bolts from a large shipment and finds that 3 are defective. Based on this sample, what is the best estimate of the number of defective bolts in a shipment of 3,000 bolts?",
+    choices: ["150", "180", "3", "60"],
+    answer: 0,
+    explanation: "Sample defect rate = 3/60 = 0.05 = 5%. Estimated defective bolts in 3,000 = 0.05 × 3,000 = 150.",
+  },
+  {
+    id: "pd-404",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Inference from sample statistics",
+    difficulty: 3,
+    prompt:
+      "A researcher wants to estimate the average commute time for all residents of a city. She collects data by surveying people as they exit a downtown subway station during the Tuesday morning rush hour. The sample average is 34 minutes. Why might this estimate be unreliable for the entire city's population?",
+    choices: [
+      "The sample overrepresents transit commuters during peak hours, likely biasing the estimate and excluding people who drive, bike, or commute at other times.",
+      "The sample size is too large to produce a reliable estimate.",
+      "Subway riders always have identical commute times.",
+      "Average values from samples can never be used to estimate population values.",
+    ],
+    answer: 0,
+    explanation:
+      "Surveying only subway riders during one rush-hour period systematically excludes drivers, cyclists, off-peak commuters, and others, biasing the estimate away from the true city-wide average — a sampling bias issue, not a sample-size issue.",
+  },
+  {
+    id: "pd-405",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 1,
+    prompt:
+      "A news headline states, 'Ice cream sales and drowning incidents both rise in the summer, so ice cream sales cause drowning incidents.' What is the flaw in this reasoning?",
+    choices: [
+      "Both variables are likely driven by a confounding variable (warm weather), not a direct cause-and-effect relationship.",
+      "Ice cream sales can only be measured in winter.",
+      "Drowning incidents are not related to any other variable.",
+      "The claim is correct because both quantities increase together.",
+    ],
+    answer: 0,
+    explanation:
+      "Warm weather (a confounding variable) likely increases both ice cream sales and swimming (and thus drowning risk) independently; the correlation does not mean one causes the other.",
+  },
+  {
+    id: "pd-406",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 2,
+    prompt:
+      "A city wants to find out whether a new bike-share program reduces residents' commute times. It compares commute times between residents who voluntarily sign up for the program and residents who do not sign up, without random assignment. What is the main weakness of this study design?",
+    choices: [
+      "Because participants self-selected into the program, the two groups could differ in other ways (such as living closer to transit) that also affect commute time.",
+      "The study cannot be conducted without a government budget.",
+      "Commute times cannot be compared between different groups of residents.",
+      "The program must be tested on every resident in the city to be valid.",
+    ],
+    answer: 0,
+    explanation:
+      "Residents who choose to join a bike-share program might already live in more bike-friendly areas or have shorter commutes for other reasons, so without random assignment this difference (not the program) could explain any gap in commute times — a self-selection/confounding issue.",
+  },
+  {
+    id: "pd-407",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 2,
+    prompt:
+      "A company claims that a new energy drink improves athletic performance, citing a study in which participants' sprint times improved after drinking it. The study did not include a control group that did not drink the beverage. Why does this weaken the claim?",
+    choices: [
+      "Without a control group, it's unclear whether the improvement was due to the drink or another factor, such as practice effects from running the sprint multiple times.",
+      "Sprint times cannot be measured accurately without an energy drink.",
+      "A study without a control group always proves causation more strongly.",
+      "The sample size is automatically too small without a control group.",
+    ],
+    answer: 0,
+    explanation:
+      "Without a comparison group that didn't receive the treatment, improvements could be due to other factors (such as practice or motivation), not the drink itself — a lack of a control group undermines causal claims.",
+  },
+  {
+    id: "pd-408",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 2,
+    prompt:
+      "A small study reports that a new treatment reduced symptoms in 80% of patients, based on a sample of 10 patients, none of whom were randomly selected. A competing study reports a 65% improvement rate from a randomized sample of 400 patients. Which study's result is likely a more reliable estimate of the treatment's true effect in the broader population, and why?",
+    choices: [
+      "The second study, because its much larger, randomly selected sample is less subject to both sampling variability and selection bias.",
+      "The first study, because an 80% improvement rate is a better outcome regardless of sample size.",
+      "Both studies are equally reliable, since percentages don't depend on sample size.",
+      "The first study, because smaller samples always generalize better to the population.",
+    ],
+    answer: 0,
+    explanation:
+      "A larger, randomly selected sample reduces both random sampling error and selection bias, making its estimate more trustworthy than a tiny, non-random sample, even though its reported rate is lower.",
+  },
+  {
+    id: "pd-409",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 2,
+    prompt:
+      "A survey about internet usage is conducted only among people who respond to a questionnaire posted on a social media site. What type of bias does this sampling method most likely introduce?",
+    choices: [
+      "Selection bias, because people who use the internet and social media less are unlikely to see or respond to the survey.",
+      "Measurement bias, because online responses are always recorded incorrectly.",
+      "No bias, because online surveys reach the entire population equally.",
+      "Response bias, because social media users always lie on surveys.",
+    ],
+    answer: 0,
+    explanation:
+      "Posting a survey about internet usage only on social media systematically excludes people who use the internet less, so the sample overrepresents heavy users — a form of selection/sampling bias.",
+  },
+  {
+    id: "pd-410",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 3,
+    prompt:
+      "A study finds that students who take a particular SAT prep course have, on average, higher SAT scores than students who do not take the course. A researcher concludes that the course causes higher scores. Which of the following, if true, would most directly undermine this causal conclusion?",
+    choices: [
+      "Students who choose to enroll in the course tend to come from higher-income families that can also afford other tutoring, which independently raises scores.",
+      "The course is offered in multiple cities across the country.",
+      "Most students who take the course report that they enjoyed it.",
+      "The course has been offered for over ten years.",
+    ],
+    answer: 0,
+    explanation:
+      "If a confounding variable (family income enabling additional tutoring) is associated with both course enrollment and higher scores, it could explain the score difference instead of the course itself — undermining the causal claim.",
+  },
+  {
+    id: "pd-411",
+    module: "math",
+    domain: "Problem-Solving and Data Analysis",
+    skill: "Evaluating statistical claims",
+    difficulty: 3,
+    prompt:
+      "A school district wants to know whether a new reading program improves third-grade reading scores. Researchers randomly assign half of the third-grade classrooms in the district to use the new program and the other half to continue with the old program, then compare end-of-year reading scores. Why does random assignment strengthen the validity of a causal conclusion here, compared to letting teachers choose their own program?",
+    choices: [
+      "Random assignment tends to balance out other differences between classrooms (such as student ability or teacher experience) between the two groups, isolating the effect of the program itself.",
+      "Random assignment guarantees that every classroom will have identical scores at the end of the year.",
+      "Random assignment removes the need for a reasonably large sample size.",
+      "Random assignment ensures the study requires no control group.",
+    ],
+    answer: 0,
+    explanation:
+      "Randomly assigning classrooms to treatment and control groups tends to balance confounding factors (like prior ability or teacher experience) between groups on average, so any score difference is more plausibly due to the program rather than pre-existing differences.",
   }
 );

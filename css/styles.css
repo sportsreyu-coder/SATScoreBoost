@@ -38,63 +38,63 @@
    going cold slate-gray — a dark cream/charcoal paper, not a dev tool. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #17140f;
-    --bg-elev: #201b14;
-    --bg-card: #241f17;
-    --border: #362e22;
-    --border-soft: #2c261c;
-    --bg-translucent: rgba(23, 20, 15, 0.88);
-    --text: #f3ede3;
-    --text-dim: #c6bcac;
-    --text-dimmer: #9c927f;
-    --primary: #6d9ced;
-    --primary-hover: #8fb2f1;
-    --primary-light: #8fb2f1;
-    --primary-soft: rgba(109, 156, 237, 0.14);
-    --accent: #6d9ced;
-    --accent-hover: #9cc0f4;
-    --accent-soft: rgba(109, 156, 237, 0.16);
-    --on-accent: #10161f;
-    --success: #3fbb8a;
-    --success-light: #5ecba0;
-    --success-soft: rgba(63, 187, 138, 0.16);
+    --bg: #000000;
+    --bg-elev: #0a0a0a;
+    --bg-card: #0d0d0d;
+    --border: #1f2a25;
+    --border-soft: #151c18;
+    --bg-translucent: rgba(0, 0, 0, 0.88);
+    --text: #f5f5f5;
+    --text-dim: #c4c9c6;
+    --text-dimmer: #8f9893;
+    --primary: #059669;
+    --primary-hover: #10b981;
+    --primary-light: #10b981;
+    --primary-soft: rgba(5, 150, 105, 0.14);
+    --accent: #059669;
+    --accent-hover: #10b981;
+    --accent-soft: rgba(5, 150, 105, 0.16);
+    --on-accent: #000000;
+    --success: #6ee7b7;
+    --success-light: #6ee7b7;
+    --success-soft: rgba(110, 231, 183, 0.16);
     --danger: #e8705f;
     --danger-soft: rgba(232, 112, 95, 0.16);
     --warn: #e0ae53;
     --warn-soft: rgba(224, 174, 83, 0.14);
     --gold: #e0b83f;
     --gold-soft: rgba(224, 184, 63, 0.14);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   }
 }
 :root[data-theme="dark"] {
-  --bg: #17140f;
-  --bg-elev: #201b14;
-  --bg-card: #241f17;
-  --border: #362e22;
-  --border-soft: #2c261c;
-  --bg-translucent: rgba(23, 20, 15, 0.88);
-  --text: #f3ede3;
-  --text-dim: #c6bcac;
-  --text-dimmer: #9c927f;
-  --primary: #6d9ced;
-  --primary-hover: #8fb2f1;
-  --primary-light: #8fb2f1;
-  --primary-soft: rgba(109, 156, 237, 0.14);
-  --accent: #6d9ced;
-  --accent-hover: #9cc0f4;
-  --accent-soft: rgba(109, 156, 237, 0.16);
-  --on-accent: #10161f;
-  --success: #3fbb8a;
-  --success-light: #5ecba0;
-  --success-soft: rgba(63, 187, 138, 0.16);
+  --bg: #000000;
+  --bg-elev: #0a0a0a;
+  --bg-card: #0d0d0d;
+  --border: #1f2a25;
+  --border-soft: #151c18;
+  --bg-translucent: rgba(0, 0, 0, 0.88);
+  --text: #f5f5f5;
+  --text-dim: #c4c9c6;
+  --text-dimmer: #8f9893;
+  --primary: #059669;
+  --primary-hover: #10b981;
+  --primary-light: #10b981;
+  --primary-soft: rgba(5, 150, 105, 0.14);
+  --accent: #059669;
+  --accent-hover: #10b981;
+  --accent-soft: rgba(5, 150, 105, 0.16);
+  --on-accent: #000000;
+  --success: #6ee7b7;
+  --success-light: #6ee7b7;
+  --success-soft: rgba(110, 231, 183, 0.16);
   --danger: #e8705f;
   --danger-soft: rgba(232, 112, 95, 0.16);
   --warn: #e0ae53;
   --warn-soft: rgba(224, 174, 83, 0.14);
   --gold: #e0b83f;
   --gold-soft: rgba(224, 184, 63, 0.14);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2445,4 +2445,79 @@ footer.site a { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 860px) {
   .idle-layout { grid-template-columns: 1fr; }
+}
+
+/* Dark mode: black text on green reads better than white on these
+   accent-filled surfaces, so override the hardcoded #fff here. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand .logo,
+  :root:not([data-theme="light"]) .l-start-card,
+  :root:not([data-theme="light"]) .next-action-card,
+  :root:not([data-theme="light"]) .l-btn-outline-white {
+    color: var(--on-accent);
+  }
+  :root:not([data-theme="light"]) .next-action-card .eyebrow,
+  :root:not([data-theme="light"]) .next-action-card p {
+    color: rgba(0, 0, 0, 0.72);
+  }
+  :root:not([data-theme="light"]) .l-btn-outline-white {
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+  :root:not([data-theme="light"]) .l-btn-outline-white:hover {
+    background: var(--on-accent);
+    color: var(--primary);
+    border-color: var(--on-accent);
+  }
+  :root:not([data-theme="light"]) .btn-primary {
+    background: #16815b;
+    color: #fff;
+  }
+  :root:not([data-theme="light"]) .btn-primary:hover {
+    background: #1fa374;
+  }
+  :root:not([data-theme="light"]) .btn-primary:disabled:hover {
+    background: #16815b;
+  }
+  :root:not([data-theme="light"]) .next-action-card .btn-primary {
+    background: var(--on-accent);
+    color: var(--primary);
+  }
+  :root:not([data-theme="light"]) .next-action-card .btn-primary:hover {
+    background: rgba(0, 0, 0, 0.85);
+  }
+}
+:root[data-theme="dark"] .brand .logo,
+:root[data-theme="dark"] .l-start-card,
+:root[data-theme="dark"] .next-action-card,
+:root[data-theme="dark"] .l-btn-outline-white {
+  color: var(--on-accent);
+}
+:root[data-theme="dark"] .next-action-card .eyebrow,
+:root[data-theme="dark"] .next-action-card p {
+  color: rgba(0, 0, 0, 0.72);
+}
+:root[data-theme="dark"] .l-btn-outline-white {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+:root[data-theme="dark"] .l-btn-outline-white:hover {
+  background: var(--on-accent);
+  color: var(--primary);
+  border-color: var(--on-accent);
+}
+:root[data-theme="dark"] .btn-primary {
+  background: #16815b;
+  color: #fff;
+}
+:root[data-theme="dark"] .btn-primary:hover {
+  background: #1fa374;
+}
+:root[data-theme="dark"] .btn-primary:disabled:hover {
+  background: #16815b;
+}
+:root[data-theme="dark"] .next-action-card .btn-primary {
+  background: var(--on-accent);
+  color: var(--primary);
+}
+:root[data-theme="dark"] .next-action-card .btn-primary:hover {
+  background: rgba(0, 0, 0, 0.85);
 }

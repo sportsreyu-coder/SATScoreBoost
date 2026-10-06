@@ -5878,5 +5878,1053 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Archaeologist A credits trade contact for the spread of bronze-working, while Archaeologist B credits independent discovery from shared ore deposits — the contrast in choice A.",
+  },
+  {
+    id: "cs-348",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "The textbook's explanation of thermodynamics was unusually ______: even readers with no physics background could follow the chain of reasoning from one law to the next.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["lucid", "cryptic", "technical", "lengthy"],
+    answer: 0,
+    explanation:
+      "Readers with no background being able to follow the reasoning describes a clear, or lucid, explanation, not a cryptic or overly technical one.",
+  },
+  {
+    id: "cs-349",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Knowing the market could turn volatile, the retiree made the ______ choice to keep six months of expenses in a low-risk savings account before investing the rest.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["prudent", "reckless", "impulsive", "generous"],
+    answer: 0,
+    explanation:
+      "Setting aside expenses as a safeguard before investing is a cautious, sensible decision, which 'prudent' captures; 'reckless' and 'impulsive' are opposites.",
+  },
+  {
+    id: "cs-350",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "After a summer of drought, the farmer's harvest was ______, yielding barely enough grain to last the family through winter.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["meager", "abundant", "varied", "delayed"],
+    answer: 0,
+    explanation:
+      "A drought that leaves 'barely enough grain' describes a scant, or meager, harvest, the opposite of abundant.",
+  },
+  {
+    id: "cs-351",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Despite the layoffs reported elsewhere in the industry, the small firm's mood remained unexpectedly ______, lifted by a string of new client contracts.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["buoyant", "somber", "indifferent", "cautious"],
+    answer: 0,
+    explanation:
+      "New contracts lifting the mood despite industry layoffs describes a hopeful, upbeat, or buoyant mood, not a somber one.",
+  },
+  {
+    id: "cs-352",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Transcribing the handwritten ledgers one entry at a time proved ______, and most interns quit before finishing even a single box.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["tedious", "lucrative", "collaborative", "rewarding"],
+    answer: 0,
+    explanation:
+      "Work so dull that most interns quit before finishing one box is tedious, not lucrative or rewarding.",
+  },
+  {
+    id: "cs-353",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Engineers found that the new coating reduced friction by a ______ amount, so small that test drivers could not detect any difference in handling.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["negligible", "substantial", "dangerous", "predictable"],
+    answer: 0,
+    explanation:
+      "An amount 'so small' that drivers couldn't notice it is negligible, the opposite of substantial.",
+  },
+  {
+    id: "cs-354",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "After months of practicing together, the rowing team finally moved as a ______ unit, every stroke landing in the water at exactly the same instant.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["cohesive", "disjointed", "competitive", "temporary"],
+    answer: 0,
+    explanation:
+      "Strokes landing 'at exactly the same instant' describe a tightly unified, or cohesive, team, not a disjointed one.",
+  },
+  {
+    id: "cs-355",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 1,
+    passage:
+      "Compared to the ornate buildings surrounding it, the new library's ______ facade of plain gray concrete drew little attention from passersby.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["understated", "elaborate", "colorful", "historic"],
+    answer: 0,
+    explanation:
+      "A 'plain gray' facade that draws 'little attention' next to ornate buildings is understated, the opposite of elaborate or colorful.",
+  },
+  {
+    id: "cs-356",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "The merger agreement's ______ language, full of nested clauses and cross-references, required three attorneys a full week to untangle.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["convoluted", "straightforward", "brief", "informal"],
+    answer: 0,
+    explanation:
+      "Language that is 'full of nested clauses' and takes a week to 'untangle' is convoluted, not straightforward or brief.",
+  },
+  {
+    id: "cs-357",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "The young sailor's ______ plan to cross the strait alone in a boat built from salvaged wood struck seasoned captains as reckless bravado.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["audacious", "timid", "methodical", "customary"],
+    answer: 0,
+    explanation:
+      "A plan that seasoned captains see as 'reckless bravado' is boldly daring, or audacious, not timid or customary.",
+  },
+  {
+    id: "cs-358",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Critics dismissed the painter's early canvases as ______, noting how closely each composition echoed the brushwork of her more famous teacher.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["derivative", "innovative", "abstract", "unfinished"],
+    answer: 0,
+    explanation:
+      "Work that closely echoes another artist's style is derivative, or imitative, the opposite of innovative.",
+  },
+  {
+    id: "cs-359",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Rather than guessing at the cause of the outage, the technician proceeded in a ______ manner, checking each component in sequence until the faulty wire was found.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["methodical", "erratic", "hurried", "careless"],
+    answer: 0,
+    explanation:
+      "Checking components 'in sequence' rather than guessing describes an orderly, step-by-step, or methodical approach.",
+  },
+  {
+    id: "cs-360",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Boxes were stacked in a ______ fashion throughout the garage, with fragile dishes wedged beneath heavy tools and nothing labeled.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["haphazard", "systematic", "sparse", "orderly"],
+    answer: 0,
+    explanation:
+      "Fragile dishes wedged under heavy tools with nothing labeled describes a disorganized, random, or haphazard arrangement, not a systematic one.",
+  },
+  {
+    id: "cs-361",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "The committee's final statement sounded oddly ______, pairing a paragraph celebrating unity with a paragraph listing years of unresolved disputes.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["discordant", "harmonious", "concise", "formal"],
+    answer: 0,
+    explanation:
+      "Pairing celebration of unity with a list of unresolved disputes creates a clashing, or discordant, effect, not a harmonious one.",
+  },
+  {
+    id: "cs-362",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Though his feedback was often accurate, the new manager's ______ delivery—blunt criticism given in front of the whole team—left morale lower each week.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["abrasive", "diplomatic", "hesitant", "generous"],
+    answer: 0,
+    explanation:
+      "Blunt public criticism that lowers morale describes a harsh, grating, or abrasive delivery, the opposite of diplomatic.",
+  },
+  {
+    id: "cs-363",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Negotiating between two rival factions who refused even to sit at the same table, the mediator remained ______, careful never to let either side feel blamed.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["diplomatic", "partisan", "indifferent", "aggressive"],
+    answer: 0,
+    explanation:
+      "Being 'careful never to let either side feel blamed' describes tactful, even-handed, or diplomatic conduct, not partisan or aggressive behavior.",
+  },
+  {
+    id: "cs-364",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "For most recent graduates, rent in the city center has become ______, forcing many to commute from towns an hour away.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["prohibitive", "negligible", "stable", "subsidized"],
+    answer: 0,
+    explanation:
+      "Rent high enough to force graduates to commute from distant towns is prohibitively expensive, not negligible or subsidized.",
+  },
+  {
+    id: "cs-365",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "On stage the violinist was ______, punctuating every solo with sweeping bow strokes and dramatic pauses that the sheet music never called for.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["flamboyant", "reserved", "mechanical", "nervous"],
+    answer: 0,
+    explanation:
+      "Sweeping, theatrical gestures not called for by the music describe a showy, flamboyant performer, the opposite of reserved or mechanical.",
+  },
+  {
+    id: "cs-366",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "Rather than pursuing the ideal but costly solution, the city council took a ______ approach, patching the most dangerous potholes first with the budget available.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["pragmatic", "idealistic", "reckless", "ceremonial"],
+    answer: 0,
+    explanation:
+      "Choosing a practical fix within budget rather than the costly ideal describes a pragmatic approach, the opposite of idealistic.",
+  },
+  {
+    id: "cs-367",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 2,
+    passage:
+      "The star's brightness dimmed and brightened on no predictable schedule, a ______ pattern that kept astronomers debating its cause for years.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["perplexing", "familiar", "gradual", "seasonal"],
+    answer: 0,
+    explanation:
+      "A pattern with 'no predictable schedule' that sparks years of debate is puzzling, or perplexing, not familiar or seasonal.",
+  },
+  {
+    id: "cs-368",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Though her name appeared in no official minutes, the translator had become so ______ to the negotiations that delegates privately agreed no session should proceed without her.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["indispensable", "peripheral", "controversial", "temporary"],
+    answer: 0,
+    explanation:
+      "Delegates insisting no session proceed without her shows she had become essential, or indispensable, not peripheral.",
+  },
+  {
+    id: "cs-369",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "What the newcomers dreaded as punishing, the veteran hikers found oddly ______: the thin, cold air at the summit seemed to sharpen their thinking rather than exhaust it.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["invigorating", "debilitating", "unremarkable", "familiar"],
+    answer: 0,
+    explanation:
+      "Air that 'sharpens thinking rather than exhausts it' is energizing, or invigorating, the opposite of debilitating.",
+  },
+  {
+    id: "cs-370",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "The editor's cuts to the manuscript were so ______ that the author, rereading the shortened draft, could not identify a single scene she actually missed.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["judicious", "careless", "extensive", "reluctant"],
+    answer: 0,
+    explanation:
+      "Cuts so well chosen that nothing missing is noticed describe wise, well-judged, or judicious editing, not careless cutting.",
+  },
+  {
+    id: "cs-371",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Scholars have spent decades on the inscription's final line, which remains ______ enough that no two translations agree on its meaning.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["cryptic", "redundant", "outdated", "literal"],
+    answer: 0,
+    explanation:
+      "A line where 'no two translations agree' is mysterious, or cryptic, not literal or redundant.",
+  },
+  {
+    id: "cs-372",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Nothing in the firm's decade of filings escaped the auditor's ______ attention, not even a rounding error buried three spreadsheets deep.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["scrupulous", "cursory", "selective", "belated"],
+    answer: 0,
+    explanation:
+      "Catching an error 'buried three spreadsheets deep' shows extremely careful, or scrupulous, attention, the opposite of cursory.",
+  },
+  {
+    id: "cs-373",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    difficulty: 3,
+    passage:
+      "Insurers quoted a premium so ______ for the fragile sculpture's transport that the museum chose to cancel the loan rather than pay it.",
+    prompt: "Which choice completes the text with the most logical and precise word or phrase?",
+    choices: ["exorbitant", "nominal", "standard", "negotiable"],
+    answer: 0,
+    explanation:
+      "A premium so costly the museum cancels the loan rather than pay it is exorbitant, the opposite of nominal.",
+  },
+  {
+    id: "cs-374",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "Honeybee scouts that find a rich flower patch perform a 'waggle dance' back at the hive. The dance's angle and duration encode the direction and distance to the food source for other bees to follow.",
+    prompt: "Which choice best describes the function of the second sentence in the text?",
+    choices: [
+      "It explains the mechanism behind the behavior introduced in the first sentence.",
+      "It contradicts the claim made in the first sentence.",
+      "It introduces a completely new topic unrelated to bees.",
+      "It summarizes the entire text before any detail is given.",
+    ],
+    answer: 0,
+    explanation:
+      "The second sentence explains how the dance encodes direction and distance, elaborating on the mechanism behind the behavior named in the first sentence.",
+  },
+  {
+    id: "cs-375",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "A short article begins by describing how sailors once relied on bonfires atop cliffs to avoid rocky shoals. It then explains how the Fresnel lens revolutionized lighthouse design in the nineteenth century. It closes by noting that satellite navigation has made many lighthouses obsolete today.",
+    prompt: "Which choice best describes the overall structure of the text?",
+    choices: [
+      "It traces the history of a technology from an early method to a major improvement to its current decline.",
+      "It compares two competing theories about the origins of lighthouses.",
+      "It argues that lighthouses should be rebuilt using historical methods.",
+      "It lists safety regulations for modern maritime navigation.",
+    ],
+    answer: 0,
+    explanation:
+      "The text moves chronologically from bonfires, to the Fresnel lens improvement, to the decline caused by satellites, matching choice A.",
+  },
+  {
+    id: "cs-376",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "A food blogger's post opens with a story about her grandmother's kitchen, then transitions into a detailed recipe for the soup that kitchen was known for.",
+    prompt: "Which choice best describes the function of the opening story about the grandmother's kitchen?",
+    choices: [
+      "It provides a personal, sentimental frame that motivates the recipe that follows.",
+      "It proves that the recipe originated in a professional restaurant.",
+      "It lists the exact ingredients required for the soup.",
+      "It criticizes modern cooking techniques.",
+    ],
+    answer: 0,
+    explanation:
+      "The anecdote sets a personal, sentimental tone that leads into and motivates the recipe, rather than listing ingredients or criticizing anything.",
+  },
+  {
+    id: "cs-377",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "A business profile first describes the company's humble beginning in a garage. The next paragraph details its rapid expansion after a single viral product launch. The final paragraph discusses the leadership struggles that followed that growth.",
+    prompt: "Which choice best describes the function of the second paragraph?",
+    choices: [
+      "To mark the turning point between the company's modest start and its later struggles",
+      "To criticize the company's original founders",
+      "To describe a struggle that occurred before the company existed",
+      "To provide statistics unrelated to the company's growth",
+    ],
+    answer: 0,
+    explanation:
+      "The second paragraph's account of rapid expansion sits between the modest beginning and the later struggles, functioning as the pivot connecting them.",
+  },
+  {
+    id: "cs-378",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "Glass was once so costly that only the wealthy could afford windows made of it. Over centuries, cheaper manufacturing methods made glass common in ordinary homes. Today glass is so inexpensive that it is often used once and thrown away.",
+    prompt: "Which choice best describes the overall structure of the text?",
+    choices: [
+      "It traces how an object's status changed as its cost declined over time.",
+      "It explains the chemical composition of glass.",
+      "It compares glass to other building materials used today.",
+      "It argues that glass should no longer be manufactured.",
+    ],
+    answer: 0,
+    explanation:
+      "The text moves from glass as a luxury, to a common household material, to a disposable one, tracking its changing status as cost fell.",
+  },
+  {
+    id: "cs-379",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 1,
+    passage:
+      "Before she became known for her mathematical proofs, the mathematician spent a decade working as a seamstress to support her studies.",
+    prompt: "Which choice best describes the function of this sentence in a biography of the mathematician?",
+    choices: [
+      "It highlights an unexpected contrast between her early circumstances and her later achievements.",
+      "It explains the mathematical content of her proofs.",
+      "It argues that seamstresses cannot become mathematicians.",
+      "It criticizes her decision to pursue mathematics.",
+    ],
+    answer: 0,
+    explanation:
+      "Naming an unrelated decade-long job 'before' her fame sets up a contrast between her modest early circumstances and her later achievements.",
+  },
+  {
+    id: "cs-380",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "Scientists long assumed that the volcano's dormant period meant its magma chamber had cooled significantly. New seismic readings, however, show the chamber remains nearly as hot as it was before the last eruption, suggesting dormancy says little about the chamber's temperature.",
+    prompt: "Which choice best describes the function of the second sentence in the text?",
+    choices: [
+      "It presents new evidence that undermines the assumption described in the first sentence.",
+      "It restates the first sentence without adding new information.",
+      "It describes an unrelated volcanic eruption from history.",
+      "It proposes a method for predicting future eruptions.",
+    ],
+    answer: 0,
+    explanation:
+      "The 'however' signals a reversal: seismic readings showing the chamber is still hot directly undermines the cooling assumption stated first.",
+  },
+  {
+    id: "cs-381",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "An essay on urban parks opens with a statistic about declining green space in cities, pivots to interviews with three city planners about competing visions for new parks, and ends by proposing a compromise that borrows from each planner's vision.",
+    prompt: "Which choice best describes the overall structure of the essay?",
+    choices: [
+      "It moves from a problem, through multiple perspectives on that problem, to a proposed synthesis.",
+      "It presents a single planner's argument and refutes it point by point.",
+      "It narrates a chronological history of one city's park system.",
+      "It compares the cost of parks in different countries.",
+    ],
+    answer: 0,
+    explanation:
+      "The essay proceeds from a stated problem, to three differing perspectives, to a synthesis combining them, matching choice A.",
+  },
+  {
+    id: "cs-382",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "The report claims that remote work increases productivity for most employees. It then cites a study in which output per hour rose eight percent after a software company allowed employees to work from home three days a week.",
+    prompt: "Which choice best describes the function of the second sentence?",
+    choices: [
+      "It supplies specific evidence for the general claim made in the first sentence.",
+      "It contradicts the claim made in the first sentence.",
+      "It introduces a new claim unrelated to productivity.",
+      "It questions the reliability of the first sentence's claim.",
+    ],
+    answer: 0,
+    explanation:
+      "The specific statistic about output rising eight percent supports, rather than contradicts, the general productivity claim made in the first sentence.",
+  },
+  {
+    id: "cs-383",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "Advocates often describe the new vaccine as a complete solution to the outbreak. The vaccine, however, appears to reduce transmission mainly among adults under fifty, with weaker effects observed so far in older populations.",
+    prompt: "Which choice best describes the function of the second sentence in the text as a whole?",
+    choices: [
+      "It qualifies the sweeping claim made in the first sentence with a more limited finding.",
+      "It fully confirms the claim made in the first sentence.",
+      "It introduces a different disease unrelated to the vaccine.",
+      "It argues that the vaccine should be discontinued entirely.",
+    ],
+    answer: 0,
+    explanation:
+      "Noting that the effect varies by age group narrows, or qualifies, the sweeping claim of a 'complete solution' made in the first sentence.",
+  },
+  {
+    id: "cs-384",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "Critics of the new subway line concede that it has shortened commute times for thousands of riders. They argue, however, that its construction displaced several small businesses that have not been able to relocate nearby.",
+    prompt: "Which choice best describes the overall structure of the text?",
+    choices: [
+      "It acknowledges a benefit before raising a significant drawback.",
+      "It lists several unrelated benefits of the subway line.",
+      "It narrates the day-to-day construction of the subway line.",
+      "It argues that the subway line should never have been proposed.",
+    ],
+    answer: 0,
+    explanation:
+      "The text concedes shortened commutes as a benefit, then pivots with 'however' to raise the displacement of businesses as a drawback.",
+  },
+  {
+    id: "cs-385",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "Before analyzing the bridge's failure, the engineer's report first defines 'fatigue cracking' as the gradual weakening of metal from repeated stress rather than a single overload. Only after establishing this definition does the report examine the bridge's specific cracks.",
+    prompt: "Which choice best describes the function of the first sentence?",
+    choices: [
+      "It defines a key term that the rest of the report will depend on.",
+      "It summarizes the report's final conclusion.",
+      "It argues that the bridge's failure was intentional.",
+      "It criticizes the engineers who built the bridge.",
+    ],
+    answer: 0,
+    explanation:
+      "The sentence establishes a definition of 'fatigue cracking' before the report applies that term to the bridge's specific cracks.",
+  },
+  {
+    id: "cs-386",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "A psychology article opens with the story of a single patient who overcame a specific phobia through gradual exposure. The article then broadens its focus to describe how gradual exposure therapy has been studied across thousands of patients with many different phobias.",
+    prompt: "Which choice best describes the relationship between the opening anecdote and the rest of the article?",
+    choices: [
+      "The anecdote introduces a specific case that the article then generalizes into a broader pattern.",
+      "The anecdote contradicts the broader pattern described later.",
+      "The anecdote proves that exposure therapy fails in most cases.",
+      "The anecdote is unrelated to the broader discussion that follows.",
+    ],
+    answer: 0,
+    explanation:
+      "The single-patient story functions as a specific case that the rest of the article broadens into a general pattern across thousands of patients.",
+  },
+  {
+    id: "cs-387",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 2,
+    passage:
+      "Many assume that older buildings are always less energy-efficient than new ones. One nineteenth-century stone farmhouse, however, retains heat so effectively through its thick walls that its owners use less fuel each winter than neighbors in houses built a decade ago.",
+    prompt: "Which choice best describes the function of the second sentence in the text as a whole?",
+    choices: [
+      "It offers a specific counterexample to the assumption stated in the first sentence.",
+      "It provides statistical proof that all old buildings are efficient.",
+      "It explains how stone is quarried for construction.",
+      "It argues that new buildings should be banned.",
+    ],
+    answer: 0,
+    explanation:
+      "The single farmhouse that outperforms newer houses serves as a specific counterexample to the general assumption stated first, not a universal proof.",
+  },
+  {
+    id: "cs-388",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "A historian's essay seems at first to defend the king's reputation, cataloguing his reforms to taxation and law. Only in its final paragraph does the essay reveal that those reforms were implemented by the king's advisors over his repeated objections, recasting everything praised before as evidence against him.",
+    prompt: "Which choice best describes how the final paragraph functions within the essay as a whole?",
+    choices: [
+      "It reframes the preceding praise by attributing its basis to someone other than the king.",
+      "It simply repeats the praise offered earlier in the essay.",
+      "It introduces a second, unrelated king for comparison.",
+      "It abandons the topic of reforms entirely.",
+    ],
+    answer: 0,
+    explanation:
+      "By revealing the advisors implemented the reforms over the king's objections, the final paragraph reframes the earlier praise as actually undermining his reputation.",
+  },
+  {
+    id: "cs-389",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "The review spends three paragraphs praising the novel's intricate plotting, careful pacing, and vivid setting. Its final line, almost in passing, admits that the reviewer skimmed the last hundred pages.",
+    prompt: "Which choice best describes the effect of the final line on the text as a whole?",
+    choices: [
+      "It undercuts the credibility of the detailed praise that came before it.",
+      "It confirms that the reviewer read every page carefully.",
+      "It introduces a new novel unrelated to the one being reviewed.",
+      "It summarizes the plot points discussed earlier in greater detail.",
+    ],
+    answer: 0,
+    explanation:
+      "Admitting that the reviewer skimmed the ending casts doubt on the reliability of the detailed praise given in the preceding paragraphs.",
+  },
+  {
+    id: "cs-390",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "A policy brief raises the objection that stricter emissions limits could raise costs for small manufacturers. It then presents data showing that, among manufacturers studied, the limits raised costs only for those that had delayed upgrading equipment for over a decade, while early adopters saw costs fall.",
+    prompt: "Which choice best describes the function of the data presented in the second sentence?",
+    choices: [
+      "It narrows the force of the objection raised in the first sentence to a specific subset of cases.",
+      "It fully confirms the objection raised in the first sentence applies to all manufacturers.",
+      "It introduces an objection unrelated to emissions limits.",
+      "It argues that emissions limits should be abandoned entirely.",
+    ],
+    answer: 0,
+    explanation:
+      "Showing that costs rose only for manufacturers that delayed upgrades limits the objection to a specific subset rather than confirming it broadly.",
+  },
+  {
+    id: "cs-391",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "A critique of a proposed dam begins by listing the engineers' projections for the electricity it would generate. It then shifts to decades-old records of similar dams whose output fell well short of projections once silt buildup reduced reservoir capacity. The critique closes by questioning whether the new dam's projections account for this pattern.",
+    prompt: "Which choice best describes the overall structure of the critique?",
+    choices: [
+      "It presents a forecast, complicates it with historical precedent, then questions the forecast's assumptions.",
+      "It praises the engineers' projections without qualification.",
+      "It narrates the dam's construction process from start to finish.",
+      "It compares the dam to unrelated energy sources such as solar power.",
+    ],
+    answer: 0,
+    explanation:
+      "The critique moves from the stated forecast, to historical records complicating it, to a closing question about the forecast's assumptions, matching choice A.",
+  },
+  {
+    id: "cs-392",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    difficulty: 3,
+    passage:
+      "The memoir's central chapters recount the author's years as a translator at international summits, rendering speeches between leaders who often could not otherwise understand one another. One brief aside notes that the author sometimes softened insults exchanged between delegates, altering the historical record those delegates believed they had created.",
+    prompt: "Which choice best describes the function of the aside about softening insults?",
+    choices: [
+      "It complicates the chapters' portrayal of the author as a neutral conduit between delegates.",
+      "It proves that the author never made translation errors.",
+      "It summarizes the memoir's account of the author's childhood.",
+      "It argues that translators should be eliminated from summits entirely.",
+    ],
+    answer: 0,
+    explanation:
+      "Revealing that the author altered what was actually said complicates the earlier impression of a neutral conduit simply rendering speeches between leaders.",
+  },
+  {
+    id: "cs-393",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Researcher A found that students who studied right before sleeping recalled vocabulary lists better the next day than students who studied in the morning.\n\nText 2: Researcher B found the same memory benefit when students napped briefly after studying in the morning, suggesting sleep itself, not time of day, drives the effect.",
+    prompt: "Which choice best describes the relationship between the two researchers' findings?",
+    choices: [
+      "Researcher B's finding suggests that sleep, rather than studying at night specifically, may explain the benefit Researcher A observed.",
+      "Researcher B's finding contradicts Researcher A's results entirely.",
+      "Both researchers found that naps have no effect on memory.",
+      "Researcher A's finding applies only to students who never sleep.",
+    ],
+    answer: 0,
+    explanation:
+      "Since a morning nap produced the same benefit, sleep itself, rather than studying at night, may explain the recall advantage Researcher A found.",
+  },
+  {
+    id: "cs-394",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Critic A praised the new bakery's sourdough for its thick, crackling crust.\n\nText 2: Critic B also praised the sourdough's crust, adding that the tangy interior made it the best loaf in the neighborhood.",
+    prompt: "Which choice best describes the relationship between the two critics' reviews?",
+    choices: [
+      "Critic B agrees with Critic A's assessment and adds further praise.",
+      "Critic B disagrees with Critic A about the quality of the crust.",
+      "Critic A praised the interior while Critic B praised only the crust.",
+      "The two critics reviewed different bakeries entirely.",
+    ],
+    answer: 0,
+    explanation:
+      "Critic B echoes Critic A's praise for the crust and adds additional praise for the interior, so the two reviews agree and build on each other.",
+  },
+  {
+    id: "cs-395",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Gardener A waters tomato plants every morning, believing consistent moisture produces the sweetest fruit.\n\nText 2: Gardener B waters tomato plants only when the soil is visibly dry, arguing that occasional stress makes the fruit sweeter.",
+    prompt: "Which choice best describes a key difference between the two gardeners' approaches?",
+    choices: [
+      "Gardener A favors a consistent watering schedule, while Gardener B favors watering only when the soil dries out.",
+      "Both gardeners agree that tomatoes should never be watered.",
+      "Gardener B waters more frequently than Gardener A.",
+      "Gardener A believes tomatoes require no sunlight.",
+    ],
+    answer: 0,
+    explanation:
+      "Gardener A waters on a consistent daily schedule, while Gardener B waters only when soil dries out, the contrast stated in choice A.",
+  },
+  {
+    id: "cs-396",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Coach A has the swim team practice for three hours every day, believing more repetition builds faster times.\n\nText 2: Coach B limits practice to ninety minutes, arguing that shorter, more focused sessions prevent injury and improve times just as much.",
+    prompt: "Which choice best describes a key difference between the two coaches' philosophies?",
+    choices: [
+      "Coach A emphasizes longer practices, while Coach B emphasizes shorter, more focused sessions.",
+      "Both coaches agree that practice length does not matter.",
+      "Coach B has the team practice longer than Coach A.",
+      "Coach A believes injuries are more important than speed.",
+    ],
+    answer: 0,
+    explanation:
+      "Coach A favors three-hour practices for more repetition, while Coach B favors shorter ninety-minute sessions, the difference choice A describes.",
+  },
+  {
+    id: "cs-397",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 1,
+    passage:
+      "Text 1: Historian A dates the village's founding to the early 1600s, citing a land deed stored in a regional archive.\n\nText 2: Historian B dates the founding several decades earlier, citing pottery shards found at the site that match styles from the late 1500s.",
+    prompt: "Which choice best describes the relationship between the two historians' claims?",
+    choices: [
+      "The two historians rely on different kinds of evidence to propose different founding dates for the village.",
+      "Both historians agree on the exact founding date of the village.",
+      "Historian A relies on pottery shards for the founding date.",
+      "Historian B argues the village was never founded.",
+    ],
+    answer: 0,
+    explanation:
+      "Historian A cites a land deed for an early-1600s date, while Historian B cites pottery shards for an earlier date, so each relies on different evidence for a different date.",
+  },
+  {
+    id: "cs-398",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Economist A studied a city that raised its minimum wage and found no measurable increase in unemployment over the following two years.\n\nText 2: Economist B studied a different city with a similar wage increase and found a small but clear rise in unemployment among workers under twenty, concentrated in retail jobs.",
+    prompt: "Which choice best describes the relationship between the two economists' findings?",
+    choices: [
+      "Economist B's findings suggest the effect of minimum wage increases may vary by location and worker group rather than being uniform.",
+      "Economist B's findings exactly replicate Economist A's results.",
+      "Both economists found large unemployment increases across every industry.",
+      "Economist A studied the same city and workers as Economist B.",
+    ],
+    answer: 0,
+    explanation:
+      "Because the two studies found different results in different cities and worker groups, the effect may vary rather than being uniform, as choice A states.",
+  },
+  {
+    id: "cs-399",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Linguist A argues that a regional dialect is dying out because younger residents increasingly use standard pronunciations in everyday speech.\n\nText 2: Linguist B argues the dialect is merely shifting rather than dying, pointing to recordings showing younger residents still use many of its distinctive words, just with standard pronunciation.",
+    prompt: "Which choice best describes how Linguist B's view relates to Linguist A's?",
+    choices: [
+      "Linguist B reinterprets the evidence Linguist A cites as a change in the dialect rather than its disappearance.",
+      "Linguist B agrees entirely that the dialect is disappearing.",
+      "Linguist A argues the dialect's vocabulary is spreading to new regions.",
+      "Both linguists agree the dialect has already vanished completely.",
+    ],
+    answer: 0,
+    explanation:
+      "Linguist B takes the same pronunciation shift Linguist A cites as evidence of death and reinterprets it as evidence of ongoing change instead.",
+  },
+  {
+    id: "cs-400",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: A study of office workers found that those who drank coffee before noon reported better focus throughout the afternoon.\n\nText 2: A study of night-shift workers found that coffee consumed before their equivalent 'morning' shift start made no measurable difference in reported focus.",
+    prompt: "Which choice best describes how the second study's findings relate to the first study's findings?",
+    choices: [
+      "The second study suggests the focus benefit found in the first study may depend on factors beyond simply drinking coffee before a shift begins.",
+      "The second study confirms that coffee improves focus for all workers regardless of schedule.",
+      "Both studies found that coffee consistently reduces focus.",
+      "The first study examined night-shift workers exclusively.",
+    ],
+    answer: 0,
+    explanation:
+      "Since the same coffee timing failed to help night-shift workers, the benefit found in office workers may depend on factors beyond coffee timing alone.",
+  },
+  {
+    id: "cs-401",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Architect A argues that mass timber construction should replace steel in most mid-size buildings, citing its much smaller carbon footprint during manufacturing.\n\nText 2: Architect B argues that steel remains preferable for buildings in high-wildfire-risk areas, citing timber's greater vulnerability to fire despite modern fire-retardant treatments.",
+    prompt: "Which choice best describes the relationship between the two architects' positions?",
+    choices: [
+      "Architect B's concern about fire risk suggests Architect A's recommendation may not hold in every setting.",
+      "Architect B agrees that timber is preferable in all settings.",
+      "Both architects agree that steel should never be used in construction.",
+      "Architect A argues that fire risk is irrelevant to building design.",
+    ],
+    answer: 0,
+    explanation:
+      "Architect B's fire-risk concern identifies a setting where Architect A's general recommendation for timber may not apply, as choice A states.",
+  },
+  {
+    id: "cs-402",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Critic A praises the director's use of long, uninterrupted takes for making tense scenes feel more immediate and real.\n\nText 2: Critic B argues the same long takes often drag on past the point of tension, leaving some scenes feeling padded rather than immersive.",
+    prompt: "Which choice best describes the relationship between the two critics' assessments?",
+    choices: [
+      "The critics agree on the director's technique but disagree about its overall effect on the viewer.",
+      "The critics disagree about which technique the director actually used.",
+      "Critic B argues the director never uses long takes.",
+      "Both critics agree the long takes ruin every scene in the film.",
+    ],
+    answer: 0,
+    explanation:
+      "Both critics identify the same long-take technique, but Critic A finds it immersive while Critic B finds it padded, a disagreement about effect, not technique.",
+  },
+  {
+    id: "cs-403",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Paleontologist A argues that a species of dinosaur hunted in coordinated packs, citing multiple skeletons found together near a single large prey animal.\n\nText 2: Paleontologist B argues the skeletons more likely gathered individually around the carcass after it died of other causes, noting no bite marks from the smaller dinosaurs appear on the prey's bones.",
+    prompt: "Which choice best describes a key difference between the two paleontologists' interpretations?",
+    choices: [
+      "Paleontologist A interprets the fossil grouping as evidence of coordinated hunting, while Paleontologist B interprets it as scavenging after death.",
+      "Both paleontologists agree the dinosaurs hunted alone.",
+      "Paleontologist B found bite marks confirming active hunting.",
+      "Paleontologist A argues the prey animal was never found.",
+    ],
+    answer: 0,
+    explanation:
+      "Paleontologist A reads the grouped skeletons as coordinated hunting, while Paleontologist B reads the same grouping as later scavenging, the contrast in choice A.",
+  },
+  {
+    id: "cs-404",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: A city council member claims that adding protected bike lanes on Main Street will reduce car traffic congestion within a year.\n\nText 2: A transportation researcher responds that similar projects in comparable cities reduced congestion only where nearby public transit could absorb the resulting drop in parking, not simply from adding the lanes alone.",
+    prompt: "Based on the texts, how would the transportation researcher most likely respond to the council member's claim?",
+    choices: [
+      "By cautioning that the reduction may depend on supporting transit options, not the bike lanes alone.",
+      "By fully endorsing the claim without any reservations.",
+      "By arguing that bike lanes always increase congestion.",
+      "By insisting that public transit should be eliminated entirely.",
+    ],
+    answer: 0,
+    explanation:
+      "The researcher's evidence that comparable cities needed strong transit to see the benefit implies caution about the council member's unqualified claim.",
+  },
+  {
+    id: "cs-405",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 2,
+    passage:
+      "Text 1: Meteorologist A's forecasting model predicted the storm would weaken significantly before making landfall, based on patterns from the past decade.\n\nText 2: Meteorologist B notes that the storm instead strengthened over unusually warm ocean water that wasn't present in the decade of data the model was trained on.",
+    prompt: "Which choice best describes how Meteorologist B's observation relates to Meteorologist A's prediction?",
+    choices: [
+      "It identifies a condition absent from the model's training data that may explain why the prediction failed.",
+      "It confirms that the model's prediction was accurate.",
+      "It argues that ocean temperature never affects storm strength.",
+      "It shows that the storm weakened exactly as predicted.",
+    ],
+    answer: 0,
+    explanation:
+      "Meteorologist B points to warm water absent from the model's training data as a likely reason the storm defied the model's weakening prediction.",
+  },
+  {
+    id: "cs-406",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Philosopher A argues that a person's identity persists over time because of continuous psychological connections, like overlapping memories linking each day to the next, even if no single memory spans an entire life.\n\nText 2: Philosopher B argues that this chain of overlapping connections cannot by itself secure identity, since two people could in principle share such a chain between them without either being the same person as the other.",
+    prompt: "Which choice best describes how Philosopher B's argument functions in relation to Philosopher A's?",
+    choices: [
+      "It presents a scenario meant to show that A's criterion is not sufficient to guarantee identity.",
+      "It confirms that A's criterion is both necessary and sufficient for identity.",
+      "It argues that memories never overlap between consecutive days.",
+      "It restates A's position without raising any objection.",
+    ],
+    answer: 0,
+    explanation:
+      "By imagining two people sharing such a chain, Philosopher B shows that overlapping psychological connections alone do not guarantee identity, undercutting A's sufficiency claim.",
+  },
+  {
+    id: "cs-407",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Historian A argues that a region's shift from subsistence farming to cash crops in the nineteenth century was driven primarily by new rail lines that made distant markets reachable for the first time.\n\nText 2: Historian B argues the shift began years before the rail lines were completed, pointing to tax records showing cash-crop acreage already rising in response to earlier changes in land ownership law.",
+    prompt: "Which choice best describes how Historian B's evidence complicates Historian A's argument?",
+    choices: [
+      "It suggests that the shift was already underway for reasons other than rail access, undermining rail lines as the primary cause.",
+      "It confirms that rail lines were the sole cause of the shift.",
+      "It shows that cash-crop farming never occurred before the rail lines were built.",
+      "It argues that land ownership law had no effect on farming practices.",
+    ],
+    answer: 0,
+    explanation:
+      "Tax records showing the shift predated the rail lines suggest another cause was already driving it, which weakens rail access as the primary explanation.",
+  },
+  {
+    id: "cs-408",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Immunologist A argues that a vaccine candidate's strong antibody response in trial participants predicts durable long-term protection, based on past vaccines where high antibody levels correlated with years of protection.\n\nText 2: Immunologist B cautions that for the virus in question, antibody levels have been observed to fade within months even in people who later proved resistant to reinfection, suggesting antibody levels alone may not predict protection for this virus.",
+    prompt: "Which choice best describes the relationship between Immunologist B's caution and Immunologist A's argument?",
+    choices: [
+      "It challenges the reliability of the measure Immunologist A relies on, at least for this particular virus.",
+      "It confirms that antibody levels predict protection for every virus.",
+      "It argues that no vaccine can ever provide protection.",
+      "It shows that Immunologist A's trial participants were never tested.",
+    ],
+    answer: 0,
+    explanation:
+      "By showing antibody levels fade even in people who remain protected, Immunologist B challenges whether antibody levels reliably predict protection for this virus.",
+  },
+  {
+    id: "cs-409",
+    module: "rw",
+    domain: "Craft and Structure",
+    skill: "Cross-Text Connections",
+    difficulty: 3,
+    passage:
+      "Text 1: Art historian A attributes an unsigned portrait to a well-known painter's workshop, citing brushwork in the fabric folds that closely matches the master's documented technique.\n\nText 2: Art historian B questions the attribution, noting that pigment analysis shows the portrait uses a lead-based white that fell out of common use in the master's workshop a decade before the portrait's estimated date.",
+    prompt: "Which choice best describes how Art historian B's finding relates to Art historian A's attribution?",
+    choices: [
+      "It raises a chronological inconsistency that calls the stylistic attribution into question.",
+      "It fully supports the attribution based on brushwork alone.",
+      "It confirms the portrait's exact date of creation.",
+      "It argues that pigment analysis is irrelevant to dating paintings.",
+    ],
+    answer: 0,
+    explanation:
+      "The pigment's fall from use before the portrait's estimated date creates a timing inconsistency that undercuts Art historian A's brushwork-based attribution.",
   }
 );

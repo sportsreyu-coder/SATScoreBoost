@@ -5938,5 +5938,1059 @@ QUESTIONS.push(
     answer: 0,
     explanation:
       "Only choice A gives the material explanation, clay's durability, for why so many tablets have survived.",
+  },
+  {
+    id: "ei-349",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "A massive volcanic eruption in 1815 spewed ash high into the atmosphere, blocking sunlight across much of the globe. ______ crops failed in many regions the following year.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["As a result,", "However,", "For example,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The crop failures were a direct consequence of blocked sunlight, so the cause-and-effect transition 'As a result' is needed.",
+  },
+  {
+    id: "ei-350",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "An engineer once predicted that the wooden footbridge would collapse within a decade. ______ it has stood for more than fifty years.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "Consequently,", "In addition,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The bridge's long survival contradicts the engineer's prediction, so the contrast transition 'Instead' is needed.",
+  },
+  {
+    id: "ei-351",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The museum opened a new wing devoted to contemporary sculpture. ______ it extended its weekend hours to accommodate more visitors.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In addition,", "However,", "Instead,", "Therefore,"],
+    answer: 0,
+    explanation:
+      "Extending weekend hours is a second, related change alongside the new wing, so the addition transition 'In addition' fits.",
+  },
+  {
+    id: "ei-352",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The chef built a reputation for unusual flavor pairings. ______ one popular dessert combines dark chocolate with chili powder.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For instance,", "Nevertheless,", "As a result,", "Meanwhile,"],
+    answer: 0,
+    explanation:
+      "The dessert is a specific example of the chef's unusual pairings, so 'For instance' correctly introduces it.",
+  },
+  {
+    id: "ei-353",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "Rainfall across the valley fell far below average for three consecutive years. ______ reservoir levels dropped to their lowest point in decades.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Consequently,", "However,", "For instance,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "Low reservoir levels are the effect of the sustained low rainfall, so the cause-and-effect transition 'Consequently' is required.",
+  },
+  {
+    id: "ei-354",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "Critics dismissed the novel as derivative when it was first published. ______ it went on to sell millions of copies worldwide.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Nevertheless,", "As a result,", "For example,", "In addition,"],
+    answer: 0,
+    explanation:
+      "The novel's commercial success contrasts with its harsh reception, so the concession transition 'Nevertheless' is needed.",
+  },
+  {
+    id: "ei-355",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "Finnish and Estonian both evolved from a common Uralic ancestor language. ______ both languages rely heavily on noun case endings rather than prepositions.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Similarly,", "However,", "As a result,", "For example,"],
+    answer: 0,
+    explanation:
+      "The second sentence states another point of resemblance between the languages, so 'Similarly' fits.",
+  },
+  {
+    id: "ei-356",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The biologist first drafted a hypothesis about the bird's migration pattern. ______ she spent two summers tracking tagged birds to test it.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Afterward,", "However,", "In other words,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "Tracking the birds happened after drafting the hypothesis, so the sequence transition 'Afterward' is correct.",
+  },
+  {
+    id: "ei-357",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The city has become known for its vibrant street art scene. ______ one downtown alley is covered wall to wall with murals by local artists.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In particular,", "Nevertheless,", "As a result,", "Meanwhile,"],
+    answer: 0,
+    explanation:
+      "The alley is a specific instance of the broader street art scene, so 'In particular' correctly narrows the focus.",
+  },
+  {
+    id: "ei-358",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage:
+      "The company switched to biodegradable packaging for all of its products. ______ its shipping costs rose because the new materials were bulkier than the old plastic wrap.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["As a result,", "However,", "For instance,", "Likewise,"],
+    answer: 0,
+    explanation:
+      "The rise in shipping costs is a direct effect of the packaging switch, so 'As a result' is needed.",
+  },
+  {
+    id: "ei-359",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "Economists widely expected a recession once interest rates rose sharply. ______ the economy grew faster than it had in the previous three years.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "As a result,", "Similarly,", "For instance,"],
+    answer: 0,
+    explanation:
+      "The economy's unexpected growth directly contradicts the predicted recession, so the contrast transition 'Instead' is needed, not a cause-and-effect or addition word.",
+  },
+  {
+    id: "ei-360",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The new sequencing method takes nearly twice as long as the older technique. ______ it produces results with far fewer errors.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even so,", "As a result,", "For example,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The accuracy gain holds despite the slower speed, so the concessive transition 'Even so' is needed rather than a cause-and-effect or addition word.",
+  },
+  {
+    id: "ei-361",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "Regulators tightened emissions standards for new vehicles. ______ automakers accelerated development of electric models.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Accordingly,", "Nevertheless,", "For instance,", "In the same way,"],
+    answer: 0,
+    explanation:
+      "Automakers' response was a direct consequence of the new standards, so 'Accordingly' correctly signals that cause-and-effect relationship.",
+  },
+  {
+    id: "ei-362",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The artist spent decades perfecting her technique in oil painting. ______ she mastered bronze casting well into her seventies.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Moreover,", "Instead,", "As a result,", "Nonetheless,"],
+    answer: 0,
+    explanation:
+      "Mastering bronze casting is an additional, impressive accomplishment alongside painting, so the intensifying addition transition 'Moreover' fits best.",
+  },
+  {
+    id: "ei-363",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "Students in the morning discussion section scored consistently well on the exam. ______ those in the afternoon section struggled with the same material.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["By contrast,", "Similarly,", "As a result,", "For example,"],
+    answer: 0,
+    explanation:
+      "The afternoon section's performance directly opposes the morning section's, so the contrast transition 'By contrast' is required.",
+  },
+  {
+    id: "ei-364",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The budget phone costs significantly less than its competitors. ______ its camera and battery life fall noticeably short of industry standards.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["That said,", "As a result,", "For example,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The weaker specs qualify the praise of the low price, so the concessive transition 'That said' is needed rather than a result or example word.",
+  },
+  {
+    id: "ei-365",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The ancient manuscript was exposed to damp conditions for centuries. ______ most of its pages have become too brittle to handle without specialized equipment.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["As a result,", "However,", "For instance,", "Likewise,"],
+    answer: 0,
+    explanation:
+      "The brittleness is a direct effect of centuries of dampness, so the cause-and-effect transition 'As a result' is needed.",
+  },
+  {
+    id: "ei-366",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The team lost three starting players to injury midseason. ______ it still managed to qualify for the playoffs.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Nonetheless,", "As a result,", "For example,", "In addition,"],
+    answer: 0,
+    explanation:
+      "Qualifying for the playoffs happened despite the injuries, so the concessive transition 'Nonetheless' is required.",
+  },
+  {
+    id: "ei-367",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The region experienced its driest growing season on record. ______ many farmers had to sell off portions of their livestock to cover their losses.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["As a consequence,", "However,", "For example,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "Selling livestock was a direct consequence of the severe drought, so 'As a consequence' is needed.",
+  },
+  {
+    id: "ei-368",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "The orchestra's new conductor has reshaped its sound dramatically. ______ she slowed the tempo of several classical pieces to emphasize their emotional weight.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Specifically,", "However,", "In addition,", "Consequently,"],
+    answer: 0,
+    explanation:
+      "Slowing the tempo explains precisely how the conductor reshaped the sound, so 'Specifically' fits better than a word suggesting a separate added action.",
+  },
+  {
+    id: "ei-369",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "One proposal would fund the repairs through a property tax increase. ______ the alternative plan would rely on a one-time fee charged to new construction projects.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["On the other hand,", "As a result,", "For instance,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The second plan is presented as an alternative to the first, so the contrast transition 'On the other hand' is needed.",
+  },
+  {
+    id: "ei-370",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "Parents complained for years about the school's rigid dress code. ______ the district revised the policy to allow more flexibility.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In response,", "For example,", "Similarly,", "Nonetheless,"],
+    answer: 0,
+    explanation:
+      "The policy revision was a reaction to the complaints, so 'In response' correctly signals that cause-and-effect relationship.",
+  },
+  {
+    id: "ei-371",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "Engineers warned repeatedly that the dam's spillway was undersized for a major flood. ______ officials delayed funding the upgrade for another decade.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even then,", "As a result,", "For instance,", "Likewise,"],
+    answer: 0,
+    explanation:
+      "Officials ignored the warnings despite them, so the concessive transition 'Even then' is needed rather than a cause-and-effect word.",
+  },
+  {
+    id: "ei-372",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage:
+      "Researchers first identified the compound in a soil sample from a remote rainforest. ______ laboratory tests revealed that it had powerful antifungal properties.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Subsequently,", "However,", "Similarly,", "In other words,"],
+    answer: 0,
+    explanation:
+      "The lab tests happened after the initial identification, so the sequence transition 'Subsequently' is correct.",
+  },
+  {
+    id: "ei-373",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "The committee's decision was procedurally sound but substantively flawed. ______ the committee followed every required step yet reached a conclusion unsupported by the evidence it gathered.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["That is,", "However,", "For example,", "As a result,"],
+    answer: 0,
+    explanation:
+      "The second sentence restates and clarifies the claim in the first sentence rather than contrasting with it or giving an example, so the clarifying transition 'That is' is needed.",
+  },
+  {
+    id: "ei-374",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "The startup's app undeniably simplified scheduling for small medical clinics. ______ few of those clinics could justify its steep monthly subscription fee once a free alternative appeared.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even so,", "As a result,", "For example,", "In addition,"],
+    answer: 0,
+    explanation:
+      "The clinics abandoning the app happened despite its usefulness, so the concessive transition 'Even so' is needed rather than a cause-and-effect or addition word.",
+  },
+  {
+    id: "ei-375",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "The sculpture's rough, unfinished appearance is not the result of neglect. ______ the artist deliberately left tool marks visible to emphasize the carving process.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Rather,", "As a result,", "Similarly,", "In short,"],
+    answer: 0,
+    explanation:
+      "The second sentence replaces the rejected explanation (neglect) with the true one (deliberate choice), so the corrective transition 'Rather' is needed.",
+  },
+  {
+    id: "ei-376",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "The algorithm's accuracy plateaus once the training set exceeds roughly ten million examples, a point of diminishing returns. ______ beyond that threshold, adding more data barely improves its performance.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In other words,", "As a result,", "For instance,", "Nevertheless,"],
+    answer: 0,
+    explanation:
+      "The second sentence restates the same idea, diminishing returns past a threshold, in simpler terms, so the restating transition 'In other words' fits best.",
+  },
+  {
+    id: "ei-377",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "In coastal towns, rising sea levels have forced many residents to relocate inland over the past decade. ______ in some inland floodplains, the same decade has seen a surge of new residential development despite the flood risk.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Conversely,", "Similarly,", "As a result,", "For example,"],
+    answer: 0,
+    explanation:
+      "The inland trend, more development despite risk, is the opposite of the coastal trend, relocation away from risk, so the contrast transition 'Conversely' is required.",
+  },
+  {
+    id: "ei-378",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "Historians have long criticized the treaty's vague wording as an invitation to future disputes. ______ the treaty held firm for nearly a century without a single major violation.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Yet,", "As a result,", "For instance,", "Similarly,"],
+    answer: 0,
+    explanation:
+      "The treaty's durability contradicts the expectation created by its vague wording, so the contrast transition 'Yet' is needed.",
+  },
+  {
+    id: "ei-379",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 3,
+    passage:
+      "Bypass surgery carries well-documented risks for patients over eighty. ______ for Mr. Alvarez, forgoing treatment carried a far higher risk of sudden cardiac failure.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Admittedly,", "As a result,", "For example,", "Likewise,"],
+    answer: 0,
+    explanation:
+      "The sentence concedes the surgery's risk before presenting a specific case where the alternative was riskier still, so the concessive transition 'Admittedly' is needed.",
+  },
+  {
+    id: "ei-380",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Sourdough starter is a mixture of flour and water that captures wild yeast and bacteria from the surrounding air.\n• Lactobacillus bacteria in the starter ferment sugars in the dough and produce lactic acid as a byproduct.\n• The lactic acid is responsible for sourdough bread's distinctive tangy flavor.",
+    prompt:
+      "The student wants to explain why sourdough bread tastes tangy. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Lactobacillus bacteria in the starter produce lactic acid, which gives sourdough bread its distinctive tangy flavor.",
+      "Sourdough starter is a mixture of flour and water that captures wild yeast and bacteria from the air.",
+      "Sourdough bread has been made using natural fermentation for thousands of years.",
+      "Bakers must feed a sourdough starter regularly to keep it active.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A names the lactic acid byproduct that directly explains the tangy flavor; the others describe the starter or its history without explaining the taste.",
+  },
+  {
+    id: "ei-381",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Honeybee scouts perform a figure-eight waggle dance inside the hive after finding a good food source.\n• The angle of the dance relative to vertical indicates the direction of the food relative to the sun.\n• The duration of the waggling portion of the dance indicates how far away the food source is.",
+    prompt:
+      "The student wants to explain how other bees learn the distance to a food source from the waggle dance. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "The duration of the waggling portion of the dance tells other bees how far away the food source is.",
+      "Honeybee scouts perform a figure-eight dance after finding a good food source.",
+      "The angle of the dance relative to vertical indicates the food's direction relative to the sun.",
+      "Bees rely on dances to communicate information inside the hive.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A specifically links the dance's duration to communicating distance, which is the stated goal.",
+  },
+  {
+    id: "ei-382",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• The aurora borealis occurs when charged particles from the sun collide with gases in Earth's atmosphere.\n• Oxygen collisions tend to produce green or red light, while nitrogen collisions tend to produce blue or purple light.\n• The aurora is most visible near the magnetic poles, where Earth's magnetic field funnels the charged particles.",
+    prompt:
+      "The student wants to explain what causes the different colors seen in the aurora borealis. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Oxygen collisions tend to produce green or red light, while nitrogen collisions tend to produce blue or purple light.",
+      "The aurora borealis occurs when charged particles from the sun collide with atmospheric gases.",
+      "The aurora is most visible near Earth's magnetic poles.",
+      "Earth's magnetic field funnels charged particles toward the poles.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A identifies which gases produce which colors, directly fulfilling the stated goal.",
+  },
+  {
+    id: "ei-383",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Coast redwoods can grow bark more than a foot thick at the base of the trunk.\n• The thick bark contains very little resin, which makes it difficult for fire to ignite.\n• The bark also provides insulation that protects the tree's living tissue from heat during a forest fire.",
+    prompt:
+      "The student wants to explain why coast redwoods often survive forest fires that kill other trees. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Their thick, low-resin bark resists ignition and insulates the tree's living tissue from the heat of a forest fire.",
+      "Coast redwoods can grow bark more than a foot thick at the base of the trunk.",
+      "Coast redwoods are among the tallest trees in the world.",
+      "Forest fires periodically sweep through coastal redwood forests.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A combines both the fire-resistant and insulating properties of the bark to explain the trees' survival.",
+  },
+  {
+    id: "ei-384",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Early clothing fasteners like buttons and hooks required time and dexterity to fasten one at a time.\n• The modern zipper, patented in the early twentieth century, uses interlocking teeth that close with a single pull of a slider.\n• Zippers quickly became popular for boots, jackets, and later a wide range of clothing.",
+    prompt:
+      "The student wants to explain why the zipper was a convenient improvement over earlier fasteners. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Unlike buttons and hooks, which had to be fastened one at a time, the zipper closes an entire seam with a single pull of a slider.",
+      "The modern zipper was patented in the early twentieth century.",
+      "Zippers quickly became popular for boots and jackets.",
+      "Buttons and hooks were used on clothing for centuries.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A directly contrasts the zipper's one-motion closure with the slower, one-at-a-time fastening it replaced.",
+  },
+  {
+    id: "ei-385",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Many bat species are active at night and hunt flying insects in near-total darkness.\n• Bats emit high-frequency calls and listen for the echoes that bounce off nearby objects.\n• By analyzing the timing and pitch of the returning echoes, a bat can judge an object's distance, size, and movement.",
+    prompt:
+      "The student wants to explain how bats are able to hunt successfully in the dark. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "By emitting calls and analyzing the timing and pitch of the returning echoes, bats can judge the distance, size, and movement of nearby objects even in darkness.",
+      "Many bat species are active at night and hunt flying insects.",
+      "Bats emit high-frequency calls that are often inaudible to humans.",
+      "Bats are found on every continent except Antarctica.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explains the mechanism, echo analysis, that lets bats hunt without relying on sight.",
+  },
+  {
+    id: "ei-386",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• In 1928, Alexander Fleming returned from vacation to find a petri dish of bacteria contaminated with mold.\n• Fleming noticed that the bacteria near the mold had been killed, while bacteria elsewhere on the dish had grown normally.\n• This chance observation led Fleming to isolate the substance, later named penicillin, that the mold produced.",
+    prompt:
+      "The student wants to emphasize how accidental Fleming's discovery of penicillin was. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Fleming's discovery began with an accidental observation: bacteria near a stray mold contamination had died, while bacteria elsewhere on the dish had not.",
+      "Alexander Fleming isolated the substance that the mold produced and later named it penicillin.",
+      "Fleming returned from vacation in 1928 to examine his petri dishes.",
+      "Penicillin became one of the most important medical discoveries of the twentieth century.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A highlights the unplanned contamination and chance observation that make the discovery accidental.",
+  },
+  {
+    id: "ei-387",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• The Arctic tern breeds in the Arctic during the northern summer.\n• It then migrates to spend the southern summer near Antarctica, following a round-trip route of roughly 60,000 miles.\n• This is considered the longest annual migration of any animal.",
+    prompt:
+      "The student wants to emphasize how extreme the Arctic tern's migration distance is. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "The Arctic tern's round-trip migration covers roughly 60,000 miles each year, the longest annual journey of any animal.",
+      "The Arctic tern breeds in the Arctic during the northern summer.",
+      "The Arctic tern spends the southern summer near Antarctica.",
+      "Many bird species migrate long distances between breeding and non-breeding seasons.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A states the specific extreme distance and its record-setting status, matching the goal.",
+  },
+  {
+    id: "ei-388",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage:
+      "A student has gathered the following notes:\n• Before standardized shipping containers, cargo was loaded and unloaded piece by piece by dockworkers, a slow and labor-intensive process.\n• Standardized steel containers, introduced in the mid-twentieth century, could be lifted by crane directly between ships, trains, and trucks.\n• This standardization cut loading times from days to hours and sharply reduced shipping costs.",
+    prompt:
+      "The student wants to emphasize how much the standardized shipping container improved the efficiency of global trade. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "By allowing cargo to move directly between ships, trains, and trucks, standardized containers cut loading times from days to hours and sharply reduced shipping costs.",
+      "Before standardized containers, cargo was loaded and unloaded piece by piece by dockworkers.",
+      "Standardized steel shipping containers were introduced in the mid-twentieth century.",
+      "Global trade expanded significantly over the second half of the twentieth century.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A states the specific efficiency gains, time and cost, that fulfill the goal of emphasizing improved efficiency.",
+  },
+  {
+    id: "ei-389",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Before the printing press, books were copied by hand, a slow process that kept them scarce and expensive.\n• Gutenberg's movable-type press, developed around 1440, allowed identical pages to be printed quickly and in large numbers.\n• Within decades, the price of books fell sharply, and significantly more people across Europe learned to read.",
+    prompt:
+      "The student wants to explain how the printing press contributed to rising literacy rates in Europe. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Because the press could print identical pages quickly and in large numbers, book prices fell sharply, and significantly more people learned to read.",
+      "Before the printing press, books were copied by hand, a slow and expensive process.",
+      "Gutenberg developed his movable-type press around 1440.",
+      "Handwritten books were scarce and valuable before the printing press existed.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A links the press's output and falling prices directly to the rise in literacy, fulfilling the stated goal.",
+  },
+  {
+    id: "ei-390",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Mount Everest's summit is covered by a layer of snow and ice whose depth can change from year to year.\n• Surveyors must also account for slight shifts in the Himalayas caused by ongoing tectonic activity.\n• Different surveying expeditions have measured the mountain's height as anywhere from about 29,000 to just over 29,035 feet.",
+    prompt:
+      "The student wants to explain why different surveys have measured slightly different heights for Mount Everest. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Because the snow and ice layer on the summit varies and the Himalayas shift slightly due to tectonic activity, surveys have measured the mountain's height differently.",
+      "Mount Everest's summit is covered by a layer of snow and ice.",
+      "Different surveying expeditions have measured the mountain's height as anywhere from about 29,000 to just over 29,035 feet.",
+      "The Himalayas were formed by the collision of tectonic plates.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A gives the two reasons, variable snow depth and tectonic shifts, that explain the measurement differences; choice C merely restates the discrepancy without explaining it.",
+  },
+  {
+    id: "ei-391",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Scientists drill long cylindrical cores of ice from the Antarctic ice sheet, where layers of snow have compacted into ice over hundreds of thousands of years.\n• Tiny bubbles of ancient air trapped in each layer preserve a sample of the atmosphere at the time the snow fell.\n• By measuring carbon dioxide levels in these trapped air bubbles, researchers can reconstruct how the atmosphere's composition has changed over time.",
+    prompt:
+      "The student wants to explain how ice cores allow scientists to study the ancient atmosphere. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Tiny bubbles of ancient air trapped in each ice layer preserve a sample of the atmosphere from when the snow fell, letting researchers measure past carbon dioxide levels.",
+      "Scientists drill long cylindrical cores of ice from the Antarctic ice sheet.",
+      "Layers of snow in Antarctica have compacted into ice over hundreds of thousands of years.",
+      "Antarctica holds the majority of the world's fresh water in its ice sheet.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explains the trapped-air mechanism that lets scientists study the ancient atmosphere, directly fulfilling the goal.",
+  },
+  {
+    id: "ei-392",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Flamingos are often seen standing on a single leg for extended periods, including while asleep.\n• Researchers found that flamingos use less muscular effort to balance on one leg than on two, likely due to how their leg joints lock in place.\n• Standing on one leg also allows a flamingo to keep the other leg tucked against its body, reducing heat loss in cold water.",
+    prompt:
+      "The student wants to explain a functional benefit of the one-legged stance beyond balance. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Tucking one leg against the body while standing on the other helps a flamingo reduce heat loss in cold water.",
+      "Flamingos are often seen standing on a single leg for extended periods.",
+      "Flamingos use less muscular effort to balance on one leg than on two.",
+      "Flamingo leg joints can lock in place while the bird stands.",
+    ],
+    answer: 0,
+    explanation:
+      "The goal asks for a benefit beyond balance; only choice A names the heat-conservation benefit, while the other relevant-sounding choices concern balance, not warmth.",
+  },
+  {
+    id: "ei-393",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• The Rosetta Stone, discovered in 1799, contains the same decree inscribed in three scripts: hieroglyphic, Demotic, and ancient Greek.\n• Scholars at the time could already read ancient Greek fluently.\n• By comparing the Greek text to the hieroglyphic text word by word, researchers were gradually able to decode the meanings of Egyptian hieroglyphs.",
+    prompt:
+      "The student wants to explain how the Rosetta Stone allowed scholars to decipher Egyptian hieroglyphs. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Because scholars could already read the stone's Greek inscription, comparing it word by word to the hieroglyphic text let them gradually decode the hieroglyphs' meanings.",
+      "The Rosetta Stone was discovered in 1799.",
+      "The Rosetta Stone contains the same decree in three different scripts.",
+      "Ancient Greek was already a well-understood language among scholars of the time.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explains the comparative method, using known Greek to decode unknown hieroglyphs, that fulfills the goal.",
+  },
+  {
+    id: "ei-394",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• The SR-71 Blackbird reconnaissance jet cruised at speeds above Mach 3, generating extreme frictional heat on its skin.\n• Engineers coated the aircraft's titanium skin with a special black paint.\n• The black paint helped the skin radiate away excess heat more effectively and also reduced the aircraft's radar visibility.",
+    prompt:
+      "The student wants to explain why the SR-71's black paint was functionally useful, not merely a stylistic choice. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "The black paint helped the Blackbird's skin radiate away the extreme heat generated at high speed more effectively.",
+      "The SR-71 Blackbird cruised at speeds above Mach 3.",
+      "Engineers coated the aircraft's titanium skin with a special black paint.",
+      "The SR-71 Blackbird was used for reconnaissance missions.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A ties the paint to a specific functional benefit, heat radiation, rather than simply restating that the paint was applied.",
+  },
+  {
+    id: "ei-395",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Venice is built on a cluster of marshy islands in a lagoon, and its foundations rest on wooden piles driven into soft sediment.\n• Decades of groundwater pumping in the twentieth century caused the sediment beneath the city to compact and settle.\n• At the same time, global sea levels have been rising, increasing the frequency of flooding in the city's lowest-lying squares.",
+    prompt:
+      "The student wants to explain that Venice's flooding problem results from two separate factors. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Venice's flooding stems both from the city's own sediment settling due to past groundwater pumping and from the broader rise in global sea levels.",
+      "Venice is built on a cluster of marshy islands in a lagoon.",
+      "Venice's foundations rest on wooden piles driven into soft sediment.",
+      "Global sea levels have been rising in recent decades.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A names both contributing factors, local subsidence and global sea-level rise, as the goal requires.",
+  },
+  {
+    id: "ei-396",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Cats commonly purr when content, such as while being petted or resting near their owners.\n• Cats have also been observed purring while injured, giving birth, or near death.\n• Researchers have proposed that purring may aid healing through vibration, but no single explanation has been confirmed for all cases.",
+    prompt:
+      "The student wants to emphasize that scientists do not fully understand why cats purr. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Although purring may aid healing through vibration, researchers have not confirmed a single explanation that accounts for all the situations in which cats purr.",
+      "Cats commonly purr when content, such as while being petted.",
+      "Cats have been observed purring while injured or giving birth.",
+      "Purring may help cats heal through the vibrations it produces.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explicitly states that no confirmed explanation exists, matching the goal of emphasizing scientific uncertainty.",
+  },
+  {
+    id: "ei-397",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Many forest trees are connected underground by networks of mycorrhizal fungi attached to their roots.\n• Through these fungal networks, a tree can send sugars to a neighboring tree that is shaded or struggling.\n• Some researchers have also found evidence that trees send chemical warning signals through the same network when attacked by insects.",
+    prompt:
+      "The student wants to describe a specific way trees use the fungal network to help a struggling neighbor. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "A tree can send sugars through the fungal network to a neighboring tree that is shaded or struggling.",
+      "Many forest trees are connected underground by networks of mycorrhizal fungi.",
+      "Trees may send chemical warning signals through the fungal network when attacked by insects.",
+      "Mycorrhizal fungi attach themselves to the roots of forest trees.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A describes the specific nutrient-sharing behavior that helps a struggling neighboring tree, as the goal requires.",
+  },
+  {
+    id: "ei-398",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Many people assume the Leaning Tower of Pisa was designed to lean.\n• In fact, the tower began tilting during construction in the twelfth century because its foundation was laid in unstable, soft soil.\n• Engineers in the twentieth century installed counterweights and extracted soil from beneath the foundation to stabilize the tilt without making the tower perfectly straight.",
+    prompt:
+      "The student wants to correct the common misconception that the tower's lean was intentional. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Contrary to popular belief, the tower began tilting during construction because its foundation was laid in unstable, soft soil.",
+      "Engineers in the twentieth century installed counterweights to stabilize the tower.",
+      "Soil was extracted from beneath the tower's foundation to reduce its tilt.",
+      "The Leaning Tower of Pisa was built in the twelfth century.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A directly states that the lean was accidental, correcting the misconception named in the goal.",
+  },
+  {
+    id: "ei-399",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Roman aqueducts carried water for miles using a continuous, gentle downhill slope, often elevated on stone arches.\n• Maya water systems in cities like Palenque instead used covered, pressurized channels that could run water uphill over short distances.\n• Both civilizations built their systems primarily to supply cities with drinking water and support agriculture.",
+    prompt:
+      "The student wants to highlight a key engineering difference between the Roman and Maya water systems. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "While Roman aqueducts relied on a continuous downhill slope, Maya systems used covered, pressurized channels that could move water uphill.",
+      "Roman aqueducts carried water for miles, often elevated on stone arches.",
+      "Maya water systems were used in cities such as Palenque.",
+      "Both civilizations built water systems to supply their cities with drinking water.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A directly contrasts the two engineering approaches, slope-based versus pressurized, as the goal requires.",
+  },
+  {
+    id: "ei-400",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Most flying insects beat all of their wings using a shared set of muscles, limiting independent control.\n• Dragonflies have separate muscles controlling each of their four wings individually.\n• This independent control lets dragonflies hover, fly backward, and change direction abruptly while chasing prey.",
+    prompt:
+      "The student wants to explain how dragonflies achieve such precise aerial maneuverability. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Because separate muscles control each of their four wings individually, dragonflies can hover, fly backward, and change direction abruptly.",
+      "Most flying insects beat all of their wings using a shared set of muscles.",
+      "Dragonflies have four wings, unlike many other flying insects.",
+      "Dragonflies often chase prey while in flight.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A ties the independent wing-muscle control to the specific maneuvers, explaining the mechanism the goal asks for.",
+  },
+  {
+    id: "ei-401",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• The Atacama Desert in Chile receives less than half an inch of rainfall per year, making it one of the driest places on Earth.\n• Dry air contains little water vapor, which would otherwise absorb and distort incoming light and radio signals.\n• Several major astronomical observatories, including large radio telescope arrays, have been built in the Atacama because of these conditions.",
+    prompt:
+      "The student wants to explain why astronomers chose the Atacama Desert as a site for major observatories. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Because the desert's extremely dry air contains little water vapor to distort incoming light and radio signals, astronomers have built major observatories there.",
+      "The Atacama Desert in Chile receives less than half an inch of rainfall per year.",
+      "The Atacama Desert is one of the driest places on Earth.",
+      "Several major astronomical observatories have been built in the Atacama Desert.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explains the causal link between dry air and clearer observations, matching the goal of explaining why astronomers chose the site.",
+  },
+  {
+    id: "ei-402",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage:
+      "A student has gathered the following notes:\n• Many people assume that international internet traffic travels mainly through satellites.\n• In reality, a vast network of fiber-optic cables laid along the ocean floor carries the large majority of international data.\n• These submarine cables can transmit far more data, more quickly and cheaply, than satellite links can.",
+    prompt:
+      "The student wants to correct the misconception that satellites carry most international internet traffic. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Contrary to popular belief, a vast network of fiber-optic cables laid along the ocean floor, not satellites, carries the large majority of international internet traffic.",
+      "Submarine cables can transmit data more quickly and cheaply than satellite links can.",
+      "Many people assume that international internet traffic travels mainly through satellites.",
+      "Fiber-optic cables are laid along the ocean floor to connect continents.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explicitly states the correct fact in contrast to the misconception, fulfilling the stated goal.",
+  },
+  {
+    id: "ei-403",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• Korean printers cast movable metal type and used it to print the Jikji, a Buddhist text, in 1377.\n• Johannes Gutenberg's movable-type press in Europe is often credited as the first of its kind, beginning around 1440.\n• The Korean system used individual characters for a script with thousands of characters, making large-scale printing more difficult than it was for the European alphabet.",
+    prompt:
+      "The student wants to challenge the common assumption that Gutenberg's press was the first movable-type printing technology. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Korean printers were already using movable metal type to print the Jikji in 1377, more than sixty years before Gutenberg's press appeared in Europe.",
+      "Johannes Gutenberg's movable-type press is often credited as the first of its kind.",
+      "The Korean printing system had to account for a script with thousands of characters.",
+      "European printing relied on an alphabet with a comparatively small number of characters.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A gives the specific date showing Korean movable type predated Gutenberg's press, directly challenging the assumption named in the goal.",
+  },
+  {
+    id: "ei-404",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• Before the Panama Canal opened in 1914, a ship traveling between New York and San Francisco had to sail around the southern tip of South America.\n• That route added roughly 8,000 miles compared with crossing through the Panama Canal.\n• The canal uses a system of locks to raise and lower ships between sea level and a man-made lake roughly 85 feet above sea level.",
+    prompt:
+      "The student wants to quantify how much distance the Panama Canal saved on a specific shipping route. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "By allowing ships to avoid sailing around South America, the canal shortened the New York-to-San Francisco route by roughly 8,000 miles.",
+      "The Panama Canal opened in 1914.",
+      "The canal uses a system of locks to raise and lower ships to a lake roughly 85 feet above sea level.",
+      "Ships traveling between the Atlantic and Pacific Oceans once had to sail around South America.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A states the specific route and the exact distance saved; the last choice describes the old route without the quantified comparison the goal requires.",
+  },
+  {
+    id: "ei-405",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• Carbon dating measures the decay of carbon-14, a radioactive isotope, to estimate the age of organic material.\n• Carbon-14 has a half-life of about 5,730 years, meaning half of it decays in that span.\n• Because so little carbon-14 remains after roughly 50,000 years, the method becomes unreliable for dating objects older than that.",
+    prompt:
+      "The student wants to explain a specific limitation of carbon dating as a method. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Because so little carbon-14 remains after roughly 50,000 years, carbon dating becomes unreliable for objects older than that.",
+      "Carbon dating measures the decay of carbon-14 to estimate an object's age.",
+      "Carbon-14 has a half-life of about 5,730 years.",
+      "Carbon dating is commonly used by archaeologists to date organic material.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A identifies the specific age threshold beyond which the method fails, directly stating a limitation rather than just describing how the method works.",
+  },
+  {
+    id: "ei-406",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• In 1971, computer engineer Ray Tomlinson sent what is widely considered the first email between two separate computers on a network.\n• Tomlinson later said he could not remember the exact content of the message, though he believed it was something unremarkable like a string of letters.\n• The @ symbol Tomlinson chose to separate the username from the computer's name is still used in email addresses today.",
+    prompt:
+      "The student wants to emphasize that the first email's content was unremarkable compared to its lasting significance. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Tomlinson could not even recall the exact content of his 1971 message, likely an unremarkable string of letters, yet the system he built still underlies email today.",
+      "In 1971, Ray Tomlinson sent what is widely considered the first email between two computers.",
+      "Tomlinson chose the @ symbol to separate the username from the computer's name.",
+      "The @ symbol is still used in email addresses today.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explicitly pairs the forgettable content with the system's lasting significance, matching the specific contrast the goal asks for.",
+  },
+  {
+    id: "ei-407",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• Leonardo da Vinci often blended colors and tones gradually, a technique called sfumato, to soften outlines and create a hazy depth.\n• Sandro Botticelli, by contrast, favored crisp, clearly defined outlines and flat areas of color with little blending.\n• Both painters worked in Florence during the Italian Renaissance and were influenced by some of the same patrons.",
+    prompt:
+      "The student wants to highlight a specific stylistic difference between da Vinci's and Botticelli's painting techniques. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "While da Vinci blended colors gradually to create a hazy depth, Botticelli favored crisp outlines and flat areas of color with little blending.",
+      "Leonardo da Vinci's technique of blending colors gradually is called sfumato.",
+      "Both painters worked in Florence during the Italian Renaissance.",
+      "Da Vinci and Botticelli were influenced by some of the same patrons.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A names both painters' contrasting techniques side by side, fulfilling the specific stylistic-contrast goal.",
+  },
+  {
+    id: "ei-408",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• Gothic cathedrals were built with tall stone walls containing large stained-glass windows, which left less stone to bear the roof's weight.\n• Flying buttresses are external stone arches that lean against the upper walls from outside the building.\n• By transferring some of the roof's outward thrust to the ground through these external arches, flying buttresses allowed the walls themselves to be thinner and support larger windows.",
+    prompt:
+      "The student wants to explain the specific structural problem that flying buttresses solved. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Flying buttresses transferred the roof's outward thrust to the ground, allowing walls weakened by large stained-glass windows to remain stable even though they were thinner.",
+      "Flying buttresses are external stone arches that lean against the upper walls from outside the building.",
+      "Gothic cathedrals were built with tall stone walls containing large stained-glass windows.",
+      "Gothic architecture flourished in Europe during the medieval period.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A connects the buttresses' function, redirecting thrust, to the specific problem, thin walls weakened by windows, as the goal requires.",
+  },
+  {
+    id: "ei-409",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• The Dead Sea's water is roughly ten times saltier than ordinary ocean water, which is why almost no fish or plants can survive in it.\n• The Dead Sea earned its name because of this near-total absence of aquatic life.\n• Despite its name, the Dead Sea is a popular tourist destination, largely because its extreme salinity makes swimmers float with unusual ease.",
+    prompt:
+      "The student wants to highlight an ironic contrast between the Dead Sea's name and its appeal to tourists. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Despite being named for its near-total absence of life, the Dead Sea draws tourists precisely because its extreme salinity lets them float with unusual ease.",
+      "The Dead Sea's water is roughly ten times saltier than ordinary ocean water.",
+      "Almost no fish or plants can survive in the Dead Sea.",
+      "The Dead Sea earned its name because of its near-total absence of aquatic life.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A explicitly juxtaposes the 'dead' name with the lively tourist appeal, capturing the irony the goal asks for.",
+  },
+  {
+    id: "ei-410",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 3,
+    passage:
+      "A student has gathered the following notes:\n• The Pantheon in Rome, completed around 128 CE, still has the world's largest unreinforced concrete dome.\n• Roman concrete included volcanic ash, which modern researchers have found reacts with seawater and rainwater to grow new mineral crystals that fill in tiny cracks over time.\n• Modern concrete, by contrast, typically weakens and cracks further once water penetrates it.",
+    prompt:
+      "The student wants to explain why Roman concrete structures like the Pantheon have survived for nearly two thousand years. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: [
+      "Volcanic ash in Roman concrete reacts with water to grow new mineral crystals that fill in cracks over time, unlike modern concrete, which tends to weaken as water penetrates it.",
+      "The Pantheon in Rome was completed around 128 CE.",
+      "The Pantheon still has the world's largest unreinforced concrete dome.",
+      "Modern concrete typically weakens and cracks further once water penetrates it.",
+    ],
+    answer: 0,
+    explanation:
+      "Only choice A gives the specific self-healing mechanism, and contrasts it with modern concrete, explaining the longevity the goal asks about.",
   }
 );
