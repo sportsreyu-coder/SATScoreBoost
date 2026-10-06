@@ -12,6 +12,8 @@
     answers: {},       // qIndex -> choiceIndex
     checked: {},       // qIndex -> bool, true once "Check Answer" has revealed it
     missReasons: {},   // qIndex -> reason key (see MISTAKE_REASONS), tagged after a wrong answer
+    questionStartTimes: {}, // qIndex -> ms timestamp when first shown unanswered (pacing)
+    questionTimes: {}, // qIndex -> seconds elapsed to the first answer (pacing)
     eliminated: {},    // qIndex -> Set of choiceIndex
     marked: {},        // qIndex -> bool
     current: 0,
@@ -81,6 +83,9 @@
   const STUDY_PLAN_KEY = "sat_last_diagnostic"; // most recent diagnostic's category breakdown
   const GOAL_KEY = "sat_goal"; // user's target SAT score, shown on the Dashboard
   const DEFAULT_GOAL = 1600;
+  const TEST_DATE_KEY = "sat_test_date"; // chosen exam date (YYYY-MM-DD), for the Study Plan's daily plan
+  const MINUTES_PER_DAY_KEY = "sat_minutes_per_day"; // minutes/day the student said they can study
+  const DEFAULT_MINUTES_PER_DAY = 30;
   const DOMAIN_TODAY_KEY = "sat_domain_today"; // per-domain answered-question counts, today only
   const MISTAKE_BANK_KEY = "sat_mistake_bank"; // missed questions on the redo queue, with their spaced-repetition box/due date
   const MISTAKES_REVIEWED_KEY = "sat_mistakes_reviewed_today"; // count of mistakes reviewed today
@@ -88,6 +93,7 @@
   const TIMED_MODULE_KEY = "sat_timed_module_today"; // whether a timed session was completed today
   const MISTAKE_BANK_LIMIT = 50;
   const DAY_MS = 24 * 60 * 60 * 1000;
+  const THEME_KEY = "sat_theme"; // explicit light/dark override; unset means "follow the OS"
   // Leitner-style spaced repetition: index = the box a mistake is in, value
   // = days to wait before it's due again after being answered correctly
   // from that box. Reaching an index past the end of this array means it's
@@ -104,6 +110,11 @@
     time: "Ran out of time",
     guess: "Guessed",
   };
+  const PACING_LOG_KEY = "sat_pacing_log"; // rolling {domain, module, correct, timeSec} samples, for the pacing insight
+  const PACING_LOG_LIMIT = 300;
+  const PACE_RUSHED_SECONDS = 20; // under this and a miss reads as "rushed it" rather than "didn't know it"
+  const PACE_STALLED_SECONDS = 120;
+  const PACE_MIN_DOMAIN_SAMPLES = 5; // don't call a domain "slow" off one or two questions
   const XP_KEY = "sat_xp"; // lifetime XP earned from completed quests
   const QUEST_XP_AWARDED_KEY = "sat_quest_xp_awarded"; // which quests have already paid out XP today
   const RPG_KEY = "sat_rpg_state"; // Dungeon Quest save: level, xp, hp, gold, gear tiers, zone progress
@@ -123,6 +134,23 @@
   function progressKey(base) {
     const user = window.Auth && window.Auth.getCurrentUser();
     return user ? `${base}::${user.email}` : base;
+  }
+
+  // ---- Theme ----
+  // Light/dark is a per-browser display preference, not study progress —
+  // always plain localStorage, never scoped to the signed-in user or
+  // reset by progressStore()'s guest/sessionStorage split.
+  function getTheme() {
+    const attr = document.documentElement.getAttribute("data-theme");
+    if (attr === "dark" || attr === "light") return attr;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (e) { /* localStorage unavailable */ }
   }
 
   // ---- Badges ----
@@ -267,6 +295,7 @@
     studyPlan: document.getElementById("studyPlan"),
     lessons: document.getElementById("lessons"),
     games: document.getElementById("games"),
+    classroom: document.getElementById("classroom"),
   };
 
   function show(name) {
@@ -276,10 +305,15 @@
     // header's own Home button covers navigating back out in that case.
     document.getElementById("topbar").classList.toggle("hidden", name === "exam");
     document.getElementById("siteFooter").classList.toggle("hidden", name === "exam");
+    document.getElementById("bottomTabBar")?.classList.toggle("hidden", name === "exam");
     document.getElementById("bankNavBtn").classList.toggle("active", name === "bank");
     document.getElementById("dashboardNavBtn").classList.toggle("active", name === "dashboard");
     document.getElementById("lessonsNavBtn").classList.toggle("active", name === "lessons");
     document.getElementById("gamesNavBtn").classList.toggle("active", name === "games");
+    document.getElementById("bottomTabBank")?.classList.toggle("active", name === "bank");
+    document.getElementById("bottomTabDashboard")?.classList.toggle("active", name === "dashboard");
+    document.getElementById("bottomTabLessons")?.classList.toggle("active", name === "lessons");
+    document.getElementById("bottomTabGames")?.classList.toggle("active", name === "games");
     if (name !== "exam") closeCalculatorPanel();
     if (name !== "games") stopActiveGame();
     document.getElementById("topbarCenter")?.classList.remove("open");
@@ -341,6 +375,8 @@
     state.eliminated = {};
     state.checked = {};
     state.missReasons = {};
+    state.questionStartTimes = {};
+    state.questionTimes = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -703,6 +739,8 @@
     state.eliminated = {};
     state.checked = {};
     state.missReasons = {};
+    state.questionStartTimes = {};
+    state.questionTimes = {};
     state.marked = {};
     state.current = 0;
     state.eliminating = false;
@@ -723,7 +761,7 @@
   function finishDiagModule() {
     clearInterval(state.timer);
     state.questions.forEach((q, i) => {
-      state.fdResults.push({ q, selected: state.answers[i], reason: state.missReasons[i] });
+      state.fdResults.push({ q, selected: state.answers[i], reason: state.missReasons[i], timeSec: state.questionTimes[i] });
     });
 
     const idx = state.fdModuleIndex;
@@ -974,6 +1012,12 @@
     const q = state.questions[i];
     const body = document.getElementById("examBody");
 
+    // Pacing: stamp the first moment this question is seen unanswered, so
+    // selectChoice() can derive how long it took once it's picked.
+    if (state.answers[i] === undefined && !state.questionStartTimes[i]) {
+      state.questionStartTimes[i] = Date.now();
+    }
+
     const passageHTML = q.passage
       ? `<div class="passage">${q.passage}</div>`
       : "";
@@ -1089,6 +1133,9 @@
     const i = state.current;
     const firstAnswer = state.answers[i] === undefined;
     state.answers[i] = ci;
+    if (firstAnswer && state.questionStartTimes[i]) {
+      state.questionTimes[i] = Math.round((Date.now() - state.questionStartTimes[i]) / 1000);
+    }
     renderQuestion();
     renderFooter();
     if (firstAnswer) {
@@ -1245,7 +1292,7 @@
         : toSectionScore(pct); // single section
 
     showScoringTransition(() => {
-      recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i], reason: state.missReasons[i] })));
+      recordSessionProgress(state.questions.map((q, i) => ({ q, selected: state.answers[i], reason: state.missReasons[i], timeSec: state.questionTimes[i] })));
       if (state.module === "mistakeReview") {
         const reviewed = state.questions.filter((q, i) => state.answers[i] !== undefined).length;
         bumpMistakesReviewedToday(reviewed);
@@ -1419,10 +1466,71 @@
       </div>`;
   }
 
+  // Turns a test date + a daily time budget into a short, concrete list of
+  // what to do today — not a fake score-to-question-count formula (that's
+  // not something we can honestly compute), just the redo queue plus a
+  // sized block of the weakest domain, sized from the minutes available.
+  function dailyPlanCardHTML() {
+    const testDate = loadTestDate();
+    const minutesPerDay = loadMinutesPerDay();
+
+    if (!testDate || dailyPlanEditing) {
+      return `
+        <div class="plan-section daily-plan-card">
+          <h3>${testDate ? "Update your plan" : "Build a daily plan"}</h3>
+          <p class="plan-section-blurb">Tell us your test date and how much time you've got, and we'll turn it into a daily target.</p>
+          <form class="daily-plan-form" id="dailyPlanForm">
+            <label>Test date<input type="date" id="dailyPlanDate" required min="${todayStr()}" value="${testDate || ""}" /></label>
+            <label>Minutes per day<input type="number" id="dailyPlanMinutes" min="10" max="240" step="5" value="${minutesPerDay}" /></label>
+            <button type="submit" class="btn btn-primary btn-small">${testDate ? "Save" : "Build my plan →"}</button>
+          </form>
+        </div>`;
+    }
+
+    const days = daysUntilTestDate();
+    const daysLabel =
+      days === null
+        ? ""
+        : days < 0
+        ? "Your test date has passed — set a new one below."
+        : days === 0
+        ? "Test day is today — good luck!"
+        : `${days} day${days === 1 ? "" : "s"} until your test`;
+    const weakest = weakestDomains(1)[0];
+    const questionsPerDay = Math.max(5, Math.round((minutesPerDay * 60) / SECONDS_PER_Q));
+    const due = dueMistakes().length;
+    const goal = loadGoal();
+
+    const items = [];
+    if (due) {
+      items.push(
+        `<li>${due} question${due === 1 ? "" : "s"} on your redo queue <button type="button" class="btn btn-ghost btn-small" data-start="mistakeReview">Go →</button></li>`
+      );
+    }
+    items.push(
+      weakest
+        ? `<li>${questionsPerDay} questions in ${weakest.domain}, your lowest-scoring area <button type="button" class="btn btn-ghost btn-small" data-domain-practice="${weakest.domain}" data-domain-module="${weakest.module}">Go →</button></li>`
+        : `<li>${questionsPerDay} questions of mixed practice <button type="button" class="btn btn-ghost btn-small" data-start="mixed">Go →</button></li>`
+    );
+
+    return `
+      <div class="plan-section daily-plan-card">
+        <div class="daily-plan-top">
+          <div>
+            <h3>Today's plan</h3>
+            <p class="plan-section-blurb">${daysLabel}${daysLabel ? " · " : ""}aiming for ${goal} · about ${minutesPerDay} min today</p>
+          </div>
+          <button type="button" class="daily-plan-edit" data-action="edit-daily-plan" title="Change test date or time budget">✎</button>
+        </div>
+        <ul class="daily-plan-list">${items.join("")}</ul>
+      </div>`;
+  }
+
   function renderStudyPlan() {
     const data = loadDiagnosticSummary();
     const el = document.getElementById("studyPlan");
     const premium = !!(window.Auth && window.Auth.isPremium());
+    const planHTML = dailyPlanCardHTML();
     const queueHTML = redoQueueCardHTML();
     const reasonHTML = missReasonInsightHTML();
 
@@ -1445,6 +1553,7 @@
             </div>
           </div>
         </div>
+        ${planHTML}
         ${queueHTML}
         ${reasonHTML}`;
       return;
@@ -1499,6 +1608,7 @@
         <p class="tagline">Built from your ${data.label} · ${timeAgo(data.timestamp)}</p>
       </div>
 
+      ${planHTML}
       ${queueHTML}
       ${reasonHTML}
 
@@ -1544,6 +1654,50 @@
   // sub-lessons — the tab itself is always open (no full-page paywall);
   // individual Pro lessons show a locked card with an upgrade prompt
   // instead of their content.
+  // Small, high-value content the review called out specifically: what to
+  // actually do the week before, how Bluebook's own controls work, a few
+  // Desmos tricks, and a plan for blanking on a question — none of it
+  // skill-specific, so it lives once at the bottom of Lessons rather than
+  // under any one domain.
+  function testDayReadinessHTML() {
+    const card = (title, items) => `
+      <div class="readiness-card">
+        <h3>${title}</h3>
+        <ul>${items.map((i) => `<li>${i}</li>`).join("")}</ul>
+      </div>`;
+    return `
+      <div class="readiness-section">
+        <span class="eyebrow">Test-day readiness</span>
+        <h2>Small things that make a real difference</h2>
+        <div class="readiness-grid">
+          ${card("The week before", [
+            "Charge your laptop or tablet the night before, and bring the charger anyway.",
+            "Install the Bluebook app ahead of time and finish any setup it asks for — don't leave it for test morning.",
+            "Run at least one full timed module in Bluebook itself so the real interface isn't a surprise.",
+            "Confirm your test center and check-in time, and plan to arrive with time to spare.",
+          ])}
+          ${card("Bluebook basics", [
+            '"Mark for Review" flags a question in the navigator — use it instead of stalling on one item.',
+            "The strikethrough tool hides a choice without changing your answer, so crossing out is reversible.",
+            "The timer can be hidden, but a 5-minute warning still appears near the end of a module.",
+            "Once you submit a module you can't go back to it, even if time remains — review before you submit.",
+          ])}
+          ${card("Desmos tricks", [
+            "Type an equation straight in — y = 2x + 3 — and it graphs immediately, no setup needed.",
+            "For a system of equations, graph both lines and read off the intersection instead of solving by hand.",
+            'A slider (drag a number in your typed equation) is fast for "find the value that makes this true" questions.',
+            "Use it to check your algebra, not to replace reading the question carefully in the first place.",
+          ])}
+          ${card("When you blank", [
+            "Mark it and move on — a fresh question resets your focus, and you can return with time left.",
+            "Eliminate anything clearly wrong even without knowing the right answer; a narrowed guess beats a blind one.",
+            "Reread the question itself, not just the passage — the actual ask is sometimes narrower than it first seems.",
+            "Never leave a question blank at the end — there's no penalty for a wrong guess.",
+          ])}
+        </div>
+      </div>`;
+  }
+
   function renderLessons() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const premium = !!(window.Auth && window.Auth.isPremium());
@@ -1553,6 +1707,15 @@
       renderLessonDetail(state.activeLesson.domain, state.activeLesson.index);
       return;
     }
+
+    const beginnerHTML = `
+      <div class="beginner-banner">
+        <div class="beginner-banner-text">
+          <div class="beginner-banner-title">New to the SAT? Start with the basics.</div>
+          <div class="beginner-banner-sub">Every skill below has a free foundations lesson — core algebra, grammar rules, and reading strategy, no prior SAT experience assumed.</div>
+        </div>
+        <button type="button" class="btn btn-ghost btn-sm lessons-free-toggle" data-lessons-free-toggle>Show foundations only</button>
+      </div>`;
 
     const upsellHTML = premium
       ? ""
@@ -1603,6 +1766,7 @@
       <h1 class="section-title">Learn every topic on the digital SAT</h1>
       <p class="section-sub">Pick a lesson to read it, then jump straight into matching practice questions.</p>
 
+      ${beginnerHTML}
       ${upsellHTML}
 
       <div class="lessons-toolbar">
@@ -1620,6 +1784,8 @@
       </div>
 
       <div class="lessons-domains">${groups.map(domainGroup).join("")}</div>
+
+      ${testDayReadinessHTML()}
     `;
 
     document.querySelectorAll("[data-lessons-tab]").forEach((btn) => {
@@ -1629,13 +1795,12 @@
       });
     });
 
-    const freeToggleBtn = document.querySelector("[data-lessons-free-toggle]");
-    if (freeToggleBtn) {
-      freeToggleBtn.addEventListener("click", () => {
+    document.querySelectorAll("[data-lessons-free-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
         state.lessonsFreeOnly = !state.lessonsFreeOnly;
         renderLessons();
       });
-    }
+    });
   }
 
   function renderLessonDetail(domain, index) {
@@ -2813,6 +2978,7 @@
 
   // ---- Dashboard ----
   let dashGoalEditing = false; // whether the SAT Goal card is showing its edit form
+  let dailyPlanEditing = false; // whether the Study Plan's daily-plan card is showing its setup form
 
   function loadGoal() {
     try {
@@ -2827,6 +2993,46 @@
     try {
       progressStore().setItem(progressKey(GOAL_KEY), String(score));
     } catch (e) { /* storage unavailable */ }
+  }
+
+  function loadTestDate() {
+    try {
+      return progressStore().getItem(progressKey(TEST_DATE_KEY)) || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveTestDate(dateStr) {
+    try {
+      progressStore().setItem(progressKey(TEST_DATE_KEY), dateStr);
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function loadMinutesPerDay() {
+    try {
+      const raw = progressStore().getItem(progressKey(MINUTES_PER_DAY_KEY));
+      return raw ? Number(raw) : DEFAULT_MINUTES_PER_DAY;
+    } catch (e) {
+      return DEFAULT_MINUTES_PER_DAY;
+    }
+  }
+
+  function saveMinutesPerDay(mins) {
+    try {
+      progressStore().setItem(progressKey(MINUTES_PER_DAY_KEY), String(mins));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // Whole days between today and the saved test date, or null if no date
+  // is set yet. Negative once the date's in the past.
+  function daysUntilTestDate() {
+    const dateStr = loadTestDate();
+    if (!dateStr) return null;
+    const target = new Date(dateStr + "T00:00:00");
+    if (Number.isNaN(target.getTime())) return null;
+    const startOfToday = new Date(new Date().toDateString());
+    return Math.round((target - startOfToday) / DAY_MS);
   }
 
   // Estimates a combined RW + Math score from the most recent diagnostic's
@@ -2982,6 +3188,87 @@
     } catch (e) { /* storage unavailable */ }
   }
 
+  // ---- Pacing analytics ----
+  // A rolling, capped log of per-question timing samples (first-answer
+  // elapsed seconds, correct/incorrect, domain) across every session —
+  // not scoped to one attempt, so the insight below is a real behavioral
+  // pattern rather than a one-off.
+  function loadPacingLog() {
+    try {
+      const raw = progressStore().getItem(progressKey(PACING_LOG_KEY));
+      if (raw) return JSON.parse(raw);
+    } catch (e) { /* storage unavailable */ }
+    return [];
+  }
+
+  function appendPacingLog(samples) {
+    if (!samples.length) return;
+    const log = loadPacingLog().concat(samples).slice(-PACING_LOG_LIMIT);
+    try {
+      progressStore().setItem(progressKey(PACING_LOG_KEY), JSON.stringify(log));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  // Turns the raw log into the numbers the Dashboard's pacing card shows:
+  // overall average time per question, accuracy on rushed (<20s) vs.
+  // stalled (>120s) answers, and the slowest domain with enough samples
+  // to mean something.
+  function computePacingStats() {
+    const log = loadPacingLog();
+    if (log.length < 5) return null;
+
+    const acc = (list) => (list.length ? Math.round((list.filter((s) => s.correct).length / list.length) * 100) : null);
+    const rushed = log.filter((s) => s.timeSec < PACE_RUSHED_SECONDS);
+    const stalled = log.filter((s) => s.timeSec > PACE_STALLED_SECONDS);
+
+    const byDomain = {};
+    log.forEach((s) => {
+      const d = (byDomain[s.domain] = byDomain[s.domain] || { total: 0, n: 0 });
+      d.total += s.timeSec;
+      d.n++;
+    });
+    let slowestDomain = null;
+    Object.keys(byDomain).forEach((domain) => {
+      const { total, n } = byDomain[domain];
+      if (n < PACE_MIN_DOMAIN_SAMPLES) return;
+      const avgSec = Math.round(total / n);
+      if (!slowestDomain || avgSec > slowestDomain.avgSec) slowestDomain = { domain, avgSec };
+    });
+
+    return {
+      sampleCount: log.length,
+      avgSec: Math.round(log.reduce((n, s) => n + s.timeSec, 0) / log.length),
+      overallAcc: acc(log),
+      rushedCount: rushed.length,
+      rushedAcc: acc(rushed),
+      stalledCount: stalled.length,
+      stalledAcc: acc(stalled),
+      slowestDomain,
+    };
+  }
+
+  // The one or two sentences the Dashboard's pacing card leads with —
+  // only calls out rushing or stalling when the accuracy gap from a
+  // student's own overall average is big enough to be a real pattern,
+  // not noise from a handful of questions.
+  function pacingInsightSentence(p) {
+    const notes = [];
+    if (p.rushedCount >= 5 && p.rushedAcc !== null && p.rushedAcc <= p.overallAcc - 15) {
+      notes.push(
+        `Answers under ${PACE_RUSHED_SECONDS}s are right only ${p.rushedAcc}% of the time, versus ${p.overallAcc}% overall — slow down on those.`
+      );
+    }
+    if (p.stalledCount >= 5 && p.stalledAcc !== null && p.stalledAcc <= p.overallAcc - 15) {
+      notes.push(
+        `Questions you spend over ${Math.round(PACE_STALLED_SECONDS / 60)} minutes on are right only ${p.stalledAcc}% of the time — if it's not clicking by then, skip and come back.`
+      );
+    }
+    if (p.slowestDomain) {
+      notes.push(`${p.slowestDomain.domain} takes you the longest on average (${p.slowestDomain.avgSec}s/question).`);
+    }
+    return notes.length ? notes.join(" ") : "Your pacing looks steady — no questions are consistently rushed or stalled.";
+  }
+
   function loadMistakesReviewedToday() {
     try {
       const raw = progressStore().getItem(progressKey(MISTAKES_REVIEWED_KEY));
@@ -3021,19 +3308,25 @@
   }
 
   // Called once per finished session (any module) with each question's
-  // {q, selected, reason} — folds the attempt into today's per-domain
-  // counts, the redo queue, and the miss-reason tally, and marks today's
-  // timed-module quest complete. `reason` (from MISTAKE_REASONS) is only
-  // present when the question was missed and the student tagged why.
+  // {q, selected, reason, timeSec} — folds the attempt into today's
+  // per-domain counts, the redo queue, the miss-reason tally, and the
+  // pacing log, and marks today's timed-module quest complete. `reason`
+  // is only present when missed and tagged; `timeSec` whenever pacing
+  // was captured (see state.questionTimes).
   function recordSessionProgress(pairs) {
     const domainCounts = {};
     const missed = [];
     const masteredIds = [];
-    pairs.forEach(({ q, selected, reason }) => {
+    const pacingSamples = [];
+    pairs.forEach(({ q, selected, reason, timeSec }) => {
       if (selected === undefined) return;
       domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
-      if (selected === q.answer) masteredIds.push(q.id);
+      const correct = selected === q.answer;
+      if (correct) masteredIds.push(q.id);
       else missed.push({ q, reason });
+      if (typeof timeSec === "number") {
+        pacingSamples.push({ domain: q.domain, module: q.module, correct, timeSec });
+      }
     });
     Object.keys(domainCounts).forEach((domain) => bumpDomainToday(domain, domainCounts[domain]));
     if (missed.length) {
@@ -3041,6 +3334,7 @@
       bumpMistakeReasonTally(missed);
     }
     if (masteredIds.length) advanceMistakes(masteredIds);
+    if (pacingSamples.length) appendPacingLog(pacingSamples);
     markTimedModuleToday();
   }
 
@@ -3068,6 +3362,8 @@
     state.answers = {};
     state.checked = {};
     state.missReasons = {};
+    state.questionStartTimes = {};
+    state.questionTimes = {};
     state.eliminated = {};
     state.marked = {};
     state.current = 0;
@@ -3315,6 +3611,43 @@
     };
   }
 
+  // The single most useful thing to do right now, in priority order: clear
+  // a due redo queue, drill the weakest domain from the last diagnostic,
+  // take a first diagnostic if there's no data yet, or just keep moving.
+  // Leads the Dashboard instead of a flat stat grid — see everything else
+  // on the page as context for this one recommendation, not a list of
+  // equally-weighted options.
+  function nextBestActionHTML(weakest) {
+    const due = dueMistakes().length;
+    const hasData = !!loadDiagnosticSummary();
+    let title, body, go;
+    if (due > 0) {
+      title = "Clear your redo queue";
+      body = `${due} question${due === 1 ? "" : "s"} you've missed before ${due === 1 ? "is" : "are"} ready to retry — spaced out so they actually stick.`;
+      go = `<button type="button" class="btn btn-primary" data-start="mistakeReview">Start redo queue →</button>`;
+    } else if (weakest && weakest[0]) {
+      const w = weakest[0];
+      title = `Focus on ${w.domain}`;
+      body = `It's your lowest-scoring area — ${Math.round(w.pct * 100)}% correct on your last diagnostic.`;
+      go = `<button type="button" class="btn btn-primary" data-domain-practice="${w.domain}" data-domain-module="${w.module}">Practice →</button>`;
+    } else if (!hasData) {
+      title = "Take your first diagnostic";
+      body = "It gives you a score estimate and tells us exactly what to recommend here next.";
+      go = `<button type="button" class="btn btn-primary" data-start="diagnostic">Start Full-Length Test →</button>`;
+    } else {
+      title = "Keep the streak going";
+      body = "Nothing urgent queued right now — a quick mixed session keeps your pace up.";
+      go = `<button type="button" class="btn btn-primary" data-start="mixed">Start practicing →</button>`;
+    }
+    return `
+      <div class="next-action-card">
+        <span class="eyebrow">Next best action</span>
+        <h2>${title}</h2>
+        <p>${body}</p>
+        ${go}
+      </div>`;
+  }
+
   function renderDashboard() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const name = user ? user.name : null;
@@ -3367,12 +3700,27 @@
         <div class="bd-card"><div class="v">${stats.sessions}</div><div class="l">Sessions completed</div></div>
       </div>`;
 
+    const pacing = computePacingStats();
+    const pacingHTML = pacing
+      ? `
+      <div class="dash-section">
+        <h3>Pacing</h3>
+        <div class="dash-stats-grid">
+          <div class="bd-card"><div class="v">${pacing.avgSec}s</div><div class="l">Avg. time per question</div></div>
+          <div class="bd-card"><div class="v">${pacing.rushedAcc === null ? "—" : pacing.rushedAcc + "%"}</div><div class="l">Accuracy under ${PACE_RUSHED_SECONDS}s</div></div>
+          <div class="bd-card"><div class="v">${pacing.stalledAcc === null ? "—" : pacing.stalledAcc + "%"}</div><div class="l">Accuracy over ${Math.round(PACE_STALLED_SECONDS / 60)}min</div></div>
+        </div>
+        <p class="pacing-insight">${pacingInsightSentence(pacing)}</p>
+      </div>`
+      : "";
+
     document.getElementById("dashboard").innerHTML = `
       <div class="dash-header">
         <span class="eyebrow">Dashboard</span>
         <h2>${name ? `Welcome back, ${escapeHtml(name)}` : "Welcome"}</h2>
       </div>
       ${guestBannerHTML()}
+      ${nextBestActionHTML(weakest)}
       <div class="dash-goals">
         <div class="dash-goal-card">
           <div class="dash-goal-label">SAT Goal</div>
@@ -3408,12 +3756,12 @@
       <div class="dash-section">
         <h3>Your stats</h3>
         ${statsHTML}
+        <button type="button" class="btn btn-ghost btn-sm dash-share-btn" id="dashShareBtn">Share progress →</button>
       </div>
-      <div class="results-actions">
-        <button class="btn btn-primary" data-start="mixed">Start practicing →</button>
-      </div>
+      ${pacingHTML}
     `;
 
+    document.getElementById("dashShareBtn")?.addEventListener("click", openProgressShareCard);
     if (dashGoalEditing) document.getElementById("dashGoalInput")?.focus();
   }
 
@@ -3473,6 +3821,170 @@
           ${group("Math", math)}
         </div>
       </div>`;
+  }
+
+  // ---- Shareable results card ----
+  // Renders a square, social-ready card to a <canvas> — a download/share
+  // the student can post themselves, since nothing here can post on their
+  // behalf. Drawn fresh each open so it reflects the theme's accent color.
+  function drawShareCard(data) {
+    const canvas = document.createElement("canvas");
+    const size = 1080;
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext("2d");
+    const styles = getComputedStyle(document.documentElement);
+    const primary = styles.getPropertyValue("--primary").trim() || "#2e63c8";
+    const accent = styles.getPropertyValue("--accent-hover").trim() || "#1f4fa8";
+
+    const grad = ctx.createLinearGradient(0, 0, size, size);
+    grad.addColorStop(0, primary);
+    grad.addColorStop(1, accent);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, size, size);
+
+    ctx.fillStyle = "rgba(255,255,255,0.92)";
+    ctx.font = "600 34px 'Hanken Grotesk', sans-serif";
+    ctx.fillText("SAT ScoreBoost", 72, 100);
+
+    ctx.font = "700 46px 'Hanken Grotesk', sans-serif";
+    ctx.fillStyle = "#fff";
+    wrapCanvasText(ctx, data.label, 72, 220, size - 144, 54);
+
+    ctx.font = "800 220px 'Newsreader', serif";
+    ctx.fillStyle = "#fff";
+    ctx.fillText(`${Math.round(data.pct * 100)}%`, 72, 520);
+
+    ctx.font = "500 36px 'Hanken Grotesk', sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.88)";
+    ctx.fillText(`${data.correct} of ${data.total} correct · est. ${data.overall}`, 72, 580);
+
+    ctx.font = "500 32px 'Hanken Grotesk', sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.92)";
+    wrapCanvasText(ctx, data.tagline, 72, 660, size - 144, 42);
+
+    ctx.font = "600 28px 'Hanken Grotesk', sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.7)";
+    ctx.fillText("Free, Bluebook-style SAT practice — scoreboost", 72, size - 72);
+
+    return canvas;
+  }
+
+  function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight) {
+    const words = String(text).split(" ");
+    let line = "";
+    let curY = y;
+    words.forEach((word) => {
+      const test = line ? `${line} ${word}` : word;
+      if (ctx.measureText(test).width > maxWidth && line) {
+        ctx.fillText(line, x, curY);
+        line = word;
+        curY += lineHeight;
+      } else {
+        line = test;
+      }
+    });
+    if (line) ctx.fillText(line, x, curY);
+  }
+
+  function openShareCard(data) {
+    showShareCardModal(drawShareCard(data), "sat-scoreboost-results.png");
+  }
+
+  // Shared by the results share card and the progress share card below —
+  // wires the preview image, download link, and (where supported) the Web
+  // Share API's file-sharing path onto whatever canvas was just drawn.
+  function showShareCardModal(canvas, filename) {
+    const dataUrl = canvas.toDataURL("image/png");
+    const modal = document.getElementById("shareModal");
+    const img = document.getElementById("sharePreviewImg");
+    img.src = dataUrl;
+    const downloadBtn = document.getElementById("shareDownloadBtn");
+    downloadBtn.href = dataUrl;
+    downloadBtn.download = filename;
+    const shareBtn = document.getElementById("shareNativeBtn");
+    if (navigator.share && navigator.canShare) {
+      canvas.toBlob((blob) => {
+        const file = new File([blob], filename, { type: "image/png" });
+        if (navigator.canShare({ files: [file] })) {
+          shareBtn.classList.remove("hidden");
+          shareBtn.onclick = () => navigator.share({ files: [file], title: "SAT ScoreBoost" }).catch(() => {});
+        } else {
+          shareBtn.classList.add("hidden");
+        }
+      });
+    } else {
+      shareBtn.classList.add("hidden");
+    }
+    modal.classList.remove("hidden");
+  }
+
+  // A parent-friendly progress snapshot (streak, accuracy, questions
+  // answered, weakest area) — the shareable substitute for a weekly email,
+  // since nothing here can actually send mail on the student's behalf.
+  function drawProgressShareCard() {
+    const canvas = document.createElement("canvas");
+    const size = 1080;
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext("2d");
+    const styles = getComputedStyle(document.documentElement);
+    const primary = styles.getPropertyValue("--primary").trim() || "#2e63c8";
+    const accent = styles.getPropertyValue("--accent-hover").trim() || "#1f4fa8";
+    const grad = ctx.createLinearGradient(0, 0, size, size);
+    grad.addColorStop(0, primary);
+    grad.addColorStop(1, accent);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, size, size);
+
+    const stats = computeDashboardStats();
+    const streak = displayStreak(loadStreak());
+    const weakest = weakestDomains(1)[0];
+
+    ctx.fillStyle = "rgba(255,255,255,0.92)";
+    ctx.font = "600 34px 'Hanken Grotesk', sans-serif";
+    ctx.fillText("SAT ScoreBoost — Progress", 72, 100);
+
+    ctx.font = "700 40px 'Hanken Grotesk', sans-serif";
+    ctx.fillStyle = "#fff";
+    ctx.fillText(`${new Date().toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })}`, 72, 170);
+
+    const rows = [
+      [`${streak}`, "day streak"],
+      [stats.accuracy === null ? "—" : `${stats.accuracy}%`, "accuracy"],
+      [`${stats.questionsAnswered}`, "questions answered"],
+      [`${stats.sessions}`, "sessions completed"],
+    ];
+    let y = 320;
+    rows.forEach(([value, label]) => {
+      ctx.font = "800 90px 'Newsreader', serif";
+      ctx.fillStyle = "#fff";
+      ctx.fillText(value, 72, y);
+      ctx.font = "500 32px 'Hanken Grotesk', sans-serif";
+      ctx.fillStyle = "rgba(255,255,255,0.82)";
+      const valueWidth = ctx.measureText(value).width;
+      ctx.font = "800 90px 'Newsreader', serif";
+      const bigWidth = ctx.measureText(value).width;
+      ctx.font = "500 32px 'Hanken Grotesk', sans-serif";
+      ctx.fillText(label, 72 + bigWidth + 18, y - 8);
+      y += 110;
+    });
+
+    if (weakest) {
+      ctx.font = "500 32px 'Hanken Grotesk', sans-serif";
+      ctx.fillStyle = "rgba(255,255,255,0.92)";
+      wrapCanvasText(ctx, `Focus area right now: ${weakest.domain}`, 72, y + 20, size - 144, 42);
+    }
+
+    ctx.font = "600 28px 'Hanken Grotesk', sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.7)";
+    ctx.fillText("Free, Bluebook-style SAT practice — scoreboost", 72, size - 72);
+
+    return canvas;
+  }
+
+  function openProgressShareCard() {
+    showShareCardModal(drawProgressShareCard(), "sat-scoreboost-progress.png");
   }
 
   function renderResults(r) {
@@ -3555,9 +4067,14 @@
           state.module === "full-diagnostic" ? "Retake Full Scale Test" : isDiagnostic ? "Retake Full-Length Test" : "Try Again"
         }</button>
         ${isDiagnostic ? `<button class="btn btn-ghost" data-nav="studyPlan">View Study Plan →</button>` : ""}
+        <button class="btn btn-ghost" id="shareResultsBtn">Share →</button>
         <button class="btn btn-ghost" id="homeBtn">Back to Home</button>
       </div>
     `;
+
+    document.getElementById("shareResultsBtn")?.addEventListener("click", () => {
+      openShareCard({ pct, overall, correct, total, label: scoreLabel, tagline });
+    });
 
     const list = document.getElementById("reviewList");
     list.innerHTML = state.questions
@@ -3998,6 +4515,14 @@
       <path d="M4 20c1.4-4.2 4.7-6.5 8-6.5s6.6 2.3 8 6.5" />
     </svg>`;
 
+  const ICON_USERS = `
+    <svg class="menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="9" cy="8" r="3.3" />
+      <path d="M2.5 19c1.1-3.4 3.6-5.2 6.5-5.2s5.4 1.8 6.5 5.2" />
+      <path d="M15.5 8.3a3 3 0 1 1 3.6 2.95" />
+      <path d="M15 13.9c2.5.2 4.5 1.9 5.5 5.1" />
+    </svg>`;
+
   function renderProfileMenu() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const dropdown = document.getElementById("profileDropdown");
@@ -4021,9 +4546,19 @@
       <button class="profile-menu-item" data-nav="social">Streak &amp; Stats ${ICON_FIRE}</button>
       <button class="profile-menu-item" data-nav="badges">Badges ${ICON_BADGE}</button>
       <button class="profile-menu-item" data-nav="battlepass">Battle Pass ${ICON_TROPHY}</button>
+      <button class="profile-menu-item" data-nav="classroom">Classroom ${ICON_USERS}</button>
       <div class="profile-divider"></div>
       ${logoutHTML}
     `;
+  }
+
+  const ICON_SUN = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`;
+  const ICON_MOON = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>`;
+
+  function renderThemeToggle() {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    btn.innerHTML = getTheme() === "dark" ? ICON_SUN : ICON_MOON;
   }
 
   // Reads an image file, downscales it to fit within maxSize×maxSize (never
@@ -4053,6 +4588,239 @@
   }
 
   // ---- Profile ----
+  // ---- Classrooms ----
+  // A roster, not a role system: any signed-in user can create a classroom
+  // and share its join code; anyone who joins shows up on the roster. See
+  // supabase/schema.sql for the classrooms/classroom_members tables and
+  // RLS this needs — it must be run in the Supabase SQL editor before any
+  // of this works (classrooms created before that will just error).
+  let activeClassroomId = null;
+
+  function generateJoinCode() {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // no 0/O/1/I
+    let code = "";
+    for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)];
+    return code;
+  }
+
+  async function createClassroom(name) {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    if (!user || !user.id || !window.supabaseClient) {
+      return { ok: false, error: "Classrooms need a real account — log in first." };
+    }
+    if (!name) return { ok: false, error: "Give your classroom a name." };
+    const { error } = await window.supabaseClient
+      .from("classrooms")
+      .insert({ owner_id: user.id, name, join_code: generateJoinCode() });
+    if (error) return { ok: false, error: error.message };
+    return { ok: true };
+  }
+
+  async function joinClassroomByCode(code) {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    if (!user || !user.id || !window.supabaseClient) {
+      return { ok: false, error: "Classrooms need a real account — log in first." };
+    }
+    const { data: found, error: findError } = await window.supabaseClient
+      .from("classrooms")
+      .select("id, name")
+      .eq("join_code", (code || "").trim().toUpperCase())
+      .maybeSingle();
+    if (findError) return { ok: false, error: findError.message };
+    if (!found) return { ok: false, error: "No classroom found with that code." };
+    const { error } = await window.supabaseClient
+      .from("classroom_members")
+      .insert({ classroom_id: found.id, student_id: user.id });
+    if (error) {
+      return {
+        ok: false,
+        error: /duplicate key|already exists/i.test(error.message) ? "You've already joined this classroom." : error.message,
+      };
+    }
+    return { ok: true, classroom: found };
+  }
+
+  async function loadOwnedClassrooms() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    if (!user || !user.id || !window.supabaseClient) return [];
+    const { data, error } = await window.supabaseClient
+      .from("classrooms")
+      .select("id, name, join_code, created_at")
+      .eq("owner_id", user.id)
+      .order("created_at", { ascending: false });
+    return error ? [] : data || [];
+  }
+
+  async function loadJoinedClassrooms() {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    if (!user || !user.id || !window.supabaseClient) return [];
+    const { data, error } = await window.supabaseClient
+      .from("classroom_members")
+      .select("joined_at, classrooms(id, name, join_code)")
+      .eq("student_id", user.id)
+      .order("joined_at", { ascending: false });
+    return error ? [] : data || [];
+  }
+
+  async function loadRoster(classroomId) {
+    if (!window.supabaseClient) return [];
+    const { data, error } = await window.supabaseClient
+      .from("classroom_members")
+      .select("joined_at, profiles(name, email)")
+      .eq("classroom_id", classroomId)
+      .order("joined_at", { ascending: true });
+    return error ? [] : data || [];
+  }
+
+  async function renderClassroom() {
+    const el = document.getElementById("classroom");
+    const user = window.Auth && window.Auth.getCurrentUser();
+    if (!user) {
+      el.innerHTML = `
+        <span class="eyebrow">Classroom</span>
+        <h1 class="section-title">You're not logged in</h1>
+        <p class="section-sub">Classrooms need a real account so a join code actually means something — log in or sign up first.</p>
+        <div class="results-actions">
+          <button class="btn btn-primary" data-action="open-auth">Log in →</button>
+        </div>
+      `;
+      return;
+    }
+
+    el.innerHTML = `<span class="eyebrow">Classroom</span><h1 class="section-title">Loading…</h1>`;
+
+    if (activeClassroomId) {
+      const [roster, owned] = await Promise.all([loadRoster(activeClassroomId), loadOwnedClassrooms()]);
+      const classroom = owned.find((c) => c.id === activeClassroomId);
+      if (!classroom) {
+        activeClassroomId = null;
+        renderClassroom();
+        return;
+      }
+      el.innerHTML = `
+        <button class="lesson-back" data-classroom-back>← Back to Classrooms</button>
+        <span class="eyebrow">Classroom</span>
+        <h1 class="section-title">${escapeHtml(classroom.name)}</h1>
+        <p class="section-sub">Join code: <span class="classroom-code">${classroom.join_code}</span> — share it with your students.</p>
+        <div class="classroom-list">
+          ${
+            roster.length
+              ? roster
+                  .map(
+                    (m) => `
+              <div class="classroom-card">
+                <div>
+                  <div class="classroom-card-title">${escapeHtml((m.profiles && m.profiles.name) || "Unnamed student")}</div>
+                  <div class="classroom-card-sub">${escapeHtml((m.profiles && m.profiles.email) || "")} · joined ${timeAgo(m.joined_at)}</div>
+                </div>
+              </div>`
+                  )
+                  .join("")
+              : `<p class="section-sub">No students have joined yet — share the code above.</p>`
+          }
+        </div>
+        <p class="classroom-note">Per-student progress and accuracy aren't synced here yet — this shows who's enrolled, not their scores.</p>
+      `;
+      document.querySelector("[data-classroom-back]")?.addEventListener("click", () => {
+        activeClassroomId = null;
+        renderClassroom();
+      });
+      return;
+    }
+
+    const [owned, joined] = await Promise.all([loadOwnedClassrooms(), loadJoinedClassrooms()]);
+
+    const ownedHTML = owned.length
+      ? owned
+          .map(
+            (c) => `
+          <div class="classroom-card">
+            <div>
+              <div class="classroom-card-title">${escapeHtml(c.name)}</div>
+              <div class="classroom-card-sub">Join code: <span class="classroom-code">${c.join_code}</span></div>
+            </div>
+            <button type="button" class="btn btn-ghost btn-small" data-classroom-view="${c.id}">View roster →</button>
+          </div>`
+          )
+          .join("")
+      : `<p class="section-sub">You haven't created a classroom yet.</p>`;
+
+    const joinedHTML = joined.length
+      ? joined
+          .map(
+            (m) => `
+          <div class="classroom-card">
+            <div>
+              <div class="classroom-card-title">${escapeHtml((m.classrooms && m.classrooms.name) || "Classroom")}</div>
+              <div class="classroom-card-sub">Joined ${timeAgo(m.joined_at)}</div>
+            </div>
+          </div>`
+          )
+          .join("")
+      : `<p class="section-sub">You haven't joined a classroom yet.</p>`;
+
+    el.innerHTML = `
+      <span class="eyebrow">Classroom</span>
+      <h1 class="section-title">Classrooms</h1>
+      <p class="section-sub">Create a classroom to get a join code for your students, or join one with a code a teacher gave you.</p>
+
+      <div class="classroom-section">
+        <h3>Your classrooms</h3>
+        <div class="classroom-list">${ownedHTML}</div>
+        <form class="classroom-form" id="createClassroomForm">
+          <input type="text" id="createClassroomName" placeholder="Classroom name (e.g. 3rd Period SAT Prep)" required maxlength="60" />
+          <button type="submit" class="btn btn-primary btn-small">Create classroom</button>
+        </form>
+        <div class="auth-error hidden" id="createClassroomError"></div>
+      </div>
+
+      <div class="classroom-section">
+        <h3>Classes you've joined</h3>
+        <div class="classroom-list">${joinedHTML}</div>
+        <form class="classroom-form" id="joinClassroomForm">
+          <input type="text" id="joinClassroomCode" placeholder="Join code" required maxlength="8" />
+          <button type="submit" class="btn btn-ghost btn-small">Join classroom</button>
+        </form>
+        <div class="auth-error hidden" id="joinClassroomError"></div>
+      </div>
+    `;
+
+    document.querySelectorAll("[data-classroom-view]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activeClassroomId = btn.dataset.classroomView;
+        renderClassroom();
+      });
+    });
+
+    document.getElementById("createClassroomForm")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById("createClassroomName");
+      const errorEl = document.getElementById("createClassroomError");
+      errorEl.classList.add("hidden");
+      const result = await createClassroom(nameInput.value.trim());
+      if (!result.ok) {
+        errorEl.textContent = result.error;
+        errorEl.classList.remove("hidden");
+        return;
+      }
+      renderClassroom();
+    });
+
+    document.getElementById("joinClassroomForm")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const codeInput = document.getElementById("joinClassroomCode");
+      const errorEl = document.getElementById("joinClassroomError");
+      errorEl.classList.add("hidden");
+      const result = await joinClassroomByCode(codeInput.value);
+      if (!result.ok) {
+        errorEl.textContent = result.error;
+        errorEl.classList.remove("hidden");
+        return;
+      }
+      renderClassroom();
+    });
+  }
+
   function renderProfile() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const el = document.getElementById("profile");
@@ -4282,6 +5050,7 @@
       answers: state.answers,
       checked: state.checked,
       missReasons: state.missReasons,
+      questionTimes: state.questionTimes,
       eliminated: serializeEliminated(state.eliminated),
       marked: state.marked,
       current: state.current,
@@ -4323,6 +5092,8 @@
     state.answers = snap.answers || {};
     state.checked = snap.checked || {};
     state.missReasons = snap.missReasons || {};
+    state.questionTimes = snap.questionTimes || {};
+    state.questionStartTimes = {};
     state.eliminated = deserializeEliminated(snap.eliminated);
     state.marked = snap.marked || {};
     state.current = snap.current || 0;
@@ -4380,6 +5151,7 @@
       document.getElementById("navToggle").setAttribute("aria-expanded", String(open));
     });
 
+    renderThemeToggle();
     renderResumeBanner();
     document.getElementById("resumeBannerGo")?.addEventListener("click", resumeSavedSession);
     document.getElementById("resumeBannerDismiss")?.addEventListener("click", () => {
@@ -4405,11 +5177,12 @@
         if (nav === "badges") renderBadges();
         else if (nav === "battlepass") renderBattlePass();
         else if (nav === "bank") renderBank();
-        else if (nav === "studyPlan") renderStudyPlan();
+        else if (nav === "studyPlan") { dailyPlanEditing = false; renderStudyPlan(); }
         else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
         else if (nav === "lessons") { state.activeLesson = null; state.lessonChatLog = []; renderLessons(); }
         else if (nav === "games") { stopActiveGame(); renderGamesHub(); }
         else if (nav === "profile") renderProfile();
+        else if (nav === "classroom") renderClassroom();
         else renderSocial();
         show(nav);
         closeProfileMenu();
@@ -4527,6 +5300,12 @@
         } else if (action === "edit-goal") {
           dashGoalEditing = true;
           renderDashboard();
+        } else if (action === "edit-daily-plan") {
+          dailyPlanEditing = true;
+          renderStudyPlan();
+        } else if (action === "toggle-theme") {
+          setTheme(getTheme() === "dark" ? "light" : "dark");
+          renderThemeToggle();
         } else if (action === "upgrade-premium") {
           window.Auth.upgradeToPremium();
           afterAuthChange();
@@ -4555,6 +5334,16 @@
         if (val >= 400 && val <= 1600) saveGoal(val);
         dashGoalEditing = false;
         renderDashboard();
+        return;
+      }
+      if (e.target.id === "dailyPlanForm") {
+        e.preventDefault();
+        const dateVal = document.getElementById("dailyPlanDate").value;
+        const minutesVal = Math.round(Number(document.getElementById("dailyPlanMinutes").value) / 5) * 5;
+        if (dateVal) saveTestDate(dateVal);
+        if (minutesVal >= 10 && minutesVal <= 240) saveMinutesPerDay(minutesVal);
+        dailyPlanEditing = false;
+        renderStudyPlan();
         return;
       }
       if (e.target.id === "lessonChatForm") {
@@ -4652,6 +5441,12 @@
     });
     confirmModal.addEventListener("click", (e) => {
       if (e.target === confirmModal) confirmModal.classList.add("hidden");
+    });
+
+    const shareModal = document.getElementById("shareModal");
+    document.getElementById("shareModalClose").addEventListener("click", () => shareModal.classList.add("hidden"));
+    shareModal.addEventListener("click", (e) => {
+      if (e.target === shareModal) shareModal.classList.add("hidden");
     });
 
     const authModal = document.getElementById("authModal");

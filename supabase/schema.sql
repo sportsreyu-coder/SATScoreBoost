@@ -45,10 +45,9 @@ create policy "Public can read questions"
 -- ---------------------------------------------------------------------
 -- profiles
 -- ---------------------------------------------------------------------
--- One row per Supabase-authenticated (Google) user, keyed to auth.users.
--- The app's local email/password sign-in is a client-only demo (see
--- js/auth.js) and does not get a row here -- there's no real backend
--- identity to attach it to.
+-- One row per Supabase-authenticated user (Google or email/password --
+-- both are real auth.users rows now, see js/auth.js), auto-created by the
+-- trigger below regardless of which provider created the auth.users row.
 
 create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
@@ -163,3 +162,112 @@ create policy "Users can delete their own avatar"
   for delete
   to authenticated
   using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+
+-- ---------------------------------------------------------------------
+-- classrooms
+-- ---------------------------------------------------------------------
+-- A lightweight roster, not a role system: any signed-in user can create
+-- a classroom (becoming its owner) and share its join code with
+-- students, who join from their own account. This tracks who's enrolled
+-- and when -- it does NOT aggregate student practice stats (accuracy,
+-- streaks, mistakes, pacing all still live client-side per browser; see
+-- js/app.js), so the classroom view in the app shows a roster, not a
+-- progress dashboard, until that sync exists.
+
+create table if not exists public.classrooms (
+  id uuid primary key default gen_random_uuid(),
+  owner_id uuid not null references auth.users (id) on delete cascade,
+  name text not null,
+  join_code text not null unique,
+  created_at timestamptz not null default now()
+);
+
+alter table public.classrooms enable row level security;
+
+create policy "Owners can read their own classrooms"
+  on public.classrooms
+  for select
+  to authenticated
+  using (auth.uid() = owner_id);
+
+create policy "Members can read classrooms they belong to"
+  on public.classrooms
+  for select
+  to authenticated
+  using (exists (
+    select 1 from public.classroom_members m
+    where m.classroom_id = classrooms.id and m.student_id = auth.uid()
+  ));
+
+create policy "Users can create their own classroom"
+  on public.classrooms
+  for insert
+  to authenticated
+  with check (auth.uid() = owner_id);
+
+create policy "Owners can update their own classroom"
+  on public.classrooms
+  for update
+  to authenticated
+  using (auth.uid() = owner_id)
+  with check (auth.uid() = owner_id);
+
+create policy "Owners can delete their own classroom"
+  on public.classrooms
+  for delete
+  to authenticated
+  using (auth.uid() = owner_id);
+
+-- student_id references profiles (not auth.users directly) so PostgREST's
+-- embed syntax (classroom_members.select("profiles(name,email)")) can
+-- follow a direct foreign key for the roster view -- profiles.id is
+-- already 1:1 with auth.users.id, so this changes nothing about identity.
+create table if not exists public.classroom_members (
+  classroom_id uuid not null references public.classrooms (id) on delete cascade,
+  student_id uuid not null references public.profiles (id) on delete cascade,
+  joined_at timestamptz not null default now(),
+  primary key (classroom_id, student_id)
+);
+
+alter table public.classroom_members enable row level security;
+
+create policy "Owners can read their classroom's roster"
+  on public.classroom_members
+  for select
+  to authenticated
+  using (exists (
+    select 1 from public.classrooms c
+    where c.id = classroom_members.classroom_id and c.owner_id = auth.uid()
+  ));
+
+create policy "Students can read their own membership rows"
+  on public.classroom_members
+  for select
+  to authenticated
+  using (auth.uid() = student_id);
+
+create policy "Students can join a classroom themselves"
+  on public.classroom_members
+  for insert
+  to authenticated
+  with check (auth.uid() = student_id);
+
+create policy "Students can leave a classroom themselves"
+  on public.classroom_members
+  for delete
+  to authenticated
+  using (auth.uid() = student_id);
+
+-- Lets a classroom owner see the name/email of students on their own
+-- roster -- the base "Users can read their own profile" policy above
+-- only covers auth.uid() = id, which wouldn't otherwise let a teacher
+-- read anyone else's profile row.
+create policy "Classroom owners can read their roster's profiles"
+  on public.profiles
+  for select
+  to authenticated
+  using (exists (
+    select 1 from public.classroom_members m
+    join public.classrooms c on c.id = m.classroom_id
+    where m.student_id = profiles.id and c.owner_id = auth.uid()
+  ));
