@@ -182,14 +182,33 @@ create table if not exists public.classrooms (
   created_at timestamptz not null default now()
 );
 
-alter table public.classrooms enable row level security;
+-- student_id references profiles (not auth.users directly) so PostgREST's
+-- embed syntax (classroom_members.select("profiles(name,email)")) can
+-- follow a direct foreign key for the roster view -- profiles.id is
+-- already 1:1 with auth.users.id, so this changes nothing about identity.
+--
+-- Created right after classrooms and before any policies on either table:
+-- classrooms' own RLS below references classroom_members in a subquery,
+-- so that table has to exist first or the policy creation fails with
+-- "relation does not exist".
+create table if not exists public.classroom_members (
+  classroom_id uuid not null references public.classrooms (id) on delete cascade,
+  student_id uuid not null references public.profiles (id) on delete cascade,
+  joined_at timestamptz not null default now(),
+  primary key (classroom_id, student_id)
+);
 
+alter table public.classrooms enable row level security;
+alter table public.classroom_members enable row level security;
+
+drop policy if exists "Owners can read their own classrooms" on public.classrooms;
 create policy "Owners can read their own classrooms"
   on public.classrooms
   for select
   to authenticated
   using (auth.uid() = owner_id);
 
+drop policy if exists "Members can read classrooms they belong to" on public.classrooms;
 create policy "Members can read classrooms they belong to"
   on public.classrooms
   for select
@@ -199,12 +218,14 @@ create policy "Members can read classrooms they belong to"
     where m.classroom_id = classrooms.id and m.student_id = auth.uid()
   ));
 
+drop policy if exists "Users can create their own classroom" on public.classrooms;
 create policy "Users can create their own classroom"
   on public.classrooms
   for insert
   to authenticated
   with check (auth.uid() = owner_id);
 
+drop policy if exists "Owners can update their own classroom" on public.classrooms;
 create policy "Owners can update their own classroom"
   on public.classrooms
   for update
@@ -212,25 +233,14 @@ create policy "Owners can update their own classroom"
   using (auth.uid() = owner_id)
   with check (auth.uid() = owner_id);
 
+drop policy if exists "Owners can delete their own classroom" on public.classrooms;
 create policy "Owners can delete their own classroom"
   on public.classrooms
   for delete
   to authenticated
   using (auth.uid() = owner_id);
 
--- student_id references profiles (not auth.users directly) so PostgREST's
--- embed syntax (classroom_members.select("profiles(name,email)")) can
--- follow a direct foreign key for the roster view -- profiles.id is
--- already 1:1 with auth.users.id, so this changes nothing about identity.
-create table if not exists public.classroom_members (
-  classroom_id uuid not null references public.classrooms (id) on delete cascade,
-  student_id uuid not null references public.profiles (id) on delete cascade,
-  joined_at timestamptz not null default now(),
-  primary key (classroom_id, student_id)
-);
-
-alter table public.classroom_members enable row level security;
-
+drop policy if exists "Owners can read their classroom's roster" on public.classroom_members;
 create policy "Owners can read their classroom's roster"
   on public.classroom_members
   for select
@@ -240,18 +250,21 @@ create policy "Owners can read their classroom's roster"
     where c.id = classroom_members.classroom_id and c.owner_id = auth.uid()
   ));
 
+drop policy if exists "Students can read their own membership rows" on public.classroom_members;
 create policy "Students can read their own membership rows"
   on public.classroom_members
   for select
   to authenticated
   using (auth.uid() = student_id);
 
+drop policy if exists "Students can join a classroom themselves" on public.classroom_members;
 create policy "Students can join a classroom themselves"
   on public.classroom_members
   for insert
   to authenticated
   with check (auth.uid() = student_id);
 
+drop policy if exists "Students can leave a classroom themselves" on public.classroom_members;
 create policy "Students can leave a classroom themselves"
   on public.classroom_members
   for delete
@@ -262,6 +275,7 @@ create policy "Students can leave a classroom themselves"
 -- roster -- the base "Users can read their own profile" policy above
 -- only covers auth.uid() = id, which wouldn't otherwise let a teacher
 -- read anyone else's profile row.
+drop policy if exists "Classroom owners can read their roster's profiles" on public.profiles;
 create policy "Classroom owners can read their roster's profiles"
   on public.profiles
   for select
