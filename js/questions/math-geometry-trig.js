@@ -246,11 +246,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt: "If sin(x°) = cos(30°) and x is an acute angle, what is the value of x?",
-    choices: ["60", "30", "45", "90"],
-    answer: 0,
-    explanation:
-      "Since sin(x°) = cos(90° − x°), setting 90 − x = 30 gives x = 60.",
+    prompt: "In a right triangle, one acute angle measures (x + 15)° and the other measures (2x + 63)°. What is the value of x?",
+    choices: ["5", "86", "3", "4"],
+    answer: 3,
+    explanation: "The two acute angles of a right triangle sum to 90°: (x + 15) + (2x + 63) = 90, so 3x + 78 = 90, giving x = 4.",
   },
   {
     id: "geo-23",
@@ -280,12 +279,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A cube has a volume of 27. If each side length is doubled, what is the volume of the new cube?",
-    choices: ["216", "54", "108", "729"],
+    prompt: "Two similar solids have a linear scale factor of 4 (every length in the larger solid is 4 times the corresponding length in the smaller one). If the smaller solid has a volume of 10 cubic centimeters, what is the volume of the larger solid, in cubic centimeters?",
+    choices: ["640", "639", "40", "160"],
     answer: 0,
-    explanation:
-      "The original edge length is 3 (since 3³ = 27). Doubling gives an edge of 6, so the new volume is 6³ = 216.",
+    explanation: "For similar solids, volume scales with the cube of the linear scale factor: volume ratio = 4³ = 64. So the larger solid's volume is 10 × 64 = 640 cubic centimeters.",
   },
   {
     id: "geo-26",
@@ -293,11 +290,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A circle in the xy-plane has equation x² + y² − 6x + 8y = 0. What is the radius of the circle?",
-    choices: ["5", "25", "3", "4"],
+    prompt: "The equation x² + y² − 12x + 6y + 41 = 0 defines a circle. What is the radius of this circle?",
+    choices: ["2", "3", "4", "1"],
     answer: 0,
-    explanation:
-      "Completing the square: (x² − 6x + 9) + (y² + 8y + 16) = 9 + 16 → (x − 3)² + (y + 4)² = 25, so r² = 25 and r = 5.",
+    explanation: "Completing the square: x² − 12x = (x − 6)² − 36, and y² + 6y = (y + 3)² − 9. The equation becomes (x − 6)² + (y + 3)² = 4, so the radius is √4 = 2.",
   },
   {
     id: "geo-27",
@@ -305,11 +301,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, one angle measures 30° and the side opposite that angle has length 5. What is the length of the hypotenuse?",
-    choices: ["10", "5√3", "15", "20"],
-    answer: 0,
-    explanation: "sin(30°) = opposite/hypotenuse = 5/hyp, and sin(30°) = 0.5, so hyp = 5/0.5 = 10.",
+    prompt: "In a right triangle, θ is an acute angle with sin(θ) = 5/13. What is the value of cos(θ)?",
+    choices: ["12/5", "13/5", "12/13", "5/13"],
+    answer: 2,
+    explanation: "A right triangle with sin(θ) = 5/13 has a leg of length 10 opposite θ and a hypotenuse of 26, so by the Pythagorean theorem the adjacent leg is 24. Thus cos(θ) = adjacent/hypotenuse = 24/26 = 12/13.",
   },
   {
     id: "geo-28",
@@ -317,12 +312,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle ABC is similar to triangle DEF, with a scale factor of 3/2 from DEF to ABC. If the area of triangle DEF is 16, what is the area of triangle ABC?",
-    choices: ["36", "24", "32", "48"],
+    prompt: "Triangle ABC is similar to triangle DEF, with each side of DEF being 5 times the corresponding side of ABC. If the area of triangle ABC is 3 square units, what is the area of triangle DEF, in square units?",
+    choices: ["75", "74", "15", "80"],
     answer: 0,
-    explanation:
-      "Area scales by the square of the linear scale factor: (3/2)² = 9/4. So the area of ABC is 16 × 9/4 = 36.",
+    explanation: "For similar triangles, area scales with the square of the side ratio: area ratio = 5² = 25. So the area of DEF is 3 × 25 = 75 square units.",
   },
   {
     id: "geo-29",
@@ -330,11 +323,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "The diagonal of a square has length 8√2. What is the area of the square?",
-    choices: ["64", "32", "128", "16"],
-    answer: 0,
-    explanation:
-      "For a square with side s, the diagonal equals s√2. So s√2 = 8√2 → s = 8, and the area is s² = 64.",
+    prompt: "In a 45-45-90 triangle, each leg has length 10. The hypotenuse of this 45-45-90 triangle is also the longest side of a separate 30-60-90 triangle. What is the length of the shortest side of the 30-60-90 triangle, in terms of √2?",
+    choices: ["20√2", "5√2", "5√3", "10√2"],
+    answer: 1,
+    explanation: "The hypotenuse of the 45-45-90 triangle is 10√2. This becomes the hypotenuse of the 30-60-90 triangle, whose shortest side is half the hypotenuse: (10√2)/2 = 5√2.",
   },
   {
     id: "geo-30",
@@ -367,12 +359,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A ladder 13 feet long leans against a wall, with its base 5 feet from the wall. How many feet up the wall does the ladder reach?",
-    choices: ["12", "11", "10", "13"],
-    answer: 0,
-    explanation:
-      "By the Pythagorean theorem: height = √(13² − 5²) = √(169 − 25) = √144 = 12 (a 5-12-13 right triangle).",
+    prompt: "In right triangle ABC, the right angle is at C, and the altitude from C to the hypotenuse divides it into two segments of lengths 4 and 9. What is the length of the altitude from C?",
+    choices: ["6.5", "13", "7", "6"],
+    answer: 3,
+    explanation: "The altitude to the hypotenuse is the geometric mean of the two segments it creates: altitude² = 4 × 9 = 36, so the altitude = √36 = 6.",
   },
   {
     id: "geo-33",
@@ -605,11 +595,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A rectangular prism has a square base with side length 4 and a volume of 128. What is the height of the prism?",
-    choices: ["8", "32", "4", "16"],
-    answer: 0,
-    explanation: "The base area is 4² = 16, so the height is 128/16 = 8.",
+    prompt: "A solid cylinder has radius 4 cm and height 3 cm, so its volume is 48π cubic centimeters. If the material has a density of 3 grams per cubic centimeter (using π ≈ 1, i.e., treating the volume as 48 cubic centimeters for this estimate), what is the mass of the cylinder, in grams?",
+    choices: ["147", "96", "48", "144"],
+    answer: 3,
+    explanation: "Volume = πr²h = π(4)²(3) = 48π ≈ 48 cubic centimeters. Mass = density × volume = 3 × 48 = 144 grams.",
   },
   {
     id: "geo-54",
@@ -617,11 +606,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A circle in the xy-plane has equation x² + y² + 4x − 10y + 13 = 0. What is the radius of the circle?",
-    choices: ["4", "16", "5", "13"],
-    answer: 0,
-    explanation:
-      "Completing the square: (x² + 4x + 4) + (y² − 10y + 25) = −13 + 4 + 25 → (x + 2)² + (y − 5)² = 16, so r² = 16 and r = 4.",
+    prompt: "A circle has radius 3. What is the length of an arc with a central angle of 150°, in terms of π?",
+    choices: ["5/4π", "5π", "72/5π", "5/2π"],
+    answer: 3,
+    explanation: "Arc length = (angle/360) × circumference = (150/360) × 2π(3) = 5/2π.",
   },
   {
     id: "geo-55",
@@ -629,12 +617,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt:
-      "Line l passes through the point (1, 5) and is perpendicular to a line with slope −2/3. What is the equation of line l in slope-intercept form?",
-    choices: ["y = (3/2)x + 7/2", "y = (−2/3)x + 17/3", "y = (3/2)x − 7/2", "y = −(2/3)x + 5"],
-    answer: 0,
-    explanation:
-      "A line perpendicular to slope −2/3 has slope 3/2. Using point (1, 5): y − 5 = (3/2)(x − 1) → y = (3/2)x − 3/2 + 5 = (3/2)x + 7/2.",
+    prompt: "Point A is at (1, −6) and point B is at (6, y), where y > −6. If the distance from A to B is 13, what is the value of y?",
+    choices: ["7", "6", "−18", "4"],
+    answer: 1,
+    explanation: "The distance formula gives 13² = (6 − 1)² + (y − −6)² = 5² + (y − −6)². So (y − −6)² = 144 = 12², giving y − −6 = 12 (taking the positive root since y > −6), so y = 6.",
   },
   {
     id: "geo-56",
@@ -642,11 +628,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two lines intersect, forming four angles. One angle measures (3x + 10)°, and its vertical angle measures (5x − 20)°. What is the value of x?",
-    choices: ["15", "5", "10", "20"],
-    answer: 0,
-    explanation: "Vertical angles are equal: 3x + 10 = 5x − 20 → 30 = 2x → x = 15.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two same-side interior angles measure (5x + 115)° and (2x + 2)°. What is the value of x?",
+    choices: ["10", "8", "9", "171"],
+    answer: 2,
+    explanation: "Same-side interior angles formed by a transversal across parallel lines are supplementary: (5x + 115) + (2x + 2) = 180, so 7x + 117 = 180, giving x = 9.",
   },
   {
     id: "geo-57",
@@ -654,11 +639,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle A measures 40° and the hypotenuse has length 20. What is the length of the side opposite angle A, rounded to the nearest tenth?",
-    choices: ["12.9", "15.3", "16.8", "10.2"],
+    prompt: "Triangles ABC and DEF are similar right triangles with the same acute angle θ, where sin(θ) = 7/25. If the hypotenuse of triangle DEF is 150, what is the length of the side opposite θ in triangle DEF?",
+    choices: ["42", "108", "48", "144"],
     answer: 0,
-    explanation: "Opposite = hypotenuse × sin(A) = 20 × sin(40°) ≈ 20 × 0.643 ≈ 12.9.",
+    explanation: "Since sin(θ) = 7/25 (in lowest terms), the side opposite θ is always 7/25 of the hypotenuse. For a hypotenuse of 150, the opposite side is (7/25) · 150 = 42.",
   },
   {
     id: "geo-58",
@@ -666,11 +650,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular garden has a diagonal path of length 39 feet. If the garden's width is 15 feet, what is its length, in feet?",
-    choices: ["36", "34", "24", "54"],
+    prompt: "In right triangle ABC with the right angle at C, the altitude from C meets the hypotenuse at D, where AD = 2 and DB = 6. What is the length of leg AC (adjacent to segment AD)?",
+    choices: ["4", "8", "2", "5"],
     answer: 0,
-    explanation: "By the Pythagorean theorem: length = √(39² − 15²) = √(1521 − 225) = √1296 = 36 feet.",
+    explanation: "A leg of a right triangle is the geometric mean of the whole hypotenuse and the adjacent segment: AC² = AD × AB = 2 × 8 = 16, so AC = √16 = 4.",
   },
   {
     id: "geo-59",
@@ -678,12 +661,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle DEF is similar to triangle GHI, with a scale factor of 5/3 from GHI to DEF. If the perimeter of triangle GHI is 36, what is the perimeter of triangle DEF?",
-    choices: ["60", "100", "21.6", "12"],
+    prompt: "A person 4 feet tall casts a shadow 3 feet long. At the same time, a nearby pole casts a shadow that reaches a point 13 feet beyond the base of a wall, with the shadow on the ground measuring the rest of the distance. If the pole is 12 feet tall, what is the total length of the pole's shadow (on the ground plus the 13 feet beyond the wall), in feet?",
+    choices: ["22", "24", "19", "9"],
     answer: 0,
-    explanation:
-      "Unlike area, perimeter scales by the same factor as corresponding sides (not its square): 36 × (5/3) = 60.",
+    explanation: "By similar triangles, pole height/person height = pole shadow/person shadow, so the pole's shadow on the ground is 12 × (3/4) = 9 feet. Adding the 13 feet beyond the wall gives a total of 9 + 13 = 22 feet.",
   },
   {
     id: "geo-60",
@@ -691,11 +672,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "In a 30-60-90 triangle, the longer leg has length 9√3. What is the length of the hypotenuse?",
-    choices: ["18", "9√3", "9√6", "27"],
+    prompt: "A 30-60-90 triangle has hypotenuse 8. Its longer leg is also the hypotenuse of a second 30-60-90 triangle. What is the length of the shorter leg of the second triangle, in terms of √3?",
+    choices: ["2√3", "8√3", "2√2", "4√3"],
     answer: 0,
-    explanation:
-      "The longer leg equals the shorter leg times √3, so the shorter leg is 9√3/√3 = 9. The hypotenuse is twice the shorter leg: 2 × 9 = 18.",
+    explanation: "In the first triangle, the shorter leg is 8/2 = 4, and the longer leg is 4√3. This longer leg is the hypotenuse of the second triangle, whose shorter leg is half of it: (4√3)/2 = 2√3.",
   },
   {
     id: "geo-61",
@@ -703,12 +683,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle ABC, the exterior angle at vertex A measures 130°, and angle B measures 55°. What is the measure of angle C?",
-    choices: ["75°", "65°", "70°", "85°"],
+    prompt: "In triangle ABC, the two remote interior angles from exterior angle D measure 58° and 44°. If the exterior angle D measures (3x)°, what is the value of x?",
+    choices: ["34", "51", "51/2", "26"],
     answer: 0,
-    explanation:
-      "An exterior angle equals the sum of the two remote interior angles: 130 = B + C = 55 + C, so C = 75°.",
+    explanation: "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 3x = 58 + 44 = 102, so x = 34.",
   },
   {
     id: "geo-62",
@@ -1034,11 +1012,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt: "A cone has a volume of 100π and a height of 12. What is the radius of its base?",
-    choices: ["5", "25", "10", "2.5"],
-    answer: 0,
-    explanation:
-      "Volume = (1/3)πr²h → 100π = (1/3)πr²(12) = 4πr² → r² = 25 → r = 5.",
+    prompt: "A cone has radius 5 and volume 125/3π cubic units. What is the height of the cone?",
+    choices: ["6", "4", "5", "3"],
+    answer: 2,
+    explanation: "Using V = (1/3)πr²h: 125/3π = (1/3)π(5)²h, so 125/3 = 25/3h (after dividing by π), which gives h = 5.",
   },
   {
     id: "geo-91",
@@ -1046,11 +1023,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A circle in the xy-plane has equation x² + y² + 10x − 6y + 18 = 0. What is the radius of the circle?",
-    choices: ["4", "16", "5", "6"],
-    answer: 0,
-    explanation:
-      "Completing the square: (x² + 10x + 25) + (y² − 6y + 9) = −18 + 25 + 9 → (x + 5)² + (y − 3)² = 16, so r² = 16 and r = 4.",
+    prompt: "A circle has radius 6. What is the area of a sector with a central angle of 150°, in terms of π?",
+    choices: ["5/2π", "15π", "432/5π", "30π"],
+    answer: 1,
+    explanation: "Sector area = (angle/360) × πr² = (150/360) × π(6)² = 15π.",
   },
   {
     id: "geo-92",
@@ -1058,11 +1034,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular box has a length of 12, a width of 9, and a height of 8. What is the length of the diagonal connecting two opposite corners of the box?",
-    choices: ["17", "15", "13", "289"],
-    answer: 0,
-    explanation: "The space diagonal is √(12² + 9² + 8²) = √(144 + 81 + 64) = √289 = 17.",
+    prompt: "In right triangle ABC, the right angle is at C, and the altitude from C to the hypotenuse divides it into two segments of lengths 10 and 10. What is the length of the altitude from C?",
+    choices: ["11", "10", "20", "12"],
+    answer: 1,
+    explanation: "The altitude to the hypotenuse is the geometric mean of the two segments it creates: altitude² = 10 × 10 = 100, so the altitude = √100 = 10.",
   },
   {
     id: "geo-93",
@@ -1070,11 +1045,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle A measures 55°, and the side opposite angle A has length 18. What is the length of the hypotenuse, rounded to the nearest tenth?",
-    choices: ["22.0", "31.4", "12.6", "14.7"],
+    prompt: "In a right triangle, one acute angle measures (4x + 10)° and the other measures (3x + 24)°. What is the value of x?",
+    choices: ["8", "9", "82", "7"],
     answer: 0,
-    explanation: "sin(A) = opposite/hypotenuse, so hypotenuse = 18/sin(55°) ≈ 18/0.819 ≈ 22.0.",
+    explanation: "The two acute angles of a right triangle sum to 90°: (4x + 10) + (3x + 24) = 90, so 7x + 34 = 90, giving x = 8.",
   },
   {
     id: "geo-94",
@@ -1082,11 +1056,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "The diagonal of a square has length 10√2. What is the perimeter of the square?",
-    choices: ["40", "100", "20", "10"],
-    answer: 0,
-    explanation:
-      "For a square with side s, the diagonal equals s√2. So s√2 = 10√2 → s = 10, and the perimeter is 4s = 40.",
+    prompt: "In a 45-45-90 triangle, each leg has length 10. The hypotenuse of this 45-45-90 triangle is also the longest side of a separate 30-60-90 triangle. What is the length of the shortest side of the 30-60-90 triangle, in terms of √2?",
+    choices: ["10√2", "20√2", "5√2", "5√3"],
+    answer: 2,
+    explanation: "The hypotenuse of the 45-45-90 triangle is 10√2. This becomes the hypotenuse of the 30-60-90 triangle, whose shortest side is half the hypotenuse: (10√2)/2 = 5√2.",
   },
   {
     id: "geo-95",
@@ -1094,12 +1067,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle ABC is similar to triangle DEF, with a scale factor of 4/3 from DEF to ABC. If the perimeter of triangle ABC is 48, what is the perimeter of triangle DEF?",
-    choices: ["36", "64", "27", "12"],
+    prompt: "Triangle ABC is similar to triangle DEF, with each side of DEF being 5 times the corresponding side of ABC. If the area of triangle ABC is 13 square units, what is the area of triangle DEF, in square units?",
+    choices: ["325", "65", "324", "330"],
     answer: 0,
-    explanation:
-      "Perimeter scales by the same factor as corresponding sides (not its square): perimeter of DEF = 48 ÷ (4/3) = 48 × 3/4 = 36.",
+    explanation: "For similar triangles, area scales with the square of the side ratio: area ratio = 5² = 25. So the area of DEF is 13 × 25 = 325 square units.",
   },
   {
     id: "geo-96",
@@ -1107,12 +1078,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle PQR, the exterior angle at vertex P measures 115°, and angle Q measures 48°. What is the measure of angle R?",
-    choices: ["67°", "65°", "55°", "132°"],
-    answer: 0,
-    explanation:
-      "An exterior angle equals the sum of the two remote interior angles: 115 = Q + R = 48 + R, so R = 67°.",
+    prompt: "In isosceles triangle ABC, angle A is the vertex angle and measures 32°. The two base angles are congruent and each measures (2x)°. What is the value of x?",
+    choices: ["74", "37", "16", "74/3"],
+    answer: 1,
+    explanation: "Since the triangle's angles sum to 180° and the vertex angle is 32°, each base angle is (180 − 32)/2 = 74°. So 2x = 74, giving x = 37.",
   },
   {
     id: "geo-97",
@@ -1120,12 +1089,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt:
-      "Line m passes through the point (−2, 3) and is parallel to a line with equation 4x − 2y = 6. What is the equation of line m in slope-intercept form?",
-    choices: ["y = 2x + 7", "y = 2x − 1", "y = −1/2x + 2", "y = 2x + 3"],
+    prompt: "Triangle ABC has vertices A(−2, 3), B(2, 3), and C(−8, 7). What is the area of triangle ABC?",
+    choices: ["8", "16", "4", "12"],
     answer: 0,
-    explanation:
-      "Rewriting 4x − 2y = 6 gives y = 2x − 3, so the slope is 2. A parallel line has the same slope. Using point (−2, 3): y − 3 = 2(x + 2) → y = 2x + 4 + 3 = 2x + 7.",
+    explanation: "Side AB is horizontal with length 4, and the height from C to line AB is 4 (the vertical distance). Area = (1/2) × base × height = (1/2)(4)(4) = 8.",
   },
   {
     id: "geo-98",
@@ -1133,11 +1100,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A chord of a circle with radius 13 is 5 units from the center. What is the length of the chord?",
-    choices: ["24", "12", "144", "18"],
-    answer: 0,
-    explanation:
-      "Half the chord, the radius to the chord's midpoint, and the distance from the center form a right triangle: half-chord = √(13² − 5²) = √(169 − 25) = √144 = 12, so the chord is 2 × 12 = 24.",
+    prompt: "The equation x² + y² − 10x − 16y + 80 = 0 defines a circle. What is the radius of this circle?",
+    choices: ["2", "4", "3", "9"],
+    answer: 2,
+    explanation: "Completing the square: x² − 10x = (x − 5)² − 25, and y² − 16y = (y − 8)² − 64. The equation becomes (x − 5)² + (y − 8)² = 9, so the radius is √9 = 3.",
   },
   {
     id: "geo-99",
@@ -1145,12 +1111,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A cylinder has a volume of 250π and a height of 10. If the radius is doubled while the height stays the same, what is the new volume, in terms of π?",
-    choices: ["1000π", "500π", "2000π", "125π"],
-    answer: 0,
-    explanation:
-      "Originally, 250π = πr²(10) → r² = 25 → r = 5. Doubling the radius to 10 gives new volume = π(10²)(10) = 1000π.",
+    prompt: "Two similar solids have a linear scale factor of 2 (every length in the larger solid is 2 times the corresponding length in the smaller one). If the smaller solid has a volume of 18 cubic centimeters, what is the volume of the larger solid, in cubic centimeters?",
+    choices: ["72", "36", "144", "143"],
+    answer: 2,
+    explanation: "For similar solids, volume scales with the cube of the linear scale factor: volume ratio = 2³ = 8. So the larger solid's volume is 18 × 8 = 144 cubic centimeters.",
   }
 );
 
@@ -1206,12 +1170,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, one angle measures 60° and the side opposite that angle has length 9√3. What is the length of the hypotenuse?",
-    choices: ["18", "9√3", "9", "27"],
-    answer: 0,
-    explanation:
-      "sin(60°) = (9√3)/hypotenuse, and sin(60°) = √3/2, so hypotenuse = (9√3) ÷ (√3/2) = 9√3 × 2/√3 = 18.",
+    prompt: "In a right triangle, θ is an acute angle with sin(θ) = 7/25. What is the value of tan(θ)?",
+    choices: ["7/25", "25/7", "7/24", "24/7"],
+    answer: 2,
+    explanation: "A right triangle with sin(θ) = 7/25 has a leg of length 21 opposite θ and a hypotenuse of 75, so by the Pythagorean theorem the adjacent leg is 72. Thus tan(θ) = opposite/adjacent = 21/72 = 7/24.",
   },
   {
     id: "geo-105",
@@ -1254,12 +1216,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle XYZ, angle X is 20° more than angle Y, and angle Z is three times angle Y. What is the measure of angle Z?",
-    choices: ["96°", "32°", "52°", "64°"],
-    answer: 0,
-    explanation:
-      "Let angle Y = y. Then X = y + 20 and Z = 3y. Since the angles sum to 180°: y + (y + 20) + 3y = 180 → 5y = 160 → y = 32°, so Z = 3(32) = 96°.",
+    prompt: "In triangle ABC, the three angles measure (2x − 6)°, (x + 18)°, and (x + 96)°. What is the measure of the largest angle, in degrees?",
+    choices: ["18", "66", "109", "114"],
+    answer: 3,
+    explanation: "The angles of a triangle sum to 180°: (2x − 6) + (x + 18) + (x + 96) = 180. Solving gives x = 18. The three angles are then 30°, 36°, and 114°, so the largest is 114°.",
   },
   {
     id: "geo-109",
@@ -1312,11 +1272,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle B measures 35°, and the hypotenuse has length 22. What is the length of the side adjacent to angle B, rounded to the nearest tenth?",
-    choices: ["18.0", "12.6", "15.5", "19.8"],
-    answer: 0,
-    explanation: "Adjacent = hypotenuse × cos(B) = 22 × cos(35°) ≈ 22 × 0.819 ≈ 18.0.",
+    prompt: "Triangles ABC and DEF are similar right triangles with the same acute angle θ, where sin(θ) = 20/29. If the hypotenuse of triangle DEF is 174, what is the length of the side opposite θ in triangle DEF?",
+    choices: ["119", "126", "54", "120"],
+    answer: 3,
+    explanation: "Since sin(θ) = 20/29 (in lowest terms), the side opposite θ is always 20/29 of the hypotenuse. For a hypotenuse of 174, the opposite side is (20/29) · 174 = 120.",
   },
   {
     id: "geo-114",
@@ -1358,11 +1317,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle ABC, the exterior angle at vertex B measures 148°, and angle A measures 62°. What is the measure of angle C?",
-    choices: ["86°", "148°", "24°", "32°"],
-    answer: 0,
-    explanation: "An exterior angle equals the sum of the two remote interior angles: 148 = A + C = 62 + C, so C = 86°.",
+    prompt: "In triangle ABC, the two remote interior angles from exterior angle D measure 40° and 58°. If the exterior angle D measures (4x)°, what is the value of x?",
+    choices: ["98/5", "98/3", "49/2", "41/2"],
+    answer: 2,
+    explanation: "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 4x = 40 + 58 = 98, so x = 49/2.",
   },
   {
     id: "geo-118",
@@ -1415,10 +1373,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt: "If cos(x°) = sin(20°) and x is an acute angle, what is the value of x?",
-    choices: ["70", "20", "45", "110"],
+    prompt: "In a right triangle, one acute angle measures (3x + 13)° and the other measures (x + 29)°. What is the value of x?",
+    choices: ["12", "11", "13", "78"],
     answer: 0,
-    explanation: "Since cos(x°) = sin(90° − x°), setting 90 − x = 20 gives x = 70.",
+    explanation: "The two acute angles of a right triangle sum to 90°: (3x + 13) + (x + 29) = 90, so 4x + 42 = 90, giving x = 12.",
   },
   {
     id: "geo-123",
@@ -1461,10 +1419,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt: "A triangle has angle measures in the ratio 1:2:6. What is the measure of the smallest angle?",
-    choices: ["20°", "40°", "120°", "160°"],
-    answer: 0,
-    explanation: "The ratio parts sum to 1 + 2 + 6 = 9, and 180°/9 = 20° per part, so the smallest angle is 1 × 20° = 20°.",
+    prompt: "In isosceles triangle ABC, angle A is the vertex angle and measures 40°. The two base angles are congruent and each measures (6x)°. What is the value of x?",
+    choices: ["14", "35/3", "10", "20/3"],
+    answer: 1,
+    explanation: "Since the triangle's angles sum to 180° and the vertex angle is 40°, each base angle is (180 − 40)/2 = 70°. So 6x = 70, giving x = 35/3.",
   },
   {
     id: "geo-127",
@@ -1517,11 +1475,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, the side opposite angle θ has length 7√2, and the side adjacent to angle θ has length 7√2. What is the measure of angle θ?",
-    choices: ["45°", "30°", "60°", "90°"],
-    answer: 0,
-    explanation: "tan(θ) = opposite/adjacent = (7√2)/(7√2) = 1, so θ = 45°.",
+    prompt: "In a right triangle, θ is an acute angle with sin(θ) = 3/5. What is the value of cos(θ)?",
+    choices: ["4/3", "4/5", "5/3", "3/5"],
+    answer: 1,
+    explanation: "A right triangle with sin(θ) = 3/5 has a leg of length 6 opposite θ and a hypotenuse of 10, so by the Pythagorean theorem the adjacent leg is 8. Thus cos(θ) = adjacent/hypotenuse = 8/10 = 4/5.",
   },
   {
     id: "geo-132",
@@ -1564,12 +1521,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle PQR, angle P measures (2x + 10)°, angle Q measures 3x°, and angle R measures (x + 20)°. What is the measure of angle R?",
-    choices: ["45°", "60°", "75°", "25°"],
-    answer: 0,
-    explanation:
-      "The angles sum to 180°: (2x + 10) + 3x + (x + 20) = 180 → 6x + 30 = 180 → x = 25, so angle R = 25 + 20 = 45°.",
+    prompt: "In triangle ABC, the three angles measure (x + 1)°, (3x + 17)°, and (4x + 26)°. What is the measure of the largest angle, in degrees?",
+    choices: ["89", "94", "86", "17"],
+    answer: 1,
+    explanation: "The angles of a triangle sum to 180°: (x + 1) + (3x + 17) + (4x + 26) = 180. Solving gives x = 17. The three angles are then 18°, 68°, and 94°, so the largest is 94°.",
   },
   {
     id: "geo-136",
@@ -1623,11 +1578,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle A measures 28°, and the side adjacent to angle A has length 15. What is the length of the side opposite angle A, rounded to the nearest tenth?",
-    choices: ["8.0", "7.0", "17.0", "28.2"],
+    prompt: "Triangles ABC and DEF are similar right triangles with the same acute angle θ, where sin(θ) = 20/29. If the hypotenuse of triangle DEF is 145, what is the length of the side opposite θ in triangle DEF?",
+    choices: ["100", "105", "99", "45"],
     answer: 0,
-    explanation: "Opposite = adjacent × tan(A) = 15 × tan(28°) ≈ 15 × 0.532 ≈ 8.0.",
+    explanation: "Since sin(θ) = 20/29 (in lowest terms), the side opposite θ is always 20/29 of the hypotenuse. For a hypotenuse of 145, the opposite side is (20/29) · 145 = 100.",
   },
   {
     id: "geo-141",
@@ -1670,12 +1624,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle DEF, angle D measures 90°, and angle E is four times angle F. What is the measure of angle F?",
-    choices: ["18°", "72°", "22.5°", "45°"],
+    prompt: "In triangle ABC, the two remote interior angles from exterior angle D measure 35° and 50°. If the exterior angle D measures (4x)°, what is the value of x?",
+    choices: ["85/4", "17", "95/4", "85/3"],
     answer: 0,
-    explanation:
-      "Since angle D = 90°, angles E and F sum to 90°. With E = 4F: 4F + F = 90 → 5F = 90 → F = 18°.",
+    explanation: "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 4x = 35 + 50 = 85, so x = 85/4.",
   },
   {
     id: "geo-145",
@@ -1729,11 +1681,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, the side opposite angle θ has length 11, and the side adjacent to angle θ has length 11√3. What is the measure of angle θ?",
-    choices: ["30°", "60°", "45°", "90°"],
-    answer: 0,
-    explanation: "tan(θ) = opposite/adjacent = 11/(11√3) = 1/√3, so θ = 30°.",
+    prompt: "In a right triangle, one acute angle measures (x + 18)° and the other measures (4x + 37)°. What is the value of x?",
+    choices: ["83", "8", "6", "7"],
+    answer: 3,
+    explanation: "The two acute angles of a right triangle sum to 90°: (x + 18) + (4x + 37) = 90, so 5x + 55 = 90, giving x = 7.",
   },
   {
     id: "geo-150",
@@ -1775,12 +1726,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle STU, the exterior angle at vertex S measures 125°, and angle T is 15° greater than angle U. What is the measure of angle U?",
-    choices: ["55°", "70°", "62.5°", "65°"],
-    answer: 0,
-    explanation:
-      "The exterior angle equals the sum of the two remote interior angles: T + U = 125. Since T = U + 15: (U + 15) + U = 125 → 2U = 110 → U = 55°.",
+    prompt: "In isosceles triangle ABC, angle A is the vertex angle and measures 34°. The two base angles are congruent and each measures (2x)°. What is the value of x?",
+    choices: ["17", "73/3", "73", "73/2"],
+    answer: 3,
+    explanation: "Since the triangle's angles sum to 180° and the vertex angle is 34°, each base angle is (180 − 34)/2 = 73°. So 2x = 73, giving x = 73/2.",
   },
   {
     id: "geo-154",
@@ -1822,12 +1771,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two lines intersect, forming four angles. One angle measures (2x + 30)°, and the angle adjacent to it on the same line measures (3x + 10)°. What is the measure of the larger of the two angles?",
-    choices: ["94°", "86°", "28°", "180°"],
-    answer: 0,
-    explanation:
-      "Adjacent angles on a line are supplementary: (2x + 30) + (3x + 10) = 180 → 5x + 40 = 180 → x = 28. The angles are 2(28) + 30 = 86° and 3(28) + 10 = 94°, so the larger is 94°.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two alternate interior angles measure (3x − 1)° and (x + 27)°. What is the measure of one of these angles, in degrees?",
+    choices: ["14", "139", "51", "41"],
+    answer: 3,
+    explanation: "Alternate interior angles formed by a transversal across parallel lines are equal: 3x − 1 = x + 27, which gives x = 14. Substituting back, the angle measure is 3(14) − 1 = 41°.",
   },
   {
     id: "geo-158",
@@ -1847,11 +1794,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular box has a length of 2, a width of 10, and a height of 11. What is the length of the diagonal connecting two opposite corners of the box?",
-    choices: ["15", "13", "17", "225"],
+    prompt: "In right triangle ABC with the right angle at C, the altitude from C meets the hypotenuse at D, where AD = 2 and DB = 6. What is the length of leg AC (adjacent to segment AD)?",
+    choices: ["4", "8", "6", "5"],
     answer: 0,
-    explanation: "The space diagonal is √(2² + 10² + 11²) = √(4 + 100 + 121) = √225 = 15.",
+    explanation: "A leg of a right triangle is the geometric mean of the whole hypotenuse and the adjacent segment: AC² = AD × AB = 2 × 8 = 16, so AC = √16 = 4.",
   },
   {
     id: "geo-160",
@@ -1872,11 +1818,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "A square has a diagonal of length 14. What is the area of the square?",
-    choices: ["98", "196", "49", "14"],
-    answer: 0,
-    explanation:
-      "For a square with side s, the diagonal d satisfies d² = 2s², so the area s² = d²/2 = 196/2 = 98.",
+    prompt: "A 30-60-90 triangle has hypotenuse 4. Its longer leg is also the hypotenuse of a second 30-60-90 triangle. What is the length of the shorter leg of the second triangle, in terms of √3?",
+    choices: ["1√2", "2√3", "4√3", "1√3"],
+    answer: 3,
+    explanation: "In the first triangle, the shorter leg is 4/2 = 2, and the longer leg is 2√3. This longer leg is the hypotenuse of the second triangle, whose shorter leg is half of it: (2√3)/2 = 1√3.",
   },
   {
     id: "geo-162",
@@ -1961,11 +1906,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A circle in the xy-plane has equation x² + y² − 8x + 2y − 8 = 0. What is the radius of the circle?",
-    choices: ["5", "25", "4", "3"],
+    prompt: "A circle has radius 14. What is the length of an arc with a central angle of 150°, in terms of π?",
+    choices: ["35/3π", "336/5π", "35/6π", "70/3π"],
     answer: 0,
-    explanation:
-      "Completing the square: (x² − 8x + 16) + (y² + 2y + 1) = 8 + 16 + 1 → (x − 4)² + (y + 1)² = 25, so r² = 25 and r = 5.",
+    explanation: "Arc length = (angle/360) × circumference = (150/360) × 2π(14) = 35/3π.",
   },
   {
     id: "geo-170",
@@ -1973,11 +1917,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A chord of a circle with radius 10 is 6 units from the center. What is the length of the chord?",
-    choices: ["16", "8", "14", "20"],
-    answer: 0,
-    explanation:
-      "Half the chord, the radius to the chord's midpoint, and the distance from the center form a right triangle: half-chord = √(10² − 6²) = √(100 − 36) = √64 = 8, so the chord is 2 × 8 = 16.",
+    prompt: "A circle has radius 12. What is the area of a sector with a central angle of 60°, in terms of π?",
+    choices: ["48π", "864π", "24π", "2π"],
+    answer: 2,
+    explanation: "Sector area = (angle/360) × πr² = (60/360) × π(12)² = 24π.",
   },
   {
     id: "geo-171",
@@ -2062,12 +2005,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A cylinder has a volume of 180π and a height of 5. If the height is tripled while the radius stays the same, what is the new volume, in terms of π?",
-    choices: ["540π", "1620π", "60π", "900π"],
-    answer: 0,
-    explanation:
-      "Originally, 180π = πr²(5) → r² = 36. Tripling the height to 15 gives new volume = π(36)(15) = 540π.",
+    prompt: "A solid cylinder has radius 3 cm and height 4 cm, so its volume is 36π cubic centimeters. If the material has a density of 2 grams per cubic centimeter (using π ≈ 1, i.e., treating the volume as 36 cubic centimeters for this estimate), what is the mass of the cylinder, in grams?",
+    choices: ["74", "73", "72", "36"],
+    answer: 2,
+    explanation: "Volume = πr²h = π(3)²(4) = 36π ≈ 36 cubic centimeters. Mass = density × volume = 2 × 36 = 72 grams.",
   },
   {
     id: "geo-179",
@@ -2075,11 +2016,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A rectangular prism has a square base with side length 5 and a volume of 175. What is the height of the prism?",
-    choices: ["7", "35", "25", "14"],
-    answer: 0,
-    explanation: "The base area is 5² = 25, so the height is 175/25 = 7.",
+    prompt: "A cone has radius 3 and volume 33π cubic units. What is the height of the cone?",
+    choices: ["12", "3", "10", "11"],
+    answer: 3,
+    explanation: "Using V = (1/3)πr²h: 33π = (1/3)π(3)²h, so 33 = 3h (after dividing by π), which gives h = 11.",
   },
   {
     id: "geo-180",
@@ -2145,11 +2085,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle B measures 48°, and the side opposite angle B has length 25. What is the length of the hypotenuse, rounded to the nearest tenth?",
-    choices: ["33.6", "37.4", "22.5", "27.9"],
-    answer: 0,
-    explanation: "sin(B) = opposite/hypotenuse, so hypotenuse = 25/sin(48°) ≈ 25/0.743 ≈ 33.6.",
+    prompt: "In a right triangle, θ is an acute angle with sin(θ) = 20/29. What is the value of tan(θ)?",
+    choices: ["20/29", "21/20", "29/20", "20/21"],
+    answer: 3,
+    explanation: "A right triangle with sin(θ) = 20/29 has a leg of length 60 opposite θ and a hypotenuse of 87, so by the Pythagorean theorem the adjacent leg is 63. Thus tan(θ) = opposite/adjacent = 60/63 = 20/21.",
   },
   {
     id: "geo-186",
@@ -2157,10 +2096,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt: "If cos(x°) = sin(35°) and x is an acute angle, what is the value of x?",
-    choices: ["55", "35", "45", "65"],
-    answer: 0,
-    explanation: "Since cos(x°) = sin(90° − x°), setting 90 − x = 35 gives x = 55.",
+    prompt: "Triangles ABC and DEF are similar right triangles with the same acute angle θ, where sin(θ) = 20/29. If the hypotenuse of triangle DEF is 116, what is the length of the side opposite θ in triangle DEF?",
+    choices: ["36", "81", "80", "84"],
+    answer: 2,
+    explanation: "Since sin(θ) = 20/29 (in lowest terms), the side opposite θ is always 20/29 of the hypotenuse. For a hypotenuse of 116, the opposite side is (20/29) · 116 = 80.",
   },
   {
     id: "geo-187",
@@ -2225,11 +2164,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle XYZ, the exterior angle at vertex X measures 142°, and angle Y measures 81°. What is the measure of angle Z?",
-    choices: ["61°", "71°", "59°", "142°"],
-    answer: 0,
-    explanation: "An exterior angle equals the sum of the two remote interior angles: 142 = Y + Z = 81 + Z, so Z = 61°.",
+    prompt: "In triangle ABC, the three angles measure (3x − 1)°, (x + 12)°, and (4x + 33)°. What is the measure of the largest angle, in degrees?",
+    choices: ["17", "101", "79", "96"],
+    answer: 1,
+    explanation: "The angles of a triangle sum to 180°: (3x − 1) + (x + 12) + (4x + 33) = 180. Solving gives x = 17. The three angles are then 50°, 29°, and 101°, so the largest is 101°.",
   },
   {
     id: "geo-193",
@@ -2237,12 +2175,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle JKL, angle J measures 3x°, angle K measures (2x + 10)°, and angle L measures (x + 20)°. What is the measure of angle L?",
-    choices: ["45°", "75°", "60°", "25°"],
-    answer: 0,
-    explanation:
-      "The angles sum to 180°: 3x + (2x + 10) + (x + 20) = 180 → 6x + 30 = 180 → x = 25, so angle L = 25 + 20 = 45°.",
+    prompt: "In triangle ABC, the two remote interior angles from exterior angle D measure 70° and 61°. If the exterior angle D measures (4x)°, what is the value of x?",
+    choices: ["49/4", "131/5", "131/4", "131/3"],
+    answer: 2,
+    explanation: "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 4x = 70 + 61 = 131, so x = 131/4.",
   },
   {
     id: "geo-194",
@@ -2306,11 +2242,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "The diagonal of a square has length 12√2. What is the perimeter of the square?",
-    choices: ["48", "144", "24", "12"],
-    answer: 0,
-    explanation:
-      "For a square with side s, the diagonal equals s√2. So s√2 = 12√2 → s = 12, and the perimeter is 4s = 48.",
+    prompt: "In a 45-45-90 triangle, each leg has length 12. The hypotenuse of this 45-45-90 triangle is also the longest side of a separate 30-60-90 triangle. What is the length of the shortest side of the 30-60-90 triangle, in terms of √2?",
+    choices: ["24√2", "6√3", "12√2", "6√2"],
+    answer: 3,
+    explanation: "The hypotenuse of the 45-45-90 triangle is 12√2. This becomes the hypotenuse of the 30-60-90 triangle, whose shortest side is half the hypotenuse: (12√2)/2 = 6√2.",
   },
   {
     id: "geo-200",
@@ -2318,11 +2253,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "A square has an area of 50. What is the length of its diagonal?",
-    choices: ["10", "50", "5√2", "25"],
+    prompt: "A 30-60-90 triangle has hypotenuse 8. Its longer leg is also the hypotenuse of a second 30-60-90 triangle. What is the length of the shorter leg of the second triangle, in terms of √3?",
+    choices: ["2√3", "4√3", "2√2", "8√3"],
     answer: 0,
-    explanation:
-      "The side length is √50 = 5√2, and the diagonal equals side × √2, so the diagonal is 5√2 × √2 = 10.",
+    explanation: "In the first triangle, the shorter leg is 8/2 = 4, and the longer leg is 4√3. This longer leg is the hypotenuse of the second triangle, whose shorter leg is half of it: (4√3)/2 = 2√3.",
   },
   {
     id: "geo-201",
@@ -2391,12 +2325,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle ABC is similar to triangle XYZ, with a scale factor of 7/4 from XYZ to ABC. If the perimeter of triangle XYZ is 48, what is the perimeter of triangle ABC?",
-    choices: ["84", "27.4", "192", "12"],
-    answer: 0,
-    explanation:
-      "Perimeter scales by the same factor as corresponding sides (not its square): 48 × (7/4) = 84.",
+    prompt: "A person 5 feet tall casts a shadow 3 feet long. At the same time, a nearby pole casts a shadow that reaches a point 6 feet beyond the base of a wall, with the shadow on the ground measuring the rest of the distance. If the pole is 30 feet tall, what is the total length of the pole's shadow (on the ground plus the 6 feet beyond the wall), in feet?",
+    choices: ["21", "26", "18", "24"],
+    answer: 3,
+    explanation: "By similar triangles, pole height/person height = pole shadow/person shadow, so the pole's shadow on the ground is 30 × (3/5) = 18 feet. Adding the 6 feet beyond the wall gives a total of 18 + 6 = 24 feet.",
   },
   {
     id: "geo-207",
@@ -2404,12 +2336,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle DEF is similar to triangle GHI, with a scale factor of 5/2 from GHI to DEF. If the area of triangle GHI is 24, what is the area of triangle DEF?",
-    choices: ["150", "60", "9.6", "96"],
-    answer: 0,
-    explanation:
-      "Area scales by the square of the linear scale factor: (5/2)² = 25/4. So the area of DEF is 24 × 25/4 = 150.",
+    prompt: "Triangle ABC is similar to triangle DEF, with each side of DEF being 2 times the corresponding side of ABC. If the area of triangle ABC is 11 square units, what is the area of triangle DEF, in square units?",
+    choices: ["22", "43", "46", "44"],
+    answer: 3,
+    explanation: "For similar triangles, area scales with the square of the side ratio: area ratio = 2² = 4. So the area of DEF is 11 × 4 = 44 square units.",
   },
   {
     id: "geo-208",
@@ -2474,11 +2404,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular box has a length of 6, a width of 8, and a height of 24. What is the length of the diagonal connecting two opposite corners of the box?",
-    choices: ["26", "22", "28", "676"],
+    prompt: "In right triangle ABC, the right angle is at C, and the altitude from C to the hypotenuse divides it into two segments of lengths 12 and 12. What is the length of the altitude from C?",
+    choices: ["12", "14", "13", "24"],
     answer: 0,
-    explanation: "The space diagonal is √(6² + 8² + 24²) = √(36 + 64 + 576) = √676 = 26.",
+    explanation: "The altitude to the hypotenuse is the geometric mean of the two segments it creates: altitude² = 12 × 12 = 144, so the altitude = √144 = 12.",
   },
   {
     id: "geo-214",
@@ -2486,11 +2415,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular television screen has a diagonal of length 34 inches and a width of 16 inches. What is its height, in inches?",
-    choices: ["30", "26", "28", "18"],
-    answer: 0,
-    explanation: "By the Pythagorean theorem: height = √(34² − 16²) = √(1156 − 256) = √900 = 30 inches.",
+    prompt: "In right triangle ABC with the right angle at C, the altitude from C meets the hypotenuse at D, where AD = 2 and DB = 6. What is the length of leg AC (adjacent to segment AD)?",
+    choices: ["5", "2", "4", "8"],
+    answer: 2,
+    explanation: "A leg of a right triangle is the geometric mean of the whole hypotenuse and the adjacent segment: AC² = AD × AB = 2 × 8 = 16, so AC = √16 = 4.",
   },
   {
     id: "geo-215",
@@ -2544,12 +2472,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two lines intersect, forming four angles. One angle measures (4x + 15)°, and the angle adjacent to it on the same line measures (2x + 45)°. What is the measure of the larger of the two angles?",
-    choices: ["95°", "85°", "20°", "180°"],
-    answer: 0,
-    explanation:
-      "Adjacent angles on a line are supplementary: (4x + 15) + (2x + 45) = 180 → 6x + 60 = 180 → x = 20. The angles are 4(20) + 15 = 95° and 2(20) + 45 = 85°, so the larger is 95°.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two same-side interior angles measure (2x + 107)° and (3x + 18)°. What is the value of x?",
+    choices: ["12", "10", "11", "169"],
+    answer: 2,
+    explanation: "Same-side interior angles formed by a transversal across parallel lines are supplementary: (2x + 107) + (3x + 18) = 180, so 5x + 125 = 180, giving x = 11.",
   },
   {
     id: "geo-220",
@@ -2601,12 +2527,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt:
-      "Line n passes through the point (3, −2) and is perpendicular to a line with slope 4/5. What is the equation of line n in slope-intercept form?",
-    choices: ["y = −(5/4)x + 7/4", "y = (4/5)x − 2", "y = −(5/4)x − 7/4", "y = (5/4)x + 7/4"],
-    answer: 0,
-    explanation:
-      "A line perpendicular to slope 4/5 has slope −5/4. Using point (3, −2): y − (−2) = −(5/4)(x − 3) → y = −(5/4)x + 15/4 − 2 = −(5/4)x + 7/4.",
+    prompt: "Point A is at (4, −6) and point B is at (12, y), where y > −6. If the distance from A to B is 17, what is the value of y?",
+    choices: ["10", "7", "9", "−21"],
+    answer: 2,
+    explanation: "The distance formula gives 17² = (12 − 4)² + (y − −6)² = 8² + (y − −6)². So (y − −6)² = 225 = 15², giving y − −6 = 15 (taking the positive root since y > −6), so y = 9.",
   },
   {
     id: "geo-225",
@@ -2680,11 +2604,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A circle in the xy-plane has equation x² + y² − 12x − 4y + 4 = 0. What is the radius of the circle?",
-    choices: ["6", "36", "4", "8"],
-    answer: 0,
-    explanation:
-      "Completing the square: (x² − 12x + 36) + (y² − 4y + 4) = −4 + 36 + 4 → (x − 6)² + (y − 2)² = 36, so r² = 36 and r = 6.",
+    prompt: "The equation x² + y² + 16x + 18y + 129 = 0 defines a circle. What is the radius of this circle?",
+    choices: ["5", "16", "3", "4"],
+    answer: 3,
+    explanation: "Completing the square: x² + 16x = (x + 8)² − 64, and y² + 18y = (y + 9)² − 81. The equation becomes (x + 8)² + (y + 9)² = 16, so the radius is √16 = 4.",
   },
   {
     id: "geo-232",
@@ -2692,11 +2615,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A chord of a circle with radius 20 is 12 units from the center. What is the length of the chord?",
-    choices: ["32", "16", "24", "40"],
+    prompt: "A circle has radius 12. What is the length of an arc with a central angle of 60°, in terms of π?",
+    choices: ["4π", "144π", "2π", "8π"],
     answer: 0,
-    explanation:
-      "Half the chord, the radius to the chord's midpoint, and the distance from the center form a right triangle: half-chord = √(20² − 12²) = √(400 − 144) = √256 = 16, so the chord is 2 × 16 = 32.",
+    explanation: "Arc length = (angle/360) × circumference = (60/360) × 2π(12) = 4π.",
   },
   {
     id: "geo-233",
@@ -2792,10 +2714,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt: "A cylinder has a volume of 96π and a height of 6. What is the radius of its base?",
-    choices: ["4", "16", "8", "2"],
-    answer: 0,
-    explanation: "Volume = πr²h → 96π = πr²(6) = 6πr² → r² = 16 → r = 4.",
+    prompt: "Two similar solids have a linear scale factor of 4 (every length in the larger solid is 4 times the corresponding length in the smaller one). If the smaller solid has a volume of 20 cubic centimeters, what is the volume of the larger solid, in cubic centimeters?",
+    choices: ["320", "80", "1279", "1280"],
+    answer: 3,
+    explanation: "For similar solids, volume scales with the cube of the linear scale factor: volume ratio = 4³ = 64. So the larger solid's volume is 20 × 64 = 1280 cubic centimeters.",
   },
   {
     id: "geo-242",
@@ -2803,12 +2725,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A cube has a volume of 64. If each side length is tripled, what is the volume of the new cube?",
-    choices: ["1728", "512", "192", "576"],
-    answer: 0,
-    explanation:
-      "The original edge length is 4 (since 4³ = 64). Tripling gives an edge of 12, so the new volume is 12³ = 1728.",
+    prompt: "A solid cylinder has radius 5 cm and height 4 cm, so its volume is 100π cubic centimeters. If the material has a density of 5 grams per cubic centimeter (using π ≈ 1, i.e., treating the volume as 100 cubic centimeters for this estimate), what is the mass of the cylinder, in grams?",
+    choices: ["400", "505", "100", "500"],
+    answer: 3,
+    explanation: "Volume = πr²h = π(5)²(4) = 100π ≈ 100 cubic centimeters. Mass = density × volume = 5 × 100 = 500 grams.",
   },
   {
     id: "geo-243",
@@ -2874,11 +2794,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle B measures 52°, and the side adjacent to angle B has length 14. What is the length of the hypotenuse, rounded to the nearest tenth?",
-    choices: ["22.7", "8.6", "17.8", "11.0"],
-    answer: 0,
-    explanation: "cos(B) = adjacent/hypotenuse, so hypotenuse = 14/cos(52°) ≈ 14/0.616 ≈ 22.7.",
+    prompt: "In a right triangle, one acute angle measures (2x + 12)° and the other measures (3x + 13)°. What is the value of x?",
+    choices: ["14", "13", "12", "77"],
+    answer: 1,
+    explanation: "The two acute angles of a right triangle sum to 90°: (2x + 12) + (3x + 13) = 90, so 5x + 25 = 90, giving x = 13.",
   },
   {
     id: "geo-249",
@@ -2886,10 +2805,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt: "If sin(x°) = cos(18°) and x is an acute angle, what is the value of x?",
-    choices: ["72", "18", "45", "108"],
-    answer: 0,
-    explanation: "Since sin(x°) = cos(90° − x°), setting 90 − x = 18 gives x = 72.",
+    prompt: "In a right triangle, θ is an acute angle with sin(θ) = 8/17. What is the value of cos(θ)?",
+    choices: ["17/8", "8/17", "15/17", "15/8"],
+    answer: 2,
+    explanation: "A right triangle with sin(θ) = 8/17 has a leg of length 8 opposite θ and a hypotenuse of 17, so by the Pythagorean theorem the adjacent leg is 15. Thus cos(θ) = adjacent/hypotenuse = 15/17 = 15/17.",
   },
   {
     id: "geo-250",
@@ -2954,11 +2873,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle ABC, the exterior angle at vertex A measures 158°, and angle B measures 97°. What is the measure of angle C?",
-    choices: ["61°", "97°", "158°", "65°"],
-    answer: 0,
-    explanation: "An exterior angle equals the sum of the two remote interior angles: 158 = B + C = 97 + C, so C = 61°.",
+    prompt: "In isosceles triangle ABC, angle A is the vertex angle and measures 54°. The two base angles are congruent and each measures (2x)°. What is the value of x?",
+    choices: ["63", "21", "27", "63/2"],
+    answer: 3,
+    explanation: "Since the triangle's angles sum to 180° and the vertex angle is 54°, each base angle is (180 − 54)/2 = 63°. So 2x = 63, giving x = 63/2.",
   },
   {
     id: "geo-256",
@@ -2966,12 +2884,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle PQR, angle P measures (3x + 15)°, angle Q measures (2x + 25)°, and angle R measures (x + 20)°. What is the measure of angle R?",
-    choices: ["40°", "65°", "75°", "20°"],
-    answer: 0,
-    explanation:
-      "The angles sum to 180°: (3x + 15) + (2x + 25) + (x + 20) = 180 → 6x + 60 = 180 → x = 20, so angle R = 20 + 20 = 40°.",
+    prompt: "In triangle ABC, the three angles measure (3x − 1)°, (3x + 9)°, and (2x + 116)°. What is the measure of the largest angle, in degrees?",
+    choices: ["125", "7", "130", "50"],
+    answer: 2,
+    explanation: "The angles of a triangle sum to 180°: (3x − 1) + (3x + 9) + (2x + 116) = 180. Solving gives x = 7. The three angles are then 20°, 30°, and 130°, so the largest is 130°.",
   },
   {
     id: "geo-257",
@@ -3035,11 +2951,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "A square has a diagonal of length 9√2. What is the area of the square?",
-    choices: ["81", "162", "9", "40.5"],
+    prompt: "In a 45-45-90 triangle, each leg has length 12. The hypotenuse of this 45-45-90 triangle is also the longest side of a separate 30-60-90 triangle. What is the length of the shortest side of the 30-60-90 triangle, in terms of √2?",
+    choices: ["6√2", "12√2", "6√3", "24√2"],
     answer: 0,
-    explanation:
-      "For a square with side s, the diagonal equals s√2. So s√2 = 9√2 → s = 9, and the area is s² = 81.",
+    explanation: "The hypotenuse of the 45-45-90 triangle is 12√2. This becomes the hypotenuse of the 30-60-90 triangle, whose shortest side is half the hypotenuse: (12√2)/2 = 6√2.",
   },
   {
     id: "geo-263",
@@ -3047,11 +2962,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "A square has a perimeter of 56. What is the length of its diagonal?",
-    choices: ["14√2", "56√2", "14", "28√2"],
-    answer: 0,
-    explanation:
-      "The perimeter is 4s = 56, so the side is s = 14. The diagonal equals s√2 = 14√2.",
+    prompt: "A 30-60-90 triangle has hypotenuse 4. Its longer leg is also the hypotenuse of a second 30-60-90 triangle. What is the length of the shorter leg of the second triangle, in terms of √3?",
+    choices: ["2√3", "1√2", "4√3", "1√3"],
+    answer: 3,
+    explanation: "In the first triangle, the shorter leg is 4/2 = 2, and the longer leg is 2√3. This longer leg is the hypotenuse of the second triangle, whose shorter leg is half of it: (2√3)/2 = 1√3.",
   },
   {
     id: "geo-264",
@@ -3121,12 +3035,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle MNO is similar to triangle PQR, with a scale factor of 8/3 from MNO to PQR. If the area of triangle PQR is 128, what is the area of triangle MNO?",
-    choices: ["18", "910.2", "48", "341.3"],
-    answer: 0,
-    explanation:
-      "Area scales by the square of the linear scale factor: (8/3)² = 64/9. So the area of MNO is 128 ÷ (64/9) = 128 × 9/64 = 18.",
+    prompt: "A person 5 feet tall casts a shadow 5 feet long. At the same time, a nearby pole casts a shadow that reaches a point 7 feet beyond the base of a wall, with the shadow on the ground measuring the rest of the distance. If the pole is 30 feet tall, what is the total length of the pole's shadow (on the ground plus the 7 feet beyond the wall), in feet?",
+    choices: ["39", "30", "37", "34"],
+    answer: 2,
+    explanation: "By similar triangles, pole height/person height = pole shadow/person shadow, so the pole's shadow on the ground is 30 × (5/5) = 30 feet. Adding the 7 feet beyond the wall gives a total of 30 + 7 = 37 feet.",
   },
   {
     id: "geo-270",
@@ -3134,12 +3046,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle STU is similar to triangle VWX, with a scale factor of 9/4 from STU to VWX. If the perimeter of triangle VWX is 63, what is the perimeter of triangle STU?",
-    choices: ["28", "141.75", "12.4", "35"],
-    answer: 0,
-    explanation:
-      "Perimeter scales by the same factor as corresponding sides (not its square): perimeter of STU = 63 ÷ (9/4) = 63 × 4/9 = 28.",
+    prompt: "Triangle ABC is similar to triangle DEF, with each side of DEF being 4 times the corresponding side of ABC. If the area of triangle ABC is 10 square units, what is the area of triangle DEF, in square units?",
+    choices: ["40", "164", "159", "160"],
+    answer: 3,
+    explanation: "For similar triangles, area scales with the square of the side ratio: area ratio = 4² = 16. So the area of DEF is 10 × 16 = 160 square units.",
   },
   {
     id: "geo-271",
@@ -3204,11 +3114,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular box has a length of 4, a width of 13, and a height of 16. What is the length of the diagonal connecting two opposite corners of the box?",
-    choices: ["21", "33", "9", "441"],
+    prompt: "In right triangle ABC, the right angle is at C, and the altitude from C to the hypotenuse divides it into two segments of lengths 8 and 8. What is the length of the altitude from C?",
+    choices: ["8", "10", "9", "16"],
     answer: 0,
-    explanation: "The space diagonal is √(4² + 13² + 16²) = √(16 + 169 + 256) = √441 = 21.",
+    explanation: "The altitude to the hypotenuse is the geometric mean of the two segments it creates: altitude² = 8 × 8 = 64, so the altitude = √64 = 8.",
   },
   {
     id: "geo-277",
@@ -3216,11 +3125,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular television screen has a diagonal of length 58 inches and a height of 40 inches. What is its width, in inches?",
-    choices: ["42", "18", "98", "1764"],
-    answer: 0,
-    explanation: "By the Pythagorean theorem: width = √(58² − 40²) = √(3364 − 1600) = √1764 = 42 inches.",
+    prompt: "In right triangle ABC with the right angle at C, the altitude from C meets the hypotenuse at D, where AD = 2 and DB = 6. What is the length of leg AC (adjacent to segment AD)?",
+    choices: ["2", "4", "8", "5"],
+    answer: 1,
+    explanation: "A leg of a right triangle is the geometric mean of the whole hypotenuse and the adjacent segment: AC² = AD × AB = 2 × 8 = 16, so AC = √16 = 4.",
   },
   {
     id: "geo-278",
@@ -3263,12 +3171,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two lines intersect, forming four angles. One angle measures (3x + 25)°, and the angle adjacent to it on the same line measures (2x + 35)°. What is the measure of the larger of the two angles?",
-    choices: ["97°", "83°", "24°", "180°"],
-    answer: 0,
-    explanation:
-      "Adjacent angles on a line are supplementary: (3x + 25) + (2x + 35) = 180 → 5x + 60 = 180 → x = 24. The angles are 3(24) + 25 = 97° and 2(24) + 35 = 83°, so the larger is 97°.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two alternate interior angles measure (5x + 4)° and (x + 72)°. What is the measure of one of these angles, in degrees?",
+    choices: ["99", "91", "17", "89"],
+    answer: 3,
+    explanation: "Alternate interior angles formed by a transversal across parallel lines are equal: 5x + 4 = x + 72, which gives x = 17. Substituting back, the angle measure is 5(17) + 4 = 89°.",
   },
   {
     id: "geo-282",
@@ -3276,11 +3182,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two angles are supplementary. The larger angle measures four times the smaller angle. What is the measure of the larger angle?",
-    choices: ["144°", "36°", "108°", "72°"],
-    answer: 0,
-    explanation: "Let the smaller angle be x. Then x + 4x = 180 → 5x = 180 → x = 36°, so the larger angle is 4(36) = 144°.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two same-side interior angles measure (3x + 99)° and (2x − 19)°. What is the value of x?",
+    choices: ["160", "21", "20", "19"],
+    answer: 2,
+    explanation: "Same-side interior angles formed by a transversal across parallel lines are supplementary: (3x + 99) + (2x − 19) = 180, so 5x + 80 = 180, giving x = 20.",
   },
   {
     id: "geo-283",
@@ -3334,12 +3239,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt:
-      "Line p passes through the point (−1, 4) and is perpendicular to a line with slope 3/7. What is the equation of line p in slope-intercept form?",
-    choices: ["y = −(7/3)x + 5/3", "y = (3/7)x + 4", "y = −(7/3)x − 5/3", "y = (7/3)x + 5/3"],
+    prompt: "Triangle ABC has vertices A(−1, −3), B(11, −3), and C(−7, 7). What is the area of triangle ABC?",
+    choices: ["60", "50", "72", "120"],
     answer: 0,
-    explanation:
-      "A line perpendicular to slope 3/7 has slope −7/3. Using point (−1, 4): y − 4 = −(7/3)(x + 1) → y = −(7/3)x − 7/3 + 4 = −(7/3)x + 5/3.",
+    explanation: "Side AB is horizontal with length 12, and the height from C to line AB is 10 (the vertical distance). Area = (1/2) × base × height = (1/2)(12)(10) = 60.",
   },
   {
     id: "geo-288",
@@ -3480,12 +3383,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Three angles around a point measure (2x)°, (3x + 10)°, and (4x − 10)°, and together with a fourth angle of 90° they complete the full 360° around the point. What is the value of x?",
-    choices: ["30", "25", "35", "20"],
+    prompt: "Lines m and n are parallel and cut by a transversal. Two alternate interior angles measure (4x − 17)° and (3x − 2)°. What is the measure of one of these angles, in degrees?",
+    choices: ["43", "15", "53", "137"],
     answer: 0,
-    explanation:
-      "All angles around a point sum to 360°: (2x) + (3x + 10) + (4x − 10) + 90 = 360 → 9x + 90 = 360 → x = 30.",
+    explanation: "Alternate interior angles formed by a transversal across parallel lines are equal: 4x − 17 = 3x − 2, which gives x = 15. Substituting back, the angle measure is 4(15) − 17 = 43°.",
   },
   {
     id: "geo-300",
@@ -3493,12 +3394,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two lines intersect, forming four angles. One angle measures (6x − 15)°, and the angle adjacent to it (forming a linear pair) measures (2x + 35)°. What is the measure of the angle vertical to the (6x − 15)° angle?",
-    choices: ["105°", "75°", "110°", "130°"],
-    answer: 0,
-    explanation:
-      "Adjacent angles on a line are supplementary: (6x − 15) + (2x + 35) = 180 → 8x + 20 = 180 → x = 20. The angle is 6(20) − 15 = 105°, and its vertical angle is equal, 105°.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two same-side interior angles measure (2x + 48)° and (3x + 17)°. What is the value of x?",
+    choices: ["22", "24", "157", "23"],
+    answer: 3,
+    explanation: "Same-side interior angles formed by a transversal across parallel lines are supplementary: (2x + 48) + (3x + 17) = 180, so 5x + 65 = 180, giving x = 23.",
   },
   {
     id: "geo-301",
@@ -3561,11 +3460,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt: "For what value of k are the points (2, 3), (4, 7), and (6, k) collinear?",
-    choices: ["11", "9", "13", "15"],
-    answer: 0,
-    explanation:
-      "The slope from (2, 3) to (4, 7) is (7 − 3)/(4 − 2) = 2. For the points to be collinear, the slope from (4, 7) to (6, k) must also be 2: (k − 7)/2 = 2 → k = 11.",
+    prompt: "Point A is at (−5, −3) and point B is at (3, y), where y > −3. If the distance from A to B is 17, what is the value of y?",
+    choices: ["13", "12", "10", "−18"],
+    answer: 1,
+    explanation: "The distance formula gives 17² = (3 − −5)² + (y − −3)² = 8² + (y − −3)². So (y − −3)² = 225 = 15², giving y − −3 = 15 (taking the positive root since y > −3), so y = 12.",
   },
   {
     id: "geo-307",
@@ -3617,11 +3515,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt: "Line q passes through the points (−3, 8) and (5, −4). What is the equation of line q in slope-intercept form?",
-    choices: ["y = −(3/2)x + 7/2", "y = (3/2)x + 7/2", "y = −(3/2)x − 7/2", "y = −(2/3)x + 7/2"],
-    answer: 0,
-    explanation:
-      "Slope = (−4 − 8)/(5 − (−3)) = −12/8 = −3/2. Using point (−3, 8): y − 8 = −(3/2)(x + 3) → y = −(3/2)x − 9/2 + 8 = −(3/2)x + 7/2.",
+    prompt: "Triangle ABC has vertices A(−6, −1), B(0, −1), and C(−7, 5). What is the area of triangle ABC?",
+    choices: ["24", "12", "18", "36"],
+    answer: 2,
+    explanation: "Side AB is horizontal with length 6, and the height from C to line AB is 6 (the vertical distance). Area = (1/2) × base × height = (1/2)(6)(6) = 18.",
   },
   {
     id: "geo-312",
@@ -3712,12 +3609,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "A rectangular box has a length of 6, a width of 6, and a space diagonal of length 6√3. What is the height of the box?",
-    choices: ["6", "6√3", "12", "18"],
-    answer: 0,
-    explanation:
-      "Using d² = l² + w² + h²: (6√3)² = 6² + 6² + h² → 108 = 72 + h² → h² = 36 → h = 6.",
+    prompt: "In right triangle ABC, the right angle is at C, and the altitude from C to the hypotenuse divides it into two segments of lengths 6 and 6. What is the length of the altitude from C?",
+    choices: ["12", "7", "5", "6"],
+    answer: 3,
+    explanation: "The altitude to the hypotenuse is the geometric mean of the two segments it creates: altitude² = 6 × 6 = 36, so the altitude = √36 = 6.",
   },
   {
     id: "geo-320",
@@ -3725,10 +3620,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt: "A right triangle has one leg of length 11 and a hypotenuse of length 61. What is the length of the other leg?",
-    choices: ["60", "50", "72", "3600"],
-    answer: 0,
-    explanation: "√(61² − 11²) = √(3721 − 121) = √3600 = 60.",
+    prompt: "In right triangle ABC with the right angle at C, the altitude from C meets the hypotenuse at D, where AD = 3 and DB = 9. What is the length of leg AC (adjacent to segment AD)?",
+    choices: ["12", "8", "7", "6"],
+    answer: 3,
+    explanation: "A leg of a right triangle is the geometric mean of the whole hypotenuse and the adjacent segment: AC² = AD × AB = 3 × 12 = 36, so AC = √36 = 6.",
   },
   {
     id: "geo-321",
@@ -3783,12 +3678,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle XYZ, angle X measures (2a + 20)°, angle Y measures (3a − 10)°, and angle Z measures (a + 20)°. What is the measure of the largest angle?",
-    choices: ["70°", "65°", "45°", "75°"],
-    answer: 0,
-    explanation:
-      "Since the angles sum to 180°: (2a + 20) + (3a − 10) + (a + 20) = 180 → 6a + 30 = 180 → a = 25. The angles are 70°, 65°, and 45°, so the largest is 70°.",
+    prompt: "In triangle ABC, the two remote interior angles from exterior angle D measure 42° and 57°. If the exterior angle D measures (5x)°, what is the value of x?",
+    choices: ["33/2", "99/4", "99/5", "81/5"],
+    answer: 2,
+    explanation: "By the Exterior Angle Theorem, the exterior angle equals the sum of the two remote interior angles: 5x = 42 + 57 = 99, so x = 99/5.",
   },
   {
     id: "geo-326",
@@ -3842,11 +3735,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "A square has an area of 50. What is the length of its diagonal?",
-    choices: ["10", "50", "5√2", "25"],
-    answer: 0,
-    explanation:
-      "The side length is √50 = 5√2. The diagonal equals side × √2 = 5√2 × √2 = 10.",
+    prompt: "In a 45-45-90 triangle, each leg has length 7. The hypotenuse of this 45-45-90 triangle is also the longest side of a separate 30-60-90 triangle. What is the length of the shortest side of the 30-60-90 triangle, in terms of √2?",
+    choices: ["14√2", "7/2√2", "7√2", "7/2√3"],
+    answer: 1,
+    explanation: "The hypotenuse of the 45-45-90 triangle is 7√2. This becomes the hypotenuse of the 30-60-90 triangle, whose shortest side is half the hypotenuse: (7√2)/2 = 7/2√2.",
   },
   {
     id: "geo-331",
@@ -3891,12 +3783,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle GHI is similar to triangle JKL. The area of GHI is 45 and the area of JKL is 80. What is the scale factor from GHI to JKL?",
-    choices: ["4/3", "16/9", "9/4", "3/4"],
-    answer: 0,
-    explanation:
-      "The ratio of areas equals the square of the scale factor: 80/45 = 16/9, so the scale factor is √(16/9) = 4/3.",
+    prompt: "A person 5 feet tall casts a shadow 3 feet long. At the same time, a nearby pole casts a shadow that reaches a point 3 feet beyond the base of a wall, with the shadow on the ground measuring the rest of the distance. If the pole is 30 feet tall, what is the total length of the pole's shadow (on the ground plus the 3 feet beyond the wall), in feet?",
+    choices: ["18", "23", "22", "21"],
+    answer: 3,
+    explanation: "By similar triangles, pole height/person height = pole shadow/person shadow, so the pole's shadow on the ground is 30 × (3/5) = 18 feet. Adding the 3 feet beyond the wall gives a total of 18 + 3 = 21 feet.",
   },
   {
     id: "geo-335",
@@ -3904,12 +3794,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "Triangle MNO is similar to triangle PQR. The perimeter of MNO is 42, and the perimeter of PQR is 70. If the shortest side of PQR has length 25, what is the length of the shortest side of MNO?",
-    choices: ["15", "41.67", "9", "35"],
-    answer: 0,
-    explanation:
-      "The scale factor from PQR to MNO is 42/70 = 3/5, so the shortest side of MNO is 25 × 3/5 = 15.",
+    prompt: "Triangle ABC is similar to triangle DEF, with each side of DEF being 3 times the corresponding side of ABC. If the area of triangle ABC is 16 square units, what is the area of triangle DEF, in square units?",
+    choices: ["143", "144", "147", "48"],
+    answer: 1,
+    explanation: "For similar triangles, area scales with the square of the side ratio: area ratio = 3² = 9. So the area of DEF is 16 × 9 = 144 square units.",
   },
   {
     id: "geo-336",
@@ -3952,11 +3840,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "A plane flying at an altitude of 5,000 feet begins its descent, and the angle of depression to the airport is 10°. What is the horizontal distance from the plane to the airport at this point, rounded to the nearest foot?",
-    choices: ["28,359 feet", "28,794 feet", "4,924 feet", "881.6 feet"],
+    prompt: "Triangles ABC and DEF are similar right triangles with the same acute angle θ, where sin(θ) = 5/13. If the hypotenuse of triangle DEF is 65, what is the length of the side opposite θ in triangle DEF?",
+    choices: ["25", "60", "40", "30"],
     answer: 0,
-    explanation: "tan(10°) = opposite/adjacent = 5000/d, so d = 5000/tan(10°) ≈ 5000/0.176 ≈ 28,359 feet.",
+    explanation: "Since sin(θ) = 5/13 (in lowest terms), the side opposite θ is always 5/13 of the hypotenuse. For a hypotenuse of 65, the opposite side is (5/13) · 65 = 25.",
   },
   {
     id: "geo-340",
@@ -3964,11 +3851,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "In a right triangle, angle B measures 62°, and the side opposite angle B has length 30. What is the length of the side adjacent to angle B, rounded to the nearest tenth?",
-    choices: ["16.0", "34.0", "56.4", "14.1"],
+    prompt: "In a right triangle, one acute angle measures (2x + 1)° and the other measures (4x + 59)°. What is the value of x?",
+    choices: ["5", "85", "6", "4"],
     answer: 0,
-    explanation: "tan(B) = opposite/adjacent, so adjacent = 30/tan(62°) ≈ 30/1.881 ≈ 16.0.",
+    explanation: "The two acute angles of a right triangle sum to 90°: (2x + 1) + (4x + 59) = 90, so 6x + 60 = 90, giving x = 5.",
   },
   {
     id: "geo-341",
@@ -4011,12 +3897,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A solid is formed by a cylinder with radius 3 and height 10 topped with a hemisphere of the same radius. What is the total volume of the solid, in terms of π?",
-    choices: ["108π", "126π", "90π", "117π"],
-    answer: 0,
-    explanation:
-      "Cylinder volume = π(3²)(10) = 90π. Hemisphere volume = (2/3)π(3³) = 18π. Total = 90π + 18π = 108π.",
+    prompt: "A cone has radius 2 and volume 44/3π cubic units. What is the height of the cone?",
+    choices: ["12", "11", "10", "2"],
+    answer: 1,
+    explanation: "Using V = (1/3)πr²h: 44/3π = (1/3)π(2)²h, so 44/3 = 4/3h (after dividing by π), which gives h = 11.",
   },
   {
     id: "geo-345",
@@ -4065,12 +3949,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt:
-      "A line is tangent to a circle with center O and radius 9 at point T. Point P lies on the tangent line such that OP = 41. What is the length of PT?",
-    choices: ["40", "32", "1600", "50"],
-    answer: 0,
-    explanation:
-      "A tangent line is perpendicular to the radius at the point of tangency, forming a right triangle OTP: PT = √(41² − 9²) = √(1681 − 81) = √1600 = 40.",
+    prompt: "A circle has radius 8. What is the area of a sector with a central angle of 45°, in terms of π?",
+    choices: ["512π", "16π", "8π", "1π"],
+    answer: 2,
+    explanation: "Sector area = (angle/360) × πr² = (45/360) × π(8)² = 8π.",
   },
   {
     id: "geo-349",
@@ -4078,11 +3960,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt: "A circle in the xy-plane has equation x² + y² − 12x + 2y + 12 = 0. What is the area of the circle, in terms of π?",
-    choices: ["25π", "5π", "100π", "625π"],
-    answer: 0,
-    explanation:
-      "Completing the square: (x² − 12x + 36) + (y² + 2y + 1) = −12 + 36 + 1 → (x − 6)² + (y + 1)² = 25, so r² = 25 and the area is πr² = 25π.",
+    prompt: "The equation x² + y² − 8x + 8y − 32 = 0 defines a circle. What is the radius of this circle?",
+    choices: ["7", "8", "64", "9"],
+    answer: 1,
+    explanation: "Completing the square: x² − 8x = (x − 4)² − 16, and y² + 8y = (y + 4)² − 16. The equation becomes (x − 4)² + (y + 4)² = 64, so the radius is √64 = 8.",
   },
   {
     id: "geo-350",
@@ -4162,12 +4043,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A storage tank is shaped like a cylinder with a hemispherical cap on top. The cylinder has radius 6 and height 10, and the hemisphere has the same radius. What is the total volume of the tank, in terms of π?",
-    choices: ["504π", "648π", "360π", "432π"],
-    answer: 0,
-    explanation:
-      "Cylinder volume = πr²h = π(36)(10) = 360π. Hemisphere volume = (2/3)πr³ = (2/3)π(216) = 144π. Total = 360π + 144π = 504π.",
+    prompt: "Two similar solids have a linear scale factor of 3 (every length in the larger solid is 3 times the corresponding length in the smaller one). If the smaller solid has a volume of 18 cubic centimeters, what is the volume of the larger solid, in cubic centimeters?",
+    choices: ["162", "54", "486", "485"],
+    answer: 2,
+    explanation: "For similar solids, volume scales with the cube of the linear scale factor: volume ratio = 3³ = 27. So the larger solid's volume is 18 × 27 = 486 cubic centimeters.",
   },
   {
     id: "geo-357",
@@ -4175,12 +4054,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Area and volume",
     difficulty: 3,
-    prompt:
-      "A rectangular prism has a volume of 240. A second, similar prism is scaled up by a factor of 2 in every dimension. What is the volume of the second prism?",
-    choices: ["1920", "960", "480", "30"],
-    answer: 0,
-    explanation:
-      "Volume scales by the cube of the linear scale factor: 240 × 2³ = 240 × 8 = 1920.",
+    prompt: "A solid cylinder has radius 4 cm and height 8 cm, so its volume is 128π cubic centimeters. If the material has a density of 4 grams per cubic centimeter (using π ≈ 1, i.e., treating the volume as 128 cubic centimeters for this estimate), what is the mass of the cylinder, in grams?",
+    choices: ["128", "516", "384", "512"],
+    answer: 3,
+    explanation: "Volume = πr²h = π(4)²(8) = 128π ≈ 128 cubic centimeters. Mass = density × volume = 4 × 128 = 512 grams.",
   },
   {
     id: "geo-358",
@@ -4258,12 +4135,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt:
-      "From external point P, two tangent segments are drawn to a circle, touching the circle at points A and B. If the angle between the tangents (angle APB) measures 50°, what is the measure of the minor arc AB?",
-    choices: ["130°", "50°", "65°", "100°"],
-    answer: 0,
-    explanation:
-      "The angle between two tangents equals 180° minus the minor arc they intercept: 50 = 180 − arc, so arc AB = 130°.",
+    prompt: "A circle has radius 14. What is the length of an arc with a central angle of 270°, in terms of π?",
+    choices: ["112/3π", "21π", "42π", "21/2π"],
+    answer: 1,
+    explanation: "Arc length = (angle/360) × circumference = (270/360) × 2π(14) = 21π.",
   },
   {
     id: "geo-365",
@@ -4271,12 +4146,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Circles",
     difficulty: 3,
-    prompt:
-      "A line is tangent to a circle with center O and radius 8 at point T. Point P lies on the tangent line such that OP = 17. What is the area of triangle OTP?",
-    choices: ["60", "68", "120", "136"],
+    prompt: "A circle has radius 10. What is the area of a sector with a central angle of 30°, in terms of π?",
+    choices: ["25/3π", "5/6π", "50/3π", "1200π"],
     answer: 0,
-    explanation:
-      "A tangent is perpendicular to the radius at the point of tangency, so OT = 8 and PT = √(17² − 8²) = √(289 − 64) = √225 = 15. Area = (1/2)(8)(15) = 60.",
+    explanation: "Sector area = (angle/360) × πr² = (30/360) × π(10)² = 25/3π.",
   },
   {
     id: "geo-366",
@@ -4342,12 +4215,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt:
-      "Line ℓ has a slope of 1/2 and passes through the point (6, 4). Line m is perpendicular to ℓ and also passes through (6, 4). What is the y-intercept of line m?",
-    choices: ["16", "1", "-8", "7"],
-    answer: 0,
-    explanation:
-      "Perpendicular slopes are negative reciprocals, so line m has slope −2. Using point-slope form: y − 4 = −2(x − 6). At x = 0, y = 4 − 2(−6) = 4 + 12 = 16.",
+    prompt: "Point A is at (4, 3) and point B is at (24, y), where y > 3. If the distance from A to B is 29, what is the value of y?",
+    choices: ["22", "−18", "24", "25"],
+    answer: 2,
+    explanation: "The distance formula gives 29² = (24 − 4)² + (y − 3)² = 20² + (y − 3)². So (y − 3)² = 441 = 21², giving y − 3 = 21 (taking the positive root since y > 3), so y = 24.",
   },
   {
     id: "geo-372",
@@ -4355,12 +4226,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Coordinate geometry",
     difficulty: 3,
-    prompt:
-      "A square in the xy-plane has two of its vertices at (1, 2) and (1, 8), and it lies entirely in the region where x ≥ 1. What are the coordinates of the vertex diagonally opposite (1, 2)?",
-    choices: ["(7, 8)", "(7, 2)", "(1, 8)", "(6, 8)"],
-    answer: 0,
-    explanation:
-      "The side from (1, 2) to (1, 8) has length 6, so the square extends 6 units in the +x direction, giving vertices (7, 2) and (7, 8). The vertex diagonally opposite (1, 2) is (7, 8).",
+    prompt: "Triangle ABC has vertices A(2, 0), B(8, 0), and C(8, 8). What is the area of triangle ABC?",
+    choices: ["30", "48", "16", "24"],
+    answer: 3,
+    explanation: "Side AB is horizontal with length 6, and the height from C to line AB is 8 (the vertical distance). Area = (1/2) × base × height = (1/2)(6)(8) = 24.",
   },
   {
     id: "geo-373",
@@ -4436,12 +4305,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Lines and angles",
     difficulty: 3,
-    prompt:
-      "Two lines intersect, forming four angles. One angle measures (5x + 10)°, and its vertical angle measures (7x − 20)°. What is the measure of each of these two vertical angles?",
-    choices: ["85°", "15°", "95°", "75°"],
-    answer: 0,
-    explanation:
-      "Vertical angles are equal: 5x + 10 = 7x − 20 → 30 = 2x → x = 15. The angle measures 5(15) + 10 = 85°.",
+    prompt: "Lines m and n are parallel and cut by a transversal. Two alternate interior angles measure (4x − 9)° and (5x − 19)°. What is the measure of one of these angles, in degrees?",
+    choices: ["41", "31", "149", "10"],
+    answer: 1,
+    explanation: "Alternate interior angles formed by a transversal across parallel lines are equal: 4x − 9 = 5x − 19, which gives x = 10. Substituting back, the angle measure is 4(10) − 9 = 31°.",
   },
   {
     id: "geo-380",
@@ -4510,12 +4377,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt:
-      "From a point on the ground 40 feet from the base of a tower, the angle of elevation to the top of the tower is 37°. To the nearest foot, what is the height of the tower?",
-    choices: ["30 feet", "24 feet", "32 feet", "53 feet"],
-    answer: 0,
-    explanation:
-      "The height is opposite the angle of elevation, and 40 feet is adjacent to it: height = 40 tan(37°) ≈ 40(0.754) ≈ 30 feet.",
+    prompt: "In a right triangle, θ is an acute angle with sin(θ) = 8/17. What is the value of tan(θ)?",
+    choices: ["8/17", "15/8", "8/15", "17/8"],
+    answer: 2,
+    explanation: "A right triangle with sin(θ) = 8/17 has a leg of length 16 opposite θ and a hypotenuse of 34, so by the Pythagorean theorem the adjacent leg is 30. Thus tan(θ) = opposite/adjacent = 16/30 = 8/15.",
   },
   {
     id: "geo-386",
@@ -4523,11 +4388,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
     difficulty: 3,
-    prompt: "In right triangle PQR, angle R is the right angle. If sin(P) = 7/25, what is the value of cos(Q)?",
-    choices: ["7/25", "24/25", "25/7", "7/24"],
+    prompt: "Triangles ABC and DEF are similar right triangles with the same acute angle θ, where sin(θ) = 5/13. If the hypotenuse of triangle DEF is 52, what is the length of the side opposite θ in triangle DEF?",
+    choices: ["20", "48", "32", "24"],
     answer: 0,
-    explanation:
-      "Since angle R is 90°, angles P and Q are complementary, so cos(Q) = cos(90° − P) = sin(P) = 7/25.",
+    explanation: "Since sin(θ) = 5/13 (in lowest terms), the side opposite θ is always 5/13 of the hypotenuse. For a hypotenuse of 52, the opposite side is (5/13) · 52 = 20.",
   },
   {
     id: "geo-387",
@@ -4593,11 +4457,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt: "A right triangle has a hypotenuse of length 25. One leg is 17 units longer than the other. What is the length of the shorter leg?",
-    choices: ["7", "24", "8", "15"],
+    prompt: "In right triangle ABC, the right angle is at C, and the altitude from C to the hypotenuse divides it into two segments of lengths 5 and 5. What is the length of the altitude from C?",
+    choices: ["5", "7", "6", "10"],
     answer: 0,
-    explanation:
-      "Let the legs be x and x + 17: x² + (x + 17)² = 625 → 2x² + 34x − 336 = 0 → x² + 17x − 168 = 0. This factors to give x = 7 (the shorter leg) and x + 17 = 24.",
+    explanation: "The altitude to the hypotenuse is the geometric mean of the two segments it creates: altitude² = 5 × 5 = 25, so the altitude = √25 = 5.",
   },
   {
     id: "geo-393",
@@ -4605,12 +4468,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Right triangles",
     difficulty: 3,
-    prompt:
-      "In right triangle ABC, the right angle is at C. The altitude from C to hypotenuse AB has length 12 and divides AB into segments of length 9 and x. What is the length of the leg of the triangle adjacent to the segment of length x?",
-    choices: ["20", "15", "25", "16"],
-    answer: 0,
-    explanation:
-      "The altitude's length satisfies 12² = 9x, so x = 16, and AB = 9 + 16 = 25. A leg adjacent to a segment satisfies leg² = segment × hypotenuse, so the leg adjacent to x is √(16 × 25) = √400 = 20.",
+    prompt: "In right triangle ABC with the right angle at C, the altitude from C meets the hypotenuse at D, where AD = 8 and DB = 10. What is the length of leg AC (adjacent to segment AD)?",
+    choices: ["11", "13", "18", "12"],
+    answer: 3,
+    explanation: "A leg of a right triangle is the geometric mean of the whole hypotenuse and the adjacent segment: AC² = AD × AB = 8 × 18 = 144, so AC = √144 = 12.",
   },
   {
     id: "geo-394",
@@ -4680,12 +4541,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Similar triangles",
     difficulty: 3,
-    prompt:
-      "In triangle ABC, segment DE is parallel to side BC, with D on side AB and E on side AC. If AD = 8, DB = 4, and BC = 18, what is the length of DE?",
-    choices: ["12", "9", "27", "6"],
-    answer: 0,
-    explanation:
-      "Since DE ∥ BC, triangle ADE ~ triangle ABC with ratio AD/AB = 8/12 = 2/3, so DE = 18 × 2/3 = 12.",
+    prompt: "A person 4 feet tall casts a shadow 3 feet long. At the same time, a nearby pole casts a shadow that reaches a point 14 feet beyond the base of a wall, with the shadow on the ground measuring the rest of the distance. If the pole is 16 feet tall, what is the total length of the pole's shadow (on the ground plus the 14 feet beyond the wall), in feet?",
+    choices: ["23", "28", "12", "26"],
+    answer: 3,
+    explanation: "By similar triangles, pole height/person height = pole shadow/person shadow, so the pole's shadow on the ground is 16 × (3/4) = 12 feet. Adding the 14 feet beyond the wall gives a total of 12 + 14 = 26 feet.",
   },
   {
     id: "geo-400",
@@ -4751,11 +4610,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt: "An equilateral triangle has a height of 9√3. What is the length of each side?",
-    choices: ["18", "9", "18√3", "9√3"],
+    prompt: "A 30-60-90 triangle has hypotenuse 14. Its longer leg is also the hypotenuse of a second 30-60-90 triangle. What is the length of the shorter leg of the second triangle, in terms of √3?",
+    choices: ["7/2√3", "7√3", "14√3", "7/2√2"],
     answer: 0,
-    explanation:
-      "The height of an equilateral triangle with side s is (s√3)/2, so s = 2h/√3 = 2(9√3)/√3 = 18.",
+    explanation: "In the first triangle, the shorter leg is 14/2 = 7, and the longer leg is 7√3. This longer leg is the hypotenuse of the second triangle, whose shorter leg is half of it: (7√3)/2 = 7/2√3.",
   },
   {
     id: "geo-406",
@@ -4763,12 +4621,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Special right triangles",
     difficulty: 3,
-    prompt:
-      "A 30-60-90 triangle and a 45-45-90 triangle have the same hypotenuse length of 16. What is the positive difference between the longer leg of the 30-60-90 triangle and the leg of the 45-45-90 triangle?",
-    choices: ["8√3 − 8√2", "8√3 + 8√2", "8√2 − 8√3", "16√3 − 16√2"],
-    answer: 0,
-    explanation:
-      "In the 30-60-90 triangle, the shorter leg is 16/2 = 8, so the longer leg is 8√3. In the 45-45-90 triangle, each leg is 16/√2 = 8√2. The difference is 8√3 − 8√2.",
+    prompt: "In a 45-45-90 triangle, each leg has length 2. The hypotenuse of this 45-45-90 triangle is also the longest side of a separate 30-60-90 triangle. What is the length of the shortest side of the 30-60-90 triangle, in terms of √2?",
+    choices: ["1√3", "4√2", "1√2", "2√2"],
+    answer: 2,
+    explanation: "The hypotenuse of the 45-45-90 triangle is 2√2. This becomes the hypotenuse of the 30-60-90 triangle, whose shortest side is half the hypotenuse: (2√2)/2 = 1√2.",
   },
   {
     id: "geo-407",
@@ -4822,12 +4678,10 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt:
-      "In triangle ABC, the measure of angle A is 15° more than twice the measure of angle B, and the measure of angle C is 15° less than three times the measure of angle B. What is the measure of angle B?",
-    choices: ["30°", "75°", "45°", "20°"],
-    answer: 0,
-    explanation:
-      "A + B + C = 180: (2B + 15) + B + (3B − 15) = 180 → 6B = 180 → B = 30°.",
+    prompt: "In isosceles triangle ABC, angle A is the vertex angle and measures 30°. The two base angles are congruent and each measures (2x)°. What is the value of x?",
+    choices: ["15", "75/2", "75", "25"],
+    answer: 1,
+    explanation: "Since the triangle's angles sum to 180° and the vertex angle is 30°, each base angle is (180 − 30)/2 = 75°. So 2x = 75, giving x = 75/2.",
   },
   {
     id: "geo-412",
@@ -4835,10 +4689,9 @@ QUESTIONS.push(
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
     difficulty: 3,
-    prompt: "In triangle PQR, the exterior angle at vertex R measures 132°, and angle P measures 59°. What is the measure of angle Q?",
-    choices: ["73°", "48°", "93°", "21°"],
-    answer: 0,
-    explanation:
-      "An exterior angle equals the sum of the two remote interior angles: 132 = P + Q = 59 + Q, so Q = 73°.",
+    prompt: "In triangle ABC, the three angles measure (3x − 3)°, (3x)°, and (3x + 30)°. What is the measure of the largest angle, in degrees?",
+    choices: ["76", "17", "99", "81"],
+    answer: 3,
+    explanation: "The angles of a triangle sum to 180°: (3x − 3) + (3x) + (3x + 30) = 180. Solving gives x = 17. The three angles are then 48°, 51°, and 81°, so the largest is 81°.",
   }
 );

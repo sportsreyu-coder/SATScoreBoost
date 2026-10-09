@@ -127,11 +127,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "How many solutions does the system y = 2x + 5 and y = 2x + 3 have?",
-    choices: ["0", "1", "2", "Infinitely many"],
-    answer: 0,
-    explanation:
-      "Setting the equations equal: 2x + 5 = 2x + 3 → 5 = 3, which is false. The lines are parallel with different intercepts, so there is no solution.",
+    prompt: "For what value of k does the system of equations 9x + 9y = 17 and 27x + ky = 56 have no solution?",
+    choices: ["31", "23", "−27", "27"],
+    answer: 3,
+    explanation: "For no solution, the left sides must be proportional while the right sides are not. Since 27 = 3 · 9, the y-coefficients must match that same scale factor: k = 3 · 9 = 27. (Checking constants: 3 · 17 = 51 ≠ 56, confirming no solution.)",
   },
   {
     id: "alg-12",
@@ -220,11 +219,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt: "The formula A = P(1 + rt) can be solved for r in terms of A, P, and t. Which expression is equivalent to r?",
-    choices: ["(A − P)/(Pt)", "(A − Pt)/P", "A/(Pt) − 1", "(A − P)/t"],
-    answer: 0,
-    explanation:
-      "A = P + Prt → A − P = Prt → r = (A − P)/(Pt).",
+    prompt: "The equation 10x + 7y = 1 is equivalent to y = mx + k, where m and k are constants. What is the value of m?",
+    choices: ["−7/10", "7/10", "10/7", "−10/7"],
+    answer: 3,
+    explanation: "Solving for y: 7y = −10x + 1, so y = (−10/7)x + 1/7. Thus m = −10/7.",
   },
   {
     id: "alg-20",
@@ -256,11 +254,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "How many solutions does the system 6x − 2y = 10 and y = 3x − 5 have?",
-    choices: ["Infinitely many", "0", "Exactly 1", "Exactly 2"],
-    answer: 0,
-    explanation:
-      "Substituting: 6x − 2(3x − 5) = 10 → 6x − 6x + 10 = 10 → 10 = 10, which is always true, so the system has infinitely many solutions.",
+    prompt: "The system of equations x + 7y = 15 and 4x + ky = 60 has infinitely many solutions. What is the value of k?",
+    choices: ["−28", "26", "28", "31"],
+    answer: 2,
+    explanation: "For infinitely many solutions, the second equation must be a constant multiple of the first. Since 4/1 = 4 and 60/15 = 4, the y-coefficient must follow the same scale factor: k = 4 · 7 = 28.",
   },
   {
     id: "alg-23",
@@ -305,11 +302,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "If 3x − 2y = 12 and x + y = 9, what is the value of xy?",
-    choices: ["18", "27", "15", "12"],
-    answer: 0,
-    explanation:
-      "From x + y = 9, y = 9 − x. Substituting: 3x − 2(9 − x) = 12 → 5x = 30 → x = 6, so y = 3. Then xy = 18.",
+    prompt: "If 2x + 3y = 28 and 4x + 4y = 44, what is the value of 3x + 3y?",
+    choices: ["31", "36", "33", "−33"],
+    answer: 2,
+    explanation: "Solving the system gives x = 5 and y = 6. So 3x + 3y = 3(5) + 3(6) = 33.",
   },
   {
     id: "alg-27",
@@ -317,12 +313,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "The sum of two numbers is 42. The larger number is 2 more than 3 times the smaller number. What is the larger number?",
-    choices: ["32", "10", "36", "28"],
-    answer: 0,
-    explanation:
-      "Let the smaller number be x, so the larger is 3x + 2. Then x + (3x + 2) = 42 → 4x = 40 → x = 10, and the larger number is 3(10) + 2 = 32.",
+    prompt: "A total of $6,000 is invested in two accounts, one earning 5% annual interest and the other earning 7% annual interest. If the total interest earned in one year is $330, how much was invested at 5%?",
+    choices: ["−4500", "4503", "4495", "4500"],
+    answer: 3,
+    explanation: "Let x be the amount invested at 5%. Then $6,000 − x is invested at 7%. Solving 0.05x.07(6,000 − x) = 330 gives x = $4,500.",
   },
   {
     id: "alg-28",
@@ -330,12 +324,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "A phone plan charges a flat monthly fee plus a constant rate per minute of calls. A 40-minute call costs $14, and a 70-minute call costs $20. What is the flat monthly fee?",
-    choices: ["$6", "$8", "$4", "$10"],
-    answer: 0,
-    explanation:
-      "The rate per minute is (20 − 14)/(70 − 40) = 6/30 = $0.20. Using the 40-minute call: 14 = fee + 0.20(40) = fee + 8, so the fee is $6.",
+    prompt: "The function f is linear. If f(5) = −2 and f(7) = −8, what is the value of f(−6) − f(3)?",
+    choices: ["28", "27", "−27", "29"],
+    answer: 1,
+    explanation: "Slope = (−8 − −2)/(7 − 5) = −3. Since f(5) = −2, f(x) = −3x + 13. So f(−6) = 31 and f(3) = 4, giving a difference of 27.",
   },
   {
     id: "alg-29",
@@ -354,12 +346,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of k does the system of equations 2x + 3y = 6 and 4x + ky = 10 have no solution?",
-    choices: ["6", "5", "8", "12"],
+    prompt: "At a bakery, 3 muffins and 6 croissants cost $408 total, while 4 muffins and 5 croissants cost $406 total. How much more does one muffin cost than one croissant, in dollars?",
+    choices: ["−2", "2", "−1", "−4"],
     answer: 0,
-    explanation:
-      "A system has no solution when the lines are parallel but distinct: the coefficient ratios must match while the constant ratio differs. Setting 2/4 = 3/k gives k = 6; since 6/10 ≠ 2/4, the lines are parallel and distinct.",
+    explanation: "Let x be the muffin price and y the croissant price. Solving 3x + 6y = 408 and 4x + 5y = 406 gives x = 44 and y = 46, so the muffin costs −2 dollars more.",
   },
   {
     id: "alg-31",
@@ -390,11 +380,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt: "Line ℓ has an x-intercept of 4 and a y-intercept of −8. What is the slope of line ℓ?",
-    choices: ["2", "−2", "1/2", "−1/2"],
+    prompt: "Line k has slope 3 and passes through (6, 6). Line k also passes through (−1, y). What is the value of y minus the y-intercept of line k?",
+    choices: ["−3", "0", "3", "−2"],
     answer: 0,
-    explanation:
-      "The line passes through (4, 0) and (0, −8). Slope = (0 − (−8)) / (4 − 0) = 8/4 = 2.",
+    explanation: "Using y = 3x + b through (6, 6): 6 = 3(6) + b, so b = −12. At x = −1, y = 3(−1) − 12 = −15. So y − b = −3.",
   },
   {
     id: "alg-34",
@@ -425,12 +414,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "The function g is linear. The table shows g(1) = 7 and g(4) = 19. What is g(10)?",
-    choices: ["43", "40", "46", "37"],
-    answer: 0,
-    explanation:
-      "Slope = (19 − 7)/(4 − 1) = 4, so g(x) = 4x + 3. Then g(10) = 4(10) + 3 = 43.",
+    prompt: "Function f is linear with f(x) = 2x − 7. Function g is linear with g(0) = 34 and a rate of change of 3. For what value of x does g(x) − f(x) = 44?",
+    choices: ["5", "4", "3", "−3"],
+    answer: 2,
+    explanation: "g(x) = 34 + 3x. So g(x) − f(x) = (3 − 2)x + (34 − −7) = x + 41. Setting this equal to 44 gives x = 3.",
   },
   {
     id: "alg-37",
@@ -463,12 +450,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "Which of the following ordered pairs is NOT a solution to the inequality 4x − 3y > 12?",
-    choices: ["(0, 0)", "(5, 2)", "(6, 0)", "(10, 5)"],
-    answer: 0,
-    explanation:
-      "Testing (0, 0): 4(0) − 3(0) = 0, which is not greater than 12, so (0, 0) is not a solution. The other points each satisfy the inequality: for example, 4(5) − 3(2) = 14 > 12.",
+    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 7x − 8y > −9?",
+    choices: ["(2, −17)", "(−4, −1)", "(0, −6)", "(3, −7)"],
+    answer: 1,
+    explanation: "Testing each point in 7x − 8y > −9: only (−4, −1) gives a value that is not greater than −9, so it is not a solution.",
   },
   {
     id: "alg-40",
@@ -499,11 +484,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The equation for the perimeter of a rectangle is P = 2l + 2w. Which expression gives w in terms of P and l?",
-    choices: ["(P − 2l)/2", "(P − l)/2", "P − 2l", "(P + 2l)/2"],
-    answer: 0,
-    explanation: "P = 2l + 2w → 2w = P − 2l → w = (P − 2l)/2.",
+    prompt: "The equation A = p(q + 5r) relates the quantities A, p, q, and r. Which equation correctly gives r in terms of A, p, and q?",
+    choices: ["r = (A + pq)/(5p)", "r = 5p(A − q)", "r = (A − pq)/(5p)", "r = (A − pq)/5"],
+    answer: 2,
+    explanation: "Divide both sides by p: A/p = q + 5r. Subtract q: A/p − q = 5r. Divide by 5: r = (A − pq)/(5p), after combining over a common denominator.",
   },
   {
     id: "alg-43",
@@ -537,12 +521,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt:
-      "For which value of x is the inequality 5 − 2x ≥ 3x − 10 NOT satisfied?",
-    choices: ["4", "3", "0", "−2"],
+    prompt: "What is the greatest integer value of x that satisfies −6(x + 2) ≥ −12 + 4x?",
+    choices: ["0", "1", "−1", "−2"],
     answer: 0,
-    explanation:
-      "Solve the inequality: 5 − 2x ≥ 3x − 10 → 15 ≥ 5x → x ≤ 3. Since 4 > 3, x = 4 does not satisfy the inequality, while the other values do.",
+    explanation: "Distribute: −6x − 12 ≥ −12 + 4x. Collecting x-terms: −10x ≥ 0. Dividing by the negative coefficient −10 flips the inequality: x ≤ 0. The greatest integer satisfying this is 0.",
   },
   {
     id: "alg-46",
@@ -574,11 +556,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If 3(2x − 1) − 4(x + 2) = 15, what is the value of x?",
-    choices: ["13", "6.5", "−13", "2.6"],
-    answer: 0,
-    explanation:
-      "3(2x − 1) − 4(x + 2) = 15 → 6x − 3 − 4x − 8 = 15 → 2x − 11 = 15 → 2x = 26 → x = 13.",
+    prompt: "If 4(x + 1) + 4 = −7(x + 7) + 2, what is the value of x?",
+    choices: ["5", "−4", "−3", "−5"],
+    answer: 3,
+    explanation: "Expand both sides: 4x + 4 + 4 = −7x − 49 + 2. Collecting the x-terms and constants gives (11)x = −55, so x = −5.",
   },
   {
     id: "alg-49",
@@ -611,12 +592,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of c does the system 3x + 4y = 12 and 6x + 8y = c have infinitely many solutions?",
-    choices: ["24", "12", "6", "48"],
-    answer: 0,
-    explanation:
-      "Multiplying the first equation by 2 gives 6x + 8y = 24. For the system to have infinitely many solutions, the second equation must be identical, so c = 24.",
+    prompt: "For what value of k does the system of equations 6x + 2y = 20 and 24x + ky = 84 have no solution?",
+    choices: ["7", "8", "12", "−8"],
+    answer: 1,
+    explanation: "For no solution, the left sides must be proportional while the right sides are not. Since 24 = 4 · 6, the y-coefficients must match that same scale factor: k = 4 · 2 = 8. (Checking constants: 4 · 20 = 80 ≠ 84, confirming no solution.)",
   },
   {
     id: "alg-52",
@@ -650,12 +629,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "A jar contains only nickels and dimes worth $3.75 in total. There are 45 coins altogether. How many dimes are in the jar?",
-    choices: ["30", "15", "20", "25"],
-    answer: 0,
-    explanation:
-      "Let n + d = 45 and 0.05n + 0.10d = 3.75. Substituting n = 45 − d: 0.05(45 − d) + 0.10d = 3.75 → 2.25 + 0.05d = 3.75 → d = 30.",
+    prompt: "A chemist mixes 45 liters of solution by combining a 12% acid solution with a 62% acid solution. If 10 liters of the 62% solution is used, and the resulting mixture is 23.111% acid, how many liters of the 12% solution were used?",
+    choices: ["33", "−35", "37", "35"],
+    answer: 3,
+    explanation: "Let x be the liters of the 12% solution. Since 10 liters of 62% solution is also used, 0.12x.62(10) = 0.2311111111111111(x + 10). Solving gives x = 35 liters.",
   },
   {
     id: "alg-55",
@@ -686,12 +663,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "The function h is linear. If h(2) = 3 and h(−1) = 12, what is the value of h(0)?",
-    choices: ["9", "3", "6", "12"],
-    answer: 0,
-    explanation:
-      "Slope = (12 − 3)/(−1 − 2) = 9/(−3) = −3, so h(x) = −3x + b. Using h(2) = 3: 3 = −6 + b → b = 9. Then h(0) = 9.",
+    prompt: "The function h is linear, with h(−3) = −20 and h(7) = 30. What is the x-intercept of the graph of h?",
+    choices: ["2", "1", "−1", "3"],
+    answer: 1,
+    explanation: "Slope = (h(7) − h(−3))/(7 − −3) = 5. Since h(−3) = −20, h(x) = 5x − 5. Setting h(x) = 0 gives x = 1.",
   },
   {
     id: "alg-58",
@@ -760,12 +735,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of k does the system 4x − 6y = 10 and 2x − 3y = k have infinitely many solutions?",
-    choices: ["5", "10", "20", "2.5"],
-    answer: 0,
-    explanation:
-      "Multiplying the second equation by 2 gives 4x − 6y = 2k. For the equations to represent the same line, 2k = 10, so k = 5.",
+    prompt: "The system of equations 8x + 9y = 7 and 32x + ky = 28 has infinitely many solutions. What is the value of k?",
+    choices: ["32", "36", "38", "−36"],
+    answer: 1,
+    explanation: "For infinitely many solutions, the second equation must be a constant multiple of the first. Since 32/8 = 4 and 28/7 = 4, the y-coefficient must follow the same scale factor: k = 4 · 9 = 36.",
   },
   {
     id: "alg-64",
@@ -798,11 +771,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "How many solutions does the system 6x + 9y = 12 and 4x + 6y = 20 have?",
-    choices: ["0", "1", "2", "Infinitely many"],
-    answer: 0,
-    explanation:
-      "Multiplying the second equation by 1.5 gives 6x + 9y = 30, which contradicts 6x + 9y = 12. The lines are parallel with different intercepts, so there are 0 solutions.",
+    prompt: "If 4x + 4y = 4 and x − 4y = 1, what is the value of 2x + 3y?",
+    choices: ["3", "−1", "−2", "2"],
+    answer: 3,
+    explanation: "Solving the system gives x = 1 and y = 0. So 2x + 3y = 2(1) + 3(0) = 2.",
   },
   {
     id: "alg-67",
@@ -857,11 +829,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt: "Line m has an x-intercept of −3 and a y-intercept of 6. What is the slope of line m?",
-    choices: ["2", "−2", "1/2", "3"],
-    answer: 0,
-    explanation:
-      "The line passes through (−3, 0) and (0, 6). Slope = (6 − 0)/(0 − (−3)) = 6/3 = 2.",
+    prompt: "The function f is linear. If f(2) = −16 and f(7) = −21, what is the value of f(3) − f(0)?",
+    choices: ["−1", "−2", "−3", "3"],
+    answer: 2,
+    explanation: "Slope = (−21 − −16)/(7 − 2) = −1. Since f(2) = −16, f(x) = −x − 14. So f(3) = −17 and f(0) = −14, giving a difference of −3.",
   },
   {
     id: "alg-72",
@@ -892,12 +863,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "A line has a y-intercept of 10 and passes through the point (5, 0). A second line is parallel to the first and passes through (0, −4). What is the equation of the second line?",
-    choices: ["y = −2x − 4", "y = −2x + 4", "y = 2x − 4", "y = −2x − 10"],
-    answer: 0,
-    explanation:
-      "The first line has slope (0 − 10)/(5 − 0) = −2. A parallel line also has slope −2, so with y-intercept −4, the equation is y = −2x − 4.",
+    prompt: "Line k has slope −3 and passes through (7, −9). Line k also passes through (2, y). What is the value of y minus the y-intercept of line k?",
+    choices: ["6", "−6", "−4", "−5"],
+    answer: 1,
+    explanation: "Using y = −3x + b through (7, −9): −9 = −3(7) + b, so b = 12. At x = 2, y = −3(2) + 12 = 6. So y − b = −6.",
   },
   {
     id: "alg-75",
@@ -961,11 +930,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (3x − 2)/5 = x − 6, what is the value of x?",
-    choices: ["14", "28", "4", "−14"],
-    answer: 0,
-    explanation:
-      "(3x − 2)/5 = x − 6 → 3x − 2 = 5(x − 6) → 3x − 2 = 5x − 30 → 28 = 2x → x = 14.",
+    prompt: "If -(x + 3) + 11 = −2(x − 8) + 5, what is the value of 3x − 4?",
+    choices: ["37", "−35", "13", "35"],
+    answer: 3,
+    explanation: "Expand both sides: −x − 3 + 11 = −2x + 16 + 5. Collecting terms gives (1)x = 13, so x = 13. Then 3x − 4 = 3(13) − 4 = 35.",
   },
   {
     id: "alg-81",
@@ -1041,11 +1009,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt:
-      "A moving company charges $80 plus $25 per hour of labor. A customer wants the total cost to stay under $280. What is the maximum number of whole hours of labor the customer can afford?",
-    choices: ["7", "8", "9", "6"],
-    answer: 0,
-    explanation: "80 + 25h < 280 → 25h < 200 → h < 8, so the maximum number of whole hours is 7.",
+    prompt: "How many integer values of x satisfy −6 ≤ x and −2x ≥ 5 + 3x?",
+    choices: ["7", "6", "5", "−6"],
+    answer: 1,
+    explanation: "Simplifying the inequality gives x ≤ −1 (the inequality flips because the x-coefficient after combining is negative). Combined with x ≥ −6, the integers from −6 to −1 work, which is 6 values.",
   },
   {
     id: "alg-88",
@@ -1088,17 +1055,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The equation for converting a Fahrenheit temperature (F) to Kelvin (K) is K = (5/9)(F − 32) + 273. Which expression gives F in terms of K?",
-    choices: [
-      "(9/5)(K − 273) + 32",
-      "(5/9)(K − 273) + 32",
-      "(9/5)(K + 273) − 32",
-      "(9/5)K − 273 + 32",
-    ],
+    prompt: "A line has x-intercept 5 and y-intercept 3. What is the y-coordinate of the point on this line where x = 3?",
+    choices: ["1.2", "2.2", "4.2", "−1.2"],
     answer: 0,
-    explanation:
-      "K − 273 = (5/9)(F − 32) → (9/5)(K − 273) = F − 32 → F = (9/5)(K − 273) + 32.",
+    explanation: "The line through (5, 0) and (0, 3) has equation 3x + 5y = 15. Substituting x = 3: 3(3) + 5y = 15, so y = 1.2.",
   },
   {
     id: "alg-92",
@@ -1129,11 +1089,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 2x − 5y < 10?",
-    choices: ["(10, 0)", "(0, 0)", "(0, 5)", "(5, 5)"],
-    answer: 0,
-    explanation:
-      "Testing (10, 0): 2(10) − 5(0) = 20, which is not less than 10, so (10, 0) is not a solution. The other points each satisfy the inequality: for example, 2(0) − 5(5) = −25 < 10.",
+    prompt: "The point (1, −1) lies on the boundary line of 8x + 8y ≤ k. What is the value of k?",
+    choices: ["−1", "4", "2", "0"],
+    answer: 3,
+    explanation: "Since (1, −1) is on the boundary line 8x + 8y = k, substituting gives k = 8(1) + 8(−1) = 0.",
   },
   {
     id: "alg-95",
@@ -1167,11 +1126,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt: "The sum of three consecutive even integers is 96. What is the largest of the three integers?",
-    choices: ["34", "30", "32", "36"],
-    answer: 0,
-    explanation:
-      "Let the integers be n, n + 2, and n + 4. Then n + (n + 2) + (n + 4) = 96 → 3n + 6 = 96 → n = 30, so the largest integer is 30 + 4 = 34.",
+    prompt: "Working alone, machine A fills 3 boxes per hour, and machine B fills 2 boxes per hour. Working together at these rates, how many hours will it take them to fill 40 boxes?",
+    choices: ["5", "9", "8", "−8"],
+    answer: 2,
+    explanation: "Together the machines fill 3 + 2 = 5 boxes per hour. To fill 40 boxes takes 40/5 = 8 hours.",
   }
 );
 
@@ -1261,11 +1219,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (3x − 1)/4 − (x + 1)/2 = 1, what is the value of x?",
-    choices: ["7", "3", "11", "−3"],
-    answer: 0,
-    explanation:
-      "Multiplying every term by 4: (3x − 1) − 2(x + 1) = 4 → 3x − 1 − 2x − 2 = 4 → x − 3 = 4 → x = 7.",
+    prompt: "If −5(x − 2) + 4 = −3(x − 9) − 3, what is the value of 4x − 3?",
+    choices: ["−25", "23", "−23", "−5"],
+    answer: 2,
+    explanation: "Expand both sides: −5x + 10 + 4 = −3x + 27 − 3. Collecting terms gives (−2)x = 10, so x = −5. Then 4x − 3 = 4(−5) − 3 = −23.",
   },
   {
     id: "alg-106",
@@ -1273,11 +1230,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (3/4)x − 5 = (1/2)x + 3, what is the value of x?",
-    choices: ["32", "8", "−8", "2"],
+    prompt: "If −6(x − 5) − 8 = -(x + 9) + 11, what is the value of x?",
+    choices: ["4", "2", "5", "−4"],
     answer: 0,
-    explanation:
-      "Multiplying every term by 4: 3x − 20 = 2x + 12 → x = 32.",
+    explanation: "Expand both sides: −6x + 30 − 8 = −x − 9 + 11. Collecting the x-terms and constants gives (−5)x = −20, so x = 4.",
   },
   {
     id: "alg-107",
@@ -1368,11 +1324,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The formula for converting a measurement in inches (I) to centimeters (C) is C = 2.54I. A second formula converts centimeters to millimeters: M = 10C. Which expression gives M directly in terms of I?",
-    choices: ["25.4I", "12.54I", "2.54I", "254I"],
+    prompt: "The equation 2x + 9y = 14 is equivalent to y = mx + k, where m and k are constants. What is the value of m?",
+    choices: ["−2/9", "9/2", "−9/2", "2/9"],
     answer: 0,
-    explanation: "Substituting C = 2.54I into M = 10C gives M = 10(2.54I) = 25.4I.",
+    explanation: "Solving for y: 9y = −2x + 14, so y = (−2/9)x + 14/9. Thus m = −2/9.",
   },
   {
     id: "alg-115",
@@ -1380,11 +1335,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The equation ax + by = c represents a line, where a = 2 and c = 20. If the line passes through (4, 6), what is the value of b?",
-    choices: ["2", "3", "12", "8"],
+    prompt: "The equation A = p(q + 4r) relates the quantities A, p, q, and r. Which equation correctly gives r in terms of A, p, and q?",
+    choices: ["r = (A − pq)/(4p)", "r = 4p(A − q)", "r = (A + pq)/(4p)", "r = (A − pq)/4"],
     answer: 0,
-    explanation: "Substituting the known values: 2(4) + b(6) = 20 → 8 + 6b = 20 → 6b = 12 → b = 2.",
+    explanation: "Divide both sides by p: A/p = q + 4r. Subtract q: A/p − q = 4r. Divide by 4: r = (A − pq)/(4p), after combining over a common denominator.",
   },
   {
     id: "alg-116",
@@ -1473,12 +1427,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "Line p passes through (−4, 0) and (0, 6). Line q is perpendicular to line p and passes through (0, 6). What is the slope of line q?",
-    choices: ["−2/3", "3/2", "2/3", "−3/2"],
-    answer: 0,
-    explanation:
-      "Slope of line p = (6 − 0)/(0 − (−4)) = 6/4 = 3/2. A perpendicular line has slope equal to the negative reciprocal, −2/3.",
+    prompt: "Function f is linear with f(x) = 6x + 10. Function g is linear with g(0) = 17 and a rate of change of 9. For what value of x does g(x) − f(x) = 22?",
+    choices: ["7", "6", "−5", "5"],
+    answer: 3,
+    explanation: "g(x) = 17 + 9x. So g(x) − f(x) = (9 − 6)x + (17 − 10) = 3x + 7. Setting this equal to 22 gives x = 5.",
   },
   {
     id: "alg-124",
@@ -1486,11 +1438,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt: "The linear function h satisfies h(2) = 5 and h(5) = −10. For what value of x does h(x) = 0?",
-    choices: ["3", "1", "5", "15"],
+    prompt: "The function h is linear, with h(−3) = −5 and h(4) = −40. What is the x-intercept of the graph of h?",
+    choices: ["−4", "−3", "−2", "4"],
     answer: 0,
-    explanation:
-      "Slope = (−10 − 5)/(5 − 2) = −5, so h(x) = −5x + b. Using h(2) = 5: −10 + b = 5 → b = 15. Setting −5x + 15 = 0 gives x = 3.",
+    explanation: "Slope = (h(4) − h(−3))/(4 − −3) = −5. Since h(−3) = −5, h(x) = −5x − 20. Setting h(x) = 0 gives x = −4.",
   },
   {
     id: "alg-125",
@@ -1578,11 +1529,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt: "For which value of x is the inequality 4 − 3x ≤ 2x + 19 NOT satisfied?",
-    choices: ["−4", "−3", "0", "5"],
+    prompt: "If x satisfies −2(x − 5) ≥ 7 + x, what is the largest possible value of 2x?",
+    choices: ["2", "−2", "1", "3"],
     answer: 0,
-    explanation:
-      "Solving: 4 − 3x ≤ 2x + 19 → −5x ≤ 15 → x ≥ −3 (the inequality flips when dividing by a negative number). Since −4 is less than −3, it is the only listed value that does not satisfy the inequality.",
+    explanation: "Solving gives x ≤ 1 (the inequality flips on division by a negative coefficient), so the greatest integer value of x is 1, making the largest value of 2x equal to 2.",
   },
   {
     id: "alg-133",
@@ -1590,12 +1540,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt:
-      "A fitness studio offers a membership for $40 per month, or a pay-per-visit option at $8 per visit with no monthly fee. What is the minimum number of visits per month for the membership to be the cheaper option?",
-    choices: ["6", "5", "4", "7"],
-    answer: 0,
-    explanation:
-      "The membership is cheaper when 40 < 8v → v > 5, so the minimum whole number of visits is 6.",
+    prompt: "What is the greatest integer value of x that satisfies −2(x − 2) ≥ 31 + x?",
+    choices: ["−10", "9", "−9", "−8"],
+    answer: 2,
+    explanation: "Distribute: −2x + 4 ≥ 31 + x. Collecting x-terms: −3x ≥ 27. Dividing by the negative coefficient −3 flips the inequality: x ≤ −9. The greatest integer satisfying this is −9.",
   },
   {
     id: "alg-134",
@@ -1685,11 +1633,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 5x − 2y < 20?",
-    choices: ["(10, 0)", "(0, 0)", "(2, 3)", "(1, −2)"],
-    answer: 0,
-    explanation:
-      "Testing (10, 0): 5(10) − 2(0) = 50, which is not less than 20, so (10, 0) is not a solution. The other points each satisfy the inequality.",
+    prompt: "A point (x, y) satisfies y ≤ −2x + 17 and y ≥ x − 16. If x = 3, what is the greatest possible integer value of y?",
+    choices: ["12", "11", "−11", "10"],
+    answer: 1,
+    explanation: "Substituting x = 3 into y ≤ −2x + 17 gives y ≤ 11. The greatest integer satisfying this is 11.",
   },
   {
     id: "alg-142",
@@ -1697,12 +1644,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "If 2x + 5y > 10 and y = x − 1, what is the smallest integer value of x for which the inequality holds?",
-    choices: ["3", "2", "15", "8"],
-    answer: 0,
-    explanation:
-      "Substituting y = x − 1: 2x + 5(x − 1) > 10 → 7x − 5 > 10 → 7x > 15 → x > 15/7 ≈ 2.14, so the smallest integer value is 3.",
+    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 2x − 4y > 15?",
+    choices: ["(6, −8)", "(3, −1)", "(−2, −18)", "(−3, −18)"],
+    answer: 1,
+    explanation: "Testing each point in 2x − 4y > 15: only (3, −1) gives a value that is not greater than 15, so it is not a solution.",
   },
   {
     id: "alg-143",
@@ -1781,11 +1726,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "For what value of k does the system kx + 4y = 8 and 3x + 6y = 12 have infinitely many solutions?",
-    choices: ["2", "4", "6", "8"],
-    answer: 0,
-    explanation:
-      "Dividing the second equation by 3 gives x + 2y = 4. For the first equation to represent the same line, k/3 must equal 4/6 = 2/3, so k = 2.",
+    prompt: "At a bakery, 5 muffins and 4 croissants cost $405 total, while 5 muffins and 2 croissants cost $345 total. How much more does one muffin cost than one croissant, in dollars?",
+    choices: ["28", "−27", "27", "23"],
+    answer: 2,
+    explanation: "Let x be the muffin price and y the croissant price. Solving 5x + 4y = 405 and 5x + 2y = 345 gives x = 57 and y = 30, so the muffin costs 27 dollars more.",
   },
   {
     id: "alg-150",
@@ -1793,11 +1737,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "How many solutions does the system 8x − 12y = 16 and 2x − 3y = 4 have?",
-    choices: ["Infinitely many", "0", "Exactly 1", "Exactly 2"],
-    answer: 0,
-    explanation:
-      "Dividing the first equation by 4 gives 2x − 3y = 4, which is identical to the second equation, so the system has infinitely many solutions.",
+    prompt: "For what value of k does the system of equations 2x + 9y = 15 and 6x + ky = 49 have no solution?",
+    choices: ["31", "27", "−27", "25"],
+    answer: 1,
+    explanation: "For no solution, the left sides must be proportional while the right sides are not. Since 6 = 3 · 2, the y-coefficients must match that same scale factor: k = 3 · 9 = 27. (Checking constants: 3 · 15 = 45 ≠ 49, confirming no solution.)",
   },
   {
     id: "alg-151",
@@ -1805,12 +1748,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "A total of $8,400 is invested in two accounts, one earning 3% annual interest and the other earning 5% annual interest. After one year, the total interest earned is $336. How much money was invested at 5%?",
-    choices: ["$4,200", "$3,600", "$4,800", "$2,100"],
+    prompt: "The system of equations 5x + 4y = 20 and 10x + ky = 40 has infinitely many solutions. What is the value of k?",
+    choices: ["8", "5", "9", "−8"],
     answer: 0,
-    explanation:
-      "Let x be the amount invested at 5%, so 8,400 − x is invested at 3%. Then 0.05x + 0.03(8,400 − x) = 336 → 0.02x + 252 = 336 → x = 4,200.",
+    explanation: "For infinitely many solutions, the second equation must be a constant multiple of the first. Since 10/5 = 2 and 40/20 = 2, the y-coefficient must follow the same scale factor: k = 2 · 4 = 8.",
   },
   {
     id: "alg-152",
@@ -1893,12 +1834,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "The sum of two numbers is 85. The larger number is 5 less than four times the smaller number. What is the smaller number?",
-    choices: ["18", "67", "22", "13"],
+    prompt: "For three consecutive integers, 5 times the smallest equals the sum of the other two, minus some number d. If the smallest integer is 18, what is the value of d?",
+    choices: ["51", "53", "−51", "47"],
     answer: 0,
-    explanation:
-      "Let the smaller number be x, so the larger is 4x − 5. Then x + (4x − 5) = 85 → 5x = 90 → x = 18.",
+    explanation: "The three consecutive integers are 18, 19, and 20. Their sum of the two larger is 19 + 20 = 39. Since 5 times the smallest is 90, d = 90 − 39 = 51.",
   },
   {
     id: "alg-159",
@@ -1906,12 +1845,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "A jar contains quarters and dimes worth $7.05 total. There are 3 more quarters than dimes. How many dimes are in the jar?",
-    choices: ["18", "21", "15", "24"],
-    answer: 0,
-    explanation:
-      "Let d be the number of dimes, so there are d + 3 quarters. Then 0.10d + 0.25(d + 3) = 7.05 → 0.35d + 0.75 = 7.05 → d = 18.",
+    prompt: "A total of $25,000 is invested in two accounts, one earning 6% annual interest and the other earning 7% annual interest. If the total interest earned in one year is $1730, how much was invested at 6%?",
+    choices: ["1999", "2000", "−2000", "2005"],
+    answer: 1,
+    explanation: "Let x be the amount invested at 6%. Then $25,000 − x is invested at 7%. Solving 0.06x.07(25,000 − x) = 1730 gives x = $2,000.",
   },
   {
     id: "alg-160",
@@ -1919,12 +1856,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "Working alone, Hana can wrap 15 gift boxes per hour, and working alone, Leo can wrap 9 gift boxes per hour. If they work together at these constant rates, how many minutes will it take them to wrap 48 gift boxes?",
-    choices: ["120", "80", "160", "48"],
-    answer: 0,
-    explanation:
-      "Together they wrap 15 + 9 = 24 boxes per hour, so wrapping 48 boxes takes 48/24 = 2 hours, which is 120 minutes.",
+    prompt: "A chemist mixes 40 liters of solution by combining a 11% acid solution with a 54% acid solution. If 15 liters of the 54% solution is used, and the resulting mixture is 27.125% acid, how many liters of the 11% solution were used?",
+    choices: ["27", "−25", "25", "21"],
+    answer: 2,
+    explanation: "Let x be the liters of the 11% solution. Since 15 liters of 54% solution is also used, 0.11x.54(15) = 0.27125(x + 15). Solving gives x = 25 liters.",
   },
   {
     id: "alg-161",
@@ -2005,12 +1940,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of k does the system 5x + 2y = 9 and 10x + ky = 7 have no solution?",
-    choices: ["4", "7", "9", "20"],
-    answer: 0,
-    explanation:
-      "A system has no solution when the lines are parallel but distinct. Setting 5/10 = 2/k gives k = 4; since 9/7 ≠ 5/10, the lines are parallel and distinct.",
+    prompt: "If 4x + y = 3 and 6x + y = 7, what is the value of 2x + 5y?",
+    choices: ["−17", "21", "−21", "−24"],
+    answer: 2,
+    explanation: "Solving the system gives x = 2 and y = −5. So 2x + 5y = 2(2) + 5(−5) = −21.",
   },
   {
     id: "alg-168",
@@ -2018,12 +1951,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of c does the system 9x − 6y = 15 and 3x − 2y = c have infinitely many solutions?",
-    choices: ["5", "15", "45", "3"],
+    prompt: "At a bakery, 4 muffins and 3 croissants cost $306 total, while 5 muffins and 3 croissants cost $342 total. How much more does one muffin cost than one croissant, in dollars?",
+    choices: ["−18", "−14", "−20", "18"],
     answer: 0,
-    explanation:
-      "Dividing the first equation by 3 gives 3x − 2y = 5. For the second equation to represent the same line, c = 5.",
+    explanation: "Let x be the muffin price and y the croissant price. Solving 4x + 3y = 306 and 5x + 3y = 342 gives x = 36 and y = 54, so the muffin costs −18 dollars more.",
   },
   {
     id: "alg-169",
@@ -2042,12 +1973,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "A total of $12,000 is invested in two accounts, one earning 4% annual interest and the other earning 7% annual interest. After one year, the total interest earned is $690. How much was invested at 7%?",
-    choices: ["$7,000", "$5,000", "$6,000", "$4,000"],
+    prompt: "For what value of k does the system of equations 3x + 6y = 14 and 9x + ky = 44 have no solution?",
+    choices: ["18", "15", "−18", "19"],
     answer: 0,
-    explanation:
-      "Let x be the amount invested at 7%, so 12,000 − x is invested at 4%. Then 0.07x + 0.04(12,000 − x) = 690 → 0.03x + 480 = 690 → x = 7,000.",
+    explanation: "For no solution, the left sides must be proportional while the right sides are not. Since 9 = 3 · 3, the y-coefficients must match that same scale factor: k = 3 · 6 = 18. (Checking constants: 3 · 14 = 42 ≠ 44, confirming no solution.)",
   },
   {
     id: "alg-171",
@@ -2160,11 +2089,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt: "Line r has an x-intercept of 6 and a y-intercept of −3. What is the slope of line r?",
-    choices: ["1/2", "−1/2", "2", "−2"],
-    answer: 0,
-    explanation:
-      "The line passes through (6, 0) and (0, −3). Slope = (−3 − 0)/(0 − 6) = (−3)/(−6) = 1/2.",
+    prompt: "The function f is linear. If f(4) = −14 and f(10) = −32, what is the value of f(−7) − f(2)?",
+    choices: ["−27", "28", "27", "31"],
+    answer: 2,
+    explanation: "Slope = (−32 − −14)/(10 − 4) = −3. Since f(4) = −14, f(x) = −3x − 2. So f(−7) = 19 and f(2) = −8, giving a difference of 27.",
   },
   {
     id: "alg-181",
@@ -2172,12 +2100,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "A line has a y-intercept of 8 and passes through the point (4, 0). A second line is parallel to the first and passes through (0, −5). What is the equation of the second line?",
-    choices: ["y = −2x − 5", "y = −2x + 5", "y = 2x − 5", "y = −2x − 8"],
-    answer: 0,
-    explanation:
-      "The first line has slope (0 − 8)/(4 − 0) = −2. A parallel line also has slope −2, so with y-intercept −5, the equation is y = −2x − 5.",
+    prompt: "Line k has slope −4 and passes through (2, −4). Line k also passes through (−1, y). What is the value of y minus the y-intercept of line k?",
+    choices: ["−4", "4", "6", "5"],
+    answer: 1,
+    explanation: "Using y = −4x + b through (2, −4): −4 = −4(2) + b, so b = 4. At x = −1, y = −4(−1) + 4 = 8. So y − b = 4.",
   },
   {
     id: "alg-182",
@@ -2185,12 +2111,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "Line u passes through (−3, 0) and (0, 9). Line v is perpendicular to line u and passes through (0, 9). What is the slope of line v?",
-    choices: ["−1/3", "1/3", "3", "−3"],
-    answer: 0,
-    explanation:
-      "Slope of line u = (9 − 0)/(0 − (−3)) = 9/3 = 3. A perpendicular line has slope equal to the negative reciprocal, −1/3.",
+    prompt: "Function f is linear with f(x) = −x + 7. Function g is linear with g(0) = 35 and a rate of change of 1. For what value of x does g(x) − f(x) = 42?",
+    choices: ["9", "8", "−7", "7"],
+    answer: 3,
+    explanation: "g(x) = 35 + x. So g(x) − f(x) = (1 − −1)x + (35 − 7) = 2x + 28. Setting this equal to 42 gives x = 7.",
   },
   {
     id: "alg-183",
@@ -2289,11 +2213,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (2x + 1)/3 = x − 4, what is the value of x?",
-    choices: ["13", "−13", "5", "11"],
+    prompt: "If 4x − 11 = 2(x + 2) − 3, what is the value of 4x − 1?",
+    choices: ["23", "6", "25", "−23"],
     answer: 0,
-    explanation:
-      "(2x + 1)/3 = x − 4 → 2x + 1 = 3(x − 4) → 2x + 1 = 3x − 12 → 13 = x.",
+    explanation: "Expand both sides: 4x − 11 = 2x + 4 − 3. Collecting terms gives (2)x = 12, so x = 6. Then 4x − 1 = 4(6) − 1 = 23.",
   },
   {
     id: "alg-192",
@@ -2301,11 +2224,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (3/5)x + 4 = (1/5)x − 2, what is the value of x?",
-    choices: ["−15", "15", "−7.5", "7.5"],
-    answer: 0,
-    explanation:
-      "Multiplying every term by 5: 3x + 20 = x − 10 → 2x = −30 → x = −15.",
+    prompt: "If 5(x − 5) + 8 = 4(x − 5) + 11, what is the value of 2x + 4?",
+    choices: ["−20", "8", "22", "20"],
+    answer: 3,
+    explanation: "Expand both sides: 5x − 25 + 8 = 4x − 20 + 11. Collecting terms gives (1)x = 8, so x = 8. Then 2x + 4 = 2(8) + 4 = 20.",
   },
   {
     id: "alg-193",
@@ -2416,11 +2338,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt: "For which value of x is the inequality 6 − 4x ≥ 3x − 22 NOT satisfied?",
-    choices: ["5", "4", "0", "−3"],
-    answer: 0,
-    explanation:
-      "Solve the inequality: 6 − 4x ≥ 3x − 22 → 28 ≥ 7x → x ≤ 4. Since 5 > 4, x = 5 does not satisfy the inequality, while the other values do.",
+    prompt: "How many integer values of x satisfy −10 ≤ x and −3(x + 2) ≥ 10 + x?",
+    choices: ["8", "7", "6", "−7"],
+    answer: 1,
+    explanation: "Simplifying the inequality gives x ≤ −4 (the inequality flips because the x-coefficient after combining is negative). Combined with x ≥ −10, the integers from −10 to −4 work, which is 7 values.",
   },
   {
     id: "alg-203",
@@ -2428,12 +2349,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt:
-      "A theater offers a season pass for $85, or single tickets at $11 each with no pass. What is the minimum number of tickets per season for the pass to be the cheaper option?",
-    choices: ["8", "7", "9", "85"],
+    prompt: "If x satisfies −2(x − 5) ≥ 22 + 4x, what is the largest possible value of 5x?",
+    choices: ["−10", "−11", "10", "−9"],
     answer: 0,
-    explanation:
-      "The pass is cheaper when 85 < 11n → n > 7.73, so the minimum whole number of tickets is 8.",
+    explanation: "Solving gives x ≤ −2 (the inequality flips on division by a negative coefficient), so the greatest integer value of x is −2, making the largest value of 5x equal to −10.",
   },
   {
     id: "alg-204",
@@ -2497,12 +2416,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The equation ax + by = c represents a line, where b = 3 and c = 24. If the line passes through (6, 2), what is the value of a?",
-    choices: ["3", "4", "2", "6"],
+    prompt: "A line has x-intercept 6 and y-intercept 2. What is the y-coordinate of the point on this line where x = −5?",
+    choices: ["3.667", "4.667", "−3.667", "5.667"],
     answer: 0,
-    explanation:
-      "Substituting the known values: 6a + 3(2) = 24 → 6a + 6 = 24 → 6a = 18 → a = 3.",
+    explanation: "The line through (6, 0) and (0, 2) has equation 2x + 6y = 12. Substituting x = −5: 2(−5) + 6y = 12, so y = 3.667.",
   },
   {
     id: "alg-210",
@@ -2510,11 +2427,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The formula for converting a weight in kilograms (K) to pounds (P) is P = 2.2K. A second formula converts pounds to ounces: Z = 16P. Which expression gives Z directly in terms of K?",
-    choices: ["35.2K", "18.2K", "2.2K", "16K"],
-    answer: 0,
-    explanation: "Substituting P = 2.2K into Z = 16P gives Z = 16(2.2K) = 35.2K.",
+    prompt: "The equation 11x + 7y = −4 is equivalent to y = mx + k, where m and k are constants. What is the value of m?",
+    choices: ["−7/11", "−11/7", "7/11", "11/7"],
+    answer: 1,
+    explanation: "Solving for y: 7y = −11x − 4, so y = (−11/7)x − 4/7. Thus m = −11/7.",
   },
   {
     id: "alg-211",
@@ -2581,11 +2497,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 4x + 3y < 24?",
-    choices: ["(6, 1)", "(0, 0)", "(3, 2)", "(1, 5)"],
+    prompt: "The point (−1, −4) lies on the boundary line of 4x + 7y ≤ k. What is the value of k?",
+    choices: ["−32", "−36", "−31", "32"],
     answer: 0,
-    explanation:
-      "Testing (6, 1): 4(6) + 3(1) = 27, which is not less than 24, so (6, 1) is not a solution. The other points each satisfy the inequality.",
+    explanation: "Since (−1, −4) is on the boundary line 4x + 7y = k, substituting gives k = 4(−1) + 7(−4) = −32.",
   },
   {
     id: "alg-217",
@@ -2655,12 +2570,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "The sum of two numbers is 100. The larger number is 10 less than four times the smaller number. What is the larger number?",
-    choices: ["78", "22", "90", "68"],
-    answer: 0,
-    explanation:
-      "Let the smaller number be x, so the larger is 4x − 10. Then x + (4x − 10) = 100 → 5x = 110 → x = 22, and the larger number is 4(22) − 10 = 78.",
+    prompt: "Working alone, machine A fills 6 boxes per hour, and machine B fills 4 boxes per hour. Working together at these rates, how many hours will it take them to fill 80 boxes?",
+    choices: ["−8", "8", "10", "6"],
+    answer: 1,
+    explanation: "Together the machines fill 6 + 4 = 10 boxes per hour. To fill 80 boxes takes 80/10 = 8 hours.",
   },
   {
     id: "alg-223",
@@ -2775,12 +2688,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of k does the system 4x + 6y = 20 and 6x + ky = 30 have infinitely many solutions?",
-    choices: ["9", "12", "15", "20"],
-    answer: 0,
-    explanation:
-      "Multiplying the first equation by 1.5 gives 6x + 9y = 30, which matches the second equation exactly when k = 9, giving infinitely many solutions.",
+    prompt: "The system of equations 3x + 7y = 17 and 9x + ky = 51 has infinitely many solutions. What is the value of k?",
+    choices: ["−21", "21", "24", "17"],
+    answer: 1,
+    explanation: "For infinitely many solutions, the second equation must be a constant multiple of the first. Since 9/3 = 3 and 51/17 = 3, the y-coefficient must follow the same scale factor: k = 3 · 7 = 21.",
   },
   {
     id: "alg-233",
@@ -2788,12 +2699,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "For what value of k does the system 3x − 5y = 9 and 9x + ky = 11 have no solution?",
-    choices: ["−15", "15", "−5", "45"],
-    answer: 0,
-    explanation:
-      "A system has no solution when the lines are parallel but distinct. Setting 3/9 = −5/k gives k = −15; since 9/11 ≠ 3/9, the lines are parallel and distinct.",
+    prompt: "If 6x + 3y = 15 and 5x + 5y = 10, what is the value of 5x + 5y?",
+    choices: ["−10", "10", "12", "8"],
+    answer: 1,
+    explanation: "Solving the system gives x = 3 and y = −1. So 5x + 5y = 5(3) + 5(−1) = 10.",
   },
   {
     id: "alg-234",
@@ -2801,12 +2710,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "A chemist mixes a 10% acid solution with a 40% acid solution to create 12 liters of a 25% acid solution. How many liters of the 40% solution are needed?",
-    choices: ["6", "4", "8", "3"],
-    answer: 0,
-    explanation:
-      "Let x be the liters of 40% solution, so 12 − x liters of 10% solution are used. Then 0.40x + 0.10(12 − x) = 0.25(12) → 0.30x + 1.2 = 3 → x = 6.",
+    prompt: "At a bakery, 6 muffins and 6 croissants cost $396 total, while 4 muffins and 2 croissants cost $234 total. How much more does one muffin cost than one croissant, in dollars?",
+    choices: ["37", "33", "36", "−36"],
+    answer: 2,
+    explanation: "Let x be the muffin price and y the croissant price. Solving 6x + 6y = 396 and 4x + 2y = 234 gives x = 51 and y = 15, so the muffin costs 36 dollars more.",
   },
   {
     id: "alg-235",
@@ -2918,11 +2825,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt: "Line s has an x-intercept of −2 and a y-intercept of 8. What is the slope of line s?",
-    choices: ["4", "−4", "1/4", "−1/4"],
-    answer: 0,
-    explanation:
-      "The line passes through (−2, 0) and (0, 8). Slope = (8 − 0)/(0 − (−2)) = 8/2 = 4.",
+    prompt: "The function h is linear, with h(−6) = 12 and h(7) = −14. What is the x-intercept of the graph of h?",
+    choices: ["1", "0", "2", "3"],
+    answer: 1,
+    explanation: "Slope = (h(7) − h(−6))/(7 − −6) = −2. Since h(−6) = 12, h(x) = −2x. Setting h(x) = 0 gives x = 0.",
   },
   {
     id: "alg-245",
@@ -2930,12 +2836,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "Line t passes through (−4, 0) and (0, −8). Line w is perpendicular to line t and passes through (0, −8). What is the slope of line w?",
-    choices: ["1/2", "−1/2", "2", "−2"],
-    answer: 0,
-    explanation:
-      "Slope of line t = (−8 − 0)/(0 − (−4)) = −8/4 = −2. A perpendicular line has slope equal to the negative reciprocal, 1/2.",
+    prompt: "The function f is linear. If f(3) = −13 and f(5) = −21, what is the value of f(−9) − f(1)?",
+    choices: ["42", "40", "41", "−40"],
+    answer: 1,
+    explanation: "Slope = (−21 − −13)/(5 − 3) = −4. Since f(3) = −13, f(x) = −4x − 1. So f(−9) = 35 and f(1) = −5, giving a difference of 40.",
   },
   {
     id: "alg-246",
@@ -2943,11 +2847,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt: "The linear function k satisfies k(2) = 6 and k(5) = −3. For what value of x does k(x) = 0?",
-    choices: ["4", "2", "6", "12"],
-    answer: 0,
-    explanation:
-      "Slope = (−3 − 6)/(5 − 2) = −3, so k(x) = −3x + b. Using k(2) = 6: −6 + b = 6 → b = 12. Setting −3x + 12 = 0 gives x = 4.",
+    prompt: "Line k has slope 4 and passes through (3, 4). Line k also passes through (−1, y). What is the value of y minus the y-intercept of line k?",
+    choices: ["−3", "4", "−1", "−4"],
+    answer: 3,
+    explanation: "Using y = 4x + b through (3, 4): 4 = 4(3) + b, so b = −8. At x = −1, y = 4(−1) − 8 = −12. So y − b = −4.",
   },
   {
     id: "alg-247",
@@ -3034,11 +2937,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (4x − 3)/5 = x − 3, what is the value of x?",
-    choices: ["12", "−12", "3", "9"],
-    answer: 0,
-    explanation:
-      "(4x − 3)/5 = x − 3 → 4x − 3 = 5(x − 3) → 4x − 3 = 5x − 15 → x = 12.",
+    prompt: "If 2(x + 3) + 5 = −2(x − 7) + 5, what is the value of x?",
+    choices: ["−2", "2", "4", "6"],
+    answer: 1,
+    explanation: "Expand both sides: 2x + 6 + 5 = −2x + 14 + 5. Collecting the x-terms and constants gives (4)x = 8, so x = 2.",
   },
   {
     id: "alg-255",
@@ -3046,10 +2948,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (2/3)x − 7 = (1/3)x + 2, what is the value of x?",
-    choices: ["27", "−27", "13.5", "9"],
-    answer: 0,
-    explanation: "Multiplying every term by 3: 2x − 21 = x + 6 → x = 27.",
+    prompt: "If 4(x − 8) − 4 = 2(x − 3) − 12, what is the value of 2x + 4?",
+    choices: ["9", "22", "24", "−22"],
+    answer: 1,
+    explanation: "Expand both sides: 4x − 32 − 4 = 2x − 6 − 12. Collecting terms gives (2)x = 18, so x = 9. Then 2x + 4 = 2(9) + 4 = 22.",
   },
   {
     id: "alg-256",
@@ -3149,11 +3051,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt: "For which value of x is the inequality 9 − 4x ≤ 2x + 15 NOT satisfied?",
-    choices: ["−2", "−1", "0", "4"],
-    answer: 0,
-    explanation:
-      "Solve the inequality: 9 − 4x ≤ 2x + 15 → −6 ≤ 6x → x ≥ −1. Since −2 is less than −1, it does not satisfy the inequality, while the other values do.",
+    prompt: "What is the greatest integer value of x that satisfies −2(x − 3) ≥ −6 + 4x?",
+    choices: ["3", "1", "2", "−2"],
+    answer: 2,
+    explanation: "Distribute: −2x + 6 ≥ −6 + 4x. Collecting x-terms: −6x ≥ −12. Dividing by the negative coefficient −6 flips the inequality: x ≤ 2. The greatest integer satisfying this is 2.",
   },
   {
     id: "alg-265",
@@ -3161,11 +3062,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt:
-      "A charity fundraiser needs to raise at least $2,500 and has already collected $460 in donations. If the rest is raised by selling raffle tickets at $8 each, what is the minimum number of whole raffle tickets that must be sold to reach the goal?",
-    choices: ["255", "254", "256", "2040"],
-    answer: 0,
-    explanation: "460 + 8t ≥ 2500 → 8t ≥ 2040 → t ≥ 255, so the minimum whole number of tickets is 255.",
+    prompt: "How many integer values of x satisfy 2 ≤ x and −3(x − 6) ≥ −17 + 4x?",
+    choices: ["3", "5", "−4", "4"],
+    answer: 3,
+    explanation: "Simplifying the inequality gives x ≤ 5 (the inequality flips because the x-coefficient after combining is negative). Combined with x ≥ 2, the integers from 2 to 5 work, which is 4 values.",
   },
   {
     id: "alg-266",
@@ -3229,11 +3129,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The equation ax + by = c represents a line, where a = 5 and b = 2. If the line passes through (3, 4), what is the value of c?",
-    choices: ["23", "19", "26", "15"],
-    answer: 0,
-    explanation: "Substituting the known values: 5(3) + 2(4) = c → 15 + 8 = c → c = 23.",
+    prompt: "The equation A = p(q + 4r) relates the quantities A, p, q, and r. Which equation correctly gives r in terms of A, p, and q?",
+    choices: ["r = (A + pq)/(4p)", "r = 4p(A − q)", "r = (A − pq)/4", "r = (A − pq)/(4p)"],
+    answer: 3,
+    explanation: "Divide both sides by p: A/p = q + 4r. Subtract q: A/p − q = 4r. Divide by 4: r = (A − pq)/(4p), after combining over a common denominator.",
   },
   {
     id: "alg-272",
@@ -3241,11 +3140,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "A formula converts a time duration in hours (H) to seconds: S = 3600H. A second formula converts seconds to a \"work units\" measure: W = 0.5S. Which expression gives W directly in terms of H?",
-    choices: ["1800H", "3600H", "1800H + 0.5", "7200H"],
-    answer: 0,
-    explanation: "Substituting S = 3600H into W = 0.5S gives W = 0.5(3600H) = 1800H.",
+    prompt: "A line has x-intercept 10 and y-intercept 8. What is the y-coordinate of the point on this line where x = 2?",
+    choices: ["5.4", "6.4", "−6.4", "7.4"],
+    answer: 1,
+    explanation: "The line through (10, 0) and (0, 8) has equation 8x + 10y = 80. Substituting x = 2: 8(2) + 10y = 80, so y = 6.4.",
   },
   {
     id: "alg-273",
@@ -3311,11 +3209,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 3x − 7y > 21?",
-    choices: ["(0, 0)", "(10, −2)", "(14, −3)", "(10, −3)"],
-    answer: 0,
-    explanation:
-      "Testing (0, 0): 3(0) − 7(0) = 0, which is not greater than 21, so (0, 0) is not a solution. The other points each satisfy the inequality: for example, 3(10) − 7(−2) = 44 > 21.",
+    prompt: "A point (x, y) satisfies y ≤ −2x + 18 and y ≥ 5x − 21. If x = 3, what is the greatest possible integer value of y?",
+    choices: ["−12", "12", "8", "15"],
+    answer: 1,
+    explanation: "Substituting x = 3 into y ≤ −2x + 18 gives y ≤ 12. The greatest integer satisfying this is 12.",
   },
   {
     id: "alg-279",
@@ -3374,11 +3271,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "A salesperson earns a base salary of $2,000 per month plus a 10% commission on sales. In a month where the salesperson earned $3,700 total, what was the dollar amount of sales?",
-    choices: ["$17,000", "$1,700", "$37,000", "$5,700"],
-    answer: 0,
-    explanation: "2,000 + 0.10s = 3,700 → 0.10s = 1,700 → s = 17,000.",
+    prompt: "For three consecutive integers, 3 times the smallest equals the sum of the other two, minus some number d. If the smallest integer is 17, what is the value of d?",
+    choices: ["13", "14", "19", "−14"],
+    answer: 1,
+    explanation: "The three consecutive integers are 17, 18, and 19. Their sum of the two larger is 18 + 19 = 37. Since 3 times the smallest is 51, d = 51 − 37 = 14.",
   },
   {
     id: "alg-284",
@@ -3386,12 +3282,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "Working alone, Priya can mow 3 lawns per hour, and working alone, Sam can mow 2 lawns per hour. If they work together at these constant rates, how many minutes will it take them to mow 20 lawns?",
-    choices: ["240", "160", "100", "20"],
-    answer: 0,
-    explanation:
-      "Together they mow 3 + 2 = 5 lawns per hour, so mowing 20 lawns takes 20/5 = 4 hours, which is 240 minutes.",
+    prompt: "A total of $28,000 is invested in two accounts, one earning 5% annual interest and the other earning 6% annual interest. If the total interest earned in one year is $1660, how much was invested at 5%?",
+    choices: ["−2000", "2000", "2001", "1996"],
+    answer: 1,
+    explanation: "Let x be the amount invested at 5%. Then $28,000 − x is invested at 6%. Solving 0.05x.06(28,000 − x) = 1660 gives x = $2,000.",
   },
   {
     id: "alg-285",
@@ -3515,12 +3409,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "Daniela invests a total of $8,000 in two accounts, one earning 3% annual interest and the other earning 6% annual interest. If her total interest after one year is $345, how much did she invest at 6%?",
-    choices: ["$3,500", "$4,500", "$3,000", "$5,500"],
-    answer: 0,
-    explanation:
-      "Let x be the amount invested at 6%: 0.03(8,000 − x) + 0.06x = 345 → 240 + 0.03x = 345 → x = 3,500.",
+    prompt: "A chemist mixes 85 liters of solution by combining a 25% acid solution with a 66% acid solution. If 35 liters of the 66% solution is used, and the resulting mixture is 41.882% acid, how many liters of the 25% solution were used?",
+    choices: ["−50", "54", "48", "50"],
+    answer: 3,
+    explanation: "Let x be the liters of the 25% solution. Since 35 liters of 66% solution is also used, 0.25x.66(35) = 0.4188235294117647(x + 35). Solving gives x = 50 liters.",
   },
   {
     id: "alg-295",
@@ -3528,12 +3420,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "Working alone, it takes Ben 6 hours to paint a fence. Working together, Ben and Clara can paint the same fence in 4 hours. How many hours would it take Clara to paint the fence alone?",
-    choices: ["12", "8", "10", "24"],
-    answer: 0,
-    explanation:
-      "1/6 + 1/c = 1/4 → 1/c = 1/4 − 1/6 = 1/12, so c = 12 hours.",
+    prompt: "Working alone, machine A fills 4 boxes per hour, and machine B fills 6 boxes per hour. Working together at these rates, how many hours will it take them to fill 20 boxes?",
+    choices: ["0", "4", "2", "−2"],
+    answer: 2,
+    explanation: "Together the machines fill 4 + 6 = 10 boxes per hour. To fill 20 boxes takes 20/10 = 2 hours.",
   },
   {
     id: "alg-296",
@@ -3541,12 +3431,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "Ten years ago, Felix was twice as old as his sister. Today, Felix is 38 years old. How old is his sister today?",
-    choices: ["24", "19", "14", "28"],
-    answer: 0,
-    explanation:
-      "Ten years ago Felix was 38 − 10 = 28, so his sister was 28/2 = 14 then, making her 14 + 10 = 24 today.",
+    prompt: "For three consecutive integers, 3 times the smallest equals the sum of the other two, minus some number d. If the smallest integer is 21, what is the value of d?",
+    choices: ["22", "17", "18", "−18"],
+    answer: 2,
+    explanation: "The three consecutive integers are 21, 22, and 23. Their sum of the two larger is 22 + 23 = 45. Since 3 times the smallest is 63, d = 63 − 45 = 18.",
   },
   {
     id: "alg-297",
@@ -3554,12 +3442,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "A store marks up the wholesale price of a jacket by 40% to set the retail price. During a sale, the retail price is reduced by $21, making the sale price $63. What was the wholesale price of the jacket?",
-    choices: ["$60", "$45", "$70", "$84"],
-    answer: 0,
-    explanation:
-      "The retail price is 63 + 21 = $84. Since the retail price is 1.4 times the wholesale price, the wholesale price is 84/1.4 = $60.",
+    prompt: "A total of $5,000 is invested in two accounts, one earning 2% annual interest and the other earning 4% annual interest. If the total interest earned in one year is $100, how much was invested at 2%?",
+    choices: ["5002", "−5000", "4999", "5000"],
+    answer: 3,
+    explanation: "Let x be the amount invested at 2%. Then $5,000 − x is invested at 4%. Solving 0.02x.04(5,000 − x) = 100 gives x = $5,000.",
   },
   {
     id: "alg-298",
@@ -3665,11 +3551,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "For which value of b does the point (4, 10) lie exactly on the boundary line of the inequality y ≤ 3x + b?",
-    choices: ["−2", "2", "−10", "10"],
-    answer: 0,
-    explanation: "If (4, 10) lies exactly on the boundary, 10 = 3(4) + b → b = −2.",
+    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 5x − 9y > 17?",
+    choices: ["(8, −3)", "(3, −17)", "(5, 2)", "(6, −13)"],
+    answer: 2,
+    explanation: "Testing each point in 5x − 9y > 17: only (5, 2) gives a value that is not greater than 17, so it is not a solution.",
   },
   {
     id: "alg-307",
@@ -3677,12 +3562,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "A delivery truck can carry at most 4,500 pounds. Each box of type A weighs 40 pounds and each box of type B weighs 65 pounds. If the truck already carries 20 boxes of type B, what is the maximum number of type A boxes that can also be loaded without exceeding the weight limit?",
-    choices: ["80", "77", "82", "72"],
-    answer: 0,
-    explanation:
-      "Twenty type-B boxes weigh 1,300 pounds, leaving 4,500 − 1,300 = 3,200 pounds. Since 3,200/40 = 80, at most 80 type-A boxes can be added.",
+    prompt: "The point (6, 1) lies on the boundary line of 8x + 7y ≤ k. What is the value of k?",
+    choices: ["58", "−55", "54", "55"],
+    answer: 3,
+    explanation: "Since (6, 1) is on the boundary line 8x + 7y = k, substituting gives k = 8(6) + 7(1) = 55.",
   },
   {
     id: "alg-308",
@@ -3690,11 +3573,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt: "Which of the following ordered pairs satisfies both y ≤ 2x + 1 and y > −x + 2?",
-    choices: ["(3, 4)", "(0, 3)", "(1, 0)", "(−1, 3)"],
-    answer: 0,
-    explanation:
-      "For (3, 4): 4 ≤ 2(3) + 1 = 7 is true, and 4 > −3 + 2 = −1 is true, so both inequalities are satisfied. The other points fail at least one inequality.",
+    prompt: "A point (x, y) satisfies y ≤ −2x + 20 and y ≥ 5x − 27. If x = 0, what is the greatest possible integer value of y?",
+    choices: ["−20", "19", "24", "20"],
+    answer: 3,
+    explanation: "Substituting x = 0 into y ≤ −2x + 20 gives y ≤ 20. The greatest integer satisfying this is 20.",
   },
   {
     id: "alg-309",
@@ -3727,11 +3609,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "The inequality 2x − 5y > 10 is graphed in the xy-plane. What is the y-coordinate of the point where the boundary line crosses the y-axis?",
-    choices: ["−2", "2", "−5", "5"],
-    answer: 0,
-    explanation: "The boundary line is 2x − 5y = 10. Setting x = 0: −5y = 10 → y = −2.",
+    prompt: "Which of the following ordered pairs is NOT a solution to the inequality 9x − 7y > 14?",
+    choices: ["(−1, −6)", "(−6, −16)", "(7, −5)", "(−6, −8)"],
+    answer: 3,
+    explanation: "Testing each point in 9x − 7y > 14: only (−6, −8) gives a value that is not greater than 14, so it is not a solution.",
   },
   {
     id: "alg-312",
@@ -3820,11 +3701,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The formula for converting temperature is F = (9/5)C + 32. Solving for C in terms of F gives which expression?",
-    choices: ["(5/9)(F − 32)", "(9/5)(F − 32)", "(5/9)F − 32", "(5/9)(F + 32)"],
-    answer: 0,
-    explanation: "F − 32 = (9/5)C → C = (5/9)(F − 32).",
+    prompt: "The equation 8x + 2y = 11 is equivalent to y = mx + k, where m and k are constants. What is the value of m?",
+    choices: ["−1/4", "−4", "1/4", "4"],
+    answer: 1,
+    explanation: "Solving for y: 2y = −8x + 11, so y = (−8/2)x + 11/2. Thus m = −4.",
   },
   {
     id: "alg-320",
@@ -3832,10 +3712,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt: "For the equation ax + 3y = 15, the graph is a line with x-intercept 5. What is the value of a?",
-    choices: ["3", "5", "15", "1/3"],
-    answer: 0,
-    explanation: "At the x-intercept, y = 0 and x = 5: 5a = 15 → a = 3.",
+    prompt: "The equation A = p(q + 4r) relates the quantities A, p, q, and r. Which equation correctly gives r in terms of A, p, and q?",
+    choices: ["r = 4p(A − q)", "r = (A − pq)/(4p)", "r = (A − pq)/4", "r = (A + pq)/(4p)"],
+    answer: 1,
+    explanation: "Divide both sides by p: A/p = q + 4r. Subtract q: A/p − q = 4r. Divide by 4: r = (A − pq)/(4p), after combining over a common denominator.",
   },
   {
     id: "alg-321",
@@ -3843,12 +3723,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "Line m is perpendicular to the line 2x + 5y = 10 and passes through (4, −1). What is the y-intercept of line m?",
-    choices: ["−11", "−1", "4", "9"],
-    answer: 0,
-    explanation:
-      "The given line has slope −2/5, so a perpendicular line has slope 5/2. Using (4, −1): y + 1 = (5/2)(x − 4) → y = (5/2)x − 11, so the y-intercept is −11.",
+    prompt: "A line has x-intercept 2 and y-intercept 4. What is the y-coordinate of the point on this line where x = 5?",
+    choices: ["−4", "−5", "6", "−6"],
+    answer: 3,
+    explanation: "The line through (2, 0) and (0, 4) has equation 4x + 2y = 8. Substituting x = 5: 4(5) + 2y = 8, so y = −6.",
   },
   {
     id: "alg-322",
@@ -3950,12 +3828,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt:
-      "A theater seats at most 320 people. If 45 seats are already reserved and each remaining ticket is sold to a group of 5 people, what is the maximum number of groups that can still be seated?",
-    choices: ["55", "56", "65", "275"],
+    prompt: "If x satisfies −3(x − 1) ≥ 3 + 2x, what is the largest possible value of 2x?",
+    choices: ["0", "−1", "1", "−2"],
     answer: 0,
-    explanation:
-      "After reserving 45 seats, 320 − 45 = 275 seats remain. Since 275/5 = 55, at most 55 groups of 5 can be seated.",
+    explanation: "Solving gives x ≤ 0 (the inequality flips on division by a negative coefficient), so the greatest integer value of x is 0, making the largest value of 2x equal to 0.",
   },
   {
     id: "alg-331",
@@ -3963,11 +3839,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt: "If 3x − 7 > 8x + 13, what is the largest integer value of x that satisfies the inequality?",
-    choices: ["−5", "−4", "−3", "4"],
-    answer: 0,
-    explanation:
-      "3x − 7 > 8x + 13 → −20 > 5x → x < −4, so the largest integer value satisfying the inequality is −5.",
+    prompt: "What is the greatest integer value of x that satisfies −3(x + 5) ≥ −19 + x?",
+    choices: ["0", "−1", "2", "1"],
+    answer: 3,
+    explanation: "Distribute: −3x − 15 ≥ −19 + x. Collecting x-terms: −4x ≥ −4. Dividing by the negative coefficient −4 flips the inequality: x ≤ 1. The greatest integer satisfying this is 1.",
   },
   {
     id: "alg-332",
@@ -4011,11 +3886,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "For what value of k does the system 4x + ky = 8 and 2x + 3y = 4 have infinitely many solutions?",
-    choices: ["6", "3", "12", "2"],
+    prompt: "For what value of k does the system of equations x + y = 1 and 4x + ky = 6 have no solution?",
+    choices: ["4", "−4", "5", "0"],
     answer: 0,
-    explanation:
-      "For infinitely many solutions, the equations must be proportional: 4/2 = k/3 = 8/4 = 2, so k/3 = 2 → k = 6.",
+    explanation: "For no solution, the left sides must be proportional while the right sides are not. Since 4 = 4 · 1, the y-coefficients must match that same scale factor: k = 4 · 1 = 4. (Checking constants: 4 · 1 = 4 ≠ 6, confirming no solution.)",
   },
   {
     id: "alg-336",
@@ -4023,11 +3897,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "If 3x − 2y = 7 and 2x + 5y = 11, what is the value of x + y?",
-    choices: ["4", "3", "7", "11"],
+    prompt: "The system of equations 6x + y = 1 and 24x + ky = 4 has infinitely many solutions. What is the value of k?",
+    choices: ["4", "−4", "5", "1"],
     answer: 0,
-    explanation:
-      "Multiply the first equation by 5 and the second by 2: 15x − 10y = 35 and 4x + 10y = 22. Adding gives 19x = 57 → x = 3, so y = 1 and x + y = 4.",
+    explanation: "For infinitely many solutions, the second equation must be a constant multiple of the first. Since 24/6 = 4 and 4/1 = 4, the y-coefficient must follow the same scale factor: k = 4 · 1 = 4.",
   },
   {
     id: "alg-337",
@@ -4070,12 +3943,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "The function f is linear. A table shows that f(2) = 7 and f(6) = 19. What value of x satisfies f(x) = 31?",
-    choices: ["10", "9", "11", "30"],
-    answer: 0,
-    explanation:
-      "Slope = (19 − 7)/(6 − 2) = 3, so f(x) = 3x + 1. Setting 3x + 1 = 31 gives x = 10.",
+    prompt: "Function f is linear with f(x) = 3x − 8. Function g is linear with g(0) = 18 and a rate of change of 4. For what value of x does g(x) − f(x) = 28?",
+    choices: ["6", "2", "−2", "3"],
+    answer: 1,
+    explanation: "g(x) = 18 + 4x. So g(x) − f(x) = (4 − 3)x + (18 − −8) = x + 26. Setting this equal to 28 gives x = 2.",
   },
   {
     id: "alg-341",
@@ -4141,11 +4012,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If |2x + 5| = 13, what is the positive difference between the two possible values of x?",
-    choices: ["13", "8", "9", "4"],
-    answer: 0,
-    explanation:
-      "2x + 5 = 13 gives x = 4; 2x + 5 = −13 gives x = −9. The positive difference between these values is 4 − (−9) = 13.",
+    prompt: "If −4(x − 3) + 9 = 2(x + 5) − 7, what is the value of 4x?",
+    choices: ["3", "−12", "10", "12"],
+    answer: 3,
+    explanation: "Expand both sides: −4x + 12 + 9 = 2x + 10 − 7. Collecting terms gives (−6)x = −18, so x = 3. Then 4x = 4(3) = 12.",
   },
   {
     id: "alg-347",
@@ -4153,10 +4023,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If (3x/4) − (x/2) = 5, what is the value of x?",
-    choices: ["20", "5", "10", "40"],
-    answer: 0,
-    explanation: "(3x/4) − (x/2) = (3x/4) − (2x/4) = x/4 = 5, so x = 20.",
+    prompt: "If -(x − 6) − 7 = −6(x − 2) + 2, what is the value of x?",
+    choices: ["−3", "3", "7", "5"],
+    answer: 1,
+    explanation: "Expand both sides: −x + 6 − 7 = −6x + 12 + 2. Collecting the x-terms and constants gives (5)x = 15, so x = 3.",
   },
   {
     id: "alg-348",
@@ -4243,11 +4113,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If 3(x − 4) − 2(x + 1) = 5x − 18, what is the value of x?",
-    choices: ["1", "4", "−1", "7"],
-    answer: 0,
-    explanation:
-      "3(x − 4) − 2(x + 1) = 3x − 12 − 2x − 2 = x − 14. Setting x − 14 = 5x − 18 gives 4 = 4x, so x = 1.",
+    prompt: "If (x + 5) + 1 = 5(x + 4) − 2, what is the value of 2x + 3?",
+    choices: ["3", "−5", "−3", "−4"],
+    answer: 2,
+    explanation: "Expand both sides: x + 5 + 1 = 5x + 20 − 2. Collecting terms gives (−4)x = 12, so x = −3. Then 2x + 3 = 2(−3) + 3 = −3.",
   },
   {
     id: "alg-356",
@@ -4255,11 +4124,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If |4x − 9| = 23, what is the sum of the two possible values of x?",
-    choices: ["4.5", "9", "2.25", "−4.5"],
-    answer: 0,
-    explanation:
-      "4x − 9 = 23 gives x = 8; 4x − 9 = −23 gives x = −3.5. The sum of these values is 8 + (−3.5) = 4.5.",
+    prompt: "If (x − 4) + 7 = 4(x − 7) − 5, what is the value of 3x + 3?",
+    choices: ["−39", "12", "39", "37"],
+    answer: 2,
+    explanation: "Expand both sides: x − 4 + 7 = 4x − 28 − 5. Collecting terms gives (−3)x = −36, so x = 12. Then 3x + 3 = 3(12) + 3 = 39.",
   },
   {
     id: "alg-357",
@@ -4267,11 +4135,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in one variable",
     difficulty: 3,
-    prompt: "If 2x − 3(2 − x) = 4(x + 1) − 5, what is the value of x?",
-    choices: ["5", "−5", "1", "7"],
-    answer: 0,
-    explanation:
-      "2x − 3(2 − x) = 2x − 6 + 3x = 5x − 6. And 4(x + 1) − 5 = 4x − 1. Setting 5x − 6 = 4x − 1 gives x = 5.",
+    prompt: "If 3(x − 3) − 6 = 2x − 2, what is the value of x?",
+    choices: ["17", "−13", "13", "15"],
+    answer: 2,
+    explanation: "Expand both sides: 3x − 9 − 6 = 2x − 2. Collecting the x-terms and constants gives (1)x = 13, so x = 13.",
   },
   {
     id: "alg-358",
@@ -4347,17 +4214,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The formula for converting a temperature from Fahrenheit to Kelvin is K = (5/9)(F − 32) + 273. Which expression gives F in terms of K?",
-    choices: [
-      "(9/5)(K − 273) + 32",
-      "(5/9)(K − 273) + 32",
-      "(9/5)(K + 273) − 32",
-      "(9/5)K − 273 + 32",
-    ],
-    answer: 0,
-    explanation:
-      "K − 273 = (5/9)(F − 32) → (9/5)(K − 273) = F − 32 → F = (9/5)(K − 273) + 32.",
+    prompt: "The equation 9x + 5y = −3 is equivalent to y = mx + k, where m and k are constants. What is the value of m?",
+    choices: ["9/5", "−9/5", "5/9", "−5/9"],
+    answer: 1,
+    explanation: "Solving for y: 5y = −9x − 3, so y = (−9/5)x − 3/5. Thus m = −9/5.",
   },
   {
     id: "alg-365",
@@ -4365,11 +4225,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear equations in two variables",
     difficulty: 3,
-    prompt:
-      "The formula for the volume of a cone is V = (1/3)πr²h. Which expression gives h in terms of V, r, and π?",
-    choices: ["3V/(πr²)", "V/(3πr²)", "3V/(πr)", "V·3πr²"],
-    answer: 0,
-    explanation: "V = (1/3)πr²h → 3V = πr²h → h = 3V/(πr²).",
+    prompt: "The equation A = p(q + 5r) relates the quantities A, p, q, and r. Which equation correctly gives r in terms of A, p, and q?",
+    choices: ["r = (A + pq)/(5p)", "r = 5p(A − q)", "r = (A − pq)/(5p)", "r = (A − pq)/5"],
+    answer: 2,
+    explanation: "Divide both sides by p: A/p = q + 5r. Subtract q: A/p − q = 5r. Divide by 5: r = (A − pq)/(5p), after combining over a common denominator.",
   },
   {
     id: "alg-366",
@@ -4459,12 +4318,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "Line k passes through the point (3, 2) and is perpendicular to the line 2x + y = 7. What is the equation of line k?",
-    choices: ["y = (1/2)x + 1/2", "y = −2x + 8", "y = (1/2)x − 1/2", "y = 2x − 4"],
-    answer: 0,
-    explanation:
-      "The line 2x + y = 7 has slope −2 (from y = −2x + 7). A perpendicular line has slope 1/2. Using point (3, 2): 2 = (1/2)(3) + b → b = 1/2. So line k is y = (1/2)x + 1/2.",
+    prompt: "The function h is linear, with h(−6) = 45 and h(2) = 5. What is the x-intercept of the graph of h?",
+    choices: ["−3", "3", "7", "4"],
+    answer: 1,
+    explanation: "Slope = (h(2) − h(−6))/(2 − −6) = −5. Since h(−6) = 45, h(x) = −5x + 15. Setting h(x) = 0 gives x = 3.",
   },
   {
     id: "alg-374",
@@ -4472,12 +4329,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "The function m is linear. If m(−2) = 10 and m(4) = −8, what is the value of x for which m(x) = 0?",
-    choices: ["4/3", "−4/3", "2", "−2"],
-    answer: 0,
-    explanation:
-      "Slope = (−8 − 10)/(4 − (−2)) = −18/6 = −3, so m(x) = −3x + 4 (since m(−2) = 10 gives b = 4). Setting −3x + 4 = 0 gives x = 4/3.",
+    prompt: "The function f is linear. If f(4) = 21 and f(7) = 39, what is the value of f(−4) − f(2)?",
+    choices: ["−35", "−36", "36", "−34"],
+    answer: 1,
+    explanation: "Slope = (39 − 21)/(7 − 4) = 6. Since f(4) = 21, f(x) = 6x − 3. So f(−4) = −27 and f(2) = 9, giving a difference of −36.",
   },
   {
     id: "alg-375",
@@ -4485,12 +4340,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear functions",
     difficulty: 3,
-    prompt:
-      "Lines j and k are both linear. Line j has a slope of 4 and passes through (1, 6). Line k passes through (0, −3) and (3, 3). What is the x-coordinate of the point where lines j and k intersect?",
-    choices: ["−2.5", "2.5", "−5", "1"],
-    answer: 0,
-    explanation:
-      "Line j: slope 4 through (1, 6) gives y = 4x + 2 (since 6 = 4(1) + b → b = 2). Line k: slope = (3 − (−3))/(3 − 0) = 2, giving y = 2x − 3. Setting 4x + 2 = 2x − 3 gives 2x = −5, so x = −2.5.",
+    prompt: "Line k has slope −1 and passes through (3, 8). Line k also passes through (−1, y). What is the value of y minus the y-intercept of line k?",
+    choices: ["3", "2", "−1", "1"],
+    answer: 3,
+    explanation: "Using y = −x + b through (3, 8): 8 = −1(3) + b, so b = 11. At x = −1, y = −1(−1) + 11 = 12. So y − b = 1.",
   },
   {
     id: "alg-376",
@@ -4580,11 +4433,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt: "Which of the following values of x makes the inequality 4 − 2x < 3x − 11 FALSE?",
-    choices: ["3", "4", "10", "5"],
-    answer: 0,
-    explanation:
-      "4 − 2x < 3x − 11 → 15 < 5x → x > 3. The inequality is true only when x > 3, so x = 3 makes it false (since 3 is not greater than 3); the other values are all greater than 3 and make it true.",
+    prompt: "How many integer values of x satisfy −12 ≤ x and −4(x + 6) ≥ 18 + 2x?",
+    choices: ["−6", "7", "6", "5"],
+    answer: 2,
+    explanation: "Simplifying the inequality gives x ≤ −7 (the inequality flips because the x-coefficient after combining is negative). Combined with x ≥ −12, the integers from −12 to −7 work, which is 6 values.",
   },
   {
     id: "alg-384",
@@ -4592,11 +4444,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in one variable",
     difficulty: 3,
-    prompt: "If 3 ≤ 2x − 5 ≤ 11, what is the greatest possible value of 3x?",
-    choices: ["24", "12", "48", "21"],
-    answer: 0,
-    explanation:
-      "3 ≤ 2x − 5 ≤ 11 → 8 ≤ 2x ≤ 16 → 4 ≤ x ≤ 8. The greatest value of x is 8, so the greatest value of 3x is 24.",
+    prompt: "If x satisfies −7(x − 3) ≥ −12 + 4x, what is the largest possible value of 2x?",
+    choices: ["−6", "6", "7", "5"],
+    answer: 1,
+    explanation: "Solving gives x ≤ 3 (the inequality flips on division by a negative coefficient), so the greatest integer value of x is 3, making the largest value of 2x equal to 6.",
   },
   {
     id: "alg-385",
@@ -4663,11 +4514,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "The point (k, 3) lies in the solution set of the inequality 2x + y > 11 for the smallest integer value of k possible. What is that value of k?",
-    choices: ["5", "4", "8", "9"],
-    answer: 0,
-    explanation: "2k + 3 > 11 → 2k > 8 → k > 4, so the smallest integer value of k is 5.",
+    prompt: "The point (2, 4) lies on the boundary line of 5x + 4y ≤ k. What is the value of k?",
+    choices: ["30", "−26", "26", "23"],
+    answer: 2,
+    explanation: "Since (2, 4) is on the boundary line 5x + 4y = k, substituting gives k = 5(2) + 4(4) = 26.",
   },
   {
     id: "alg-391",
@@ -4675,12 +4525,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
     difficulty: 3,
-    prompt:
-      "For the inequality 6x − 3y ≤ 18, if x and y are both positive integers, what is the greatest possible value of x when y = 2?",
-    choices: ["4", "3", "6", "2"],
-    answer: 0,
-    explanation:
-      "Substituting y = 2: 6x − 6 ≤ 18 → 6x ≤ 24 → x ≤ 4, so the greatest possible positive-integer value of x is 4.",
+    prompt: "A point (x, y) satisfies y ≤ −4x + 19 and y ≥ 4x − 17. If x = 4, what is the greatest possible integer value of y?",
+    choices: ["4", "−3", "2", "3"],
+    answer: 3,
+    explanation: "Substituting x = 4 into y ≤ −4x + 19 gives y ≤ 3. The greatest integer satisfying this is 3.",
   },
   {
     id: "alg-392",
@@ -4780,12 +4628,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt:
-      "The system of equations 6x + 9y = 21 and 2x + ky = 7 has infinitely many solutions. What is the value of k?",
-    choices: ["3", "9", "21", "7"],
-    answer: 0,
-    explanation:
-      "Dividing the first equation by 3 gives 2x + 3y = 7, which must be identical to the second equation 2x + ky = 7 for infinitely many solutions. Thus k = 3.",
+    prompt: "If 4x + 4y = −12 and x + 6y = 2, what is the value of 2x + 4y?",
+    choices: ["0", "4", "−4", "−8"],
+    answer: 2,
+    explanation: "Solving the system gives x = −4 and y = 1. So 2x + 4y = 2(−4) + 4(1) = −4.",
   },
   {
     id: "alg-401",
@@ -4793,11 +4639,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "For what value of k does the system 3x + 5y = 12 and 6x + ky = 10 have no solution?",
-    choices: ["10", "6", "20", "4"],
-    answer: 0,
-    explanation:
-      "For no solution, the equations must represent parallel lines: the ratios of x- and y-coefficients must be equal while the constants' ratio differs. Setting 3/6 = 5/k gives k = 10; checking constants, 12/10 ≠ 3/6, confirming no solution when k = 10.",
+    prompt: "At a bakery, 5 muffins and 2 croissants cost $130 total, while 4 muffins and 2 croissants cost $118 total. How much more does one muffin cost than one croissant, in dollars?",
+    choices: ["−25", "−19", "23", "−23"],
+    answer: 3,
+    explanation: "Let x be the muffin price and y the croissant price. Solving 5x + 2y = 130 and 4x + 2y = 118 gives x = 12 and y = 35, so the muffin costs −23 dollars more.",
   },
   {
     id: "alg-402",
@@ -4805,11 +4650,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Systems of two linear equations",
     difficulty: 3,
-    prompt: "If 2x + 3y = 7 and 5x − 2y = 8, what is the value of x + y?",
-    choices: ["3", "2", "1", "5"],
+    prompt: "For what value of k does the system of equations 7x + 6y = 12 and 14x + ky = 28 have no solution?",
+    choices: ["12", "−12", "9", "15"],
     answer: 0,
-    explanation:
-      "Multiply the first equation by 2 and the second by 3: 4x + 6y = 14 and 15x − 6y = 24. Adding gives 19x = 38 → x = 2. Substituting into 2x + 3y = 7: 4 + 3y = 7 → y = 1. Thus x + y = 3.",
+    explanation: "For no solution, the left sides must be proportional while the right sides are not. Since 14 = 2 · 7, the y-coefficients must match that same scale factor: k = 2 · 6 = 12. (Checking constants: 2 · 12 = 24 ≠ 28, confirming no solution.)",
   },
   {
     id: "alg-403",
@@ -4896,12 +4740,10 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt:
-      "A store sells pens for $2 each and notebooks for $5 each. Jordan bought a total of 18 items and spent $63. How many notebooks did Jordan buy?",
-    choices: ["9", "7", "11", "6"],
-    answer: 0,
-    explanation:
-      "Let n be the number of notebooks and p the number of pens, so p + n = 18 and 2p + 5n = 63. Substituting p = 18 − n: 2(18 − n) + 5n = 63 → 36 + 3n = 63 → n = 9.",
+    prompt: "A chemist mixes 60 liters of solution by combining a 26% acid solution with a 75% acid solution. If 25 liters of the 75% solution is used, and the resulting mixture is 46.417% acid, how many liters of the 26% solution were used?",
+    choices: ["38", "35", "−35", "32"],
+    answer: 1,
+    explanation: "Let x be the liters of the 26% solution. Since 25 liters of 75% solution is also used, 0.26x.75(25) = 0.4641666666666666(x + 25). Solving gives x = 35 liters.",
   },
   {
     id: "alg-410",
@@ -4909,10 +4751,9 @@ QUESTIONS.push(
     domain: "Algebra",
     skill: "Word problems",
     difficulty: 3,
-    prompt: "The sum of three consecutive odd integers is 81. What is the smallest of the three integers?",
-    choices: ["25", "27", "23", "29"],
-    answer: 0,
-    explanation:
-      "Let the integers be n, n + 2, and n + 4. Then n + (n + 2) + (n + 4) = 81 → 3n + 6 = 81 → n = 25, which is the smallest integer.",
+    prompt: "Working alone, machine A fills 5 boxes per hour, and machine B fills 3 boxes per hour. Working together at these rates, how many hours will it take them to fill 24 boxes?",
+    choices: ["1", "4", "−3", "3"],
+    answer: 3,
+    explanation: "Together the machines fill 5 + 3 = 8 boxes per hour. To fill 24 boxes takes 24/8 = 3 hours.",
   }
 );

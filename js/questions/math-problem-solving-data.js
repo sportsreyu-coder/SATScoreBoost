@@ -110,12 +110,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "Of 200 students, 120 play sports; of those, 80 also play an instrument. Of the 80 students who don't play sports, 50 play an instrument. What is the probability that a randomly selected student who plays an instrument also plays sports?",
-    choices: ["8/13", "80/200", "80/120", "50/130"],
-    answer: 0,
-    explanation:
-      "Total instrument players = 80 + 50 = 130. Of those, 80 also play sports, so the probability is 80/130 = 8/13.",
+    prompt: "A survey of 90 people included 40 from Group A and 50 from Group B. 30% of Group A and 80% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["10/13", "2/15", "3/10", "3/13"],
+    answer: 3,
+    explanation: "Group A had 30% of 40 = 12 \"yes\" responses, and Group B had 80% of 50 = 40 \"yes\" responses, for a total of 52 \"yes\" responses. The probability the person is from Group A is 12/52 = 3/13.",
   },
   {
     id: "pd-10",
@@ -206,12 +204,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A jar contains 5 red and 7 blue candies. Two candies are drawn at random without replacement. What is the probability that both are red?",
-    choices: ["5/33", "25/144", "5/12", "4/11"],
-    answer: 0,
-    explanation:
-      "P(both red) = (5/12) × (4/11) = 20/132 = 5/33.",
+    prompt: "The probability that a certain machine produces a defective part is 5/10 on any given run, independent of other runs. What is the probability that at least one of the next 3 parts is defective?",
+    choices: ["1/2", "7/8", "1/8", "3/2"],
+    answer: 1,
+    explanation: "The probability a single part is NOT defective is 1/2. For 3 independent runs, P(no defects) = (1/2)<sup>3</sup> = 125/1000. So P(at least one defective) = 1 − 125/1000 = 7/8.",
   },
   {
     id: "pd-17",
@@ -342,12 +338,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A scatterplot shows a linear relationship between hours studied (x) and exam score (y), modeled by y = 55 + 4x. Based on this model, how many additional hours of studying are needed to raise a predicted score from 75 to 91?",
-    choices: ["4", "5", "9", "16"],
-    answer: 0,
-    explanation:
-      "Solving 75 = 55 + 4x gives x = 5; solving 91 = 55 + 4x gives x = 9. The additional hours needed is 9 − 5 = 4.",
+    prompt: "The line of best fit for a data set is y = −6x + 89. For a data point where x = 7, the actual y-value observed is 41. What is the residual (actual minus predicted) for this point?",
+    choices: ["47", "−6", "41", "6"],
+    answer: 1,
+    explanation: "The predicted value is y = −6(7) + 89 = 47. The residual is the actual value minus the predicted value: 41 − 47 = −6.",
   },
   {
     id: "pd-27",
@@ -355,12 +349,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A survey of 200 students found that 120 play a sport and 80 play an instrument, with 30 students doing both. What is the probability that a randomly selected student who plays a sport also plays an instrument?",
-    choices: ["1/4", "3/20", "1/6", "2/5"],
+    prompt: "A survey of 180 people included 120 from Group A and 60 from Group B. 75% of Group A and 60% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["4/9", "2/5", "5/9", "2/15"],
     answer: 0,
-    explanation:
-      "This is a conditional probability: P(instrument | sport) = (students who do both) / (students who play a sport) = 30/120 = 1/4.",
+    explanation: "Group A had 120 − 90 = 30 \"no\" responses, and Group B had 60 − 36 = 24 \"no\" responses, for a total of 54 \"no\" responses. The probability the person is from Group B is 24/54 = 4/9.",
   },
   {
     id: "pd-28",
@@ -368,10 +360,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt: "A data set has a mean of 50 and a standard deviation of 4. Which value is exactly 2 standard deviations above the mean?",
-    choices: ["58", "54", "46", "62"],
-    answer: 0,
-    explanation: "2 standard deviations above the mean is 50 + 2(4) = 58.",
+    prompt: "The mean of 6 numbers is 49. When one more number is added to the set, the new mean of all 7 numbers is 50.429. What is the value of the number that was added?",
+    choices: ["49", "353", "59", "64"],
+    answer: 2,
+    explanation: "The original sum is 6 × 49 = 294. The new sum is 7 × 50.429 = 353. The added number is 353 − 294 = 59.",
   },
   {
     id: "pd-29",
@@ -379,11 +371,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A factory produces widgets at a constant rate. If it produces 450 widgets in 6 hours, how many widgets does it produce in 1 minute?",
-    choices: ["1.25", "0.75", "1.5", "2"],
-    answer: 0,
-    explanation: "The rate is 450/6 = 75 widgets per hour, and 75/60 = 1.25 widgets per minute.",
+    prompt: "A car travels at a constant speed of 20 miles per hour. Using 1 mile = 5,280 feet, what is the car's speed in feet per second, rounded to the nearest tenth?",
+    choices: ["20", "58.6", "29", "29.3"],
+    answer: 3,
+    explanation: "Convert: 20 miles/hour × 5,280 feet/mile ÷ 3,600 seconds/hour = 29.3 feet per second.",
   },
   {
     id: "pd-30",
@@ -403,17 +394,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 50 voters from a city found that 60% support a proposed measure, with a margin of error of 5 percentage points. Which is the most reasonable conclusion?",
-    choices: [
-      "Between about 55% and 65% of all city voters likely support the measure.",
-      "Exactly 60% of all city voters support the measure.",
-      "Fewer than half of all city voters support the measure.",
-      "The sample is too small to draw any conclusion.",
-    ],
-    answer: 0,
-    explanation:
-      "A margin of error defines a plausible range around the sample estimate: 60% ± 5 percentage points gives an interval of about 55% to 65% for the full population.",
+    prompt: "A survey of a random sample estimates that 37% of a population supports a proposal, with a margin of error of 5 percentage points. Based on this survey, is it plausible that exactly 42% of the population supports the proposal?",
+    choices: ["No, because the margin of error only applies to the mean", "Yes, because it falls within the margin of error", "Yes, because the sample size is large enough", "Cannot be determined without more information"],
+    answer: 1,
+    explanation: "The survey's plausible range is 37% ± 5, which is from 32% to 42%. Since 42% falls within this range, the claim is plausible based on this survey.",
   },
   {
     id: "pd-32",
@@ -439,12 +423,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit for a data set is given by y = 3x + 2. If the actual y-value for x = 5 is 20, what is the residual?",
-    choices: ["3", "−3", "17", "20"],
-    answer: 0,
-    explanation:
-      "The predicted value is 3(5) + 2 = 17. The residual is actual minus predicted: 20 − 17 = 3.",
+    prompt: "A line of best fit models a data set with a slope of 7 units per hour. According to this model, by how much does the predicted value change as the number of hours increases from 28 to 38?",
+    choices: ["−70", "77", "70", "7"],
+    answer: 2,
+    explanation: "The predicted value changes by the slope times the change in x: 7 × (38 − 28) = 7 × 10 = 70.",
   },
   {
     id: "pd-34",
@@ -699,12 +681,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "A recipe calls for flour, sugar, and butter in the ratio 5:2:1 by weight. If a baker uses 12 ounces of sugar, how many total ounces of the three ingredients combined does the baker use?",
-    choices: ["48", "40", "36", "60"],
-    answer: 0,
-    explanation:
-      "Sugar is 2 parts and equals 12 ounces, so each part is 6 ounces. Flour = 5 × 6 = 30 ounces, butter = 1 × 6 = 6 ounces. Total = 30 + 12 + 6 = 48 ounces.",
+    prompt: "In a mixture, the ratio of sand to gravel to cement is 6:3:7. If the total mixture weighs 80 kilograms, how many kilograms of gravel are in the mixture?",
+    choices: ["35", "20", "30", "15"],
+    answer: 3,
+    explanation: "The ratio parts total 6 + 3 + 7 = 16, so each part weighs 80/16 = 5 kilograms. Gravel makes up 3 parts, so it weighs 3 × 5 = 15 kilograms.",
   },
   {
     id: "pd-53",
@@ -712,12 +692,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "Machine A fills 240 bottles per hour, and Machine B fills 360 bottles per hour. If both machines run together at their constant rates, how many minutes will it take to fill 1000 bottles?",
-    choices: ["100", "60", "120", "83.3"],
-    answer: 0,
-    explanation:
-      "Combined rate = 240 + 360 = 600 bottles per hour = 10 bottles per minute. Time to fill 1000 bottles = 1000/10 = 100 minutes.",
+    prompt: "Pump A fills a tank at a rate of 3 liters per hour. Pump B fills the same tank at a rate of 2 liters every 10 minutes. Working together, how many liters do the two pumps fill in 6 hours?",
+    choices: ["18", "84", "90", "105"],
+    answer: 2,
+    explanation: "Pump B's rate is 2 liters per 10 minutes = 12 liters per hour. Together, the pumps fill 3 + 12 = 15 liters per hour. In 6 hours, they fill 15 × 6 = 90 liters.",
   },
   {
     id: "pd-54",
@@ -725,12 +703,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A store marks up the wholesale cost of an item by 40% to set the retail price. During a sale, the retail price is discounted by 30%. If the sale price is $98, what was the original wholesale cost?",
-    choices: ["$100", "$98", "$140", "$70"],
-    answer: 0,
-    explanation:
-      "Retail price = 1.40c. Sale price = 0.70 × 1.40c = 0.98c. Setting 0.98c = 98 gives c = 100.",
+    prompt: "A value starts at 100. It first increases by 50%, and then the new value decreases by 20%. What is the overall percent change from the original value, to the nearest tenth of a percent?",
+    choices: ["25", "−30", "20", "30"],
+    answer: 2,
+    explanation: "After the increase, the value is 100 × 1.5 = 150. After the decrease, it is 150 × 0.8 = 120. The overall change is (120 − 100)/100 × 100% = +20%.",
   },
   {
     id: "pd-55",
@@ -738,12 +714,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set of 9 values has a mean of 40. When a 10th value is added, the new mean becomes 42. What is the value of the 10th data point?",
-    choices: ["60", "42", "48", "50"],
+    prompt: "A class of 18 students has an average test score of 72, and another class of 17 students has an average test score of 61. What is the average test score of all the students combined, rounded to the nearest tenth?",
+    choices: ["66.7", "67.7", "66.5", "67"],
     answer: 0,
-    explanation:
-      "The original sum is 9 × 40 = 360. The new sum with 10 values is 10 × 42 = 420. The 10th value is 420 − 360 = 60.",
+    explanation: "The combined total is 18(72) + 17(61) = 2333. Dividing by the total number of students, 18 + 17 = 35, gives an average of 2333/35 ≈ 66.7.",
   },
   {
     id: "pd-56",
@@ -751,12 +725,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit is given by y = 4x + 38. For a particular data point at x = 12, the residual is −5. What is the actual y-value of that data point?",
-    choices: ["81", "91", "86", "76"],
-    answer: 0,
-    explanation:
-      "The predicted value at x = 12 is 4(12) + 38 = 86. Since residual = actual − predicted, the actual value is 86 + (−5) = 81.",
+    prompt: "The line of best fit for a data set is y = −3x + 158. For a data point where x = 35, the actual y-value observed is 68. What is the residual (actual minus predicted) for this point?",
+    choices: ["68", "15", "53", "−15"],
+    answer: 1,
+    explanation: "The predicted value is y = −3(35) + 158 = 53. The residual is the actual value minus the predicted value: 68 − 53 = 15.",
   },
   {
     id: "pd-57",
@@ -764,11 +736,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A box contains 4 red, 6 blue, and 2 green pens. Two pens are drawn at random without replacement. What is the probability that the first pen is red and the second pen is blue?",
-    choices: ["2/11", "1/11", "4/11", "24/144"],
+    prompt: "A bag contains 6 red marbles and 4 blue marbles. Two marbles are drawn at random, one after another, without replacement. What is the probability that both marbles are red?",
+    choices: ["1/3", "3/5", "25/81", "9/25"],
     answer: 0,
-    explanation: "P(red then blue) = (4/12) × (6/11) = 24/132 = 2/11.",
+    explanation: "P(first red) = 6/10. Without replacement, P(second red | first red) = 5/9. So P(both red) = (6/10) × (5/9) = 1/3.",
   },
   {
     id: "pd-58",
@@ -776,12 +747,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A company survey of 500 employees found that 300 work remotely at least part-time. Of the employees who work remotely, 180 have more than 5 years of experience. Of the 200 employees who do not work remotely, 60 have more than 5 years of experience. What is the probability that a randomly selected employee with more than 5 years of experience works remotely?",
-    choices: ["3/4", "180/300", "180/500", "60/240"],
-    answer: 0,
-    explanation:
-      "Total employees with more than 5 years of experience = 180 + 60 = 240. Of those, 180 work remotely, so the probability is 180/240 = 3/4.",
+    prompt: "A survey of 170 people included 50 from Group A and 120 from Group B. 75% of Group A and 80% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["19/85", "19/25", "48/67", "19/67"],
+    answer: 3,
+    explanation: "Group A had 75% of 50 = 38 \"yes\" responses, and Group B had 80% of 120 = 96 \"yes\" responses, for a total of 134 \"yes\" responses. The probability the person is from Group A is 38/134 = 19/67.",
   },
   {
     id: "pd-59",
@@ -789,17 +758,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 800 adults found that 456 support a new transportation policy, with a margin of error of 3 percentage points. Which statement is most consistent with this result?",
-    choices: [
-      "It is plausible that between 54% and 60% of all adults support the policy.",
-      "Exactly 57% of all adults support the policy.",
-      "The true population percentage must be exactly 54% or 60%.",
-      "The sample size is too small to estimate a population percentage.",
-    ],
-    answer: 0,
-    explanation:
-      "The sample percentage is 456/800 = 57%. With a margin of error of 3 percentage points, the plausible range for the population is 57% − 3% = 54% to 57% + 3% = 60%.",
+    prompt: "A random sample estimates that 56% of a population favors a policy, with a margin of error of 5 percentage points. What is the smallest percentage that is within the margin of error of this estimate?",
+    choices: ["56", "61", "46", "51"],
+    answer: 3,
+    explanation: "The margin of error gives a range from 56% − 5% to 56% + 5%, that is, from 51% to 61%. The smallest percentage in this range is 51%.",
   },
   {
     id: "pd-60",
@@ -1173,17 +1135,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 1,000 shoppers found that 640 prefer digital receipts over paper receipts, with a margin of error of 2.5 percentage points. Which statement is most consistent with this result?",
-    choices: [
-      "It is plausible that between 61.5% and 66.5% of all shoppers prefer digital receipts.",
-      "Exactly 64% of all shoppers prefer digital receipts.",
-      "The true population percentage must be exactly 61.5% or 66.5%.",
-      "The sample size is too small to estimate a population percentage.",
-    ],
-    answer: 0,
-    explanation:
-      "The sample percentage is 640/1000 = 64%. With a margin of error of 2.5 percentage points, the plausible range for the population is 61.5% to 66.5%.",
+    prompt: "A survey of a random sample estimates that 46% of a population supports a proposal, with a margin of error of 3 percentage points. Based on this survey, is it plausible that exactly 47% of the population supports the proposal?",
+    choices: ["Yes, because the sample size is large enough", "Cannot be determined without more information", "No, because the margin of error only applies to the mean", "Yes, because it falls within the margin of error"],
+    answer: 3,
+    explanation: "The survey's plausible range is 46% ± 3, which is from 43% to 49%. Since 47% falls within this range, the claim is plausible based on this survey.",
   },
   {
     id: "pd-89",
@@ -1191,11 +1146,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "A fruit punch recipe combines orange juice, pineapple juice, and soda in a ratio of 4:3:2 by volume. If a batch makes 63 ounces of punch in total, how many ounces of pineapple juice are needed?",
-    choices: ["21", "28", "14", "18"],
-    answer: 0,
-    explanation: "The ratio has 9 total parts, so each part is 63/9 = 7 ounces. Pineapple juice = 3 × 7 = 21 ounces.",
+    prompt: "A recipe uses 4 cups of flour for every 2 cups of sugar. If a baker uses 10 cups of flour, how many cups of sugar should be used to keep the same ratio?",
+    choices: ["10", "2", "7", "5"],
+    answer: 3,
+    explanation: "The scale factor from the original recipe is 10/4 = 2.5. Scaling the sugar amount by the same factor: 2 × 2.5 = 5 cups.",
   },
   {
     id: "pd-90",
@@ -1203,12 +1157,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A water tank leaks at a constant rate, losing 3/4 gallon every 5 minutes. At this rate, how many gallons does the tank lose in 2 hours?",
-    choices: ["18", "15", "9", "24"],
-    answer: 0,
-    explanation:
-      "The rate is (3/4)/5 = 0.15 gallon per minute. In 2 hours (120 minutes): 0.15 × 120 = 18 gallons.",
+    prompt: "A car travels at a constant speed of 80 miles per hour. Using 1 mile = 5,280 feet, what is the car's speed in feet per second, rounded to the nearest tenth?",
+    choices: ["80", "117", "234.6", "117.3"],
+    answer: 3,
+    explanation: "Convert: 80 miles/hour × 5,280 feet/mile ÷ 3,600 seconds/hour = 117.3 feet per second.",
   },
   {
     id: "pd-91",
@@ -1216,12 +1168,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A retailer marks up the wholesale cost of an item by 50% to set the retail price, then offers a 20% discount off the retail price during a sale. If the sale price is $84, what was the original wholesale cost?",
-    choices: ["$70", "$84", "$100", "$56"],
-    answer: 0,
-    explanation:
-      "Retail price = 1.50c. Sale price = 0.80 × 1.50c = 1.20c. Setting 1.20c = 84 gives c = 70.",
+    prompt: "After a 20% discount, the price of an item is $280. What was the original price, in dollars, before the discount?",
+    choices: ["300", "336", "350", "330"],
+    answer: 2,
+    explanation: "If the original price is P, then P × (1 − 20/100) = 280, so P × 0.8 = 280, giving P = 280/0.8 = 350.",
   },
   {
     id: "pd-92",
@@ -1229,12 +1179,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit is given by y = 2.5x + 50. For a particular data point at x = 20, the residual is −8. What is the actual y-value of that data point?",
-    choices: ["92", "108", "100", "42"],
-    answer: 0,
-    explanation:
-      "The predicted value at x = 20 is 2.5(20) + 50 = 100. Since residual = actual − predicted, the actual value is 100 + (−8) = 92.",
+    prompt: "A line of best fit models a data set with a slope of −9 units per hour. According to this model, by how much does the predicted value change as the number of hours increases from 18 to 23?",
+    choices: ["−9", "−45", "−54", "45"],
+    answer: 1,
+    explanation: "The predicted value changes by the slope times the change in x: −9 × (23 − 18) = −9 × 5 = −45.",
   },
   {
     id: "pd-93",
@@ -1242,12 +1190,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set of 8 values has a mean of 25. When a 9th value is added, the new mean becomes 27. What is the value of the 9th data point?",
-    choices: ["43", "27", "29", "54"],
+    prompt: "The mean of 8 numbers is 39. When one more number is added to the set, the new mean of all 9 numbers is 42.222. What is the value of the number that was added?",
+    choices: ["68", "380", "39", "73"],
     answer: 0,
-    explanation:
-      "The original sum is 8 × 25 = 200. The new sum with 9 values is 9 × 27 = 243. The 9th value is 243 − 200 = 43.",
+    explanation: "The original sum is 8 × 39 = 312. The new sum is 9 × 42.222 = 380. The added number is 380 − 312 = 68.",
   },
   {
     id: "pd-94",
@@ -1255,11 +1201,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A drawer contains 4 black socks, 3 navy socks, and 3 gray socks. Two socks are drawn at random without replacement. What is the probability that both are black?",
-    choices: ["2/15", "16/100", "4/10", "2/9"],
-    answer: 0,
-    explanation: "P(both black) = (4/10) × (3/9) = 12/90 = 2/15.",
+    prompt: "The probability that a certain machine produces a defective part is 5/10 on any given run, independent of other runs. What is the probability that at least one of the next 3 parts is defective?",
+    choices: ["3/2", "1/2", "7/8", "1/8"],
+    answer: 2,
+    explanation: "The probability a single part is NOT defective is 1/2. For 3 independent runs, P(no defects) = (1/2)<sup>3</sup> = 125/1000. So P(at least one defective) = 1 − 125/1000 = 7/8.",
   },
   {
     id: "pd-95",
@@ -1267,12 +1212,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A hospital study of 600 patients found that 360 received a new treatment. Of those who received the new treatment, 288 recovered within a week. Of the 240 patients who received the standard treatment, 96 recovered within a week. What is the probability that a randomly selected patient who recovered within a week received the new treatment?",
-    choices: ["3/4", "288/360", "288/600", "96/384"],
-    answer: 0,
-    explanation:
-      "Total patients who recovered within a week = 288 + 96 = 384. Of those, 288 received the new treatment, so the probability is 288/384 = 3/4.",
+    prompt: "A survey of 120 people included 70 from Group A and 50 from Group B. 60% of Group A and 75% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["6/25", "1/10", "3/10", "7/10"],
+    answer: 2,
+    explanation: "Group A had 70 − 42 = 28 \"no\" responses, and Group B had 50 − 38 = 12 \"no\" responses, for a total of 40 \"no\" responses. The probability the person is from Group B is 12/40 = 3/10.",
   },
   {
     id: "pd-96",
@@ -1280,17 +1223,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A researcher wants to know whether a new fertilizer increases crop yield. One field receives the fertilizer while a neighboring field does not, but the fertilized field also happens to get more sunlight and water due to its location. What does this scenario best illustrate?",
-    choices: [
-      "A confounding variable makes it impossible to attribute the yield difference solely to the fertilizer.",
-      "The study proves the fertilizer directly causes higher yield.",
-      "Sample size is irrelevant to the validity of an experiment.",
-      "Random assignment guarantees the result is due to the fertilizer.",
-    ],
-    answer: 0,
-    explanation:
-      "Because sunlight and water differ between the fields along with fertilizer use, these confounding variables make it impossible to isolate the fertilizer's effect on yield.",
+    prompt: "Researchers randomly selected 500 adults from a city's population and surveyed their sleep habits and job satisfaction. They found a correlation between more sleep and higher job satisfaction. Which of the following is the most appropriate conclusion?",
+    choices: ["The results cannot be generalized because the sample was not randomly assigned to treatment groups", "The results can be generalized to the city's adult population, and more sleep causes higher job satisfaction", "A causal relationship can be established because the sample size is large", "The results can be generalized to the city's adult population, but a causal relationship between sleep and job satisfaction cannot be established"],
+    answer: 3,
+    explanation: "Because the sample was randomly selected (not randomly assigned to a sleep treatment), the results generalize to the population sampled, but since this is an observational study, no causal claim can be made.",
   },
   {
     id: "pd-97",
@@ -1298,17 +1234,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 1,200 voters across a state found that 660 support a ballot measure, with a margin of error of 2 percentage points. Which of the following is the most reasonable conclusion?",
-    choices: [
-      "It is plausible that between 53% and 57% of all voters support the measure.",
-      "Exactly 55% of all voters support the measure.",
-      "The true population percentage must be exactly 53% or 57%.",
-      "The sample is too small to draw any conclusion.",
-    ],
+    prompt: "A random sample estimates that 49% of a population favors a policy, with a margin of error of 5 percentage points. What is the smallest percentage that is within the margin of error of this estimate?",
+    choices: ["44", "49", "54", "39"],
     answer: 0,
-    explanation:
-      "The sample percentage is 660/1200 = 55%. With a margin of error of 2 percentage points, the plausible range for the population is 53% to 57%.",
+    explanation: "The margin of error gives a range from 49% − 5% to 49% + 5%, that is, from 44% to 54%. The smallest percentage in this range is 44%.",
   }
 );
 
@@ -1383,12 +1312,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A clinical trial enrolled 540 participants, of whom 324 received an experimental drug. Of those who received the experimental drug, 243 reported symptom improvement. Of the 216 participants who received a placebo, 54 reported symptom improvement. What is the probability that a randomly selected participant who reported symptom improvement received the experimental drug?",
-    choices: ["9/11", "3/4", "9/20", "2/11"],
-    answer: 0,
-    explanation:
-      "Total participants who reported improvement = 243 + 54 = 297. Of those, 243 received the experimental drug, so the probability is 243/297 = 9/11.",
+    prompt: "A survey of 160 people included 40 from Group A and 120 from Group B. 80% of Group A and 50% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["4/5", "8/23", "15/23", "1/5"],
+    answer: 1,
+    explanation: "Group A had 80% of 40 = 32 \"yes\" responses, and Group B had 50% of 120 = 60 \"yes\" responses, for a total of 92 \"yes\" responses. The probability the person is from Group A is 32/92 = 8/23.",
   },
   {
     id: "pd-104",
@@ -1396,12 +1323,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A university survey of 450 students found that 270 live on campus. Of those who live on campus, 189 participate in a club. Of the 180 students who live off campus, 36 participate in a club. What is the probability that a randomly selected club participant lives on campus?",
-    choices: ["21/25", "7/10", "21/50", "4/25"],
-    answer: 0,
-    explanation:
-      "Total club participants = 189 + 36 = 225. Of those, 189 live on campus, so the probability is 189/225 = 21/25.",
+    prompt: "A survey of 120 people included 50 from Group A and 70 from Group B. 90% of Group A and 20% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["7/15", "56/61", "5/61", "4/5"],
+    answer: 1,
+    explanation: "Group A had 50 − 45 = 5 \"no\" responses, and Group B had 70 − 14 = 56 \"no\" responses, for a total of 61 \"no\" responses. The probability the person is from Group B is 56/61 = 56/61.",
   },
   {
     id: "pd-105",
@@ -1498,17 +1423,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A researcher wants to test whether a new teaching method improves test scores. Students are not randomly assigned; instead, students who already have higher grades choose the new method, while other students use the traditional method. The new-method group scores higher on the final test. What does this scenario best illustrate?",
-    choices: [
-      "Without random assignment, prior differences between the groups are a confounding variable that could explain the score difference.",
-      "The study proves the new teaching method directly causes higher test scores.",
-      "Sample size is the only factor that determines whether a study is valid.",
-      "Random assignment would have made no difference to the conclusion.",
-    ],
+    prompt: "A researcher randomly assigned 200 volunteers who agreed to participate in a study to either a new exercise program or no program, and measured changes in resting heart rate. Which of the following is the most appropriate conclusion?",
+    choices: ["A causal relationship between the exercise program and heart rate change can be established for people like those in the study, but the results cannot necessarily be generalized to the broader population", "The results can be generalized to the entire population, but no causal relationship can be established", "A causal relationship can be established, and the results can be generalized to the entire population", "Neither a causal relationship nor generalization is possible from this study"],
     answer: 0,
-    explanation:
-      "Because students with higher grades selected themselves into the new-method group, this pre-existing difference is a confounding variable that makes it impossible to attribute the score difference solely to the teaching method.",
+    explanation: "Random assignment (not random selection from the population) supports a causal conclusion for the study's volunteer participants, but without random sampling from the broader population, the results cannot be generalized beyond people similar to those volunteers.",
   },
   {
     id: "pd-111",
@@ -1516,17 +1434,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A pharmaceutical company tests a new medication in a study where participants are randomly assigned to receive either the medication or a placebo, and neither participants nor researchers know who received which. The medication group shows significantly fewer symptoms. What feature of this study design most strengthens the claim that the medication caused the improvement?",
-    choices: [
-      "Random assignment combined with blinding reduces the risk that confounding variables or bias explain the result.",
-      "The large number of participants guarantees the result applies to everyone.",
-      "Observational data is inherently more reliable than experimental data.",
-      "The study design has no bearing on whether the result reflects causation.",
-    ],
-    answer: 0,
-    explanation:
-      "Random assignment balances other factors between groups, and blinding prevents expectations from influencing outcomes, so this design supports a causal conclusion more strongly than an observational study.",
+    prompt: "A polling organization surveys a random sample of registered voters and reports that 54% support a measure, with a margin of error of 3 percentage points. Which of the following statements is best supported by this poll?",
+    choices: ["Exactly 54% of all registered voters support the measure", "The poll proves that the measure will pass", "More than half of all registered voters definitely support the measure", "It is plausible that the true percentage of all registered voters who support the measure is between 51% and 57%"],
+    answer: 3,
+    explanation: "A margin of error defines a plausible range for the true population value: 54% ± 3 percentage points, or 51% to 57%. It does not establish an exact value or a certainty.",
   },
   {
     id: "pd-112",
@@ -1596,17 +1507,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 900 adults found that 288 regularly use a meditation app, with a margin of error of 2.5 percentage points. Which statement is most consistent with this result?",
-    choices: [
-      "It is plausible that between 29.5% and 34.5% of all adults regularly use a meditation app.",
-      "Exactly 32% of all adults regularly use a meditation app.",
-      "The true population percentage must be exactly 29.5% or 34.5%.",
-      "The sample size is too small to estimate a population percentage.",
-    ],
-    answer: 0,
-    explanation:
-      "The sample percentage is 288/900 = 32%. With a margin of error of 2.5 percentage points, the plausible range for the population is 29.5% to 34.5%.",
+    prompt: "A survey of a random sample estimates that 66% of a population supports a proposal, with a margin of error of 3 percentage points. Based on this survey, is it plausible that exactly 70% of the population supports the proposal?",
+    choices: ["Cannot be determined without more information", "Yes, because the sample size is large enough", "No, because the margin of error only applies to the mean", "No, because it falls outside the margin of error"],
+    answer: 3,
+    explanation: "The survey's plausible range is 66% ± 3, which is from 63% to 69%. Since 70% falls outside this range, the claim is not plausible based on this survey.",
   },
   {
     id: "pd-118",
@@ -1614,17 +1518,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 1,500 drivers found that 975 support a proposed highway toll increase, with a margin of error of 1.5 percentage points. Which of the following is the most reasonable conclusion?",
-    choices: [
-      "It is plausible that between 63.5% and 66.5% of all drivers support the toll increase.",
-      "Exactly 65% of all drivers support the toll increase.",
-      "The true population percentage must be exactly 63.5% or 66.5%.",
-      "The sample is too small to draw any conclusion.",
-    ],
-    answer: 0,
-    explanation:
-      "The sample percentage is 975/1500 = 65%. With a margin of error of 1.5 percentage points, the plausible range for the population is 63.5% to 66.5%.",
+    prompt: "A random sample estimates that 40% of a population favors a policy, with a margin of error of 2 percentage points. What is the smallest percentage that is within the margin of error of this estimate?",
+    choices: ["36", "42", "38", "40"],
+    answer: 2,
+    explanation: "The margin of error gives a range from 40% − 2% to 40% + 2%, that is, from 38% to 42%. The smallest percentage in this range is 38%.",
   },
   {
     id: "pd-119",
@@ -1716,12 +1613,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set of 12 values has a mean of 55. When a 13th value is added, the new mean becomes 56. What is the value of the 13th data point?",
-    choices: ["68", "56", "61", "72"],
-    answer: 0,
-    explanation:
-      "The original sum is 12 × 55 = 660. The new sum with 13 values is 13 × 56 = 728. The 13th value is 728 − 660 = 68.",
+    prompt: "A class of 12 students has an average test score of 75, and another class of 8 students has an average test score of 73. What is the average test score of all the students combined, rounded to the nearest tenth?",
+    choices: ["74", "75.2", "74.2", "73.2"],
+    answer: 2,
+    explanation: "The combined total is 12(75) + 8(73) = 1484. Dividing by the total number of students, 12 + 8 = 20, gives an average of 1484/20 ≈ 74.2.",
   },
   {
     id: "pd-126",
@@ -1796,12 +1691,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A store marks up the wholesale cost of an item by 25% to set the retail price, then offers a 10% discount off the retail price during a clearance sale. If the sale price is $112.50, what was the original wholesale cost?",
-    choices: ["$100", "$112.50", "$125", "$90"],
+    prompt: "A value starts at 40. It first increases by 50%, and then the new value decreases by 10%. What is the overall percent change from the original value, to the nearest tenth of a percent?",
+    choices: ["35", "40", "−40", "34"],
     answer: 0,
-    explanation:
-      "Retail price = 1.25c. Sale price = 0.90 × 1.25c = 1.125c. Setting 1.125c = 112.50 gives c = 100.",
+    explanation: "After the increase, the value is 40 × 1.5 = 60. After the decrease, it is 60 × 0.9 = 54. The overall change is (54 − 40)/40 × 100% = +35%.",
   },
   {
     id: "pd-133",
@@ -1869,11 +1762,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A jar contains 6 red and 9 blue candies. Two candies are drawn at random without replacement. What is the probability that both are blue?",
-    choices: ["12/35", "9/25", "3/5", "4/7"],
-    answer: 0,
-    explanation: "P(both blue) = (9/15) × (8/14) = 72/210 = 12/35.",
+    prompt: "A bag contains 8 red marbles and 4 blue marbles. Two marbles are drawn at random, one after another, without replacement. What is the probability that both marbles are red?",
+    choices: ["49/121", "4/9", "2/3", "14/33"],
+    answer: 3,
+    explanation: "P(first red) = 8/12. Without replacement, P(second red | first red) = 7/11. So P(both red) = (8/12) × (7/11) = 14/33.",
   },
   {
     id: "pd-139",
@@ -1881,11 +1773,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A drawer contains 5 black, 4 white, and 3 gray socks. Two socks are drawn at random without replacement. What is the probability that the first sock is white and the second sock is gray?",
-    choices: ["1/11", "1/12", "3/11", "12/144"],
-    answer: 0,
-    explanation: "P(white then gray) = (4/12) × (3/11) = 12/132 = 1/11.",
+    prompt: "The probability that a certain machine produces a defective part is 2/4 on any given run, independent of other runs. What is the probability that at least one of the next 2 parts is defective?",
+    choices: ["1/4", "1", "1/2", "3/4"],
+    answer: 3,
+    explanation: "The probability a single part is NOT defective is 1/2. For 2 independent runs, P(no defects) = (1/2)<sup>2</sup> = 4/16. So P(at least one defective) = 1 − 4/16 = 3/4.",
   },
   {
     id: "pd-140",
@@ -1963,11 +1854,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A factory produces gadgets at a constant rate. If it produces 600 gadgets in 5 hours, how many gadgets does it produce in 1 minute?",
-    choices: ["2", "1.5", "2.5", "0.5"],
+    prompt: "Pump A fills a tank at a rate of 6 liters per hour. Pump B fills the same tank at a rate of 1 liters every 10 minutes. Working together, how many liters do the two pumps fill in 6 hours?",
+    choices: ["72", "84", "36", "66"],
     answer: 0,
-    explanation: "The rate is 600/5 = 120 gadgets per hour, and 120/60 = 2 gadgets per minute.",
+    explanation: "Pump B's rate is 1 liters per 10 minutes = 6 liters per hour. Together, the pumps fill 6 + 6 = 12 liters per hour. In 6 hours, they fill 12 × 6 = 72 liters.",
   },
   {
     id: "pd-147",
@@ -2047,11 +1937,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "A smoothie recipe combines strawberries, bananas, and yogurt in a ratio of 4:3:2 by weight. If a batch makes 54 ounces of smoothie in total, how many ounces of bananas are needed?",
-    choices: ["18", "24", "12", "16"],
-    answer: 0,
-    explanation: "The ratio has 9 total parts, so each part is 54/9 = 6 ounces. Bananas = 3 × 6 = 18 ounces.",
+    prompt: "In a mixture, the ratio of sand to gravel to cement is 7:2:6. If the total mixture weighs 30 kilograms, how many kilograms of gravel are in the mixture?",
+    choices: ["6", "4", "12", "14"],
+    answer: 1,
+    explanation: "The ratio parts total 7 + 2 + 6 = 15, so each part weighs 30/15 = 2 kilograms. Gravel makes up 2 parts, so it weighs 2 × 2 = 4 kilograms.",
   },
   {
     id: "pd-154",
@@ -2131,11 +2020,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt: "A line of best fit for a data set is given by y = 6x − 4. If the actual y-value for x = 7 is 50, what is the residual?",
-    choices: ["12", "−12", "38", "50"],
+    prompt: "The line of best fit for a data set is y = −6x + 37. For a data point where x = 27, the actual y-value observed is −129. What is the residual (actual minus predicted) for this point?",
+    choices: ["−4", "−125", "−129", "4"],
     answer: 0,
-    explanation:
-      "The predicted value is 6(7) − 4 = 38. The residual is actual minus predicted: 50 − 38 = 12.",
+    explanation: "The predicted value is y = −6(27) + 37 = −125. The residual is the actual value minus the predicted value: −129 − −125 = −4.",
   },
   {
     id: "pd-160",
@@ -2143,12 +2031,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit is given by y = 3.5x + 60. For a particular data point at x = 16, the residual is −10. What is the actual y-value of that data point?",
-    choices: ["106", "126", "116", "96"],
-    answer: 0,
-    explanation:
-      "The predicted value at x = 16 is 3.5(16) + 60 = 116. Since residual = actual − predicted, the actual value is 116 + (−10) = 106.",
+    prompt: "A line of best fit models a data set with a slope of −3 units per hour. According to this model, by how much does the predicted value change as the number of hours increases from 19 to 23?",
+    choices: ["12", "−3", "−12", "−15"],
+    answer: 2,
+    explanation: "The predicted value changes by the slope times the change in x: −3 × (23 − 19) = −3 × 4 = −12.",
   },
   {
     id: "pd-161",
@@ -2235,12 +2121,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set of 11 values has a mean of 64. When a 12th value is added, the new mean becomes 66. What is the value of the 12th data point?",
-    choices: ["88", "66", "78", "92"],
-    answer: 0,
-    explanation:
-      "The original sum is 11 × 64 = 704. The new sum with 12 values is 12 × 66 = 792. The 12th value is 792 − 704 = 88.",
+    prompt: "The mean of 7 numbers is 81. When one more number is added to the set, the new mean of all 8 numbers is 78.375. What is the value of the number that was added?",
+    choices: ["627", "81", "65", "60"],
+    answer: 3,
+    explanation: "The original sum is 7 × 81 = 567. The new sum is 8 × 78.375 = 627. The added number is 627 − 567 = 60.",
   },
   {
     id: "pd-168",
@@ -2248,11 +2132,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set has a mean of 120 and a standard deviation of 9. Which value is exactly 2.5 standard deviations below the mean?",
-    choices: ["97.5", "102", "142.5", "106.5"],
-    answer: 0,
-    explanation: "120 − 2.5(9) = 120 − 22.5 = 97.5.",
+    prompt: "A class of 20 students has an average test score of 84, and another class of 11 students has an average test score of 83. What is the average test score of all the students combined, rounded to the nearest tenth?",
+    choices: ["84.6", "84", "83.6", "83.5"],
+    answer: 2,
+    explanation: "The combined total is 20(84) + 11(83) = 2593. Dividing by the total number of students, 20 + 11 = 31, gives an average of 2593/31 ≈ 83.6.",
   },
   {
     id: "pd-169",
@@ -2328,12 +2211,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A store prices an item by marking up its wholesale cost by 45%, then later discounts the marked-up price by 20% for a promotion. If the promotional price is $87, what was the original wholesale cost?",
-    choices: ["$75", "$87", "$101.25", "$108.75"],
-    answer: 0,
-    explanation:
-      "Marked-up price = 1.45c. Promotional price = 0.80 × 1.45c = 1.16c. Setting 1.16c = 87 gives c = 75.",
+    prompt: "After a 25% discount, the price of an item is $180. What was the original price, in dollars, before the discount?",
+    choices: ["205", "240", "215", "225"],
+    answer: 1,
+    explanation: "If the original price is P, then P × (1 − 25/100) = 180, so P × 0.75 = 180, giving P = 180/0.75 = 240.",
   },
   {
     id: "pd-176",
@@ -2341,12 +2222,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A solution is 15% acid by volume. If 200 mL of pure water is added to 300 mL of the solution, what is the new acid concentration, as a percent of the total volume?",
-    choices: ["9%", "15%", "6%", "12%"],
+    prompt: "A value starts at 100. It first increases by 50%, and then the new value decreases by 30%. What is the overall percent change from the original value, to the nearest tenth of a percent?",
+    choices: ["5", "10", "−20", "20"],
     answer: 0,
-    explanation:
-      "The solution contains 0.15 × 300 = 45 mL of acid. Adding 200 mL of water gives a total volume of 500 mL, so the new concentration is 45/500 = 9%.",
+    explanation: "After the increase, the value is 100 × 1.5 = 150. After the decrease, it is 150 × 0.7 = 105. The overall change is (105 − 100)/100 × 100% = +5%.",
   },
   {
     id: "pd-177",
@@ -2354,12 +2233,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A stock price increased by 10% in January, decreased by 10% in February, and increased by 10% again in March. What was the overall percent change in the stock price over the three months?",
-    choices: ["8.9% increase", "10% increase", "0% change (no net change)", "1.1% decrease"],
-    answer: 0,
-    explanation:
-      "Multiplying by 1.10, then 0.90, then 1.10 gives 1.10 × 0.90 × 1.10 = 1.089, an overall increase of 8.9%.",
+    prompt: "After a 50% discount, the price of an item is $420. What was the original price, in dollars, before the discount?",
+    choices: ["630", "790", "840", "470"],
+    answer: 2,
+    explanation: "If the original price is P, then P × (1 − 50/100) = 420, so P × 0.5 = 420, giving P = 420/0.5 = 840.",
   },
   {
     id: "pd-178",
@@ -2439,11 +2316,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit for a data set is given by y = 4x + 15. If the actual y-value for x = 9 is 58, what is the residual?",
-    choices: ["7", "−7", "51", "58"],
-    answer: 0,
-    explanation: "The predicted value is 4(9) + 15 = 51. The residual is actual minus predicted: 58 − 51 = 7.",
+    prompt: "The line of best fit for a data set is y = −9x + 15. For a data point where x = 30, the actual y-value observed is −259. What is the residual (actual minus predicted) for this point?",
+    choices: ["−259", "4", "−4", "−255"],
+    answer: 2,
+    explanation: "The predicted value is y = −9(30) + 15 = −255. The residual is the actual value minus the predicted value: −259 − −255 = −4.",
   },
   {
     id: "pd-184",
@@ -2451,12 +2327,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit is given by y = 1.8x + 42. For a particular data point at x = 25, the residual is −6. What is the actual y-value of that data point?",
-    choices: ["81", "93", "87", "75"],
-    answer: 0,
-    explanation:
-      "The predicted value at x = 25 is 1.8(25) + 42 = 45 + 42 = 87. Since residual = actual − predicted, the actual value is 87 + (−6) = 81.",
+    prompt: "A line of best fit models a data set with a slope of −4 units per hour. According to this model, by how much does the predicted value change as the number of hours increases from 8 to 12?",
+    choices: ["−4", "−20", "16", "−16"],
+    answer: 3,
+    explanation: "The predicted value changes by the slope times the change in x: −4 × (12 − 8) = −4 × 4 = −16.",
   },
   {
     id: "pd-185",
@@ -2524,11 +2398,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "A trail mix combines almonds, cranberries, and pretzels in a ratio of 5:3:2 by weight. If a batch makes 100 ounces of trail mix in total, how many ounces of cranberries are needed?",
-    choices: ["30", "50", "20", "15"],
-    answer: 0,
-    explanation: "The ratio has 10 total parts, so each part is 100/10 = 10 ounces. Cranberries = 3 × 10 = 30 ounces.",
+    prompt: "A recipe uses 4 cups of flour for every 4 cups of sugar. If a baker uses 14 cups of flour, how many cups of sugar should be used to keep the same ratio?",
+    choices: ["15", "14", "4", "18"],
+    answer: 1,
+    explanation: "The scale factor from the original recipe is 14/4 = 3.5. Scaling the sugar amount by the same factor: 4 × 3.5 = 14 cups.",
   },
   {
     id: "pd-191",
@@ -2536,11 +2409,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "An alloy is 35% zinc and 65% copper by mass. If the alloy contains 42 kilograms of zinc, how many total kilograms does the alloy weigh?",
-    choices: ["120", "78", "65", "162"],
-    answer: 0,
-    explanation: "Since 35% of the total equals 42 kilograms, the total weight is 42/0.35 = 120 kilograms.",
+    prompt: "In a mixture, the ratio of sand to gravel to cement is 2:4:2. If the total mixture weighs 24 kilograms, how many kilograms of gravel are in the mixture?",
+    choices: ["15", "6", "12", "11"],
+    answer: 2,
+    explanation: "The ratio parts total 2 + 4 + 2 = 8, so each part weighs 24/8 = 3 kilograms. Gravel makes up 4 parts, so it weighs 4 × 3 = 12 kilograms.",
   },
   {
     id: "pd-192",
@@ -2606,11 +2478,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A bakery produces loaves of bread at a constant rate. If it produces 630 loaves in 7 hours, how many loaves does it produce in 1 minute?",
-    choices: ["1.5", "1.25", "2", "0.9"],
-    answer: 0,
-    explanation: "The rate is 630/7 = 90 loaves per hour, and 90/60 = 1.5 loaves per minute.",
+    prompt: "A car travels at a constant speed of 70 miles per hour. Using 1 mile = 5,280 feet, what is the car's speed in feet per second, rounded to the nearest tenth?",
+    choices: ["103", "102.7", "205.4", "70"],
+    answer: 1,
+    explanation: "Convert: 70 miles/hour × 5,280 feet/mile ÷ 3,600 seconds/hour = 102.7 feet per second.",
   },
   {
     id: "pd-198",
@@ -2618,12 +2489,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A leaking pipe loses water at a constant rate of 2/3 gallon every 4 minutes. At this rate, how many gallons does the pipe lose in 3 hours?",
-    choices: ["30", "24", "36", "20"],
-    answer: 0,
-    explanation:
-      "The rate is (2/3)/4 = 1/6 gallon per minute. In 3 hours (180 minutes): 180 × (1/6) = 30 gallons.",
+    prompt: "Pump A fills a tank at a rate of 2 liters per hour. Pump B fills the same tank at a rate of 2 liters every 10 minutes. Working together, how many liters do the two pumps fill in 2 hours?",
+    choices: ["42", "26", "4", "28"],
+    answer: 3,
+    explanation: "Pump B's rate is 2 liters per 10 minutes = 12 liters per hour. Together, the pumps fill 2 + 12 = 14 liters per hour. In 2 hours, they fill 14 × 2 = 28 liters.",
   },
   {
     id: "pd-199",
@@ -2689,11 +2558,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A jar contains 7 red and 5 blue marbles. Two marbles are drawn at random without replacement. What is the probability that both are red?",
-    choices: ["7/22", "49/144", "7/12", "5/11"],
+    prompt: "A bag contains 3 red marbles and 7 blue marbles. Two marbles are drawn at random, one after another, without replacement. What is the probability that both marbles are red?",
+    choices: ["1/15", "9/100", "3/10", "4/81"],
     answer: 0,
-    explanation: "P(both red) = (7/12) × (6/11) = 42/132 = 7/22.",
+    explanation: "P(first red) = 3/10. Without replacement, P(second red | first red) = 2/9. So P(both red) = (3/10) × (2/9) = 1/15.",
   },
   {
     id: "pd-205",
@@ -2701,11 +2569,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A drawer contains 6 black, 5 white, and 4 gray socks. Two socks are drawn at random without replacement. What is the probability that the first sock is black and the second sock is white?",
-    choices: ["1/7", "2/15", "1/5", "30/225"],
-    answer: 0,
-    explanation: "P(black then white) = (6/15) × (5/14) = 30/210 = 1/7.",
+    prompt: "The probability that a certain machine produces a defective part is 5/10 on any given run, independent of other runs. What is the probability that at least one of the next 2 parts is defective?",
+    choices: ["1/2", "3/4", "1", "1/4"],
+    answer: 1,
+    explanation: "The probability a single part is NOT defective is 1/2. For 2 independent runs, P(no defects) = (1/2)<sup>2</sup> = 25/100. So P(at least one defective) = 1 − 25/100 = 3/4.",
   },
   {
     id: "pd-206",
@@ -2780,17 +2647,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 1,100 voters found that 572 support a proposed tax measure, with a margin of error of 2 percentage points. Which statement is most consistent with this result?",
-    choices: [
-      "It is plausible that between 50% and 54% of all voters support the tax measure.",
-      "Exactly 52% of all voters support the tax measure.",
-      "The true population percentage must be exactly 50% or 54%.",
-      "The sample size is too small to estimate a population percentage.",
-    ],
-    answer: 0,
-    explanation:
-      "The sample percentage is 572/1,100 = 52%. With a margin of error of 2 percentage points, the plausible range for the population is 50% to 54%.",
+    prompt: "A survey of a random sample estimates that 66% of a population supports a proposal, with a margin of error of 2.5 percentage points. Based on this survey, is it plausible that exactly 70% of the population supports the proposal?",
+    choices: ["No, because the margin of error only applies to the mean", "Yes, because the sample size is large enough", "Cannot be determined without more information", "No, because it falls outside the margin of error"],
+    answer: 3,
+    explanation: "The survey's plausible range is 66% ± 2.5, which is from 63.5% to 68.5%. Since 70% falls outside this range, the claim is not plausible based on this survey.",
   },
   {
     id: "pd-212",
@@ -2888,17 +2748,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "Researchers want to test whether a new fertilizer increases crop yield. They randomly assign half of many identical plots to receive the fertilizer and the other half to receive none, keeping sunlight, water, and soil conditions the same across all plots. The fertilized plots show significantly higher yield. What feature of this study design most strengthens the claim that the fertilizer caused the increase?",
-    choices: [
-      "Random assignment combined with controlling other conditions reduces the risk that confounding variables explain the result.",
-      "The large number of plots guarantees the result applies to every type of crop.",
-      "Observational data is inherently more reliable than experimental data.",
-      "The study design has no bearing on whether the result reflects causation.",
-    ],
-    answer: 0,
-    explanation:
-      "Randomly assigning plots and holding other growing conditions constant isolates the effect of the fertilizer, so confounding variables are unlikely to explain the yield difference.",
+    prompt: "A study observes that students who take an SAT prep course tend to have higher test scores than students who do not, but students chose for themselves whether to take the course. Which of the following is the most appropriate conclusion?",
+    choices: ["The results cannot be generalized or associated in any way", "Taking the course causes higher test scores", "A causal relationship can be concluded because the sample size was large", "There is an association between taking the course and higher scores, but a causal relationship cannot be concluded because students were not randomly assigned to take the course"],
+    answer: 3,
+    explanation: "Without random assignment to the course, other factors (such as motivation or prior ability) could explain the association, so only a correlation — not causation — can be concluded.",
   },
   {
     id: "pd-218",
@@ -2968,12 +2821,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A clinical study enrolled 720 participants, of whom 480 received a new vaccine. Of those who received the vaccine, 360 developed immunity markers. Of the 240 participants who received a placebo, 48 developed immunity markers. What is the probability that a randomly selected participant who developed immunity markers received the vaccine?",
-    choices: ["15/17", "360/480", "360/720", "48/408"],
-    answer: 0,
-    explanation:
-      "Total participants who developed immunity markers = 360 + 48 = 408. Of those, 360 received the vaccine, so the probability is 360/408 = 15/17.",
+    prompt: "A survey of 160 people included 50 from Group A and 110 from Group B. 20% of Group A and 20% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["11/16", "5/16", "1/16", "1/5"],
+    answer: 1,
+    explanation: "Group A had 20% of 50 = 10 \"yes\" responses, and Group B had 20% of 110 = 22 \"yes\" responses, for a total of 32 \"yes\" responses. The probability the person is from Group A is 10/32 = 5/16.",
   },
   {
     id: "pd-224",
@@ -3060,12 +2911,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set of 10 values has a mean of 36. When an 11th value is added, the new mean becomes 38. What is the value of the 11th data point?",
-    choices: ["58", "38", "46", "60"],
-    answer: 0,
-    explanation:
-      "The original sum is 10 × 36 = 360. The new sum with 11 values is 11 × 38 = 418. The 11th value is 418 − 360 = 58.",
+    prompt: "The mean of 13 numbers is 36. When one more number is added to the set, the new mean of all 14 numbers is 39.786. What is the value of the number that was added?",
+    choices: ["94", "557", "89", "36"],
+    answer: 2,
+    explanation: "The original sum is 13 × 36 = 468. The new sum is 14 × 39.786 = 557. The added number is 557 − 468 = 89.",
   },
   {
     id: "pd-231",
@@ -3073,11 +2922,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set has a mean of 85 and a standard deviation of 6. Which value is exactly 1.5 standard deviations below the mean?",
-    choices: ["76", "79", "91", "82"],
+    prompt: "A class of 19 students has an average test score of 61, and another class of 17 students has an average test score of 76. What is the average test score of all the students combined, rounded to the nearest tenth?",
+    choices: ["68.1", "68", "69.1", "68.5"],
     answer: 0,
-    explanation: "85 − 1.5(6) = 85 − 9 = 76.",
+    explanation: "The combined total is 19(61) + 17(76) = 2451. Dividing by the total number of students, 19 + 17 = 36, gives an average of 2451/36 ≈ 68.1.",
   },
   {
     id: "pd-232",
@@ -3165,12 +3013,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A furniture store marks up the wholesale cost of a chair by 60%, then offers a 25% discount off the marked-up price during a clearance sale. If the clearance price is $108, what was the original wholesale cost?",
-    choices: ["$90", "$108", "$135", "$72"],
-    answer: 0,
-    explanation:
-      "Marked-up price = 1.60c. Clearance price = 0.75 × 1.60c = 1.20c. Setting 1.20c = 108 gives c = 90.",
+    prompt: "A value starts at 80. It first increases by 30%, and then the new value decreases by 25%. What is the overall percent change from the original value, to the nearest tenth of a percent?",
+    choices: ["−5", "−2.5", "2.5", "5"],
+    answer: 1,
+    explanation: "After the increase, the value is 80 × 1.3 = 104. After the decrease, it is 104 × 0.75 = 78. The overall change is (78 − 80)/80 × 100% = −2.5%.",
   },
   {
     id: "pd-240",
@@ -3178,12 +3024,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A cleaning solution is 20% bleach by volume. If 600 mL of pure water is added to 400 mL of the solution, what is the new bleach concentration, as a percent of the total volume?",
-    choices: ["8%", "20%", "12%", "5%"],
-    answer: 0,
-    explanation:
-      "The solution contains 0.20 × 400 = 80 mL of bleach. Adding 600 mL of water gives a total volume of 1,000 mL, so the new concentration is 80/1,000 = 8%.",
+    prompt: "After a 50% discount, the price of an item is $330. What was the original price, in dollars, before the discount?",
+    choices: ["610", "660", "380", "495"],
+    answer: 1,
+    explanation: "If the original price is P, then P × (1 − 50/100) = 330, so P × 0.5 = 330, giving P = 330/0.5 = 660.",
   },
   {
     id: "pd-241",
@@ -3256,12 +3100,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit is given by y = 2.2x + 30. For a particular data point at x = 15, the residual is −7. What is the actual y-value of that data point?",
-    choices: ["56", "63", "70", "49"],
-    answer: 0,
-    explanation:
-      "The predicted value at x = 15 is 2.2(15) + 30 = 33 + 30 = 63. Since residual = actual − predicted, the actual value is 63 + (−7) = 56.",
+    prompt: "The line of best fit for a data set is y = 8x + 103. For a data point where x = 21, the actual y-value observed is 261. What is the residual (actual minus predicted) for this point?",
+    choices: ["271", "10", "−10", "261"],
+    answer: 2,
+    explanation: "The predicted value is y = 8(21) + 103 = 271. The residual is the actual value minus the predicted value: 261 − 271 = −10.",
   },
   {
     id: "pd-247",
@@ -3269,10 +3111,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt: "A line of best fit for a data set is given by y = 9x − 20. If the actual y-value for x = 11 is 102, what is the residual?",
-    choices: ["23", "−23", "79", "102"],
-    answer: 0,
-    explanation: "The predicted value is 9(11) − 20 = 79. The residual is actual minus predicted: 102 − 79 = 23.",
+    prompt: "A line of best fit models a data set with a slope of −3 units per hour. According to this model, by how much does the predicted value change as the number of hours increases from 11 to 17?",
+    choices: ["−21", "18", "−18", "−3"],
+    answer: 2,
+    explanation: "The predicted value changes by the slope times the change in x: −3 × (17 − 11) = −3 × 6 = −18.",
   },
   {
     id: "pd-248",
@@ -3340,11 +3182,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "A fruit salad combines melon, grapes, and berries in a ratio of 5:4:3 by weight. If a batch makes 72 ounces of fruit salad in total, how many ounces of grapes are needed?",
-    choices: ["24", "30", "18", "36"],
-    answer: 0,
-    explanation: "The ratio has 12 total parts, so each part is 72/12 = 6 ounces. Grapes = 4 × 6 = 24 ounces.",
+    prompt: "A recipe uses 6 cups of flour for every 2 cups of sugar. If a baker uses 9 cups of flour, how many cups of sugar should be used to keep the same ratio?",
+    choices: ["2", "3", "9", "5"],
+    answer: 1,
+    explanation: "The scale factor from the original recipe is 9/6 = 1.5. Scaling the sugar amount by the same factor: 2 × 1.5 = 3 cups.",
   },
   {
     id: "pd-254",
@@ -3352,11 +3193,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "An alloy is 28% tin and 72% lead by mass. If the alloy contains 70 kilograms of tin, how many total kilograms does the alloy weigh?",
-    choices: ["250", "180", "194.4", "225"],
+    prompt: "In a mixture, the ratio of sand to gravel to cement is 2:3:5. If the total mixture weighs 90 kilograms, how many kilograms of gravel are in the mixture?",
+    choices: ["27", "18", "36", "45"],
     answer: 0,
-    explanation: "Since 28% of the total equals 70 kilograms, the total weight is 70/0.28 = 250 kilograms.",
+    explanation: "The ratio parts total 2 + 3 + 5 = 10, so each part weighs 90/10 = 9 kilograms. Gravel makes up 3 parts, so it weighs 3 × 9 = 27 kilograms.",
   },
   {
     id: "pd-255",
@@ -3422,11 +3262,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A workshop manufactures chairs at a constant rate. If it manufactures 504 chairs in 7 hours, how many chairs does it manufacture in 1 minute?",
-    choices: ["1.2", "1.4", "0.84", "1.5"],
-    answer: 0,
-    explanation: "The rate is 504/7 = 72 chairs per hour, and 72/60 = 1.2 chairs per minute.",
+    prompt: "A car travels at a constant speed of 70 miles per hour. Using 1 mile = 5,280 feet, what is the car's speed in feet per second, rounded to the nearest tenth?",
+    choices: ["103", "102.7", "70", "205.4"],
+    answer: 1,
+    explanation: "Convert: 70 miles/hour × 5,280 feet/mile ÷ 3,600 seconds/hour = 102.7 feet per second.",
   },
   {
     id: "pd-261",
@@ -3434,12 +3273,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A dripping faucet loses water at a constant rate of 5/6 cup every 10 minutes. At this rate, how many cups does the faucet lose in 4 hours?",
-    choices: ["20", "24", "16", "18"],
-    answer: 0,
-    explanation:
-      "The rate is (5/6)/10 = 1/12 cup per minute. In 4 hours (240 minutes): 240 × (1/12) = 20 cups.",
+    prompt: "Pump A fills a tank at a rate of 2 liters per hour. Pump B fills the same tank at a rate of 1 liters every 10 minutes. Working together, how many liters do the two pumps fill in 4 hours?",
+    choices: ["28", "40", "32", "8"],
+    answer: 2,
+    explanation: "Pump B's rate is 1 liters per 10 minutes = 6 liters per hour. Together, the pumps fill 2 + 6 = 8 liters per hour. In 4 hours, they fill 8 × 4 = 32 liters.",
   },
   {
     id: "pd-262",
@@ -3505,11 +3342,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A jar contains 6 red and 9 blue candies. Two candies are drawn at random without replacement. What is the probability that both are red?",
-    choices: ["1/7", "4/15", "2/5", "1/5"],
+    prompt: "A bag contains 7 red marbles and 6 blue marbles. Two marbles are drawn at random, one after another, without replacement. What is the probability that both marbles are red?",
+    choices: ["7/26", "1/4", "7/13", "49/169"],
     answer: 0,
-    explanation: "P(both red) = (6/15) × (5/14) = 30/210 = 1/7.",
+    explanation: "P(first red) = 7/13. Without replacement, P(second red | first red) = 6/12. So P(both red) = (7/13) × (6/12) = 7/26.",
   },
   {
     id: "pd-268",
@@ -3517,11 +3353,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A drawer contains 7 black, 5 white, and 3 gray socks. Two socks are drawn at random without replacement. What is the probability that the first sock is black and the second sock is white?",
-    choices: ["1/6", "7/15", "1/3", "35/225"],
+    prompt: "The probability that a certain machine produces a defective part is 1/5 on any given run, independent of other runs. What is the probability that at least one of the next 2 parts is defective?",
+    choices: ["9/25", "2/5", "1/5", "16/25"],
     answer: 0,
-    explanation: "P(black then white) = (7/15) × (5/14) = 35/210 = 1/6.",
+    explanation: "The probability a single part is NOT defective is 4/5. For 2 independent runs, P(no defects) = (4/5)<sup>2</sup> = 16/25. So P(at least one defective) = 1 − 16/25 = 9/25.",
   },
   {
     id: "pd-269",
@@ -3596,17 +3431,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 1,250 shoppers found that 825 prefer self-service kiosks over cashier checkout, with a margin of error of 2 percentage points. Which statement is most consistent with this result?",
-    choices: [
-      "It is plausible that between 64% and 68% of all shoppers prefer self-service kiosks.",
-      "Exactly 66% of all shoppers prefer self-service kiosks.",
-      "The true population percentage must be exactly 64% or 68%.",
-      "The sample size is too small to estimate a population percentage.",
-    ],
-    answer: 0,
-    explanation:
-      "The sample percentage is 825/1,250 = 66%. With a margin of error of 2 percentage points, the plausible range for the population is 64% to 68%.",
+    prompt: "A random sample estimates that 57% of a population favors a policy, with a margin of error of 3 percentage points. What is the smallest percentage that is within the margin of error of this estimate?",
+    choices: ["57", "54", "60", "51"],
+    answer: 1,
+    explanation: "The margin of error gives a range from 57% − 3% to 57% + 3%, that is, from 54% to 60%. The smallest percentage in this range is 54%.",
   },
   {
     id: "pd-275",
@@ -3703,17 +3531,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "Researchers want to test whether a new study technique improves recall on a memory test. They randomly assign volunteers to use either the new technique or a standard technique, keeping the study material, time allotted, and testing conditions the same for both groups. The new-technique group scores significantly higher. What feature of this study design most strengthens the claim that the technique caused the improvement?",
-    choices: [
-      "Random assignment combined with controlling other conditions reduces the risk that confounding variables explain the result.",
-      "The large number of volunteers guarantees the result applies to every type of material.",
-      "Observational data is inherently more reliable than experimental data.",
-      "The study design has no bearing on whether the result reflects causation.",
-    ],
-    answer: 0,
-    explanation:
-      "Randomly assigning volunteers and holding other conditions constant isolates the effect of the technique, so confounding variables are unlikely to explain the score difference.",
+    prompt: "A news article states that a study found people who drink coffee daily live longer, and concludes that coffee causes longevity. The study was observational, comparing self-reported coffee habits of 10,000 randomly sampled adults. Which of the following best describes a flaw in the article's conclusion?",
+    choices: ["Random sampling means the results cannot be generalized to the broader population", "The study did not randomly assign participants to drink coffee or not, so the observed association cannot establish that coffee causes longer life", "The sample size of 10,000 is too small to detect any association", "Self-reported data always produces results that are the opposite of the truth"],
+    answer: 1,
+    explanation: "Causal conclusions require random assignment to treatment and control groups. Since this was an observational study with no random assignment, confounding variables (such as overall lifestyle) could explain the association instead of coffee itself.",
   },
   {
     id: "pd-281",
@@ -3769,12 +3590,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A wellness study enrolled 630 participants, of whom 378 followed a new sleep routine. Of those who followed the new routine, 294 reported improved energy levels. Of the 252 participants who did not follow the routine, 63 reported improved energy levels. What is the probability that a randomly selected participant who reported improved energy levels followed the new routine?",
-    choices: ["14/17", "294/378", "294/630", "63/315"],
+    prompt: "A survey of 130 people included 50 from Group A and 80 from Group B. 40% of Group A and 80% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["8/23", "8/65", "1/5", "15/23"],
     answer: 0,
-    explanation:
-      "Total participants who reported improved energy levels = 294 + 63 = 357. Of those, 294 followed the new routine, so the probability is 294/357 = 14/17.",
+    explanation: "Group A had 50 − 20 = 30 \"no\" responses, and Group B had 80 − 64 = 16 \"no\" responses, for a total of 46 \"no\" responses. The probability the person is from Group B is 16/46 = 8/23.",
   },
   {
     id: "pd-286",
@@ -3782,12 +3601,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A manufacturing audit of 480 parts found that 288 were produced on Line A. Of the parts produced on Line A, 216 passed final inspection on the first attempt. Of the 192 parts produced on Line B, 48 passed final inspection on the first attempt. What is the probability that a randomly selected part that passed inspection on the first attempt was produced on Line A?",
-    choices: ["9/11", "216/288", "216/480", "48/240"],
-    answer: 0,
-    explanation:
-      "Total parts that passed inspection = 216 + 48 = 264. Of those, 216 were produced on Line A, so the probability is 216/264 = 9/11.",
+    prompt: "A survey of 160 people included 100 from Group A and 60 from Group B. 50% of Group A and 10% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["3/28", "1/2", "25/28", "5/16"],
+    answer: 2,
+    explanation: "Group A had 50% of 100 = 50 \"yes\" responses, and Group B had 10% of 60 = 6 \"yes\" responses, for a total of 56 \"yes\" responses. The probability the person is from Group A is 50/56 = 25/28.",
   },
   {
     id: "pd-287",
@@ -3848,12 +3665,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "An investment's value increases by 25% in year one. By what percent must it decrease in year two to return to its original value?",
-    choices: ["20%", "25%", "15%", "80%"],
+    prompt: "A value starts at 70. It first increases by 25%, and then the new value decreases by 20%. What is the overall percent change from the original value, to the nearest tenth of a percent?",
+    choices: ["0", "−1", "5", "−5"],
     answer: 0,
-    explanation:
-      "If the value is multiplied by 1.25, it must then be multiplied by 1/1.25 = 0.80 to return to the original value, a decrease of 20%.",
+    explanation: "After the increase, the value is 70 × 1.25 = 87.5. After the decrease, it is 87.5 × 0.8 = 70. The overall change is (70 − 70)/70 × 100% = 0%.",
   },
   {
     id: "pd-292",
@@ -3917,12 +3732,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A data set of 12 values has a standard deviation of 6. If every value in the data set is multiplied by 3, what is the standard deviation of the new data set?",
-    choices: ["18", "6", "9", "36"],
-    answer: 0,
-    explanation:
-      "Multiplying every value by a constant k multiplies the standard deviation by |k|: 3 × 6 = 18.",
+    prompt: "The mean of 14 numbers is 75. When one more number is added to the set, the new mean of all 15 numbers is 73. What is the value of the number that was added?",
+    choices: ["1095", "45", "50", "75"],
+    answer: 1,
+    explanation: "The original sum is 14 × 75 = 1050. The new sum is 15 × 73 = 1095. The added number is 1095 − 1050 = 45.",
   },
   {
     id: "pd-297",
@@ -4008,17 +3821,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A line of best fit for a scatterplot of x and y is y = −2x + 50, which produces a sum of squared residuals of 180. A different line produces a sum of squared residuals of 95 for the same data. Which line fits the data better, and why?",
-    choices: [
-      "The second line, because a smaller sum of squared residuals indicates the line is closer overall to the actual data points.",
-      "The first line, because a larger sum of squared residuals indicates a better fit.",
-      "Both lines fit equally well, since the sum of squared residuals does not measure fit.",
-      "Neither line's fit can be compared without knowing each individual residual.",
-    ],
-    answer: 0,
-    explanation:
-      "The line of best fit minimizes the sum of squared residuals, so a smaller sum of squared residuals (95 vs. 180) indicates a better overall fit to the data.",
+    prompt: "The line of best fit for a data set is y = 5x + 87. For a data point where x = 18, the actual y-value observed is 165. What is the residual (actual minus predicted) for this point?",
+    choices: ["177", "12", "−12", "165"],
+    answer: 2,
+    explanation: "The predicted value is y = 5(18) + 87 = 177. The residual is the actual value minus the predicted value: 165 − 177 = −12.",
   },
   {
     id: "pd-303",
@@ -4087,12 +3893,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "An alloy consists of metals X, Y, and Z in a ratio of 3:4:5 by weight. A second alloy consists of the same metals in a ratio of 1:1:2 by weight. If 24 kilograms of the first alloy are mixed with 16 kilograms of the second alloy, how many total kilograms of metal Z are in the mixture?",
-    choices: ["18", "20", "16", "22"],
-    answer: 0,
-    explanation:
-      "In the first alloy, Z is 5/12 of the weight: 24 × 5/12 = 10 kg. In the second alloy, Z is 2/4 of the weight: 16 × 2/4 = 8 kg. Total metal Z = 10 + 8 = 18 kg.",
+    prompt: "A recipe uses 6 cups of flour for every 2 cups of sugar. If a baker uses 15 cups of flour, how many cups of sugar should be used to keep the same ratio?",
+    choices: ["15", "2", "7", "5"],
+    answer: 3,
+    explanation: "The scale factor from the original recipe is 15/6 = 2.5. Scaling the sugar amount by the same factor: 2 × 2.5 = 5 cups.",
   },
   {
     id: "pd-309",
@@ -4146,12 +3950,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "Pipe A can fill a tank in 6 hours working alone, and Pipe B can fill the same tank in 12 hours working alone. If both pipes work together at their constant rates, how many hours will it take to fill the tank?",
-    choices: ["4", "3", "6", "9"],
-    answer: 0,
-    explanation:
-      "Pipe A's rate is 1/6 tank per hour and Pipe B's rate is 1/12 tank per hour. Combined rate = 1/6 + 1/12 = 3/12 = 1/4 tank per hour, so the tank fills in 4 hours.",
+    prompt: "A car travels at a constant speed of 20 miles per hour. Using 1 mile = 5,280 feet, what is the car's speed in feet per second, rounded to the nearest tenth?",
+    choices: ["58.6", "29", "29.3", "20"],
+    answer: 2,
+    explanation: "Convert: 20 miles/hour × 5,280 feet/mile ÷ 3,600 seconds/hour = 29.3 feet per second.",
   },
   {
     id: "pd-314",
@@ -4159,12 +3961,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A runner jogs the first 8 miles of a race at 8 miles per hour and the remaining 4 miles at 6 miles per hour. What is the runner's average speed, in miles per hour, for the entire 12-mile race?",
-    choices: ["7.2", "7", "7.5", "8"],
-    answer: 0,
-    explanation:
-      "Time for the first part = 8/8 = 1 hour; time for the second part = 4/6 = 2/3 hour. Total time = 5/3 hours, so average speed = 12 ÷ (5/3) = 7.2 miles per hour.",
+    prompt: "Pump A fills a tank at a rate of 5 liters per hour. Pump B fills the same tank at a rate of 5 liters every 10 minutes. Working together, how many liters do the two pumps fill in 2 hours?",
+    choices: ["105", "70", "10", "68"],
+    answer: 1,
+    explanation: "Pump B's rate is 5 liters per 10 minutes = 30 liters per hour. Together, the pumps fill 5 + 30 = 35 liters per hour. In 2 hours, they fill 35 × 2 = 70 liters.",
   },
   {
     id: "pd-315",
@@ -4222,12 +4022,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A box contains 3 red, 4 blue, and 5 green chips. Three chips are drawn at random without replacement. What is the probability that all three chips are green?",
-    choices: ["1/22", "5/12", "1/12", "1/44"],
-    answer: 0,
-    explanation:
-      "There are C(12,3) = 220 ways to choose 3 chips from 12, and C(5,3) = 10 ways to choose 3 green chips from 5. The probability is 10/220 = 1/22.",
+    prompt: "A bag contains 3 red marbles and 5 blue marbles. Two marbles are drawn at random, one after another, without replacement. What is the probability that both marbles are red?",
+    choices: ["3/8", "3/28", "9/64", "4/49"],
+    answer: 1,
+    explanation: "P(first red) = 3/8. Without replacement, P(second red | first red) = 2/7. So P(both red) = (3/8) × (2/7) = 3/28.",
   },
   {
     id: "pd-320",
@@ -4356,17 +4154,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A random sample of 1,600 voters found that 48% support a ballot measure, with a margin of error of 2.5 percentage points. A second independent random sample of 400 voters, using the same method, found 50% support, with a margin of error of 5 percentage points. Which statement is best supported by comparing these two samples?",
-    choices: [
-      "The two samples' plausible ranges for the population overlap, so the results are consistent with each other.",
-      "The two samples contradict each other because they report different percentages.",
-      "The second sample must be more accurate because it has a larger margin of error.",
-      "Since the sample sizes differ, the two results cannot be compared at all.",
-    ],
+    prompt: "A survey of a random sample estimates that 34% of a population supports a proposal, with a margin of error of 5 percentage points. Based on this survey, is it plausible that exactly 32% of the population supports the proposal?",
+    choices: ["Yes, because it falls within the margin of error", "Cannot be determined without more information", "Yes, because the sample size is large enough", "No, because the margin of error only applies to the mean"],
     answer: 0,
-    explanation:
-      "Sample 1's plausible range is about 45.5% to 50.5%, and sample 2's plausible range is about 45% to 55%. These ranges overlap, so the two results are consistent rather than contradictory.",
+    explanation: "The survey's plausible range is 34% ± 5, which is from 29% to 39%. Since 32% falls within this range, the claim is plausible based on this survey.",
   },
   {
     id: "pd-329",
@@ -4374,17 +4165,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A researcher wants to estimate a true population percentage as precisely as possible using a random sample. Which of the following changes would most directly improve the precision of the estimate, all else being equal?",
-    choices: [
-      "Increasing the sample size while keeping the sampling method random",
-      "Switching to a convenience sample of easy-to-reach people",
-      "Decreasing the sample size to save time",
-      "Asking a leading question to encourage a particular response",
-    ],
-    answer: 0,
-    explanation:
-      "Precision of an estimate from a random sample improves as sample size increases; switching to a non-random or biased method would not improve precision regardless of size.",
+    prompt: "A random sample estimates that 67% of a population favors a policy, with a margin of error of 2.5 percentage points. What is the smallest percentage that is within the margin of error of this estimate?",
+    choices: ["67", "64.5", "69.5", "62"],
+    answer: 1,
+    explanation: "The margin of error gives a range from 67% − 2.5% to 67% + 2.5%, that is, from 64.5% to 69.5%. The smallest percentage in this range is 64.5%.",
   },
   {
     id: "pd-330",
@@ -4518,17 +4302,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A clinical trial randomly assigns 200 patients to a new drug and 200 to a placebo. The drug group shows a statistically significant improvement over the placebo group. A critic argues the result might still be due to chance. What does 'statistically significant' most directly address about this concern?",
-    choices: [
-      "It indicates the observed difference is unlikely to have occurred by random chance alone, under the study's assumptions.",
-      "It proves with absolute certainty that the drug caused the improvement.",
-      "It means the result would be identical if the study were repeated.",
-      "It guarantees the drug will work for every future patient.",
-    ],
-    answer: 0,
-    explanation:
-      "Statistical significance indicates that a result as large as the one observed is unlikely to occur by chance alone, but it does not provide absolute certainty or guarantee identical future results.",
+    prompt: "A university wants to know whether a new study app improves grades for its students. It recruits 300 student volunteers and randomly assigns half to use the app and half not to, then compares end-of-semester GPAs. Which of the following is the most appropriate conclusion the university can draw?",
+    choices: ["The app causes a GPA change for all students at the university", "Among students similar to the volunteers, using the app can be said to cause a change in GPA, but the result may not generalize to all students at the university", "No conclusion about cause can be drawn because volunteers are never representative", "The results generalize to all students, but no causal claim is possible"],
+    answer: 1,
+    explanation: "Random assignment allows a causal conclusion about the volunteer group, but because the volunteers were not randomly selected from the full student population, the finding cannot automatically be generalized to all students.",
   },
   {
     id: "pd-338",
@@ -4536,17 +4313,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A nutrition study observes that people who eat breakfast daily have a lower average body weight than those who skip breakfast, and concludes that 'eating breakfast causes weight loss.' Which of the following, if true, would most directly challenge this causal conclusion?",
-    choices: [
-      "People who already have healthier habits, such as regular exercise, are more likely to eat breakfast daily.",
-      "The study included more than 500 participants.",
-      "Body weight was measured using a reliable scale.",
-      "Breakfast skippers reported their weight accurately.",
-    ],
+    prompt: "Researchers randomly selected 500 adults from a city's population and surveyed their sleep habits and job satisfaction. They found a correlation between more sleep and higher job satisfaction. Which of the following is the most appropriate conclusion?",
+    choices: ["The results can be generalized to the city's adult population, but a causal relationship between sleep and job satisfaction cannot be established", "The results cannot be generalized because the sample was not randomly assigned to treatment groups", "A causal relationship can be established because the sample size is large", "The results can be generalized to the city's adult population, and more sleep causes higher job satisfaction"],
     answer: 0,
-    explanation:
-      "If healthier habits like exercise make someone both more likely to eat breakfast and more likely to weigh less, exercise (a confounding variable) could explain the association instead of breakfast itself.",
+    explanation: "Because the sample was randomly selected (not randomly assigned to a sleep treatment), the results generalize to the population sampled, but since this is an observational study, no causal claim can be made.",
   },
   {
     id: "pd-339",
@@ -4554,17 +4324,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A pharmaceutical study reports a 'relative risk reduction' of 50% for a new drug compared to a placebo, meaning participants on the drug were half as likely to experience an event. However, the actual event rate was 2% on the placebo and 1% on the drug. Which statement best evaluates the claim based on this additional information?",
-    choices: [
-      "Although the relative risk reduction (50%) sounds large, the absolute risk reduction is only 1 percentage point, which provides important context.",
-      "The relative risk reduction is misleading and should be ignored entirely.",
-      "The absolute and relative risk reductions must always be equal.",
-      "Since the relative risk reduction is 50%, the drug eliminates half of all events in every population.",
-    ],
+    prompt: "A researcher randomly assigned 200 volunteers who agreed to participate in a study to either a new exercise program or no program, and measured changes in resting heart rate. Which of the following is the most appropriate conclusion?",
+    choices: ["A causal relationship between the exercise program and heart rate change can be established for people like those in the study, but the results cannot necessarily be generalized to the broader population", "A causal relationship can be established, and the results can be generalized to the entire population", "Neither a causal relationship nor generalization is possible from this study", "The results can be generalized to the entire population, but no causal relationship can be established"],
     answer: 0,
-    explanation:
-      "A 50% relative risk reduction describes a large relative change, but the absolute risk reduction (2% − 1% = 1 percentage point) shows the actual impact is small; both figures are useful for fully evaluating a claim.",
+    explanation: "Random assignment (not random selection from the population) supports a causal conclusion for the study's volunteer participants, but without random sampling from the broader population, the results cannot be generalized beyond people similar to those volunteers.",
   },
   {
     id: "pd-340",
@@ -4662,12 +4425,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A manufacturing plant audits 540 units, of which 360 were assembled by robotic line A. Of the units assembled by line A, 252 met the premium quality standard on the first check. Of the 180 units assembled by line B, 36 met the premium quality standard on the first check. What is the probability that a randomly selected unit that met the premium standard on the first check was assembled by line A?",
-    choices: ["7/8", "252/360", "252/540", "36/288"],
-    answer: 0,
-    explanation:
-      "Total units that met the premium standard = 252 + 36 = 288. Of those, 252 were assembled by line A, so the probability is 252/288 = 7/8.",
+    prompt: "A survey of 200 people included 100 from Group A and 100 from Group B. 50% of Group A and 30% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["7/10", "7/20", "5/12", "7/12"],
+    answer: 3,
+    explanation: "Group A had 100 − 50 = 50 \"no\" responses, and Group B had 100 − 30 = 70 \"no\" responses, for a total of 120 \"no\" responses. The probability the person is from Group B is 70/120 = 7/12.",
   },
   {
     id: "pd-348",
@@ -4675,12 +4436,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A university survey of 720 students found that 480 live on campus. Of those who live on campus, 360 eat at the dining hall at least 4 times per week. Of the 240 students who live off campus, 40 eat at the dining hall at least 4 times per week. What is the probability that a randomly selected student who eats at the dining hall at least 4 times per week lives on campus?",
-    choices: ["9/10", "360/480", "360/720", "40/400"],
-    answer: 0,
-    explanation:
-      "Total frequent dining-hall users = 360 + 40 = 400. Of those, 360 live on campus, so the probability is 360/400 = 9/10.",
+    prompt: "A survey of 150 people included 60 from Group A and 90 from Group B. 10% of Group A and 40% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["6/7", "1/7", "1/10", "1/25"],
+    answer: 1,
+    explanation: "Group A had 10% of 60 = 6 \"yes\" responses, and Group B had 40% of 90 = 36 \"yes\" responses, for a total of 42 \"yes\" responses. The probability the person is from Group A is 6/42 = 1/7.",
   },
   {
     id: "pd-349",
@@ -4688,12 +4447,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "A regional health survey of 650 adults found that 390 exercise at least 3 times per week. Of those who exercise at least 3 times per week, 273 report sleeping 7 or more hours per night. Of the 260 adults who exercise fewer than 3 times per week, 78 report sleeping 7 or more hours per night. What is the probability that a randomly selected adult who sleeps 7 or more hours per night also exercises at least 3 times per week?",
-    choices: ["7/9", "273/390", "273/650", "78/351"],
+    prompt: "A survey of 140 people included 50 from Group A and 90 from Group B. 60% of Group A and 40% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["27/37", "10/37", "27/70", "3/5"],
     answer: 0,
-    explanation:
-      "Total adults who sleep 7 or more hours = 273 + 78 = 351. Of those, 273 also exercise at least 3 times per week, so the probability is 273/351 = 7/9.",
+    explanation: "Group A had 50 − 30 = 20 \"no\" responses, and Group B had 90 − 36 = 54 \"no\" responses, for a total of 74 \"no\" responses. The probability the person is from Group B is 54/74 = 27/37.",
   },
   {
     id: "pd-350",
@@ -4765,12 +4522,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "At a company, the ratio of managers to engineers is 2:9, and the ratio of engineers to technicians is 9:5. If there are 18 managers, how many technicians are there?",
-    choices: ["45", "81", "162", "10"],
-    answer: 0,
-    explanation:
-      "Managers = 18 is 2 parts of the 2:9 ratio, so each part = 9 and engineers = 9 × 9 = 81. Engineers = 81 is 9 parts of the 9:5 ratio, so each part = 9 and technicians = 5 × 9 = 45. (Stopping at the engineer count gives 81; applying the final ratio directly to the manager count, 18 × 5/9, gives the incorrect 10.)",
+    prompt: "In a mixture, the ratio of sand to gravel to cement is 4:4:6. If the total mixture weighs 112 kilograms, how many kilograms of gravel are in the mixture?",
+    choices: ["48", "32", "40", "31"],
+    answer: 1,
+    explanation: "The ratio parts total 4 + 4 + 6 = 14, so each part weighs 112/14 = 8 kilograms. Gravel makes up 4 parts, so it weighs 4 × 8 = 32 kilograms.",
   },
   {
     id: "pd-356",
@@ -4778,12 +4533,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Ratios and proportions",
     difficulty: 3,
-    prompt:
-      "A jar contains red and blue marbles in the ratio 3:2. After 10 red marbles are removed, the ratio of red to blue becomes 1:2, and the number of blue marbles has not changed. How many blue marbles are in the jar?",
-    choices: ["10", "15", "5", "20"],
-    answer: 0,
-    explanation:
-      "Let red = 3k and blue = 2k originally. After removing 10 red marbles, (3k − 10)/(2k) = 1/2, so 6k − 20 = 2k, giving 4k = 20 and k = 5. Blue = 2k = 10 (unchanged, as stated); red becomes 3(5) − 10 = 5, and 5:10 = 1:2, confirming the setup.",
+    prompt: "A recipe uses 2 cups of flour for every 4 cups of sugar. If a baker uses 7 cups of flour, how many cups of sugar should be used to keep the same ratio?",
+    choices: ["4", "7", "14", "18"],
+    answer: 2,
+    explanation: "The scale factor from the original recipe is 7/2 = 3.5. Scaling the sugar amount by the same factor: 4 × 3.5 = 14 cups.",
   },
   {
     id: "pd-357",
@@ -4851,12 +4604,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "Working alone, Mia can mow a lawn in 40 minutes, and Noah can mow the same lawn in 60 minutes. If they work together at their respective rates, how many minutes will it take them to mow the lawn together?",
-    choices: ["24", "50", "20", "100"],
-    answer: 0,
-    explanation:
-      "Combined rate = 1/40 + 1/60 = 3/120 + 2/120 = 5/120 = 1/24 lawn per minute. Time = 24 minutes.",
+    prompt: "A car travels at a constant speed of 50 miles per hour. Using 1 mile = 5,280 feet, what is the car's speed in feet per second, rounded to the nearest tenth?",
+    choices: ["50", "73", "146.6", "73.3"],
+    answer: 3,
+    explanation: "Convert: 50 miles/hour × 5,280 feet/mile ÷ 3,600 seconds/hour = 73.3 feet per second.",
   },
   {
     id: "pd-363",
@@ -4864,12 +4615,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
     difficulty: 3,
-    prompt:
-      "A train travels at 80 miles per hour for 2 hours and then at 60 miles per hour for 1 hour. What is the train's average speed, in miles per hour, for the entire trip?",
-    choices: ["≈73.3", "70", "75", "80"],
-    answer: 0,
-    explanation:
-      "Total distance = 80×2 + 60×1 = 220 miles. Total time = 2+1 = 3 hours. Average speed = 220/3 ≈ 73.3 mph. (Averaging the two speeds directly, (80+60)/2 = 70, is incorrect here because the time spent at each speed is not equal.)",
+    prompt: "Pump A fills a tank at a rate of 2 liters per hour. Pump B fills the same tank at a rate of 3 liters every 10 minutes. Working together, how many liters do the two pumps fill in 4 hours?",
+    choices: ["76", "8", "80", "100"],
+    answer: 2,
+    explanation: "Pump B's rate is 3 liters per 10 minutes = 18 liters per hour. Together, the pumps fill 2 + 18 = 20 liters per hour. In 4 hours, they fill 20 × 4 = 80 liters.",
   },
   {
     id: "pd-364",
@@ -4936,12 +4685,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A solution is 30% acid by volume. If 4 liters of pure water are added to 6 liters of this solution, what is the new acid concentration, by volume?",
-    choices: ["18%", "30%", "12%", "24%"],
-    answer: 0,
-    explanation:
-      "Acid present = 0.30 × 6 = 1.8 liters. New total volume = 6 + 4 = 10 liters. New concentration = 1.8/10 = 18%.",
+    prompt: "After a 50% discount, the price of an item is $100. What was the original price, in dollars, before the discount?",
+    choices: ["201", "150", "200", "202"],
+    answer: 2,
+    explanation: "If the original price is P, then P × (1 − 50/100) = 100, so P × 0.5 = 100, giving P = 100/0.5 = 200.",
   },
   {
     id: "pd-370",
@@ -4949,12 +4696,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Percentages",
     difficulty: 3,
-    prompt:
-      "A company's revenue increased by 25% in Year 1 and then decreased by 20% in Year 2. What was the overall percent change in revenue from the start of Year 1 to the end of Year 2?",
-    choices: ["0%", "5% increase", "5% decrease", "45% increase"],
-    answer: 0,
-    explanation:
-      "Multiply the growth factors: 1.25 × 0.80 = 1.00, meaning revenue returns to its original value — a 0% overall change. Simply subtracting or adding the percentages (25−20=5 or 25+20=45) is incorrect because percent changes compound multiplicatively, not additively.",
+    prompt: "A value starts at 50. It first increases by 10%, and then the new value decreases by 40%. What is the overall percent change from the original value, to the nearest tenth of a percent?",
+    choices: ["30", "−29", "−34", "−30"],
+    answer: 2,
+    explanation: "After the increase, the value is 50 × 1.1 = 55. After the decrease, it is 55 × 0.6 = 33. The overall change is (33 − 50)/50 × 100% = −34%.",
   },
   {
     id: "pd-371",
@@ -5028,12 +4773,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "A class of 20 students has a mean test score of 74. After the teacher discovers a grading error, 5 students' scores each increase by 6 points, and the rest remain the same. What is the new mean score for the class?",
-    choices: ["75.5", "75", "80", "74.3"],
-    answer: 0,
-    explanation:
-      "Original total = 74×20=1480. Total increase = 5×6=30, so the new total = 1,510. New mean = 1510/20 = 75.5.",
+    prompt: "A class of 18 students has an average test score of 60, and another class of 7 students has an average test score of 72. What is the average test score of all the students combined, rounded to the nearest tenth?",
+    choices: ["66", "63", "64.4", "63.4"],
+    answer: 3,
+    explanation: "The combined total is 18(60) + 7(72) = 1584. Dividing by the total number of students, 18 + 7 = 25, gives an average of 1584/25 ≈ 63.4.",
   },
   {
     id: "pd-377",
@@ -5041,17 +4784,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "One-variable data",
     difficulty: 3,
-    prompt:
-      "Data set P has a standard deviation of 7, and data set Q is created by adding 12 to every value in data set P. How does the standard deviation of data set Q compare to that of data set P?",
-    choices: [
-      "It is the same, 7, because adding a constant to every value shifts the data but does not change its spread.",
-      "It increases to 19, because 12 is added to every value.",
-      "It increases to 84, because the deviation scales with the added value.",
-      "It becomes 0, because every value changes by the same amount.",
-    ],
+    prompt: "The mean of 12 numbers is 43. When one more number is added to the set, the new mean of all 13 numbers is 44.538. What is the value of the number that was added?",
+    choices: ["63", "579", "43", "68"],
     answer: 0,
-    explanation:
-      "Adding a constant to every value in a data set shifts the mean but does not change the spread of values around the mean, so the standard deviation is unchanged at 7.",
+    explanation: "The original sum is 12 × 43 = 516. The new sum is 13 × 44.538 = 579. The added number is 579 − 516 = 63.",
   },
   {
     id: "pd-378",
@@ -5138,17 +4874,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A botanist fits a line of best fit to a scatterplot of a tomato plant's height (y, in centimeters) versus weeks since planting (x), getting y = 4.2x + 8, based on data collected during weeks 1 through 12. Why would it be unreliable to use this equation to predict the plant's height at week 150?",
-    choices: [
-      "Week 150 is far outside the range of the data used to build the model, so extrapolating that far is unreliable — plants don't keep growing taller forever.",
-      "The slope of 4.2 is too small to apply to any week.",
-      "Linear models can only be used for whole numbers of weeks.",
-      "The y-intercept of 8 means the model is invalid for any week after week 1.",
-    ],
-    answer: 0,
-    explanation:
-      "Using a model to predict far beyond the range of the original data (extrapolation) is unreliable; the linear relationship observed in weeks 1–12 is unlikely to continue indefinitely, so predicting at week 150 is not justified.",
+    prompt: "A line of best fit models a data set with a slope of 3 units per hour. According to this model, by how much does the predicted value change as the number of hours increases from 9 to 19?",
+    choices: ["3", "−30", "30", "33"],
+    answer: 2,
+    explanation: "The predicted value changes by the slope times the change in x: 3 × (19 − 9) = 3 × 10 = 30.",
   },
   {
     id: "pd-384",
@@ -5156,17 +4885,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Two-variable data",
     difficulty: 3,
-    prompt:
-      "A scatterplot of 8 data points has a line of best fit y = 4x + 12. One point, (10, 95), lies far above the line, while the rest of the points lie close to the line. If this point is removed and the line of best fit is recalculated, what is the most likely effect?",
-    choices: [
-      "The new line's slope and intercept will change, and the new line will fit the remaining points more closely than before.",
-      "The line of best fit will stay exactly the same, since one point cannot affect a line fit to 8 points.",
-      "All remaining points will now lie exactly on the new line.",
-      "The correlation coefficient will become weaker after removing the outlier.",
-    ],
-    answer: 0,
-    explanation:
-      "An outlier like (10, 95), which lies far from the pattern of the other points, can pull the line of best fit toward it. Removing it typically changes the slope and intercept and improves (strengthens) the fit for the remaining points.",
+    prompt: "The line of best fit for a data set is y = 7x + 100. For a data point where x = 32, the actual y-value observed is 323. What is the residual (actual minus predicted) for this point?",
+    choices: ["1", "−1", "324", "323"],
+    answer: 1,
+    explanation: "The predicted value is y = 7(32) + 100 = 324. The residual is the actual value minus the predicted value: 323 − 324 = −1.",
   },
   {
     id: "pd-385",
@@ -5235,12 +4957,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
     difficulty: 3,
-    prompt:
-      "A box contains 4 defective and 16 working light bulbs. Two bulbs are selected at random without replacement. What is the probability that at least one of the two selected bulbs is defective?",
-    choices: ["7/19", "4/19", "1/5", "12/19"],
+    prompt: "The probability that a certain machine produces a defective part is 2/4 on any given run, independent of other runs. What is the probability that at least one of the next 3 parts is defective?",
+    choices: ["7/8", "1/2", "1/8", "3/2"],
     answer: 0,
-    explanation:
-      "P(neither defective) = (16/20)(15/19) = 240/380 = 12/19. P(at least one defective) = 1 − 12/19 = 7/19.",
+    explanation: "The probability a single part is NOT defective is 1/2. For 3 independent runs, P(no defects) = (1/2)<sup>3</sup> = 8/64. So P(at least one defective) = 1 − 8/64 = 7/8.",
   },
   {
     id: "pd-391",
@@ -5313,12 +5033,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "An airline reviews 450 flights, of which 300 departed on time. Of the flights that departed on time, 270 also arrived on time. Of the 150 flights that did not depart on time, 15 arrived on time. What is the probability that a randomly selected flight that did NOT arrive on time departed on time?",
-    choices: ["2/11", "270/300", "30/450", "135/165"],
-    answer: 0,
-    explanation:
-      "Among the 300 flights that departed on time, 300 − 270 = 30 did not arrive on time; among the 150 that did not depart on time, 150 − 15 = 135 did not arrive on time. Total that did not arrive on time = 30 + 135 = 165. The probability that such a flight departed on time = 30/165 = 2/11.",
+    prompt: "A survey of 190 people included 120 from Group A and 70 from Group B. 90% of Group A and 25% of Group B answered \"yes\" to a question. If a person who answered \"yes\" is selected at random, what is the probability that the person is from Group A?",
+    choices: ["54/95", "1/7", "9/10", "6/7"],
+    answer: 3,
+    explanation: "Group A had 90% of 120 = 108 \"yes\" responses, and Group B had 25% of 70 = 18 \"yes\" responses, for a total of 126 \"yes\" responses. The probability the person is from Group A is 108/126 = 6/7.",
   },
   {
     id: "pd-397",
@@ -5326,12 +5044,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Conditional probability",
     difficulty: 3,
-    prompt:
-      "An electronics retailer receives 600 tablets from two suppliers. Supplier X delivered 400 units, of which 20 are defective. Supplier Y delivered 200 units, of which 30 are defective. If a unit is selected at random from the defective units only, what is the probability that it came from Supplier Y?",
-    choices: ["3/5", "30/200", "30/600", "20/50"],
-    answer: 0,
-    explanation:
-      "Total defective units = 20 + 30 = 50. Of those, 30 came from Supplier Y, so the probability is 30/50 = 3/5.",
+    prompt: "A survey of 140 people included 90 from Group A and 50 from Group B. 60% of Group A and 90% of Group B answered \"yes\" to a question (the rest answered \"no\"). If a person who answered \"no\" is selected at random, what is the probability that the person is from Group B?",
+    choices: ["1/10", "5/41", "1/28", "36/41"],
+    answer: 1,
+    explanation: "Group A had 90 − 54 = 36 \"no\" responses, and Group B had 50 − 45 = 5 \"no\" responses, for a total of 41 \"no\" responses. The probability the person is from Group B is 5/41 = 5/41.",
   },
   {
     id: "pd-398",
@@ -5423,17 +5139,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Inference from sample statistics",
     difficulty: 3,
-    prompt:
-      "A researcher wants to estimate the average commute time for all residents of a city. She collects data by surveying people as they exit a downtown subway station during the Tuesday morning rush hour. The sample average is 34 minutes. Why might this estimate be unreliable for the entire city's population?",
-    choices: [
-      "The sample overrepresents transit commuters during peak hours, likely biasing the estimate and excluding people who drive, bike, or commute at other times.",
-      "The sample size is too large to produce a reliable estimate.",
-      "Subway riders always have identical commute times.",
-      "Average values from samples can never be used to estimate population values.",
-    ],
-    answer: 0,
-    explanation:
-      "Surveying only subway riders during one rush-hour period systematically excludes drivers, cyclists, off-peak commuters, and others, biasing the estimate away from the true city-wide average — a sampling bias issue, not a sample-size issue.",
+    prompt: "A survey of a random sample estimates that 36% of a population supports a proposal, with a margin of error of 4 percentage points. Based on this survey, is it plausible that exactly 33% of the population supports the proposal?",
+    choices: ["No, because the margin of error only applies to the mean", "Cannot be determined without more information", "Yes, because it falls within the margin of error", "Yes, because the sample size is large enough"],
+    answer: 2,
+    explanation: "The survey's plausible range is 36% ± 4, which is from 32% to 40%. Since 33% falls within this range, the claim is plausible based on this survey.",
   },
   {
     id: "pd-405",
@@ -5531,17 +5240,10 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A study finds that students who take a particular SAT prep course have, on average, higher SAT scores than students who do not take the course. A researcher concludes that the course causes higher scores. Which of the following, if true, would most directly undermine this causal conclusion?",
-    choices: [
-      "Students who choose to enroll in the course tend to come from higher-income families that can also afford other tutoring, which independently raises scores.",
-      "The course is offered in multiple cities across the country.",
-      "Most students who take the course report that they enjoyed it.",
-      "The course has been offered for over ten years.",
-    ],
-    answer: 0,
-    explanation:
-      "If a confounding variable (family income enabling additional tutoring) is associated with both course enrollment and higher scores, it could explain the score difference instead of the course itself — undermining the causal claim.",
+    prompt: "A polling organization surveys a random sample of registered voters and reports that 54% support a measure, with a margin of error of 3 percentage points. Which of the following statements is best supported by this poll?",
+    choices: ["More than half of all registered voters definitely support the measure", "It is plausible that the true percentage of all registered voters who support the measure is between 51% and 57%", "Exactly 54% of all registered voters support the measure", "The poll proves that the measure will pass"],
+    answer: 1,
+    explanation: "A margin of error defines a plausible range for the true population value: 54% ± 3 percentage points, or 51% to 57%. It does not establish an exact value or a certainty.",
   },
   {
     id: "pd-411",
@@ -5549,16 +5251,9 @@ QUESTIONS.push(
     domain: "Problem-Solving and Data Analysis",
     skill: "Evaluating statistical claims",
     difficulty: 3,
-    prompt:
-      "A school district wants to know whether a new reading program improves third-grade reading scores. Researchers randomly assign half of the third-grade classrooms in the district to use the new program and the other half to continue with the old program, then compare end-of-year reading scores. Why does random assignment strengthen the validity of a causal conclusion here, compared to letting teachers choose their own program?",
-    choices: [
-      "Random assignment tends to balance out other differences between classrooms (such as student ability or teacher experience) between the two groups, isolating the effect of the program itself.",
-      "Random assignment guarantees that every classroom will have identical scores at the end of the year.",
-      "Random assignment removes the need for a reasonably large sample size.",
-      "Random assignment ensures the study requires no control group.",
-    ],
-    answer: 0,
-    explanation:
-      "Randomly assigning classrooms to treatment and control groups tends to balance confounding factors (like prior ability or teacher experience) between groups on average, so any score difference is more plausibly due to the program rather than pre-existing differences.",
+    prompt: "A study observes that students who take an SAT prep course tend to have higher test scores than students who do not, but students chose for themselves whether to take the course. Which of the following is the most appropriate conclusion?",
+    choices: ["A causal relationship can be concluded because the sample size was large", "The results cannot be generalized or associated in any way", "Taking the course causes higher test scores", "There is an association between taking the course and higher scores, but a causal relationship cannot be concluded because students were not randomly assigned to take the course"],
+    answer: 3,
+    explanation: "Without random assignment to the course, other factors (such as motivation or prior ability) could explain the association, so only a correlation — not causation — can be concluded.",
   }
 );
