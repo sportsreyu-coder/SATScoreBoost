@@ -301,12 +301,12 @@ QUESTIONS.push(
     choices: [
       "To trace a shift in the architect's style and suggest it represented a departure from his strengths",
       "To argue that the architect's later work was universally superior to his early work",
-      "To provide a technical manual for building design",
+      "To argue that the architect's reputation never recovered from the shift described",
       "To defend the architect against all criticism of his career",
     ],
     answer: 0,
     explanation:
-      "The essay praises the early work, then shows how later work 'abandoned' those strengths — a structure that traces decline, not defense or unqualified praise.",
+      "The essay traces a decline from the architect's early strengths, but never claims his reputation was permanently ruined — only that his later work departed from what made the early work distinctive, matching choice A.",
   },
   {
     id: "cs-21",
@@ -376,13 +376,13 @@ QUESTIONS.push(
     prompt: "Which choice best describes a key difference between the two historians' views?",
     choices: [
       "Historian A emphasizes an external economic cause, while Historian B emphasizes an internal political cause.",
-      "Both historians agree entirely on the cause of the city's decline.",
+      "Historian B treats the political corruption as a consequence of the trade route shift rather than an independent cause.",
       "Historian B relies exclusively on maritime trade records.",
       "Historian A blames the decline on political corruption.",
     ],
     answer: 0,
     explanation:
-      "Historian A points to trade routes (an external, economic factor), while Historian B points to corruption (an internal, political factor) — the contrast in choice A.",
+      "Historian A points to trade routes (an external, economic factor), while Historian B points to corruption that occurred 'even before trade routes shifted' — an independent, internal cause, not a downstream consequence — the contrast in choice A.",
   },
   {
     id: "cs-25",
@@ -396,12 +396,12 @@ QUESTIONS.push(
     choices: [
       "Researcher B's results do not confirm Researcher A's findings, though the smaller sample size may limit that comparison.",
       "Researcher B's findings exactly replicate Researcher A's results.",
-      "Both researchers studied dinner rather than breakfast.",
+      "Researcher B's larger sample size makes her null result more reliable than Researcher A's.",
       "Researcher A found no difference between the two meal types.",
     ],
     answer: 0,
     explanation:
-      "Researcher B's null result differs from Researcher A's positive result, but the passage notes B's smaller sample size, a detail that qualifies rather than fully undermines the comparison.",
+      "Researcher B's null result differs from Researcher A's positive result, but the passage notes B's sample size was considerably smaller, not larger, a detail that qualifies rather than strengthens the comparison.",
   },
   {
     id: "cs-26",
@@ -481,12 +481,12 @@ QUESTIONS.push(
     choices: [
       "It creates a deliberate parallel with the opening anecdote, implicitly connecting her early experience to her later achievement.",
       "It introduces a new critique of the engineer's design choices.",
-      "It shifts the focus entirely away from bridges to her personal life.",
+      "It introduces a bridge designed by a different engineer for contrast.",
       "It contradicts the claim made in the opening paragraph.",
     ],
     answer: 0,
     explanation:
-      "The closing paragraph revisits the bridge imagery from the opening 'without stating it directly,' which is a structural echo linking her origin story to her career, matching choice A.",
+      "The closing paragraph revisits a bridge she herself designed, echoing the opening 'without stating it directly,' which links her origin story to her own career, not a different engineer's work, matching choice A.",
   },
   {
     id: "cs-31",
@@ -497,10 +497,10 @@ QUESTIONS.push(
     passage:
       "Rather than refuting her colleague's data outright, the scientist offered a more ______ critique, suggesting the sample size was too small to support such a broad conclusion.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["measured", "scathing", "dismissive", "hostile"],
+    choices: ["measured", "scathing", "cautious", "hostile"],
     answer: 0,
     explanation:
-      "'Rather than refuting...outright' signals a restrained approach, contrasted with the harsher tone implied by the other options — 'measured' fits a careful, moderate critique.",
+      "'Rather than refuting...outright' signals restraint in tone, not uncertainty about the critique itself — 'measured' conveys a deliberately controlled, proportionate tone, while 'cautious' would suggest she herself was unsure of the critique, which her confident claim about sample size contradicts.",
   },
   {
     id: "cs-32",
@@ -653,10 +653,10 @@ QUESTIONS.push(
     passage:
       "The volcanologist's report was notably ______, avoiding any firm prediction and instead listing several equally plausible outcomes for the volcano's activity over the coming months.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["hedged", "definitive", "alarmist", "dismissive"],
+    choices: ["hedged", "definitive", "alarmist", "ambiguous"],
     answer: 0,
     explanation:
-      "Avoiding a firm prediction and listing multiple plausible outcomes describes a hedged report, not a definitive or alarmist one.",
+      "Listing several explicit, equally plausible outcomes is a deliberate hedge against being wrong, not mere vagueness — an ambiguous report would be unclear about what it means, whereas this one is clear but noncommittal.",
   },
   {
     id: "cs-41",
@@ -670,12 +670,12 @@ QUESTIONS.push(
     choices: [
       "It complicates the earlier celebration by introducing a less positive consequence of the same technology.",
       "It repeats the praise offered in the first two paragraphs without adding anything new.",
-      "It shifts the topic entirely away from typewriters and clerical work.",
+      "It shifts focus to how factory workers, rather than clerical workers, experienced the same standardization.",
       "It proves that the typewriter had no effect on women's employment.",
     ],
     answer: 0,
     explanation:
-      "After celebrating the typewriter's benefits, the final paragraph introduces a constraining effect of the same machines, complicating rather than repeating the earlier praise.",
+      "After celebrating the typewriter's benefits, the final paragraph introduces a constraining effect on the same clerical workers just celebrated, complicating rather than repeating the earlier praise or shifting to a different group entirely.",
   },
   {
     id: "cs-42",
@@ -688,13 +688,13 @@ QUESTIONS.push(
     prompt: "Which choice best describes a key difference between the two paleontologists' views?",
     choices: [
       "Paleontologist A points to a sudden single event, while Paleontologist B points to a gradual, prolonged process.",
-      "Both paleontologists agree the extinction left no geological evidence.",
+      "Paleontologist A attributes the extinction to a gradual period of volcanic activity rather than a sudden impact.",
       "Paleontologist B relies exclusively on the iridium layer.",
       "Paleontologist A argues that species were declining long before the extinction.",
     ],
     answer: 0,
     explanation:
-      "Paleontologist A attributes the extinction to a sudden asteroid impact, while Paleontologist B attributes it to gradual volcanic decline — the contrast described in choice A.",
+      "Paleontologist A attributes the extinction to a sudden asteroid impact, while Paleontologist B attributes it to gradual volcanic decline, matching choice A; the second choice swaps that pairing, wrongly crediting the gradual explanation to A instead of B.",
   },
   {
     id: "cs-43",
@@ -809,10 +809,10 @@ QUESTIONS.push(
     passage:
       "Rather than following the rigid conventions of formal calligraphy, the artist developed a style so ______ that no two of her letters were ever formed exactly the same way twice.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["idiosyncratic", "standardized", "illegible", "traditional"],
+    choices: ["idiosyncratic", "standardized", "illegible", "unconventional"],
     answer: 0,
     explanation:
-      "A style in which 'no two letters were ever formed exactly the same way' describes a highly individual, or idiosyncratic, approach, in contrast to rigid conventions.",
+      "The style is defined by variation within itself — no two letters alike — which 'idiosyncratic' captures as a personal peculiarity; 'unconventional' only means it departs from formal norms and could still describe a style that stays internally consistent.",
   },
   {
     id: "cs-50",
@@ -965,10 +965,10 @@ QUESTIONS.push(
     passage:
       "Even as flood warnings poured in through the night, the broadcaster's voice remained ______, never wavering into panic despite the escalating danger.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["steady", "frantic", "hesitant", "indifferent"],
+    choices: ["steady", "frantic", "hesitant", "calm"],
     answer: 0,
     explanation:
-      "A voice that 'never wavered into panic' amid escalating danger is best described as steady, the opposite of frantic or hesitant.",
+      "'Never wavering' emphasizes consistency sustained over the whole night, which 'steady' names directly; 'calm' describes a lack of distress at a given moment but doesn't by itself imply the voice held constant despite escalating danger.",
   },
   {
     id: "cs-59",
@@ -982,12 +982,12 @@ QUESTIONS.push(
     choices: [
       "It provides a counterexample that overturns the assumption presented in the opening sentence.",
       "It confirms the assumption presented in the opening sentence.",
-      "It introduces a topic unrelated to the article's opening claim.",
+      "It qualifies the opening claim as a rare exception rather than truly overturning it.",
       "It summarizes the article's conclusion before any evidence is given.",
     ],
     answer: 0,
     explanation:
-      "The passage states directly that the vents are used 'to overturn the assumption stated at the outset,' making choice A the accurate description of their function.",
+      "The passage states directly that the vents are used 'to overturn the assumption stated at the outset,' not merely to carve out a minor exception to it, making choice A the accurate description of their function.",
   },
   {
     id: "cs-60",
@@ -1183,12 +1183,12 @@ QUESTIONS.push(
     skill: "Words in Context",
     difficulty: 3,
     passage:
-      "The poet's later collection embraced an ______ style, stripping away metaphor and ornament until only the bare image remained.",
+      "The poet's later collection embraced an ______ style, abandoning not just metaphor and ornament but any trace of warmth, until only the bare image remained.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["austere", "ornate", "whimsical", "sentimental"],
+    choices: ["austere", "ornate", "minimalist", "sentimental"],
     answer: 0,
     explanation:
-      "Stripping away metaphor and ornament to leave only bare images describes an austere, spare style, the opposite of ornate.",
+      "Stripping away both ornament and warmth describes more than simplicity — it's a stark, severe economy that 'austere' captures; 'minimalist' would fit a pared-down style but doesn't necessarily carry austere's connotation of coldness.",
   },
   {
     id: "cs-74",
@@ -1199,10 +1199,10 @@ QUESTIONS.push(
     passage:
       "Shareholders dismissed the CEO's apology as ______, noting that it never once mentioned the specific harm caused by the recall.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["perfunctory", "heartfelt", "detailed", "unnecessary"],
+    choices: ["perfunctory", "heartfelt", "detailed", "brief"],
     answer: 0,
     explanation:
-      "An apology that never addresses the specific harm caused reads as a perfunctory, going-through-the-motions gesture, not a detailed one.",
+      "Never mentioning the specific harm caused suggests the apology was issued as a hollow formality, not merely that it was short — 'brief' would describe length, while 'perfunctory' captures the lack of genuine engagement shareholders objected to.",
   },
   {
     id: "cs-75",
@@ -1213,10 +1213,10 @@ QUESTIONS.push(
     passage:
       "The archaeologist's conclusions remained ______, since the fragment could be read as evidence for either of the two rival theories about the site's original purpose.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["equivocal", "conclusive", "unanimous", "irrelevant"],
+    choices: ["equivocal", "conclusive", "unanimous", "ambivalent"],
     answer: 0,
     explanation:
-      "Evidence that supports either of two rival theories equally is ambiguous, or equivocal, rather than conclusive.",
+      "The fragment supporting either rival theory equally makes the conclusion open to two readings, which 'equivocal' names; 'ambivalent' describes a person's own mixed feelings, not evidence that cuts both ways.",
   },
   {
     id: "cs-76",
@@ -1227,10 +1227,10 @@ QUESTIONS.push(
     passage:
       "Throughout the tense trial, the lead juror kept an ______ expression, giving neither attorney any hint of her eventual vote.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["impassive", "animated", "sympathetic", "hostile"],
+    choices: ["impassive", "animated", "sympathetic", "stoic"],
     answer: 0,
     explanation:
-      "An expression that gives 'neither attorney any hint' of her opinion is impassive, or unreadable, not animated or sympathetic.",
+      "The clue concerns what her face revealed — 'impassive' names an expression that gives nothing away — while 'stoic' describes an attitude of enduring hardship without complaint, which doesn't necessarily describe a blank, unreadable expression.",
   },
   {
     id: "cs-77",
@@ -1443,12 +1443,12 @@ QUESTIONS.push(
     choices: [
       "It provides a counterexample that undermines the assumption stated at the beginning of the essay.",
       "It confirms the assumption stated at the beginning of the essay.",
-      "It introduces a topic unrelated to the essay's opening claim.",
+      "It qualifies the opening claim as true only for the first half of the century rather than overturning it.",
       "It summarizes the essay's conclusion before any evidence is given.",
     ],
     answer: 0,
     explanation:
-      "The passage states the survey data is used to challenge the essay's own opening claim, so it functions as a counterexample undermining that assumption, matching choice A.",
+      "The passage states the survey data is used to challenge the essay's own opening claim outright, not merely to narrow its timeframe, so it functions as a counterexample undermining that assumption, matching choice A.",
   },
   {
     id: "cs-89",
@@ -1462,12 +1462,12 @@ QUESTIONS.push(
     choices: [
       "To trace how a work's critical reputation shifted dramatically over time",
       "To argue that the symphony was rightly dismissed by its earliest audiences",
-      "To provide a technical analysis of the symphony's musical notation",
+      "To argue that the symphony's harsh initial reviews permanently damaged its legacy",
       "To defend the harsh reviews the symphony initially received",
     ],
     answer: 0,
     explanation:
-      "The essay traces the symphony's reputation from harsh initial reviews to later acclaim as a defining work, matching choice A's description of a shift in reputation.",
+      "The essay traces the symphony's reputation from harsh initial reviews to later acclaim as a defining work, not a permanently damaged legacy, matching choice A's description of a shift in reputation.",
   },
   {
     id: "cs-90",
@@ -1946,10 +1946,10 @@ QUESTIONS.push(
     passage:
       "The philosopher's argument was ______, resting on a single assumption that, if false, would cause the entire conclusion to collapse.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["precarious", "airtight", "redundant", "circular"],
+    choices: ["precarious", "airtight", "fragile", "circular"],
     answer: 0,
     explanation:
-      "An argument that would 'collapse' if a single assumption were false rests on shaky footing, which 'precarious' captures, not 'airtight.'",
+      "An argument that would 'collapse' if one assumption failed is precariously balanced on that single point; 'fragile' suggests general delicacy but doesn't capture the specific dependency on one assumption the way 'precarious' does.",
   },
   {
     id: "cs-121",
@@ -1960,10 +1960,10 @@ QUESTIONS.push(
     passage:
       "The researchers' claim was ______, supported by only a single small-scale trial that other labs had not yet attempted to replicate.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["tentative", "definitive", "fraudulent", "widely confirmed"],
+    choices: ["tentative", "definitive", "preliminary", "widely confirmed"],
     answer: 0,
     explanation:
-      "A claim supported by only 'a single small-scale trial' not yet replicated is tentative, not definitive or widely confirmed.",
+      "The claim's weakness is its lack of replication, making it cautiously held, or tentative; 'preliminary' would describe its place early in a research timeline, but a finding can be preliminary and still stated with confidence, so it doesn't capture the hedging the unreplicated trial demands.",
   },
   {
     id: "cs-122",
@@ -1974,10 +1974,10 @@ QUESTIONS.push(
     passage:
       "The critic argued that the author's prose, for all its surface beauty, was fundamentally ______, since the ornate sentences rarely advanced the plot or revealed character.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["superfluous", "essential", "concise", "restrained"],
+    choices: ["superfluous", "essential", "concise", "decorative"],
     answer: 0,
     explanation:
-      "Ornate sentences that 'rarely advanced the plot or revealed character' are unnecessary to the work's substance, making them superfluous, not essential.",
+      "The critic's complaint is that the ornate prose serves no narrative function — superfluous means wholly unnecessary to the work's substance — while 'decorative' would concede the prose serves an aesthetic purpose, which the critic denies by saying it never advances plot or character.",
   },
   {
     id: "cs-123",
@@ -1988,10 +1988,10 @@ QUESTIONS.push(
     passage:
       "The contract's clause was deliberately ______, allowing either party to interpret the obligation differently should a dispute arise.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["ambiguous", "explicit", "void", "standard"],
+    choices: ["ambiguous", "explicit", "vague", "standard"],
     answer: 0,
     explanation:
-      "A clause written so either party could 'interpret the obligation differently' is deliberately ambiguous, not explicit or standard.",
+      "The clause supports two distinct, competing readings by design, which 'ambiguous' captures precisely; 'vague' would mean merely imprecise or unclear, not necessarily allowing two parties to construct different coherent interpretations.",
   },
   {
     id: "cs-124",
@@ -2002,10 +2002,10 @@ QUESTIONS.push(
     passage:
       "The senator's proposal was ______ in its scope, addressing tax policy, healthcare, education funding, and immigration within a single bill.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["omnibus", "narrow", "modest", "temporary"],
+    choices: ["omnibus", "narrow", "modest", "comprehensive"],
     answer: 0,
     explanation:
-      "A single bill addressing tax policy, healthcare, education, and immigration together is a classic omnibus bill, not a narrow one.",
+      "The clue is not just thoroughness but bundling unrelated subjects — tax, healthcare, education, immigration — into one bill, which 'omnibus' names specifically; 'comprehensive' could describe exhaustive coverage of a single topic without that multi-subject bundling.",
   },
   {
     id: "cs-125",
@@ -2016,10 +2016,10 @@ QUESTIONS.push(
     passage:
       "The curator defended the exhibit's unconventional pairing of medieval tapestries with video art as ______, arguing the juxtaposition revealed unexpected continuities between eras.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["inspired", "arbitrary", "offensive", "traditional"],
+    choices: ["inspired", "arbitrary", "offensive", "unconventional"],
     answer: 0,
     explanation:
-      "The curator's defense that the pairing 'revealed unexpected continuities' frames the choice as inspired, not arbitrary or offensive.",
+      "The curator isn't just noting the pairing was unusual — she's defending its insight, that it 'revealed unexpected continuities'; 'unconventional' would only describe its novelty, not the justified creative vision 'inspired' conveys.",
   },
   {
     id: "cs-126",
@@ -2030,10 +2030,10 @@ QUESTIONS.push(
     passage:
       "Analysts described the central bank's messaging as ______, since each official statement seemed to hint at a different timeline for interest rate changes.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["inconsistent", "transparent", "unanimous", "reassuring"],
+    choices: ["inconsistent", "transparent", "unanimous", "nuanced"],
     answer: 0,
     explanation:
-      "Statements that 'hint at a different timeline' each time describe inconsistent messaging, not transparent or unanimous messaging.",
+      "Analysts' complaint is that the statements didn't line up with each other, suggesting no stable position — 'inconsistent' — rather than that each statement offered a carefully calibrated, more complex view, which 'nuanced' would suggest without implying contradiction.",
   },
   {
     id: "cs-127",
@@ -2332,12 +2332,12 @@ QUESTIONS.push(
     choices: [
       "It provides a counterexample that undermines the assumption presented in the opening sentence.",
       "It confirms the assumption presented in the opening sentence.",
-      "It introduces a topic unrelated to the essay's opening claim.",
+      "It qualifies the opening claim as true only for business correspondence, not personal letters.",
       "It summarizes the essay's conclusion before any evidence is given.",
     ],
     answer: 0,
     explanation:
-      "The passage states the trend is used 'to challenge the essay's own opening claim,' so the letter-writing clubs function as a counterexample undermining that assumption.",
+      "The passage states the trend is used 'to challenge the essay's own opening claim' directly, not to carve out a narrower exception for it, so the letter-writing clubs function as a counterexample undermining that assumption.",
   },
   {
     id: "cs-143",
@@ -2370,12 +2370,12 @@ QUESTIONS.push(
     choices: [
       "They complicate the earlier praise by revealing a cost the growth figures obscured.",
       "They repeat the praise offered in the opening paragraphs without adding anything new.",
-      "They shift the topic entirely away from the factory town.",
+      "They shift the focus to a neighboring factory town that avoided industrial pollution.",
       "They prove that the factory town experienced no economic growth at all.",
     ],
     answer: 0,
     explanation:
-      "After praising economic growth, the final paragraphs reveal a health cost the growth figures missed, complicating rather than repeating the earlier praise.",
+      "After praising economic growth, the final paragraphs reveal a health cost in the same town that the growth figures missed, complicating rather than repeating the earlier praise or shifting to a different town altogether.",
   },
   {
     id: "cs-145",
@@ -2389,12 +2389,12 @@ QUESTIONS.push(
     choices: [
       "To trace how a thinker's critical reputation shifted dramatically after her death",
       "To argue that her contemporaries were correct to dismiss her work",
-      "To provide a technical summary of her philosophical arguments",
+      "To argue that her contemporaries' harsh dismissal permanently ended her influence",
       "To defend the harsh dismissal she initially received",
     ],
     answer: 0,
     explanation:
-      "The essay traces the philosopher's reputation from harsh contemporary dismissal to later recognition as a founder of a new field, matching choice A's description of a reputational shift.",
+      "The essay traces the philosopher's reputation from harsh contemporary dismissal to later recognition as a founder of a new field, not a permanently ended influence, matching choice A's description of a reputational shift.",
   },
   {
     id: "cs-146",
@@ -2858,10 +2858,10 @@ QUESTIONS.push(
     passage:
       "Critics called the new concert hall's acoustics ______, noting that even a whisper from the stage carried clearly to the farthest row without any amplification.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["resonant", "muffled", "cramped", "deserted"],
+    choices: ["resonant", "muffled", "echoing", "deserted"],
     answer: 0,
     explanation:
-      "A hall where 'even a whisper...carried clearly to the farthest row' has resonant acoustics, not muffled ones.",
+      "Carrying a whisper 'clearly' to the back row describes rich, clear acoustics — resonant — not a hall with excessive echo, where multiple reflections would blur rather than clarify a faint sound.",
   },
   {
     id: "cs-174",
@@ -2872,10 +2872,10 @@ QUESTIONS.push(
     passage:
       "The startup's decision to freeze all hiring came so ______ that recruiters who had extended offers the previous week had to rescind them overnight.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["precipitously", "gradually", "transparently", "predictably"],
+    choices: ["precipitously", "gradually", "transparently", "swiftly"],
     answer: 0,
     explanation:
-      "A decision that forced recruiters to rescind week-old offers 'overnight' happened with sudden, startling speed, or precipitously, not gradually.",
+      "The jarring reversal — offers rescinded 'overnight' — signals a sudden, reckless change in course, which 'precipitously' conveys; 'swiftly' only describes speed and could just as easily describe an efficient, well-managed decision, not one that blindsided recruiters.",
   },
   {
     id: "cs-175",
@@ -2900,10 +2900,10 @@ QUESTIONS.push(
     passage:
       "Inside the case, the clock's mechanism was astonishingly ______, its hundreds of tiny brass gears meshing to track not only the hour but the phase of the moon.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["intricate", "simple", "rusted", "broken"],
+    choices: ["intricate", "simple", "rusted", "elaborate"],
     answer: 0,
     explanation:
-      "'Hundreds of tiny brass gears' tracking both the hour and the moon's phase describes an intricate mechanism, not a simple one.",
+      "The clue is functional complexity — gears 'meshing' to track multiple things at once — which 'intricate' names; 'elaborate' suggests ornateness or decorative detail, not necessarily the interlocking mechanical complexity the gears display.",
   },
   {
     id: "cs-177",
@@ -2942,10 +2942,10 @@ QUESTIONS.push(
     passage:
       "After months of drilling, the geologist's core samples proved frustratingly ______, showing traces of three different minerals that could each explain the anomaly equally well.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["inconclusive", "definitive", "obvious", "worthless"],
+    choices: ["inconclusive", "definitive", "obvious", "ambiguous"],
     answer: 0,
     explanation:
-      "Samples pointing to three equally plausible explanations are inconclusive, not definitive or obvious.",
+      "Three equally plausible explanations leave the investigation undecided — inconclusive describes evidence that fails to settle a question, while 'ambiguous' more naturally describes a statement with unclear meaning, not physical samples that simply don't resolve between hypotheses.",
   },
   {
     id: "cs-180",
@@ -3012,10 +3012,10 @@ QUESTIONS.push(
     passage:
       "Visitors complained that the new exhibit felt ______, since artifacts from three unrelated centuries were scattered across a single room with no connecting theme.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["disjointed", "cohesive", "chronological", "sparse"],
+    choices: ["disjointed", "cohesive", "chronological", "eclectic"],
     answer: 0,
     explanation:
-      "Unrelated artifacts 'scattered...with no connecting theme' describe a disjointed exhibit, not a cohesive or chronological one.",
+      "Visitors are complaining about a lack of connection, which 'disjointed' captures as a flaw; 'eclectic' describes a varied mix that could be a deliberate, even admired, curatorial choice rather than a complaint-worthy lack of theme.",
   },
   {
     id: "cs-185",
@@ -3068,10 +3068,10 @@ QUESTIONS.push(
     passage:
       "Assembling gears smaller than a grain of rice, the watchmaker's hands stayed remarkably ______, never once trembling under the magnifying lens.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["steady", "shaky", "hurried", "careless"],
+    choices: ["steady", "shaky", "hurried", "nimble"],
     answer: 0,
     explanation:
-      "Hands that 'never once' tremble while assembling microscopic gears are steady, not shaky or hurried.",
+      "The clue is about trembling, not speed or dexterity — 'steady' names the absence of tremor directly, while 'nimble' describes quick, agile movement that says nothing about whether the hands shake.",
   },
   {
     id: "cs-189",
@@ -3142,12 +3142,12 @@ QUESTIONS.push(
     choices: [
       "It explains how a prolonged failure influenced a meaningful change in her later approach to her work.",
       "It proves that her early theorems were actually incorrect.",
-      "It shifts the biography's focus away from mathematics entirely.",
+      "It shows that she abandoned mathematics entirely after the failed proof.",
       "It summarizes her entire career before any chapters have been written.",
     ],
     answer: 0,
     explanation:
-      "The text explicitly states the failed proof 'shaped her later, more cautious approach,' matching choice A's description of the chapter's function.",
+      "The text explicitly states the failed proof 'shaped her later, more cautious approach' to publishing, not that she left the field, matching choice A's description of the chapter's function.",
   },
   {
     id: "cs-193",
@@ -3294,12 +3294,12 @@ QUESTIONS.push(
     choices: [
       "It overturns the initial assumption stated in the first sentence with evidence from further research.",
       "It confirms the initial assumption stated in the first sentence.",
-      "It introduces an unrelated set of tablets from a different excavation.",
+      "It suggests the tablets record both a royal decree and a merchant's inventory at once.",
       "It summarizes the chapter's conclusion before any research has occurred.",
     ],
     answer: 0,
     explanation:
-      "Cross-referencing symbols revealed the tablets were actually a grain inventory, not a royal decree, directly overturning the assumption in the first sentence.",
+      "Cross-referencing symbols revealed the tablets were actually a grain inventory, not a royal decree — a full overturning of the first assumption, not a tablet that is somehow both at once.",
   },
   {
     id: "cs-201",
@@ -3427,12 +3427,12 @@ QUESTIONS.push(
     choices: [
       "It moves from a specific anecdote to supporting data to a policy recommendation.",
       "It presents two competing policies and rejects both of them.",
-      "It begins with a policy recommendation and never explains its reasoning.",
+      "It presents the elk population data before the ranger's anecdote, then closes without a recommendation.",
       "It compares wolf reintroduction to an unrelated conservation effort in a different country.",
     ],
     answer: 0,
     explanation:
-      "The article's stated progression — ranger's anecdote, then elk data, then a policy recommendation — matches choice A exactly.",
+      "The article's stated progression — ranger's anecdote first, then elk data, then a policy recommendation — matches choice A exactly; the article never reverses that order or closes without a recommendation.",
   },
   {
     id: "cs-208",
@@ -4511,10 +4511,10 @@ QUESTIONS.push(
     passage:
       "The cartoonist's political strip grew increasingly ______, using a single panel to compress arguments that opinion columnists needed several paragraphs to make.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["economical", "verbose", "redundant", "literal"],
+    choices: ["economical", "verbose", "redundant", "terse"],
     answer: 0,
     explanation:
-      "Compressing a full argument into a single panel describes an economical, efficient style, not a verbose or redundant one.",
+      "Compressing a full argument into one panel is not just brevity but skillful efficiency, which 'economical' conveys; 'terse' describes curt brevity that doesn't necessarily capture successfully compressed meaning — a terse panel could just as easily be cryptic or incomplete.",
   },
   {
     id: "cs-271",
@@ -4525,10 +4525,10 @@ QUESTIONS.push(
     passage:
       "The upholsterer's restoration of the antique chair was ______, matching the original fabric's pattern so precisely that the repair was invisible to anyone who hadn't seen the chair before.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["seamless", "conspicuous", "partial", "mismatched"],
+    choices: ["seamless", "conspicuous", "skillful", "mismatched"],
     answer: 0,
     explanation:
-      "A repair that is 'invisible to anyone who hadn't seen the chair before' describes seamless work, the opposite of conspicuous or mismatched.",
+      "The key detail is that the repair was 'invisible,' not merely well executed — 'seamless' captures undetectability specifically, while 'skillful' describes expert craftsmanship that could still be visible as a repair.",
   },
   {
     id: "cs-272",
@@ -4539,10 +4539,10 @@ QUESTIONS.push(
     passage:
       "The kite maker's designs were ______, holding steady in gusts that sent every other kite at the festival spiraling to the ground.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["resilient", "flimsy", "erratic", "grounded"],
+    choices: ["resilient", "flimsy", "erratic", "durable"],
     answer: 0,
     explanation:
-      "Holding steady in gusts that downed every other kite describes a resilient design, not a flimsy or erratic one.",
+      "The clue is withstanding sudden gusts in the moment, which 'resilient' captures as the capacity to flex and recover under stress; 'durable' instead describes lasting through long-term wear, not necessarily handling a sudden gust better than other kites.",
   },
   {
     id: "cs-273",
@@ -4553,10 +4553,10 @@ QUESTIONS.push(
     passage:
       "The bonsai gardener's pruning was ______, removing growth so gradually over decades that the tree's miniature form never looked abruptly altered.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["incremental", "drastic", "careless", "seasonal"],
+    choices: ["incremental", "drastic", "careless", "deliberate"],
     answer: 0,
     explanation:
-      "Removing growth gradually over decades without abrupt change describes incremental pruning, the opposite of drastic.",
+      "The clue is the slow accumulation of small changes over decades, which 'incremental' names precisely; 'deliberate' only means intentional and wouldn't rule out an intentional but drastic, one-time cut.",
   },
   {
     id: "cs-274",
@@ -4567,10 +4567,10 @@ QUESTIONS.push(
     passage:
       "The radio host's interview style was ______, letting long silences sit unfilled so guests felt compelled to elaborate rather than give rehearsed answers.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["deliberate", "rushed", "scripted", "dismissive"],
+    choices: ["deliberate", "rushed", "scripted", "patient"],
     answer: 0,
     explanation:
-      "Intentionally letting silences sit to draw out unrehearsed answers describes a deliberate style, not a rushed or scripted one.",
+      "The passage describes an intentional strategy — letting silences sit to draw out guests — which 'deliberate' names as a calculated technique; 'patient' describes a personal temperament and doesn't by itself capture that the silences were a deliberate interviewing tactic.",
   },
   {
     id: "cs-275",
@@ -4581,10 +4581,10 @@ QUESTIONS.push(
     passage:
       "The blacksmith's technique was ______, reheating and reworking the same blade a dozen times until the metal's internal structure was uniform throughout.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["painstaking", "hasty", "slapdash", "indifferent"],
+    choices: ["painstaking", "hasty", "slapdash", "thorough"],
     answer: 0,
     explanation:
-      "Reheating and reworking a blade 'a dozen times' for a uniform structure describes a painstaking technique, the opposite of hasty.",
+      "Reworking the same blade 'a dozen times' emphasizes repeated, effortful care, which 'painstaking' captures; 'thorough' would describe comprehensive attention but doesn't necessarily imply the repetitive labor that produced the uniform structure.",
   },
   {
     id: "cs-276",
@@ -4598,12 +4598,12 @@ QUESTIONS.push(
     choices: [
       "To complicate the assumption that barter was a simpler precursor to currency",
       "To argue that currency was never actually adopted by most societies",
-      "To provide a step-by-step guide to establishing a barter system",
+      "To argue that barter required less social trust than the currency systems that replaced it",
       "To criticize the villages for refusing to adopt currency",
     ],
     answer: 0,
     explanation:
-      "The essay explicitly argues that barter, 'far from being primitive,' was more intricate than later currency systems, complicating the simpler-precursor assumption.",
+      "The essay explicitly argues that barter required trust networks 'more intricate' than later currency systems, not less — complicating, rather than reversing, the simpler-precursor assumption.",
   },
   {
     id: "cs-277",
@@ -4618,11 +4618,11 @@ QUESTIONS.push(
       "It moves from a personal illustration of a tradition to its near-loss to its recent resurgence.",
       "It presents two competing weaving techniques and argues for one over the other.",
       "It opens with the tradition's revival and ends with its origin.",
-      "It compares basket weaving to an unrelated textile craft throughout.",
+      "It credits the technique's revival mainly to her grandmother's generation rather than recent young craftspeople.",
     ],
     answer: 0,
     explanation:
-      "The profile moves in sequence from a personal illustration of the tradition, to its near-disappearance, to its recent revival, matching choice A.",
+      "The profile moves in sequence from a personal illustration of the tradition, to its near-disappearance, to its recent revival among young craftspeople, not her grandmother's generation, matching choice A.",
   },
   {
     id: "cs-278",
@@ -4636,12 +4636,12 @@ QUESTIONS.push(
     choices: [
       "It highlights an ironic return to a transportation approach the city had earlier abandoned.",
       "It confirms that automobiles remain the city's preferred mode of transportation.",
-      "It introduces an entirely unrelated transportation project in a different city.",
+      "It proposes rerouting the light-rail lines away from the streetcars' original paths.",
       "It proves that the original streetcar removal was a mistake with no further explanation needed.",
     ],
     answer: 0,
     explanation:
-      "Proposing light-rail lines along the same routes the city once tore up for cars highlights a return to the earlier approach, matching choice A.",
+      "Proposing light-rail lines along 'nearly the same routes' the city once tore up for cars highlights a return to the earlier approach, not a rerouting away from it, matching choice A.",
   },
   {
     id: "cs-279",
@@ -4655,12 +4655,12 @@ QUESTIONS.push(
     choices: [
       "It contrasts an early failure with a later engineering success that achieved lasting reliability.",
       "It argues that transatlantic communication was impossible before satellites.",
-      "It presents two unrelated inventions with no connection to each other.",
+      "It argues that the 1858 cable's failure proved the entire cable project was misguided.",
       "It opens with the successful cable and ends with its failure.",
     ],
     answer: 0,
     explanation:
-      "The text moves from the cable's early failure to the later refinements that achieved decades of reliable operation, matching choice A.",
+      "The text moves from the cable's early failure to the later refinements that achieved decades of reliable operation, not to a conclusion that the project itself was misguided, matching choice A.",
   },
   {
     id: "cs-280",
@@ -4674,12 +4674,12 @@ QUESTIONS.push(
     choices: [
       "It identifies the specific invention that resolved the burdensome task described in the first sentence.",
       "It disputes that residents ever needed to stoke furnaces manually.",
-      "It introduces a completely unrelated household appliance.",
+      "It credits the furnace itself, rather than the thermostat, with ending the need for manual stoking.",
       "It argues that automatic temperature regulation was less convenient than manual stoking.",
     ],
     answer: 0,
     explanation:
-      "The second sentence names the thermostat as the invention that freed residents from the nightly stoking described in the first sentence.",
+      "The second sentence specifically names the thermostat, not the furnace itself, as the invention that freed residents from the nightly stoking described in the first sentence.",
   },
   {
     id: "cs-281",
@@ -4822,10 +4822,10 @@ QUESTIONS.push(
     passage:
       "The experiment's result was ______: particles separated by vast distances appeared to influence each other instantaneously, defying classical expectations.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["counterintuitive", "predictable", "trivial", "familiar"],
+    choices: ["counterintuitive", "predictable", "trivial", "paradoxical"],
     answer: 0,
     explanation:
-      "A result that 'defies classical expectations' is one that goes against common sense, which 'counterintuitive' captures precisely.",
+      "'Defying classical expectations' describes a result that confounds intuition, which 'counterintuitive' names; 'paradoxical' implies an internal logical contradiction, a stronger claim than simply being surprising or hard to anticipate.",
   },
   {
     id: "cs-290",
@@ -4878,10 +4878,10 @@ QUESTIONS.push(
     passage:
       "Engineers admitted the algorithm's decision-making process was ______, producing results that even its own designers struggled to explain.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["opaque", "transparent", "simple", "predictable"],
+    choices: ["opaque", "transparent", "simple", "complex"],
     answer: 0,
     explanation:
-      "A process its own designers 'struggled to explain' is unclear, or opaque, which is the opposite of transparent or simple.",
+      "The clue is that designers 'struggled to explain' the results — a failure of understanding, which 'opaque' captures figuratively; 'complex' only means having many parts, and a complex system can still be fully explainable, unlike one that is opaque.",
   },
   {
     id: "cs-294",
@@ -4934,10 +4934,10 @@ QUESTIONS.push(
     passage:
       "Currency traders described the market as ______ that week, with prices swinging several percentage points within hours on rumors alone.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["volatile", "stable", "sluggish", "predictable"],
+    choices: ["volatile", "stable", "sluggish", "erratic"],
     answer: 0,
     explanation:
-      "Prices swinging 'several percentage points within hours' describes a volatile market, not a stable or sluggish one.",
+      "The clue specifies swings of 'several percentage points within hours' — a matter of magnitude and speed, which 'volatile' names precisely; 'erratic' only implies a lack of consistent pattern and doesn't specifically convey swings of that size and speed.",
   },
   {
     id: "cs-298",
@@ -5036,12 +5036,12 @@ QUESTIONS.push(
     choices: [
       "They complicate the initial praise by introducing an unintended consequence of the same isolation.",
       "They repeat the praise from the opening without adding anything new.",
-      "They shift the topic entirely away from the dialect.",
+      "They attribute the dialect's decline to outside interference rather than the isolation that preserved it.",
       "They prove that the dialect was never actually endangered.",
     ],
     answer: 0,
     explanation:
-      "After praising the dialect's preservation, the final paragraphs show the same isolation now causing its disappearance, complicating rather than repeating the earlier praise.",
+      "After praising the dialect's preservation, the final paragraphs show the very same isolation now causing its disappearance, not some outside interference, complicating rather than repeating the earlier praise.",
   },
   {
     id: "cs-304",
@@ -5169,12 +5169,12 @@ QUESTIONS.push(
     choices: [
       "It provides a counterexample that overturns the assumption presented in the opening sentence.",
       "It confirms the assumption presented in the opening sentence.",
-      "It introduces a topic unrelated to the article's opening claim.",
+      "It qualifies the opening claim as true only for creatures living below a certain depth.",
       "It summarizes the article's conclusion before any evidence is given.",
     ],
     answer: 0,
     explanation:
-      "The passage states directly that the finding is used 'to overturn the assumption stated at the outset,' making choice A the accurate description.",
+      "The passage states directly that the finding is used 'to overturn the assumption stated at the outset' entirely, not to narrow its depth range, making choice A the accurate description.",
   },
   {
     id: "cs-311",
@@ -5302,12 +5302,12 @@ QUESTIONS.push(
     choices: [
       "To complicate a simplified view of interpreting with evidence of its real complexity",
       "To argue that interpreting requires no specialized skill",
-      "To provide a step-by-step manual for learning sign language",
+      "To argue that word-for-word substitution is in fact the most accurate way to interpret",
       "To defend one interpreter against professional criticism",
     ],
     answer: 0,
     explanation:
-      "The essay starts with a simplified view, then explicitly uses detail about grammatical restructuring to complicate it, matching choice A.",
+      "The essay starts with the word-for-word view, then uses detail about split-second grammatical restructuring to complicate, not confirm, that view, matching choice A.",
   },
   {
     id: "cs-318",
@@ -5378,12 +5378,12 @@ QUESTIONS.push(
     choices: [
       "It creates a deliberate parallel with the opening anecdote, implicitly connecting early failure to later success.",
       "It introduces a new critique of her later compositions.",
-      "It shifts the focus entirely away from music to her personal life.",
+      "It introduces a second composer's triumphant premiere for comparison.",
       "It contradicts the claim made in the opening paragraph.",
     ],
     answer: 0,
     explanation:
-      "The closing paragraph revisits the premiere imagery from the opening 'without stating it directly,' linking her early failure to her later triumph, matching choice A.",
+      "The closing paragraph revisits her own premiere imagery from the opening 'without stating it directly,' linking her early failure to her later triumph, not introducing a different composer, matching choice A.",
   },
   {
     id: "cs-322",
@@ -6168,10 +6168,10 @@ QUESTIONS.push(
     passage:
       "Though her name appeared in no official minutes, the translator had become so ______ to the negotiations that delegates privately agreed no session should proceed without her.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["indispensable", "peripheral", "controversial", "temporary"],
+    choices: ["indispensable", "peripheral", "controversial", "influential"],
     answer: 0,
     explanation:
-      "Delegates insisting no session proceed without her shows she had become essential, or indispensable, not peripheral.",
+      "Delegates insisting 'no session should proceed without her' signals that she had become irreplaceable, which 'indispensable' names; 'influential' only means she had a significant effect, not that negotiations literally could not continue in her absence.",
   },
   {
     id: "cs-369",
@@ -6182,10 +6182,10 @@ QUESTIONS.push(
     passage:
       "What the newcomers dreaded as punishing, the veteran hikers found oddly ______: the thin, cold air at the summit seemed to sharpen their thinking rather than exhaust it.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["invigorating", "debilitating", "unremarkable", "familiar"],
+    choices: ["invigorating", "debilitating", "unremarkable", "pleasant"],
     answer: 0,
     explanation:
-      "Air that 'sharpens thinking rather than exhausts it' is energizing, or invigorating, the opposite of debilitating.",
+      "The clue is a specific energizing effect — thinking 'sharpened' rather than dulled — which 'invigorating' names; 'pleasant' only means agreeable and doesn't capture that the thin air actively heightened their mental sharpness.",
   },
   {
     id: "cs-370",
@@ -6196,10 +6196,10 @@ QUESTIONS.push(
     passage:
       "The editor's cuts to the manuscript were so ______ that the author, rereading the shortened draft, could not identify a single scene she actually missed.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["judicious", "careless", "extensive", "reluctant"],
+    choices: ["judicious", "careless", "extensive", "thorough"],
     answer: 0,
     explanation:
-      "Cuts so well chosen that nothing missing is noticed describe wise, well-judged, or judicious editing, not careless cutting.",
+      "The author's inability to miss anything shows the cuts were wisely chosen, not just comprehensive — 'thorough' would describe cuts that covered a lot of material, which could still remove something the author missed, unlike the good judgment 'judicious' implies.",
   },
   {
     id: "cs-371",
@@ -6210,10 +6210,10 @@ QUESTIONS.push(
     passage:
       "Scholars have spent decades on the inscription's final line, which remains ______ enough that no two translations agree on its meaning.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["cryptic", "redundant", "outdated", "literal"],
+    choices: ["cryptic", "redundant", "archaic", "literal"],
     answer: 0,
     explanation:
-      "A line where 'no two translations agree' is mysterious, or cryptic, not literal or redundant.",
+      "Disagreement among translators points to an obscure, puzzling meaning, which 'cryptic' names directly; 'archaic' only describes the language as old-fashioned and wouldn't by itself explain why scholars can't agree on what it means.",
   },
   {
     id: "cs-372",
@@ -6224,10 +6224,10 @@ QUESTIONS.push(
     passage:
       "Nothing in the firm's decade of filings escaped the auditor's ______ attention, not even a rounding error buried three spreadsheets deep.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["scrupulous", "cursory", "selective", "belated"],
+    choices: ["scrupulous", "cursory", "diligent", "belated"],
     answer: 0,
     explanation:
-      "Catching an error 'buried three spreadsheets deep' shows extremely careful, or scrupulous, attention, the opposite of cursory.",
+      "Catching an error 'buried three spreadsheets deep' shows nothing escaped notice, a level of exacting precision 'scrupulous' captures; 'diligent' describes hard, persistent work but doesn't guarantee that same exhaustive attention to the smallest detail.",
   },
   {
     id: "cs-373",
@@ -6238,10 +6238,10 @@ QUESTIONS.push(
     passage:
       "Insurers quoted a premium so ______ for the fragile sculpture's transport that the museum chose to cancel the loan rather than pay it.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
-    choices: ["exorbitant", "nominal", "standard", "negotiable"],
+    choices: ["exorbitant", "nominal", "standard", "steep"],
     answer: 0,
     explanation:
-      "A premium so costly the museum cancels the loan rather than pay it is exorbitant, the opposite of nominal.",
+      "Canceling the loan over the price implies it was judged unreasonably excessive, which 'exorbitant' conveys; 'steep' only means high and could still describe a price the museum found justifiable, just expensive.",
   },
   {
     id: "cs-374",
@@ -6521,12 +6521,12 @@ QUESTIONS.push(
     choices: [
       "It reframes the preceding praise by attributing its basis to someone other than the king.",
       "It simply repeats the praise offered earlier in the essay.",
-      "It introduces a second, unrelated king for comparison.",
+      "It reveals that the king personally championed the reforms despite his advisors' objections.",
       "It abandons the topic of reforms entirely.",
     ],
     answer: 0,
     explanation:
-      "By revealing the advisors implemented the reforms over the king's objections, the final paragraph reframes the earlier praise as actually undermining his reputation.",
+      "By revealing the advisors implemented the reforms over the king's own objections, not the reverse, the final paragraph reframes the earlier praise as actually undermining his reputation.",
   },
   {
     id: "cs-389",
@@ -6540,12 +6540,12 @@ QUESTIONS.push(
     choices: [
       "It undercuts the credibility of the detailed praise that came before it.",
       "It confirms that the reviewer read every page carefully.",
-      "It introduces a new novel unrelated to the one being reviewed.",
+      "It reveals that the reviewer skimmed the opening chapters rather than the ending.",
       "It summarizes the plot points discussed earlier in greater detail.",
     ],
     answer: 0,
     explanation:
-      "Admitting that the reviewer skimmed the ending casts doubt on the reliability of the detailed praise given in the preceding paragraphs.",
+      "Admitting that the reviewer skimmed the last hundred pages, not the opening, casts doubt on the reliability of the detailed praise given in the preceding paragraphs.",
   },
   {
     id: "cs-390",
@@ -6559,12 +6559,12 @@ QUESTIONS.push(
     choices: [
       "It narrows the force of the objection raised in the first sentence to a specific subset of cases.",
       "It fully confirms the objection raised in the first sentence applies to all manufacturers.",
-      "It introduces an objection unrelated to emissions limits.",
+      "It shows that costs rose for every manufacturer regardless of when they upgraded equipment.",
       "It argues that emissions limits should be abandoned entirely.",
     ],
     answer: 0,
     explanation:
-      "Showing that costs rose only for manufacturers that delayed upgrades limits the objection to a specific subset rather than confirming it broadly.",
+      "Showing that costs rose only for manufacturers that delayed upgrades for over a decade, not for every manufacturer regardless of timing, limits the objection to a specific subset rather than confirming it broadly.",
   },
   {
     id: "cs-391",
@@ -6579,11 +6579,11 @@ QUESTIONS.push(
       "It presents a forecast, complicates it with historical precedent, then questions the forecast's assumptions.",
       "It praises the engineers' projections without qualification.",
       "It narrates the dam's construction process from start to finish.",
-      "It compares the dam to unrelated energy sources such as solar power.",
+      "It closes by endorsing the engineers' original electricity projections as accurate.",
     ],
     answer: 0,
     explanation:
-      "The critique moves from the stated forecast, to historical records complicating it, to a closing question about the forecast's assumptions, matching choice A.",
+      "The critique moves from the stated forecast, to historical records complicating it, to a closing question about whether the forecast accounts for that pattern — not an endorsement of it — matching choice A.",
   },
   {
     id: "cs-392",

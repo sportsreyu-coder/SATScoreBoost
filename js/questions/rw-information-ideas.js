@@ -132,13 +132,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The settlement's economy likely depended on fishing to a greater extent than previously assumed.",
-      "The settlement had no contact with hunting communities.",
-      "The fishhooks discovered were purely decorative and never used.",
-      "Researchers had always known the community fished extensively.",
+      "The settlement abandoned hunting entirely once it began fishing.",
+      "The woven nets were most likely used for ceremonial display rather than for catching fish.",
+      "Researchers had already documented extensive fishing by this community before the exhibit opened.",
     ],
     answer: 0,
     explanation:
-      "The discovery of intricate fishing tools 'far more' developed than expected, in a community 'believed to rely solely on hunting,' implies fishing played a bigger economic role than previously thought.",
+      "The tools' unexpected sophistication, in a community 'previously believed to rely solely on hunting,' supports a moderate inference that fishing played a larger economic role—not that hunting was abandoned entirely, which overstates the shift, or that the nets served a non-fishing purpose the passage never suggests.",
   },
   {
     id: "ii-8",
@@ -151,13 +151,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Job satisfaction and turnover rate are not necessarily driven by the same factors at this company.",
-      "Remote work directly caused the turnover rate to increase.",
-      "Every employee at the company prefers remote work.",
-      "The company plans to eliminate remote work options.",
+      "Remote work has no influence whatsoever on whether employees decide to leave the company.",
+      "Employees who worked remotely at least three days a week left the company less often than others.",
+      "Every employee at the company prefers remote work over working in-office.",
     ],
     answer: 0,
     explanation:
-      "Satisfaction rose but turnover held steady, suggesting the two outcomes are not tightly linked at this company — exactly what choice A concludes without overreaching.",
+      "Satisfaction rose while overall turnover barely changed, suggesting the two measures aren't tightly linked—not that remote work provably has zero influence on departures, which overreaches beyond a correlation, or that remote employees specifically had lower turnover, a breakdown the survey never reports.",
   },
   {
     id: "ii-9",
@@ -189,13 +189,13 @@ QUESTIONS.push(
     prompt: "Which choice would most directly support the historian's argument?",
     choices: [
       "Grain exports from the affected region continued at high volumes even as local food prices soared.",
-      "The crop failure was caused by a fungal blight.",
-      "The famine lasted for several consecutive years.",
-      "Neighboring regions also experienced poor harvests that year.",
+      "Grain prices in the nation's capital, far from the famine-stricken region, stayed stable throughout the crisis.",
+      "The famine persisted for several consecutive years before subsiding.",
+      "The crop failure was later traced to a fungal blight affecting the region's staple grain.",
     ],
     answer: 0,
     explanation:
-      "Continuing grain exports during a famine points to a policy choice worsening food scarcity, directly supporting the claim that policy — not just crop failure — deepened the crisis.",
+      "The historian's claim is about policy, not grain prices elsewhere, the famine's duration, or the biological cause of the crop failure; only the detail about continued exports amid soaring local prices shows deliberate scarcity, while the blight detail could even support crop failure, not policy, as the cause.",
   },
   {
     id: "ii-11",
@@ -227,13 +227,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "A reevaluation of Whitfield's work suggests her once-dismissed techniques were intentional artistic choices.",
-      "Whitfield's paintings were destroyed in a fire and are now lost.",
-      "Critics have always admired Whitfield's use of color and framing.",
-      "Whitfield primarily painted portraits rather than landscapes.",
+      "Newly uncovered letters reveal that Whitfield herself viewed her muted palette as a technical limitation she was never able to overcome.",
+      "The retrospective focuses mainly on correcting critics' specific objections to Whitfield's unconventional framing.",
+      "Whitfield painted landscapes only early in her career before turning permanently to portraiture.",
     ],
     answer: 0,
     explanation:
-      "The retrospective reframes techniques once seen as flaws as deliberate choices — the reversal choice A captures. Choice C contradicts the passage's mention of early dismissal.",
+      "The passage says the retrospective recasts Whitfield's palette and framing together as deliberate innovations, not that her letters confirm a limitation she never overcame, that the exhibit is really about one framing complaint, or that she later abandoned landscapes for portraits.",
   },
   {
     id: "ii-13",
@@ -246,13 +246,13 @@ QUESTIONS.push(
     prompt: "Which finding from the data most directly supports the economist's argument?",
     choices: [
       "City X's unemployment rate rose less than that of neighboring cities without the wage increase.",
-      "City X's unemployment rate increased at all during the period.",
-      "Neighboring cities are larger in population than City X.",
-      "The wage increase in City X took effect immediately upon passage.",
+      "City X's unemployment rate rose more sharply over the two years than the rate in neighboring cities did.",
+      "Neighboring cities had a higher unemployment rate than City X even before the wage increase took effect.",
+      "City X's unemployment rate increased at all during the two-year period.",
     ],
     answer: 0,
     explanation:
-      "The relevant comparison is City X's small rise (0.1 point) against a larger rise elsewhere (0.6 points) without the policy — implying the wage increase did not drive up unemployment relative to the trend.",
+      "The economist's claim rests on comparing the SIZE of each rise: City X's rate climbed only 0.1 point versus 0.6 points among neighbors, the opposite of a sharper rise in City X; neighboring cities actually started lower (4.0% vs. 4.2%), not higher; and noting that City X's rate rose at all ignores how modest that rise was relative to the trend elsewhere.",
   },
   {
     id: "ii-14",
@@ -322,13 +322,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The founder avoids public appearances but is still willing to communicate views in writing.",
-      "The founder has no opinions on monetary policy.",
-      "The company has stopped publishing its shareholder letters.",
-      "The founder is unaware of competitors' strategies.",
+      "The founder will only share opinions through official interviews, not any other channel.",
+      "The shareholder letter is the company's only avenue for any public communication.",
+      "The founder intends to begin accepting interview requests after a decade of declining them.",
     ],
     answer: 0,
     explanation:
-      "Declining interviews while personally writing detailed, opinionated letters each year implies a preference for written over spoken public communication, not a general aversion to sharing views.",
+      "Declining interviews for years while personally writing an opinionated letter each year shows a preference for written over spoken communication—the reverse of refusing all channels but interviews—and the passage says nothing about whether other public communication exists or whether the founder's stance will change.",
   },
   {
     id: "ii-18",
@@ -341,13 +341,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Octopus intelligence, though structured differently from vertebrate intelligence, represents its own sophisticated evolutionary approach to problem-solving.",
-      "Octopuses are considered less intelligent than most vertebrate species.",
-      "All of an octopus's neurons are located in its central brain.",
-      "Mazes are the only reliable way to test octopus intelligence.",
+      "The text's main point is that octopuses can solve mazes and open jars more skillfully than most vertebrates can.",
+      "Because most of an octopus's neurons reside in its arms rather than a central brain, researchers increasingly view octopus cognition as a simpler, lesser form of intelligence.",
+      "Mazes are the only reliable way researchers can test octopus intelligence.",
     ],
     answer: 0,
     explanation:
-      "The passage explicitly reframes octopus cognition as 'an entirely distinct evolutionary solution,' not an inferior one — matching choice A and contradicting choice B and C.",
+      "The passage's main point is the broader claim that decentralized octopus cognition is 'an entirely distinct evolutionary solution,' not a lesser one—the maze and jar feats are supporting examples, not the main idea, and the arm-based neuron structure is explicitly framed as evidence of that distinctness, not of inferiority.",
   },
   {
     id: "ii-19",
@@ -379,13 +379,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Factors beyond legal permission, such as cost, may be limiting broader adoption of accessory dwelling units.",
-      "No homeowners in the city are interested in accessory dwelling units.",
-      "The zoning ordinance was overturned within its first year.",
-      "Homeowners in affluent neighborhoods are barred from applying for permits.",
+      "Homeowners citywide have shown essentially no interest in building accessory dwelling units.",
+      "The zoning ordinance was overturned within its first year of being enacted.",
+      "Homeowners in affluent neighborhoods face fewer legal restrictions than homeowners elsewhere when applying for permits.",
     ],
     answer: 0,
     explanation:
-      "Legal permission alone didn't produce widespread uptake, and adoption clustered in wealthier areas — suggesting a nonlegal barrier, such as construction cost, is limiting broader participation.",
+      "That permits clustered in three affluent neighborhoods despite citywide legal permission suggests a nonlegal barrier, such as cost, not that interest was essentially nonexistent, that the ordinance was struck down, or that the law itself treats neighborhoods unequally—it explicitly applies to 'any residential lot.'",
   },
   {
     id: "ii-21",
@@ -436,13 +436,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The founders' public account of how decisions are made may not fully reflect the company's actual process.",
-      "Customer feedback played no role in any company decision.",
-      "The investor personally built the flagship feature.",
-      "Internal emails at the company are always made public.",
+      "Customer feedback has never influenced any decision the company has made.",
+      "The investor personally designed and built the company's flagship feature.",
+      "Internal company emails are routinely made available to the public.",
     ],
     answer: 0,
     explanation:
-      "A gap between the public narrative (customer-driven decisions) and the internal record (an investor-driven decision predating customer use) implies the public account is at least incomplete.",
+      "A gap between the public narrative (customer-driven decisions) and the internal record (one investor conversation predating customer use) shows the public account may be incomplete—not that feedback never factors in at all, that the investor built the feature himself rather than merely prompting it in conversation, or anything about the company's email practices.",
   },
   {
     id: "ii-24",
@@ -607,13 +607,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Considered together, the two studies indicate that urban trees provide several distinct benefits whose loss creates multiple simultaneous problems.",
-      "The two studies directly contradict each other and cannot both be correct.",
-      "Reducing summer temperatures is more important than managing stormwater runoff.",
-      "Urban tree cover has no measurable effect on stormwater runoff.",
+      "The main conclusion of the research is that lowering summer temperatures is urban tree canopy's single most important function.",
+      "The research implies that reducing summer temperatures matters more than managing stormwater runoff.",
+      "Because canopy loss increases stormwater runoff, planting more urban trees would eliminate flooding risk entirely.",
     ],
     answer: 0,
     explanation:
-      "The text explicitly states the studies, 'taken together,' show trees serve 'multiple, largely independent' functions whose loss 'compounds' — matching choice A, not a contradiction.",
+      "Read together, the studies point to multiple, independent benefits of urban trees rather than ranking one function as most important or treating either study's finding as the single takeaway, and the passage never suggests trees could eliminate flooding risk altogether—only that losing canopy raises runoff.",
   },
   {
     id: "ii-33",
@@ -627,12 +627,12 @@ QUESTIONS.push(
     choices: [
       "'yet our trade routes and prices continued exactly as before, as though the ink had dried on paper no one troubled to read.'",
       "'The new treaty was signed with great ceremony.'",
-      "'I have kept this diary since I was young.'",
-      "'Merchants travel widely in search of goods.'",
+      "'I watched as representatives of both nations negotiated for months before the signing.'",
+      "'Many merchants in our town grew wealthy during this same era of expanding trade.'",
     ],
     answer: 0,
     explanation:
-      "The historian argues the treaty had little real effect; this quotation directly shows trade continued unchanged, supporting that argument.",
+      "The historian needs evidence that the treaty failed to change actual trade practices; the ceremony and the lengthy negotiations both suggest the treaty was treated as significant, and general wealth during the era doesn't show whether this specific treaty mattered—only the quotation about routes and prices staying 'exactly as before' directly supports the claim of minimal impact.",
   },
   {
     id: "ii-34",
@@ -704,13 +704,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Artificial light along migration routes may disrupt or delay birds' nighttime navigation.",
-      "Birds that migrate over cities travel a much longer distance than those on rural routes.",
-      "Nighttime migration has been abandoned by this songbird species.",
-      "Rural flight paths are more dangerous for migrating birds than urban ones.",
+      "Artificial light makes nighttime migratory navigation completely impossible for affected birds.",
+      "The four-day delay is most likely explained by urban-route birds having to fly a longer distance.",
+      "Birds on rural flight paths experience no negative effects from any human activity.",
     ],
     answer: 0,
     explanation:
-      "Since the routes are nearly identical in distance, the delay associated with the lit route points to the light itself as a likely disruptive factor, not the distance traveled.",
+      "Since the two routes are nearly identical in distance, the lit route's added delay points to light itself, not distance, as the likely disruptor; the birds still complete their migration, so light cannot be making navigation impossible, and the passage addresses only light exposure, not human activity generally.",
   },
   {
     id: "ii-38",
@@ -743,13 +743,13 @@ QUESTIONS.push(
       "Which quotation from the analysis note best supports the astronomer's argument?",
     choices: [
       "'Temperature readings on the planet's night side remain nearly as high as on its sunlit side, a pattern we would not expect unless heat were being trapped and redistributed by a substantial atmosphere.'",
-      "'The exoplanet orbits its star once every nine days.'",
-      "'This system was first observed by a space telescope launched a decade ago.'",
+      "'The exoplanet completes one full orbit of its star every nine days.'",
+      "'Earlier spectroscopic scans detected trace amounts of methane in the planet's upper atmosphere.'",
       "'The planet is roughly the same size as Neptune.'",
     ],
     answer: 0,
     explanation:
-      "Only this quotation ties an observed pattern — even night/day temperatures — to the presence of a heat-trapping atmosphere, directly supporting the claim.",
+      "Only the night/day temperature-uniformity observation directly ties to heat being trapped and redistributed; the orbital period, a trace-gas detection, and the planet's size are all real details about the system, but none of them show the specific even-heating pattern that indicates a substantial, heat-retaining atmosphere.",
   },
   {
     id: "ii-40",
@@ -838,13 +838,13 @@ QUESTIONS.push(
     prompt: "Which finding from the study most directly supports the engineer's claim?",
     choices: [
       "Coated panels produced 6.8% more electricity annually while costing less than 1% more to manufacture.",
-      "The study compared panels installed in a desert climate.",
-      "Solar panels of this model have been sold since 2015.",
-      "The coating was developed over three years of laboratory testing.",
+      "Coated panels cost 6.8% more to manufacture than uncoated panels of the same model.",
+      "Manufacturing costs fell by nearly 1% after the coating was introduced.",
+      "The coating was developed over three years of laboratory testing before being brought to market.",
     ],
     answer: 0,
     explanation:
-      "The claim has two parts — higher output and negligible added cost — and only choice A reports data addressing both figures from the study.",
+      "The claim needs both a higher output figure and a near-zero cost increase; only the first choice pairs the correct figures (6.8% more electricity, under 1% more cost), while swapping 6.8% onto cost or reversing cost's direction misapplies the study's own numbers, and the development timeline isn't part of either measured outcome.",
   },
   {
     id: "ii-45",
@@ -876,13 +876,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Feld's decades of recording work aim to preserve aspects of a dying language, like humor and song, that formal documentation alone would miss.",
-      "Dictionaries are sufficient to preserve every aspect of an endangered language.",
-      "The language Feld studies has already gone completely extinct.",
-      "Feld primarily focuses on translating academic grammar papers.",
+      "Grammar, like humor and music, cannot be preserved through academic documentation alone.",
+      "The language Feld studies will likely have no remaining fluent speakers within the next few years.",
+      "Feld's main scholarly contribution lies in translating the grammar papers already written about the language.",
     ],
     answer: 0,
     explanation:
-      "The passage's point is that Feld's recordings capture idioms, jokes, and songs that 'dictionaries alone would never preserve' — directly matching choice A and contradicting choice B.",
+      "The passage draws a specific contrast: grammar 'can survive in academic papers,' but humor and music cannot be preserved that way without someone recording them—the opposite of claiming grammar also needs documentation beyond papers, a prediction about exactly when speakers will be gone, or a focus on grammar papers rather than the idioms and songs Feld actually records.",
   },
   {
     id: "ii-47",
@@ -933,13 +933,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "These dinosaurs may have traveled together as a coordinated group rather than individually.",
-      "The dinosaurs that made these tracks were of many different species.",
-      "The trackway shows evidence of a predator attack.",
-      "The footprints were made by dinosaurs moving in random directions.",
+      "These dinosaurs likely belonged to many different species that happened to travel the same path.",
+      "The steady, evenly spaced prints suggest the group was fleeing from a nearby predator.",
+      "The direction of the footprints shows the dinosaurs were traveling toward a water source.",
     ],
     answer: 0,
     explanation:
-      "Same-sized prints moving together, at a steady pace, in one direction without scattering suggests coordinated group movement rather than individual, random travel.",
+      "Uniform size, spacing, and direction with no crossing or scattering most plausibly reflect coordinated group movement; that same steady pattern doesn't fit a predator chase, which would likely produce panicked, uneven tracks, and the passage gives no detail about the dinosaurs' destination or how many species were present.",
   },
   {
     id: "ii-50",
@@ -972,12 +972,12 @@ QUESTIONS.push(
     choices: [
       "'I anticipated some improvement in morale, but I did not expect nearly every department head to report their teams asking to keep the schedule permanently, even those who were skeptical before we began the trial.'",
       "'We began the four-day workweek trial at the start of the fiscal year.'",
-      "'The company employs about 600 people across three offices.'",
-      "'Other companies have experimented with similar schedules.'",
+      "'About 80% of employees said in a survey that their morale had improved since the schedule change.'",
+      "'Other companies in the industry have experimented with similar four-day schedules.'",
     ],
     answer: 0,
     explanation:
-      "This quotation explicitly contrasts the CEO's expectations with the stronger-than-expected positive response, directly supporting the claim of morale improvement beyond expectations.",
+      "The journalist's claim is specifically that morale improved MORE than leadership anticipated, so only the memo's explicit contrast between the CEO's expectations and the stronger-than-expected response supports it directly—a general morale statistic doesn't address what was expected, and the trial's start date and other companies' practices are unrelated to the size of the effect.",
   },
   {
     id: "ii-52",
@@ -991,12 +991,12 @@ QUESTIONS.push(
     choices: [
       "Slow-release fertilizer fields yielded 12% more corn while nearby nitrogen runoff fell 30%.",
       "The study was conducted over a single growing season.",
-      "Standard fertilizer has been used by farmers for many decades.",
+      "Nitrogen runoff fell by 12% while corn yield rose by 30% in the treated fields.",
       "The slow-release fertilizer costs more per bag than standard fertilizer.",
     ],
     answer: 0,
     explanation:
-      "The claim requires both higher yield and reduced runoff, and only choice A reports data on both outcomes measured in the study.",
+      "The claim requires both a yield increase and a runoff decrease matched to their correct figures—corn yield rose 12% and nitrogen runoff fell 30%, not the reverse—and the study's duration or the fertilizer's price don't speak to either measured outcome.",
   },
   {
     id: "ii-53",
@@ -1067,13 +1067,13 @@ QUESTIONS.push(
       "Which finding most directly supports the district's claim that the intervention specifically helped struggling readers?",
     choices: [
       "Below-grade-level students gained 22 points on average, compared with a 3-point gain for at-or-above-grade-level students.",
-      "The intervention program ran for one full school year.",
-      "The district serves students across twelve elementary schools.",
-      "Teachers received training before implementing the program.",
+      "The intervention program ran for one full school year before scores were measured.",
+      "Average reading scores rose 3 points among below-grade-level students and 22 points among those already at or above grade level.",
+      "Teachers received specialized training before implementing the program.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a difference in benefit between two groups, and only choice A reports the gap in score gains between struggling and non-struggling readers.",
+      "The claim is about which group benefited more, so the figures must be attached to the correct group: below-grade-level students gained 22 points, far more than the 3-point gain among students already at or above grade level, not the reverse, and the program's length or teacher training don't address the size of either group's gain.",
   },
   {
     id: "ii-57",
@@ -1162,13 +1162,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Contact between whale populations may play a role in how quickly their songs change over time.",
-      "Humpback whale songs never change within a single population.",
-      "The neighboring population has stopped singing entirely.",
-      "All whale populations sing identical songs regardless of contact with other groups.",
+      "The neighboring population's song has changed just as much as the frequently studied population's song over the past three decades.",
+      "The frequently studied population's song has remained completely unchanged for over thirty years.",
+      "The two populations' songs are completely unrelated to each other in structure.",
     ],
     answer: 0,
     explanation:
-      "The population with frequent contact/study shows gradual change while the more isolated population's song stayed nearly static, suggesting contact between groups relates to how songs evolve over time.",
+      "The population with frequent contact/study shows gradual change while the more isolated population's song stayed nearly static, suggesting contact between groups relates to how songs evolve—not that the roles are reversed in either direction, and not an unsupported claim about whether the songs are structurally related at all.",
   },
   {
     id: "ii-62",
@@ -1391,13 +1391,13 @@ QUESTIONS.push(
       "Which finding most directly supports the district's claim that the program specifically helped at-risk students?",
     choices: [
       "At-risk students' graduation rates rose from 61% to 79%, while non-at-risk students' rates stayed at 94% throughout.",
-      "The tutoring program paired each student with a trained volunteer.",
+      "Graduation rates among non-at-risk students rose from 61% to 79%, while at-risk students' rates stayed at 94% throughout.",
       "The district implemented the program across all of its high schools.",
       "Tutoring sessions were held twice per week after school.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a difference in benefit between two groups, and only choice A reports the contrast between rising at-risk rates and unchanged non-at-risk rates.",
+      "The claim is that at-risk students specifically benefited, and it's at-risk students whose rate rose from 61% to 79%, while non-at-risk students stayed flat at 94%—reversing those figures misstates the finding, and program implementation scope or session frequency don't address this comparison.",
   },
   {
     id: "ii-74",
@@ -1467,13 +1467,13 @@ QUESTIONS.push(
     prompt: "Which finding most directly supports the property manager's claim?",
     choices: [
       "Noise complaints dropped from 47 to 9, while wall- and ceiling-related maintenance requests rose only slightly, from 3 to 4.",
+      "Maintenance requests related to walls or ceilings fell from 47 to 9, while noise complaints rose only from 3 to 4.",
       "The building contains 120 total units.",
-      "The insulation was installed over a two-month period.",
       "The property manager sent a survey to all residents.",
     ],
     answer: 0,
     explanation:
-      "The claim has two parts — fewer complaints and no meaningful rise in related maintenance requests — and only choice A reports data on both.",
+      "The claim requires both fewer complaints and no meaningful rise in maintenance requests; the real figures show noise complaints falling from 47 to 9 while maintenance requests rose only slightly, from 3 to 4—swapping which figure belongs to which measure misstates the finding, and unit count or survey outreach don't address either measure.",
   },
   {
     id: "ii-78",
@@ -1505,13 +1505,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The manuscript may have been completed by more than one scribe rather than a single continuous author.",
-      "The manuscript was definitely written by two entirely different authors from different centuries.",
-      "Chemical analysis proves the handwriting style never changed.",
+      "The manuscript was definitely written by two entirely different authors working in different centuries.",
+      "The shift in ink composition occurred gradually over many years rather than at one identifiable point in the text.",
       "Earlier scholars deliberately ignored evidence of multiple scribes.",
     ],
     answer: 0,
     explanation:
-      "A simultaneous shift in ink and handwriting suggests a change in scribe, but the evidence supports only the modest claim in choice A, not the stronger, unsupported claims in the other choices.",
+      "A simultaneous shift in ink and handwriting at one specific point in the text most reasonably suggests a change in scribe—not a gradual shift, not two authors from different eras, and not deliberate neglect by scholars who, per the passage, simply never noticed a subtle change.",
   },
   {
     id: "ii-80",
@@ -1525,12 +1525,12 @@ QUESTIONS.push(
     choices: [
       "'For the first time, I could pause and rewind the confusing part of the lecture as many times as I needed, and then actually ask questions about it the next day instead of just copying notes I didn't understand.'",
       "'Class meets three times a week.'",
-      "'I have always found math to be my favorite subject.'",
+      "'I feel like I understand the material better this semester than I did last year.'",
       "'The lecture videos are about fifteen minutes long.'",
     ],
     answer: 0,
     explanation:
-      "This quotation directly links the flipped format's flexibility to deeper understanding and active questioning, supporting the claim that it improved learning of difficult material.",
+      "The teacher's claim is specifically that the flipped format's flexibility improved understanding of difficult material; only the first quotation explains how—pausing, rewinding, and asking better questions—while a vaguer comparison to last year, the class schedule, and video length don't establish that specific link.",
   },
   {
     id: "ii-81",
@@ -1562,13 +1562,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Neural patterns during jazz improvisation reflect a shift in the kind of cognitive monitoring involved, not a simple absence of judgment.",
-      "Improvising musicians make no deliberate choices about which notes to play.",
-      "Playing memorized music from notation produces the same brain activity as improvising.",
-      "Researchers agree that improvisation completely disables a musician's self-monitoring.",
+      "The main finding is that improvisation reduces activity in brain regions associated with self-monitoring and inhibition.",
+      "Because improvisers show reduced self-monitoring activity, researchers conclude that improvisation eliminates deliberate decision-making.",
+      "The increased activity in self-expression regions appears mainly when musicians play a memorized piece from notation.",
     ],
     answer: 0,
     explanation:
-      "The passage explicitly cautions against concluding judgment is simply absent, instead describing 'a shift in the type of monitoring involved' — precisely choice A, contradicting choices B and D.",
+      "The passage's main idea is the caution itself: the brain pattern reflects a shift in the type of monitoring, not its absence, so citing only the self-monitoring decrease without that caveat, using it to conclude judgment is eliminated, or attaching the self-expression increase to the wrong condition all misrepresent what the researchers concluded.",
   },
   {
     id: "ii-83",
@@ -1600,13 +1600,13 @@ QUESTIONS.push(
     prompt: "Which quotation from the keeper's logbook best supports the historian's argument?",
     choices: [
       "'The gulls came inland by midday and would not return to the rocks, and I lit the lamp early and secured the boats, though the barometer itself gave no unusual reading until nearly six hours later, when the storm was already upon us.'",
-      "'I have kept this lighthouse for eleven years.'",
-      "'The lamp requires oil to be refilled nightly.'",
+      "'Thick clouds had been forming steadily for two days before the storm arrived.'",
+      "'The lighthouse's barometer had been replaced only the previous spring.'",
       "'Ships pass this point on their way to the harbor.'",
     ],
     answer: 0,
     explanation:
-      "This quotation shows the keeper acting on bird behavior hours before the barometer showed any change, directly supporting the claim that her observations outpaced the era's instruments.",
+      "The historian's claim is specifically that the keeper's bird and cloud observations outpaced the barometer by hours; only the chosen quotation establishes that timing gap directly—general cloud buildup, the barometer's age, and shipping traffic are all real details but none show her prediction beating the instrument.",
   },
   {
     id: "ii-85",
@@ -1620,13 +1620,13 @@ QUESTIONS.push(
       "Which finding most directly supports the clinic's claim that telehealth specifically helped patients living farther away?",
     choices: [
       "Patients living more than 30 miles away saw missed appointments fall from 34% to 11%, while nearby patients' rate barely changed, from 9% to 7%.",
-      "The clinic began offering telehealth appointments last year.",
+      "Missed appointments among patients living within 30 miles fell from 34% to 11%, while distant patients' rate barely changed, from 9% to 7%.",
       "The clinic serves patients across a rural county.",
       "Telehealth appointments require a stable internet connection.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to distant patients, and only choice A contrasts the large improvement for distant patients with the small change for nearby patients.",
+      "The claim is specifically about distant patients benefiting more, so the figures must attach to the right group: patients over 30 miles away saw missed appointments fall from 34% to 11%, not nearby patients, who changed only slightly from 9% to 7%; the clinic's service area and connectivity requirements don't address either group's change.",
   },
   {
     id: "ii-86",
@@ -1639,13 +1639,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Excavation evidence suggests this Maya city developed advanced water-purification engineering earlier than previously assumed.",
-      "The city relied exclusively on simple rain catchment for its water supply.",
+      "The city's water system relied primarily on simple rain catchment, just as researchers had long assumed.",
       "Zeolite was first identified as a water-purifying mineral by modern chemists.",
-      "This Maya city was the only ancient civilization to use canals.",
+      "This Maya city was the only ancient civilization known to use canals.",
     ],
     answer: 0,
     explanation:
-      "The passage reverses the earlier assumption of simple rain catchment, revealing engineered water purification 'centuries before parallel methods were understood elsewhere' — matching choice A.",
+      "The passage reverses the old assumption of simple rain catchment, revealing engineered purification 'centuries before parallel methods were understood elsewhere'—not confirming that old assumption, crediting modern chemists with discovering zeolite's properties, or claiming this city was uniquely a canal-building civilization.",
   },
   {
     id: "ii-87",
@@ -1734,13 +1734,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Some factor not identified by the researchers likely influenced the colony's sudden change in foraging behavior.",
-      "The abandoned trail was blocked by a physical obstruction the researchers overlooked.",
-      "Ant colonies never change their foraging routes once established.",
-      "The colony ran out of food along both trails simultaneously.",
+      "The abandoned trail was most likely blocked by a predator that the colony could sense but researchers could not detect.",
+      "Once a foraging route is established, ant colonies essentially never abandon it for another.",
+      "The colony's sudden shift was most likely caused by the queen relocating to a new nest.",
     ],
     answer: 0,
     explanation:
-      "Since the obvious causes were ruled out yet the behavior changed abruptly, the most reasonable conclusion is that some unidentified factor was involved, not the more specific, unsupported claims in the other choices.",
+      "With the obvious causes ruled out, the most reasonable conclusion is that some unidentified factor was involved—not a specific but undetected predator or a queen relocation, both of which overreach beyond the evidence, and not a general rule about ant behavior that this very case contradicts.",
   },
   {
     id: "ii-92",
@@ -1829,13 +1829,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Reconciling the two studies suggests that factors accompanying heavy screen use, not the screen use itself, may better explain lower well-being.",
-      "The two studies prove that screen use has no relationship to well-being under any circumstances.",
-      "One of the two studies must contain a significant methodological flaw.",
-      "Household income and sleep duration are irrelevant to adolescent well-being.",
+      "The two studies together prove that screen use has absolutely no effect on adolescent well-being under any circumstances.",
+      "The lower well-being scores in the first study likely reflect a flaw in how researchers measured screen use.",
+      "Household income and sleep duration are the sole causes of lower adolescent well-being among heavy screen users.",
     ],
     answer: 0,
     explanation:
-      "The passage explicitly rejects the idea that either study is flawed and instead proposes that accompanying circumstances explain the correlation — matching choice A, not C or D.",
+      "The passage explicitly rejects blaming either study's methodology and instead proposes, cautiously, that accompanying circumstances 'may' better explain the pattern—not that screen use is proven irrelevant, that a specific measurement flaw explains the first study, or that income and sleep are established as the only causes.",
   },
   {
     id: "ii-97",
@@ -1848,13 +1848,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Many visitors drawn by the renovation may be using the library for purposes other than borrowing physical books.",
-      "The renovation caused physical book circulation to decline sharply.",
-      "The quiet study rooms are rarely used by library visitors.",
-      "Foot traffic to the library decreased after the renovation.",
+      "Physical book circulation most likely rose at about the same sharp rate as overall foot traffic after the renovation.",
+      "The new study rooms are used exclusively by students working on school assignments.",
+      "Foot traffic to the library has already returned to pre-renovation levels now that the novelty of the new rooms has worn off.",
     ],
     answer: 0,
     explanation:
-      "Rising foot traffic alongside flat book circulation suggests new visitors are using the space for something besides borrowing books, such as the study rooms themselves.",
+      "Rising foot traffic alongside flat book circulation suggests new visitors are using the library for something other than borrowing books—not that circulation actually rose in step with traffic, that the rooms serve only one specific group, or that the traffic increase has since faded, none of which the passage supports.",
   },
   {
     id: "ii-98",
@@ -1947,13 +1947,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Monarchs may rely on a timing mechanism that does not depend solely on the specific route or conditions encountered.",
-      "All monarchs from the same field take the exact same path to Mexico.",
-      "Weather conditions have no effect on individual monarch butterflies.",
+      "The similar arrival times suggest monarchs from the same field travel at nearly identical speeds throughout the journey.",
+      "Weather conditions have no effect on individual monarch butterflies at any point in their migration.",
       "Monarchs that depart later always arrive earlier than those that depart first.",
     ],
     answer: 0,
     explanation:
-      "Since butterflies with different routes and weather still converged in arrival within a day, some internal timing cue independent of route or conditions seems likely, as choice A states without the overreach of the other options.",
+      "Since monarchs took measurably different routes through different weather yet still converged in arrival within a day, some internal timing cue independent of route or conditions is the more direct explanation than assuming they coincidentally traveled at identical speeds; the passage doesn't claim weather has zero effect generally, nor does it address departure order.",
   },
   {
     id: "ii-103",
@@ -2006,13 +2006,13 @@ QUESTIONS.push(
       "Which finding most directly supports the office's claim that the initiative specifically helped previously tree-sparse neighborhoods?",
     choices: [
       "Pavement temperatures in newly planted neighborhoods fell from 112°F to 98°F, while canopy-rich neighborhoods changed only slightly, from 94°F to 93°F.",
-      "The initiative planted over 20,000 trees across the city.",
+      "Pavement temperatures in canopy-rich neighborhoods fell from 112°F to 98°F, while newly planted neighborhoods changed only slightly, from 94°F to 93°F.",
       "Street trees were selected for their drought tolerance.",
       "The sustainability office was established a decade ago.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to tree-sparse areas, and only choice A contrasts the large temperature drop there with the negligible change in already-shaded neighborhoods.",
+      "The claim is specifically about newly planted, previously tree-sparse neighborhoods benefiting most; the large drop (112°F to 98°F) belongs to those neighborhoods, not the already-shaded ones, which changed only slightly (94°F to 93°F)—reversing the groups misstates the data, and tree species selection or the office's founding date don't address either temperature change.",
   },
   {
     id: "ii-106",
@@ -2257,12 +2257,12 @@ QUESTIONS.push(
     choices: [
       "Some scout bees may have continued signaling information learned before the hive was relocated.",
       "Waggle dances never convey accurate information about food sources.",
-      "The flowering field was deliberately moved along with the hives.",
-      "Bees cannot learn new food locations after being relocated.",
+      "A new flowering field happened to bloom near the hives' new location at the same time as the move.",
+      "Bees are incapable of learning the location of new food sources after being relocated.",
     ],
     answer: 0,
     explanation:
-      "Since the dance pointed to a food source from the colony's old location rather than anything near the new site, the bees appear to have been signaling outdated, previously learned information.",
+      "Since the dance pointed to a food source matching the colony's OLD location rather than anything new, the simplest explanation is that some scouts were still signaling previously learned information—not that dances are generally unreliable, that a new field coincidentally bloomed in the same spot, or that these bees are permanently unable to learn new locations.",
   },
   {
     id: "ii-119",
@@ -2315,13 +2315,13 @@ QUESTIONS.push(
       "Which finding most directly supports the agency's claim that the stations specifically helped long-distance commuters?",
     choices: [
       "Long-distance commuters' electric vehicle registrations rose from 3% to 14%, while short-distance drivers' registrations rose only from 9% to 11%.",
-      "The highway corridor spans roughly 80 miles.",
+      "Short-distance drivers' electric vehicle registrations rose from 3% to 14%, while long-distance commuters' registrations rose only from 9% to 11%.",
       "The charging stations can each serve multiple vehicles at once.",
       "The agency plans to install additional stations next year.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to long-distance commuters, and only choice A contrasts their large increase in adoption with the much smaller increase among short-distance drivers.",
+      "The claim is that long-distance commuters specifically benefited, and it was commuters whose registrations rose sharply, from 3% to 14%, while short-distance drivers rose only slightly, from 9% to 11%—reversing which group got which figures misstates the finding, and station capacity or future plans don't bear on this comparison.",
   },
   {
     id: "ii-122",
@@ -2411,13 +2411,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Surface-level observations alone may underestimate the extent of permafrost thaw occurring underground.",
-      "Methane concentrations are highest at the very surface of the permafrost.",
+      "Surface temperature readings and satellite imagery are rising at the same rate as underground methane concentrations.",
       "Satellite imagery provides a fully accurate picture of underground permafrost conditions.",
-      "No thawing is occurring in this permafrost region at any depth.",
+      "Thawing in this permafrost region is limited to a single isolated location rather than being widespread.",
     ],
     answer: 0,
     explanation:
-      "Since the fastest methane rise occurs underground where surface methods suggest frozen conditions persist, those surface methods likely miss meaningful thaw happening below, supporting choice A over the others.",
+      "The fastest methane rise occurs several feet underground, in layers that surface temperature readings and satellite imagery suggest remain frozen—meaning those surface methods are not tracking the same change underground, let alone accurately or completely, and the passage gives no information about how widespread the affected area is.",
   },
   {
     id: "ii-127",
@@ -2563,13 +2563,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The dormant state may allow tardigrades to survive extended periods without the biological damage that normally accumulates over time.",
-      "Tardigrades cannot survive any period of dehydration.",
-      "Rehydrated tardigrades require months to resume normal activity.",
-      "Metabolism in tardigrades increases dramatically during dehydration.",
+      "The dormant state completely eliminates all biological aging in tardigrades, even decades after rehydration.",
+      "Tardigrades dormant for over a decade take proportionally longer to rehydrate than those dormant for only a few years.",
+      "A tardigrade's metabolic rate while dormant matches its metabolic rate during active feeding.",
     ],
     answer: 0,
     explanation:
-      "Specimens dormant for over a decade resuming normal function within hours suggests the dormant state protects them from damage that would otherwise accumulate, contradicting the other, inconsistent choices.",
+      "Specimens dormant for over a decade resuming normal function within hours suggest the state may protect against accumulated damage—not that aging stops permanently and completely, that longer dormancy scales up rehydration time (a comparison the passage never makes), or that dormant metabolism matches active metabolism, which the passage explicitly contrasts.",
   },
   {
     id: "ii-135",
@@ -2622,13 +2622,13 @@ QUESTIONS.push(
       "Which finding most directly supports the official's claim that mail ballots specifically helped younger voters?",
     choices: [
       "Turnout among voters under 30 rose from 38% to 57%, while turnout among voters over 60 changed only from 71% to 73%.",
-      "Mail ballots must be postmarked by Election Day to count.",
+      "Turnout among voters over 60 rose from 38% to 57%, while turnout among voters under 30 changed only from 71% to 73%.",
       "The county began mailing ballots during a statewide election.",
       "Voters over 60 have historically turned out at higher rates than younger voters.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to younger voters, and only choice A contrasts their large turnout increase with the much smaller change among older voters.",
+      "The claim is that mail ballots specifically helped younger voters, and it's voters under 30 whose turnout jumped from 38% to 57%, not voters over 60, whose rate barely moved from 71% to 73%—swapping the groups misstates the data, and the ballot deadline, election type, or historical turnout patterns don't address this specific change.",
   },
   {
     id: "ii-138",
@@ -2641,13 +2641,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Vultures may play a significant role in limiting disease spread by rapidly removing carcasses from the environment.",
-      "The veterinary drug was intentionally designed to poison vultures.",
-      "Carcasses decompose at the same rate regardless of vulture presence.",
-      "Livestock diseases in these regions are entirely unrelated to carcass decomposition.",
+      "The veterinary drug's effect on vultures was identified through deliberate testing before the drug was approved for use.",
+      "Carcasses in affected regions now decompose about five times faster than before vulture populations collapsed.",
+      "Vultures are likely the only factor influencing disease transmission from decaying animals in these regions.",
     ],
     answer: 0,
     explanation:
-      "The combination of slower decomposition and rising disease outbreaks where vultures declined suggests vultures help limit disease by removing carcasses quickly, not the unsupported or contradicted alternatives.",
+      "Slower decomposition alongside rising disease outbreaks where vultures declined suggests vultures help limit disease by removing carcasses quickly—not that the poisoning was deliberately tested beforehand, that decomposition sped up (the passage says it slowed, fivefold), or that vultures are the only factor at play, a stronger claim than the passage's hedged 'may play a significant role.'",
   },
   {
     id: "ii-139",
@@ -2737,13 +2737,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "The artist intended her tidal stone installation to exist as an ever-changing work rather than a completed one.",
-      "Critics unanimously agreed that the installation should be considered complete.",
-      "The stones were arranged permanently above the reach of the tide.",
-      "The artist regretted that the tides interfered with her finished work.",
+      "The main point of the text is that critics reached a consensus about whether the installation counts as finished.",
+      "The spiral pattern remains visible at all times, regardless of the tide's position.",
+      "The artist intended the tide to reconstruct the spiral identically each time it reemerged.",
     ],
     answer: 0,
     explanation:
-      "The passage states the artist 'maintained that the piece was never meant to be finished,' directly matching choice A and contradicting choices C and D.",
+      "The artist's own statement—that the piece was 'never meant to be finished, only witnessed in whatever state the tide happened to leave it'—is the main idea; the passage describes disagreement among critics, not consensus, states the work is visible only at low tide, and implies the tide leaves the work in varying, not identical, states each time.",
   },
   {
     id: "ii-144",
@@ -2835,12 +2835,12 @@ QUESTIONS.push(
     choices: [
       "'Though young Tomas has completed every requirement for mastery and his work shows no fault that any examiner could name, the council has voted to delay his admission three more years, there being already too many master weavers for the trade our town can support.'",
       "'Tomas began his apprenticeship as a young boy.'",
-      "'Weaving has long been an important trade in our town.'",
+      "'The guild requires every apprentice to pass a rigorous examination judged by senior weavers.'",
       "'The guild meets regularly to discuss town affairs.'",
     ],
     answer: 0,
     explanation:
-      "This quotation shows a qualified candidate deliberately delayed for economic reasons—too many weavers already—rather than any quality concern, directly supporting the claim that guilds restricted entry to protect members' income.",
+      "The historian needs evidence that economic protection, not quality, drove restricted entry; the guild's examination requirement could even seem to support quality standards as the real concern, and Tomas's youth and the guild's general meetings don't address why his admission was delayed—only the record of his qualified work being blocked over a stated surplus of weavers directly shows an economic motive.",
   },
   {
     id: "ii-149",
@@ -2854,12 +2854,12 @@ QUESTIONS.push(
     choices: [
       "The expanding state's Gini coefficient fell from 0.47 to 0.41, while the neighboring state's fell only from 0.46 to 0.45.",
       "Earned income tax credits are also offered at the federal level.",
-      "The two states have similar total populations.",
+      "The neighboring state's Gini coefficient fell from 0.47 to 0.41, while the expanding state's fell only from 0.46 to 0.45.",
       "The neighboring state's tax policy remained unchanged for over a decade.",
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the actual difference in the inequality measure's decline between the two states.",
+      "The claim is comparative and depends on which state's Gini coefficient fell further: the expanding state's fell from 0.47 to 0.41, a bigger drop than the neighboring state's 0.46-to-0.45—reversing those figures misstates the comparison, and the federal credit's existence or the two states' tax-policy history don't bear on this specific inequality trend.",
   },
   {
     id: "ii-150",
@@ -3006,13 +3006,13 @@ QUESTIONS.push(
       "Which finding most directly supports the authority's claim that the new line specifically helped peak-hour commuters?",
     choices: [
       "Peak-hour ridership rose from 4,200 to 9,100 daily riders, while off-peak ridership rose only from 1,800 to 2,000.",
-      "The dedicated bus lanes span twelve miles of the corridor.",
+      "Off-peak ridership rose from 4,200 to 9,100 daily riders, while peak-hour ridership rose only from 1,800 to 2,000.",
       "The new buses are equipped with free wireless internet.",
       "The transit authority also operates several subway lines.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to peak-hour commuters, and only choice A contrasts the large peak-hour ridership increase with the minimal off-peak change.",
+      "The claim is that peak-hour commuters specifically benefited, and it was peak-hour ridership that jumped from 4,200 to 9,100, not off-peak ridership, which rose only from 1,800 to 2,000—reversing those figures misstates the finding, and onboard wifi or other transit lines don't address this specific comparison.",
   },
   {
     id: "ii-158",
@@ -3084,12 +3084,12 @@ QUESTIONS.push(
     choices: [
       "Average records exposed per breach fell from 340,000 to 12,000, while personalization satisfaction scores stayed at 4.1 out of 5 throughout.",
       "The company experienced a total of six security breaches over the two-year period.",
-      "The data-minimization policy was developed by the company's legal team.",
+      "Customer satisfaction scores for personalized recommendations fell from 4.1 to 3.4 out of 5 after the policy change.",
       "The company serves customers in over twenty countries.",
     ],
     answer: 0,
     explanation:
-      "The claim has two parts—reduced breach severity and maintained personalization quality—and only choice A reports data addressing both outcomes.",
+      "The claim requires both less severe breaches and unchanged personalization quality; only the correct choice reports both figures accurately—breach size fell sharply while satisfaction held steady at 4.1—whereas claiming satisfaction actually declined misreads the study's own reported number, and breach count or customer geography don't address either outcome.",
   },
   {
     id: "ii-162",
@@ -3159,13 +3159,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Public and professional attitudes toward brutalist architecture have shifted from scorn toward appreciation and preservation.",
-      "Brutalist buildings have always been celebrated for their honesty of design.",
+      "Public opinion of brutalist architecture has remained consistently positive since these buildings were first constructed.",
       "Most brutalist buildings have been demolished due to public opposition.",
-      "Architects uniformly agree that brutalism represents a failure of design.",
+      "A small minority of architects now argue that brutalism's unornamented forms were a failure of design all along.",
     ],
     answer: 0,
     explanation:
-      "The passage describes a reversal—buildings 'once derided' now being preserved and reconsidered—matching choice A and contradicting the 'always' in choice B.",
+      "The passage describes a reversal—buildings 'once derided' now increasingly preserved and reappreciated—not buildings always viewed positively, mass demolition, or a dwindling minority still calling the style a design failure.",
   },
   {
     id: "ii-166",
@@ -3254,13 +3254,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Historians treat certain family quilts as informal historical records that preserve information families never documented in writing.",
-      "Quilts are valuable to historians only for their decorative patterns.",
-      "Every family quilt has already been thoroughly documented in written records.",
+      "The main point of the text is that quilts reveal exactly which fabrics were fashionable during a particular period.",
+      "The specific fabrics used in family quilts are typically also catalogued in written family diaries.",
       "Historians generally consider quilts less informative than written family diaries.",
     ],
     answer: 0,
     explanation:
-      "The passage states quilts can reveal information 'that family members never wrote down,' framing them as documents rather than mere decoration, matching choice A.",
+      "The passage's point is that quilts function as informal historical records precisely because they preserve information—migration, hardship, milestones—that was never written down elsewhere, not that quilts are valued only for noting fashionable fabrics, that diaries duplicate this information, or that quilts rank below diaries in informational value.",
   },
   {
     id: "ii-171",
@@ -3330,13 +3330,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Historical evidence suggests that bushido as commonly understood today is largely a later idealization rather than an accurate record of earlier samurai practice.",
-      "Bushido was recorded in precise detail during the height of samurai military activity.",
-      "Samurai military practices remained completely unchanged for centuries.",
-      "Historians have found no surviving documents describing the samurai code.",
+      "Bushido was formalized gradually throughout the centuries when samurai were most actively engaged in battle.",
+      "Because bushido was formalized after the samurai's military role faded, historians conclude that virtually none of its principles reflect real battlefield practice.",
+      "Popular modern accounts of bushido closely match the picture given in surviving historical documents.",
     ],
     answer: 0,
     explanation:
-      "The passage states the code was formalized 'after the samurai's military role had already faded,' making it a 'later idealization,' matching choice A and contradicting choice B.",
+      "The passage states bushido was recorded mostly AFTER the samurai's military role had faded, making much of today's 'traditional' version a later idealization—not a record kept during peak military activity, not a claim that virtually nothing reflects real practice, an overstatement of 'much of,' and not a match between popular imagination and the historical record, which the passage explicitly contrasts.",
   },
   {
     id: "ii-175",
@@ -3406,13 +3406,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "The rise in multigenerational households reflects economic pressures and a cultural shift rather than a single cause.",
-      "Multigenerational households are declining because of rising housing costs.",
-      "Younger adults uniformly view multigenerational living as a sign of personal failure.",
+      "Rising housing costs are the single largest force behind the increase in multigenerational households, with cultural attitudes playing only a minor role.",
+      "Younger adults who still see multigenerational living as a sign of financial failure are driving the recent increase in such households.",
       "Demographers attribute the trend entirely to an aging population, with no other contributing factors.",
     ],
     answer: 0,
     explanation:
-      "The passage lists several distinct contributing forces—cost, aging, and cultural attitudes—matching the multi-cause framing in choice A and contradicting the single-cause choices B and D.",
+      "The passage lists housing costs, an aging population, and a cultural shift as a combination of forces, without ranking one as most important, crediting the rise to adults who still see the arrangement negatively, or treating any single factor as the whole explanation.",
   },
   {
     id: "ii-179",
@@ -3578,12 +3578,12 @@ QUESTIONS.push(
     choices: [
       "Milkweed availability, rather than temperature alone, may be a key factor driving monarch migration route choices.",
       "Temperature is the only factor that determines monarch migration routes.",
-      "Monarchs abandoned migration entirely in years when milkweed was scarce.",
-      "The secondary corridor contains no milkweed at all.",
+      "Monarchs that shifted to the secondary corridor took significantly longer to complete their migration than those on the traditional route.",
+      "The secondary corridor's milkweed supply is replenished specifically by seeds carried from the traditional route.",
     ],
     answer: 0,
     explanation:
-      "Because the shift occurred even when temperatures were normal, milkweed scarcity—not temperature—appears to be the factor prompting the route change, matching choice A.",
+      "Because the route shift happened even when temperatures were normal, milkweed scarcity—not temperature alone—appears to drive the choice of route; the passage says nothing about how long the alternate migration took or how the secondary corridor's milkweed got there, and temperature being the ONLY factor is the opposite of what the shift suggests.",
   },
   {
     id: "ii-188",
@@ -3616,12 +3616,12 @@ QUESTIONS.push(
     choices: [
       "Factors other than rent increases alone may be contributing to the displacement of longtime residents in the neighborhood.",
       "Rent control laws directly caused the residents to move away from the neighborhood.",
-      "No rent-controlled apartments existed in the neighborhood before the transit line opened.",
-      "The new transit line had no effect on anyone living nearby.",
+      "The neighborhood's rent-control laws were enacted only after the transit line opened nearby.",
+      "The transit line's opening caused rents in the neighborhood to rise above the legal limit.",
     ],
     answer: 0,
     explanation:
-      "Since rents stayed within the legal limit yet many residents still left after the transit line opened, something besides rent increases—perhaps rising neighborhood costs generally—appears to be driving the departures, matching choice A.",
+      "Since controlled rents stayed within the legal limit yet many longtime residents still left after the transit line opened, something besides rent increases appears to be driving departures—not rent control itself causing the moves, an unstated timeline for when the laws took effect, or rents actually exceeding the legal limit, which the passage rules out.",
   },
   {
     id: "ii-190",
@@ -3673,12 +3673,12 @@ QUESTIONS.push(
     choices: [
       "The advantages of learning a language at a younger versus older age may depend on which specific skill, such as pronunciation versus vocabulary, is being measured.",
       "Adults are always better than children at every aspect of learning a new language.",
-      "Children acquire vocabulary and grammar faster than adults in the first year.",
-      "Pronunciation ability is entirely unrelated to the age at which a person begins learning a language.",
+      "Children who arrive young eventually surpass adults in vocabulary and grammar, not just pronunciation.",
+      "Pronunciation ability depends solely on age of arrival, regardless of how long someone has studied the language.",
     ],
     answer: 0,
     explanation:
-      "Adults led in vocabulary and grammar early on, while children who started young eventually sounded more native in pronunciation, implying age advantages differ by skill rather than favoring one group uniformly, matching choice A.",
+      "Adults led in vocabulary and grammar early on, while children who started young eventually sounded more native specifically in pronunciation—implying age advantages differ by skill, not that children eventually win across the board, and not that age is the sole determinant of pronunciation to the exclusion of any other factor.",
   },
   {
     id: "ii-193",
@@ -4097,13 +4097,13 @@ QUESTIONS.push(
     prompt: "Which finding most directly supports the therapist's claim?",
     choices: [
       "Resistance program participants gained an average of 2.1% in hip bone density while walking-only participants averaged a 0.3% decline.",
-      "Both programs had dropout rates of around 15%.",
+      "Resistance program participants averaged a 0.3% decline in hip bone density while walking-only participants gained 2.1%.",
       "The study followed participants for eighteen months.",
       "Participants in both groups were all over the age of 65.",
     ],
     answer: 0,
     explanation:
-      "The claim is a comparison of bone density outcomes, and only choice A reports the actual density changes (a gain versus a decline) distinguishing the two programs.",
+      "The claim is that resistance training outperformed walking for bone density, and it's the resistance group that gained 2.1% while the walking group averaged a 0.3% decline, not the reverse—swapping those figures misstates the finding, and dropout rates, study length, or age range don't address the comparison itself.",
   },
   {
     id: "ii-215",
@@ -4193,13 +4193,13 @@ QUESTIONS.push(
     prompt: "Which finding most directly supports the researcher's claim?",
     choices: [
       "The score gap between tutored and non-tutored students narrowed from 15 points to 4 points after one year in the program.",
-      "The program enrolled over 300 students in its first year.",
+      "The score gap between tutored and non-tutored students widened from 4 points to 15 points after one year in the program.",
       "Tutoring sessions were held three times per week.",
       "Non-tutored students' scores remained completely unchanged throughout the study.",
     ],
     answer: 0,
     explanation:
-      "The claim is specifically about a narrowed, not eliminated, score gap, and only choice A reports the actual before-and-after gap (15 points to 4 points) matching that nuance.",
+      "The claim is specifically about a narrowed, not eliminated or widened, score gap; the actual before-and-after figures show the gap shrinking from 15 points to 4 points, not growing—reversing those numbers misstates the finding, and session frequency or an unstated claim about non-tutored students' scores staying perfectly flat don't address the gap itself.",
   },
   {
     id: "ii-220",
@@ -4233,11 +4233,11 @@ QUESTIONS.push(
       "Monthly streetlighting electricity costs fell from about $140,000 to $58,000 even as 40 additional roads were newly lit.",
       "The LED replacement project took eighteen months to complete citywide.",
       "LED fixtures generally last longer than sodium light fixtures.",
-      "The city contains several thousand individual streetlights.",
+      "Monthly streetlighting costs rose from about $58,000 to $140,000 even as 40 roads were newly lit.",
     ],
     answer: 0,
     explanation:
-      "The claim is that costs fell substantially despite expanded lighting coverage, and only choice A reports the actual cost drop alongside the added roads, directly supporting it.",
+      "The claim is that costs fell substantially despite expanded coverage; the real figures show a drop from about $140,000 to $58,000, not a rise—reversing that direction misstates the finding, and project duration or LED fixture lifespan, while real facts, don't address the cost comparison itself.",
   },
   {
     id: "ii-222",
@@ -4252,12 +4252,12 @@ QUESTIONS.push(
     choices: [
       "Retention among employees who took parental leave rose from 61% to 89%, while overall company retention rose only from 84% to 86% over the same period.",
       "The expanded leave policy applies to both parents, not just one.",
-      "The company employs several thousand people across multiple offices.",
+      "Overall company retention rose from 61% to 89%, while retention among employees who took parental leave rose only from 84% to 86%.",
       "Parental leave policies vary widely between different companies.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to new parents, and only choice A contrasts the large retention increase among leave-takers with the much smaller overall increase.",
+      "The claim is that new parents specifically benefited; it's leave-takers whose retention jumped from 61% to 89%, while the company's OVERALL retention rose only slightly, from 84% to 86%—reversing those figures misstates the comparison, and leave eligibility rules or policies elsewhere don't address this specific contrast.",
   },
   {
     id: "ii-223",
@@ -4555,13 +4555,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Evidence suggests Nubian pyramids reflect deliberate design choices rather than a lesser imitation of Egyptian architecture.",
-      "Nubian pyramids are structurally identical to Egyptian pyramids in every respect.",
-      "Archaeologists agree that Nubian builders lacked the ability to construct larger structures.",
-      "Nubian pyramids were built before any Egyptian pyramids existed.",
+      "Nubian pyramids share the same steep, narrow design that Egyptian pyramids used for similar ritual purposes.",
+      "The pyramids' smaller scale most likely reflects limited resources rather than a deliberate structural choice.",
+      "Nubian pyramid-building began shortly after the Egyptian tradition first emerged, continuing in close parallel ever since.",
     ],
     answer: 0,
     explanation:
-      "The passage counters the 'inferior imitation' view by describing a 'steeper, narrower design' reflecting 'distinct engineering choices,' matching choice A and contradicting choice C.",
+      "The passage counters the 'inferior imitation' view by describing a steeper, narrower design suited to different purposes, not a design shared with Egyptian pyramids, a scale explained by limited resources, or a building tradition that began alongside Egypt's rather than centuries later.",
   },
   {
     id: "ii-239",
@@ -4574,13 +4574,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Researchers suspect this orchid's conspicuous flowers persist because they occasionally enable genetic diversity despite usually self-pollinating.",
-      "This orchid has completely lost the ability to produce flowers of any kind.",
-      "Insects are essential to this orchid's reproduction in every generation.",
-      "Scientists agree the orchid's flowers serve no remaining biological function.",
+      "This orchid's flowers have become smaller and less colorful over many generations as self-pollination increased.",
+      "Insect pollination is the primary way this orchid maintains genetic diversity across most generations.",
+      "Because the flowers rarely attract insects, researchers conclude they serve no function beyond self-pollination.",
     ],
     answer: 0,
     explanation:
-      "The passage explicitly rejects the 'wasted evolutionary leftover' view, proposing instead that the flowers preserve genetic diversity via occasional pollinator visits, matching choice A and contradicting choice D.",
+      "The passage rejects the 'wasted evolutionary leftover' view, proposing instead that the flowers persist because they occasionally still enable genetic diversity—not because the flowers themselves have diminished over time, not because insects remain the primary or frequent route to diversity, and not because the flowers serve no function at all.",
   },
   {
     id: "ii-240",
@@ -4593,13 +4593,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Mortar analysis suggests the cathedral's thin walls were an original, deliberate design rather than the product of later renovation.",
-      "The cathedral's walls have remained thicker than any other structure of its era.",
+      "The cathedral's walls were reinforced with additional stone sometime after their original construction.",
       "Historians agree the thin walls resulted entirely from renovations centuries after construction.",
-      "The mortar analysis was inconclusive and provided no information about the walls' origin.",
+      "The mortar analysis found the walls' material to be inconsistent with any construction technique used during the twelfth century.",
     ],
     answer: 0,
     explanation:
-      "The passage reverses the earlier renovation assumption, showing the mortar is 'consistent with the structure's original twelfth-century construction,' matching choice A and contradicting choice C.",
+      "The passage reverses the earlier renovation assumption: mortar analysis shows the walls' material is consistent with original twelfth-century construction, not a later addition, not confirmation that renovations caused the thinness (the old, discarded theory), and not an inconclusive or contradictory result.",
   },
   {
     id: "ii-241",
@@ -4612,13 +4612,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "The investigation attributes poor outcomes in the public defender system to structural caseload volume rather than individual attorneys' competence.",
-      "Public defenders in the county carried caseloads below the national recommended standard.",
-      "The investigation concluded that individual attorney skill was the primary cause of poor case outcomes.",
-      "National caseload standards do not exist for public defenders.",
+      "Public defenders in the county carried caseloads only slightly above the national recommended standard.",
+      "One particularly overworked attorney's poor performance was the investigation's primary focus and conclusion.",
+      "National caseload standards for public defenders have recently been lowered to reduce attorney workloads.",
     ],
     answer: 0,
     explanation:
-      "The passage states the authors argued caseload volume, not individual skill, 'made adequate preparation structurally impossible,' directly matching choice A and contradicting choice C.",
+      "The investigation's point is structural: caseloads nearly four times the national standard made adequate preparation impossible regardless of any one attorney's skill—not a mild overage, not a finding centered on one attorney's performance, and not a recent change to the standards themselves.",
   },
   {
     id: "ii-242",
@@ -4631,13 +4631,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Isotopic evidence reveals that Bronze Age tin trade spanned a far larger network than earlier historians had assumed.",
-      "Tin was readily available throughout the ancient Mediterranean region.",
-      "Earlier historians had already documented tin's origins from distant British mines.",
-      "Bronze Age societies did not use tin from any sources outside their immediate region.",
+      "Tin from British mines was readily available to all Bronze Age Mediterranean societies, not just a few trade hubs.",
+      "Isotopic analysis confirmed earlier historians' assumption that only a handful of nearby tin sources were used.",
+      "Bronze artifacts manufactured in Britain have been found at Mediterranean archaeological sites.",
     ],
     answer: 0,
     explanation:
-      "The passage states isotopic analysis revealed a trade network 'far more extensive... than previously documented evidence had suggested,' matching choice A and contradicting choices C and D.",
+      "Isotopic analysis revealed Mediterranean bronze contains tin sourced from distant mines like Britain's, overturning, not confirming, the old assumption of only nearby sources—this shows a wider trade network, not that tin became universally available, and it was the raw tin that traveled, not finished bronze objects made in Britain.",
   },
   {
     id: "ii-243",
@@ -4879,12 +4879,12 @@ QUESTIONS.push(
     choices: [
       "The two species may not have lived in the same specific habitat or time period despite inhabiting the same broader region.",
       "The two species definitely lived together in large mixed herds.",
-      "No fossils of either species have been found within the same geographic region.",
-      "Rock layers provide no information about when a fossil was deposited.",
+      "The two species' fossils are typically found scattered randomly throughout the same individual rock layers.",
+      "Fossils found within a few feet of each other vertically were definitely deposited at the exact same time.",
     ],
     answer: 0,
     explanation:
-      "Since the species are never found in the 'exact same layer' despite sharing a region, they likely did not overlap in specific habitat or time, contradicting the mixed-herd claim in choice B.",
+      "Since the species are never found in the 'exact same layer' despite sharing a region, even when their fossils sit within a few feet of each other vertically, they likely did not overlap in specific habitat or time—not that they roamed together in mixed herds, that their fossils actually mix within the same layers, or that physical closeness in the rock column means simultaneous deposition.",
   },
   {
     id: "ii-256",
@@ -4897,13 +4897,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "Some of the moths disrupted by the traps may have relocated to the untreated orchard rather than being eliminated entirely.",
-      "The pheromone traps increased the total moth population across both orchards.",
-      "The untreated orchard also installed pheromone traps that season.",
-      "Moth populations in the region had been declining for years before the traps were installed.",
+      "The pheromone traps eliminated the moth population in the treated orchard entirely.",
+      "The untreated orchard's moth population rise was caused by a separate, unrelated pest outbreak.",
+      "The untreated orchard's moth population had been rising gradually for several years before this season.",
     ],
     answer: 0,
     explanation:
-      "The treated orchard's decline coinciding with the nearby untreated orchard's unprecedented rise suggests displaced moths relocated rather than disappeared, contradicting choice C's claim that it was also treated.",
+      "The treated orchard's decline coinciding with the nearby untreated orchard's sudden, unprecedented rise in that same season suggests displaced moths relocated rather than disappeared—not that the traps wiped out the population entirely, that an unrelated outbreak explains the untreated orchard's spike, or that its rise had been building gradually for years.",
   },
   {
     id: "ii-257",
@@ -4916,13 +4916,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "This sign language likely developed its grammar independently rather than by borrowing it from the surrounding spoken languages.",
-      "The deaf community has had no contact with hearing residents for centuries.",
+      "Contact between the deaf and hearing communities has increased significantly in recent decades.",
       "Spoken and signed languages always share identical grammatical structures.",
-      "The sign language was invented by hearing residents of the region.",
+      "The sign language borrowed its vocabulary, though not its grammar, from the surrounding spoken languages.",
     ],
     answer: 0,
     explanation:
-      "Since the grammar shares 'almost no' structure with nearby spoken languages despite 'centuries of continuous contact,' independent development is the most reasonable inference, contradicting choice B's claim of no contact.",
+      "Since the grammar shares 'almost no' structure with nearby spoken languages despite centuries of contact, independent development is the most reasonable inference—not a claim about contact increasing recently, not that signed and spoken grammar are always identical, and not an unsupported claim about vocabulary, which the passage never addresses.",
   },
   {
     id: "ii-258",
@@ -4936,12 +4936,12 @@ QUESTIONS.push(
     choices: [
       "It may be difficult to attribute the falling rents to the rental restriction alone, given the concurrent rise in new apartment construction.",
       "The rental restriction is definitely the sole cause of the city's falling rents.",
-      "No new apartment construction occurred in the city before the restriction took effect.",
+      "The rise in apartment construction permits was caused by the same policy that restricted vacation rentals.",
       "The zoning change and the rental restriction occurred for identical reasons.",
     ],
     answer: 0,
     explanation:
-      "Because new construction driven by a separate zoning change was completed around the same time rents fell, isolating the rental restriction as the cause is difficult, contradicting the sole-cause claim in choice B.",
+      "Because new construction driven by a SEPARATE zoning change was completed around the same time rents fell, isolating the rental restriction as the cause is difficult—not because the restriction definitely caused everything, not because the same policy drove both changes (the passage calls the zoning change separate), and not because the two policies shared identical motivations, which the passage never states.",
   },
   {
     id: "ii-259",
@@ -5433,12 +5433,12 @@ QUESTIONS.push(
     choices: [
       "Full-time employment among participants rose from 38% to 51%, while the comparison group's rose only from 36% to 39% over the same period.",
       "The pilot program provided payments of $500 per month.",
-      "Participants were selected randomly from a larger applicant pool.",
+      "The comparison group's full-time employment rose from 38% to 51%, while participants' employment rose only from 36% to 39% over the same period.",
       "The program was funded through a combination of public and private sources.",
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the actual difference in full-time employment growth between participants and the comparison group.",
+      "The claim is comparative, and it's the PARTICIPANTS whose full-time employment rose more, from 38% to 51%, versus the comparison group's smaller rise from 36% to 39%—reversing those figures misstates the finding, and payment amount or funding source don't address the employment comparison itself.",
   },
   {
     id: "ii-285",
@@ -5452,13 +5452,13 @@ QUESTIONS.push(
       "Which finding most directly supports the company's claim that the yield advantage is specific to dry years?",
     choices: [
       "The drought-tolerant hybrid yielded 164 bushels per acre versus 121 in drought years, but within 2 bushels per acre of the standard hybrid in normal-rainfall years.",
-      "The drought-tolerant hybrid was developed over a ten-year breeding program.",
+      "In years with normal rainfall, the drought-tolerant hybrid yielded 164 bushels per acre versus 121 for the standard hybrid.",
       "Corn yields are typically measured in bushels per acre.",
       "The standard hybrid has been sold commercially for over twenty years.",
     ],
     answer: 0,
     explanation:
-      "The claim is about an advantage specific to dry years, and only choice A contrasts the large drought-year yield gap with the negligible gap in normal-rainfall years.",
+      "The claim is that the yield advantage is specific to dry years; the 164-versus-121 gap applies to drought years, not normal-rainfall years, where the hybrids differed by only about 2 bushels per acre—applying the drought figures to normal years misstates the comparison, and the breeding program's length, measurement units, or the standard hybrid's market history don't address it.",
   },
   {
     id: "ii-286",
@@ -5473,12 +5473,12 @@ QUESTIONS.push(
     choices: [
       "New business registrations in newly connected towns rose from 4 to 15 per year, while registrations in unconnected towns rose only from 5 to 6 per year.",
       "The broadband expansion was completed in phases over eighteen months.",
-      "The newly connected towns have a combined population of about 40,000.",
+      "Registrations in unconnected towns rose from 4 to 15 per year, while newly connected towns' registrations rose only from 5 to 6 per year.",
       "The telecom company also offers broadband service in several major cities.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to the newly connected towns, and only choice A contrasts their large increase in business registrations with the minimal change in unconnected towns.",
+      "The claim is about newly connected towns benefiting specifically, and it's those towns whose registrations jumped from 4 to 15 per year, not the unconnected towns, which rose only from 5 to 6—reversing those figures misstates the finding, and the expansion timeline, town population, or the company's other markets don't address this comparison.",
   },
   {
     id: "ii-287",
@@ -5493,12 +5493,12 @@ QUESTIONS.push(
     choices: [
       "Adolescent adherence rose from 44% to 79%, while adult adherence rose only from 68% to 72% over the same period.",
       "The dose counter displays the number of puffs remaining in the inhaler.",
-      "Adolescent asthma patients were recruited from twelve clinics.",
+      "Adult adherence rose from 44% to 79%, while adolescent adherence rose only from 68% to 72% over the same period.",
       "The new inhaler costs slightly more than the previous design.",
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to adolescent patients, and only choice A contrasts their large adherence increase with the much smaller increase among adult patients.",
+      "The claim is that adolescents specifically benefited, and it's adolescent adherence that jumped from 44% to 79%, not adult adherence, which rose only from 68% to 72%—reversing those figures misstates the finding, and the dose counter's display feature, clinic recruitment, or inhaler cost don't address this comparison.",
   },
   {
     id: "ii-288",
@@ -5568,13 +5568,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Fungal networks may serve a newly recognized function beyond decomposition: relaying warning signals between trees.",
-      "Fungal networks are useful only for breaking down dead organic matter.",
-      "Trees under insect attack always die regardless of fungal networks.",
+      "Fungal networks' decomposition role has recently been found to be less significant than scientists once believed.",
+      "Neighboring trees connected by fungal networks raise their defenses only after being touched by the pests themselves.",
       "Scientists have proven that fungi are capable of conscious thought.",
     ],
     answer: 0,
     explanation:
-      "The passage states fungi were 'long studied mainly' for decomposition but now show a newly suspected role in warning nearby trees, which matches choice A.",
+      "The passage adds a newly recognized function—relaying warning signals—without downgrading the established decomposition role, states that neighboring trees raise defenses BEFORE pests reach them, not after, and describes signal transmission, not consciousness.",
   },
   {
     id: "ii-292",
@@ -5644,13 +5644,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "The actual source of the worst noise complaints differed from officials' initial assumption.",
-      "Highway traffic is louder than any other source of noise in the city.",
+      "Highway traffic generates more sustained noise than idling delivery trucks, though officials had underestimated it.",
       "Delivery trucks have been banned from residential neighborhoods.",
       "Noise complaints decreased sharply after the survey was conducted.",
     ],
     answer: 0,
     explanation:
-      "The text contrasts officials' assumption (highways) with the survey's finding (delivery routes), matching choice A.",
+      "The text contrasts officials' assumption (highway traffic as the main source) with the survey's actual finding that idling delivery trucks created more sustained noise—not that highway traffic was still louder, that trucks were subsequently banned, or that complaints later fell, none of which the passage mentions.",
   },
   {
     id: "ii-296",
@@ -5739,13 +5739,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Algae colonizing glaciers may drive a self-reinforcing cycle of melting beyond what dust alone explains.",
-      "Windblown dust is the only cause of dark patches on glaciers.",
-      "Algae growth on glaciers has no measurable effect on ice temperature.",
-      "Glaciers melt at a constant rate regardless of their surface conditions.",
+      "Windblown dust has recently been ruled out as a cause of dark patches on glaciers.",
+      "Algae growth accelerates glacier melt only in regions already affected by broader climate trends.",
+      "The cycle of algae growth and melting eventually stabilizes once the glacier reaches a constant melt rate.",
     ],
     answer: 0,
     explanation:
-      "The passage describes algae darkening the ice and accelerating melt in a cycle 'independent of broader climate trends,' matching choice A.",
+      "The passage adds algae as another contributor alongside dust, not a replacement for it, describes the melt-acceleration cycle as operating independent of broader climate trends, not only within them, and never claims the cycle eventually stabilizes.",
   },
   {
     id: "ii-301",
@@ -5797,12 +5797,12 @@ QUESTIONS.push(
     choices: [
       "The ship likely made at least one stop that was not recorded in its official manifest.",
       "The manifest was entirely accurate about everything the ship carried.",
-      "The jars were loaded onto the ship after it had already sunk.",
-      "The ship never carried any ceramic goods during its voyages.",
+      "The jars were likely placed in the wreck by looters long after the ship originally sank.",
+      "The ceramic jars found in the hold were manufactured at the ship's recorded destination.",
     ],
     answer: 0,
     explanation:
-      "Jars from a region absent from the manifest suggest the ship visited a place its official record did not document, matching choice A.",
+      "Jars from a region absent from the manifest suggest the ship visited a place its official record did not document—not that the manifest was fully accurate, that looters added the jars after the wreck (unsupported speculation), or that the jars actually came from the ship's documented destination.",
   },
   {
     id: "ii-304",
@@ -5855,11 +5855,11 @@ QUESTIONS.push(
       "The mountain dialect likely developed this feature somewhat independently of its lowland relatives.",
       "All languages distinguish 'borrow' from 'lend' using entirely separate words.",
       "Lowland dialects and the mountain dialect are completely mutually unintelligible.",
-      "The mountain dialect has no words related to exchange or trade at all.",
+      "The mountain dialect borrowed this single-word structure directly from a neighboring lowland dialect.",
     ],
     answer: 0,
     explanation:
-      "The feature's rarity 'among the dialect's lowland relatives' suggests it arose somewhat independently in the mountain dialect, matching choice A.",
+      "The feature's rarity 'among the dialect's lowland relatives' suggests it arose somewhat independently in the mountain dialect—not that all languages work this way, not that the two dialect groups can't communicate at all, and not that the feature was borrowed from a lowland neighbor, the opposite of what its rarity there suggests.",
   },
   {
     id: "ii-307",
@@ -5967,13 +5967,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The manuscript was likely annotated or altered by someone other than its original author long after it was written.",
-      "The entire manuscript was written within a single calendar year.",
-      "Chemical analysis is generally unreliable for dating old ink.",
+      "The handwriting difference most likely reflects the same author's natural changes in style over a single year.",
+      "The ink used in the later pages was chemically identical to the ink used in the rest of the manuscript.",
       "The original author returned decades later to finish the manuscript himself.",
     ],
     answer: 0,
     explanation:
-      "Distinct handwriting in ink dated roughly a century later indicates a later annotator rather than the original author, matching choice A.",
+      "Distinct handwriting in chemically dated ink nearly a century later points to a different annotator, not the original author—far too long a gap for one author's natural style drift within a year or for the ink to be chemically identical, and far longer than the 'decades' in the author's-return scenario.",
   },
   {
     id: "ii-313",
@@ -7638,13 +7638,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "Archival evidence suggests a trade agreement's credited benefit to manufacturing has been overstated, with agriculture actually gaining more from it.",
-      "The trade agreement provided no benefits to either signatory nation.",
-      "Manufacturing firms received the same tariff treatment as agricultural exporters.",
-      "Domestic investment played no role in the smaller nation's economic growth.",
+      "The trade agreement's main benefit was to accelerate domestic investment in the smaller nation's manufacturing sector.",
+      "Agricultural exporters received the same tariff treatment manufacturing firms had already secured.",
+      "The agreement's preferential tariff treatment was primarily responsible for the smaller nation's manufacturing growth.",
     ],
     answer: 0,
     explanation:
-      "The passage presents a revisionist claim that agriculture, not manufacturing, was the agreement's real beneficiary, with manufacturing growth traced to unrelated investment, matching choice A. The other choices contradict specific details given.",
+      "The passage's revisionist claim is that agriculture, not manufacturing, was the agreement's true beneficiary, with manufacturing growth traced to unrelated domestic investment—not that the agreement itself drove that investment, not that manufacturing ever secured the same tariff treatment agriculture did, and not that the tariff benefit explains manufacturing's growth.",
   },
   {
     id: "ii-399",
@@ -7678,12 +7678,12 @@ QUESTIONS.push(
     choices: [
       "Average boarding-related departure delay fell from 11 to 4 minutes after the new procedure began, despite a slight rise in passenger loads.",
       "The airline operates flights to over 100 destinations.",
-      "Passengers are assigned boarding groups printed on their tickets.",
+      "Average boarding-related delay rose from 4 to 11 minutes after the new procedure began, even as passenger loads fell slightly.",
       "The airline introduced a new loyalty program the same year.",
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after delay figures, and the fact that the drop occurred despite slightly fuller flights strengthens the link to the new procedure rather than lighter passenger loads.",
+      "The claim is that the new procedure reduced delay; the real figures show delay falling from 11 to 4 minutes despite slightly fuller flights, not rising from 4 to 11 with lighter loads—reversing those figures misstates the finding, and destination count or an unrelated loyalty program don't address boarding delay.",
   },
   {
     id: "ii-401",
@@ -7696,13 +7696,13 @@ QUESTIONS.push(
     prompt: "Which choice is the most logical inference based on the text?",
     choices: [
       "The ship likely made a stop in the northern region before its final, documented departure, contrary to what the manifest alone suggests.",
-      "The pottery was manufactured at the southern port listed in the manifest.",
-      "The ballast stones were purely decorative and served no functional purpose.",
+      "The glazed pottery found aboard was a style common to ports throughout the region, including the southern port of departure.",
+      "The ballast stones were loaded at the southern port using material imported from the north.",
       "The manifest's listed port of departure was deliberately falsified by the crew.",
     ],
     answer: 0,
     explanation:
-      "Cargo and ballast tied to a northern region, despite a manifest listing a southern departure port, most reasonably suggests an unlisted stop in the north rather than fabrication or coincidence. The other choices are unsupported or contradicted by the text.",
+      "Cargo and ballast tied to a northern region, despite a manifest listing only a southern departure, most reasonably suggests an unlisted stop in the north—not that the pottery style was common everywhere including the south, not an unsupported story about imported ballast material, and not deliberate falsification, a stronger claim than the evidence requires.",
   },
   {
     id: "ii-402",
@@ -7715,13 +7715,13 @@ QUESTIONS.push(
     prompt: "Which choice best states the main idea of the text?",
     choices: [
       "A reanalysis has cast doubt on an exoplanet's water vapor signal without fully disproving it, a nuance some coverage missed.",
-      "Astronomers have definitively confirmed water vapor on the exoplanet.",
-      "The reanalysis proved the exoplanet has no atmosphere at all.",
-      "Popular coverage of the reanalysis accurately captured its uncertain conclusions.",
+      "Instrument interference has been ruled out as a possible explanation for the original signal.",
+      "The reanalysis specifically disproved the possibility of water vapor in the exoplanet's atmosphere.",
+      "Popular coverage of the reanalysis clearly emphasized that the original signal remains uncertain rather than disproven.",
     ],
     answer: 0,
     explanation:
-      "The passage distinguishes 'uncertain rather than disproven' and notes coverage blurred that distinction, matching choice A. The other choices overstate or contradict the passage's careful framing.",
+      "The passage's nuance is that the reanalysis left the water vapor finding uncertain, not disproven, after identifying instrument interference as a likely source of much of the original signal—not that interference was ruled out, not that water vapor was definitively disproved, and not that popular coverage got the distinction right, which the passage says some coverage missed.",
   },
   {
     id: "ii-403",
@@ -7775,12 +7775,12 @@ QUESTIONS.push(
     choices: [
       "Cultural exchange likely occurred between the two civilizations despite their historical rivalry.",
       "The two civilizations merged into a single political state.",
-      "One civilization completely abandoned its original pottery traditions.",
-      "The shared border between the civilizations was closed to all travel.",
+      "Pottery styles blended only in settlements far from the shared border, not in border settlements themselves.",
+      "Cultural exchange between the civilizations began only after their historical rivalry formally ended.",
     ],
     answer: 0,
     explanation:
-      "Blended motifs appearing in settlements on both sides of the border, despite rivalry, most reasonably suggests some form of cultural exchange occurred. The other choices make claims well beyond what the pottery evidence supports.",
+      "Blended motifs appearing in settlements on both sides of the border, despite ongoing rivalry, most reasonably suggest cultural exchange occurred—not a full political merger, not blending that avoided border settlements specifically (the opposite of what's described), and not exchange that waited for the rivalry to end, which the passage never states.",
   },
   {
     id: "ii-406",
@@ -7794,12 +7794,12 @@ QUESTIONS.push(
     choices: [
       "Evidence of delayed writing has led historians to reconsider a diary as a hindsight-shaped memoir rather than a contemporary account.",
       "The diary has been proven to be entirely fabricated.",
-      "All historians now agree the diary was written during the war itself.",
+      "The inconsistencies in the diary's dated entries have been fully resolved, confirming it was written during the war.",
       "The soldier's later years were undocumented before this diary was found.",
     ],
     answer: 0,
     explanation:
-      "The passage describes a shift in interpretation from contemporary record to later reconstruction, matching choice A. Choice B overstates with 'entirely fabricated,' C contradicts the passage's description of new doubt, and D is not discussed.",
+      "The passage describes a shift in interpretation from contemporary record to hindsight-shaped reconstruction, not proof of outright fabrication, not a resolution of the inconsistencies confirming wartime authorship (the inconsistencies are what prompted the doubt), and nothing about whether the soldier's later years were otherwise documented.",
   },
   {
     id: "ii-407",
@@ -7851,12 +7851,12 @@ QUESTIONS.push(
     choices: [
       "The anomalous signal is less likely to be a simple equipment error than the first laboratory initially assumed.",
       "The anomalous signal has been conclusively confirmed as a new physical phenomenon.",
-      "All three laboratories used identical detector designs.",
+      "The statistical threshold considered conclusive was reached once all three laboratories' results were combined.",
       "The standard model has been proven incorrect by these results.",
     ],
     answer: 0,
     explanation:
-      "Independent replication across differently designed detectors makes a simple equipment-error explanation less likely, even though the passage explicitly notes the results are not yet conclusive. The other choices overstate what the passage supports.",
+      "Independent replication across differently designed detectors makes a simple equipment-error explanation less likely, even though the passage explicitly notes the results are not yet conclusive—it says nothing about a combined result crossing that threshold, and it stops well short of confirming a new phenomenon or disproving the standard model.",
   },
   {
     id: "ii-410",
@@ -7870,12 +7870,12 @@ QUESTIONS.push(
     choices: [
       "Private notebooks undercut the view that a sculptor's shift to kinetic art was a publicity gimmick, pointing instead to years of genuine experimentation.",
       "The sculptor abandoned bronze sculpture after a single failed exhibition.",
-      "Critics universally praised the sculptor's new kinetic works from the start.",
+      "Critics eventually reversed their dismissal after seeing the large-scale kinetic sculptures exhibited publicly.",
       "The notebooks reveal the kinetic sculptures were created primarily by assistants.",
     ],
     answer: 0,
     explanation:
-      "The passage uses notebook evidence to counter the gimmick narrative with genuine, sustained experimentation, matching choice A. Choice B misstates the reason for the shift, C contradicts the initial dismissal described, and D is never mentioned.",
+      "The passage uses notebook evidence—not a later change of heart after public exhibitions—to counter the gimmick narrative with genuine, sustained private experimentation; it also never says critics came around, only that notebooks undercut their original dismissal, and it says nothing about a failed exhibition or assistants' involvement.",
   },
   {
     id: "ii-411",
@@ -7909,12 +7909,12 @@ QUESTIONS.push(
     choices: [
       "Daily output rose from 850 to 1,300 units while the defect rate stayed essentially flat, from 2.1% to 2.0%, after the robotic arms were installed.",
       "The robotic arms were purchased from an overseas manufacturer.",
+      "Daily output rose from 850 to 1,300 units while the defect rate also rose, from 2.0% to 2.1%.",
       "The assembly line operates in three daily shifts.",
-      "Workers received training on the new robotic arms before installation.",
     ],
     answer: 0,
     explanation:
-      "The claim requires both higher output and an unchanged defect rate. Only choice A reports data on both measures, showing output rising substantially while the defect rate remained essentially flat.",
+      "The claim requires both higher output and an unchanged defect rate; the real figures show output climbing from 850 to 1,300 units while the defect rate held essentially flat, falling slightly from 2.1% to 2.0%, not rising—reversing those figures misstates the finding, and the arms' origin or shift schedule don't address either measure.",
   },
   {
     id: "ii-413",
@@ -7928,11 +7928,11 @@ QUESTIONS.push(
     choices: [
       "The historical chronicles' description of abundant harvests during that decade may be inaccurate or reflect conditions other than favorable weather.",
       "Tree-ring data is always a less reliable indicator of climate than written chronicles.",
-      "The forest sampled was located in a different region from the one described in the chronicles.",
+      "The narrow growth rings reflect a brief, single-year drought rather than a decade-long pattern.",
       "Drought conditions always produce abundant agricultural harvests.",
     ],
     answer: 0,
     explanation:
-      "A conflict between narrow, drought-associated rings and chronicled abundance most reasonably suggests the written record may not accurately reflect growing conditions in that decade. The other choices overstate general reliability claims or contradict the stated pattern.",
+      "A conflict between narrow, drought-associated rings across the full decade and chronicled abundance most reasonably suggests the written record may not accurately reflect growing conditions in that decade—not a general claim about which record is more reliable, not a narrower single-year reading of a pattern the passage describes across the whole decade, and not a claim that drought itself produces abundant harvests.",
   }
 );

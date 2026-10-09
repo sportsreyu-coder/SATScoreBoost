@@ -164,12 +164,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The award, ______ given annually since 1962, honors excellence in local journalism.",
+      "The award, ______ given annually since 1962 to the reporter whose work most advances the public interest, honors excellence in local journalism.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["which has been", "that has been", "who has been", "being"],
     answer: 0,
     explanation:
-      "The nonessential clause set off by commas refers to a thing (the award) and needs a complete verb phrase, so 'which has been' is correct.",
+      "The nonessential clause set off by commas describes a thing (the award), not the reporter named later in the sentence, so it needs the thing-pronoun 'which' with a complete verb phrase; 'who has been' is tempting because a person is mentioned nearby, but the clause still modifies 'award.'",
   },
   {
     id: "conv-13",
@@ -236,10 +236,10 @@ QUESTIONS.push(
     passage:
       "By the time the guests arrive, she______dinner for two hours.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["will have been cooking", "cooks", "cooked", "is cooking"],
+    choices: ["will have been cooking", "will cook", "cooked", "is cooking"],
     answer: 0,
     explanation:
-      "'By the time' with a future event signals the future perfect progressive tense, 'will have been cooking,' to show an action continuing up to that future point.",
+      "'By the time' with a future event signals the future perfect progressive tense, 'will have been cooking,' to show an action continuing up to that future point; 'will cook' is tempting because it is also future tense, but it lacks the progressive aspect needed to show the two-hour duration.",
   },
   {
     id: "conv-18",
@@ -295,12 +295,12 @@ QUESTIONS.push(
     choices: [
       "I finally saw the cathedral's spires come into view.",
       "the cathedral's spires finally came into view.",
-      "the old district's history was learned by me.",
-      "cathedral spires were seen by tourists walking through the district.",
+      "a faded guidebook listed the cathedral's spires among the highlights.",
+      "the narrow streets led directly to the cathedral's spires.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Walking through the old district' describes a person, not the spires or the history, so the main clause's subject must be the walker: 'I.'",
+      "The introductory phrase 'Walking through the old district' describes a person, so the noun immediately after the comma must be the walker, 'I'; a guidebook or a set of streets cannot walk, even though both sentences read smoothly on their own.",
   },
   {
     id: "conv-22",
@@ -409,10 +409,10 @@ QUESTIONS.push(
     passage:
       "The city council recommended that the new ordinance______before the next fiscal year begins.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["take effect", "takes effect", "will take effect", "taking effect"],
+    choices: ["take effect", "takes effect", "will take effect", "took effect"],
     answer: 0,
     explanation:
-      "'Recommended that' triggers the subjunctive mood, which uses the base form of the verb ('take effect') regardless of the subject's number.",
+      "'Recommended that' triggers the subjunctive mood, which uses the base form of the verb, 'take effect,' regardless of the subject's number or the sentence's tense; the ordinary past-tense form 'took effect' is tempting but is indicative, not subjunctive.",
   },
   {
     id: "conv-30",
@@ -426,7 +426,7 @@ QUESTIONS.push(
     choices: ["who", "who, ", ", who", ", who,"],
     answer: 0,
     explanation:
-      "The clause 'who submitted every required document' is essential (restrictive) to identifying which applicants are meant, so it takes no surrounding commas.",
+      "The clause 'who submitted every required document' is essential (restrictive) to identifying which applicants are meant, so it takes no surrounding commas; ', who' is the closest trap because it would be correct only if the clause were nonessential, merely adding extra detail about applicants already identified.",
   },
   {
     id: "conv-31",
@@ -439,13 +439,13 @@ QUESTIONS.push(
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: [
       "how to revise them effectively",
-      "effective revision techniques being taught",
-      "how effective revision is",
-      "revising them is effective",
+      "how revising them is done effectively",
+      "how effective their revisions are",
+      "revising them effectively",
     ],
     answer: 0,
     explanation:
-      "'Not only...but also' requires parallel structure. Since the first part is 'how to write persuasive essays,' the second part must match that form: 'how to revise them effectively.'",
+      "'Not only...but also' requires matching grammatical forms; since the first element is the infinitive phrase 'how to write persuasive essays,' the second must match with 'how to revise them effectively.' The other choices keep the word 'how' or a gerund but drop the parallel infinitive structure, so they break the parallelism.",
   },
   {
     id: "conv-32",
@@ -554,10 +554,10 @@ QUESTIONS.push(
     passage:
       "By the time the fire crew arrived, the flames______the roof.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["had already consumed", "already consumed", "have already consumed", "were already consuming"],
+    choices: ["had already consumed", "would have consumed", "have already consumed", "were already consuming"],
     answer: 0,
     explanation:
-      "Because the roof was consumed before another past event (the crew's arrival), the past perfect 'had already consumed' is required.",
+      "Because the roof was consumed before another past event (the crew's arrival), the past perfect 'had already consumed' is required; 'would have consumed' is tempting because it also pairs two past events, but the conditional perfect implies an unmet hypothetical condition rather than simply reporting what had already happened.",
   },
   {
     id: "conv-40",
@@ -566,12 +566,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The final vote______a stunning 7-to-2 decision—reshaped the court's approach to digital privacy.",
+      "The final vote______a stunning, unanimous 7-to-2 decision—reshaped the court's approach to digital privacy.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a stunning 7-to-2 decision' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a stunning, unanimous 7-to-2 decision' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-41",
@@ -584,13 +584,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the sailor decided to postpone the voyage.",
-      "the voyage was postponed by the sailor.",
-      "storm clouds were the sailor's main concern.",
-      "the weather forecast was studied carefully.",
+      "the voyage required postponing before nightfall.",
+      "storm clouds gathered quickly along the horizon.",
+      "the weather forecast warned of an approaching storm.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Scanning the horizon for storm clouds' describes a person performing the action, so the noun immediately following the comma must be that person: 'the sailor.'",
+      "The introductory phrase 'Scanning the horizon for storm clouds' describes a person performing the action, so the noun immediately after the comma must be that person, 'the sailor'; the voyage, the clouds, and the forecast cannot scan the horizon, even though each sentence is otherwise well formed.",
   },
   {
     id: "conv-42",
@@ -618,7 +618,7 @@ QUESTIONS.push(
     choices: ["whomever", "whoever", "whom", "who"],
     answer: 0,
     explanation:
-      "Within the clause, the pronoun functions as the object of 'considers' ('the committee considers whom'), so the objective case 'whomever' is required even though the whole clause follows the preposition 'to.'",
+      "Within the clause, the pronoun functions as the object of 'considers' ('the committee considers whom'), so the objective case 'whomever' is required even though the whole clause follows the preposition 'to'; 'whoever' is the closest trap because it would be correct if the pronoun were instead the subject of 'considers,' which it is not.",
   },
   {
     id: "conv-44",
@@ -660,7 +660,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+      "A colon correctly introduces the list following the complete independent clause, and because the items themselves contain commas, semicolons separate the items; the semicolon is the closest trap, since semicolons do correctly separate the list's items, but only a colon can introduce the list as a whole.",
   },
   {
     id: "conv-47",
@@ -702,7 +702,7 @@ QUESTIONS.push(
     choices: ["improve", "improving", "improvement of", "the improvement in"],
     answer: 0,
     explanation:
-      "'Both...and' requires parallel structure; since the first element is the infinitive 'to reduce,' the second must match with the base verb 'improve' after 'to.'",
+      "'Both...and' requires parallel structure; since the first element is the infinitive 'to reduce,' the second must match with the base verb 'improve' after 'to.' 'Improving' is the closest trap because it still reads smoothly after 'to,' but pairing 'to' with a gerund breaks the required infinitive parallel with 'to reduce.'",
   },
   {
     id: "conv-50",
@@ -730,7 +730,7 @@ QUESTIONS.push(
     choices: ["lain", "laid", "lay", "layed"],
     answer: 0,
     explanation:
-      "The intransitive verb 'lie' (to rest in a place) takes the past participle 'lain' after 'had'; 'laid' is the past participle of the transitive verb 'lay,' which requires a direct object.",
+      "The intransitive verb 'lie' (to rest in a place) takes the past participle 'lain' after 'had.' 'Laid' is the closest trap because it is the past participle of the similar-sounding verb 'lay,' but 'lay' is transitive and requires a direct object, which this sentence does not have.",
   },
   {
     id: "conv-52",
@@ -744,7 +744,7 @@ QUESTIONS.push(
     choices: [", ", "; ", ": ", " "],
     answer: 0,
     explanation:
-      "'However' interrupts a single independent clause rather than joining two clauses, so it must be enclosed in a pair of commas; since the first comma is already given, a matching comma is needed here.",
+      "'However' interrupts a single independent clause rather than joining two clauses, so it must be enclosed in a pair of commas; since the first comma is already given, a matching comma is needed here. The semicolon is the closest trap because 'however' often pairs with a semicolon when it joins two independent clauses, but here it merely interrupts one clause, which calls for commas instead.",
   },
   {
     id: "conv-53",
@@ -842,7 +842,7 @@ QUESTIONS.push(
     choices: ["more smoothly", "smoother", "more smooth", "smoothly more"],
     answer: 0,
     explanation:
-      "The verb 'proceeded' must be modified by an adverb, not an adjective, so 'more smoothly' is correct; 'smoother' and 'more smooth' are adjective forms.",
+      "The verb 'proceeded' must be modified by an adverb, not an adjective, so 'more smoothly' is correct. 'Smoother' is the closest trap because it is a natural-sounding comparative, but as an adjective it cannot modify the verb 'proceeded.'",
   },
   {
     id: "conv-60",
@@ -907,12 +907,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The central bank's decision______a quarter-point rate cut—surprised most analysts who had expected no change.",
+      "The central bank's decision______a quarter-point rate cut, its first in three years—surprised most analysts who had expected no change.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a quarter-point rate cut' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a quarter-point rate cut, its first in three years' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-65",
@@ -968,7 +968,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+      "A colon correctly introduces the list following the complete independent clause, and because the items themselves contain commas, semicolons separate the items; the semicolon is the closest trap, since semicolons do correctly separate the list's items, but only a colon can introduce the list as a whole.",
   },
   {
     id: "conv-69",
@@ -1038,7 +1038,7 @@ QUESTIONS.push(
     choices: ["review", "reviews", "reviewed", "will review"],
     answer: 0,
     explanation:
-      "'Insisted that' triggers the subjunctive mood, which uses the base form of the verb ('review') regardless of the subject's number.",
+      "'Insisted that' triggers the subjunctive mood, which uses the base form of the verb, 'review,' regardless of the subject's number; 'reviews' is tempting because it agrees with the singular 'member,' but ordinary subject-verb agreement does not apply inside a subjunctive clause.",
   },
   {
     id: "conv-74",
@@ -1093,13 +1093,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the rover continued transmitting data from the Martian surface.",
-      "the Martian surface received data from the rover.",
-      "data continued to be transmitted by the rover from Mars.",
-      "extreme temperatures were withstood by the Martian surface.",
+      "the Martian surface posed new engineering challenges for the team.",
+      "mission engineers monitored the rover's systems around the clock.",
+      "the data collected revealed surprising temperature swings.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Designed to withstand extreme temperatures' describes the rover, not the surface or the data, so the noun immediately following the comma must be 'the rover.'",
+      "The introductory phrase 'Designed to withstand extreme temperatures' describes the rover, so the noun immediately after the comma must be 'the rover'; the surface, the engineers, and the data were not themselves designed for that purpose, even though each choice forms a complete, sensible sentence.",
   },
   {
     id: "conv-78",
@@ -1164,12 +1164,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The coin______a rare 1943 copper penny—sold at auction for more than one million dollars.",
+      "The coin______a rare 1943 copper penny, one of only a dozen known to exist—sold at auction for more than one million dollars.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a rare 1943 copper penny' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a rare 1943 copper penny, one of only a dozen known to exist' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-83",
@@ -1225,7 +1225,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the explanation of what the truth was, following a complete independent clause.",
+      "A colon correctly introduces the explanation of what the truth was, following a complete independent clause; the semicolon is the closest trap because it could also join these two independent clauses, but it lacks the colon's specific signal that what follows defines or explains the 'single truth' just mentioned.",
   },
   {
     id: "conv-87",
@@ -1295,7 +1295,7 @@ QUESTIONS.push(
     choices: ["had been", "was", "were", "has been"],
     answer: 0,
     explanation:
-      "The main clause 'would have shown' signals a past unreal conditional, which requires the past perfect 'had been' in the if-clause.",
+      "The main clause 'would have shown' signals a past unreal conditional, which requires the past perfect 'had been' in the if-clause. 'Were' is the closest trap because it is the correct subjunctive form for a present contrary-to-fact condition, but this sentence is about a past, completed event, which needs the past perfect instead.",
   },
   {
     id: "conv-92",
@@ -1332,12 +1332,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The author's debut work______a slim volume of interconnected short stories—went largely unnoticed until decades after her death.",
+      "The author's debut work______a slim volume of interconnected short stories, published when she was only twenty-two—went largely unnoticed until decades after her death.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a slim volume of interconnected short stories' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a slim volume of interconnected short stories, published when she was only twenty-two' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-95",
@@ -1351,7 +1351,7 @@ QUESTIONS.push(
     choices: ["any other", "any", "all", "every"],
     answer: 0,
     explanation:
-      "Because the fossil is itself a specimen found in the region, it must be compared to 'any other specimen' to exclude itself from the comparison; 'any,' 'all,' and 'every' would illogically include the fossil among the things it is being compared to.",
+      "Because the fossil is itself a specimen found in the region, it must be compared to 'any other specimen' to exclude itself from the comparison. 'Any' is the closest trap because it almost completes the idiom correctly, but without 'other' it illogically includes the fossil among the things it is being compared to.",
   },
   {
     id: "conv-96",
@@ -1503,12 +1503,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The lighthouse keeper's logbook, ______ kept meticulously since 1901, records every ship that has passed the point.",
+      "The lighthouse keeper's logbook, ______ kept meticulously since 1901 by three generations of the same family, records every ship that has passed the point.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["which has been", "that has been", "who has been", "being"],
     answer: 0,
     explanation:
-      "The nonessential clause set off by commas refers to a thing (the logbook) and needs a complete verb phrase, so 'which has been' is correct.",
+      "The nonessential clause set off by commas describes a thing (the logbook), not the family mentioned later in the sentence, so it needs the thing-pronoun 'which' with a complete verb phrase; 'who has been' is tempting because people are mentioned nearby, but the clause still modifies 'logbook.'",
   },
   {
     id: "conv-107",
@@ -1531,12 +1531,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The sculpture's base______a slab of unpolished granite—weighs nearly two tons.",
+      "The sculpture's base______a slab of unpolished granite, cut from a single quarry block—weighs nearly two tons.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a slab of unpolished granite' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a slab of unpolished granite, cut from a single quarry block' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-109",
@@ -1550,7 +1550,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+      "A colon correctly introduces the list following the complete independent clause, and because the items themselves contain commas, semicolons separate the items; the semicolon is the closest trap, since semicolons do correctly separate the list's items, but only a colon can introduce the list as a whole.",
   },
   {
     id: "conv-110",
@@ -1564,7 +1564,7 @@ QUESTIONS.push(
     choices: [", ", "; ", ": ", " "],
     answer: 0,
     explanation:
-      "'Indeed' interrupts a single independent clause rather than joining two clauses, so it must be enclosed in a pair of commas; since the first comma is already given, a matching comma is needed here.",
+      "'Indeed' interrupts a single independent clause rather than joining two clauses, so it must be enclosed in a pair of commas; since the first comma is already given, a matching comma is needed here. The semicolon is the closest trap because interrupters like 'indeed' can also join two independent clauses with a semicolon before and comma after, but here 'indeed' only interrupts one clause.",
   },
   {
     id: "conv-111",
@@ -1631,10 +1631,10 @@ QUESTIONS.push(
     passage:
       "______research on coral bleaching was published in a leading science journal after three years of fieldwork.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["Maria and Carlos's", "Maria's and Carlos's", "Maria and Carlo's", "Marias and Carlos's"],
+    choices: ["Maria and Carlos's", "Maria's and Carlos's", "Maria and Carlos'", "Maria's and Carlos'"],
     answer: 0,
     explanation:
-      "Because Maria and Carlos jointly produced one shared piece of research, only the final name takes the apostrophe and s; marking both names as possessive would incorrectly suggest two separate studies.",
+      "Because Maria and Carlos jointly produced one shared piece of research, only the final name takes the possessive marker, and a singular name ending in 's,' like Carlos, still takes 's' to form that possessive: 'Carlos's.' Marking both names as possessive ('Maria's and Carlos's') would wrongly imply two separate studies, and dropping the 's' after Carlos ('Carlos'') is the wrong way to form a singular possessive.",
   },
   {
     id: "conv-116",
@@ -1676,7 +1676,7 @@ QUESTIONS.push(
     choices: ["; ", ", ", ": ", " "],
     answer: 0,
     explanation:
-      "'For example' introduces a second independent clause, so like a conjunctive adverb it must be preceded by a semicolon and followed by a comma.",
+      "'For example' introduces a second independent clause, so like a conjunctive adverb it must be preceded by a semicolon and followed by a comma. The comma is the closest trap because 'for example' is often set off by commas when it interrupts a single clause, but here it introduces a whole new independent clause, which requires the stronger semicolon break.",
   },
   {
     id: "conv-119",
@@ -1732,7 +1732,7 @@ QUESTIONS.push(
     choices: ["whom", "who", "which", "that"],
     answer: 0,
     explanation:
-      "Within the clause, the pronoun functions as the object of 'recommended' ('the panel had recommended whom'), so the objective case 'whom' is required; 'which' is reserved for things, not people.",
+      "Within the clause, the pronoun functions as the object of 'recommended' ('the panel had recommended whom'), so the objective case 'whom' is required; 'who' is the closest trap because it would be correct if the pronoun were the subject of 'recommended' rather than its object.",
   },
   {
     id: "conv-123",
@@ -1746,7 +1746,7 @@ QUESTIONS.push(
     choices: [" ", ": ", "; ", ", "],
     answer: 0,
     explanation:
-      "'Flour, sugar, and eggs' serves as the direct object of 'requires,' so nothing should separate the verb from its object; inserting a colon, semicolon, or comma here would incorrectly separate a verb from its direct object.",
+      "'Flour, sugar, and eggs' serves as the direct object of 'requires,' so nothing should separate the verb from its object. The colon is the closest trap because colons often introduce lists, but a colon cannot separate a verb from its own direct object the way it can follow a complete independent clause.",
   },
   {
     id: "conv-124",
@@ -1811,12 +1811,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The committee's final report—delayed for nearly a year by budget disputes______was finally released to the public.",
+      "The committee's final report—delayed for nearly a year by budget disputes, lawsuits, and staff turnover______was finally released to the public.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'delayed for nearly a year by budget disputes' is a nonessential interrupter already opened with a dash, so it must be closed with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'delayed for nearly a year by budget disputes, lawsuits, and staff turnover' already contains internal commas separating its list, so only a matching dash—not a comma, colon, or semicolon—can close the interruption without creating ambiguity about where the aside ends.",
   },
   {
     id: "conv-129",
@@ -1928,7 +1928,7 @@ QUESTIONS.push(
     choices: ["was", "were", "are", "have been"],
     answer: 0,
     explanation:
-      "'Cake' here is a noncount (mass) noun referring to a single whole, so 'none' takes the singular verb 'was.'",
+      "'Cake' here is a noncount (mass) noun referring to a single whole, so 'none' takes the singular verb 'was.' 'Were' is the closest trap because 'none' can take a plural verb when it refers to a count noun ('none of the cookies were left'), but 'cake' here is treated as an uncountable whole.",
   },
   {
     id: "conv-137",
@@ -2012,7 +2012,7 @@ QUESTIONS.push(
     choices: ["send", "sending", "the sending of", "to send"],
     answer: 0,
     explanation:
-      "'Either...or' requires parallel structure; since the first element is the base verb 'approve,' the second must match with the base verb 'send.'",
+      "'Either...or' requires parallel structure; since the first element is the base verb 'approve' (governed by 'must'), the second must match with the base verb 'send.' 'To send' is the closest trap because it reads naturally, but reinserting 'to' breaks the parallel with the bare infinitive 'approve.'",
   },
   {
     id: "conv-143",
@@ -2037,10 +2037,10 @@ QUESTIONS.push(
     passage:
       "The pilot reported that the storm______by the time the plane reached cruising altitude.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["had already passed", "already passed", "has already passed", "was already passing"],
+    choices: ["had already passed", "would have passed", "has already passed", "was already passing"],
     answer: 0,
     explanation:
-      "Because the storm passed before another past event (the plane's reaching altitude), the past perfect 'had already passed' is required to show the earlier action.",
+      "Because the storm passed before another past event (the plane's reaching altitude), the past perfect 'had already passed' is required to show the earlier action; 'would have passed' is tempting because it also relates two past events, but the conditional perfect wrongly implies the passing depended on some unstated condition.",
   },
   {
     id: "conv-145",
@@ -2096,7 +2096,7 @@ QUESTIONS.push(
     choices: ["only", "the only", "only that", "that only"],
     answer: 0,
     explanation:
-      "Placing 'only' immediately before the verb 'covers' correctly limits the meaning to manufacturing defects alone, matching the contrast drawn in the second half of the sentence.",
+      "Placing 'only' immediately before the verb 'covers' correctly limits the meaning to manufacturing defects alone, matching the contrast drawn in the second half of the sentence. 'That only' is the closest trap because it still precedes 'covers,' but inserting 'that' turns the sentence into an incomplete relative-clause fragment rather than a complete main clause.",
   },
   {
     id: "conv-149",
@@ -2124,7 +2124,7 @@ QUESTIONS.push(
     choices: ["was", "were", "has been", "is"],
     answer: 0,
     explanation:
-      "With fractions, the verb agrees with the noun in the 'of' phrase; 'orchard' is singular, so the singular verb 'was' is correct.",
+      "With fractions, the verb agrees with the noun in the 'of' phrase; 'orchard' is singular, so the singular verb 'was' is correct. 'Were' is the closest trap because fractions take a plural verb when the noun that follows is plural ('two-thirds of the apples were damaged'), but here the noun is the singular 'orchard.'",
   },
   {
     id: "conv-151",
@@ -2194,7 +2194,7 @@ QUESTIONS.push(
     choices: ["were", "was", "is", "has been"],
     answer: 0,
     explanation:
-      "In this inverted sentence, the true subject, 'two former Olympic swimmers,' follows the verb and is plural, so the plural verb 'were' is required even though it comes first.",
+      "In this inverted sentence, the true subject, 'two former Olympic swimmers,' follows the verb and is plural, so the plural verb 'were' is required even though it comes first. 'Was' is the closest trap because a reader might wrongly match the verb to the nearer word 'finalists' in the opening phrase instead of to the actual subject after the verb.",
   },
   {
     id: "conv-156",
@@ -2343,12 +2343,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The satellite's final component______a solar panel engineered to unfold in orbit—was tested rigorously before launch.",
+      "The satellite's final component______a solar panel engineered to unfold in orbit, its hinges modeled on origami—was tested rigorously before launch.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a solar panel engineered to unfold in orbit' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a solar panel engineered to unfold in orbit, its hinges modeled on origami' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-167",
@@ -2413,12 +2413,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The mural, ______ repainted twice since its unveiling, has become a symbol of the neighborhood.",
+      "The mural, ______ repainted twice since its unveiling by the same artist who created the original, has become a symbol of the neighborhood.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["which has been", "that has been", "who has been", "being"],
     answer: 0,
     explanation:
-      "The nonessential clause set off by commas refers to a thing (the mural) and needs a complete verb phrase, so 'which has been' is correct.",
+      "The nonessential clause set off by commas describes a thing (the mural), not the artist named later in the sentence, so it needs the thing-pronoun 'which' with a complete verb phrase; 'who has been' is tempting because a person is mentioned nearby, but the clause still modifies 'mural.'",
   },
   {
     id: "conv-172",
@@ -2474,7 +2474,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the list following the complete independent clause; because the items themselves contain commas, semicolons separate the items, but only a colon can introduce the list as a whole.",
+      "A colon correctly introduces the list following the complete independent clause, and because the items themselves contain commas, semicolons separate the items; the semicolon is the closest trap, since semicolons do correctly separate the list's items, but only a colon can introduce the list as a whole.",
   },
   {
     id: "conv-176",
@@ -2511,12 +2511,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The orchestra's new conductor—trained at a conservatory in Vienna______surprised the board by programming an entirely contemporary season.",
+      "The orchestra's new conductor—trained at a conservatory in Vienna, where she studied under two renowned mentors______surprised the board by programming an entirely contemporary season.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'trained at a conservatory in Vienna' is a nonessential interrupter already opened with a dash, so it must be closed with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'trained at a conservatory in Vienna, where she studied under two renowned mentors' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can close the interruption without creating ambiguity about where the aside ends.",
   },
   {
     id: "conv-179",
@@ -2544,7 +2544,7 @@ QUESTIONS.push(
     choices: ["whom", "who", "which", "that"],
     answer: 0,
     explanation:
-      "Within the clause, the pronoun functions as the object of 'credited' ('they credited whom'), so the objective case 'whom' is required; 'which' is reserved for things, not people.",
+      "Within the clause, the pronoun functions as the object of 'credited' ('they credited whom'), so the objective case 'whom' is required; 'who' is the closest trap because it would be correct if the pronoun were the subject of the clause rather than its object.",
   },
   {
     id: "conv-181",
@@ -2623,12 +2623,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The troupe's final rehearsal______a full run-through in costume—convinced the director the show was ready.",
+      "The troupe's final rehearsal______a full run-through in costume, complete with the orchestra—convinced the director the show was ready.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a full run-through in costume' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a full run-through in costume, complete with the orchestra' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-187",
@@ -2679,12 +2679,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The suspension bridge, ______ engineered to withstand hurricane-force winds, has never sustained structural damage.",
+      "The suspension bridge, ______ engineered by a team that had never designed for hurricane-force winds before, has never sustained structural damage.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["which was", "that was", "who was", "being"],
     answer: 0,
     explanation:
-      "The nonessential clause set off by commas refers to a thing (the bridge) and needs a complete verb phrase, so 'which was' is correct.",
+      "The nonessential clause set off by commas describes a thing (the bridge), not the team mentioned later in the sentence, so it needs the thing-pronoun 'which' with a complete verb phrase; 'who was' is tempting because a team of people is mentioned nearby, but the clause still modifies 'bridge.'",
   },
   {
     id: "conv-191",
@@ -2781,13 +2781,13 @@ QUESTIONS.push(
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: [
       "its clear explanation of complex science",
-      "explaining complex science clearly was done",
-      "how clearly complex science was explained",
-      "complex science was explained clearly",
+      "explaining complex science with clarity",
+      "how clearly it explained complex science",
+      "the complex science it explained clearly",
     ],
     answer: 0,
     explanation:
-      "'Not only...but also' requires parallel structure. Since the first element is the noun phrase 'its striking visuals,' the second must match that form: 'its clear explanation of complex science.'",
+      "'Not only...but also' pairs two objects of 'for'; since the first is the possessive noun phrase 'its striking visuals,' the second must match that form: 'its clear explanation of complex science.' The other choices are grammatical as objects of 'for' but shift to a gerund phrase or a clause, breaking the parallel structure.",
   },
   {
     id: "conv-198",
@@ -2814,13 +2814,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the sculptor finally finished the marble bust.",
-      "the marble bust was finally finished.",
-      "the night brought the sculptor close to finishing.",
-      "the studio grew quiet as the bust was finished.",
+      "the marble bust took its final shape under the studio lights.",
+      "the studio remained quiet except for the scrape of the chisel.",
+      "exhaustion finally caught up with the long project.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Carving late into the night' describes a person performing the action, so the noun immediately following the comma must be that person: 'the sculptor.'",
+      "The introductory phrase 'Carving late into the night' describes a person performing the action, so the noun immediately after the comma must be that person, 'the sculptor'; the bust, the studio, and the exhaustion cannot carve, even though each choice reads as a complete, plausible sentence.",
   },
   {
     id: "conv-200",
@@ -2834,7 +2834,7 @@ QUESTIONS.push(
     choices: ["be", "is", "was", "will be"],
     answer: 0,
     explanation:
-      "'Recommended that' triggers the subjunctive mood, which uses the base form of the verb ('be') regardless of the subject's number or the sentence's tense.",
+      "'Recommended that' triggers the subjunctive mood, which uses the base form 'be' regardless of the subject's number or the sentence's tense; 'will be' is tempting because the revision is a future event, but the subjunctive 'be' is required after a verb of recommendation, not an ordinary future tense.",
   },
   {
     id: "conv-201",
@@ -2859,10 +2859,10 @@ QUESTIONS.push(
     passage:
       "By the time the train reached the station, the passengers______for nearly three hours.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["had been waiting", "waited", "wait", "are waiting"],
+    choices: ["had been waiting", "waited", "would have been waiting", "are waiting"],
     answer: 0,
     explanation:
-      "Because the waiting began before and continued up to another past event (the train's arrival), the past perfect progressive 'had been waiting' is required.",
+      "Because the waiting began before and continued up to another past event (the train's arrival), the past perfect progressive 'had been waiting' is required; 'would have been waiting' is tempting because it also combines past time with progressive aspect, but the conditional form wrongly implies the waiting depended on some unstated condition.",
   },
   {
     id: "conv-203",
@@ -2876,7 +2876,7 @@ QUESTIONS.push(
     choices: ["whoever", "whomever", "who", "whom"],
     answer: 0,
     explanation:
-      "The pronoun functions as the subject of 'submits' within its own clause, so the subjective case 'whoever' is correct even though the entire clause follows the preposition 'to.'",
+      "The pronoun functions as the subject of 'submits' within its own clause, so the subjective case 'whoever' is correct even though the entire clause follows the preposition 'to'; 'whomever' is the closest trap because it would be correct if the pronoun were instead the object of a verb inside the clause.",
   },
   {
     id: "conv-204",
@@ -3027,10 +3027,10 @@ QUESTIONS.push(
     passage:
       "By the time the critic arrived, the chef______the entire tasting menu.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["had already prepared", "already prepared", "has already prepared", "was already preparing"],
+    choices: ["had already prepared", "would have prepared", "has already prepared", "was already preparing"],
     answer: 0,
     explanation:
-      "Because the menu was prepared before another past event (the critic's arrival), the past perfect 'had already prepared' is required.",
+      "Because the menu was prepared before another past event (the critic's arrival), the past perfect 'had already prepared' is required; 'would have prepared' is tempting because it also links two past events, but the conditional perfect wrongly implies the preparation depended on some unstated condition.",
   },
   {
     id: "conv-215",
@@ -3044,7 +3044,7 @@ QUESTIONS.push(
     choices: ["submit", "submits", "submitted", "will submit"],
     answer: 0,
     explanation:
-      "'Insisted that' triggers the subjunctive mood, which uses the base form of the verb ('submit') regardless of the subject's number.",
+      "'Insisted that' triggers the subjunctive mood, which uses the base form 'submit' regardless of the subject's number; 'submits' is tempting because it matches the singular 'student,' but subjunctive clauses do not follow ordinary subject-verb agreement.",
   },
   {
     id: "conv-216",
@@ -3057,13 +3057,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the photographer set up her tripod before dawn.",
-      "the tripod was set up before dawn.",
-      "dawn arrived before the eclipse could be captured.",
-      "the eclipse was captured by careful planning.",
+      "the tripod stood ready on the hillside before dawn.",
+      "dawn broke just as the eclipse began.",
+      "careful planning made the early morning shoot possible.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Hoping to capture the eclipse' describes a person, not the tripod, the dawn, or the eclipse, so the noun immediately following the comma must be that person: 'the photographer.'",
+      "The introductory phrase 'Hoping to capture the eclipse' describes a person, so the noun immediately after the comma must be that person, 'the photographer'; the tripod, the dawn, and the planning cannot hope, even though each choice is a complete, sensible sentence on its own.",
   },
   {
     id: "conv-217",
@@ -3259,7 +3259,7 @@ QUESTIONS.push(
     choices: ["whomever", "whoever", "whom", "who"],
     answer: 0,
     explanation:
-      "Within the clause, the pronoun functions as the object of 'judges' ('the committee judges whom'), so the objective case 'whomever' is required even though the whole clause follows the preposition 'to.'",
+      "Within the clause, the pronoun functions as the object of 'judges' ('the committee judges whom'), so the objective case 'whomever' is required even though the whole clause follows the preposition 'to'; 'whoever' is the closest trap because it would be correct if the pronoun were the subject of 'judges' rather than its object.",
   },
   {
     id: "conv-231",
@@ -3282,12 +3282,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The company's new headquarters______a repurposed textile mill—opened to employees six months ahead of schedule.",
+      "The company's new headquarters______a repurposed textile mill dating to the 1890s, complete with its original smokestack—opened to employees six months ahead of schedule.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a repurposed textile mill' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a repurposed textile mill dating to the 1890s, complete with its original smokestack' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-233",
@@ -3296,12 +3296,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The senator's proposal______a modest increase in the minimum wage—drew fierce opposition from business groups.",
+      "The senator's proposal______a modest increase in the minimum wage, phased in over three years—drew fierce opposition from business groups.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a modest increase in the minimum wage' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a modest increase in the minimum wage, phased in over three years' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-234",
@@ -3310,12 +3310,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The gem's one imperfection______a faint cloud near its center—reduced its appraised value significantly.",
+      "The gem's one imperfection______a faint cloud near its center, visible only under magnification—reduced its appraised value significantly.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a faint cloud near its center' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a faint cloud near its center, visible only under magnification' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-235",
@@ -3324,12 +3324,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The architect's final sketch______a sweeping glass atrium—became the building's most celebrated feature.",
+      "The architect's final sketch______a sweeping glass atrium flooded with light from a retractable roof—became the building's most celebrated feature.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a sweeping glass atrium' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a sweeping glass atrium flooded with light from a retractable roof' is a single nonessential aside about the sketch, so only a matching dash—not a comma, colon, or semicolon—can open it without being mistaken for a new independent clause.",
   },
   {
     id: "conv-236",
@@ -3553,7 +3553,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the explanation of what the conclusion was, following a complete independent clause.",
+      "A colon correctly introduces the explanation of what the conclusion was, following a complete independent clause; the semicolon is the closest trap because it could also join these two independent clauses, but it lacks the colon's specific signal that what follows defines or explains the conclusion just mentioned.",
   },
   {
     id: "conv-252",
@@ -3576,12 +3576,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The dam, ______ operating continuously since 1950, underwent its first major inspection last year.",
+      "The dam, ______ operating continuously since 1950 under the supervision of a single engineering firm, underwent its first major inspection last year.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["which has been", "that has been", "who has been", "being"],
     answer: 0,
     explanation:
-      "The nonessential clause set off by commas refers to a thing (the dam) and needs a complete verb phrase, so 'which has been' is correct.",
+      "The nonessential clause set off by commas describes a thing (the dam), not the firm mentioned later in the sentence, so it needs the thing-pronoun 'which' with a complete verb phrase; 'who has been' is tempting because an organization of people is mentioned nearby, but the clause still modifies 'dam.'",
   },
   {
     id: "conv-254",
@@ -3746,10 +3746,10 @@ QUESTIONS.push(
     passage:
       "The award was shared equally between the lead engineer and______.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["me", "I", "myself", "mine"],
+    choices: ["me", "I", "myself", "us"],
     answer: 0,
     explanation:
-      "The pronoun is the object of the preposition 'between,' so the objective case 'me' is correct, not the subjective 'I.'",
+      "The pronoun is the object of the preposition 'between,' so the objective case 'me' is correct, not the subjective 'I.' 'Myself' is the closest trap because reflexive pronouns are often used this way in casual speech, but 'myself' needs an earlier 'I' in the same clause to reflect back to, which is missing here.",
   },
   {
     id: "conv-266",
@@ -3760,10 +3760,10 @@ QUESTIONS.push(
     passage:
       "The director asked the lead actor and______to rehearse the final scene privately.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["me", "I", "myself", "mine"],
+    choices: ["me", "I", "myself", "us"],
     answer: 0,
     explanation:
-      "The pronoun is the object of 'asked,' so the objective case 'me' is correct, not the subjective 'I.'",
+      "The pronoun is the object of 'asked,' so the objective case 'me' is correct, not the subjective 'I.' 'Myself' is the closest trap for the same reason: reflexive pronouns are common in casual speech here, but 'myself' needs an earlier 'I' in the clause to reflect back to.",
   },
   {
     id: "conv-267",
@@ -3777,7 +3777,7 @@ QUESTIONS.push(
     choices: ["themselves", "theirselves", "their self", "them"],
     answer: 0,
     explanation:
-      "The plural reflexive pronoun 'themselves' correctly refers back to 'the interns'; 'theirselves' and 'their self' are nonstandard forms.",
+      "The plural reflexive pronoun 'themselves' correctly refers back to 'the interns.' 'Them' is the closest trap because it is a real plural pronoun, but the sentence needs the reflexive form to show the interns acted on their own, not a plain object pronoun.",
   },
   {
     id: "conv-268",
@@ -3802,10 +3802,10 @@ QUESTIONS.push(
     passage:
       "By the time the lease ends, the tenants______in the apartment for exactly five years.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["will have been living", "live", "lived", "are living"],
+    choices: ["will have been living", "will live", "lived", "are living"],
     answer: 0,
     explanation:
-      "'By the time' with a future event signals the future perfect progressive tense, 'will have been living,' to show an action continuing up to that future point.",
+      "'By the time' with a future event signals the future perfect progressive tense, 'will have been living,' to show an action continuing up to that future point; 'will live' is tempting because it is also future tense, but it lacks the progressive aspect needed to show the five-year duration.",
   },
   {
     id: "conv-270",
@@ -3847,7 +3847,7 @@ QUESTIONS.push(
     choices: ["had been", "was", "were", "has been"],
     answer: 0,
     explanation:
-      "The main clause 'would have moved' signals a past unreal conditional, which requires the past perfect 'had been' in the if-clause.",
+      "The main clause 'would have moved' signals a past unreal conditional, which requires the past perfect 'had been' in the if-clause. 'Were' is the closest trap because it is the correct subjunctive form for a present contrary-to-fact condition, but this sentence is about a past, completed event, which needs the past perfect instead.",
   },
   {
     id: "conv-273",
@@ -3874,13 +3874,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the skier adjusted her goggles before the next run.",
-      "her goggles were adjusted before the next run.",
-      "the next run required adjusted goggles.",
-      "the glare off the snow was reduced by goggles.",
+      "her goggles fogged up within minutes of the start.",
+      "the next run promised even brighter glare off the snow.",
+      "sunlight reflected sharply off the fresh snow.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Squinting against the glare off the snow' describes a person, so the noun immediately following the comma must be that person: 'the skier.'",
+      "The introductory phrase 'Squinting against the glare off the snow' describes a person, so the noun immediately after the comma must be that person, 'the skier'; the goggles, the run, and the sunlight cannot squint, even though each choice forms a complete, plausible sentence.",
   },
   {
     id: "conv-275",
@@ -3960,12 +3960,12 @@ QUESTIONS.push(
     choices: [
       "policymakers drafting new regulations",
       "the drafting of new regulations by policymakers",
-      "new regulations are drafted by policymakers",
-      "policymakers who are drafting is encouraged",
+      "policymakers who draft new regulations",
+      "regulations drafted by policymakers",
     ],
     answer: 0,
     explanation:
-      "'Not only...but also' requires parallel structure. Since the first part is 'scientists studying climate change,' the second part must match that form: 'policymakers drafting new regulations.'",
+      "'Not only...but also' pairs two objects of 'supports'; since the first is the noun-plus-participle phrase 'scientists studying climate change,' the second must match that exact form: 'policymakers drafting new regulations.' The other choices are grammatical noun phrases but use a gerund, a full relative clause, or a passive participle instead, so they do not match the original construction.",
   },
   {
     id: "conv-280",
@@ -4007,7 +4007,7 @@ QUESTIONS.push(
     choices: ["any other", "any", "all", "every"],
     answer: 0,
     explanation:
-      "Because the engine is itself a member of its class, it must be compared to 'any other engine' to exclude itself from the comparison; 'any,' 'all,' and 'every' would illogically include the engine among the things it is being compared to.",
+      "Because the engine is itself a member of its class, it must be compared to 'any other engine' to exclude itself from the comparison. 'Any' is the closest trap because it almost completes the idiom correctly, but without 'other' it illogically includes the engine among the things it is being compared to.",
   },
   {
     id: "conv-283",
@@ -4156,12 +4156,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The lighthouse keeper______a quiet man who rarely left the island—kept meticulous weather logs for forty years.",
+      "The lighthouse keeper______a quiet man who, by his own account, rarely left the island—kept meticulous weather logs for forty years.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The phrase 'a quiet man who rarely left the island' is a nonessential interrupter already closed with a dash, so it must be opened with a matching dash rather than a comma, colon, or semicolon.",
+      "The interrupting phrase 'a quiet man who, by his own account, rarely left the island' already contains internal commas, so only a matching dash—not a comma, colon, or semicolon—can open the interruption without creating ambiguity about where the aside begins.",
   },
   {
     id: "conv-294",
@@ -4217,7 +4217,7 @@ QUESTIONS.push(
     choices: [" ", ", ", "; ", ": "],
     answer: 0,
     explanation:
-      "'Crossed the finish line' and 'collapsed from exhaustion' share the same subject and form a compound predicate, so no comma is needed before 'and.'",
+      "'Crossed the finish line' and 'collapsed from exhaustion' share the same subject and form a compound predicate, so no comma is needed before 'and.' The comma is the closest trap because commas do precede 'and' when it joins two independent clauses, but here 'and' only joins two verbs sharing one subject.",
   },
   {
     id: "conv-298",
@@ -4245,7 +4245,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon can introduce a single word for emphasis when it follows a complete independent clause.",
+      "A colon can introduce a single word for emphasis when it follows a complete independent clause; the comma is the closest trap because it could loosely connect 'one word' and 'focus' in casual writing, but formal Standard English calls for the colon's stronger emphasis after a complete clause like this one.",
   },
   {
     id: "conv-300",
@@ -4310,12 +4310,12 @@ QUESTIONS.push(
     skill: "Boundaries",
     difficulty: 3,
     passage:
-      "The tower's spire—reconstructed using the original fifteenth-century blueprints______finally returned to the skyline after a decade of restoration.",
+      "The tower's spire—reconstructed using the original fifteenth-century blueprints, which had sat forgotten in a monastery archive______finally returned to the skyline after a decade of restoration.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
     choices: ["—", ", ", ": ", "; "],
     answer: 0,
     explanation:
-      "The interrupting phrase 'reconstructed using the original fifteenth-century blueprints' is already opened with a dash, so it must be closed with a matching dash.",
+      "The interrupting phrase 'reconstructed using the original fifteenth-century blueprints, which had sat forgotten in a monastery archive' already contains its own internal comma, so only a matching dash—not a comma, colon, or semicolon—can close the interruption without creating ambiguity about where the aside ends.",
   },
   {
     id: "conv-305",
@@ -4385,7 +4385,7 @@ QUESTIONS.push(
     choices: ["; ", ", ", " so, ", ": "],
     answer: 0,
     explanation:
-      "Both clauses are independent with no coordinating conjunction, so they must be separated by a semicolon rather than joined with only a comma.",
+      "Both clauses are independent with no coordinating conjunction, so they must be separated by a semicolon rather than joined with only a comma. The comma is the closest trap because a comma plus a coordinating conjunction like 'so' could join these clauses, but a bare comma alone creates a comma splice.",
   },
   {
     id: "conv-310",
@@ -4399,7 +4399,7 @@ QUESTIONS.push(
     choices: [", ", "; ", ": ", " "],
     answer: 0,
     explanation:
-      "'Although the treaty was signed within weeks of the ceasefire' is an introductory dependent clause and must be followed by a single comma, not a semicolon, colon, or no punctuation at all.",
+      "'Although the treaty was signed within weeks of the ceasefire' is an introductory dependent clause and must be followed by a single comma. The semicolon is the closest trap because semicolons do separate clauses elsewhere in similar sentences, but a semicolon requires an independent clause on both sides, and this opening clause is dependent.",
   },
   {
     id: "conv-311",
@@ -4413,7 +4413,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the explanation of what the flaw was, following a complete independent clause.",
+      "A colon correctly introduces the explanation of what the flaw was, following a complete independent clause; the semicolon is the closest trap because it could also join these two independent clauses, but it lacks the colon's specific signal that what follows defines or explains the flaw just mentioned.",
   },
   {
     id: "conv-312",
@@ -4480,10 +4480,10 @@ QUESTIONS.push(
     passage:
       "By the time the train arrives, she______on the platform for nearly two hours.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["will have been waiting", "waits", "waited", "is waiting"],
+    choices: ["will have been waiting", "will wait", "waited", "is waiting"],
     answer: 0,
     explanation:
-      "'By the time' with a future event signals the future perfect progressive tense, 'will have been waiting,' to show an action continuing up to that future point.",
+      "'By the time' with a future event signals the future perfect progressive tense, 'will have been waiting,' to show an action continuing up to that future point; 'will wait' is tempting because it is also future tense, but it lacks the progressive aspect needed to show the two-hour duration.",
   },
   {
     id: "conv-317",
@@ -4566,13 +4566,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the arctic tern travels farther than almost any other bird.",
-      "the journey of the arctic tern covers an enormous distance.",
-      "scientists have long studied the arctic tern's migration.",
-      "an enormous distance is covered by the arctic tern.",
+      "the journey of the arctic tern spans nearly the length of the globe.",
+      "scientists have long studied the arctic tern's migration patterns.",
+      "pole-to-pole flight paths make the arctic tern famous among researchers.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase 'Migrating thousands of miles each winter' describes a traveler, so the subject of the main clause must be the one migrating: 'the arctic tern.'",
+      "The introductory phrase 'Migrating thousands of miles each winter' describes a traveler, so the subject of the main clause must be the one migrating, 'the arctic tern'; the journey, the scientists, and the flight paths do not themselves migrate, even though each choice is a grammatically complete sentence.",
   },
   {
     id: "conv-323",
@@ -4628,7 +4628,7 @@ QUESTIONS.push(
     choices: ["any other", "any", "all", "every"],
     answer: 0,
     explanation:
-      "Because the processor is itself a member of its price range, it must be compared to 'any other chip' to exclude itself from the comparison; 'any,' 'all,' and 'every' would illogically include it among the things it is being compared to.",
+      "Because the processor is itself a member of its price range, it must be compared to 'any other chip' to exclude itself from the comparison. 'Any' is the closest trap because it almost completes the idiom correctly, but without 'other' it illogically includes the processor among the things it is being compared to.",
   },
   {
     id: "conv-327",
@@ -4684,7 +4684,7 @@ QUESTIONS.push(
     choices: ["were", "was", "is", "has been"],
     answer: 0,
     explanation:
-      "The sentence is inverted, but the subject is still the plural noun 'wildflowers,' which follows the verb, so the plural verb 'were' is required.",
+      "The sentence is inverted, but the subject is still the plural noun 'wildflowers,' which follows the verb, so the plural verb 'were' is required. 'Was' is the closest trap because a reader might wrongly treat 'hillside' in the opening phrase as the subject instead of the actual subject that follows the verb.",
   },
   {
     id: "conv-331",
@@ -4740,7 +4740,7 @@ QUESTIONS.push(
     choices: ["she", "her", "herself", "hers"],
     answer: 0,
     explanation:
-      "The pronoun follows the linking verb 'was' and renames the subject, so the subject-case pronoun 'she' is required rather than the object-case 'her.'",
+      "The pronoun follows the linking verb 'was' and renames the subject, so the subject-case pronoun 'she' is required rather than the object-case 'her.' 'Her' is the closest trap because it is the pronoun most people default to after a verb, but a linking verb takes a subject-case complement, not an object.",
   },
   {
     id: "conv-335",
@@ -4754,7 +4754,7 @@ QUESTIONS.push(
     choices: ["have", "has", "having", "is having"],
     answer: 0,
     explanation:
-      "The relative clause 'who have ever successfully cloned' modifies 'researchers,' a plural noun, so the plural verb 'have' is required, not the singular 'has.'",
+      "The relative clause 'who have ever successfully cloned' modifies 'researchers,' a plural noun, so the plural verb 'have' is required. 'Has' is the closest trap because a reader might wrongly match the verb to the singular 'she' instead of to 'researchers,' the actual antecedent of 'who.'",
   },
   {
     id: "conv-336",
@@ -4782,7 +4782,7 @@ QUESTIONS.push(
     choices: ["have", "has", "having", "is"],
     answer: 0,
     explanation:
-      "'A number of' is followed by a plural verb because the emphasis is on the individual employees, unlike 'the number of,' which takes a singular verb.",
+      "'A number of' is followed by a plural verb because the emphasis is on the individual employees, unlike 'the number of,' which takes a singular verb. 'Has' is the closest trap because it would be correct if the phrase were 'the number of employees,' which treats the group as one unit rather than as individuals.",
   },
   {
     id: "conv-338",
@@ -4852,7 +4852,7 @@ QUESTIONS.push(
     choices: ["were", "was", "am", "be"],
     answer: 0,
     explanation:
-      "This hypothetical condition requires the subjunctive mood, which uses 'were' with 'I' rather than the indicative 'was.'",
+      "This hypothetical condition requires the subjunctive mood, which uses 'were' with 'I' rather than the indicative 'was'; 'was' is especially tempting because it is the ordinary past tense of 'be' with 'I,' but the contrary-to-fact 'if' clause calls for the subjunctive form instead.",
   },
   {
     id: "conv-343",
@@ -5076,7 +5076,7 @@ QUESTIONS.push(
     choices: ["were", "was", "is", "be"],
     answer: 0,
     explanation:
-      "After 'wish,' a contrary-to-fact statement requires the subjunctive mood, which uses 'were' regardless of the subject's number; 'was,' 'is,' and 'be' are not the correct subjunctive form.",
+      "After 'wish,' a contrary-to-fact statement requires the subjunctive mood, which uses 'were' regardless of the subject's number; 'was' is especially tempting because it is the ordinary past tense that would fit outside a wish statement, but 'wish' specifically calls for the subjunctive.",
   },
   {
     id: "conv-359",
@@ -5193,7 +5193,7 @@ QUESTIONS.push(
     choices: ["whom", "who", "whomever", "whose"],
     answer: 0,
     explanation:
-      "'Whom' is the object of the verb 'had interviewed' (she had interviewed whom), so the objective case is required; 'who' is subjective, 'whomever' is unnecessarily indefinite, and 'whose' is possessive.",
+      "'Whom' is the object of the verb 'had interviewed' ('she had interviewed whom'), so the objective case is required; 'who' is the closest trap because it would be correct if the pronoun were the subject of 'had interviewed,' which it is not.",
   },
   {
     id: "conv-367",
@@ -5235,7 +5235,7 @@ QUESTIONS.push(
     choices: [": ", "; ", ", ", " "],
     answer: 0,
     explanation:
-      "A colon correctly introduces the quotation that follows a complete independent clause; a semicolon or comma would not properly set off a quotation in this position, and no punctuation would run the sentence together.",
+      "A colon correctly introduces the quotation that follows a complete independent clause; the comma is the closest trap because commas often introduce quotations in dialogue, but Standard English convention calls for a colon when the quotation serves as a formal, emphatic conclusion to an independent clause like this one.",
   },
   {
     id: "conv-370",
@@ -5304,13 +5304,13 @@ QUESTIONS.push(
     prompt: "Which choice most logically and clearly completes the sentence?",
     choices: [
       "the hiker finally spotted a weathered cabin through the trees.",
-      "a weathered cabin was finally spotted through the trees.",
-      "the trees finally revealed a weathered cabin to the hiker.",
+      "a weathered cabin stood just visible through the trees.",
+      "the trees finally thinned enough to reveal a cabin.",
       "it was a weathered cabin that the hiker finally spotted through the trees.",
     ],
     answer: 0,
     explanation:
-      "The introductory phrase describes a person who is dripping and shivering, so the subject that follows must be 'the hiker'; the other choices place an inanimate subject right after the modifier, illogically suggesting that thing was dripping and shivering.",
+      "The introductory phrase describes a person who is dripping and shivering, so the subject immediately following the comma must be 'the hiker'; a cabin or a stand of trees cannot shiver, and restructuring the sentence with 'it was...that' still places the illogical subject 'it' right after the modifier.",
   },
   {
     id: "conv-375",
@@ -5366,7 +5366,7 @@ QUESTIONS.push(
     choices: [", ", "; ", ": ", " "],
     answer: 0,
     explanation:
-      "'According to the lead archaeologist' is a parenthetical interrupter and must be set off by commas on both sides; the comma after it is already given, so the blank requires a matching comma, not a semicolon, colon, or no punctuation.",
+      "'According to the lead archaeologist' is a parenthetical interrupter and must be set off by commas on both sides; the comma after it is already given, so the blank requires a matching comma. The semicolon is the closest trap because semicolons can separate related independent clauses, but this interrupting phrase is not an independent clause and needs commas, not a semicolon.",
   },
   {
     id: "conv-379",
@@ -5408,7 +5408,7 @@ QUESTIONS.push(
     choices: ["were", "was", "is", "has been"],
     answer: 0,
     explanation:
-      "The relative pronoun 'who' refers to 'finalists' (plural), the antecedent in 'one of the finalists who,' so the verb must be plural: 'were'; 'was,' 'is,' and 'has been' are singular forms that don't agree with 'finalists.'",
+      "The relative pronoun 'who' refers to 'finalists' (plural), the antecedent in 'one of the finalists who,' so the verb must be plural: 'were.' 'Was' is the closest trap because a reader might wrongly match the verb to the singular 'she' instead of to 'finalists,' the actual antecedent of 'who.'",
   },
   {
     id: "conv-382",
@@ -5450,7 +5450,7 @@ QUESTIONS.push(
     choices: [", ", "; ", ": ", " "],
     answer: 0,
     explanation:
-      "The trailing phrase 'exhausted but relieved after sixteen straight hours of talks' is a nonessential description of the negotiators and must be set off with a comma; a semicolon or colon would require an independent clause, and omitting punctuation would run the ideas together.",
+      "The trailing phrase 'exhausted but relieved after sixteen straight hours of talks' is a nonessential description of the negotiators and must be set off with a comma. The semicolon is the closest trap because semicolons can follow an independent clause, but this trailing phrase is not itself an independent clause and needs a comma instead.",
   },
   {
     id: "conv-385",
@@ -5489,10 +5489,10 @@ QUESTIONS.push(
     passage:
       "Training for a marathon demands far more discipline than______a single race.",
     prompt: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-    choices: ["running", "to run", "the run of", "a runner running"],
+    choices: ["running", "to run", "the running of", "runners who run"],
     answer: 0,
     explanation:
-      "The comparison must use parallel grammatical forms; since 'training' is a gerund, the second part of the comparison must also be a gerund, 'running,' rather than an infinitive or an awkward noun phrase.",
+      "The comparison must use parallel grammatical forms; since 'training' is a gerund functioning as the subject's counterpart, the second half of the comparison must also be the bare gerund 'running,' not the infinitive 'to run,' the noun phrase 'the running of,' or 'runners who run,' which illogically compares discipline to people rather than to an activity.",
   },
   {
     id: "conv-388",
@@ -5688,7 +5688,7 @@ QUESTIONS.push(
     choices: ["showed", "shows", "has shown", "is showing"],
     answer: 0,
     explanation:
-      "'A number of' functions as a plural quantifier meaning 'several' and takes a plural verb, 'showed'; by contrast, 'the number of' would take a singular verb. 'Shows,' 'has shown,' and 'is showing' are singular forms that don't fit here.",
+      "'A number of' functions as a plural quantifier meaning 'several' and takes a plural verb, 'showed.' 'Has shown' is the closest trap because it would be correct if the phrase were 'the number of volunteers,' which treats the group as a single unit rather than as individuals.",
   },
   {
     id: "conv-402",
@@ -5730,7 +5730,7 @@ QUESTIONS.push(
     choices: ["; ", ", ", " and ", ": "],
     answer: 0,
     explanation:
-      "Because each item in this list already contains an internal comma, semicolons are needed to separate the three main items clearly; using only commas throughout would blur where one item ends and the next begins.",
+      "Because each item in this list already contains an internal comma, semicolons are needed to separate the three main items clearly. The comma is the closest trap because commas normally separate list items, but using only commas here would blur where one item ends and the next begins.",
   },
   {
     id: "conv-405",
@@ -5744,7 +5744,7 @@ QUESTIONS.push(
     choices: ["who", "whom", "which", "whose"],
     answer: 0,
     explanation:
-      "Within the nonessential clause, the pronoun functions as the subject of the verb 'spent,' so the subjective 'who' is required; 'whom' is objective, 'which' refers to things rather than people, and 'whose' is possessive.",
+      "Within the nonessential clause, the pronoun functions as the subject of the verb 'spent,' so the subjective 'who' is required; 'whom' is the closest trap because it is the correct choice when the pronoun is the object of a verb or preposition within its clause, which is not the case here.",
   },
   {
     id: "conv-406",
@@ -5758,6 +5758,6 @@ QUESTIONS.push(
     choices: ["; ", ", ", " so, ", ": "],
     answer: 0,
     explanation:
-      "Both clauses are independent with no coordinating conjunction linking them, so a semicolon is required; a comma alone would create a splice, and ' so,' is nonstandard.",
+      "Both clauses are independent with no coordinating conjunction linking them, so a semicolon is required. The comma is the closest trap because a comma plus 'so' could join these clauses correctly, but a bare comma alone creates a comma splice.",
   }
 );

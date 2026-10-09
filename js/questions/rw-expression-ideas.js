@@ -138,10 +138,10 @@ QUESTIONS.push(
     passage:
       "The two researchers disagreed on nearly every methodological point. ______ they arrived at strikingly similar conclusions.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Yet,", "Because of this,", "Specifically,", "In short,"],
+    choices: ["Yet,", "Instead,", "In contrast,", "As a result,"],
     answer: 0,
     explanation:
-      "Disagreeing on methodology but reaching similar conclusions is a contrast, best signaled by 'Yet.'",
+      "The sentence states two separate true facts in tension—disagreement on method, agreement on conclusions—calling for a plain contrast word. 'Instead' would wrongly suggest the agreement replaced the disagreement, and 'In contrast' is reserved for comparing two distinct subjects side by side, not one pair's unexpected outcome, so 'Yet' is correct.",
   },
   {
     id: "ei-11",
@@ -282,14 +282,14 @@ QUESTIONS.push(
     prompt:
       "The student wants to explain a surprising consequence of the octopus's unusual circulatory system. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
     choices: [
-      "Because its main heart stops beating while swimming, an octopus tires quickly and prefers to crawl.",
-      "Octopuses have blood that appears blue due to a copper-based protein.",
-      "Octopuses can be found in oceans throughout the world.",
+      "Because its main heart is the one that pumps blood to the rest of its body, that circulation briefly stops every time the octopus swims.",
+      "An octopus's main heart pumps blood to the rest of its body, while its other two hearts serve only the gills.",
+      "An octopus has three separate hearts to circulate its blood.",
       "Two of an octopus's three hearts pump blood to its gills.",
     ],
     answer: 0,
     explanation:
-      "Choice A connects a specific fact from the notes (the main heart stopping during swimming) to a consequence, fulfilling the goal of explaining a surprising effect.",
+      "Only choice A combines the main heart's specific role with the fact that it stops during swimming to state the surprising consequence; the others restate isolated notes or describe the hearts' division of labor without naming that consequence.",
   },
   {
     id: "ei-19",
@@ -363,13 +363,13 @@ QUESTIONS.push(
       "The student wants to use a specific piece of evidence to support the claim that the Sahara was once green. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
     choices: [
       "Cave paintings in the region depict animals such as giraffes and hippos, species associated with wetter climates.",
-      "The Sahara is the largest hot desert in the world.",
-      "The African Humid Period ended about 5,000 years ago.",
-      "Deserts can form for a variety of different climatic reasons.",
+      "Cave paintings have been found throughout the Sahara region.",
+      "The Sahara Desert was once a lush, green savanna.",
+      "The African Humid Period ended roughly 5,000 years ago.",
     ],
     answer: 0,
     explanation:
-      "Only choice A offers concrete supporting evidence (cave paintings of animals tied to wetter climates) for the claim, rather than simply restating it.",
+      "Only choice A cites concrete evidence—animals tied to wetter climates—for the claim; the vague mention of cave paintings omits that specific detail, and the other two choices merely restate the claim itself or an indirect date rather than supporting evidence.",
   },
   {
     id: "ei-23",
@@ -508,10 +508,10 @@ QUESTIONS.push(
     passage:
       "Proponents argue that the new tax would primarily affect large corporations. ______ , an independent analysis found that over 60% of the tax's burden would ultimately fall on consumers through higher prices.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Similarly,", "In addition,", "Specifically,"],
+    choices: ["However,", "In contrast,", "Granted,", "Specifically,"],
     answer: 0,
     explanation:
-      "The independent analysis contradicts the proponents' claim, so a contrast transition, 'However,' is required.",
+      "The analysis directly rebuts the proponents' claim with contradicting data, which calls for a plain contrast word. 'In contrast' is reserved for comparing two distinct, parallel subjects rather than correcting a single claim, and 'Granted' concedes a point before a main argument rather than introducing rebutting evidence, so 'However' is correct.",
   },
   {
     id: "ei-31",
@@ -610,10 +610,10 @@ QUESTIONS.push(
     passage:
       "The city commissioned dozens of murals to beautify its downtown, expecting the project to reduce vandalism. ______ reports of graffiti and property damage actually increased in the months following the murals' completion.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "As a result,", "Similarly,", "For example,"],
+    choices: ["Instead,", "Yet,", "Nonetheless,", "For example,"],
     answer: 0,
     explanation:
-      "The rise in vandalism directly contradicts the city's expectation, so a contrast transition, 'Instead,' is required.",
+      "Because the murals were expected to reduce vandalism but vandalism rose instead, the clause names what actually happened in place of that expectation, which 'Instead' signals. 'Nonetheless' would suggest the increase occurred despite some obstacle rather than as the opposite of a prediction, so 'Instead' is correct.",
   },
   {
     id: "ei-37",
@@ -662,12 +662,12 @@ QUESTIONS.push(
     choices: [
       "Antarctica's annual ice loss climbed from about 40 billion tons in the 1980s to roughly 250 billion tons by the 2010s.",
       "Rising ocean temperatures are believed to be melting ice shelves from below.",
-      "Scientists use satellites to track changes in Antarctica's ice sheet.",
-      "Antarctica contains the majority of the world's fresh water in the form of ice.",
+      "Antarctica lost about 40 billion tons of ice per year in the 1980s.",
+      "By the 2010s, Antarctica's annual ice loss had risen to roughly 250 billion tons per year.",
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific before-and-after figures that demonstrate the scale of acceleration in ice loss.",
+      "Only choice A pairs both figures to show the scale of change over time; the others give the cause of melting or just one data point, neither of which demonstrates the acceleration by itself.",
   },
   {
     id: "ei-40",
@@ -712,10 +712,10 @@ QUESTIONS.push(
     passage:
       "Economists at the central bank predicted that inflation would ease significantly by the end of the year. ______ the most recent consumer price data showed inflation holding steady at nearly the same rate as six months earlier.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "Accordingly,", "Specifically,", "In short,"],
+    choices: ["Instead,", "Nonetheless,", "By contrast,", "In short,"],
     answer: 0,
     explanation:
-      "The steady inflation data contradicts the bank's prediction of easing, so a contrast transition, 'Instead,' is needed.",
+      "Economists' prediction of easing inflation is replaced by the opposite outcome, calling for 'Instead.' 'Nonetheless' implies the steady rate persisted despite some obstacle rather than contradicting a forecast, and 'By contrast' would require two distinct things being compared side by side, not one prediction proven wrong, so 'Instead' is correct.",
   },
   {
     id: "ei-43",
@@ -832,12 +832,12 @@ QUESTIONS.push(
     choices: [
       "Through the waggle dance, bees signal a food source's direction by the angle of the dance relative to vertical and its distance by the duration of the waggle run.",
       "Honeybees perform a waggle dance to communicate with other bees.",
-      "Bees use the position of the sun to help navigate.",
-      "Honeybee colonies rely on complex communication to gather food efficiently.",
+      "The angle of a bee's waggle dance relative to vertical indicates a food source's direction relative to the sun.",
+      "The duration of a bee's waggle run indicates how far away a food source is.",
     ],
     answer: 0,
     explanation:
-      "Only choice A specifies both mechanisms — angle for direction and duration for distance — precisely fulfilling the stated goal.",
+      "Only choice A specifies both mechanisms—angle for direction and duration for distance—together; B is too vague to explain the mechanism at all, and C and D each capture only one of the two required pieces.",
   },
   {
     id: "ei-50",
@@ -882,10 +882,10 @@ QUESTIONS.push(
     passage:
       "For decades, archaeologists maintained that the stone circle served primarily as a burial ground. ______ recent excavations of nearby postholes suggest it may have functioned as an astronomical calendar.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["More recently,", "For this reason,", "In the same way,", "As a result,"],
+    choices: ["More recently,", "Subsequently,", "Eventually,", "As a result,"],
     answer: 0,
     explanation:
-      "The new postholes evidence introduces a competing theory that has revised the older, long-held view, a shift that 'More recently' correctly signals.",
+      "The newer excavation evidence revises a decades-old belief, which requires a transition marking an updated, present-day view—'More recently.' 'Subsequently' merely marks later timing without signaling revision, and 'Eventually' implies a final outcome of a process rather than a shift in scholarly understanding, so 'More recently' is correct.",
   },
   {
     id: "ei-53",
@@ -984,10 +984,10 @@ QUESTIONS.push(
     passage:
       "After three rounds of talks ended without agreement, both sides publicly stated that a deal was unlikely before the deadline. ______ a last-minute compromise on the disputed clause allowed the agreement to be signed just hours before the deadline.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Nonetheless,", "For this reason,", "In particular,", "As predicted,"],
+    choices: ["Nonetheless,", "Admittedly,", "Instead,", "As predicted,"],
     answer: 0,
     explanation:
-      "The deal being signed despite the publicly stated pessimism is a concession, which 'Nonetheless' correctly signals.",
+      "A deal being signed despite the stated pessimism is a concession-and-persistence relationship, which 'Nonetheless' signals. 'Admittedly' would need to introduce the conceded fact itself rather than follow it, 'Instead' implies the agreement replaced an expectation rather than occurring despite one, and 'As predicted' asserts the opposite of what happened, so 'Nonetheless' is correct.",
   },
   {
     id: "ei-59",
@@ -1156,12 +1156,12 @@ QUESTIONS.push(
     choices: [
       "With more than 30 interlocking bronze gears, the Antikythera mechanism could predict astronomical positions and eclipses decades in advance.",
       "The Antikythera mechanism was recovered from a shipwreck near a Greek island in 1901.",
-      "Researchers continue to study ancient Greek shipwrecks for new discoveries.",
+      "The device could predict astronomical positions and eclipses decades in advance.",
       "The mechanism's gears were made of bronze.",
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the gear count with the device's predictive capability, together showing a level of engineering far ahead of its era.",
+      "Only choice A pairs the gear count with the device's predictive power to show just how mechanically advanced it was; C states the capability alone without the mechanical complexity, and the others are incidental details.",
   },
   {
     id: "ei-68",
@@ -1236,12 +1236,12 @@ QUESTIONS.push(
     choices: [
       "Though almost completely deaf by the time he composed his Ninth Symphony, Beethoven reportedly sensed the orchestra's vibrations through the floor.",
       "Beethoven began losing his hearing in his late twenties.",
-      "Beethoven's Ninth Symphony is considered one of his greatest works.",
-      "Hearing loss can occur gradually over the course of many years.",
+      "By the time he composed his Ninth Symphony, Beethoven was almost completely deaf.",
+      "Beethoven reportedly sensed the orchestra's vibrations through the floor.",
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the concrete adaptation, sensing vibrations through the floor, that illustrates how Beethoven composed despite deafness.",
+      "Only choice A links the near-total deafness to the specific adaptation of sensing vibrations through the floor; C states the deafness alone and D states the adaptation alone, neither fully illustrating how he adapted.",
   },
   {
     id: "ei-72",
@@ -1315,13 +1315,13 @@ QUESTIONS.push(
       "The student wants to use a specific detail to highlight what makes the monarch migration especially puzzling to scientists. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
     choices: [
       "Because no single monarch completes the full 3,000-mile round trip, scientists are still unsure how butterflies several generations removed from their ancestors know which route to follow.",
-      "Monarch butterflies migrate between North America and central Mexico.",
-      "Monarch butterflies are known for their distinctive orange and black wings.",
-      "Many insect species undertake long migrations each year.",
+      "Monarch butterflies migrate up to 3,000 miles between North America and central Mexico.",
+      "The monarch migration takes three or four generations to complete, since no single butterfly makes the full round trip.",
+      "Scientists still debate exactly how later generations know the route their ancestors traveled.",
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the multigenerational nature of the trip to the specific mystery of how the route is passed on, matching the stated goal.",
+      "Only choice A connects the multigenerational relay to the specific mystery of route transmission; C states the relay without the mystery, and D states the mystery without explaining why it's puzzling in the first place.",
   },
   {
     id: "ei-76",
@@ -1474,10 +1474,10 @@ QUESTIONS.push(
     passage:
       "The young chess player lost every match at his first major tournament, drawing ridicule from commentators who doubted his talent. ______ within two years he became the youngest grandmaster in his country's history.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Yet,", "Because of this,", "Specifically,", "In short,"],
+    choices: ["Yet,", "Instead,", "In contrast,", "Because of this,"],
     answer: 0,
     explanation:
-      "Becoming a grandmaster after such a discouraging start is a contrast, best signaled by 'Yet.'",
+      "Becoming a grandmaster after a ridiculed start is a direct contrast between two facts about the same person, which plain 'Yet' signals. 'Instead' would wrongly suggest the early losses never happened, and 'In contrast' is reserved for comparing two separate subjects, not one person's turnaround, so 'Yet' is correct.",
   },
   {
     id: "ei-85",
@@ -1530,10 +1530,10 @@ QUESTIONS.push(
     passage:
       "City officials initially assured taxpayers that the new library wing would be completed within its original budget. ______ internal documents later revealed that costs had exceeded projections by nearly 40 percent before construction even began.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["In fact,", "Similarly,", "For this reason,", "As anticipated,"],
+    choices: ["In fact,", "However,", "Instead,", "As anticipated,"],
     answer: 0,
     explanation:
-      "The internal documents reveal a truth that undercuts the officials' assurances, a relationship best signaled by 'In fact.'",
+      "The internal documents don't just contrast with the officials' assurance—they expose the concealed truth behind it, which the intensifying transition 'In fact' best captures. Plain 'However' would only mark contrast without that revealing force, and 'Instead' wrongly implies the cost overrun replaced the assurance rather than exposing it as false, so 'In fact' is correct.",
   },
   {
     id: "ei-89",
@@ -1586,10 +1586,10 @@ QUESTIONS.push(
     passage:
       "After a test rocket exploded during a routine engine trial, engineers warned that a successful launch was likely years away. ______ the redesigned rocket completed a flawless orbital launch just eight months later.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Contrary to expectations,", "For this reason,", "In particular,", "As predicted,"],
+    choices: ["Contrary to expectations,", "Surprisingly,", "Nonetheless,", "As predicted,"],
     answer: 0,
     explanation:
-      "The quick, flawless launch directly contradicts the engineers' warning of a years-long delay, so 'Contrary to expectations' is needed.",
+      "The phrase must explicitly tie the flawless launch back to the engineers' specific warning, which 'Contrary to expectations' does directly. 'Surprisingly' marks only the writer's reaction without referencing the stated prediction, and 'Nonetheless' suggests the launch succeeded despite a general obstacle rather than refuting a specific forecast, so 'Contrary to expectations' is correct.",
   },
   {
     id: "ei-93",
@@ -1642,10 +1642,10 @@ QUESTIONS.push(
     passage:
       "For most of her career, the painter was celebrated for meticulously realistic portraits. ______ her final decade of work embraced bold abstraction that alienated many longtime collectors before eventually reshaping her critical reputation.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["By contrast,", "Similarly,", "As a result,", "In particular,"],
+    choices: ["By contrast,", "However,", "Instead,", "As a result,"],
     answer: 0,
     explanation:
-      "Realistic portraits versus bold abstraction describes two opposite phases of her career, so 'By contrast' is correct.",
+      "The sentence explicitly sets two distinct career phases side by side—realistic portraits versus bold abstraction—which calls for the parallel-comparison transition 'By contrast.' 'However' would mark contrast too generally without emphasizing the two-phase comparison, and 'Instead' wrongly implies the later style erased or replaced the earlier one rather than simply differing from it, so 'By contrast' is correct.",
   },
   {
     id: "ei-97",
@@ -1670,10 +1670,10 @@ QUESTIONS.push(
     passage:
       "The publisher printed only 2,000 copies of the debut novel, expecting modest interest given its unconventional structure. ______ word-of-mouth recommendations drove the book to sell over a million copies within its first year.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "For this reason,", "In particular,", "As predicted,"],
+    choices: ["Instead,", "Yet,", "Nonetheless,", "As predicted,"],
     answer: 0,
     explanation:
-      "Selling over a million copies directly contradicts the publisher's expectation of modest interest, so a contrast transition, 'Instead,' is needed.",
+      "The runaway sales directly replace the publisher's expectation of modest interest, which 'Instead' signals precisely. 'Nonetheless' would suggest success happened despite some stated obstacle rather than contradicting a forecast, and 'As predicted' asserts the opposite of what occurred, so 'Instead' is correct.",
   }
 );
 
@@ -1785,10 +1785,10 @@ QUESTIONS.push(
     passage:
       "The city council passed one of the strictest noise ordinances in the state last year. ______ complaints about late-night noise from the entertainment district have barely declined.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Nonetheless,", "Accordingly,", "Specifically,", "In addition,"],
+    choices: ["Nonetheless,", "Granted,", "Instead,", "Accordingly,"],
     answer: 0,
     explanation:
-      "Complaints persisting despite a strict new ordinance is a concession, which 'Nonetheless' correctly signals.",
+      "Complaints persisting despite a newly strict ordinance is a concession-and-persistence relationship, which 'Nonetheless' signals. 'Granted' would need to introduce a concession before a main claim rather than follow one, and 'Instead' wrongly implies the complaints replaced the ordinance rather than continuing despite it, so 'Nonetheless' is correct.",
   },
   {
     id: "ei-107",
@@ -1827,10 +1827,10 @@ QUESTIONS.push(
     passage:
       "The renowned conductor fell ill just hours before the sold-out performance. ______ his twenty-four-year-old assistant stepped in and led the orchestra through a flawless rendition of the symphony.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Yet,", "Because of this,", "Specifically,", "In short,"],
+    choices: ["Yet,", "Instead,", "In contrast,", "Because of this,"],
     answer: 0,
     explanation:
-      "A flawless performance despite the sudden crisis is a contrast, best signaled by 'Yet.'",
+      "A flawless performance despite the conductor's sudden illness is a direct, single-storyline contrast, which plain 'Yet' signals. 'In contrast' is for comparing two separate subjects side by side, not one crisis-and-recovery story, and 'Instead' wrongly implies the illness never actually happened, so 'Yet' is correct.",
   },
   {
     id: "ei-110",
@@ -1855,10 +1855,10 @@ QUESTIONS.push(
     passage:
       "For decades, historians believed the village was abandoned before the famine struck. ______ pottery shards unearthed at the site in 2019 suggest residents remained for at least another generation.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["More recently,", "For this reason,", "In the same way,", "As a result,"],
+    choices: ["More recently,", "Subsequently,", "Eventually,", "As a result,"],
     answer: 0,
     explanation:
-      "The 2019 discovery introduces newer evidence that revises the older, long-held belief, a shift that 'More recently' correctly signals.",
+      "New 2019 evidence revises a long-held historical belief, which requires the updating transition 'More recently.' 'Subsequently' marks mere sequence without signaling a revision of prior belief, and 'Eventually' implies the final stage of a single process rather than a shift in scholarly consensus, so 'More recently' is correct.",
   },
   {
     id: "ei-112",
@@ -1925,10 +1925,10 @@ QUESTIONS.push(
     passage:
       "The recycling plant's engineers claimed their new sorting system would cut contamination rates in half. ______ independent audits found contamination rates had barely changed one year after installation.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Similarly,", "In addition,", "Specifically,"],
+    choices: ["However,", "Instead,", "Nonetheless,", "Specifically,"],
     answer: 0,
     explanation:
-      "The audit results contradict the engineers' claim, so a contrast transition, 'However,' is required.",
+      "Independent audit data directly refutes the engineers' claim, a straightforward contradiction best marked by 'However.' 'Instead' would suggest the claim is being replaced by a parallel alternative rather than disproven by evidence, and 'Nonetheless' implies the claim held true despite some obstacle, which misstates the relationship, so 'However' is correct.",
   },
   {
     id: "ei-117",
@@ -2009,10 +2009,10 @@ QUESTIONS.push(
     passage:
       "Ticket sales at the century-old theater had declined steadily for a decade as streaming services grew popular. ______ a single viral clip of a local performance sent sales soaring by 300 percent within a month.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Remarkably,", "Consequently,", "For example,", "That is,"],
+    choices: ["Remarkably,", "Nonetheless,", "Instead,", "Consequently,"],
     answer: 0,
     explanation:
-      "A sudden, dramatic reversal of a decade-long decline is a striking, unexpected turn, which 'Remarkably' signals.",
+      "The transition must capture just how startling a 300% jump is after a decade of decline, which 'Remarkably' emphasizes. 'Nonetheless' implies the rise happened despite the decline continuing, and 'Instead' merely marks replacement without conveying the dramatic scale of the reversal, so 'Remarkably' is correct.",
   },
   {
     id: "ei-123",
@@ -2051,10 +2051,10 @@ QUESTIONS.push(
     passage:
       "Engineers warned that a failure to deploy the probe's solar panels would end the mission within days. ______ ground controllers remotely triggered a backup mechanism that unfolded the panels and saved the mission.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Fortunately,", "Consequently,", "Similarly,", "For example,"],
+    choices: ["Fortunately,", "Remarkably,", "Nonetheless,", "Consequently,"],
     answer: 0,
     explanation:
-      "The backup mechanism saving the mission is a welcome, contrasting turn against the engineers' warning, which 'Fortunately' captures.",
+      "The backup mechanism's success is framed as a lucky, welcome break from the engineers' warning, which 'Fortunately' captures through its positive evaluation. 'Remarkably' notes surprise without that favorable framing, and 'Nonetheless' implies success despite a persisting obstacle rather than a rescue from one, so 'Fortunately' is correct.",
   },
   {
     id: "ei-126",
@@ -2107,10 +2107,10 @@ QUESTIONS.push(
     passage:
       "The regional almanac predicted an unusually mild, frost-free spring for the area. ______ an unexpected cold snap in late April destroyed nearly a third of the season's fruit blossoms.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "Accordingly,", "Specifically,", "In short,"],
+    choices: ["Instead,", "Yet,", "Nonetheless,", "Accordingly,"],
     answer: 0,
     explanation:
-      "The damaging cold snap contradicts the almanac's prediction of a mild spring, so a contrast transition, 'Instead,' is needed.",
+      "The devastating cold snap replaces the almanac's prediction of a mild spring with the opposite reality, which 'Instead' signals precisely. 'Nonetheless' would suggest the damage happened despite some obstacle rather than contradicting a forecast, so 'Instead' is correct.",
   },
   {
     id: "ei-130",
@@ -2245,12 +2245,12 @@ QUESTIONS.push(
     choices: [
       "Because the eruption occurred in an accessible, unpopulated valley with slow-moving, low-danger lava, more than 100,000 visitors flocked to see it within two months rather than being evacuated.",
       "A volcanic eruption occurred in Iceland in 2021.",
-      "Lava flows from the eruption moved slowly.",
-      "Iceland experiences frequent volcanic activity due to its geology.",
+      "Lava flows from the eruption moved slowly and posed little danger to visitors.",
+      "The eruption occurred in a relatively accessible, unpopulated valley.",
     ],
     answer: 0,
     explanation:
-      "Only choice A links the valley's accessibility and low danger to the specific outcome of mass tourism rather than evacuation, fulfilling the stated goal.",
+      "Only choice A combines accessibility, low danger, and the visitor count to fully explain why crowds came rather than evacuees fled; C and D each give only one piece of that explanation.",
   },
   {
     id: "ei-137",
@@ -2326,11 +2326,11 @@ QUESTIONS.push(
       "Since humans were evacuated after the 1986 disaster, wolf, lynx, and elk populations within the Chernobyl exclusion zone have rebounded.",
       "The 1986 Chernobyl disaster forced the permanent evacuation of the surrounding area.",
       "Some radiation levels within the exclusion zone remain too high for long-term human habitation.",
-      "Nuclear accidents can have long-lasting effects on surrounding ecosystems.",
+      "Without people around, wildlife in the exclusion zone has generally thrived.",
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific evidence — rebounding wolf, lynx, and elk populations — that supports the claim about wildlife thriving without people.",
+      "Only choice A names the specific species that rebounded and ties that rebound to the human evacuation; D makes the same general claim without the concrete evidence, and B and C describe the evacuation or radiation without mentioning wildlife at all.",
   },
   {
     id: "ei-141",
@@ -2426,11 +2426,11 @@ QUESTIONS.push(
       "At the bottom of the Mariana Trench, water pressure exceeds 1,000 times what it is at sea level.",
       "The Mariana Trench reaches a depth of nearly 11,000 meters.",
       "Specialized submersibles are needed to explore the trench's depths.",
-      "The Mariana Trench is located in the western Pacific Ocean.",
+      "Because it is so deep, the Mariana Trench requires specialized submersibles for exploration.",
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific pressure figure, directly fulfilling the goal of emphasizing the extreme pressure at the trench's bottom.",
+      "Only choice A states the actual pressure figure—1,000 times sea-level pressure—that the goal asks to emphasize; the others describe the trench's depth or the need for submersibles without quantifying the pressure itself.",
   },
   {
     id: "ei-146",
@@ -2484,13 +2484,13 @@ QUESTIONS.push(
       "The student wants to explain how this beetle is able to survive with almost no rainfall in its habitat. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
     choices: [
       "Because bumps on its back collect fog droplets, which grooves then channel directly to its mouth, the beetle can get water even though its desert habitat sees almost no rainfall.",
-      "The Namib desert beetle lives in one of the driest deserts on Earth.",
-      "Deserts can form for a variety of different climatic reasons.",
-      "Many desert animals have adapted to survive with minimal water.",
+      "The Namib desert beetle lives in one of the driest deserts on Earth, which receives almost no rainfall.",
+      "Bumps on the beetle's back collect tiny water droplets from the morning fog.",
+      "Grooves between the bumps channel collected water to the beetle's mouth.",
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the full fog-harvesting mechanism, directly answering how the beetle survives without rainfall.",
+      "Only choice A explains the full fog-harvesting mechanism, from collection to delivery; C and D each give only half of that mechanism, and B states the problem without any solution.",
   },
   {
     id: "ei-149",
@@ -2586,11 +2586,11 @@ QUESTIONS.push(
       "During flight, a hummingbird's heart can beat more than 1,200 times per minute.",
       "Hummingbirds are the only birds capable of sustained hovering flight.",
       "Hummingbirds must feed on nectar every ten to fifteen minutes while awake.",
-      "Hummingbirds are found throughout the Americas.",
+      "A hummingbird's heart beats very quickly during flight.",
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific heart rate figure, directly fulfilling the goal of emphasizing how fast a hummingbird's heart beats in flight.",
+      "Only choice A gives the specific rate—more than 1,200 beats per minute—that the goal asks to emphasize; D makes the same general claim without a number, and B and C are true but unrelated to heart rate.",
   },
   {
     id: "ei-154",
@@ -2625,12 +2625,12 @@ QUESTIONS.push(
     choices: [
       "Early trials show that adding certain seaweed supplements to cattle feed can cut methane emissions from digestion by over 80%.",
       "Cattle produce methane during digestion, a gas with a strong short-term warming effect.",
-      "Some ranchers have begun experimenting with new feed additives.",
-      "Livestock farming contributes to greenhouse gas emissions in various ways.",
+      "Some ranchers have begun adding seaweed supplements to cattle feed.",
+      "Because cattle produce a strong-warming gas during digestion, some ranchers have begun adding seaweed to their feed.",
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific trial result, an 80% emissions cut, that provides concrete evidence for the claim about diet changes.",
+      "Only choice A cites the trial result—an 80% emissions cut—that actually supports the claim; C mentions the intervention without evidence it works, and B and D explain the problem or the attempted fix without the outcome data.",
   },
   {
     id: "ei-156",
@@ -2665,12 +2665,12 @@ QUESTIONS.push(
     choices: [
       "Because she was fluent in at least seven languages, Cleopatra could negotiate directly with foreign dignitaries without relying on translators.",
       "Cleopatra VII was the last active ruler of the Ptolemaic Kingdom of Egypt.",
-      "Cleopatra is a frequent subject of books, films, and plays.",
-      "Ancient rulers often relied on translators for diplomacy.",
+      "Cleopatra VII is believed to have been fluent in at least seven languages.",
+      "Cleopatra reportedly negotiated with foreign dignitaries without using translators.",
     ],
     answer: 0,
     explanation:
-      "Only choice A links Cleopatra's fluency in multiple languages to the specific diplomatic advantage of negotiating without translators.",
+      "Only choice A links the specific skill (fluency in seven languages) to its specific diplomatic payoff (no need for translators); C and D each state only one half of that cause-and-effect link.",
   },
   {
     id: "ei-158",
@@ -2811,10 +2811,10 @@ QUESTIONS.push(
     passage:
       "The negotiations between the two unions dragged on for fourteen months without a breakthrough. ______ both sides reached a contract that satisfied neither side completely.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Eventually,", "Similarly,", "For instance,", "In contrast,"],
+    choices: ["Eventually,", "Subsequently,", "Gradually,", "In contrast,"],
     answer: 0,
     explanation:
-      "The second sentence describes the final outcome of the long negotiation process, which 'Eventually' correctly signals.",
+      "The contract capped fourteen months of stalled talks, so the transition must signal a long-awaited final outcome—'Eventually.' 'Subsequently' marks mere sequence without that sense of a drawn-out resolution, and 'Gradually' describes a slow process itself rather than its eventual result, so 'Eventually' is correct.",
   },
   {
     id: "ei-167",
@@ -2825,10 +2825,10 @@ QUESTIONS.push(
     passage:
       "Critics predicted the remake would tarnish the beloved original film's legacy. ______ it was praised by longtime fans as a faithful and inventive tribute.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "As a result,", "Similarly,", "For example,"],
+    choices: ["Instead,", "Yet,", "Nonetheless,", "As a result,"],
     answer: 0,
     explanation:
-      "The remake being praised directly contradicts the critics' prediction, so a contrast transition, 'Instead,' is required.",
+      "Fan praise directly replaces critics' prediction of damage to the film's legacy, which 'Instead' captures precisely. 'Nonetheless' would imply the praise occurred despite some stated obstacle rather than contradicting a forecast, so 'Instead' is correct.",
   },
   {
     id: "ei-168",
@@ -2867,10 +2867,10 @@ QUESTIONS.push(
     passage:
       "The remote village has no paved roads connecting it to the nearest city. ______ it has become an unlikely hub for a thriving online handicraft business.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Nevertheless,", "Consequently,", "For instance,", "Likewise,"],
+    choices: ["Nevertheless,", "Admittedly,", "Instead,", "Consequently,"],
     answer: 0,
     explanation:
-      "Thriving online despite such isolation is a contrast, which 'Nevertheless' correctly signals.",
+      "A thriving online business despite total road isolation is a concession-and-persistence relationship, which 'Nevertheless' signals. 'Admittedly' would need to introduce the conceded limitation itself rather than follow it, and 'Instead' wrongly implies the isolation was replaced rather than simply not preventing success, so 'Nevertheless' is correct.",
   },
   {
     id: "ei-171",
@@ -2909,10 +2909,10 @@ QUESTIONS.push(
     passage:
       "The mayor's office claimed the new parking garage would be completed on budget. ______ city records later showed the project had run $12 million over its original estimate.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["In fact,", "Similarly,", "For this reason,", "As anticipated,"],
+    choices: ["In fact,", "However,", "Instead,", "As anticipated,"],
     answer: 0,
     explanation:
-      "The city records reveal a truth that undercuts the mayor's office's claim, which 'In fact' correctly signals.",
+      "City records don't just contrast with the mayor's office's claim—they expose the concealed truth behind it, which the revealing transition 'In fact' captures. Plain 'However' would mark contrast without that exposing force, so 'In fact' is correct.",
   },
   {
     id: "ei-174",
@@ -2965,15 +2965,10 @@ QUESTIONS.push(
     passage:
       "Sales of the board game had declined every year since its release in the 1990s. ______ a viral video review sent sales soaring to an all-time high last year.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: [
-      "Unexpectedly,",
-      "Predictably,",
-      "For instance,",
-      "Consequently,",
-    ],
+    choices: ["Unexpectedly,", "Nonetheless,", "Instead,", "Predictably,"],
     answer: 0,
     explanation:
-      "A sudden reversal of a decades-long decline is a surprising turn, which 'Unexpectedly' correctly signals.",
+      "A sudden, record-breaking reversal after decades of decline is a genuinely surprising turn, which 'Unexpectedly' captures. 'Nonetheless' implies the rise happened despite the decline continuing rather than reversing it, and 'Predictably' asserts the opposite of what happened, so 'Unexpectedly' is correct.",
   },
   {
     id: "ei-178",
@@ -3026,10 +3021,10 @@ QUESTIONS.push(
     passage:
       "The panel of judges unanimously predicted the underdog team would be eliminated in the first round. ______ the team advanced all the way to the championship match.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "Accordingly,", "Specifically,", "In short,"],
+    choices: ["Instead,", "Yet,", "Nonetheless,", "Accordingly,"],
     answer: 0,
     explanation:
-      "Advancing to the championship directly contradicts the judges' prediction, so a contrast transition, 'Instead,' is needed.",
+      "The team's championship run replaces the judges' prediction of early elimination with the opposite outcome, which 'Instead' signals precisely. 'Nonetheless' would imply the advance happened despite a stated obstacle rather than contradicting a prediction, so 'Instead' is correct.",
   },
   {
     id: "ei-182",
@@ -3082,10 +3077,10 @@ QUESTIONS.push(
     passage:
       "Geologists long assumed the canyon had formed gradually over millions of years of erosion. ______ new sediment analysis suggests a single catastrophic flood carved most of it in a matter of weeks.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Similarly,", "In addition,", "Specifically,"],
+    choices: ["However,", "Instead,", "Nonetheless,", "Specifically,"],
     answer: 0,
     explanation:
-      "The new analysis contradicts the long-held assumption of gradual erosion, so a contrast transition, 'However,' is needed.",
+      "New sediment analysis directly overturns geologists' long-standing assumption, a straightforward contradiction best marked by 'However.' 'Instead' fits when a stated plan or expectation is replaced by what actually happened, but here geologists hold a belief about the past that new evidence revises, and 'Nonetheless' implies the gradual-erosion view held true despite some obstacle, so 'However' is correct.",
   },
   {
     id: "ei-186",
@@ -3124,10 +3119,10 @@ QUESTIONS.push(
     passage:
       "The app's founders launched it expecting a niche audience of hobbyist gardeners. ______ it was downloaded more than ten million times within its first year.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Instead,", "Accordingly,", "Specifically,", "In short,"],
+    choices: ["Instead,", "However,", "Nonetheless,", "Accordingly,"],
     answer: 0,
     explanation:
-      "Ten million downloads far exceeds and contradicts the founders' expectation of a niche audience, so 'Instead,' is needed.",
+      "The founders' plan for a niche audience is replaced by the opposite reality of mass downloads, which calls for 'Instead' rather than the belief-correcting 'However' or the obstacle-despite framing of 'Nonetheless.'",
   },
   {
     id: "ei-189",
@@ -3265,11 +3260,11 @@ QUESTIONS.push(
       "Despite employing more than 130,000 people, the Manhattan Project kept many workers unaware of the ultimate purpose of their own facilities.",
       "The Manhattan Project's total cost exceeded $2 billion.",
       "The Manhattan Project employed more than 130,000 people at its peak.",
-      "Large government projects often require substantial funding.",
+      "Many workers did not know the ultimate purpose of the facilities where they worked.",
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the large workforce size with workers' lack of knowledge of the project's purpose, directly emphasizing its secrecy.",
+      "Only choice A combines the massive workforce with workers' ignorance of the project's purpose to show how compartmentalized it was; C and D each give only one half of that picture, and B is unrelated to secrecy.",
   },
   {
     id: "ei-197",
@@ -3364,12 +3359,12 @@ QUESTIONS.push(
     choices: [
       "A blue whale's heart can weigh as much as 400 pounds, large enough that its heartbeat can be detected from over a mile away.",
       "Blue whales are the largest animals known to have ever lived.",
-      "Specialized equipment is needed to study a blue whale's heartbeat.",
-      "Whales are mammals that must surface regularly to breathe.",
+      "A blue whale's heartbeat can be detected using specialized equipment.",
+      "A blue whale's heart can weigh as much as 400 pounds.",
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the heart's weight with the detectable heartbeat, together illustrating just how enormous it is.",
+      "Only choice A combines the heart's weight with the mile-away detectable heartbeat to fully illustrate its enormous size; C and D each give only one of those two supporting details, and B describes the whale's overall size, not its heart.",
   },
   {
     id: "ei-202",
@@ -3385,11 +3380,11 @@ QUESTIONS.push(
       "The Great Chicago Fire of 1871 destroyed about 3.3 square miles of the city and left roughly 100,000 residents homeless.",
       "The Great Chicago Fire led to major reforms in building codes and firefighting equipment.",
       "The Great Chicago Fire occurred in 1871.",
-      "Fires were a common hazard in nineteenth-century cities built largely of wood.",
+      "The fire killed an estimated 300 people.",
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific area destroyed and number left homeless, directly conveying the fire's scale.",
+      "Only choice A combines the area destroyed with the number left homeless to state the fire's full scale; D gives only the death toll, and B and C describe a later consequence or the date rather than the scale of destruction.",
   },
   {
     id: "ei-203",
@@ -3464,12 +3459,12 @@ QUESTIONS.push(
     choices: [
       "Scientists believe giant squid evolved eyes up to 10 inches across, the largest of any animal, to detect faint light and movement in the deep ocean.",
       "Giant squid were not filmed alive in their natural habitat until 2012.",
-      "Giant squid have the largest eyes of any known animal.",
-      "The deep ocean remains one of the least explored environments on Earth.",
+      "Giant squid have the largest eyes of any known animal, up to 10 inches across.",
+      "Scientists believe large eyes help giant squid detect faint light and movement in the deep ocean.",
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the eyes' size to the specific function, detecting faint light and movement, directly explaining their evolution.",
+      "Only choice A connects the eyes' record size to their specific function to explain why they evolved that way; C and D each state only the size or only the function, and B is unrelated to the question of why the eyes evolved.",
   },
   {
     id: "ei-207",
@@ -3584,12 +3579,12 @@ QUESTIONS.push(
     choices: [
       "After the 1987 Montreal Protocol phased out ozone-depleting chemicals, satellite data by the 2020s showed the ozone layer slowly recovering.",
       "Scientists first identified severe seasonal ozone thinning over Antarctica in 1985.",
-      "The Montreal Protocol was signed by many nations in 1987.",
-      "Environmental treaties can take years to negotiate and implement.",
+      "The Montreal Protocol, signed in 1987, phased out many ozone-depleting chemicals worldwide.",
+      "By the 2020s, satellite data showed signs that the ozone layer had begun slowly recovering.",
     ],
     answer: 0,
     explanation:
-      "Only choice A links the treaty's chemical phase-out to the later recovery evidence, directly supporting the claim about international action.",
+      "Only choice A links the treaty's chemical phase-out to the later recovery evidence, showing the action actually helped; C and D each give only the action or only the result, not the causal connection the claim requires.",
   },
   {
     id: "ei-213",
@@ -3956,10 +3951,10 @@ QUESTIONS.push(
     passage:
       "The ski resort invested heavily in snowmaking machines after several winters of disappointingly low snowfall. ______ natural snowfall the following winter broke a decade-old record.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Ironically,", "Accordingly,", "For example,", "In addition,"],
+    choices: ["Ironically,", "Unexpectedly,", "Remarkably,", "Accordingly,"],
     answer: 0,
     explanation:
-      "The resort's costly preparation for low snow being followed by a record snowfall is an ironic twist, which 'Ironically' correctly signals.",
+      "The costly snowmaking investment being followed by a record natural snowfall is a self-undermining irony, not just a surprising fact, so 'Ironically' fits best. 'Unexpectedly' and 'Remarkably' both note surprise or scale but miss the specific paradox of the wasted preparation, so 'Ironically' is correct.",
   },
   {
     id: "ei-233",
@@ -3974,12 +3969,12 @@ QUESTIONS.push(
     choices: [
       "Although Watson and Crick are often credited alone, their 1953 double-helix model relied heavily on Rosalind Franklin's X-ray diffraction images.",
       "James Watson and Francis Crick published their model of DNA's structure in 1953.",
+      "Watson and Crick's model relied heavily on X-ray diffraction images.",
       "Rosalind Franklin's contribution went largely uncredited for years after the discovery.",
-      "DNA's double-helix structure explains how genetic information is stored.",
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception, crediting Franklin's essential role alongside Watson and Crick.",
+      "Only choice A explicitly names Franklin and ties her X-ray images to the model's creation, directly correcting the misconception; C omits her name and D omits her specific contribution, so neither fully corrects it.",
   },
   {
     id: "ei-234",
@@ -4024,10 +4019,10 @@ QUESTIONS.push(
     passage:
       "Regulators cut the region's cod fishing quotas in half to protect the declining population. ______ cod numbers continued to fall even after the stricter limits took effect.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Nonetheless,", "As a result,", "For instance,", "Similarly,"],
+    choices: ["Nonetheless,", "However,", "Instead,", "As a result,"],
     answer: 0,
     explanation:
-      "The population declining despite the stricter quotas is an unexpected, contrasting outcome, so 'Nonetheless' fits rather than a result transition.",
+      "Cod numbers continuing to fall despite stricter quotas is a concession-and-persistence relationship, which 'Nonetheless' signals. 'However' would fit correcting a mistaken claim rather than describing an action that failed to reverse a trend, and 'Instead' wrongly implies the decline replaced some other expected outcome, so 'Nonetheless' is correct.",
   },
   {
     id: "ei-237",
@@ -4058,10 +4053,10 @@ QUESTIONS.push(
     passage:
       "The small studio spent six years developing its debut video game, promoting it as a future genre classic. ______ it sold fewer than a thousand copies in its first month on sale.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Therefore,", "For example,", "Likewise,"],
+    choices: ["However,", "Nonetheless,", "Instead,", "Therefore,"],
     answer: 0,
     explanation:
-      "Weak sales despite years of promoted development is a contrast, correctly signaled by 'However' rather than a result transition.",
+      "The weak sales directly contradict the studio's own marketing claim, a straightforward correction best marked by 'However.' 'Nonetheless' would imply poor sales occurred despite some stated obstacle, and 'Instead' suggests a plan was replaced outright rather than a claim being disproven by the outcome, so 'However' is correct.",
   },
   {
     id: "ei-239",
@@ -4160,10 +4155,10 @@ QUESTIONS.push(
     passage:
       "The volunteer fire department relies on donations for nearly all of its equipment budget. ______ it maintains some of the newest trucks in the entire county.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Remarkably,", "Consequently,", "For instance,", "Similarly,"],
+    choices: ["Remarkably,", "Nonetheless,", "Instead,", "Consequently,"],
     answer: 0,
     explanation:
-      "Owning some of the newest trucks despite relying only on donations is a striking, unexpected fact, which 'Remarkably' signals.",
+      "Having some of the county's newest trucks on donations alone is an impressively surprising fact, which 'Remarkably' emphasizes. 'Nonetheless' would frame the donation-reliance as an obstacle merely overcome, understating how striking the outcome is, and 'Instead' implies a replacement rather than an achievement, so 'Remarkably' is correct.",
   },
   {
     id: "ei-245",
@@ -4245,13 +4240,13 @@ QUESTIONS.push(
       "The student wants to explain why Howe and Singer became rivals. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
     choices: [
       "Because Singer's commercially successful machine drew on Howe's earlier lockstitch patent, the two became rivals in a lengthy lawsuit.",
-      "Elias Howe patented his sewing machine design in 1846.",
-      "Isaac Singer built a commercial company around his sewing machine.",
-      "Sewing machines greatly increased the speed of garment production.",
+      "Elias Howe patented a lockstitch sewing machine design in 1846.",
+      "Isaac Singer later developed a more practical version and built a commercial company around it.",
+      "The two inventors were involved in a lengthy patent lawsuit.",
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the cause of the rivalry, the overlap between Singer's commercial machine and Howe's patent, fulfilling the stated goal.",
+      "Only choice A connects Singer's commercial success to Howe's earlier patent to explain the cause of their rivalry; D merely restates that they were rivals without explaining why, and B and C each describe one inventor without connecting them.",
   },
   {
     id: "ei-250",
@@ -4364,10 +4359,10 @@ QUESTIONS.push(
     passage:
       "Researchers were thrilled to discover a new species of frog in a remote rainforest. ______ habitat loss in the same region threatens to drive the species to extinction before it can be fully studied.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Consequently,", "For example,", "In addition,"],
+    choices: ["However,", "Instead,", "Nonetheless,", "In addition,"],
     answer: 0,
     explanation:
-      "The looming extinction undercuts the excitement of the discovery, so a contrast transition, 'However,' is required.",
+      "The looming extinction threat undercuts the researchers' excitement, a direct contradiction best marked by 'However.' 'Instead' would wrongly suggest the threat replaces the discovery itself, and 'Nonetheless' awkwardly implies the threat persists despite the thrill rather than undercutting it, so 'However' is correct.",
   },
   {
     id: "ei-257",
@@ -4432,10 +4427,10 @@ QUESTIONS.push(
     passage:
       "Mechanical problems delayed the amusement park's newest roller coaster for over a year past its planned opening. ______ it broke the park's single-day attendance record within its first week of operation.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Nonetheless,", "Consequently,", "For example,", "Similarly,"],
+    choices: ["Nonetheless,", "However,", "Instead,", "Consequently,"],
     answer: 0,
     explanation:
-      "Setting an attendance record despite the long delay is a concession relationship, which 'Nonetheless' correctly signals.",
+      "Setting an attendance record despite a lengthy delay is a concession-and-persistence relationship, which 'Nonetheless' signals. 'However' fits correcting a mistaken claim, not describing success following an obstacle, and 'Instead' would wrongly suggest the record replaced the delay rather than following it, so 'Nonetheless' is correct.",
   },
   {
     id: "ei-261",
@@ -4534,10 +4529,10 @@ QUESTIONS.push(
     passage:
       "The debate coach required her students to argue positions they personally disagreed with during practice rounds. ______ several students later said the exercise sharpened their ability to anticipate counterarguments.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["In fact,", "However,", "For example,", "Similarly,"],
+    choices: ["In fact,", "However,", "Nonetheless,", "For example,"],
     answer: 0,
     explanation:
-      "The students' later praise reinforces and strengthens the point about the exercise's value, an emphasis relationship signaled by 'In fact.'",
+      "The students' testimony doesn't just contrast with the exercise's discomfort—it confirms and reinforces its value, which the intensifying 'In fact' captures. Plain 'However' would only mark a contrast, and 'Nonetheless' frames the benefit as happening despite the exercise rather than growing out of it, so 'In fact' is correct.",
   },
   {
     id: "ei-267",
@@ -4553,11 +4548,11 @@ QUESTIONS.push(
       "Lenormand coined the term \"parachute\" by combining Greek and French roots meaning \"against falling.\"",
       "Louis-Sébastien Lenormand demonstrated a parachute jump from a tower in 1783.",
       "Lenormand's design predated practical aircraft by over a century.",
-      "Parachutes are used to slow a falling object's descent.",
+      "Lenormand coined a new word to describe his invention.",
     ],
     answer: 0,
     explanation:
-      "Only choice A directly explains the linguistic origin of the word, fulfilling the stated goal.",
+      "Only choice A gives the specific Greek and French roots and their meaning, directly explaining the word's origin; D mentions that he coined a word without saying what it meant, and B and C are real but irrelevant to etymology.",
   },
   {
     id: "ei-268",
@@ -4655,11 +4650,11 @@ QUESTIONS.push(
       "Because the cotton gin cleaned cotton fifty times faster than hand labor, plantation owners expanded production and deepened their reliance on enslaved labor.",
       "Eli Whitney patented the cotton gin in 1794.",
       "The cotton gin could clean cotton far faster than doing so by hand.",
-      "Cotton became a major cash crop in the southern United States.",
+      "The gin's efficiency led plantation owners to expand cotton production.",
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the machine's efficiency to the specific unintended consequence, expanded reliance on enslaved labor, fulfilling the stated goal.",
+      "Only choice A connects the gin's speed to the specific social consequence of deepened reliance on enslaved labor; D states only the production-expansion half of that consequence, and B and C describe the invention or its speed without any social effect.",
   },
   {
     id: "ei-274",
@@ -4670,10 +4665,10 @@ QUESTIONS.push(
     passage:
       "Organizers rerouted the marathon at the last minute after a water main broke along the original course. ______ runners found that the new route included a far steeper hill than organizers had anticipated.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Unexpectedly,", "Consequently,", "For example,", "Similarly,"],
+    choices: ["Unexpectedly,", "Nonetheless,", "Instead,", "Consequently,"],
     answer: 0,
     explanation:
-      "The steeper hill catching organizers off guard is a surprising development, which 'Unexpectedly' correctly signals.",
+      "Finding a steeper hill than organizers anticipated is a surprising discovery, which 'Unexpectedly' captures directly. 'Nonetheless' implies the discovery occurred despite some other obstacle, and 'Instead' suggests a planned outcome was replaced rather than an unplanned complication being discovered, so 'Unexpectedly' is correct.",
   },
   {
     id: "ei-275",
@@ -4791,11 +4786,11 @@ QUESTIONS.push(
       "After standing as a symbol of Cold War division for nearly three decades, the Berlin Wall fell within months of the 1989 protests in East Germany.",
       "The Berlin Wall was erected in 1961 to divide East and West Berlin.",
       "The wall fell in 1989 after mass protests in East Germany.",
-      "The Cold War divided much of Europe for decades.",
+      "The wall stood as a symbol of Cold War division for nearly three decades.",
     ],
     answer: 0,
     explanation:
-      "Only choice A contrasts the long span of division with the comparatively rapid collapse, fulfilling the stated goal.",
+      "Only choice A sets the decades of division against the comparatively fast collapse to emphasize the contrast; C and D each state one half of that contrast, and B describes only the wall's construction.",
   },
   {
     id: "ei-282",
@@ -4840,10 +4835,10 @@ QUESTIONS.push(
     passage:
       "The two rival chefs had spent years publicly criticizing each other's restaurants in local reviews. ______ they agreed to co-host a single charity dinner, cooking side by side for one night only.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Surprisingly,", "Consequently,", "For example,", "In addition,"],
+    choices: ["Surprisingly,", "Nonetheless,", "Instead,", "In addition,"],
     answer: 0,
     explanation:
-      "Two longtime rivals cooking together is an unexpected turn given their public criticism, which 'Surprisingly' signals.",
+      "Two longtime public rivals cooking together is a genuinely surprising turn given their history, which 'Surprisingly' emphasizes. 'Nonetheless' frames the dinner as happening despite an obstacle rather than as an unexpected reversal, and 'Instead' implies a plan was replaced rather than an unlikely event occurring, so 'Surprisingly' is correct.",
   },
   {
     id: "ei-285",
@@ -4879,11 +4874,11 @@ QUESTIONS.push(
       "A gray whale's round-trip migration between the Arctic and Mexico can cover more than 12,000 miles, among the longest of any mammal.",
       "Gray whales migrate between Arctic feeding grounds and breeding lagoons in Mexico.",
       "Mother gray whales nurse their calves in shallow, protected lagoons.",
-      "Gray whales are known for their distinctive mottled skin.",
+      "A gray whale's migration between the Arctic and Mexico is among the longest of any mammal.",
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific distance figure that fulfills the goal of emphasizing the migration's extraordinary length.",
+      "Only choice A states the actual distance—more than 12,000 miles—that quantifies the migration's extraordinary length; D makes the same claim without a number, and B and C describe the migration's route or calf-rearing without addressing its length.",
   },
   {
     id: "ei-287",
@@ -4978,10 +4973,10 @@ QUESTIONS.push(
     passage:
       "The engineer insisted that the bridge's design met every safety standard. ______ independent inspectors later found several welds that failed to meet code.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Specifically,", "Accordingly,", "Likewise,"],
+    choices: ["However,", "Instead,", "Nonetheless,", "Specifically,"],
     answer: 0,
     explanation:
-      "The inspectors' findings directly contradict the engineer's claim, so the contrast word 'However' is needed.",
+      "The inspectors' findings directly disprove the engineer's claim with contradicting evidence, which 'However' signals. 'Instead' would suit a plan replaced by what actually happened, not a claim corrected by inspection results, so 'However' is correct.",
   },
   {
     id: "ei-294",
@@ -5076,10 +5071,10 @@ QUESTIONS.push(
     passage:
       "Critics have long argued that online courses cannot replicate the engagement of in-person seminars. ______ a recent study found that online students in small discussion groups participated just as actively as their in-person peers.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["However,", "Specifically,", "Similarly,", "Consequently,"],
+    choices: ["However,", "Instead,", "Nonetheless,", "Consequently,"],
     answer: 0,
     explanation:
-      "The study's finding undercuts the critics' claim, so the contrast transition 'However' is needed.",
+      "A study's contradicting findings disprove the critics' long-standing claim, which calls for the belief-correcting 'However.' 'Instead' fits a plan replaced by reality, not a claim overturned by research, so 'However' is correct.",
   },
   {
     id: "ei-301",
@@ -5118,10 +5113,10 @@ QUESTIONS.push(
     passage:
       "The sculptor was celebrated during her lifetime for strict, minimalist forms. ______ her private sketchbooks reveal an exuberant, almost chaotic imagination.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["By contrast,", "Similarly,", "Consequently,", "For instance,"],
+    choices: ["By contrast,", "However,", "Instead,", "For instance,"],
     answer: 0,
     explanation:
-      "The sketchbooks are described as the opposite of her public minimalist reputation, so 'By contrast' fits.",
+      "The sentence explicitly sets two sides of the same artist—her public minimalist work and her private sketchbooks—side by side, which the parallel-comparison 'By contrast' captures precisely. 'However' would mark contrast more generally, and 'Instead' wrongly implies one erased the other rather than both coexisting, so 'By contrast' is correct.",
   },
   {
     id: "ei-304",
@@ -5160,10 +5155,10 @@ QUESTIONS.push(
     passage:
       "Economists generally agree that raising interest rates slows inflation. ______ the policy also risks slowing economic growth enough to cause a recession.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["At the same time,", "For example,", "Therefore,", "In short,"],
+    choices: ["At the same time,", "However,", "Nonetheless,", "Therefore,"],
     answer: 0,
     explanation:
-      "The second sentence names a simultaneous drawback alongside the agreed-upon benefit, so 'At the same time' fits.",
+      "The recession risk is an additional concern that holds alongside the agreed-upon benefit, not a contradiction of it, so the simultaneity marker 'At the same time' fits best. 'However' would wrongly frame the risk as negating the benefit, and 'Nonetheless' implies the risk persists despite some obstacle, so 'At the same time' is correct.",
   },
   {
     id: "ei-307",
@@ -5216,10 +5211,10 @@ QUESTIONS.push(
     passage:
       "Adding a small amount of catalyst lowered the reaction's activation energy substantially. ______ the reaction that once took hours now completed in minutes.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Consequently,", "Similarly,", "In contrast,", "Granted,"],
+    choices: ["Consequently,", "In contrast,", "Nonetheless,", "Granted,"],
     answer: 0,
     explanation:
-      "The dramatically faster reaction time is a direct effect of the lowered activation energy, so 'Consequently' is correct.",
+      "The dramatically faster reaction is a direct, logical effect of the lowered activation energy, which 'Consequently' signals. 'In contrast' would require two different reactions being compared side by side, and 'Nonetheless' implies the speedup happened despite an obstacle rather than because of the catalyst, so 'Consequently' is correct.",
   },
   {
     id: "ei-311",
@@ -5244,10 +5239,10 @@ QUESTIONS.push(
     passage:
       "The defense conceded that the contract's wording was ambiguous. ______ it argued that the ambiguity should be resolved in its client's favor.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Nonetheless,", "For instance,", "Similarly,", "Accordingly,"],
+    choices: ["Nonetheless,", "Admittedly,", "Instead,", "Accordingly,"],
     answer: 0,
     explanation:
-      "Despite the concession about ambiguity, the defense still pressed its argument, a relationship 'Nonetheless' captures.",
+      "Despite conceding the ambiguity, the defense still pressed its own interpretation, a concession-and-persistence relationship signaled by 'Nonetheless.' 'Admittedly' would redundantly repeat the concession rather than pivot to the argument that follows it, so 'Nonetheless' is correct.",
   },
   {
     id: "ei-313",
@@ -5317,7 +5312,7 @@ QUESTIONS.push(
     choices: ["As a result,", "In contrast,", "Admittedly,", "Similarly,"],
     answer: 0,
     explanation:
-      "The increase in output is a direct consequence of the automation upgrade, so the cause-and-effect transition is correct.",
+      "The near-doubling of output is a direct, logical effect of switching to round-the-clock robotic automation, which 'As a result' signals. 'In contrast' would require two different factories or systems being compared, and 'Admittedly' would concede a limitation before a main claim, neither of which fits a straightforward cause-and-effect result, so 'As a result' is correct.",
   },
   {
     id: "ei-318",
@@ -5453,11 +5448,11 @@ QUESTIONS.push(
       "After attaching to a female, a male anglerfish's eyes and internal organs gradually degrade as he comes to survive mainly on nutrients drawn from her bloodstream.",
       "Female anglerfish can be over sixty times the size of males.",
       "Males attach themselves permanently to a female shortly after finding her.",
-      "Anglerfish live in some of the deepest parts of the ocean.",
+      "After attaching, a male anglerfish survives mainly by drawing nutrients from the female's bloodstream.",
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the degradation of organs and eyes, the specific transformation named in the goal.",
+      "Only choice A describes both the degrading of the male's eyes and organs and his reliance on the female's bloodstream, capturing the full extremity of the transformation; C states only the attachment, and D states only the survival mechanism without the degeneration.",
   },
   {
     id: "ei-325",
@@ -5493,11 +5488,11 @@ QUESTIONS.push(
       "Skeletal remains of longbowmen reveal enlarged, asymmetrical bones in their drawing arms, a result of repeatedly pulling up to 150 pounds of force.",
       "Longbowmen at Agincourt could fire ten to twelve arrows per minute.",
       "The Battle of Agincourt took place in 1415.",
-      "English longbowmen played a decisive role in several medieval battles.",
+      "Drawing a war longbow required a pull of up to 150 pounds of force.",
     ],
     answer: 0,
     explanation:
-      "Only choice A links the skeletal evidence to the physical strain of drawing the bow, matching the stated goal.",
+      "Only choice A pairs the skeletal evidence with the 150-pound pull it resulted from to show the lasting physical toll; D states the strain alone without the evidence of damage, and B and C are unrelated to the archers' bodies.",
   },
   {
     id: "ei-327",
@@ -5573,11 +5568,11 @@ QUESTIONS.push(
       "Prolonged exposure to slightly elevated water temperatures causes coral to expel its algae, leaving it without its main nutrient source and vulnerable to death.",
       "Coral gets its color from symbiotic algae living in its tissue.",
       "Bleached coral turns white when it loses its algae.",
-      "Coral reefs support about a quarter of all marine species.",
+      "Coral can die if it loses its main source of nutrients and conditions don't improve quickly.",
     ],
     answer: 0,
     explanation:
-      "Only choice A traces the full causal chain from warm water to algae loss to the risk of death, as the goal requires.",
+      "Only choice A traces the full chain from warm water to algae expulsion to the risk of death, as the mechanism goal requires; B, C, and D each name only one link in that chain.",
   },
   {
     id: "ei-331",
@@ -5653,11 +5648,11 @@ QUESTIONS.push(
       "At the height of the 1630s tulip craze, some rare bulbs sold for prices many times a skilled worker's annual salary.",
       "Contracts to buy tulip bulbs were traded on futures markets before the flowers bloomed.",
       "The tulip market collapsed abruptly in February 1637.",
-      "Tulips were introduced to the Netherlands from the Ottoman Empire.",
+      "Tulip bulb prices rose to very high levels during the 1630s.",
     ],
     answer: 0,
     explanation:
-      "Only choice A states the inflated price figure that shows how disconnected tulip prices were from their practical value.",
+      "Only choice A gives the specific comparison—many times a worker's annual salary—that shows how disconnected prices were from practical value; D makes the same claim without that comparison, and B and C describe speculation or the collapse rather than the price disconnect itself.",
   },
   {
     id: "ei-335",
@@ -5891,13 +5886,13 @@ QUESTIONS.push(
       "The student wants to emphasize the extreme pressure conditions at the bottom of the Challenger Deep. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
     choices: [
       "At the bottom of the Challenger Deep, water pressure is more than 1,000 times greater than it is at sea level.",
-      "The Challenger Deep is the deepest known point in the ocean at nearly 36,000 feet.",
+      "The Challenger Deep is the deepest known point in the ocean, at nearly 36,000 feet.",
       "Only a handful of crewed descents to the Challenger Deep have been completed.",
-      "The Mariana Trench is located in the western Pacific Ocean.",
+      "Because it is so deep, only a handful of crewed descents to the Challenger Deep have been completed.",
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific pressure figure that directly fulfills the stated goal.",
+      "Only choice A states the actual pressure figure the goal asks to emphasize; the others describe the trench's depth or the rarity of descents without quantifying the pressure itself.",
   },
   {
     id: "ei-347",
@@ -6284,10 +6279,10 @@ QUESTIONS.push(
     passage:
       "The committee's decision was procedurally sound but substantively flawed. ______ the committee followed every required step yet reached a conclusion unsupported by the evidence it gathered.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["That is,", "However,", "For example,", "As a result,"],
+    choices: ["That is,", "Namely,", "Specifically,", "However,"],
     answer: 0,
     explanation:
-      "The second sentence restates and clarifies the claim in the first sentence rather than contrasting with it or giving an example, so the clarifying transition 'That is' is needed.",
+      "The second clause restates the same idea in concrete terms—procedurally fine but substantively unsupported—rather than introducing a new example or a particular item, so the restating transition 'That is' fits best. 'Namely' and 'Specifically' both introduce a specific instance rather than paraphrase the whole claim, and 'However' wrongly suggests a contradiction rather than a clarification, so 'That is' is correct.",
   },
   {
     id: "ei-374",
@@ -6298,10 +6293,10 @@ QUESTIONS.push(
     passage:
       "The startup's app undeniably simplified scheduling for small medical clinics. ______ few of those clinics could justify its steep monthly subscription fee once a free alternative appeared.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Even so,", "As a result,", "For example,", "In addition,"],
+    choices: ["Even so,", "Granted,", "Instead,", "As a result,"],
     answer: 0,
     explanation:
-      "The clinics abandoning the app happened despite its usefulness, so the concessive transition 'Even so' is needed rather than a cause-and-effect or addition word.",
+      "The clinics dropping the app despite its real usefulness is a concession-and-persistence relationship, which 'Even so' signals. 'Granted' would need to introduce the concession itself rather than follow it, and 'Instead' wrongly implies the usefulness was replaced rather than simply not enough to keep subscribers, so 'Even so' is correct.",
   },
   {
     id: "ei-375",
@@ -6312,10 +6307,10 @@ QUESTIONS.push(
     passage:
       "The sculpture's rough, unfinished appearance is not the result of neglect. ______ the artist deliberately left tool marks visible to emphasize the carving process.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Rather,", "As a result,", "Similarly,", "In short,"],
+    choices: ["Rather,", "Nonetheless,", "Admittedly,", "As a result,"],
     answer: 0,
     explanation:
-      "The second sentence replaces the rejected explanation (neglect) with the true one (deliberate choice), so the corrective transition 'Rather' is needed.",
+      "The sentence rejects one explanation (neglect) and replaces it with the true one (deliberate artistic choice), a corrective relationship signaled by 'Rather.' 'Admittedly' would wrongly concede the neglect explanation as true, and 'Nonetheless' implies the deliberate choice persisted despite an obstacle rather than replacing a false explanation, so 'Rather' is correct.",
   },
   {
     id: "ei-376",
@@ -6326,10 +6321,10 @@ QUESTIONS.push(
     passage:
       "The algorithm's accuracy plateaus once the training set exceeds roughly ten million examples, a point of diminishing returns. ______ beyond that threshold, adding more data barely improves its performance.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["In other words,", "As a result,", "For instance,", "Nevertheless,"],
+    choices: ["In other words,", "Namely,", "In short,", "As a result,"],
     answer: 0,
     explanation:
-      "The second sentence restates the same idea, diminishing returns past a threshold, in simpler terms, so the restating transition 'In other words' fits best.",
+      "The second sentence just paraphrases the single idea—diminishing returns past a threshold—in simpler words, which 'In other words' signals precisely. 'Namely' would introduce a specific named example rather than a paraphrase, and 'In short' implies condensing several prior points into a brief conclusion rather than restating one idea, so 'In other words' is correct.",
   },
   {
     id: "ei-377",
@@ -6340,10 +6335,10 @@ QUESTIONS.push(
     passage:
       "In coastal towns, rising sea levels have forced many residents to relocate inland over the past decade. ______ in some inland floodplains, the same decade has seen a surge of new residential development despite the flood risk.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Conversely,", "Similarly,", "As a result,", "For example,"],
+    choices: ["Conversely,", "However,", "Instead,", "Similarly,"],
     answer: 0,
     explanation:
-      "The inland trend, more development despite risk, is the opposite of the coastal trend, relocation away from risk, so the contrast transition 'Conversely' is required.",
+      "The inland surge in development is the exact opposite of the coastal retreat just described, a parallel reversal that 'Conversely' captures precisely. 'However' marks contrast more generally without that explicit mirror-opposite framing, and 'Instead' wrongly implies the coastal retreat is being replaced rather than mirrored by an opposite trend elsewhere, so 'Conversely' is correct.",
   },
   {
     id: "ei-378",
@@ -6354,10 +6349,10 @@ QUESTIONS.push(
     passage:
       "Historians have long criticized the treaty's vague wording as an invitation to future disputes. ______ the treaty held firm for nearly a century without a single major violation.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Yet,", "As a result,", "For instance,", "Similarly,"],
+    choices: ["Yet,", "Nonetheless,", "In contrast,", "As a result,"],
     answer: 0,
     explanation:
-      "The treaty's durability contradicts the expectation created by its vague wording, so the contrast transition 'Yet' is needed.",
+      "The treaty's long, violation-free durability is a direct contrast with historians' criticism of its vague wording—two coexisting facts in tension—which plain 'Yet' signals. 'In contrast' is reserved for comparing two distinct subjects side by side, not one treaty's own track record, so 'Yet' is correct.",
   },
   {
     id: "ei-379",
@@ -6368,10 +6363,10 @@ QUESTIONS.push(
     passage:
       "Bypass surgery carries well-documented risks for patients over eighty. ______ for Mr. Alvarez, forgoing treatment carried a far higher risk of sudden cardiac failure.",
     prompt: "Which choice completes the text with the most logical transition?",
-    choices: ["Admittedly,", "As a result,", "For example,", "Likewise,"],
+    choices: ["Admittedly,", "Nonetheless,", "In contrast,", "For example,"],
     answer: 0,
     explanation:
-      "The sentence concedes the surgery's risk before presenting a specific case where the alternative was riskier still, so the concessive transition 'Admittedly' is needed.",
+      "The sentence first concedes a general truth (surgery's documented risk) before pivoting to a specific case where the opposite calculus applies, which the concession-before-claim 'Admittedly' signals. 'Nonetheless' would need to follow the conceded fact with something happening despite it, not pivot to a specific contrasting case, so 'Admittedly' is correct.",
   },
   {
     id: "ei-380",
@@ -6887,11 +6882,11 @@ QUESTIONS.push(
       "Because so little carbon-14 remains after roughly 50,000 years, carbon dating becomes unreliable for objects older than that.",
       "Carbon dating measures the decay of carbon-14 to estimate an object's age.",
       "Carbon-14 has a half-life of about 5,730 years.",
-      "Carbon dating is commonly used by archaeologists to date organic material.",
+      "Because carbon-14 decays at a fixed, known rate, scientists can use it to estimate an object's age.",
     ],
     answer: 0,
     explanation:
-      "Only choice A identifies the specific age threshold beyond which the method fails, directly stating a limitation rather than just describing how the method works.",
+      "Only choice A names the specific age threshold beyond which the method becomes unreliable, directly stating a limitation; the others explain how carbon dating works or cite a related fact without identifying where it breaks down.",
   },
   {
     id: "ei-406",
@@ -6947,11 +6942,11 @@ QUESTIONS.push(
       "Flying buttresses transferred the roof's outward thrust to the ground, allowing walls weakened by large stained-glass windows to remain stable even though they were thinner.",
       "Flying buttresses are external stone arches that lean against the upper walls from outside the building.",
       "Gothic cathedrals were built with tall stone walls containing large stained-glass windows.",
-      "Gothic architecture flourished in Europe during the medieval period.",
+      "Flying buttresses transferred some of a roof's outward thrust to the ground.",
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the buttresses' function, redirecting thrust, to the specific problem, thin walls weakened by windows, as the goal requires.",
+      "Only choice A connects the buttresses' thrust-transferring function to the specific problem of walls weakened by large windows; C states the problem alone, D states the mechanism too generally, and B just describes what buttresses are.",
   },
   {
     id: "ei-409",
