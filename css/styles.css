@@ -2314,6 +2314,7 @@ footer.site a { color: var(--accent); text-decoration: none; }
   padding: 18px 14px;
   text-align: center;
   cursor: pointer;
+  color: var(--text);
   transition: transform 0.14s ease, border-color 0.14s;
 }
 .rpg-floor-node:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--accent); }
