@@ -1441,7 +1441,15 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .weak-list { list-style: decimal; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
 .weak-list li { font-size: 0.98rem; font-weight: 600; }
 
-.review-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+.review-list { display: flex; flex-direction: column; gap: 28px; margin-bottom: 40px; }
+.review-group { display: flex; flex-direction: column; gap: 12px; }
+.review-group-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border);
+}
+.review-group-header h4 { font-size: 1rem; margin: 0; }
+.review-group-count { color: var(--text-dim); font-size: 0.85rem; flex-shrink: 0; }
+.review-group-items { display: flex; flex-direction: column; gap: 12px; }
 .review-item {
   display: flex; align-items: center; gap: 14px;
   padding: 16px 18px;
@@ -1809,6 +1817,7 @@ footer.site {
 footer.site a { color: var(--accent); text-decoration: none; }
 .footer-link { background: none; color: var(--accent); font-size: inherit; font-family: inherit; padding: 0; }
 .footer-link:hover { text-decoration: underline; }
+.footer-credit { font-size: 11px; opacity: 0.75; }
 
 @media (max-width: 640px) {
   .breakdown, .section-scores, .streak-grid, .badge-grid, .cat-groups, .dash-goals, .bp-preview-row, .readiness-grid { grid-template-columns: 1fr; }
@@ -1861,18 +1870,6 @@ footer.site a { color: var(--accent); text-decoration: none; }
 .streak-icon svg { width: 28px; height: 28px; }
 
 .plan-card-actions { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
-
-/* ---------------- NAV: PRO BADGE ---------------- */
-.nav-pro-badge {
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--on-accent);
-  background: var(--accent);
-  padding: 2px 6px;
-  border-radius: 5px;
-  line-height: 1.4;
-}
 
 /* ---------------- LESSONS ---------------- */
 .lessons { max-width: 900px; margin: 0 auto; padding: 60px 28px 100px; }
@@ -2326,6 +2323,7 @@ footer.site a { color: var(--accent); text-decoration: none; }
 .rpg-floor-icon { display: block; margin: 0 auto 8px; color: var(--accent); }
 .rpg-floor-node.boss .rpg-floor-icon { color: var(--warn); }
 .rpg-floor-icon svg { width: 20px; height: 20px; }
+.rpg-floor-node.boss .rpg-floor-icon svg { width: 28px; height: 28px; }
 .rpg-floor-label { display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 2px; }
 .rpg-floor-enemy { display: block; font-size: 0.78rem; color: var(--text-dimmer); }
 .rpg-floor-done { position: absolute; top: 10px; right: 10px; color: var(--success); }
@@ -2334,7 +2332,62 @@ footer.site a { color: var(--accent); text-decoration: none; }
 .rpg-battlefield { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
 .rpg-combatant { flex: 1; min-width: 0; }
 .rpg-combatant-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; }
+.rpg-boss-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--on-accent, #fff);
+  background: var(--rpg-accent, var(--warn));
+  padding: 2px 7px;
+  border-radius: 100px;
+  vertical-align: middle;
+}
 .rpg-vs { flex-shrink: 0; font-family: var(--font-serif); color: var(--text-dimmer); font-size: 1rem; }
+
+.rpg-combatant-portrait {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg-elev);
+  border: 2px solid var(--border);
+  color: var(--accent);
+}
+.rpg-combatant-portrait svg { width: 40px; height: 40px; animation: rpgPortraitFloat 3s ease-in-out infinite; }
+.rpg-combatant-portrait.boss {
+  border-color: var(--rpg-accent, var(--warn));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--rpg-accent, var(--warn)) 18%, transparent);
+  animation: rpgBossPulse 2.2s ease-in-out infinite;
+}
+.rpg-combatant-portrait.hit-flash { animation: rpgHitShake 0.4s ease; }
+.game-result .rpg-combatant-portrait { width: 84px; height: 84px; }
+.game-result .rpg-combatant-portrait svg { width: 50px; height: 50px; animation: none; }
+.game-result .rpg-combatant-portrait.defeated { opacity: 0.45; filter: grayscale(1); }
+
+@keyframes rpgPortraitFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes rpgBossPulse {
+  0%, 100% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--rpg-accent, var(--warn)) 16%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--rpg-accent, var(--warn)) 30%, transparent); }
+}
+@keyframes rpgHitShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rpg-combatant-portrait svg,
+  .rpg-combatant-portrait.boss,
+  .rpg-combatant-portrait.hit-flash { animation: none; }
+}
 .rpg-log {
   background: var(--bg-elev);
   border: 1px solid var(--border-soft);
