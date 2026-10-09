@@ -54,7 +54,7 @@
     --accent: #059669;
     --accent-hover: #10b981;
     --accent-soft: rgba(5, 150, 105, 0.16);
-    --on-accent: #000000;
+    --on-accent: #ffffff;
     --success: #6ee7b7;
     --success-light: #6ee7b7;
     --success-soft: rgba(110, 231, 183, 0.16);
@@ -84,7 +84,7 @@
   --accent: #059669;
   --accent-hover: #10b981;
   --accent-soft: rgba(5, 150, 105, 0.16);
-  --on-accent: #000000;
+  --on-accent: #ffffff;
   --success: #6ee7b7;
   --success-light: #6ee7b7;
   --success-soft: rgba(110, 231, 183, 0.16);
@@ -2501,8 +2501,8 @@ footer.site a { color: var(--accent); text-decoration: none; }
   .idle-layout { grid-template-columns: 1fr; }
 }
 
-/* Dark mode: black text on green reads better than white on these
-   accent-filled surfaces, so override the hardcoded #fff here. */
+/* Dark mode: keep all text white on these accent-filled surfaces
+   (never black), overriding the hardcoded #fff only where needed. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .brand .logo,
   :root:not([data-theme="light"]) .l-start-card,
@@ -2512,10 +2512,10 @@ footer.site a { color: var(--accent); text-decoration: none; }
   }
   :root:not([data-theme="light"]) .next-action-card .eyebrow,
   :root:not([data-theme="light"]) .next-action-card p {
-    color: rgba(0, 0, 0, 0.72);
+    color: rgba(255, 255, 255, 0.72);
   }
   :root:not([data-theme="light"]) .l-btn-outline-white {
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
   }
   :root:not([data-theme="light"]) .l-btn-outline-white:hover {
     background: var(--on-accent);
@@ -2548,10 +2548,10 @@ footer.site a { color: var(--accent); text-decoration: none; }
 }
 :root[data-theme="dark"] .next-action-card .eyebrow,
 :root[data-theme="dark"] .next-action-card p {
-  color: rgba(0, 0, 0, 0.72);
+  color: rgba(255, 255, 255, 0.72);
 }
 :root[data-theme="dark"] .l-btn-outline-white {
-  border-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 :root[data-theme="dark"] .l-btn-outline-white:hover {
   background: var(--on-accent);
