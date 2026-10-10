@@ -2539,6 +2539,13 @@ footer.site a { color: var(--accent); text-decoration: none; }
   :root:not([data-theme="light"]) .next-action-card .btn-primary:hover {
     background: rgba(0, 0, 0, 0.85);
   }
+  :root:not([data-theme="light"]) .lesson-summary,
+  :root:not([data-theme="light"]) .ex-choices li,
+  :root:not([data-theme="light"]) .ex-letter,
+  :root:not([data-theme="light"]) .ex-walkthrough,
+  :root:not([data-theme="light"]) .lesson-locked-card p {
+    color: var(--text);
+  }
 }
 :root[data-theme="dark"] .brand .logo,
 :root[data-theme="dark"] .l-start-card,
@@ -2574,4 +2581,11 @@ footer.site a { color: var(--accent); text-decoration: none; }
 }
 :root[data-theme="dark"] .next-action-card .btn-primary:hover {
   background: rgba(0, 0, 0, 0.85);
+}
+:root[data-theme="dark"] .lesson-summary,
+:root[data-theme="dark"] .ex-choices li,
+:root[data-theme="dark"] .ex-letter,
+:root[data-theme="dark"] .ex-walkthrough,
+:root[data-theme="dark"] .lesson-locked-card p {
+  color: var(--text);
 }
