@@ -23,7 +23,7 @@ const QUESTIONS = [
     module: "rw",
     domain: "Information and Ideas",
     skill: "Command of Evidence",
-    difficulty: 2,
+    difficulty: 1,
     passage:
       "A student claims that urban community gardens meaningfully reduce household grocery spending for participating families.",
     prompt:
@@ -85,7 +85,7 @@ const QUESTIONS = [
     module: "rw",
     domain: "Information and Ideas",
     skill: "Central Ideas",
-    difficulty: 3,
+    difficulty: 2,
     passage:
       "Historians once portrayed the medieval period as a cultural 'dark age,' but recent scholarship emphasizes vibrant networks of trade, translation, and intellectual exchange that spanned continents. Manuscripts preserved and expanded classical knowledge, while universities emerged as centers of rigorous debate.",
     prompt: "Which choice best states the main idea of the text?",
@@ -104,7 +104,7 @@ const QUESTIONS = [
     module: "rw",
     domain: "Craft and Structure",
     skill: "Words in Context",
-    difficulty: 3,
+    difficulty: 2,
     passage:
       "Though critics initially dismissed the composer's work as ______, later generations recognized its intricate structure and emotional depth, elevating pieces once ignored into staples of the concert repertoire.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
@@ -171,7 +171,7 @@ const QUESTIONS = [
     module: "math",
     domain: "Algebra",
     skill: "Systems of equations",
-    difficulty: 2,
+    difficulty: 1,
     prompt:
       "If 2x + y = 11 and x − y = 1, what is the value of x?",
     choices: ["4", "3", "5", "6"],
@@ -210,7 +210,7 @@ const QUESTIONS = [
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 2,
+    difficulty: 1,
     prompt: "If 2^(x+1) = 32, what is the value of x?",
     choices: ["4", "5", "3", "6"],
     answer: 0,
@@ -234,7 +234,7 @@ const QUESTIONS = [
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Statistics",
-    difficulty: 2,
+    difficulty: 1,
     prompt:
       "The list of numbers 4, 8, 8, 10, 15 has what median?",
     choices: ["8", "9", "10", "8.5"],
@@ -247,7 +247,7 @@ const QUESTIONS = [
     module: "math",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
-    difficulty: 3,
+    difficulty: 2,
     prompt:
       "The function f is defined by f(x) = x² − 4x + 3. For what value of x does f reach its minimum?",
     choices: ["2", "−2", "4", "3"],
@@ -260,7 +260,7 @@ const QUESTIONS = [
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 2,
     prompt:
       "A car rental costs $40 per day plus $0.20 per mile. If the total charge for a one-day rental was $70, how many miles were driven?",
     choices: ["150", "175", "125", "350"],
@@ -273,7 +273,7 @@ const QUESTIONS = [
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Circles",
-    difficulty: 3,
+    difficulty: 2,
     prompt:
       "A circle has a circumference of 12π. What is its area?",
     choices: ["36π", "12π", "6π", "144π"],

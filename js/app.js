@@ -2707,7 +2707,50 @@
   function rpgZoneFloorCount(zone) { return zone.enemies.length + 1; } // 5 regular floors + 1 boss
 
   function defaultRpgState() {
-    return { level: 1, xp: 0, hp: RPG_BASE_MAX_HP, gold: 0, weaponTier: 0, armorTier: 0, cleared: {} };
+    return { level: 1, xp: 0, hp: RPG_BASE_MAX_HP, gold: 0, weaponTier: 0, armorTier: 0, cleared: {}, potions: 0, stats: defaultRpgLifetimeStats(), achievements: {} };
+  }
+
+  function defaultRpgLifetimeStats() {
+    return { battlesWon: 0, battlesLost: 0, answered: 0, correct: 0, bossesDefeated: 0, bestStreak: 0, damageDealt: 0, goldEarned: 0, potionsUsed: 0 };
+  }
+
+  const RPG_POTION_COST = 30;
+  const RPG_POTION_HEAL = 0.4; // fraction of max HP restored
+  const RPG_CRIT_STREAK = 3;   // consecutive correct answers needed for a critical hit
+
+  const RPG_ACHIEVEMENTS = [
+    { key: "firstBlood", name: "First Blood", desc: "Win your first battle", test: (r) => r.stats.battlesWon >= 1 },
+    { key: "veteran", name: "Veteran", desc: "Win 25 battles", test: (r) => r.stats.battlesWon >= 25 },
+    { key: "bossSlayer", name: "Boss Slayer", desc: "Defeat a dungeon boss", test: (r) => r.stats.bossesDefeated >= 1 },
+    { key: "bossHunter", name: "Boss Hunter", desc: "Defeat 4 dungeon bosses", test: (r) => r.stats.bossesDefeated >= 4 },
+    { key: "conqueror", name: "Conqueror", desc: "Clear all 8 dungeons", test: (r) => r.stats.bossesDefeated >= 8 || RPG_ZONES.every((z) => (r.cleared[z.key] || 0) >= rpgZoneFloorCount(z)) },
+    { key: "streak5", name: "On Fire", desc: "Answer 5 in a row correctly in one battle", test: (r) => r.stats.bestStreak >= 5 },
+    { key: "streak10", name: "Unstoppable", desc: "Answer 10 in a row correctly in one battle", test: (r) => r.stats.bestStreak >= 10 },
+    { key: "level5", name: "Rising Scholar", desc: "Reach level 5", test: (r) => r.level >= 5 },
+    { key: "level10", name: "Dungeon Master", desc: "Reach level 10", test: (r) => r.level >= 10 },
+    { key: "rich", name: "Gold Hoarder", desc: "Earn 500 gold in total", test: (r) => r.stats.goldEarned >= 500 },
+    { key: "geared", name: "Fully Geared", desc: "Max out a weapon or armor tier", test: (r) => r.weaponTier >= RPG_MAX_TIER || r.armorTier >= RPG_MAX_TIER },
+    { key: "sharp", name: "Sharp Mind", desc: "Answer 100 questions correctly", test: (r) => r.stats.correct >= 100 },
+  ];
+
+  // Awards any newly-earned achievements (mutating rpg) and returns them.
+  function rpgCheckAchievements(rpg) {
+    const earned = [];
+    RPG_ACHIEVEMENTS.forEach((a) => {
+      if (!rpg.achievements[a.key] && a.test(rpg)) {
+        rpg.achievements[a.key] = Date.now();
+        earned.push(a);
+      }
+    });
+    return earned;
+  }
+
+  function rpgTitleForLevel(level) {
+    if (level >= 15) return "Archscholar";
+    if (level >= 10) return "Dungeon Master";
+    if (level >= 7) return "Sage";
+    if (level >= 4) return "Adept";
+    return "Apprentice";
   }
 
   function loadRpgState() {
@@ -2715,7 +2758,12 @@
       const raw = progressStore().getItem(progressKey(RPG_KEY));
       if (raw) {
         const parsed = JSON.parse(raw);
-        return { ...defaultRpgState(), ...parsed, cleared: parsed.cleared || {} };
+        return {
+          ...defaultRpgState(), ...parsed,
+          cleared: parsed.cleared || {},
+          stats: { ...defaultRpgLifetimeStats(), ...(parsed.stats || {}) },
+          achievements: parsed.achievements || {},
+        };
       }
     } catch (e) { /* storage unavailable */ }
     return defaultRpgState();
@@ -2793,6 +2841,9 @@
     const xpNeed = rpgXpToNext(rpg.level);
     const el = document.getElementById("games");
 
+    const totalFloors = RPG_ZONES.reduce((n, z) => n + rpgZoneFloorCount(z), 0);
+    const totalCleared = RPG_ZONES.reduce((n, z) => n + Math.min(rpg.cleared[z.key] || 0, rpgZoneFloorCount(z)), 0);
+    const nextIdx = RPG_ZONES.findIndex((z, i) => rpgZoneUnlocked(rpg, i) && (rpg.cleared[z.key] || 0) < rpgZoneFloorCount(z));
     const nodesHTML = RPG_ZONES.map((zone, i) => {
       const unlocked = rpgZoneUnlocked(rpg, i);
       const cleared = rpg.cleared[zone.key] || 0;
@@ -2801,6 +2852,7 @@
       const classes = ["rpg-node"];
       if (!unlocked) classes.push("locked");
       if (done) classes.push("done");
+      if (i === nextIdx) classes.push("current");
       const accent = RPG_ZONE_ACCENT[zone.key];
       const nodeIcon = !unlocked ? ICON_LOCK_SM : done ? "&#10003;" : RPG_BOSS_ICONS[zone.key];
       return `
@@ -2808,6 +2860,8 @@
           <div class="rpg-node-icon" ${unlocked && !done ? `style="color:${accent}"` : ""}>${nodeIcon}</div>
           <div class="rpg-node-name">${zone.name}</div>
           <div class="rpg-node-progress">${unlocked ? `${cleared}/${total} floors` : "Locked"}</div>
+          ${unlocked ? `<div class="rpg-mini-bar"><span style="width:${(cleared / total) * 100}%;background:${accent}"></span></div>` : ""}
+          ${i === nextIdx ? `<div class="rpg-node-badge">Next up</div>` : ""}
         </div>`;
     }).join("");
 
@@ -2817,10 +2871,18 @@
         <div class="rpg-topbar-stats">
           <span class="game-stat">${ICON_GRADCAP} Lv. ${rpg.level}</span>
           <span class="game-stat">${ICON_COIN} ${rpg.gold}</span>
+          <button class="btn btn-ghost rpg-shop-btn" data-rpg-nav="hero">${ICON_USER} Hero</button>
           <button class="btn btn-ghost rpg-shop-btn" data-rpg-nav="shop">${ICON_SHIELD} Shop</button>
         </div>
       </div>
       <div class="rpg-player-card">
+        <div class="rpg-player-head">
+          <div class="rpg-combatant-portrait player rpg-mini-portrait">${RPG_PLAYER_ICON}</div>
+          <div>
+            <div class="rpg-player-title">${rpgTitleForLevel(rpg.level)}</div>
+            <div class="rpg-player-sub">Level ${rpg.level} &middot; ${ICON_FLAME} ${rpg.potions} potion${rpg.potions === 1 ? "" : "s"}</div>
+          </div>
+        </div>
         <div class="rpg-bar-row">
           <span class="rpg-bar-label">HP</span>
           <div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-hp" style="width:${Math.max(0, (rpg.hp / stats.maxHp) * 100)}%"></div></div>
@@ -2839,6 +2901,10 @@
       <span class="eyebrow">Dungeon Quest</span>
       <h1 class="section-title rpg-title">Choose your dungeon</h1>
       <p class="section-sub">Eight dungeons, one per SAT skill domain. Answer correctly to attack — miss, and the monster strikes back. Beat a dungeon's boss to unlock the next.</p>
+      <div class="rpg-overall">
+        <div class="rpg-overall-row"><span>Overall progress</span><span>${totalCleared}/${totalFloors} floors</span></div>
+        <div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-xp" style="width:${(totalCleared / totalFloors) * 100}%"></div></div>
+      </div>
       <div class="rpg-map">${nodesHTML}</div>
     `;
   }
@@ -2864,11 +2930,15 @@
       const enemyName = isBoss ? zone.boss : zone.enemies[i];
       const floorIcon = !unlocked ? ICON_LOCK_SM : isBoss ? RPG_BOSS_ICONS[zone.key] : RPG_ENEMY_ICON;
       const iconStyle = isBoss && unlocked ? ` style="color:${RPG_ZONE_ACCENT[zone.key]}"` : "";
+      const zoneIndex = RPG_ZONES.indexOf(zone);
+      const es = rpgEnemyStats(zoneIndex, i, isBoss);
+      const rw = rpgFloorReward(zoneIndex, i, isBoss);
       return `
         <button class="${classes.join(" ")}" ${unlocked ? `data-rpg-floor="${i}"` : "disabled"}>
           <span class="rpg-floor-icon"${iconStyle}>${floorIcon}</span>
           <span class="rpg-floor-label">${isBoss ? "Boss" : `Floor ${i + 1}`}</span>
           <span class="rpg-floor-enemy">${enemyName}</span>
+          <span class="rpg-floor-meta">${es.hp} HP &middot; ${rw.xp} XP &middot; ${rw.gold}g</span>
           ${done ? `<span class="rpg-floor-done">${ICON_FLAME}</span>` : ""}
         </button>`;
     }).join("");
@@ -2876,10 +2946,18 @@
     el.innerHTML = `
       <div class="rpg-topbar">
         <button class="game-quit" data-rpg-nav="overworld">← Map</button>
+        <div class="rpg-topbar-stats">
+          <span class="game-stat">${ICON_FLAME} ${rpg.potions}</span>
+          <button class="btn btn-ghost rpg-shop-btn" data-rpg-nav="shop">${ICON_SHIELD} Shop</button>
+        </div>
       </div>
       <span class="eyebrow">${zone.module === "math" ? "Math" : "Reading &amp; Writing"} dungeon</span>
       <h1 class="section-title rpg-title">${zone.name}</h1>
       <p class="section-sub">${zone.blurb}</p>
+      <div class="rpg-overall">
+        <div class="rpg-overall-row"><span>Dungeon progress</span><span>${Math.min(cleared, total)}/${total} floors</span></div>
+        <div class="rpg-bar"><div class="rpg-bar-fill" style="width:${(Math.min(cleared, total) / total) * 100}%;background:${RPG_ZONE_ACCENT[zone.key]}"></div></div>
+      </div>
       <div class="rpg-floor-list">${floorsHTML}</div>
     `;
   }
@@ -2904,7 +2982,7 @@
     state.rpgBattle = {
       zoneIndex, zoneKey, floorIndex, isBoss, enemyName,
       enemyHp: enemyStats.hp, enemyMaxHp: enemyStats.hp, enemyAtk: enemyStats.atk,
-      pool, qIndex: 0, log: isBoss ? `${enemyName} rises to block your path!` : `A wild ${enemyName} blocks your path!`, locked: false,
+      pool, qIndex: 0, streak: 0, bestStreak: 0, correct: 0, answered: 0, damageDealt: 0, log: isBoss ? `${enemyName} rises to block your path!` : `A wild ${enemyName} blocks your path!`, locked: false,
     };
     renderRpgBattle();
   }
@@ -2956,11 +3034,42 @@
           <div class="rpg-bar-value">${Math.max(0, b.enemyHp)}/${b.enemyMaxHp}</div>
         </div>
       </div>
-      <div class="rpg-log">${b.log}</div>
+      <div class="rpg-battle-tools">
+        <span class="rpg-streak${b.streak >= RPG_CRIT_STREAK ? " hot" : ""}">${ICON_FLAME} Streak ${b.streak}${b.streak >= RPG_CRIT_STREAK ? " &mdash; crit ready!" : ` <small>(${RPG_CRIT_STREAK} in a row = crit)</small>`}</span>
+        <button class="btn btn-ghost rpg-potion-btn" data-rpg-potion ${b.locked || !rpg.potions || rpg.hp >= stats.maxHp ? "disabled" : ""}>Use potion (${rpg.potions})</button>
+      </div>
+      <div class="rpg-log" id="rpgLog">${b.log}</div>
       ${q.passage ? `<div class="passage">${q.passage}</div>` : ""}
       <div class="prompt game-prompt">${q.prompt.replace(/\n/g, "<br>")}</div>
       <div class="choices" id="rpgChoices">${choicesHTML}</div>
     `;
+  }
+
+  // Pops a short-lived floating number over a combatant portrait.
+  function rpgFloatNumber(selector, text, kind) {
+    const target = document.querySelector(selector);
+    if (!target) return;
+    const f = document.createElement("span");
+    f.className = `rpg-float ${kind}`;
+    f.textContent = text;
+    target.appendChild(f);
+    setTimeout(() => f.remove(), 900);
+  }
+
+  function useRpgPotion() {
+    const b = state.rpgBattle;
+    if (!b || b.locked || state.rpgScreen !== "battle") return;
+    const rpg = loadRpgState();
+    const stats = rpgComputedStats(rpg);
+    if (rpg.potions <= 0 || rpg.hp >= stats.maxHp) return;
+    const heal = Math.min(stats.maxHp - rpg.hp, Math.round(stats.maxHp * RPG_POTION_HEAL));
+    rpg.potions--;
+    rpg.hp += heal;
+    rpg.stats.potionsUsed++;
+    saveRpgState(rpg);
+    b.log = `You drink a potion and recover ${heal} HP.`;
+    renderRpgBattle();
+    rpgFloatNumber(".rpg-combatant-portrait.player", `+${heal}`, "heal");
   }
 
   function answerRpgQuestion(choiceIndex) {
@@ -2971,6 +3080,8 @@
     const q = b.pool[b.qIndex];
     const ok = choiceIndex === q.answer;
     b.locked = true;
+    b.answered++;
+    rpg.stats.answered++;
 
     const buttons = document.querySelectorAll("#rpgChoices .choice");
     buttons.forEach((btn) => {
@@ -2980,14 +3091,28 @@
     });
 
     if (ok) {
-      const dmg = stats.atk + Math.floor(Math.random() * 3);
+      b.streak++;
+      b.correct++;
+      b.bestStreak = Math.max(b.bestStreak, b.streak);
+      rpg.stats.correct++;
+      rpg.stats.bestStreak = Math.max(rpg.stats.bestStreak, b.streak);
+      let dmg = stats.atk + Math.floor(Math.random() * 3);
+      const crit = b.streak >= RPG_CRIT_STREAK;
+      if (crit) dmg = Math.round(dmg * 1.5);
+      dmg = Math.min(dmg, b.enemyHp);
       b.enemyHp = Math.max(0, b.enemyHp - dmg);
-      b.log = `You hit ${b.enemyName} for ${dmg} damage!`;
+      b.damageDealt += dmg;
+      rpg.stats.damageDealt += dmg;
+      saveRpgState(rpg);
+      b.log = crit ? `Critical hit! You strike ${b.enemyName} for ${dmg} damage!` : `You hit ${b.enemyName} for ${dmg} damage!`;
+      rpgFloatNumber(".rpg-combatant-portrait.enemy", `-${dmg}`, crit ? "crit" : "dmg");
       document.querySelector(".rpg-combatant-portrait.enemy")?.classList.add("hit-flash");
     } else {
+      b.streak = 0;
       const dmg = b.enemyAtk + Math.floor(Math.random() * 2);
       rpg.hp = Math.max(0, rpg.hp - dmg);
       saveRpgState(rpg);
+      rpgFloatNumber(".rpg-combatant-portrait.player", `-${dmg}`, "hurt");
       b.log = `${b.enemyName} hits you for ${dmg} damage!`;
       document.querySelector(".rpg-combatant-portrait.player")?.classList.add("hit-flash");
     }
@@ -3007,9 +3132,13 @@
     const rpg = loadRpgState();
     const reward = rpgFloorReward(b.zoneIndex, b.floorIndex, b.isBoss);
     rpg.gold += reward.gold;
+    rpg.stats.goldEarned += reward.gold;
+    rpg.stats.battlesWon++;
+    if (b.isBoss && (rpg.cleared[RPG_ZONES[b.zoneIndex].key] || 0) <= b.floorIndex) rpg.stats.bossesDefeated++;
     const leveled = rpgGainXp(rpg, reward.xp);
     const zone = RPG_ZONES[b.zoneIndex];
     rpg.cleared[zone.key] = Math.max(rpg.cleared[zone.key] || 0, b.floorIndex + 1);
+    b.newAchievements = rpgCheckAchievements(rpg);
     saveRpgState(rpg);
     b.reward = reward;
     b.leveled = leveled;
@@ -3034,7 +3163,10 @@
         <div class="game-result-stats">
           <div class="bd-card"><div class="v">+${b.reward.xp}</div><div class="l">XP</div></div>
           <div class="bd-card"><div class="v">+${b.reward.gold}</div><div class="l">Gold</div></div>
+          <div class="bd-card"><div class="v">${b.correct}/${b.answered}</div><div class="l">Correct</div></div>
+          <div class="bd-card"><div class="v">${b.bestStreak}</div><div class="l">Best streak</div></div>
         </div>
+        ${(b.newAchievements || []).map((a) => `<div class="rpg-toast">${ICON_TROPHY}<span><strong>Achievement unlocked:</strong> ${a.name} &mdash; ${a.desc}</span></div>`).join("")}
         ${b.isBoss ? `<p class="section-sub">${zone.name} cleared! A new dungeon has opened on the map.</p>` : ""}
         <div class="results-actions">
           ${hasNext ? `<button class="btn btn-primary" data-rpg-floor="${nextFloorIndex}">Next floor →</button>` : ""}
@@ -3047,6 +3179,7 @@
   function resolveRpgDefeat() {
     const rpg = loadRpgState();
     rpg.hp = rpgComputedStats(rpg).maxHp; // full heal — no permanent penalty, just try again
+    rpg.stats.battlesLost++;
     saveRpgState(rpg);
     state.rpgScreen = "defeat";
     renderRpgDefeatScreen();
@@ -3118,12 +3251,82 @@
               : `<button class="btn btn-primary" data-rpg-buy="armor" ${rpg.gold < armorCost ? "disabled" : ""}>Upgrade — ${armorCost} gold</button>`
           }
         </div>
+        <div class="rpg-shop-card">
+          <div class="rpg-shop-icon">${ICON_FLAME}</div>
+          <h3>Healing Potion</h3>
+          <p>Restores ${Math.round(RPG_POTION_HEAL * 100)}% of max HP in battle. You carry ${rpg.potions}.</p>
+          <button class="btn btn-primary" data-rpg-buy="potion" ${rpg.gold < RPG_POTION_COST ? "disabled" : ""}>Buy — ${RPG_POTION_COST} gold</button>
+        </div>
+        <div class="rpg-shop-card">
+          <div class="rpg-shop-icon">${ICON_GIFT}</div>
+          <h3>Rest at the Inn</h3>
+          <p>Fully restore your HP (${rpg.hp}/${stats.maxHp}).</p>
+          <button class="btn btn-primary" data-rpg-buy="rest" ${rpg.gold < 10 || rpg.hp >= stats.maxHp ? "disabled" : ""}>Rest — 10 gold</button>
+        </div>
       </div>
+    `;
+  }
+
+  function renderRpgHero() {
+    state.rpgScreen = "hero";
+    const rpg = loadRpgState();
+    const stats = rpgComputedStats(rpg);
+    const xpNeed = rpgXpToNext(rpg.level);
+    const st = rpg.stats;
+    const acc = st.answered ? Math.round((st.correct / st.answered) * 100) : 0;
+    const unlockedCount = RPG_ACHIEVEMENTS.filter((a) => rpg.achievements[a.key]).length;
+    const achHTML = RPG_ACHIEVEMENTS.map((a) => {
+      const got = !!rpg.achievements[a.key];
+      return `<div class="rpg-ach${got ? " got" : ""}">
+        <div class="rpg-ach-icon">${got ? ICON_TROPHY : ICON_LOCK_SM}</div>
+        <div><div class="rpg-ach-name">${a.name}</div><div class="rpg-ach-desc">${a.desc}</div></div>
+      </div>`;
+    }).join("");
+    const lifetime = [
+      ["Battles won", st.battlesWon], ["Battles lost", st.battlesLost], ["Bosses defeated", st.bossesDefeated],
+      ["Questions answered", st.answered], ["Accuracy", `${acc}%`], ["Best streak", st.bestStreak],
+      ["Damage dealt", st.damageDealt], ["Gold earned", st.goldEarned], ["Potions used", st.potionsUsed],
+    ].map(([l, v]) => `<div class="bd-card"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+
+    document.getElementById("games").innerHTML = `
+      <div class="rpg-topbar">
+        <button class="game-quit" data-rpg-nav="overworld">← Map</button>
+        <div class="rpg-topbar-stats">
+          <span class="game-stat">${ICON_COIN} ${rpg.gold}</span>
+          <button class="btn btn-ghost rpg-shop-btn" data-rpg-nav="shop">${ICON_SHIELD} Shop</button>
+        </div>
+      </div>
+      <span class="eyebrow">Hero</span>
+      <div class="rpg-hero-card">
+        <div class="rpg-combatant-portrait player rpg-hero-portrait">${RPG_PLAYER_ICON}</div>
+        <div class="rpg-hero-body">
+          <h1 class="section-title rpg-title">${rpgTitleForLevel(rpg.level)} &middot; Lv. ${rpg.level}</h1>
+          <div class="rpg-bar-row"><span class="rpg-bar-label">HP</span><div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-hp" style="width:${Math.max(0, (rpg.hp / stats.maxHp) * 100)}%"></div></div><span class="rpg-bar-value">${rpg.hp}/${stats.maxHp}</span></div>
+          <div class="rpg-bar-row"><span class="rpg-bar-label">XP</span><div class="rpg-bar"><div class="rpg-bar-fill rpg-bar-xp" style="width:${Math.min(100, (rpg.xp / xpNeed) * 100)}%"></div></div><span class="rpg-bar-value">${rpg.xp}/${xpNeed}</span></div>
+        </div>
+      </div>
+      <h3 class="rpg-section-h">Equipment</h3>
+      <div class="rpg-equip-grid">
+        <div class="rpg-equip"><div class="rpg-shop-icon">${ICON_SWORD}</div><div><div class="rpg-equip-name">${RPG_WEAPON_NAMES[rpg.weaponTier]}</div><div class="rpg-ach-desc">Tier ${rpg.weaponTier + 1}/${RPG_MAX_TIER + 1} &middot; ATK ${stats.atk}</div></div></div>
+        <div class="rpg-equip"><div class="rpg-shop-icon">${ICON_SHIELD}</div><div><div class="rpg-equip-name">${RPG_ARMOR_NAMES[rpg.armorTier]}</div><div class="rpg-ach-desc">Tier ${rpg.armorTier + 1}/${RPG_MAX_TIER + 1} &middot; Max HP ${stats.maxHp}</div></div></div>
+        <div class="rpg-equip"><div class="rpg-shop-icon">${ICON_FLAME}</div><div><div class="rpg-equip-name">${rpg.potions} Healing Potion${rpg.potions === 1 ? "" : "s"}</div><div class="rpg-ach-desc">Heals ${Math.round(RPG_POTION_HEAL * 100)}% max HP</div></div></div>
+      </div>
+      <h3 class="rpg-section-h">Lifetime stats</h3>
+      <div class="rpg-stat-grid">${lifetime}</div>
+      <h3 class="rpg-section-h">Achievements <span class="rpg-section-count">${unlockedCount}/${RPG_ACHIEVEMENTS.length}</span></h3>
+      <div class="rpg-ach-grid">${achHTML}</div>
     `;
   }
 
   function buyRpgUpgrade(kind) {
     const rpg = loadRpgState();
+    if (kind === "potion" || kind === "rest") {
+      if (kind === "potion" && rpg.gold >= RPG_POTION_COST) { rpg.gold -= RPG_POTION_COST; rpg.potions++; }
+      else if (kind === "rest" && rpg.gold >= 10) { rpg.gold -= 10; rpg.hp = rpgComputedStats(rpg).maxHp; }
+      saveRpgState(rpg);
+      renderRpgShop();
+      return;
+    }
     const tier = kind === "weapon" ? rpg.weaponTier : rpg.armorTier;
     if (tier >= RPG_MAX_TIER) return;
     const cost = rpgUpgradeCost(tier);
@@ -3136,6 +3339,7 @@
       rpg.armorTier++;
       rpg.hp += rpgComputedStats(rpg).maxHp - before;
     }
+    rpgCheckAchievements(rpg);
     saveRpgState(rpg);
     renderRpgShop();
   }
@@ -5690,6 +5894,10 @@
         buyRpgUpgrade(rpgBuyBtn.dataset.rpgBuy);
         return;
       }
+      if (e.target.closest("[data-rpg-potion]")) {
+        useRpgPotion();
+        return;
+      }
       if (e.target.closest("[data-rpg-flee]")) {
         rpgFlee();
         return;
@@ -5700,6 +5908,7 @@
         if (dest === "overworld") renderRpgOverworld();
         else if (dest === "zone") renderRpgZone(rpgNavEl.dataset.rpgZone || state.rpgZoneKey);
         else if (dest === "shop") renderRpgShop();
+        else if (dest === "hero") renderRpgHero();
         return;
       }
       if (e.target.closest("[data-game-quit]")) {
