@@ -11,14 +11,27 @@
   "use strict";
 
   async function loadRemoteQuestions() {
-    if (!window.supabaseClient || !window.QUESTIONS) return;
+    // QUESTIONS is a top-level `const`, so it's a shared global but never a
+    // property of window — check it directly.
+    if (!window.supabaseClient || typeof QUESTIONS === "undefined") return;
     try {
-      const { data, error } = await window.supabaseClient
-        .from("questions")
-        .select("id, module, domain, skill, difficulty, passage, prompt, choices, answer, explanation");
-      if (error || !data || !data.length) return;
+      // Supabase caps each response at 1,000 rows, so page through the
+      // table; swap the bank in only once every page has arrived.
+      const PAGE_SIZE = 1000;
+      const rows = [];
+      for (let from = 0; ; from += PAGE_SIZE) {
+        const { data, error } = await window.supabaseClient
+          .from("questions")
+          .select("id, module, domain, skill, difficulty, passage, prompt, choices, answer, explanation")
+          .order("id")
+          .range(from, from + PAGE_SIZE - 1);
+        if (error || !data) return;
+        rows.push(...data);
+        if (data.length < PAGE_SIZE) break;
+      }
+      if (!rows.length) return;
       QUESTIONS.length = 0;
-      QUESTIONS.push(...data);
+      QUESTIONS.push(...rows);
     } catch (e) {
       // Offline, CORS, or the table isn't set up yet — keep the static bank.
     }
