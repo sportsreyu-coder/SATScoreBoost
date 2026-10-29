@@ -17,7 +17,7 @@ QUESTIONS.push(
       "Records show that preindustrial English villagers moved around much more than the traditional view held."
     ],
     answer: 3,
-    explanation: "Brennan's research contradicts the view of isolated villages, showing substantial mobility. The last choice is a detail supporting the main idea, and the second states the view she overturns."
+    explanation: "Brennan's research contradicts the view of isolated villages, showing substantial mobility. The choice about young people working as servants is a detail supporting the main idea, and the choice saying peasants rarely traveled states the view she overturns."
   },
   {
     id: "ii-h2",
@@ -51,7 +51,7 @@ QUESTIONS.push(
       "Shifts in Earth's orbit have caused most of the world's deserts to become wetter over the past 11,000 years."
     ],
     answer: 1,
-    explanation: "The text corrects the assumption of a permanently dry Sahara, describing a wet period and its likely orbital cause. The second choice is a supporting detail; the last overgeneralizes to all deserts."
+    explanation: "The text corrects the assumption of a permanently dry Sahara, describing a wet period and its likely orbital cause. The rock-painting choice is a supporting detail; the choice about most of the world's deserts overgeneralizes."
   },
   {
     id: "ii-h4",
@@ -68,7 +68,7 @@ QUESTIONS.push(
       "Ashby's published songs were more popular with audiences of her time than the songs of most other composers."
     ],
     answer: 0,
-    explanation: "The text focuses on what the discovery revealed about Ashby's unpublished work and Okafor's explanation. The second choice is a narrow detail, and the third adds a reason the text doesn't give."
+    explanation: "The text focuses on what the discovery revealed about Ashby's unpublished work and Okafor's explanation. The choice about finding the manuscripts in an attic is a narrow detail, and the choice blaming publishers' refusal to print women's music adds a reason the text doesn't give."
   },
   {
     id: "ii-h5",
@@ -85,7 +85,7 @@ QUESTIONS.push(
       "Mekonnen argues that although sun-grown coffee can yield more at first, shade-grown coffee may be the more sustainable choice."
     ],
     answer: 3,
-    explanation: "The text contrasts sun-grown coffee's short-term yields with shade-grown coffee's long-term benefits, which is Mekonnen's argument. The last choice contradicts \"nearly as productive\" in some regions."
+    explanation: "The text contrasts sun-grown coffee's short-term yields with shade-grown coffee's long-term benefits, which is Mekonnen's argument. The claim that sun-grown coffee yields more in every region contradicts \"nearly as productive\" in some regions."
   },
   {
     id: "ii-h6",
@@ -153,7 +153,7 @@ QUESTIONS.push(
       "The theft of the Mona Lisa may have played a major role in making it world-famous."
     ],
     answer: 3,
-    explanation: "The text explains how the theft turned the painting into a public sensation and suggests it was key to its fame. The second choice is a detail; the others aren't supported."
+    explanation: "The text explains how the theft turned the painting into a public sensation and suggests it was key to its fame. The 1911 theft-and-recovery choice is just a detail; the claims about early-1900s experts and about newspapers trying to catch the thief aren't supported."
   },
   {
     id: "ii-h10",
@@ -170,7 +170,7 @@ QUESTIONS.push(
       "Petrova divided plants of the same species into two groups in order to compare their responses to different amounts of water."
     ],
     answer: 2,
-    explanation: "The central finding is that early mild drought led to persistent gene-activity changes that improved survival of later severe drought. The last choice describes method, not finding."
+    explanation: "The central finding is that early mild drought led to persistent gene-activity changes that improved survival of later severe drought. The choice about dividing plants into two groups describes method, not the finding."
   },
   {
     id: "ii-h11",
@@ -238,7 +238,7 @@ QUESTIONS.push(
       "Language is the only function of the human brain that is concentrated in one hemisphere."
     ],
     answer: 2,
-    explanation: "The text debunks left/right-brain personality types while acknowledging some lateralization. The third choice is the myth being refuted."
+    explanation: "The text debunks left/right-brain personality types while acknowledging some lateralization. The choice saying logical people use the left hemisphere and creative people the right is the myth being refuted."
   },
   {
     id: "ii-h15",
@@ -289,7 +289,7 @@ QUESTIONS.push(
       "Mendes promotes rain gardens as a way to reduce polluted runoff, and their use in one neighborhood substantially reduced it."
     ],
     answer: 3,
-    explanation: "The text presents rain gardens as Mendes's solution and reports their success. The second choice describes the problem only."
+    explanation: "The text presents rain gardens as Mendes's solution and reports their success. The choice about the first hour of a rainstorm describes the problem only."
   },
   {
     id: "ii-h18",
@@ -340,7 +340,7 @@ QUESTIONS.push(
       "Photography encouraged painters to make their portraits more realistic and exact than they had been before."
     ],
     answer: 0,
-    explanation: "The text balances the losses photography caused with new opportunities it created. The last choice reverses the described effect."
+    explanation: "The text balances the losses photography caused with new opportunities it created. The claim that photography pushed painters toward more exact realism reverses the described effect."
   },
   {
     id: "ii-h21",
@@ -374,7 +374,7 @@ QUESTIONS.push(
       "Collectors prefer the simpler masks made for San Isidro's festival to the brightly painted masks made for sale."
     ],
     answer: 2,
-    explanation: "Gómez found that commercial masks changed while festival masks continued in the old style. The third choice contradicts the text."
+    explanation: "Gómez found that commercial masks changed while festival masks continued in the old style. The claim that carvers stopped making festival masks contradicts the text."
   },
   {
     id: "ii-h23",
@@ -1020,7 +1020,7 @@ QUESTIONS.push(
       "\"I never cared for distant places; / the harbor here is all I need, / its lights enough to read my letters, / its noise enough to help me sleep.\""
     ],
     answer: 0,
-    explanation: "The first quotation shows longing (naming lights as remembered windows) and the impossibility of return (\"shores I'll never walk again\"). The third suggests she can return."
+    explanation: "The \"Each night I watch the ferry leave\" quotation shows longing (naming lights as remembered windows) and the impossibility of return (\"shores I'll never walk again\"). The \"Tomorrow I will buy a ticket\" quotation suggests she can return."
   },
   {
     id: "ii-h61",
@@ -1071,7 +1071,7 @@ QUESTIONS.push(
       "\"When Clara won the prize, I cheered louder than anyone and carried her ribbon home myself.\""
     ],
     answer: 1,
-    explanation: "The narrator claims gladness but can't bear the toasts—revealing envy beneath stated indifference. The third choice only states indifference."
+    explanation: "The narrator claims gladness but can't bear the toasts—revealing envy beneath stated indifference. The \"I have never wanted what Clara wanted\" quotation only states indifference."
   },
   {
     id: "ii-h64",
@@ -1853,7 +1853,7 @@ QUESTIONS.push(
       "the manuscript was more likely produced in Spain, perhaps by a scribe trained in an Italian style of writing."
     ],
     answer: 3,
-    explanation: "Both the parchment and ink point to Spain, and importing such materials was rare. That makes Spanish production more likely, which can be reconciled with the Italian-looking script if the scribe was trained in that style. The last choice contradicts the stated rarity of imports."
+    explanation: "Both the parchment and ink point to Spain, and importing such materials was rare. That makes Spanish production more likely, which can be reconciled with the Italian-looking script if the scribe was trained in that style. The claim that monasteries regularly imported materials contradicts the stated rarity of imports."
   },
   {
     id: "ii-h110",
@@ -1972,7 +1972,7 @@ QUESTIONS.push(
       "most participants valued the extra $5 more highly in the first choice than in the second choice."
     ],
     answer: 0,
-    explanation: "The trade-off is identical (one week for $5), yet choices flip depending on whether the delay starts now. That means immediate delays feel costlier than distant ones. The first choice contradicts most people choosing $50 now."
+    explanation: "The trade-off is identical (one week for $5), yet choices flip depending on whether the delay starts now. That means immediate delays feel costlier than distant ones. The claim that people prefer larger rewards regardless of the wait contradicts most people choosing $50 now."
   },
   {
     id: "ii-h117",
@@ -3077,7 +3077,7 @@ QUESTIONS.push(
       "Under wet conditions, Fiber X had a higher strength (571) than any other fiber, and it lost the least from dry conditions to wet conditions."
     ],
     answer: 3,
-    explanation: "The conclusion is about performance under wet conditions relative to the other fibers. Only the first choice shows that Fiber X outperformed every other fiber under wet conditions and lost the least going from dry conditions to wet conditions. The other choices are accurate but describe performance under dry conditions, a drop that every fiber experienced, or a comparison that doesn't involve Fiber X."
+    explanation: "The conclusion is about performance under wet conditions relative to the other fibers. Only the correct answer shows that Fiber X outperformed every other fiber under wet conditions and lost the least going from dry conditions to wet conditions. The other choices are accurate but describe performance under dry conditions, a drop that every fiber experienced, or a comparison that doesn't involve Fiber X."
   },
   {
     id: "ii-h182",
@@ -3094,7 +3094,7 @@ QUESTIONS.push(
       "Under drought, Variety K had a lower yield (3.7) than Variety M did (4.5)."
     ],
     answer: 2,
-    explanation: "The conclusion is about performance under drought relative to the other varieties. Only the first choice shows that Variety R outperformed every other variety under drought and lost the least going from normal rainfall to drought. The other choices are accurate but describe performance under normal rainfall, a drop that every variety experienced, or a comparison that doesn't involve Variety R."
+    explanation: "The conclusion is about performance under drought relative to the other varieties. Only the correct answer shows that Variety R outperformed every other variety under drought and lost the least going from normal rainfall to drought. The other choices are accurate but describe performance under normal rainfall, a drop that every variety experienced, or a comparison that doesn't involve Variety R."
   },
   {
     id: "ii-h183",
@@ -3111,7 +3111,7 @@ QUESTIONS.push(
       "Under freezing, Type 2 had a lower germination rate (38) than Type 1 did (39)."
     ],
     answer: 1,
-    explanation: "The conclusion is about performance under freezing relative to the other seed types. Only the first choice shows that Type 3 outperformed every other seed type under freezing and lost the least going from room temperature to freezing. The other choices are accurate but describe performance under room temperature, a drop that every seed type experienced, or a comparison that doesn't involve Type 3."
+    explanation: "The conclusion is about performance under freezing relative to the other seed types. Only the correct answer shows that Type 3 outperformed every other seed type under freezing and lost the least going from room temperature to freezing. The other choices are accurate but describe performance under room temperature, a drop that every seed type experienced, or a comparison that doesn't involve Type 3."
   },
   {
     id: "ii-h184",
@@ -3128,7 +3128,7 @@ QUESTIONS.push(
       "Under a cloudy day, Species S had a higher number of visits (16) than Species P did (6)."
     ],
     answer: 0,
-    explanation: "The conclusion is about performance under a cloudy day relative to the other species. Only the first choice shows that Species Q outperformed every other species under a cloudy day and lost the least going from a sunny day to a cloudy day. The other choices are accurate but describe performance under a sunny day, a drop that every species experienced, or a comparison that doesn't involve Species Q."
+    explanation: "The conclusion is about performance under a cloudy day relative to the other species. Only the correct answer shows that Species Q outperformed every other species under a cloudy day and lost the least going from a sunny day to a cloudy day. The other choices are accurate but describe performance under a sunny day, a drop that every species experienced, or a comparison that doesn't involve Species Q."
   },
   {
     id: "ii-h185",
@@ -3145,7 +3145,7 @@ QUESTIONS.push(
       "Under 45°C, Design C had a higher remaining capacity (82) than any other battery design, and it lost the least from 20°C to 45°C."
     ],
     answer: 3,
-    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the first choice shows that Design C outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design C."
+    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the correct answer shows that Design C outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design C."
   },
   {
     id: "ii-h186",
@@ -3162,7 +3162,7 @@ QUESTIONS.push(
       "Under a cloudy day, Species Q had a higher number of visits (23) than Species P did (11)."
     ],
     answer: 2,
-    explanation: "The conclusion is about performance under a cloudy day relative to the other species. Only the first choice shows that Species S outperformed every other species under a cloudy day and lost the least going from a sunny day to a cloudy day. The other choices are accurate but describe performance under a sunny day, a drop that every species experienced, or a comparison that doesn't involve Species S."
+    explanation: "The conclusion is about performance under a cloudy day relative to the other species. Only the correct answer shows that Species S outperformed every other species under a cloudy day and lost the least going from a sunny day to a cloudy day. The other choices are accurate but describe performance under a sunny day, a drop that every species experienced, or a comparison that doesn't involve Species S."
   },
   {
     id: "ii-h187",
@@ -3179,7 +3179,7 @@ QUESTIONS.push(
       "Under a cloudy day, Species S had a lower number of visits (13) than Species Q did (18)."
     ],
     answer: 1,
-    explanation: "The conclusion is about performance under a cloudy day relative to the other species. Only the first choice shows that Species P outperformed every other species under a cloudy day and lost the least going from a sunny day to a cloudy day. The other choices are accurate but describe performance under a sunny day, a drop that every species experienced, or a comparison that doesn't involve Species P."
+    explanation: "The conclusion is about performance under a cloudy day relative to the other species. Only the correct answer shows that Species P outperformed every other species under a cloudy day and lost the least going from a sunny day to a cloudy day. The other choices are accurate but describe performance under a sunny day, a drop that every species experienced, or a comparison that doesn't involve Species P."
   },
   {
     id: "ii-h188",
@@ -3196,7 +3196,7 @@ QUESTIONS.push(
       "Under background music, Group 3 had a lower score (53) than Group 2 did (62)."
     ],
     answer: 0,
-    explanation: "The conclusion is about performance under background music relative to the other groups. Only the first choice shows that Group 1 outperformed every other group under background music and lost the least going from silence to background music. The other choices are accurate but describe performance under silence, a drop that every group experienced, or a comparison that doesn't involve Group 1."
+    explanation: "The conclusion is about performance under background music relative to the other groups. Only the correct answer shows that Group 1 outperformed every other group under background music and lost the least going from silence to background music. The other choices are accurate but describe performance under silence, a drop that every group experienced, or a comparison that doesn't involve Group 1."
   },
   {
     id: "ii-h189",
@@ -3213,7 +3213,7 @@ QUESTIONS.push(
       "Under freezing, Type 4 had a higher germination rate (55) than any other seed type, and it lost the least from room temperature to freezing."
     ],
     answer: 3,
-    explanation: "The conclusion is about performance under freezing relative to the other seed types. Only the first choice shows that Type 4 outperformed every other seed type under freezing and lost the least going from room temperature to freezing. The other choices are accurate but describe performance under room temperature, a drop that every seed type experienced, or a comparison that doesn't involve Type 4."
+    explanation: "The conclusion is about performance under freezing relative to the other seed types. Only the correct answer shows that Type 4 outperformed every other seed type under freezing and lost the least going from room temperature to freezing. The other choices are accurate but describe performance under room temperature, a drop that every seed type experienced, or a comparison that doesn't involve Type 4."
   },
   {
     id: "ii-h190",
@@ -3230,7 +3230,7 @@ QUESTIONS.push(
       "Under 45°C, Design A had a lower remaining capacity (57) than Design D did (72)."
     ],
     answer: 2,
-    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the first choice shows that Design B outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design B."
+    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the correct answer shows that Design B outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design B."
   },
   {
     id: "ii-h191",
@@ -3247,7 +3247,7 @@ QUESTIONS.push(
       "Under 45°C, Design A had a lower remaining capacity (40) than Design C did (60)."
     ],
     answer: 1,
-    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the first choice shows that Design B outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design B."
+    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the correct answer shows that Design B outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design B."
   },
   {
     id: "ii-h192",
@@ -3264,7 +3264,7 @@ QUESTIONS.push(
       "Under 45°C, Design A had a lower remaining capacity (50) than Design B did (76)."
     ],
     answer: 0,
-    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the first choice shows that Design C outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design C."
+    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the correct answer shows that Design C outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design C."
   },
   {
     id: "ii-h193",
@@ -3281,7 +3281,7 @@ QUESTIONS.push(
       "Under 45°C, Design B had a higher remaining capacity (67) than any other battery design, and it lost the least from 20°C to 45°C."
     ],
     answer: 3,
-    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the first choice shows that Design B outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design B."
+    explanation: "The conclusion is about performance under 45°C relative to the other battery designs. Only the correct answer shows that Design B outperformed every other battery design under 45°C and lost the least going from 20°C to 45°C. The other choices are accurate but describe performance under 20°C, a drop that every battery design experienced, or a comparison that doesn't involve Design B."
   },
   {
     id: "ii-h194",
@@ -3298,7 +3298,7 @@ QUESTIONS.push(
       "Under background music, Group 1 had a lower score (63) than Group 3 did (76)."
     ],
     answer: 2,
-    explanation: "The conclusion is about performance under background music relative to the other groups. Only the first choice shows that Group 4 outperformed every other group under background music and lost the least going from silence to background music. The other choices are accurate but describe performance under silence, a drop that every group experienced, or a comparison that doesn't involve Group 4."
+    explanation: "The conclusion is about performance under background music relative to the other groups. Only the correct answer shows that Group 4 outperformed every other group under background music and lost the least going from silence to background music. The other choices are accurate but describe performance under silence, a drop that every group experienced, or a comparison that doesn't involve Group 4."
   },
   {
     id: "ii-h195",
@@ -3315,7 +3315,7 @@ QUESTIONS.push(
       "Under drought, Variety K had a higher yield (2.8) than Variety T did (2.1)."
     ],
     answer: 1,
-    explanation: "The conclusion is about performance under drought relative to the other varieties. Only the first choice shows that Variety R outperformed every other variety under drought and lost the least going from normal rainfall to drought. The other choices are accurate but describe performance under normal rainfall, a drop that every variety experienced, or a comparison that doesn't involve Variety R."
+    explanation: "The conclusion is about performance under drought relative to the other varieties. Only the correct answer shows that Variety R outperformed every other variety under drought and lost the least going from normal rainfall to drought. The other choices are accurate but describe performance under normal rainfall, a drop that every variety experienced, or a comparison that doesn't involve Variety R."
   },
   {
     id: "ii-h196",
@@ -3332,7 +3332,7 @@ QUESTIONS.push(
       "Under freezing, Type 1 had a higher germination rate (61) than Type 4 did (43)."
     ],
     answer: 0,
-    explanation: "The conclusion is about performance under freezing relative to the other seed types. Only the first choice shows that Type 2 outperformed every other seed type under freezing and lost the least going from room temperature to freezing. The other choices are accurate but describe performance under room temperature, a drop that every seed type experienced, or a comparison that doesn't involve Type 2."
+    explanation: "The conclusion is about performance under freezing relative to the other seed types. Only the correct answer shows that Type 2 outperformed every other seed type under freezing and lost the least going from room temperature to freezing. The other choices are accurate but describe performance under room temperature, a drop that every seed type experienced, or a comparison that doesn't involve Type 2."
   },
   {
     id: "ii-h197",
@@ -4165,7 +4165,7 @@ QUESTIONS.push(
       "58% of students in the \"Grade 10\" group reported \"flash cards,\" compared with 24% in the \"Grade 12\" group."
     ],
     answer: 3,
-    explanation: "The claim requires a comparison of the \"flash cards\" column in which one group's share is more than double another's. 58% is more than twice 24%. The second choice compares the right column but 40 is less than twice 24; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"flash cards\" column in which one group's share is more than double another's. 58% is more than twice 24%. The choice that stays in the right column fails because 40 is less than twice 24; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h246",
@@ -4182,7 +4182,7 @@ QUESTIONS.push(
       "18% of respondents in the \"Ages 50–64\" group reported \"car,\" compared with 66% who reported \"bus.\""
     ],
     answer: 2,
-    explanation: "The claim requires a comparison of the \"bus\" column in which one group's share is more than double another's. 66% is more than twice 30%. The second choice compares the right column but 54 is less than twice 30; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"bus\" column in which one group's share is more than double another's. 66% is more than twice 30%. The choice that stays in the right column fails because 54 is less than twice 30; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h247",
@@ -4199,7 +4199,7 @@ QUESTIONS.push(
       "28% of students in the \"Grade 10\" group reported \"practice tests,\" compared with 29% who reported \"flash cards.\""
     ],
     answer: 1,
-    explanation: "The claim requires a comparison of the \"flash cards\" column in which one group's share is more than double another's. 29% is more than twice 10%. The second choice compares the right column but 29 is less than twice 16; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"flash cards\" column in which one group's share is more than double another's. 29% is more than twice 10%. The choice that stays in the right column fails because 29 is less than twice 16; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h248",
@@ -4216,7 +4216,7 @@ QUESTIONS.push(
       "47% of students in the \"Grade 11\" group reported \"flash cards,\" compared with 66% who reported \"rereading.\""
     ],
     answer: 0,
-    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 66% is more than twice 32%. The second choice compares the right column but 58 is less than twice 32; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 66% is more than twice 32%. The choice that stays in the right column fails because 58 is less than twice 32; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h249",
@@ -4233,7 +4233,7 @@ QUESTIONS.push(
       "65% of respondents in the \"Ages 18–29\" group reported \"bicycle,\" compared with 28% in the \"Ages 50–64\" group."
     ],
     answer: 3,
-    explanation: "The claim requires a comparison of the \"bicycle\" column in which one group's share is more than double another's. 65% is more than twice 28%. The second choice compares the right column but 48 is less than twice 28; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"bicycle\" column in which one group's share is more than double another's. 65% is more than twice 28%. The choice that stays in the right column fails because 48 is less than twice 28; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h250",
@@ -4250,7 +4250,7 @@ QUESTIONS.push(
       "26% of respondents in the \"Ages 18–29\" group reported \"bus,\" compared with 56% who reported \"bicycle.\""
     ],
     answer: 2,
-    explanation: "The claim requires a comparison of the \"bicycle\" column in which one group's share is more than double another's. 56% is more than twice 19%. The second choice compares the right column but 56 is less than twice 30; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"bicycle\" column in which one group's share is more than double another's. 56% is more than twice 19%. The choice that stays in the right column fails because 56 is less than twice 30; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h251",
@@ -4267,7 +4267,7 @@ QUESTIONS.push(
       "9% of students in the \"Grade 9\" group reported \"flash cards,\" compared with 44% who reported \"rereading.\""
     ],
     answer: 1,
-    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 44% is more than twice 16%. The second choice compares the right column but 31 is less than twice 16; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 44% is more than twice 16%. The choice that stays in the right column fails because 31 is less than twice 16; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h252",
@@ -4284,7 +4284,7 @@ QUESTIONS.push(
       "63% of students in the \"Grade 9\" group reported \"flash cards,\" compared with 64% who reported \"rereading.\""
     ],
     answer: 0,
-    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 64% is more than twice 25%. The second choice compares the right column but 64 is less than twice 37; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 64% is more than twice 25%. The choice that stays in the right column fails because 64 is less than twice 37; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h253",
@@ -4301,7 +4301,7 @@ QUESTIONS.push(
       "66% of students in the \"Grade 10\" group reported \"practice tests,\" compared with 28% in the \"Grade 9\" group."
     ],
     answer: 3,
-    explanation: "The claim requires a comparison of the \"practice tests\" column in which one group's share is more than double another's. 66% is more than twice 28%. The second choice compares the right column but 46 is less than twice 28; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"practice tests\" column in which one group's share is more than double another's. 66% is more than twice 28%. The choice that stays in the right column fails because 46 is less than twice 28; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h254",
@@ -4318,7 +4318,7 @@ QUESTIONS.push(
       "48% of respondents in the \"Ages 18–29\" group reported \"car,\" compared with 67% who reported \"bus.\""
     ],
     answer: 2,
-    explanation: "The claim requires a comparison of the \"bus\" column in which one group's share is more than double another's. 67% is more than twice 22%. The second choice compares the right column but 67 is less than twice 40; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"bus\" column in which one group's share is more than double another's. 67% is more than twice 22%. The choice that stays in the right column fails because 67 is less than twice 40; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h255",
@@ -4335,7 +4335,7 @@ QUESTIONS.push(
       "38% of students in the \"Grade 10\" group reported \"practice tests,\" compared with 69% who reported \"flash cards.\""
     ],
     answer: 1,
-    explanation: "The claim requires a comparison of the \"flash cards\" column in which one group's share is more than double another's. 69% is more than twice 29%. The second choice compares the right column but 47 is less than twice 29; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"flash cards\" column in which one group's share is more than double another's. 69% is more than twice 29%. The choice that stays in the right column fails because 47 is less than twice 29; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h256",
@@ -4352,7 +4352,7 @@ QUESTIONS.push(
       "70% of households in the \"Coastal\" group reported \"vegetables,\" compared with 61% who reported \"herbs.\""
     ],
     answer: 0,
-    explanation: "The claim requires a comparison of the \"herbs\" column in which one group's share is more than double another's. 61% is more than twice 29%. The second choice compares the right column but 45 is less than twice 29; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"herbs\" column in which one group's share is more than double another's. 61% is more than twice 29%. The choice that stays in the right column fails because 45 is less than twice 29; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h257",
@@ -4369,7 +4369,7 @@ QUESTIONS.push(
       "46% of respondents in the \"Ages 65+\" group reported \"car,\" compared with 22% in the \"Ages 30–49\" group."
     ],
     answer: 3,
-    explanation: "The claim requires a comparison of the \"car\" column in which one group's share is more than double another's. 46% is more than twice 22%. The second choice compares the right column but 35 is less than twice 22; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"car\" column in which one group's share is more than double another's. 46% is more than twice 22%. The choice that stays in the right column fails because 35 is less than twice 22; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h258",
@@ -4386,7 +4386,7 @@ QUESTIONS.push(
       "42% of respondents in the \"Ages 65+\" group reported \"bus,\" compared with 68% who reported \"bicycle.\""
     ],
     answer: 2,
-    explanation: "The claim requires a comparison of the \"bicycle\" column in which one group's share is more than double another's. 68% is more than twice 28%. The second choice compares the right column but 47 is less than twice 28; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"bicycle\" column in which one group's share is more than double another's. 68% is more than twice 28%. The choice that stays in the right column fails because 47 is less than twice 28; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h259",
@@ -4403,7 +4403,7 @@ QUESTIONS.push(
       "58% of students in the \"Grade 11\" group reported \"flash cards,\" compared with 49% who reported \"rereading.\""
     ],
     answer: 1,
-    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 49% is more than twice 19%. The second choice compares the right column but 36 is less than twice 19; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"rereading\" column in which one group's share is more than double another's. 49% is more than twice 19%. The choice that stays in the right column fails because 36 is less than twice 19; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h260",
@@ -4420,7 +4420,7 @@ QUESTIONS.push(
       "34% of respondents in the \"Ages 30–49\" group reported \"car,\" compared with 64% who reported \"bus.\""
     ],
     answer: 0,
-    explanation: "The claim requires a comparison of the \"bus\" column in which one group's share is more than double another's. 64% is more than twice 28%. The second choice compares the right column but 64 is less than twice 39; the third doubles correctly but in the wrong column; the fourth compares two columns within one group."
+    explanation: "The claim requires a comparison of the \"bus\" column in which one group's share is more than double another's. 64% is more than twice 28%. The choice that stays in the right column fails because 64 is less than twice 39; the choice that doubles correctly uses the wrong column; and the choice comparing two columns within one group doesn't compare groups at all."
   },
   {
     id: "ii-h261",
@@ -4777,7 +4777,7 @@ QUESTIONS.push(
       "Weatherford argues that, alongside its violence, the Mongol Empire adopted policies with lasting positive effects."
     ],
     answer: 3,
-    explanation: "Weatherford acknowledges violence but highlights connecting policies. He \"does not deny the violence,\" so the choice beginning \"Weatherford argues that historians…\" is wrong, and the text doesn't claim a first or rank achievements."
+    explanation: "Weatherford acknowledges violence but highlights connecting policies. He \"does not deny the violence,\" so the claim that he says historians exaggerated it is wrong, and the text doesn't call the empire the first to issue paper money or rank the postal relay above its other achievements."
   },
   {
     id: "ii-h282",
@@ -5950,7 +5950,7 @@ QUESTIONS.push(
       "Country D led in 2012 with 23%, but its share grew by only 4 percentage points, while Country A's grew by 17."
     ],
     answer: 3,
-    explanation: "The statement needs the 2012 leader (D) and a comparison of growth showing another country grew more. Only the correct choice provides both. The second and third each cover only one part, and the choice beginning \"Country C had the…\" is irrelevant."
+    explanation: "The statement needs the 2012 leader (Country D) and a comparison of growth showing another country grew more. Only the correct answer provides both. The choice about Country D leading in both years and the choice about Country A's rise each cover only one part, and the choice about Country C's small share is irrelevant."
   },
   {
     id: "ii-h351",
@@ -6307,7 +6307,7 @@ QUESTIONS.push(
       "calves on seaweed feed gained more weight per day in weeks 5–8 (0.79 kg) than they had in weeks 1–4 (0.61 kg)."
     ],
     answer: 0,
-    explanation: "Nearly identical gains show that seaweed didn't slow growth. The choices beginning \"calves on standard feed gained 0.80…\" and \"calves on seaweed feed…\" describe changes over time within one group, and the fourth emphasizes a tiny difference that sounds like support for the concern."
+    explanation: "Nearly identical gains show that seaweed didn't slow growth. The choices tracking standard-feed calves from 0.62 to 0.80 kg per day and seaweed-feed calves from 0.61 to 0.79 kg per day describe changes over time within one group, and the choice saying standard-feed calves gained slightly more emphasizes a tiny difference that sounds like support for the concern."
   },
   {
     id: "ii-h372",

@@ -493,7 +493,7 @@ QUESTIONS.push(
       "1903; remarkably, however,"
     ],
     answer: 3,
-    explanation: "The first independent clause ends at \"1903,\" and a second independent clause begins. A semicolon must join them. \"Remarkably\" and \"however\" are both interrupting adverbs at the start of the second clause, so each is followed by a comma. Only the first choice combines the semicolon with correctly punctuated adverbs."
+    explanation: "The first independent clause ends at \"1903,\" and a second independent clause begins. A semicolon must join them. \"Remarkably\" and \"however\" are both interrupting adverbs at the start of the second clause, so each is followed by a comma. Only the correct answer combines the semicolon with correctly punctuated adverbs."
   },
   {
     id: "conv-h30",
@@ -765,7 +765,7 @@ QUESTIONS.push(
       "flood; what remained"
     ],
     answer: 3,
-    explanation: "The first clause is independent, and \"what remained uncertain was whether...\" is also an independent clause (its subject is the noun clause \"what remained uncertain\"). A semicolon joins them. A comma creates a comma splice, no punctuation creates a run-on, and the last option inserts a comma inside the noun clause."
+    explanation: "The first clause is independent, and \"what remained uncertain was whether...\" is also an independent clause (its subject is the noun clause \"what remained uncertain\"). A semicolon joins them. A comma creates a comma splice, no punctuation creates a run-on, and \"flood: what, remained\" inserts a comma inside the noun clause."
   },
   {
     id: "conv-h46",
@@ -1037,7 +1037,7 @@ QUESTIONS.push(
       "medium: timber"
     ],
     answer: 3,
-    explanation: "The clause \"The sculptor worked in an unusual medium\" is complete, and what follows identifies the medium. A colon introduces this explanation. A semicolon requires an independent clause after it, the third option adds unnecessary words and commas, and no punctuation runs the explanation into the noun."
+    explanation: "The clause \"The sculptor worked in an unusual medium\" is complete, and what follows identifies the medium. A colon introduces this explanation. A semicolon requires an independent clause after it, \"medium, timber, that was\" adds unnecessary words and commas, and no punctuation runs the explanation into the noun."
   },
   {
     id: "conv-h62",
@@ -1275,7 +1275,7 @@ QUESTIONS.push(
       "year: for,"
     ],
     answer: 1,
-    explanation: "\"The mountain pass is open for only about four months each year\" and \"for the rest of the year, snowdrifts... make it impassable\" are independent clauses, so they are joined with a semicolon. A comma creates a comma splice, no punctuation creates a run-on, and the last option adds a comma that separates \"for\" from its object."
+    explanation: "\"The mountain pass is open for only about four months each year\" and \"for the rest of the year, snowdrifts... make it impassable\" are independent clauses, so they are joined with a semicolon. A comma creates a comma splice, no punctuation creates a run-on, and \"year: for,\" adds a comma that separates \"for\" from its object."
   },
   {
     id: "conv-h76",
@@ -1394,7 +1394,7 @@ QUESTIONS.push(
       "years: those,"
     ],
     answer: 2,
-    explanation: "The two independent clauses (\"The study followed... for twenty years\" and \"those who walked... had a significantly lower risk\") are joined with a semicolon. A comma creates a comma splice, no punctuation creates a run-on, and the last choice inserts a comma between the subject \"those\" and its modifier."
+    explanation: "The two independent clauses (\"The study followed... for twenty years\" and \"those who walked... had a significantly lower risk\") are joined with a semicolon. A comma creates a comma splice, no punctuation creates a run-on, and \"years: those,\" inserts a comma between the subject \"those\" and its modifier."
   },
   {
     id: "conv-h83",
@@ -1445,7 +1445,7 @@ QUESTIONS.push(
       "collection. Published"
     ],
     answer: 3,
-    explanation: "The sentence that begins with \"Published in 1855\" has its own subject (\"the book\") and verb (\"sold\"), and the introductory phrase modifies \"the book.\" A period separating the two sentences is correct. A comma would create a comma splice, no punctuation creates a run-on, and the last option adds a misplaced comma."
+    explanation: "The sentence that begins with \"Published in 1855\" has its own subject (\"the book\") and verb (\"sold\"), and the introductory phrase modifies \"the book.\" A period separating the two sentences is correct. A comma would create a comma splice, no punctuation creates a run-on, and \"collection; published,\" adds a misplaced comma."
   },
   {
     id: "conv-h86",
@@ -1581,7 +1581,7 @@ QUESTIONS.push(
       "subject:"
     ],
     answer: 3,
-    explanation: "The independent clause is followed by a phrase identifying the subject. A colon introduces such a phrase. A semicolon must be followed by an independent clause, a period would make the phrase a fragment, and the last option adds an incorrect comma."
+    explanation: "The independent clause is followed by a phrase identifying the subject. A colon introduces such a phrase. A semicolon must be followed by an independent clause, a period would make the phrase a fragment, and \"subject, an,\" adds an incorrect comma."
   },
   {
     id: "conv-h94",
@@ -2023,7 +2023,7 @@ QUESTIONS.push(
       "screen, and her,"
     ],
     answer: 1,
-    explanation: "\"The documentary's narrator never appears on screen\" and \"her voice... guides viewers\" are both independent clauses, so a semicolon is needed. A comma creates a comma splice, no punctuation creates a run-on, and the last option inserts a comma between the subject and its modifier."
+    explanation: "\"The documentary's narrator never appears on screen\" and \"her voice... guides viewers\" are both independent clauses, so a semicolon is needed. A comma creates a comma splice, no punctuation creates a run-on, and \"screen, and her,\" inserts a comma between the subject and its modifier."
   },
   {
     id: "conv-h120",
@@ -2227,7 +2227,7 @@ QUESTIONS.push(
       "goals, they are:"
     ],
     answer: 1,
-    explanation: "The independent clause introduces the goals, which follow in a list. A colon is correct. A semicolon cannot introduce a list, and \"these are\" after a comma creates a comma splice; the last option also places a colon after a verb."
+    explanation: "The independent clause introduces the goals, which follow in a list. A colon is correct. A semicolon cannot introduce a list, and \"these are\" after a comma creates a comma splice; \"goals, they are:\" also places a colon after a verb."
   },
   {
     id: "conv-h132",
@@ -2414,7 +2414,7 @@ QUESTIONS.push(
       "it was dismaying for the scholar to learn that a rival translation would be published the same month."
     ],
     answer: 2,
-    explanation: "The introductory phrase \"Having spent nearly a decade translating the epic\" must be followed immediately by the person who did the translating. Only the first choice places \"the scholar\" right after the phrase. The others make it seem that the news, the rival translation, or \"it\" spent a decade translating."
+    explanation: "The introductory phrase \"Having spent nearly a decade translating the epic\" must be followed immediately by the person who did the translating. Only the correct answer places \"the scholar\" right after the phrase. The others make it seem that the news, the rival translation, or \"it\" spent a decade translating."
   },
   {
     id: "conv-h143",
@@ -2703,7 +2703,7 @@ QUESTIONS.push(
       "weeks, there is a new sensor that"
     ],
     answer: 1,
-    explanation: "The phrase \"Unlike the earlier model\" sets up a comparison between two devices. The subject that follows must therefore be the new sensor, and \"the new sensor automatically adjusts\" is a complete clause. The second choice compares a model to a design, and the last two add unnecessary or illogical structures."
+    explanation: "The phrase \"Unlike the earlier model\" sets up a comparison between two devices. The subject that follows must therefore be the new sensor, and \"the new sensor automatically adjusts\" is a complete clause. \"The new sensor's design\" compares a model to a design, and \"it is the new sensor that\" and \"there is a new sensor that\" add unnecessary or illogical structures."
   },
   {
     id: "conv-h160",
@@ -2771,7 +2771,7 @@ QUESTIONS.push(
       "each summer the trails are cleared of dead brush, with certain areas being closed in high winds."
     ],
     answer: 1,
-    explanation: "The introductory infinitive phrase \"To reduce the risk of wildfires\" must be followed by the agent performing the action. Only the first choice names an agent (\"the park service\") as the subject. The other choices use passive or abstract subjects that cannot reduce risk."
+    explanation: "The introductory infinitive phrase \"To reduce the risk of wildfires\" must be followed by the agent performing the action. Only the correct answer names an agent (\"the park service\") as the subject. The other choices use passive or abstract subjects that cannot reduce risk."
   },
   {
     id: "conv-h164",
@@ -2890,7 +2890,7 @@ QUESTIONS.push(
       "dialect, it seemed to"
     ],
     answer: 2,
-    explanation: "The introductory phrase \"After years of studying the dialect\" must be followed by the person who studied it, \"the linguist.\" Only the first choice keeps \"the linguist\" as the subject immediately after the phrase."
+    explanation: "The introductory phrase \"After years of studying the dialect\" must be followed by the person who studied it, \"the linguist.\" Only the correct answer keeps \"the linguist\" as the subject immediately after the phrase."
   },
   {
     id: "conv-h171",
@@ -3434,7 +3434,7 @@ QUESTIONS.push(
       "it was determined that the beams in the farmhouse came from trees cut down in the winter of 1741."
     ],
     answer: 2,
-    explanation: "The modifier \"Using a technique called dendrochronology\" must describe the people who used it. Only the first choice places \"researchers\" immediately after the modifier."
+    explanation: "The modifier \"Using a technique called dendrochronology\" must describe the people who used it. Only the correct answer places \"researchers\" immediately after the modifier."
   },
   {
     id: "conv-h203",

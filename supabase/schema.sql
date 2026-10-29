@@ -21,14 +21,22 @@ create table public.questions (
   module text not null check (module in ('rw', 'math')),
   domain text not null,
   skill text not null,
-  difficulty smallint not null check (difficulty between 1 and 3),
+  -- 1 Easy, 2 Medium, 3 Hard, 4 Extra Hard (beyond the real SAT)
+  difficulty smallint not null check (difficulty between 1 and 4),
   passage text,
   prompt text not null,
   choices jsonb not null,
   answer smallint not null,
   explanation text not null,
+  -- why each choice is wrong, aligned with choices (null at the answer)
+  choice_explanations jsonb,
   created_at timestamptz not null default now()
 );
+
+-- Upgrading an existing table without re-running this file:
+alter table public.questions add column if not exists choice_explanations jsonb;
+alter table public.questions drop constraint if exists questions_difficulty_check;
+alter table public.questions add constraint questions_difficulty_check check (difficulty between 1 and 4);
 
 alter table public.questions enable row level security;
 
@@ -285,3 +293,6 @@ create policy "Classroom owners can read their roster's profiles"
     join public.classrooms c on c.id = m.classroom_id
     where m.student_id = profiles.id and c.owner_id = auth.uid()
   ));
+
+-- question_attempts (per-student answers + miss reasons) lives in
+-- supabase/attempts.sql -- run it after this file and the question import.

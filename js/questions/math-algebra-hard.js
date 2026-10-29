@@ -23,7 +23,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a < 0. If f(f(x)) = 9x + 14 for all values of x, what is the value of f(−1)?",
     choices: [
       "−10",
@@ -55,7 +55,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A storage shelf can hold at most 550 kilograms. It holds small bins weighing 14 kilograms each and large bins weighing 114 kilograms each. For balance, the number of small bins must be at least 4 times the number of large bins. What is the maximum number of large bins that can be loaded?",
     choices: [
       "3",
@@ -119,7 +119,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 72 liters of a solution that is 12% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 72 liters of a solution that is 17% antifreeze. What is the value of x?",
     choices: [
       "45/11",
@@ -231,7 +231,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two cyclists start 343 miles apart and travel toward each other. The first travels at a constant 26 miles per hour, and the second, who starts 3 hours later, travels at a constant 27 miles per hour. How many miles from the first one's starting point do they meet?",
     choices: [
       "168",
@@ -359,7 +359,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 36x + 14 for all values of x, what is the value of f(6)?",
     choices: [
       "−34",
@@ -391,7 +391,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A delivery van can carry at most 800 pounds. It is loaded with small crates weighing 34 pounds each and large crates weighing 70 pounds each. Company policy requires that the number of small crates be at least 2 times the number of large crates. What is the maximum number of large crates that can be loaded?",
     choices: [
       "11",
@@ -455,7 +455,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 24 liters of a solution that is 10% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 24 liters of a solution that is 15% antifreeze. What is the value of x?",
     choices: [
       "24/17",
@@ -567,7 +567,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two runners on a straight trail start 193 meters apart and travel toward each other. The first travels at a constant 14 meters per minute, and the second, who starts 2 minutes later, travels at a constant 19 meters per minute. How many meters from the first one's starting point do they meet?",
     choices: [
       "98",
@@ -695,7 +695,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 9x − 28 for all values of x, what is the value of f(−4)?",
     choices: [
       "−19",
@@ -791,7 +791,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 20 liters of a solution that is 30% acid by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure acid, which brings the tank back to 20 liters of a solution that is 35% acid. What is the value of x?",
     choices: [
       "20/13",
@@ -903,7 +903,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two cyclists start 202 miles apart and travel toward each other. The first travels at a constant 14 miles per hour, and the second, who starts 3 hours later, travels at a constant 26 miles per hour. How many miles from the first one's starting point do they meet?",
     choices: [
       "71",
@@ -1031,7 +1031,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 16x + 35 for all values of x, what is the value of f(4)?",
     choices: [
       "−9",
@@ -1063,7 +1063,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A delivery van can carry at most 800 pounds. It is loaded with small crates weighing 32 pounds each and large crates weighing 85 pounds each. Company policy requires that the number of small crates be at least 4 times the number of large crates. What is the maximum number of large crates that can be loaded?",
     choices: [
       "9",
@@ -1127,7 +1127,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 80 liters of a solution that is 30% juice concentrate by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure concentrate, which brings the tank back to 80 liters of a solution that is 42% juice concentrate. What is the value of x?",
     choices: [
       "480/29",
@@ -1239,7 +1239,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two trains on parallel tracks start 209 kilometers apart and travel toward each other. The first travels at a constant 23 kilometers per hour, and the second, who starts 1 hour later, travels at a constant 8 kilometers per hour. How many kilometers from the first one's starting point do they meet?",
     choices: [
       "155",
@@ -1367,7 +1367,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 16x + 25 for all values of x, what is the value of f(8)?",
     choices: [
       "−27",
@@ -1399,7 +1399,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A delivery van can carry at most 750 pounds. It is loaded with small crates weighing 23 pounds each and large crates weighing 95 pounds each. Company policy requires that the number of small crates be at least 4 times the number of large crates. What is the maximum number of large crates that can be loaded?",
     choices: [
       "4",
@@ -1463,7 +1463,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 72 liters of a solution that is 20% juice concentrate by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure concentrate, which brings the tank back to 72 liters of a solution that is 32% juice concentrate. What is the value of x?",
     choices: [
       "54/5",
@@ -1575,7 +1575,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two runners on a straight trail start 88 meters apart and travel toward each other. The first travels at a constant 14 meters per minute, and the second, who starts 2 minutes later, travels at a constant 6 meters per minute. How many meters from the first one's starting point do they meet?",
     choices: [
       "62",
@@ -1703,7 +1703,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 16x − 20 for all values of x, what is the value of f(4)?",
     choices: [
       "−20",
@@ -1735,7 +1735,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A delivery van can carry at most 750 pounds. It is loaded with small crates weighing 35 pounds each and large crates weighing 92 pounds each. Company policy requires that the number of small crates be at least 2 times the number of large crates. What is the maximum number of large crates that can be loaded?",
     choices: [
       "8",
@@ -1799,7 +1799,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 24 liters of a solution that is 20% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 24 liters of a solution that is 40% antifreeze. What is the value of x?",
     choices: [
       "8",
@@ -1911,7 +1911,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two trains on parallel tracks start 375 kilometers apart and travel toward each other. The first travels at a constant 23 kilometers per hour, and the second, who starts 3 hours later, travels at a constant 28 kilometers per hour. How many kilometers from the first one's starting point do they meet?",
     choices: [
       "207",
@@ -2039,7 +2039,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 4x − 3 for all values of x, what is the value of f(6)?",
     choices: [
       "11",
@@ -2071,7 +2071,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A storage shelf can hold at most 500 kilograms. It holds small bins weighing 24 kilograms each and large bins weighing 69 kilograms each. For balance, the number of small bins must be at least 2 times the number of large bins. What is the maximum number of large bins that can be loaded?",
     choices: [
       "7",
@@ -2135,7 +2135,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 72 liters of a solution that is 10% juice concentrate by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure concentrate, which brings the tank back to 72 liters of a solution that is 22% juice concentrate. What is the value of x?",
     choices: [
       "144/13",
@@ -2247,7 +2247,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two cyclists start 176 miles apart and travel toward each other. The first travels at a constant 20 miles per hour, and the second, who starts 2 hours later, travels at a constant 14 miles per hour. How many miles from the first one's starting point do they meet?",
     choices: [
       "104",
@@ -2375,7 +2375,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 16x + 30 for all values of x, what is the value of f(6)?",
     choices: [
       "−18",
@@ -2407,7 +2407,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A delivery van can carry at most 650 pounds. It is loaded with small crates weighing 34 pounds each and large crates weighing 82 pounds each. Company policy requires that the number of small crates be at least 2 times the number of large crates. What is the maximum number of large crates that can be loaded?",
     choices: [
       "7",
@@ -2471,7 +2471,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 20 liters of a solution that is 25% acid by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure acid, which brings the tank back to 20 liters of a solution that is 45% acid. What is the value of x?",
     choices: [
       "80/11",
@@ -2583,7 +2583,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two trains on parallel tracks start 236 kilometers apart and travel toward each other. The first travels at a constant 23 kilometers per hour, and the second, who starts 2 hours later, travels at a constant 15 kilometers per hour. How many kilometers from the first one's starting point do they meet?",
     choices: [
       "143",
@@ -2711,7 +2711,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 25x − 48 for all values of x, what is the value of f(2)?",
     choices: [
       "−18",
@@ -2807,7 +2807,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 50 liters of a solution that is 40% acid by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure acid, which brings the tank back to 50 liters of a solution that is 50% acid. What is the value of x?",
     choices: [
       "25/3",
@@ -2919,7 +2919,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two cyclists start 240 miles apart and travel toward each other. The first travels at a constant 25 miles per hour, and the second, who starts 3 hours later, travels at a constant 8 miles per hour. How many miles from the first one's starting point do they meet?",
     choices: [
       "182",
@@ -3047,7 +3047,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 4x − 15 for all values of x, what is the value of f(−1)?",
     choices: [
       "−3",
@@ -3079,7 +3079,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A storage shelf can hold at most 450 kilograms. It holds small bins weighing 30 kilograms each and large bins weighing 51 kilograms each. For balance, the number of small bins must be at least 3 times the number of large bins. What is the maximum number of large bins that can be loaded?",
     choices: [
       "8",
@@ -3143,7 +3143,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 40 liters of a solution that is 40% acid by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure acid, which brings the tank back to 40 liters of a solution that is 55% acid. What is the value of x?",
     choices: [
       "40/3",
@@ -3255,7 +3255,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two runners on a straight trail start 296 meters apart and travel toward each other. The first travels at a constant 16 meters per minute, and the second, who starts 2 minutes later, travels at a constant 28 meters per minute. How many meters from the first one's starting point do they meet?",
     choices: [
       "128",
@@ -3383,7 +3383,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 4x + 27 for all values of x, what is the value of f(3)?",
     choices: [
       "15",
@@ -3479,7 +3479,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 60 liters of a solution that is 10% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 60 liters of a solution that is 22% antifreeze. What is the value of x?",
     choices: [
       "120/13",
@@ -3591,7 +3591,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two trains on parallel tracks start 168 kilometers apart and travel toward each other. The first travels at a constant 12 kilometers per hour, and the second, who starts 3 hours later, travels at a constant 21 kilometers per hour. How many kilometers from the first one's starting point do they meet?",
     choices: [
       "61",
@@ -3719,7 +3719,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 25x + 54 for all values of x, what is the value of f(−3)?",
     choices: [
       "24",
@@ -3751,7 +3751,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A storage shelf can hold at most 450 kilograms. It holds small bins weighing 15 kilograms each and large bins weighing 115 kilograms each. For balance, the number of small bins must be at least 4 times the number of large bins. What is the maximum number of large bins that can be loaded?",
     choices: [
       "3",
@@ -3815,7 +3815,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 36 liters of a solution that is 25% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 36 liters of a solution that is 37% antifreeze. What is the value of x?",
     choices: [
       "48/7",
@@ -3927,7 +3927,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two runners on a straight trail start 147 meters apart and travel toward each other. The first travels at a constant 30 meters per minute, and the second, who starts 1 minute later, travels at a constant 9 meters per minute. How many meters from the first one's starting point do they meet?",
     choices: [
       "113",
@@ -4055,7 +4055,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a > 0. If f(f(x)) = 16x − 10 for all values of x, what is the value of f(7)?",
     choices: [
       "−30",
@@ -4087,7 +4087,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A storage shelf can hold at most 350 kilograms. It holds small bins weighing 13 kilograms each and large bins weighing 50 kilograms each. For balance, the number of small bins must be at least 3 times the number of large bins. What is the maximum number of large bins that can be loaded?",
     choices: [
       "3",
@@ -4151,7 +4151,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 48 liters of a solution that is 15% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 48 liters of a solution that is 23% antifreeze. What is the value of x?",
     choices: [
       "384/85",
@@ -4263,7 +4263,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Two cyclists start 89 miles apart and travel toward each other. The first travels at a constant 11 miles per hour, and the second, who starts 3 hours later, travels at a constant 17 miles per hour. How many miles from the first one's starting point do they meet?",
     choices: [
       "35",
@@ -4391,7 +4391,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "The function f is defined by f(x) = ax + b, where a and b are constants and a < 0. If f(f(x)) = 25x + 12 for all values of x, what is the value of f(−4)?",
     choices: [
       "−23",
@@ -4423,7 +4423,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Linear inequalities in two variables",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A delivery van can carry at most 250 pounds. It is loaded with small crates weighing 34 pounds each and large crates weighing 56 pounds each. Company policy requires that the number of small crates be at least 2 times the number of large crates. What is the maximum number of large crates that can be loaded?",
     choices: [
       "4",
@@ -4487,7 +4487,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Algebra",
     skill: "Word problems",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tank contains 30 liters of a solution that is 40% antifreeze by volume. A technician drains x liters of the solution from the tank and replaces them with x liters of pure antifreeze, which brings the tank back to 30 liters of a solution that is 55% antifreeze. What is the value of x?",
     choices: [
       "10",

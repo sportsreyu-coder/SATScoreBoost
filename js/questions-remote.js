@@ -18,20 +18,31 @@
       // Supabase caps each response at 1,000 rows, so page through the
       // table; swap the bank in only once every page has arrived.
       const PAGE_SIZE = 1000;
-      const rows = [];
-      for (let from = 0; ; from += PAGE_SIZE) {
-        const { data, error } = await window.supabaseClient
-          .from("questions")
-          .select("id, module, domain, skill, difficulty, passage, prompt, choices, answer, explanation")
-          .order("id")
-          .range(from, from + PAGE_SIZE - 1);
-        if (error || !data) return;
-        rows.push(...data);
-        if (data.length < PAGE_SIZE) break;
-      }
-      if (!rows.length) return;
+      const BASE_COLUMNS = "id, module, domain, skill, difficulty, passage, prompt, choices, answer, explanation";
+      // choice_explanations is a later column; if the live table predates
+      // it, the select errors, so retry once without it.
+      const fetchAll = async (columns) => {
+        const rows = [];
+        for (let from = 0; ; from += PAGE_SIZE) {
+          const { data, error } = await window.supabaseClient
+            .from("questions")
+            .select(columns)
+            .order("id")
+            .range(from, from + PAGE_SIZE - 1);
+          if (error || !data) return null;
+          rows.push(...data);
+          if (data.length < PAGE_SIZE) break;
+        }
+        return rows;
+      };
+      const rows = (await fetchAll(BASE_COLUMNS + ", choice_explanations")) || (await fetchAll(BASE_COLUMNS));
+      if (!rows || !rows.length) return;
       QUESTIONS.length = 0;
-      QUESTIONS.push(...rows);
+      QUESTIONS.push(
+        ...rows.map(({ choice_explanations, ...q }) => ({ ...q, choiceExplanations: choice_explanations || null }))
+      );
+      // Re-split off the Extra Hard tier (js/question-tiers.js).
+      if (typeof partitionQuestionTiers === "function") partitionQuestionTiers();
     } catch (e) {
       // Offline, CORS, or the table isn't set up yet — keep the static bank.
     }

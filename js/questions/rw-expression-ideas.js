@@ -189,7 +189,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A combines the flight's short duration (12 seconds) with its outsized historical significance, directly fulfilling the stated goal.",
+      "The correct answer combines the flight's short duration (12 seconds) with its outsized historical significance, directly fulfilling the stated goal.",
   },
   {
     id: "ei-14",
@@ -209,7 +209,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly conveys the river's water volume, which is the specific goal stated in the prompt.",
+      "Only the correct answer directly conveys the river's water volume, which is the specific goal stated in the prompt.",
   },
   {
     id: "ei-15",
@@ -229,7 +229,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A states the specific fact about Curie's singular distinction among laureates, matching the stated goal exactly.",
+      "The correct answer states the specific fact about Curie's singular distinction among laureates, matching the stated goal exactly.",
   },
   {
     id: "ei-16",
@@ -249,7 +249,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Being visible from space is the single most striking detail conveying scale, better fulfilling the goal than the more technical detail in choice D.",
+      "Being visible from space is the single most striking detail conveying scale, better fulfilling the goal than the more technical detail about nearly 3,000 smaller reefs.",
   },
   {
     id: "ei-17",
@@ -269,7 +269,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A links the creator, date, and stated purpose (an easy-to-learn universal language), directly explaining why Esperanto was created.",
+      "The correct answer links the creator, date, and stated purpose (an easy-to-learn universal language), directly explaining why Esperanto was created.",
   },
   {
     id: "ei-18",
@@ -289,7 +289,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the main heart's specific role with the fact that it stops during swimming to state the surprising consequence; the others restate isolated notes or describe the hearts' division of labor without naming that consequence.",
+      "Only the correct answer combines the main heart's specific role with the fact that it stops during swimming to state the surprising consequence; the others restate isolated notes or describe the hearts' division of labor without naming that consequence.",
   },
   {
     id: "ei-19",
@@ -309,7 +309,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly addresses the ongoing scholarly debate about the library's destruction, matching the stated goal.",
+      "Only the correct answer directly addresses the ongoing scholarly debate about the library's destruction, matching the stated goal.",
   },
   {
     id: "ei-20",
@@ -329,7 +329,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states a growth-rate statistic, which directly accomplishes the stated goal of highlighting bamboo's growth speed.",
+      "Only the correct answer states a growth-rate statistic, which directly accomplishes the stated goal of highlighting bamboo's growth speed.",
   },
   {
     id: "ei-21",
@@ -349,7 +349,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A is the only option that addresses the specific relationship between day length and year length named in the prompt.",
+      "The correct answer is the only option that addresses the specific relationship between day length and year length named in the prompt.",
   },
   {
     id: "ei-22",
@@ -369,7 +369,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A cites concrete evidence—animals tied to wetter climates—for the claim; the vague mention of cave paintings omits that specific detail, and the other two choices merely restate the claim itself or an indirect date rather than supporting evidence.",
+      "Only the correct answer cites concrete evidence—animals tied to wetter climates—for the claim; the vague mention of cave paintings omits that specific detail, and the other two choices merely restate the claim itself or an indirect date rather than supporting evidence.",
   },
   {
     id: "ei-23",
@@ -389,7 +389,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A gives the specific historical example (ancient Egyptian honey) requested by the prompt, rather than the general explanation in choice B.",
+      "The correct answer gives the specific historical example (ancient Egyptian honey) requested by the prompt, rather than the general explanation about honey's low moisture content.",
   },
   {
     id: "ei-24",
@@ -409,7 +409,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the cause (thermal expansion) to the effect (a 15-centimeter height change), directly explaining the phenomenon.",
+      "Only the correct answer connects the cause (thermal expansion) to the effect (a 15-centimeter height change), directly explaining the phenomenon.",
   },
   {
     id: "ei-25",
@@ -429,7 +429,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A directly describes the specific resting behavior (holding hands) requested by the prompt.",
+      "The correct answer directly describes the specific resting behavior (holding hands) requested by the prompt.",
   },
   {
     id: "ei-26",
@@ -463,7 +463,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific number of hearts (three) and their functions, directly accomplishing the stated goal.",
+      "Only the correct answer states the specific number of hearts (three) and their functions, directly accomplishing the stated goal.",
   },
   {
     id: "ei-28",
@@ -497,7 +497,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A both highlights the ridership gap (2 million vs. 800,000) and uses the similar-conditions detail to show the difference isn't explained by population or climate.",
+      "Only the correct answer both highlights the ridership gap (2 million vs. 800,000) and uses the similar-conditions detail to show the difference isn't explained by population or climate.",
   },
   {
     id: "ei-30",
@@ -531,7 +531,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines both the benefit (lower energy costs) and the drawback (complaints about brightness) that the prompt asks for.",
+      "Only the correct answer combines both the benefit (lower energy costs) and the drawback (complaints about brightness) that the prompt asks for.",
   },
   {
     id: "ei-32",
@@ -565,7 +565,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A directly emphasizes the unusual reversed rotation and its unexplained cause, matching the student's stated goal.",
+      "The correct answer directly emphasizes the unusual reversed rotation and its unexplained cause, matching the student's stated goal.",
   },
   {
     id: "ei-34",
@@ -599,7 +599,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the popular misconception about visibility from the Moon, matching the stated goal.",
+      "Only the correct answer directly names and corrects the popular misconception about visibility from the Moon, matching the stated goal.",
   },
   {
     id: "ei-36",
@@ -633,7 +633,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific rarity of egg-laying among mammals, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific rarity of egg-laying among mammals, directly fulfilling the stated goal.",
   },
   {
     id: "ei-38",
@@ -667,7 +667,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A pairs both figures to show the scale of change over time; the others give the cause of melting or just one data point, neither of which demonstrates the acceleration by itself.",
+      "Only the correct answer pairs both figures to show the scale of change over time; the others give the cause of melting or just one data point, neither of which demonstrates the acceleration by itself.",
   },
   {
     id: "ei-40",
@@ -701,7 +701,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A is the only option that directly contrasts the slow, laborious hand-copying process with the speed and low cost enabled by the press.",
+      "The correct answer is the only option that directly contrasts the slow, laborious hand-copying process with the speed and low cost enabled by the press.",
   },
   {
     id: "ei-42",
@@ -735,7 +735,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific 70,000-kilometer distance, which is the detail needed to emphasize the migration's extraordinary length.",
+      "Only the correct answer states the specific 70,000-kilometer distance, which is the detail needed to emphasize the migration's extraordinary length.",
   },
   {
     id: "ei-44",
@@ -769,7 +769,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A gives the precise elevation figure that directly supports the claim about Everest's status as the tallest peak above sea level.",
+      "The correct answer gives the precise elevation figure that directly supports the claim about Everest's status as the tallest peak above sea level.",
   },
   {
     id: "ei-46",
@@ -803,7 +803,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the stone's three-script format to the specific mechanism by which Champollion deciphered hieroglyphics, fulfilling the goal of explanation.",
+      "Only the correct answer connects the stone's three-script format to the specific mechanism by which Champollion deciphered hieroglyphics, fulfilling the goal of explanation.",
   },
   {
     id: "ei-48",
@@ -837,7 +837,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A specifies both mechanisms—angle for direction and duration for distance—together; B is too vague to explain the mechanism at all, and C and D each capture only one of the two required pieces.",
+      "Only the correct answer specifies both mechanisms—angle for direction and duration for distance—together; the choice saying bees dance to communicate is too vague to explain the mechanism at all, and the choices about angle alone or duration alone each capture only one of the two required pieces.",
   },
   {
     id: "ei-50",
@@ -871,7 +871,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A identifies the specific cause — insufficient lifeboats — that explains the high death toll, matching the stated goal.",
+      "Only the correct answer identifies the specific cause — insufficient lifeboats — that explains the high death toll, matching the stated goal.",
   },
   {
     id: "ei-52",
@@ -905,7 +905,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific height figure that fulfills the goal of emphasizing the redwoods' exceptional height.",
+      "Only the correct answer gives the specific height figure that fulfills the goal of emphasizing the redwoods' exceptional height.",
   },
   {
     id: "ei-54",
@@ -939,7 +939,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the comparable-conditions detail with both schools' score changes to suggest the tutoring program, rather than other factors, drove School A's larger gain.",
+      "Only the correct answer combines the comparable-conditions detail with both schools' score changes to suggest the tutoring program, rather than other factors, drove School A's larger gain.",
   },
   {
     id: "ei-56",
@@ -973,7 +973,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains why the site is valuable — the ash's preservation of detailed evidence — directly fulfilling the stated goal.",
+      "Only the correct answer explains why the site is valuable — the ash's preservation of detailed evidence — directly fulfilling the stated goal.",
   },
   {
     id: "ei-58",
@@ -1007,7 +1007,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Choice A is the only option that specifies the rotating-huddle mechanism, directly answering how penguins conserve heat as a group.",
+      "The correct answer is the only option that specifies the rotating-huddle mechanism, directly answering how penguins conserve heat as a group.",
   },
   {
     id: "ei-60",
@@ -1041,7 +1041,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly addresses and corrects the common misconception about who invented the light bulb, fulfilling the stated goal.",
+      "Only the correct answer directly addresses and corrects the common misconception about who invented the light bulb, fulfilling the stated goal.",
   },
   {
     id: "ei-62",
@@ -1061,7 +1061,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A pairs the fact that Van Gogh sold just one painting in his life with the enormous value of his work today, directly fulfilling the stated goal.",
+      "Only the correct answer pairs the fact that Van Gogh sold just one painting in his life with the enormous value of his work today, directly fulfilling the stated goal.",
   },
   {
     id: "ei-63",
@@ -1081,7 +1081,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific innovation, the added caution position, that made Morgan's design new, directly meeting the stated goal.",
+      "Only the correct answer names the specific innovation, the added caution position, that made Morgan's design new, directly meeting the stated goal.",
   },
   {
     id: "ei-64",
@@ -1101,7 +1101,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A ties the cancer resistance directly to ongoing scientific study, matching the goal of highlighting a trait valuable to researchers.",
+      "Only the correct answer ties the cancer resistance directly to ongoing scientific study, matching the goal of highlighting a trait valuable to researchers.",
   },
   {
     id: "ei-65",
@@ -1121,7 +1121,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links the containers' interoperability to the inefficient system they replaced, directly explaining the efficiency gain.",
+      "Only the correct answer links the containers' interoperability to the inefficient system they replaced, directly explaining the efficiency gain.",
   },
   {
     id: "ei-66",
@@ -1141,7 +1141,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific travel time that demonstrates the Concorde's exceptional speed, matching the stated goal.",
+      "Only the correct answer states the specific travel time that demonstrates the Concorde's exceptional speed, matching the stated goal.",
   },
   {
     id: "ei-67",
@@ -1161,7 +1161,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A pairs the gear count with the device's predictive power to show just how mechanically advanced it was; C states the capability alone without the mechanical complexity, and the others are incidental details.",
+      "Only the correct answer pairs the gear count with the device's predictive power to show just how mechanically advanced it was; the choice stating only the predictive capability omits the mechanical complexity, and the shipwreck recovery and bronze material are incidental details.",
   },
   {
     id: "ei-68",
@@ -1181,7 +1181,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific reason, the nightshade connection, that explains European reluctance to eat tomatoes.",
+      "Only the correct answer gives the specific reason, the nightshade connection, that explains European reluctance to eat tomatoes.",
   },
   {
     id: "ei-69",
@@ -1201,7 +1201,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names both who found the scrolls and where, directly fulfilling the stated goal.",
+      "Only the correct answer names both who found the scrolls and where, directly fulfilling the stated goal.",
   },
   {
     id: "ei-70",
@@ -1221,7 +1221,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the defensive purpose of the glow rather than merely describing when it is visible, matching the stated goal.",
+      "Only the correct answer explains the defensive purpose of the glow rather than merely describing when it is visible, matching the stated goal.",
   },
   {
     id: "ei-71",
@@ -1241,7 +1241,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links the near-total deafness to the specific adaptation of sensing vibrations through the floor; C states the deafness alone and D states the adaptation alone, neither fully illustrating how he adapted.",
+      "Only the correct answer links the near-total deafness to the specific adaptation of sensing vibrations through the floor; the choices stating only his deafness or only the vibration-sensing each give half the picture, neither fully illustrating how he adapted.",
   },
   {
     id: "ei-72",
@@ -1261,7 +1261,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific lifespan figures, directly accomplishing the goal of emphasizing the shark's exceptional longevity.",
+      "Only the correct answer states the specific lifespan figures, directly accomplishing the goal of emphasizing the shark's exceptional longevity.",
   },
   {
     id: "ei-73",
@@ -1281,7 +1281,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific observation, burrs on his dog's fur, that inspired the invention, fulfilling the stated goal.",
+      "Only the correct answer names the specific observation, burrs on his dog's fur, that inspired the invention, fulfilling the stated goal.",
   },
   {
     id: "ei-74",
@@ -1301,7 +1301,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific reason, cheaper and more flexible trucks, that explains why the tube systems were abandoned.",
+      "Only the correct answer states the specific reason, cheaper and more flexible trucks, that explains why the tube systems were abandoned.",
   },
   {
     id: "ei-75",
@@ -1321,7 +1321,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the multigenerational relay to the specific mystery of route transmission; C states the relay without the mystery, and D states the mystery without explaining why it's puzzling in the first place.",
+      "Only the correct answer connects the multigenerational relay to the specific mystery of route transmission; the choice about the multigenerational trip states the relay without the mystery, and the choice about scientists' debate states the mystery without explaining why it's puzzling in the first place.",
   },
   {
     id: "ei-76",
@@ -1341,7 +1341,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the mosquito discovery to the sanitation measures that allowed construction to succeed, directly meeting the stated goal.",
+      "Only the correct answer connects the mosquito discovery to the sanitation measures that allowed construction to succeed, directly meeting the stated goal.",
   },
   {
     id: "ei-77",
@@ -1361,7 +1361,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the current limitation directly, that full organs cannot yet be bioprinted, matching the stated goal.",
+      "Only the correct answer states the current limitation directly, that full organs cannot yet be bioprinted, matching the stated goal.",
   },
   {
     id: "ei-78",
@@ -1381,7 +1381,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the cultural role of coffeehouses as gathering places, directly fulfilling the stated goal.",
+      "Only the correct answer describes the cultural role of coffeehouses as gathering places, directly fulfilling the stated goal.",
   },
   {
     id: "ei-79",
@@ -1401,7 +1401,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the comparable-conditions detail with both cities' outcomes to suggest mandatory participation, not population differences, drove the gap.",
+      "Only the correct answer combines the comparable-conditions detail with both cities' outcomes to suggest mandatory participation, not population differences, drove the gap.",
   },
   {
     id: "ei-80",
@@ -1421,7 +1421,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific effect on the United States, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific effect on the United States, directly fulfilling the stated goal.",
   },
   {
     id: "ei-81",
@@ -2130,7 +2130,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the extreme temperature range with survival in the vacuum of space, directly fulfilling the goal of emphasizing the range of conditions tardigrades endure.",
+      "Only the correct answer combines the extreme temperature range with survival in the vacuum of space, directly fulfilling the goal of emphasizing the range of conditions tardigrades endure.",
   },
   {
     id: "ei-131",
@@ -2150,7 +2150,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific technical reason — lower energy loss — that explains why AC became the long-distance standard.",
+      "Only the correct answer states the specific technical reason — lower energy loss — that explains why AC became the long-distance standard.",
   },
   {
     id: "ei-132",
@@ -2170,7 +2170,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the venom's anti-clotting effect to the specific outcome of incapacitating much larger prey, fulfilling the stated goal.",
+      "Only the correct answer connects the venom's anti-clotting effect to the specific outcome of incapacitating much larger prey, fulfilling the stated goal.",
   },
   {
     id: "ei-133",
@@ -2190,7 +2190,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific transport method, sledges and timber rails, that answers how the wheel-less builders moved the massive stones.",
+      "Only the correct answer names the specific transport method, sledges and timber rails, that answers how the wheel-less builders moved the massive stones.",
   },
   {
     id: "ei-134",
@@ -2210,7 +2210,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific reason for Lovelace's title — her published algorithm — directly fulfilling the stated goal.",
+      "Only the correct answer gives the specific reason for Lovelace's title — her published algorithm — directly fulfilling the stated goal.",
   },
   {
     id: "ei-135",
@@ -2230,7 +2230,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific corrective action, installing new optics in 1993, that fixed the original mirror flaw.",
+      "Only the correct answer describes the specific corrective action, installing new optics in 1993, that fixed the original mirror flaw.",
   },
   {
     id: "ei-136",
@@ -2250,7 +2250,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines accessibility, low danger, and the visitor count to fully explain why crowds came rather than evacuees fled; C and D each give only one piece of that explanation.",
+      "Only the correct answer combines accessibility, low danger, and the visitor count to fully explain why crowds came rather than evacuees fled; the choices about slow-moving lava or the accessible valley each give only one piece of that explanation.",
   },
   {
     id: "ei-137",
@@ -2270,7 +2270,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explicitly contrasts physical goods with the non-material things the Silk Road spread, directly meeting the stated goal.",
+      "Only the correct answer explicitly contrasts physical goods with the non-material things the Silk Road spread, directly meeting the stated goal.",
   },
   {
     id: "ei-138",
@@ -2290,7 +2290,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the unusual mirror-script method itself, directly fulfilling the stated goal.",
+      "Only the correct answer describes the unusual mirror-script method itself, directly fulfilling the stated goal.",
   },
   {
     id: "ei-139",
@@ -2310,7 +2310,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific unemployment figure, directly fulfilling the goal of describing the scale of joblessness.",
+      "Only the correct answer states the specific unemployment figure, directly fulfilling the goal of describing the scale of joblessness.",
   },
   {
     id: "ei-140",
@@ -2330,7 +2330,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific species that rebounded and ties that rebound to the human evacuation; D makes the same general claim without the concrete evidence, and B and C describe the evacuation or radiation without mentioning wildlife at all.",
+      "Only the correct answer names the specific species that rebounded and ties that rebound to the human evacuation; the choice saying wildlife has generally thrived makes the same claim without the concrete evidence, and the choices about the evacuation or lingering radiation don't mention wildlife at all.",
   },
   {
     id: "ei-141",
@@ -2350,7 +2350,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A lists multiple regenerated body parts, directly fulfilling the goal of emphasizing the range of axolotl regeneration.",
+      "Only the correct answer lists multiple regenerated body parts, directly fulfilling the goal of emphasizing the range of axolotl regeneration.",
   },
   {
     id: "ei-142",
@@ -2370,7 +2370,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the two-touch mechanism and connects it to avoiding false alarms, directly fulfilling the stated goal.",
+      "Only the correct answer explains the two-touch mechanism and connects it to avoiding false alarms, directly fulfilling the stated goal.",
   },
   {
     id: "ei-143",
@@ -2390,7 +2390,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific length of the network, directly fulfilling the goal of conveying its scale.",
+      "Only the correct answer states the specific length of the network, directly fulfilling the goal of conveying its scale.",
   },
   {
     id: "ei-144",
@@ -2410,7 +2410,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A frames the discovery as a chance observation of contamination, directly fulfilling the goal of emphasizing its accidental nature.",
+      "Only the correct answer frames the discovery as a chance observation of contamination, directly fulfilling the goal of emphasizing its accidental nature.",
   },
   {
     id: "ei-145",
@@ -2430,7 +2430,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the actual pressure figure—1,000 times sea-level pressure—that the goal asks to emphasize; the others describe the trench's depth or the need for submersibles without quantifying the pressure itself.",
+      "Only the correct answer states the actual pressure figure—1,000 times sea-level pressure—that the goal asks to emphasize; the others describe the trench's depth or the need for submersibles without quantifying the pressure itself.",
   },
   {
     id: "ei-146",
@@ -2450,7 +2450,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the specific observation to its scientific significance as early evidence of non-human tool use, fulfilling the stated goal.",
+      "Only the correct answer connects the specific observation to its scientific significance as early evidence of non-human tool use, fulfilling the stated goal.",
   },
   {
     id: "ei-147",
@@ -2470,7 +2470,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names both who made the discovery and the circumstances of how, directly fulfilling the stated goal.",
+      "Only the correct answer names both who made the discovery and the circumstances of how, directly fulfilling the stated goal.",
   },
   {
     id: "ei-148",
@@ -2490,7 +2490,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the full fog-harvesting mechanism, from collection to delivery; C and D each give only half of that mechanism, and B states the problem without any solution.",
+      "Only the correct answer explains the full fog-harvesting mechanism, from collection to delivery; the choices about the bumps or the grooves each give only half of that mechanism, and the choice about the desert's dryness states the problem without any solution.",
   },
   {
     id: "ei-149",
@@ -2510,7 +2510,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the short-code design for common letters to the resulting gain in transmission speed, directly explaining the efficiency.",
+      "Only the correct answer connects the short-code design for common letters to the resulting gain in transmission speed, directly explaining the efficiency.",
   },
   {
     id: "ei-150",
@@ -2530,7 +2530,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific 500-year gap between the Norse arrival and Columbus, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific 500-year gap between the Norse arrival and Columbus, directly fulfilling the stated goal.",
   },
   {
     id: "ei-151",
@@ -2550,7 +2550,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the photoreceptor count with the polarized-light ability, together showing just how unusual the mantis shrimp's vision is.",
+      "Only the correct answer combines the photoreceptor count with the polarized-light ability, together showing just how unusual the mantis shrimp's vision is.",
   },
   {
     id: "ei-152",
@@ -2570,7 +2570,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the popular misconception using the insurance-record evidence, matching the stated goal.",
+      "Only the correct answer directly names and corrects the popular misconception using the insurance-record evidence, matching the stated goal.",
   },
   {
     id: "ei-153",
@@ -2590,7 +2590,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific rate—more than 1,200 beats per minute—that the goal asks to emphasize; D makes the same general claim without a number, and B and C are true but unrelated to heart rate.",
+      "Only the correct answer gives the specific rate—more than 1,200 beats per minute—that the goal asks to emphasize; the choice saying the heart beats very quickly makes the same claim without a number, and the hovering and feeding facts are true but unrelated to heart rate.",
   },
   {
     id: "ei-154",
@@ -2610,7 +2610,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects Braille's own childhood vision loss to his motivation for developing the system, directly fulfilling the stated goal.",
+      "Only the correct answer connects Braille's own childhood vision loss to his motivation for developing the system, directly fulfilling the stated goal.",
   },
   {
     id: "ei-155",
@@ -2630,7 +2630,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A cites the trial result—an 80% emissions cut—that actually supports the claim; C mentions the intervention without evidence it works, and B and D explain the problem or the attempted fix without the outcome data.",
+      "Only the correct answer cites the trial result—an 80% emissions cut—that actually supports the claim; the choice that ranchers have begun adding seaweed mentions the intervention without evidence it works, and the choices about cattle methane explain the problem or the attempted fix without the outcome data.",
   },
   {
     id: "ei-156",
@@ -2650,7 +2650,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the precise-slope technique that allowed gravity alone to move the water, directly answering how pumps were avoided.",
+      "Only the correct answer explains the precise-slope technique that allowed gravity alone to move the water, directly answering how pumps were avoided.",
   },
   {
     id: "ei-157",
@@ -2670,7 +2670,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links the specific skill (fluency in seven languages) to its specific diplomatic payoff (no need for translators); C and D each state only one half of that cause-and-effect link.",
+      "Only the correct answer links the specific skill (fluency in seven languages) to its specific diplomatic payoff (no need for translators); the choices about her fluency alone or her translator-free negotiations alone each state only half of that cause-and-effect link.",
   },
   {
     id: "ei-158",
@@ -2690,7 +2690,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the comparable-conditions detail with both towns' cost changes to suggest ownership structure, not wind conditions, drove the gap.",
+      "Only the correct answer combines the comparable-conditions detail with both towns' cost changes to suggest ownership structure, not wind conditions, drove the gap.",
   },
   {
     id: "ei-159",
@@ -2710,7 +2710,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the matching tax-credit detail with both regions' adoption rates to suggest infrastructure, not incentives, explains the gap.",
+      "Only the correct answer combines the matching tax-credit detail with both regions' adoption rates to suggest infrastructure, not incentives, explains the gap.",
   },
   {
     id: "ei-160",
@@ -2730,7 +2730,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific defining pattern — a surviving queen and food supply alongside missing workers — rather than possible causes or unrelated facts.",
+      "Only the correct answer describes the specific defining pattern — a surviving queen and food supply alongside missing workers — rather than possible causes or unrelated facts.",
   },
   {
     id: "ei-161",
@@ -3184,7 +3184,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific first successful demonstration, Watson hearing words from another room, directly fulfilling the stated goal.",
+      "Only the correct answer describes the specific first successful demonstration, Watson hearing words from another room, directly fulfilling the stated goal.",
   },
   {
     id: "ei-193",
@@ -3204,7 +3204,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A contrasts the earlier fatal prognosis with the rapid improvement insulin produced, directly explaining the discovery's significance.",
+      "Only the correct answer contrasts the earlier fatal prognosis with the rapid improvement insulin produced, directly explaining the discovery's significance.",
   },
   {
     id: "ei-194",
@@ -3224,7 +3224,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific reason behind the bridge's color, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific reason behind the bridge's color, directly fulfilling the stated goal.",
   },
   {
     id: "ei-195",
@@ -3244,7 +3244,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific, vivid detail about the sun being blocked out, directly illustrating the storms' severity.",
+      "Only the correct answer gives the specific, vivid detail about the sun being blocked out, directly illustrating the storms' severity.",
   },
   {
     id: "ei-196",
@@ -3264,7 +3264,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the massive workforce with workers' ignorance of the project's purpose to show how compartmentalized it was; C and D each give only one half of that picture, and B is unrelated to secrecy.",
+      "Only the correct answer combines the massive workforce with workers' ignorance of the project's purpose to show how compartmentalized it was; the choices about the workforce size or the workers' ignorance each give only half of that picture, and the $2 billion cost is unrelated to secrecy.",
   },
   {
     id: "ei-197",
@@ -3284,7 +3284,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific reason, frequent jamming, that explains why the original design did not catch on.",
+      "Only the correct answer gives the specific reason, frequent jamming, that explains why the original design did not catch on.",
   },
   {
     id: "ei-198",
@@ -3304,7 +3304,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific speed figure and the falcon's status as fastest animal, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific speed figure and the falcon's status as fastest animal, directly fulfilling the stated goal.",
   },
   {
     id: "ei-199",
@@ -3324,7 +3324,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific voltage figure, directly fulfilling the goal of emphasizing the discharge's power.",
+      "Only the correct answer states the specific voltage figure, directly fulfilling the goal of emphasizing the discharge's power.",
   },
   {
     id: "ei-200",
@@ -3344,7 +3344,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the common misconception about camouflage, matching the stated goal.",
+      "Only the correct answer directly names and corrects the common misconception about camouflage, matching the stated goal.",
   },
   {
     id: "ei-201",
@@ -3364,7 +3364,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the heart's weight with the mile-away detectable heartbeat to fully illustrate its enormous size; C and D each give only one of those two supporting details, and B describes the whale's overall size, not its heart.",
+      "Only the correct answer combines the heart's weight with the mile-away detectable heartbeat to fully illustrate its enormous size; the choices about the heart's weight or its detectable heartbeat each give only one of those two details, and the choice calling blue whales the largest animals describes overall size, not the heart.",
   },
   {
     id: "ei-202",
@@ -3384,7 +3384,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the area destroyed with the number left homeless to state the fire's full scale; D gives only the death toll, and B and C describe a later consequence or the date rather than the scale of destruction.",
+      "Only the correct answer combines the area destroyed with the number left homeless to state the fire's full scale; the estimated 300 deaths is only the death toll, and the later building-code reforms and the 1871 date describe a consequence or a date rather than the scale of destruction.",
   },
   {
     id: "ei-203",
@@ -3404,7 +3404,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly addresses the unresolved mystery, the unfound wreckage, matching the stated goal.",
+      "Only the correct answer directly addresses the unresolved mystery, the unfound wreckage, matching the stated goal.",
   },
   {
     id: "ei-204",
@@ -3424,7 +3424,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific improvement, untethered breathing, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific improvement, untethered breathing, directly fulfilling the stated goal.",
   },
   {
     id: "ei-205",
@@ -3444,7 +3444,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception, contrasting chocolate's sweet reputation with its bitter origins.",
+      "Only the correct answer directly names and corrects the misconception, contrasting chocolate's sweet reputation with its bitter origins.",
   },
   {
     id: "ei-206",
@@ -3464,7 +3464,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the eyes' record size to their specific function to explain why they evolved that way; C and D each state only the size or only the function, and B is unrelated to the question of why the eyes evolved.",
+      "Only the correct answer connects the eyes' record size to their specific function to explain why they evolved that way; the choices about the eyes' record size alone or their light-detecting function alone each give only half, and the 2012 filming is unrelated to the question of why the eyes evolved.",
   },
   {
     id: "ei-207",
@@ -3484,7 +3484,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific comparison to a gunshot, directly fulfilling the goal of emphasizing the snap's loudness.",
+      "Only the correct answer states the specific comparison to a gunshot, directly fulfilling the goal of emphasizing the snap's loudness.",
   },
   {
     id: "ei-208",
@@ -3504,7 +3504,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific small numbers of athletes and nations, directly fulfilling the goal of emphasizing the first Games' modest scale.",
+      "Only the correct answer gives the specific small numbers of athletes and nations, directly fulfilling the goal of emphasizing the first Games' modest scale.",
   },
   {
     id: "ei-209",
@@ -3524,7 +3524,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the specific mechanism, the rotating ball regulating ink flow, that solved earlier pens' problems.",
+      "Only the correct answer explains the specific mechanism, the rotating ball regulating ink flow, that solved earlier pens' problems.",
   },
   {
     id: "ei-210",
@@ -3544,7 +3544,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the population loss to the labor shortage and the resulting wage leverage, directly explaining the economic shift.",
+      "Only the correct answer connects the population loss to the labor shortage and the resulting wage leverage, directly explaining the economic shift.",
   },
   {
     id: "ei-211",
@@ -3564,7 +3564,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific eight-hour exposure time, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific eight-hour exposure time, directly fulfilling the stated goal.",
   },
   {
     id: "ei-212",
@@ -3584,7 +3584,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links the treaty's chemical phase-out to the later recovery evidence, showing the action actually helped; C and D each give only the action or only the result, not the causal connection the claim requires.",
+      "Only the correct answer links the treaty's chemical phase-out to the later recovery evidence, showing the action actually helped; the choices about the 1987 phase-out alone or the 2020s recovery alone each give only the action or only the result, not the causal connection the claim requires.",
   },
   {
     id: "ei-213",
@@ -3604,7 +3604,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific accidental observation, the melted chocolate bar, that led to Spencer's discovery.",
+      "Only the correct answer describes the specific accidental observation, the melted chocolate bar, that led to Spencer's discovery.",
   },
   {
     id: "ei-214",
@@ -3624,7 +3624,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception about the hat's origin, matching the stated goal.",
+      "Only the correct answer directly names and corrects the misconception about the hat's origin, matching the stated goal.",
   },
   {
     id: "ei-215",
@@ -3644,7 +3644,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific timeframe, within months, showing how quickly X-rays reached practical hospital use.",
+      "Only the correct answer gives the specific timeframe, within months, showing how quickly X-rays reached practical hospital use.",
   },
   {
     id: "ei-216",
@@ -3664,7 +3664,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the comparable-workforce detail with both factories' injury-rate changes to suggest automation timing, not workforce size, drove the gap.",
+      "Only the correct answer combines the comparable-workforce detail with both factories' injury-rate changes to suggest automation timing, not workforce size, drove the gap.",
   },
   {
     id: "ei-217",
@@ -3684,7 +3684,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific cause, unstable soil, that explains why the tower began leaning during construction.",
+      "Only the correct answer states the specific cause, unstable soil, that explains why the tower began leaning during construction.",
   },
   {
     id: "ei-218",
@@ -3704,7 +3704,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the disaster's lasting consequence, the end of passenger airships, directly fulfilling the stated goal.",
+      "Only the correct answer states the disaster's lasting consequence, the end of passenger airships, directly fulfilling the stated goal.",
   },
   {
     id: "ei-219",
@@ -3724,7 +3724,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception, noting that local residents already knew of the site before Bingham's visit.",
+      "Only the correct answer directly names and corrects the misconception, noting that local residents already knew of the site before Bingham's visit.",
   },
   {
     id: "ei-220",
@@ -3744,7 +3744,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly states Salk's refusal to patent the vaccine, fulfilling the goal of emphasizing his decision not to profit from it.",
+      "Only the correct answer directly states Salk's refusal to patent the vaccine, fulfilling the goal of emphasizing his decision not to profit from it.",
   },
   {
     id: "ei-221",
@@ -3764,7 +3764,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the comparable-funding detail with both districts' score changes to suggest library access, not funding, drove the gap.",
+      "Only the correct answer combines the comparable-funding detail with both districts' score changes to suggest library access, not funding, drove the gap.",
   },
   {
     id: "ei-222",
@@ -3784,7 +3784,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception, noting that similar meals predated Montagu, matching the stated goal.",
+      "Only the correct answer directly names and corrects the misconception, noting that similar meals predated Montagu, matching the stated goal.",
   },
   {
     id: "ei-223",
@@ -3804,7 +3804,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific jam-reducing rationale behind QWERTY's original design, directly fulfilling the stated goal.",
+      "Only the correct answer states the specific jam-reducing rationale behind QWERTY's original design, directly fulfilling the stated goal.",
   },
   {
     id: "ei-224",
@@ -3838,7 +3838,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific source, a cowpox sore, that the prompt asks for, directly fulfilling the stated goal.",
+      "Only the correct answer names the specific source, a cowpox sore, that the prompt asks for, directly fulfilling the stated goal.",
   },
   {
     id: "ei-226",
@@ -3872,7 +3872,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the dam's construction to the economic hardship of the Great Depression, fulfilling the stated goal.",
+      "Only the correct answer connects the dam's construction to the economic hardship of the Great Depression, fulfilling the stated goal.",
   },
   {
     id: "ei-228",
@@ -3906,7 +3906,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception that Pluto remains officially classified as a planet.",
+      "Only the correct answer directly names and corrects the misconception that Pluto remains officially classified as a planet.",
   },
   {
     id: "ei-230",
@@ -3940,7 +3940,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly states the nearly 50-year gap between prediction and confirmation, fulfilling the stated goal.",
+      "Only the correct answer directly states the nearly 50-year gap between prediction and confirmation, fulfilling the stated goal.",
   },
   {
     id: "ei-232",
@@ -3974,7 +3974,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explicitly names Franklin and ties her X-ray images to the model's creation, directly correcting the misconception; C omits her name and D omits her specific contribution, so neither fully corrects it.",
+      "Only the correct answer explicitly names Franklin and ties her X-ray images to the model's creation, directly correcting the misconception; the choice about the model relying on X-ray images omits her name and the choice about her going uncredited omits her specific contribution, so neither fully corrects it.",
   },
   {
     id: "ei-234",
@@ -4008,7 +4008,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific strength-to-weight comparison that fulfills the goal of emphasizing Kevlar's strength.",
+      "Only the correct answer states the specific strength-to-weight comparison that fulfills the goal of emphasizing Kevlar's strength.",
   },
   {
     id: "ei-236",
@@ -4042,7 +4042,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific distance the sound traveled, directly fulfilling the goal of emphasizing its reach.",
+      "Only the correct answer states the specific distance the sound traveled, directly fulfilling the goal of emphasizing its reach.",
   },
   {
     id: "ei-238",
@@ -4076,7 +4076,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly corrects the misconception by naming Newcomen's earlier design and Watt's later improvement.",
+      "Only the correct answer directly corrects the misconception by naming Newcomen's earlier design and Watt's later improvement.",
   },
   {
     id: "ei-240",
@@ -4110,7 +4110,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific length figure that fulfills the goal of emphasizing the railway's exceptional scale.",
+      "Only the correct answer gives the specific length figure that fulfills the goal of emphasizing the railway's exceptional scale.",
   },
   {
     id: "ei-242",
@@ -4144,7 +4144,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific rope-cutting demonstration, directly fulfilling the stated goal.",
+      "Only the correct answer describes the specific rope-cutting demonstration, directly fulfilling the stated goal.",
   },
   {
     id: "ei-244",
@@ -4178,7 +4178,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific scale of forest destruction, fulfilling the goal of emphasizing the eruption's damage.",
+      "Only the correct answer states the specific scale of forest destruction, fulfilling the goal of emphasizing the eruption's damage.",
   },
   {
     id: "ei-246",
@@ -4212,7 +4212,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception about the compass's original purpose.",
+      "Only the correct answer directly names and corrects the misconception about the compass's original purpose.",
   },
   {
     id: "ei-248",
@@ -4246,7 +4246,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects Singer's commercial success to Howe's earlier patent to explain the cause of their rivalry; D merely restates that they were rivals without explaining why, and B and C each describe one inventor without connecting them.",
+      "Only the correct answer connects Singer's commercial success to Howe's earlier patent to explain the cause of their rivalry; the lawsuit choice merely states that they were rivals without explaining why, and the choices about Howe's 1846 patent or Singer's commercial company each describe one inventor without connecting them.",
   },
   {
     id: "ei-250",
@@ -4280,7 +4280,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the observation to its broader significance, fulfilling the goal of explaining its importance.",
+      "Only the correct answer connects the observation to its broader significance, fulfilling the goal of explaining its importance.",
   },
   {
     id: "ei-252",
@@ -4314,7 +4314,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception that Troy was purely legendary.",
+      "Only the correct answer directly names and corrects the misconception that Troy was purely legendary.",
   },
   {
     id: "ei-254",
@@ -4348,7 +4348,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links the wartime cause, a disrupted supply, to the specific effect, rapid scale-up, fulfilling the stated goal.",
+      "Only the correct answer links the wartime cause, a disrupted supply, to the specific effect, rapid scale-up, fulfilling the stated goal.",
   },
   {
     id: "ei-256",
@@ -4382,7 +4382,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific cost reduction figure, fulfilling the goal of emphasizing its economic impact.",
+      "Only the correct answer states the specific cost reduction figure, fulfilling the goal of emphasizing its economic impact.",
   },
   {
     id: "ei-258",
@@ -4416,7 +4416,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific first human test, directly fulfilling the stated goal.",
+      "Only the correct answer describes the specific first human test, directly fulfilling the stated goal.",
   },
   {
     id: "ei-260",
@@ -4450,7 +4450,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific innovation, copper rivets, that made the design distinctive, fulfilling the stated goal.",
+      "Only the correct answer names the specific innovation, copper rivets, that made the design distinctive, fulfilling the stated goal.",
   },
   {
     id: "ei-262",
@@ -4484,7 +4484,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A identifies the specific causes of the thylacine's mainland extinction, fulfilling the stated goal.",
+      "Only the correct answer identifies the specific causes of the thylacine's mainland extinction, fulfilling the stated goal.",
   },
   {
     id: "ei-264",
@@ -4518,7 +4518,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the specific reason for the rotation, the higher energy cost of leading, fulfilling the stated goal.",
+      "Only the correct answer explains the specific reason for the rotation, the higher energy cost of leading, fulfilling the stated goal.",
   },
   {
     id: "ei-266",
@@ -4552,7 +4552,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific Greek and French roots and their meaning, directly explaining the word's origin; D mentions that he coined a word without saying what it meant, and B and C are real but irrelevant to etymology.",
+      "Only the correct answer gives the specific Greek and French roots and their meaning, directly explaining the word's origin; the choice saying he coined a new word doesn't say what it meant, and the 1783 tower jump and the design predating aircraft are real but irrelevant to etymology.",
   },
   {
     id: "ei-268",
@@ -4586,7 +4586,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly states the temple's exceptional scale, fulfilling the stated goal.",
+      "Only the correct answer directly states the temple's exceptional scale, fulfilling the stated goal.",
   },
   {
     id: "ei-270",
@@ -4620,7 +4620,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific improvement, a smoother, longer-lasting chew, over the earlier resin-based gum, fulfilling the stated goal.",
+      "Only the correct answer states the specific improvement, a smoother, longer-lasting chew, over the earlier resin-based gum, fulfilling the stated goal.",
   },
   {
     id: "ei-272",
@@ -4654,7 +4654,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the gin's speed to the specific social consequence of deepened reliance on enslaved labor; D states only the production-expansion half of that consequence, and B and C describe the invention or its speed without any social effect.",
+      "Only the correct answer connects the gin's speed to the specific social consequence of deepened reliance on enslaved labor; the choice about owners expanding production states only half of that consequence, and the 1794 patent and the gin's speed describe the invention without any social effect.",
   },
   {
     id: "ei-274",
@@ -4688,7 +4688,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly explains the mechanism, magnetic field detection, that hatchlings use to navigate, fulfilling the stated goal.",
+      "Only the correct answer directly explains the mechanism, magnetic field detection, that hatchlings use to navigate, fulfilling the stated goal.",
   },
   {
     id: "ei-276",
@@ -4722,7 +4722,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific observation that inspired the invention, fulfilling the stated goal.",
+      "Only the correct answer states the specific observation that inspired the invention, fulfilling the stated goal.",
   },
   {
     id: "ei-278",
@@ -4756,7 +4756,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific, surprising first use of the invention, as an amusement ride, fulfilling the stated goal.",
+      "Only the correct answer describes the specific, surprising first use of the invention, as an amusement ride, fulfilling the stated goal.",
   },
   {
     id: "ei-280",
@@ -4790,7 +4790,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A sets the decades of division against the comparatively fast collapse to emphasize the contrast; C and D each state one half of that contrast, and B describes only the wall's construction.",
+      "Only the correct answer sets the decades of division against the comparatively fast collapse to emphasize the contrast; the choices about the 1989 fall or the three decades of division each state one half of that contrast, and the 1961 construction date describes only the wall's origin.",
   },
   {
     id: "ei-282",
@@ -4824,7 +4824,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the accidental circumstances of the discovery, fulfilling the stated goal.",
+      "Only the correct answer explains the accidental circumstances of the discovery, fulfilling the stated goal.",
   },
   {
     id: "ei-284",
@@ -4858,7 +4858,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the misconception that the tusk is a horn.",
+      "Only the correct answer directly names and corrects the misconception that the tusk is a horn.",
   },
   {
     id: "ei-286",
@@ -4878,7 +4878,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the actual distance—more than 12,000 miles—that quantifies the migration's extraordinary length; D makes the same claim without a number, and B and C describe the migration's route or calf-rearing without addressing its length.",
+      "Only the correct answer states the actual distance—more than 12,000 miles—that quantifies the migration's extraordinary length; the choice calling it among the longest of any mammal makes the same claim without a number, and the choices about the Arctic-to-Mexico route or calf-nursing lagoons describe the route or calf-rearing without addressing its length.",
   },
   {
     id: "ei-287",
@@ -5332,7 +5332,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific distance and direction information the dance conveys, matching the stated goal.",
+      "Only the correct answer states the specific distance and direction information the dance conveys, matching the stated goal.",
   },
   {
     id: "ei-319",
@@ -5352,7 +5352,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the rapid spread of the press across hundreds of cities, directly fulfilling the goal.",
+      "Only the correct answer states the rapid spread of the press across hundreds of cities, directly fulfilling the goal.",
   },
   {
     id: "ei-320",
@@ -5372,7 +5372,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines the speed of camouflage with the colorblindness detail, matching the stated goal.",
+      "Only the correct answer combines the speed of camouflage with the colorblindness detail, matching the stated goal.",
   },
   {
     id: "ei-321",
@@ -5392,7 +5392,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states both the unauthorized sharing of her data and its use, matching the stated goal.",
+      "Only the correct answer states both the unauthorized sharing of her data and its use, matching the stated goal.",
   },
   {
     id: "ei-322",
@@ -5412,7 +5412,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific heating statistic requested by the stated goal.",
+      "Only the correct answer gives the specific heating statistic requested by the stated goal.",
   },
   {
     id: "ei-323",
@@ -5432,7 +5432,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the causal mechanism, the self-healing volcanic ash, that explains Roman concrete's durability.",
+      "Only the correct answer gives the causal mechanism, the self-healing volcanic ash, that explains Roman concrete's durability.",
   },
   {
     id: "ei-324",
@@ -5452,7 +5452,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes both the degrading of the male's eyes and organs and his reliance on the female's bloodstream, capturing the full extremity of the transformation; C states only the attachment, and D states only the survival mechanism without the degeneration.",
+      "Only the correct answer describes both the degrading of the male's eyes and organs and his reliance on the female's bloodstream, capturing the full extremity of the transformation; the choice about males attaching permanently states only the attachment, and the choice about drawing nutrients from the female's bloodstream gives the survival mechanism without the degeneration.",
   },
   {
     id: "ei-325",
@@ -5472,7 +5472,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific daily growth figure that directly supports the goal.",
+      "Only the correct answer states the specific daily growth figure that directly supports the goal.",
   },
   {
     id: "ei-326",
@@ -5492,7 +5492,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A pairs the skeletal evidence with the 150-pound pull it resulted from to show the lasting physical toll; D states the strain alone without the evidence of damage, and B and C are unrelated to the archers' bodies.",
+      "Only the correct answer pairs the skeletal evidence with the 150-pound pull it resulted from to show the lasting physical toll; the 150-pound-pull choice states the strain without the evidence of damage, and the firing rate and the 1415 date are unrelated to the archers' bodies.",
   },
   {
     id: "ei-327",
@@ -5512,7 +5512,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the natural observation, burrs clinging to fur, that inspired the invention.",
+      "Only the correct answer describes the natural observation, burrs clinging to fur, that inspired the invention.",
   },
   {
     id: "ei-328",
@@ -5532,7 +5532,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states that the height varies and explains why, matching the stated goal.",
+      "Only the correct answer states that the height varies and explains why, matching the stated goal.",
   },
   {
     id: "ei-329",
@@ -5552,7 +5552,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the forced surrender of scrolls, the specific acquisition method named in the goal.",
+      "Only the correct answer describes the forced surrender of scrolls, the specific acquisition method named in the goal.",
   },
   {
     id: "ei-330",
@@ -5572,7 +5572,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A traces the full chain from warm water to algae expulsion to the risk of death, as the mechanism goal requires; B, C, and D each name only one link in that chain.",
+      "Only the correct answer traces the full chain from warm water to algae expulsion to the risk of death, as the mechanism goal requires; the choices about algae giving coral its color, bleached coral turning white, or coral dying without nutrients each name only one link in that chain.",
   },
   {
     id: "ei-331",
@@ -5592,7 +5592,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the striking 3,000-year preservation figure that directly fulfills the goal.",
+      "Only the correct answer states the striking 3,000-year preservation figure that directly fulfills the goal.",
   },
   {
     id: "ei-332",
@@ -5612,7 +5612,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes a concrete physical adaptation Beethoven used to continue composing, matching the goal.",
+      "Only the correct answer describes a concrete physical adaptation Beethoven used to continue composing, matching the goal.",
   },
   {
     id: "ei-333",
@@ -5632,7 +5632,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific 800,000-year span that fulfills the stated goal.",
+      "Only the correct answer gives the specific 800,000-year span that fulfills the stated goal.",
   },
   {
     id: "ei-334",
@@ -5652,7 +5652,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific comparison—many times a worker's annual salary—that shows how disconnected prices were from practical value; D makes the same claim without that comparison, and B and C describe speculation or the collapse rather than the price disconnect itself.",
+      "Only the correct answer gives the specific comparison—many times a worker's annual salary—that shows how disconnected prices were from practical value; the choice saying prices rose to very high levels makes the same claim without that comparison, and the futures contracts and the 1637 collapse describe speculation or the crash rather than the price disconnect itself.",
   },
   {
     id: "ei-335",
@@ -5672,7 +5672,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly names and corrects the specific misconception stated in the goal.",
+      "Only the correct answer directly names and corrects the specific misconception stated in the goal.",
   },
   {
     id: "ei-336",
@@ -5692,7 +5692,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the complete sensory shutdown and total reliance on electroreception, matching the goal.",
+      "Only the correct answer states the complete sensory shutdown and total reliance on electroreception, matching the goal.",
   },
   {
     id: "ei-337",
@@ -5712,7 +5712,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A frames the discovery as accidental contamination, matching the stated goal.",
+      "Only the correct answer frames the discovery as accidental contamination, matching the stated goal.",
   },
   {
     id: "ei-338",
@@ -5732,7 +5732,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the extraordinary timescale outlasting Earth, directly matching the stated goal.",
+      "Only the correct answer states the extraordinary timescale outlasting Earth, directly matching the stated goal.",
   },
   {
     id: "ei-339",
@@ -5752,7 +5752,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly states the persistence of the design, matching the stated goal.",
+      "Only the correct answer directly states the persistence of the design, matching the stated goal.",
   },
   {
     id: "ei-340",
@@ -5772,7 +5772,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the decades-long dormancy period that fulfills the stated goal.",
+      "Only the correct answer states the decades-long dormancy period that fulfills the stated goal.",
   },
   {
     id: "ei-341",
@@ -5792,7 +5792,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the roads' survival across nearly 2,000 years, directly fulfilling the goal.",
+      "Only the correct answer states the roads' survival across nearly 2,000 years, directly fulfilling the goal.",
   },
   {
     id: "ei-342",
@@ -5812,7 +5812,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A makes the explicit historical comparison showing how far ahead of its time the device was.",
+      "Only the correct answer makes the explicit historical comparison showing how far ahead of its time the device was.",
   },
   {
     id: "ei-343",
@@ -5832,7 +5832,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific detection distance that fulfills the stated goal.",
+      "Only the correct answer states the specific detection distance that fulfills the stated goal.",
   },
   {
     id: "ei-344",
@@ -5852,7 +5852,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A credits Indian mathematicians specifically with defining zero as a true number, matching the goal.",
+      "Only the correct answer credits Indian mathematicians specifically with defining zero as a true number, matching the goal.",
   },
   {
     id: "ei-345",
@@ -5872,7 +5872,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the unexplained navigation puzzle across generations, matching the stated goal.",
+      "Only the correct answer states the unexplained navigation puzzle across generations, matching the stated goal.",
   },
   {
     id: "ei-346",
@@ -5892,7 +5892,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the actual pressure figure the goal asks to emphasize; the others describe the trench's depth or the rarity of descents without quantifying the pressure itself.",
+      "Only the correct answer states the actual pressure figure the goal asks to emphasize; the others describe the trench's depth or the rarity of descents without quantifying the pressure itself.",
   },
   {
     id: "ei-347",
@@ -5912,7 +5912,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the reason, the hours-long exposure, that explains why no moving people appear in the image.",
+      "Only the correct answer gives the reason, the hours-long exposure, that explains why no moving people appear in the image.",
   },
   {
     id: "ei-348",
@@ -5932,7 +5932,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the material explanation, clay's durability, for why so many tablets have survived.",
+      "Only the correct answer gives the material explanation, clay's durability, for why so many tablets have survived.",
   },
   {
     id: "ei-349",
@@ -6386,7 +6386,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the lactic acid byproduct that directly explains the tangy flavor; the others describe the starter or its history without explaining the taste.",
+      "Only the correct answer names the lactic acid byproduct that directly explains the tangy flavor; the others describe the starter or its history without explaining the taste.",
   },
   {
     id: "ei-381",
@@ -6406,7 +6406,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A specifically links the dance's duration to communicating distance, which is the stated goal.",
+      "Only the correct answer specifically links the dance's duration to communicating distance, which is the stated goal.",
   },
   {
     id: "ei-382",
@@ -6426,7 +6426,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A identifies which gases produce which colors, directly fulfilling the stated goal.",
+      "Only the correct answer identifies which gases produce which colors, directly fulfilling the stated goal.",
   },
   {
     id: "ei-383",
@@ -6446,7 +6446,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A combines both the fire-resistant and insulating properties of the bark to explain the trees' survival.",
+      "Only the correct answer combines both the fire-resistant and insulating properties of the bark to explain the trees' survival.",
   },
   {
     id: "ei-384",
@@ -6466,7 +6466,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly contrasts the zipper's one-motion closure with the slower, one-at-a-time fastening it replaced.",
+      "Only the correct answer directly contrasts the zipper's one-motion closure with the slower, one-at-a-time fastening it replaced.",
   },
   {
     id: "ei-385",
@@ -6486,7 +6486,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the mechanism, echo analysis, that lets bats hunt without relying on sight.",
+      "Only the correct answer explains the mechanism, echo analysis, that lets bats hunt without relying on sight.",
   },
   {
     id: "ei-386",
@@ -6506,7 +6506,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A highlights the unplanned contamination and chance observation that make the discovery accidental.",
+      "Only the correct answer highlights the unplanned contamination and chance observation that make the discovery accidental.",
   },
   {
     id: "ei-387",
@@ -6526,7 +6526,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific extreme distance and its record-setting status, matching the goal.",
+      "Only the correct answer states the specific extreme distance and its record-setting status, matching the goal.",
   },
   {
     id: "ei-388",
@@ -6546,7 +6546,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific efficiency gains, time and cost, that fulfill the goal of emphasizing improved efficiency.",
+      "Only the correct answer states the specific efficiency gains, time and cost, that fulfill the goal of emphasizing improved efficiency.",
   },
   {
     id: "ei-389",
@@ -6566,7 +6566,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links the press's output and falling prices directly to the rise in literacy, fulfilling the stated goal.",
+      "Only the correct answer links the press's output and falling prices directly to the rise in literacy, fulfilling the stated goal.",
   },
   {
     id: "ei-390",
@@ -6586,7 +6586,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the two reasons, variable snow depth and tectonic shifts, that explain the measurement differences; choice C merely restates the discrepancy without explaining it.",
+      "Only the correct answer gives the two reasons, variable snow depth and tectonic shifts, that explain the measurement differences; the choice listing heights from about 29,000 to just over 29,035 feet merely restates the discrepancy without explaining it.",
   },
   {
     id: "ei-391",
@@ -6606,7 +6606,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the trapped-air mechanism that lets scientists study the ancient atmosphere, directly fulfilling the goal.",
+      "Only the correct answer explains the trapped-air mechanism that lets scientists study the ancient atmosphere, directly fulfilling the goal.",
   },
   {
     id: "ei-392",
@@ -6626,7 +6626,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The goal asks for a benefit beyond balance; only choice A names the heat-conservation benefit, while the other relevant-sounding choices concern balance, not warmth.",
+      "The goal asks for a benefit beyond balance; only the correct answer names the heat-conservation benefit, while the other relevant-sounding choices concern balance, not warmth.",
   },
   {
     id: "ei-393",
@@ -6646,7 +6646,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the comparative method, using known Greek to decode unknown hieroglyphs, that fulfills the goal.",
+      "Only the correct answer explains the comparative method, using known Greek to decode unknown hieroglyphs, that fulfills the goal.",
   },
   {
     id: "ei-394",
@@ -6666,7 +6666,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A ties the paint to a specific functional benefit, heat radiation, rather than simply restating that the paint was applied.",
+      "Only the correct answer ties the paint to a specific functional benefit, heat radiation, rather than simply restating that the paint was applied.",
   },
   {
     id: "ei-395",
@@ -6686,7 +6686,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names both contributing factors, local subsidence and global sea-level rise, as the goal requires.",
+      "Only the correct answer names both contributing factors, local subsidence and global sea-level rise, as the goal requires.",
   },
   {
     id: "ei-396",
@@ -6706,7 +6706,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explicitly states that no confirmed explanation exists, matching the goal of emphasizing scientific uncertainty.",
+      "Only the correct answer explicitly states that no confirmed explanation exists, matching the goal of emphasizing scientific uncertainty.",
   },
   {
     id: "ei-397",
@@ -6726,7 +6726,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A describes the specific nutrient-sharing behavior that helps a struggling neighboring tree, as the goal requires.",
+      "Only the correct answer describes the specific nutrient-sharing behavior that helps a struggling neighboring tree, as the goal requires.",
   },
   {
     id: "ei-398",
@@ -6746,7 +6746,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly states that the lean was accidental, correcting the misconception named in the goal.",
+      "Only the correct answer directly states that the lean was accidental, correcting the misconception named in the goal.",
   },
   {
     id: "ei-399",
@@ -6766,7 +6766,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly contrasts the two engineering approaches, slope-based versus pressurized, as the goal requires.",
+      "Only the correct answer directly contrasts the two engineering approaches, slope-based versus pressurized, as the goal requires.",
   },
   {
     id: "ei-400",
@@ -6786,7 +6786,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A ties the independent wing-muscle control to the specific maneuvers, explaining the mechanism the goal asks for.",
+      "Only the correct answer ties the independent wing-muscle control to the specific maneuvers, explaining the mechanism the goal asks for.",
   },
   {
     id: "ei-401",
@@ -6806,7 +6806,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explains the causal link between dry air and clearer observations, matching the goal of explaining why astronomers chose the site.",
+      "Only the correct answer explains the causal link between dry air and clearer observations, matching the goal of explaining why astronomers chose the site.",
   },
   {
     id: "ei-402",
@@ -6826,7 +6826,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explicitly states the correct fact in contrast to the misconception, fulfilling the stated goal.",
+      "Only the correct answer explicitly states the correct fact in contrast to the misconception, fulfilling the stated goal.",
   },
   {
     id: "ei-403",
@@ -6846,7 +6846,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific date showing Korean movable type predated Gutenberg's press, directly challenging the assumption named in the goal.",
+      "Only the correct answer gives the specific date showing Korean movable type predated Gutenberg's press, directly challenging the assumption named in the goal.",
   },
   {
     id: "ei-404",
@@ -6866,7 +6866,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A states the specific route and the exact distance saved; the last choice describes the old route without the quantified comparison the goal requires.",
+      "Only the correct answer states the specific route and the exact distance saved; the choice about ships once sailing around South America describes the old route without the quantified comparison the goal requires.",
   },
   {
     id: "ei-405",
@@ -6886,7 +6886,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names the specific age threshold beyond which the method becomes unreliable, directly stating a limitation; the others explain how carbon dating works or cite a related fact without identifying where it breaks down.",
+      "Only the correct answer names the specific age threshold beyond which the method becomes unreliable, directly stating a limitation; the others explain how carbon dating works or cite a related fact without identifying where it breaks down.",
   },
   {
     id: "ei-406",
@@ -6906,7 +6906,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explicitly pairs the forgettable content with the system's lasting significance, matching the specific contrast the goal asks for.",
+      "Only the correct answer explicitly pairs the forgettable content with the system's lasting significance, matching the specific contrast the goal asks for.",
   },
   {
     id: "ei-407",
@@ -6926,7 +6926,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A names both painters' contrasting techniques side by side, fulfilling the specific stylistic-contrast goal.",
+      "Only the correct answer names both painters' contrasting techniques side by side, fulfilling the specific stylistic-contrast goal.",
   },
   {
     id: "ei-408",
@@ -6946,7 +6946,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A connects the buttresses' thrust-transferring function to the specific problem of walls weakened by large windows; C states the problem alone, D states the mechanism too generally, and B just describes what buttresses are.",
+      "Only the correct answer connects the buttresses' thrust-transferring function to the specific problem of walls weakened by large windows; the choice about tall walls with large windows states the problem alone, the choice about transferring some outward thrust states the mechanism too generally, and the choice about external stone arches just describes what buttresses are.",
   },
   {
     id: "ei-409",
@@ -6966,7 +6966,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A explicitly juxtaposes the 'dead' name with the lively tourist appeal, capturing the irony the goal asks for.",
+      "Only the correct answer explicitly juxtaposes the 'dead' name with the lively tourist appeal, capturing the irony the goal asks for.",
   },
   {
     id: "ei-410",
@@ -6986,7 +6986,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A gives the specific self-healing mechanism, and contrasts it with modern concrete, explaining the longevity the goal asks about.",
+      "Only the correct answer gives the specific self-healing mechanism, and contrasts it with modern concrete, explaining the longevity the goal asks about.",
   }
 );
 
@@ -10439,5 +10439,1505 @@ QUESTIONS.push(
     choices: ["Therefore,","For example,","Even so,","Likewise,"],
     answer: 2,
     explanation: "Continued readership contrasts with the critics' judgment.",
+  },
+  {
+    id: "ei-658",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Elephants have an excellent memory. ______ they can recognize the calls of dozens of other elephants years after last hearing them.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "For instance,", "Regardless,", "On the other hand,"],
+    answer: 1,
+    explanation: "Recognizing calls years later is a specific example of an excellent memory. \"For instance\" introduces it.",
+  },
+  {
+    id: "ei-659",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Ancient Polynesian navigators crossed thousands of miles of open ocean without instruments. They read the positions of stars, the patterns of ocean swells, and the flight paths of birds. ______ they could locate islands far beyond the horizon.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In contrast,", "Despite this,", "Instead,", "In this way,"],
+    answer: 3,
+    explanation: "The second sentence explains how they navigated, and the third states what those methods allowed. \"In this way\" links the methods to the outcome.",
+  },
+  {
+    id: "ei-660",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Lichens can survive in some of the harshest places on Earth, from frozen Antarctic rocks to scorching deserts. ______ some lichens have even survived exposure to the vacuum of space during experiments on the International Space Station.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Remarkably,", "Instead,", "Otherwise,", "However,"],
+    answer: 0,
+    explanation: "Surviving in space is an even more extreme example that builds on the first sentence. \"Remarkably\" signals that striking addition.",
+  },
+  {
+    id: "ei-661",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Mae Jemison was born in Decatur, Alabama, in 1956.\n• She trained as a doctor and served in the Peace Corps.\n• In 1992, she flew aboard the space shuttle Endeavour.\n• She was the first African American woman to travel to space.",
+    prompt: "The student wants to state Mae Jemison's historic achievement. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["In 1992, Mae Jemison became the first African American woman to travel to space.", "In 1992, the space shuttle Endeavour flew with Mae Jemison aboard.", "Before flying in space, Mae Jemison served in the Peace Corps as a doctor.", "Mae Jemison, born in Decatur, Alabama, in 1956, later trained as a doctor."],
+    answer: 0,
+    explanation: "The goal is to state her historic achievement. Only the sentence about being the first African American woman in space does so.",
+  },
+  {
+    id: "ei-662",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Maria Tallchief was an Osage ballet dancer.\n• She became America's first major prima ballerina.\n• She danced with the New York City Ballet from 1947 to 1965.\n• She was known for her role in The Firebird.",
+    prompt: "The student wants to introduce Maria Tallchief to an audience unfamiliar with her. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Maria Tallchief danced with the New York City Ballet from 1947 to 1965.", "The Firebird was one of the ballets in which Maria Tallchief performed.", "Maria Tallchief, an Osage dancer, became America's first major prima ballerina.", "Maria Tallchief was known for her role in the ballet The Firebird."],
+    answer: 2,
+    explanation: "An introduction should say who she is and why she matters. Only the sentence identifying her as an Osage dancer and America's first major prima ballerina does that.",
+  },
+  {
+    id: "ei-663",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The chef's first restaurant closed after only a year. ______ she opened a second restaurant that became one of the most popular in the city.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Similarly,", "Undeterred,", "Consequently,", "In summary,"],
+    answer: 1,
+    explanation: "Opening a second restaurant after a failure shows persistence. \"Undeterred\" captures that. The success didn't result from the closure, so \"consequently\" doesn't fit.",
+  },
+  {
+    id: "ei-664",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The poet Gwendolyn Brooks often wrote about everyday life in Chicago's South Side. Her collection A Street in Bronzeville, ______ portrays the hopes and struggles of the neighborhood's residents.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["however,", "in contrast,", "regardless,", "for example,"],
+    answer: 3,
+    explanation: "The collection is an example of Brooks's writing about the South Side. \"For example\" introduces it.",
+  },
+  {
+    id: "ei-665",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Kudzu is a vine native to Japan and China.\n• It was introduced to the United States in 1876.\n• In the 1930s, farmers were paid to plant it to prevent soil erosion.\n• It now covers millions of acres in the southeastern U.S. and is considered invasive.",
+    prompt: "The student wants to show that a solution to one problem created another. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Kudzu, a vine native to Japan and China, was introduced to the United States in 1876.", "In the 1930s, farmers in the United States were paid to plant kudzu on their land.", "Planted in the 1930s to stop erosion, kudzu now invades millions of southern acres.", "Kudzu, a vine from Japan and China, is now considered invasive in the United States."],
+    answer: 2,
+    explanation: "The goal requires both the original purpose (preventing erosion) and the new problem (invasion). Only one choice includes both.",
+  },
+  {
+    id: "ei-666",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Silk Road was a network of trade routes connecting China and the Mediterranean.\n• Merchants traded silk, spices, and precious metals.\n• Ideas, religions, and technologies such as papermaking also spread along the routes.\n• The routes were in use from about 130 BCE to 1453 CE.",
+    prompt: "The student wants to emphasize that the Silk Road spread more than goods. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Besides silk and spices, the Silk Road carried ideas, religions, and papermaking.", "Merchants on the Silk Road traded silk, spices, and precious metals across Asia.", "The Silk Road was a network of trade routes connecting China and the Mediterranean.", "The Silk Road was in use for about 1,500 years, from 130 BCE to 1453 CE."],
+    answer: 0,
+    explanation: "The goal is to show the Silk Road spread more than goods. Only the choice that mentions ideas, religions, and technologies does so.",
+  },
+  {
+    id: "ei-667",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Some scientists think the first dogs were domesticated in Europe. ______ other researchers point to genetic evidence suggesting that dogs were first domesticated in East Asia.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Therefore,", "Similarly,", "For instance,", "Meanwhile,"],
+    answer: 3,
+    explanation: "The text presents a competing view held by different researchers. \"Meanwhile\" introduces that alternative position; \"therefore\" implies a result, \"similarly\" implies agreement, and \"for instance\" implies an example.",
+  },
+  {
+    id: "ei-668",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Library of Alexandria was founded in Egypt in the 3rd century BCE.\n• It may have held hundreds of thousands of scrolls.\n• Scholars from across the Mediterranean studied there.\n• Its decline took place gradually over several centuries.",
+    prompt: "The student wants to emphasize the size of the Library of Alexandria's collection. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Library of Alexandria was founded in the 3rd century BCE.", "The Library of Alexandria may have held hundreds of thousands of scrolls.", "The Library of Alexandria declined gradually over several centuries.", "Scholars from across the Mediterranean studied at the Library of Alexandria."],
+    answer: 1,
+    explanation: "Only the sentence about the number of scrolls addresses the size of the collection.",
+  },
+  {
+    id: "ei-669",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Great Wall of China is a series of fortifications built over many centuries.\n• Its total length, including all branches, is about 13,000 miles.\n• Construction began as early as the 7th century BCE.\n• Much of the existing wall was built during the Ming dynasty (1368–1644).",
+    prompt: "The student wants to emphasize the length of the Great Wall. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Great Wall of China is a series of fortifications built over many centuries.", "Construction of the Great Wall of China began as early as the 7th century BCE.", "Much of the existing Great Wall was built during the Ming dynasty.", "Including all of its branches, the Great Wall of China stretches about 13,000 miles."],
+    answer: 3,
+    explanation: "The goal is to emphasize length. Only the sentence giving the 13,000-mile figure does that; the others focus on when or how the wall was built.",
+  },
+  {
+    id: "ei-670",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Jazz musician Mary Lou Williams composed and arranged music for some of the biggest bands of the 1930s. ______ she mentored younger musicians such as Thelonious Monk and Dizzy Gillespie.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Because of her mentors,", "In contrast to her mentors,", "Beyond her own work,", "Instead of composing,"],
+    answer: 2,
+    explanation: "Mentoring is an accomplishment in addition to her composing. \"Beyond her own work\" signals that addition; the other choices wrongly suggest she stopped composing or that the musicians were her mentors.",
+  },
+  {
+    id: "ei-671",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Sojourner Truth was born into slavery in New York around 1797.\n• She escaped to freedom in 1826.\n• She became a well-known speaker against slavery.\n• She also spoke out for women's rights.",
+    prompt: "The student wants to highlight Sojourner Truth's role as an advocate for two causes. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Sojourner Truth escaped from slavery to freedom in 1826.", "Sojourner Truth spoke out both against slavery and for women's rights.", "Sojourner Truth became a well-known and powerful speaker.", "Sojourner Truth was born into slavery in New York around 1797."],
+    answer: 1,
+    explanation: "The goal mentions two causes. Only the sentence naming both abolition and women's rights achieves it.",
+  },
+  {
+    id: "ei-672",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Rice is a staple food for more than half of the world's population.\n• It is grown on every continent except Antarctica.\n• Most rice is grown in flooded fields called paddies.\n• Asia produces about 90 percent of the world's rice.",
+    prompt: "The student wants to emphasize where most of the world's rice is produced. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["About 90 percent of the world's rice is produced in Asia.", "Rice is a staple food for more than half of the world's population.", "Most rice is grown in flooded fields called paddies.", "Rice is grown on every continent except Antarctica."],
+    answer: 0,
+    explanation: "Only the sentence giving Asia's 90 percent share addresses where most rice is produced.",
+  },
+  {
+    id: "ei-673",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• In 2019, a team of astronomers released the first image of a black hole.\n• The black hole is at the center of the galaxy M87, about 55 million light-years away.\n• The image was made using the Event Horizon Telescope, a network of eight radio telescopes around the world.\n• Combining the telescopes created a virtual telescope about the size of Earth.",
+    prompt: "The student wants to explain how astronomers were able to capture the image. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Astronomers linked eight radio telescopes into a virtual Earth-sized telescope to capture the image.", "The black hole in the 2019 image is about 55 million light-years away, in the galaxy M87.", "The first image of a black hole, released in 2019, was made with the Event Horizon Telescope.", "In 2019, astronomers released the first image of a black hole, located in the galaxy M87."],
+    answer: 0,
+    explanation: "The goal is to explain how the image was made. Only the sentence describing the combined telescope network does so.",
+  },
+  {
+    id: "ei-674",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The trail to the waterfall is only two miles long. ______ it climbs more than 1,500 feet, so most hikers need several hours to finish it.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Therefore,", "However,", "Similarly,", "For example,"],
+    answer: 1,
+    explanation: "The second sentence contrasts with the first: the trail is short, but steep and slow. \"However\" signals that contrast.",
+  },
+  {
+    id: "ei-675",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The theater's old seats were uncomfortable and worn. ______ the owners replaced all of them last summer.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Accordingly,", "Likewise,", "Instead,", "Nevertheless,"],
+    answer: 0,
+    explanation: "Replacing the seats is a fitting response to their condition. \"Accordingly\" signals that logical result.",
+  },
+  {
+    id: "ei-676",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Most of the students voted to hold the dance in the gym. ______ the student council chose the gym as the location.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["However,", "Similarly,", "Instead,", "Thus,"],
+    answer: 3,
+    explanation: "The council's choice follows from the vote. \"Thus\" signals that result.",
+  },
+  {
+    id: "ei-677",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Jesse Owens was an American track and field athlete.\n• He competed in the 1936 Olympics in Berlin.\n• He won four gold medals at those Games.\n• His events included the 100 meters and the long jump.",
+    prompt: "The student wants to state how many gold medals Jesse Owens won in 1936. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Jesse Owens competed at the 1936 Olympic Games in Berlin.", "At the 1936 Olympics in Berlin, Jesse Owens won four gold medals.", "Jesse Owens competed in the 100 meters and the long jump in 1936.", "Jesse Owens was an American track and field athlete in the 1930s."],
+    answer: 1,
+    explanation: "Only the sentence with the number of gold medals accomplishes the goal.",
+  },
+  {
+    id: "ei-678",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The ancient Romans built roads with several layers of stone and gravel. ______ many of these roads have survived for more than 2,000 years.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead of this careful construction,", "Because of this careful construction,", "Despite this careful construction,", "Unlike this careful construction,"],
+    answer: 1,
+    explanation: "The roads survived because they were built carefully. Only \"Because of this careful construction\" states that causal link.",
+  },
+  {
+    id: "ei-679",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Maya practiced the piano for an hour every day for a year. ______ she was ready to perform at the spring recital.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Eventually,", "Nonetheless,", "In comparison,", "Instead,"],
+    answer: 0,
+    explanation: "The second sentence describes what happened after a long period of practice. \"Eventually\" signals that sequence in time.",
+  },
+  {
+    id: "ei-680",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The mathematician Katherine Johnson calculated the flight paths for several early NASA missions. Before John Glenn's 1962 orbit of Earth, ______ he asked that she personally verify the computer's calculations.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["in contrast,", "in fact,", "however,", "instead,"],
+    answer: 1,
+    explanation: "Glenn's request emphasizes how much NASA trusted Johnson's work. \"In fact\" signals that reinforcing detail.",
+  },
+  {
+    id: "ei-681",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The first version of the robot could only move forward. ______ the second version could turn, climb steps, and pick up objects.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For instance,", "Similarly,", "In contrast,", "Therefore,"],
+    answer: 2,
+    explanation: "The second version's abilities differ sharply from the first's. \"In contrast\" signals that difference.",
+  },
+  {
+    id: "ei-682",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Penguins cannot fly. ______ they are excellent swimmers, reaching speeds of up to 22 miles per hour underwater.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Thus,", "Still,", "Likewise,", "For example,"],
+    answer: 1,
+    explanation: "Although penguins can't fly, they are skilled in the water. \"Still\" signals that contrast with the first sentence.",
+  },
+  {
+    id: "ei-683",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Tour de France is a bicycle race held each July.\n• It was first held in 1903.\n• The race covers about 2,200 miles over 21 stages.\n• The leader wears a yellow jersey.",
+    prompt: "The student wants to emphasize the distance of the Tour de France. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The leader of the Tour de France wears a yellow jersey.", "The Tour de France is a bicycle race held each July.", "The Tour de France, held each July, was first held in 1903.", "Riders in the Tour de France cover about 2,200 miles over 21 stages."],
+    answer: 3,
+    explanation: "Only the sentence with the 2,200-mile figure addresses distance.",
+  },
+  {
+    id: "ei-684",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Volunteers removed more than two tons of trash from the river last spring. ______ water quality tests showed a noticeable improvement within a few months.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Nonetheless,", "Likewise,", "Subsequently,", "Conversely,"],
+    answer: 2,
+    explanation: "The improved test results came after the cleanup. \"Subsequently\" signals that sequence.",
+  },
+  {
+    id: "ei-685",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Ice cores are cylinders of ice drilled from glaciers and ice sheets.\n• Air bubbles trapped in the ice preserve samples of the ancient atmosphere.\n• The oldest continuous ice core, from Antarctica, records about 800,000 years of climate history.\n• Scientists use these records to compare past carbon dioxide levels with today's.",
+    prompt: "The student wants to explain how ice cores help scientists study past climates. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Scientists drill ice cores from glaciers and ice sheets in places such as Antarctica.", "Air bubbles in ice cores preserve ancient air, letting scientists compare past and present carbon dioxide.", "The oldest continuous ice core, from Antarctica, records about 800,000 years of history.", "Ice cores are cylinders of ice drilled from glaciers and ice sheets, including some in Antarctica."],
+    answer: 1,
+    explanation: "The goal is to explain how ice cores reveal past climates. Only the sentence linking trapped air bubbles to comparisons of carbon dioxide levels explains the method.",
+  },
+  {
+    id: "ei-686",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Glass frogs have translucent skin that lets observers see their hearts and digestive organs. Researchers recently found that while the frogs sleep, they hide nearly 90 percent of their red blood cells inside their livers. ______ the frogs become almost completely transparent, which helps them avoid predators.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In contrast,", "Nevertheless,", "Similarly,", "As a result,"],
+    answer: 3,
+    explanation: "Hiding red blood cells causes the frogs to become almost transparent. \"As a result\" signals that cause-and-effect relationship.",
+  },
+  {
+    id: "ei-687",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Hubble Space Telescope was launched in 1990.\n• Soon after launch, scientists found a flaw in its main mirror that made images blurry.\n• In 1993, astronauts installed corrective optics during a spacewalk.\n• After the repair, Hubble produced some of the sharpest images of space ever taken.",
+    prompt: "The student wants to describe how an early setback was overcome. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Hubble Space Telescope was launched in 1990 and has operated for decades since then.", "Soon after Hubble's launch in 1990, scientists found a flaw in its main mirror.", "A flawed mirror blurred Hubble's early images, but a 1993 repair made them remarkably sharp.", "Hubble has produced some of the sharpest images of space that have ever been taken."],
+    answer: 2,
+    explanation: "The goal requires the setback and how it was fixed. Only one choice includes both the flaw and the repair.",
+  },
+  {
+    id: "ei-688",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The first vaccine for smallpox was developed in 1796. ______ it took nearly two centuries of vaccination campaigns before the World Health Organization declared the disease eradicated in 1980.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even so,", "For example,", "As a result,", "Similarly,"],
+    answer: 0,
+    explanation: "Despite the early vaccine, eradication took a very long time. \"Even so\" signals that concession.",
+  },
+  {
+    id: "ei-689",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "First, the students mixed the baking soda and water. ______ they slowly added vinegar and watched the mixture bubble.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Next,", "For example,", "In contrast,", "However,"],
+    answer: 0,
+    explanation: "The steps follow one another in order. \"Next\" signals the second step.",
+  },
+  {
+    id: "ei-690",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Underground Railroad was a network of routes and safe houses.\n• It helped enslaved people escape to free states and Canada.\n• Harriet Tubman made about 13 trips to guide roughly 70 people to freedom.\n• She never lost a single person she guided.",
+    prompt: "The student wants to emphasize Harriet Tubman's skill as a guide. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Harriet Tubman guided about 70 people to freedom and never lost a single one.", "The Underground Railroad helped enslaved people escape to free states and Canada.", "Harriet Tubman made about 13 trips to guide people on the Underground Railroad.", "The Underground Railroad was a network of secret routes and safe houses."],
+    answer: 0,
+    explanation: "Her perfect record of never losing anyone best shows her skill. Only one choice includes it.",
+  },
+  {
+    id: "ei-691",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Pantheon in Rome was completed around 125 CE.\n• Its dome is made of unreinforced concrete.\n• The dome is about 142 feet across.\n• It is still the largest unreinforced concrete dome in the world.",
+    prompt: "The student wants to emphasize the lasting achievement of the Pantheon's builders. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Pantheon in Rome was completed around 125 CE with a concrete dome.", "The Pantheon's dome is made of concrete that contains no reinforcement.", "Nearly 1,900 years later, the Pantheon's dome is still the largest of its kind.", "The Pantheon's dome, made of unreinforced concrete, is about 142 feet across."],
+    answer: 2,
+    explanation: "A lasting achievement is one that still stands out today. Only the choice stating the dome remains the largest of its kind emphasizes that.",
+  },
+  {
+    id: "ei-692",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Toni Morrison was an American novelist.\n• Her novel Beloved won the Pulitzer Prize in 1988.\n• In 1993, she became the first Black woman to win the Nobel Prize in Literature.\n• She also worked as an editor at Random House.",
+    prompt: "The student wants to present Morrison's most significant international honor. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Toni Morrison's novel Beloved won the Pulitzer Prize, a major American award, in 1988.", "Before becoming a celebrated novelist, Toni Morrison worked as an editor at Random House.", "In 1993, Toni Morrison became the first Black woman to win the Nobel Prize in Literature.", "Toni Morrison was an American novelist whose works include the Pulitzer-winning Beloved."],
+    answer: 2,
+    explanation: "The Nobel Prize is an international honor, unlike the Pulitzer, which is an American prize. Only the sentence about the Nobel accomplishes the goal.",
+  },
+  {
+    id: "ei-693",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Migrating Arctic terns fly from the Arctic to the Antarctic and back each year.\n• The round trip can be more than 40,000 miles.\n• Arctic terns can live 30 years or more.\n• Over a lifetime, a tern may fly a distance equal to three trips to the Moon and back.",
+    prompt: "The student wants to emphasize the total distance an Arctic tern may fly in its life. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["In its lifetime, an Arctic tern may fly as far as three round trips to the Moon.", "An Arctic tern's yearly round trip between the poles can exceed 40,000 miles.", "Arctic terns migrate from the Arctic to the Antarctic and back every year.", "Arctic terns, which migrate between the poles each year, can live 30 years or more."],
+    answer: 0,
+    explanation: "The goal is lifetime distance. The yearly figure is impressive but doesn't address a lifetime; only the Moon comparison does.",
+  },
+  {
+    id: "ei-694",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The city's population grew rapidly in the 1990s. ______ its public transit system expanded slowly, leaving many new neighborhoods without bus or train service.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For example,", "Meanwhile,", "Similarly,", "Therefore,"],
+    answer: 1,
+    explanation: "The slow transit expansion happened at the same time as the rapid growth and contrasts with it. \"Meanwhile\" signals those simultaneous, contrasting developments.",
+  },
+  {
+    id: "ei-695",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Sign languages are complete languages with their own grammar.\n• American Sign Language (ASL) and British Sign Language (BSL) are very different.\n• ASL is more closely related to French Sign Language.\n• This is because a French teacher helped found the first U.S. school for deaf students in 1817.",
+    prompt: "The student wants to explain why ASL is more closely related to French Sign Language than to BSL. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["ASL is more closely related to French Sign Language than to British Sign Language.", "Sign languages such as ASL and BSL are complete languages with their own grammar.", "American Sign Language and British Sign Language are very different from each other.", "ASL resembles French Sign Language because a French teacher helped found the first U.S. deaf school."],
+    answer: 3,
+    explanation: "Only the choice that names the French teacher's role explains the connection.",
+  },
+  {
+    id: "ei-696",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Octopuses have three hearts.\n• Two hearts pump blood to the gills.\n• The third heart pumps blood to the rest of the body.\n• Their blood is blue because it contains copper.",
+    prompt: "The student wants to explain why octopus blood is blue. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Two of an octopus's hearts pump blood to its gills.", "An octopus's third heart pumps blood to the rest of its body.", "Octopuses have three hearts.", "Octopus blood is blue because it contains copper."],
+    answer: 3,
+    explanation: "Only the sentence about copper explains the blue color.",
+  },
+  {
+    id: "ei-697",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Architect I. M. Pei designed the glass pyramid at the Louvre in Paris.\n• The pyramid opened in 1989.\n• Many Parisians initially criticized it as out of place among the museum's historic buildings.\n• It is now one of the most photographed structures in the city.",
+    prompt: "The student wants to emphasize how opinions of the Louvre pyramid changed over time. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Louvre pyramid, which opened in 1989, sits among the museum's historic buildings.", "Once criticized as out of place, the Louvre pyramid is now one of Paris's most photographed sights.", "I. M. Pei designed the glass pyramid at the Louvre, which opened to the public in 1989.", "When it opened in 1989, many Parisians criticized the Louvre pyramid as out of place."],
+    answer: 1,
+    explanation: "A change in opinion requires both the early criticism and the later popularity. Only one choice includes both.",
+  },
+  {
+    id: "ei-698",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Vincent van Gogh produced about 2,100 artworks.\n• He sold very few paintings during his lifetime.\n• In 1990, his Portrait of Dr. Gachet sold for $82.5 million.\n• He painted it in 1890, the last year of his life.",
+    prompt: "The student wants to contrast van Gogh's lack of commercial success while alive with the value of his work later. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Though he sold few paintings in his life, van Gogh's Portrait of Dr. Gachet later sold for $82.5 million.", "Van Gogh painted Portrait of Dr. Gachet in 1890, the last year of his life, among about 2,100 works.", "Van Gogh produced about 2,100 artworks, including Portrait of Dr. Gachet, painted in 1890.", "In 1990, a century after it was painted, Portrait of Dr. Gachet sold for $82.5 million."],
+    answer: 0,
+    explanation: "The contrast needs both his lack of sales while alive and the later price. Only one choice includes both.",
+  },
+  {
+    id: "ei-699",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The store's prices are higher than those at the supermarket. ______ many shoppers go there because the produce is fresher.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even so,", "For example,", "Therefore,", "Likewise,"],
+    answer: 0,
+    explanation: "Shoppers choose the store despite its higher prices. \"Even so\" signals that concession.",
+  },
+  {
+    id: "ei-700",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Some frogs can survive being frozen in winter. ______ the wood frog's heart stops beating, and it thaws back to life in spring.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In contrast,", "However,", "For example,", "Even so,"],
+    answer: 2,
+    explanation: "The wood frog is a specific example of a frog that survives freezing. \"For example\" introduces it.",
+  },
+  {
+    id: "ei-701",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Cats are often thought to be independent animals. ______ many cats form close bonds with their owners and seek out their company.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Thus,", "Yet", "Similarly,", "For example,"],
+    answer: 1,
+    explanation: "The second sentence challenges the common view in the first. \"Yet\" signals that contrast.",
+  },
+  {
+    id: "ei-702",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The school library added 500 new books this year. ______ it installed ten new computers for student use.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Additionally,", "Nevertheless,", "Consequently,", "Instead,"],
+    answer: 0,
+    explanation: "The second sentence adds another improvement to the library. \"Additionally\" signals that addition.",
+  },
+  {
+    id: "ei-703",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The painter spent most of her career in obscurity, selling few works. ______ after her death, her paintings began to appear in major museums around the world.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Thus,", "For instance,", "Similarly,", "Decades"],
+    answer: 3,
+    explanation: "The recognition came long after the obscurity described in the first sentence. \"Decades after her death\" marks that passage of time; the other choices imply a result, a similarity, or an example.",
+  },
+  {
+    id: "ei-704",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Some people prefer to read books on paper. ______ others prefer the convenience of reading on a tablet.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For example,", "Thus,", "Meanwhile,", "As a result,"],
+    answer: 2,
+    explanation: "The second sentence presents a different group's preference alongside the first. \"Meanwhile\" signals that the two contrasting situations exist side by side.",
+  },
+  {
+    id: "ei-705",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The cheetah is the fastest land animal.\n• It can reach speeds of about 70 miles per hour.\n• It can maintain top speed for only about 30 seconds.\n• Cheetahs live mainly in eastern and southern Africa.",
+    prompt: "The student wants to describe a limitation of the cheetah's speed. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The cheetah can run about 70 miles per hour but only for about 30 seconds.", "The cheetah, the fastest land animal, can reach speeds of about 70 miles per hour.", "Cheetahs, which live mainly in eastern and southern Africa, are extremely fast.", "The cheetah, which lives mainly in Africa, is the fastest land animal on Earth."],
+    answer: 0,
+    explanation: "A limitation is something that restricts its speed. Only the sentence about holding top speed for just 30 seconds describes one.",
+  },
+  {
+    id: "ei-706",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The printing press was invented by Johannes Gutenberg around 1440.\n• Before it, books were copied by hand, which could take months.\n• By 1500, printing presses in Europe had produced more than 20 million books.\n• The spread of books helped increase literacy.",
+    prompt: "The student wants to emphasize how dramatically the printing press increased book production. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Before Gutenberg's printing press, books in Europe were copied by hand.", "Johannes Gutenberg invented the printing press in Europe around the year 1440.", "The spread of printed books in Europe after 1440 helped increase literacy rates.", "Copying one book by hand took months, yet presses printed over 20 million books by 1500."],
+    answer: 3,
+    explanation: "The contrast between months for one handwritten book and 20 million printed books emphasizes the dramatic increase. The other choices lack that comparison.",
+  },
+  {
+    id: "ei-707",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "In 2004, NASA's rovers Spirit and Opportunity were expected to operate on Mars for about 90 days. ______ Opportunity kept exploring for nearly 15 years before a dust storm ended its mission.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Similarly,", "Consequently,", "Remarkably,", "In other words,"],
+    answer: 2,
+    explanation: "Opportunity far exceeded expectations. \"Remarkably\" signals that surprising outcome; nothing about the expectation caused it, and it isn't a restatement.",
+  },
+  {
+    id: "ei-708",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Earth's magnetic field is generated by molten iron moving in the planet's outer core.\n• The field shields Earth from harmful solar radiation.\n• Many migrating animals, including sea turtles and some birds, use the field to navigate.\n• The field's north and south poles have reversed many times in Earth's history.",
+    prompt: "The student wants to explain one way animals rely on Earth's magnetic field. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Earth's magnetic north and south poles have reversed many times.", "Earth's magnetic field is generated by molten iron in the outer core.", "Many migrating animals, including sea turtles and some birds, use Earth's magnetic field to navigate.", "Earth's magnetic field shields the planet from harmful solar radiation."],
+    answer: 2,
+    explanation: "Only the sentence about navigation describes how animals rely on the field.",
+  },
+  {
+    id: "ei-709",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Monarch butterflies that hatch in early summer live only a few weeks. Those that hatch in late summer, ______ can live up to eight months, long enough to migrate to Mexico and back.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["as a result,", "for example,", "on the other hand,", "in addition,"],
+    answer: 2,
+    explanation: "Late-summer monarchs live much longer than early-summer ones. \"On the other hand\" signals that contrast.",
+  },
+  {
+    id: "ei-710",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Mariana Trench is in the western Pacific Ocean.\n• Its deepest point, the Challenger Deep, is about 36,000 feet below sea level.\n• Mount Everest is about 29,000 feet tall.\n• Only a few people have traveled to the bottom of the trench.",
+    prompt: "The student wants to compare the depth of the Mariana Trench with the height of Mount Everest. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Mount Everest, at about 29,000 feet, is the tallest mountain above sea level.", "The Mariana Trench, whose deepest point is the Challenger Deep, is in the western Pacific.", "Only a few people have traveled to the Challenger Deep, at the bottom of the Mariana Trench.", "At about 36,000 feet deep, the Challenger Deep exceeds Everest's 29,000-foot height."],
+    answer: 3,
+    explanation: "Only the sentence that gives both measurements makes the comparison.",
+  },
+  {
+    id: "ei-711",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Paper money was first used in China during the Tang dynasty, more than 1,000 years ago. ______ it did not become common in Europe until the 1600s.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["By contrast,", "Therefore,", "For example,", "Similarly,"],
+    answer: 0,
+    explanation: "Europe's much later adoption contrasts with China's early use. \"By contrast\" signals that difference.",
+  },
+  {
+    id: "ei-712",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Researchers expected that students who listened to music while studying would score lower on tests. ______ the students who listened to instrumental music scored slightly higher than those who studied in silence.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Likewise,", "Surprisingly,", "Accordingly,", "Predictably,"],
+    answer: 1,
+    explanation: "The result was the opposite of what researchers expected. \"Surprisingly\" signals that unexpected finding.",
+  },
+  {
+    id: "ei-713",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Bioluminescence is light produced by living organisms.\n• Fireflies use it to attract mates.\n• Anglerfish use a glowing lure to attract prey.\n• Some squid use it to camouflage themselves against moonlit water.",
+    prompt: "The student wants to emphasize the variety of purposes bioluminescence serves. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Anglerfish, like fireflies, produce light, using a glowing lure to attract prey.", "Fireflies use bioluminescence to attract mates, anglerfish to lure prey, and squid to hide.", "Fireflies and anglerfish are both bioluminescent, meaning that they produce light.", "Bioluminescence is light produced by living organisms, such as fireflies and anglerfish."],
+    answer: 1,
+    explanation: "The goal calls for variety. Only the choice listing three different purposes shows it.",
+  },
+  {
+    id: "ei-714",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The company spent two years designing a new electric scooter. ______ the scooter sold out within a week of its release.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In other words,", "Ultimately,", "Conversely,", "Similarly,"],
+    answer: 1,
+    explanation: "The sellout is the final outcome of the long design process. \"Ultimately\" signals that conclusion.",
+  },
+  {
+    id: "ei-715",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Urban trees provide shade that can lower nearby street temperatures by several degrees. ______ they absorb rainwater, reducing the amount of runoff that flows into storm drains.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Even so,", "In addition,", "Instead,", "In contrast,"],
+    answer: 1,
+    explanation: "Absorbing rainwater is another benefit of urban trees. \"In addition\" signals this added benefit.",
+  },
+  {
+    id: "ei-716",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Amazon rainforest covers about 2.1 million square miles.\n• It produces about 20 percent of the world's oxygen.\n• It is home to about 10 percent of known species.\n• It spans nine countries.",
+    prompt: "The student wants to emphasize the Amazon's biodiversity. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Amazon rainforest covers about 2.1 million square miles of land.", "The Amazon rainforest spans nine countries in South America.", "The Amazon rainforest produces about 20 percent of the world's oxygen.", "The Amazon rainforest is home to about 10 percent of the world's known species."],
+    answer: 3,
+    explanation: "Biodiversity refers to the variety of living things. Only the sentence about species addresses it.",
+  },
+  {
+    id: "ei-717",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Many people assume that the Sahara has always been a desert. ______ evidence from ancient lake beds and rock paintings of hippos and giraffes shows that the region was green and wet as recently as 6,000 years ago.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Accordingly,", "Likewise,", "For this reason,", "In reality,"],
+    answer: 3,
+    explanation: "The evidence corrects a mistaken assumption. \"In reality\" signals that the truth differs from what people assume.",
+  },
+  {
+    id: "ei-718",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Mangrove trees grow along tropical coastlines.\n• Their tangled roots slow waves and reduce erosion.\n• Mangrove forests store up to four times more carbon than many inland forests.\n• They provide nurseries for many species of fish.",
+    prompt: "The student wants to emphasize mangroves' role in fighting climate change. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Mangrove trees grow along tropical coastlines, where their roots form tangles.", "Mangrove roots slow incoming waves and help reduce erosion along coastlines.", "Mangrove forests can store up to four times more carbon than many inland forests.", "Mangrove forests provide nurseries for many species of fish in tropical waters."],
+    answer: 2,
+    explanation: "Storing carbon is how mangroves help fight climate change. The other benefits are real but unrelated to the goal.",
+  },
+  {
+    id: "ei-719",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Harlem Renaissance was a cultural movement in the 1920s and 1930s.\n• It was centered in the Harlem neighborhood of New York City.\n• Writers such as Zora Neale Hurston and Langston Hughes were part of it.\n• Musicians such as Duke Ellington also played a major role.",
+    prompt: "The student wants to name two writers associated with the Harlem Renaissance. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Harlem Renaissance took place in the 1920s and 1930s.", "Zora Neale Hurston and Langston Hughes were writers of the Harlem Renaissance.", "The Harlem Renaissance was centered in New York City.", "Duke Ellington was a musician who played a major role in the Harlem Renaissance."],
+    answer: 1,
+    explanation: "The goal is to name two writers. Only the sentence naming Hurston and Hughes does so; Ellington was a musician.",
+  },
+  {
+    id: "ei-720",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Electric cars produce no tailpipe emissions. ______ the electricity used to charge them may come from power plants that burn fossil fuels.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Additionally,", "For example,", "However,", "Therefore,"],
+    answer: 2,
+    explanation: "The second sentence qualifies the environmental benefit described in the first. \"However\" signals that contrast.",
+  },
+  {
+    id: "ei-721",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The new park has a playground and a picnic area. ______ it has a walking path that circles a small pond.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "In contrast,", "However,", "Moreover,"],
+    answer: 3,
+    explanation: "The text lists another feature of the park. \"Moreover\" signals that addition; the other choices signal contrast.",
+  },
+  {
+    id: "ei-722",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The first season of the television series received poor reviews. By the third season, ______ critics were calling it one of the best shows on the air.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["for example,", "however,", "similarly,", "therefore,"],
+    answer: 1,
+    explanation: "The critics' later praise contrasts with the earlier poor reviews. \"However\" signals that change.",
+  },
+  {
+    id: "ei-723",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Coral reefs cover less than 1 percent of the ocean floor. ______ they support about 25 percent of all known marine species.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Similarly,", "Nevertheless,", "In addition,", "Therefore,"],
+    answer: 1,
+    explanation: "The large share of species contrasts with the reefs' tiny area. \"Nevertheless\" signals that surprising contrast.",
+  },
+  {
+    id: "ei-724",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Hedy Lamarr was a famous film actress in the 1930s and 1940s.\n• During World War II, she co-invented a radio technology called frequency hopping.\n• Frequency hopping helped prevent signals from being jammed.\n• Similar technology is now used in Wi-Fi and Bluetooth.",
+    prompt: "The student wants to emphasize the lasting impact of Hedy Lamarr's invention. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Hedy Lamarr, a famous film actress of the 1930s and 1940s, was also an inventor.", "Hedy Lamarr's wartime invention, frequency hopping, underlies today's Wi-Fi and Bluetooth.", "During World War II, film star Hedy Lamarr co-invented a radio technology.", "Frequency hopping, which Hedy Lamarr co-invented, helped keep radio signals from being jammed."],
+    answer: 1,
+    explanation: "\"Lasting impact\" calls for the invention's present-day use. Only the sentence connecting it to Wi-Fi and Bluetooth shows that.",
+  },
+  {
+    id: "ei-725",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The town council approved funding for a new skate park. ______ construction can't begin until the state approves the environmental review.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Likewise,", "Therefore,", "Still,", "Specifically,"],
+    answer: 2,
+    explanation: "The required approval limits what the funding achieves right away. \"Still\" signals that qualification.",
+  },
+  {
+    id: "ei-726",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Jacob Lawrence was an American painter.\n• In 1941, he completed The Migration Series, a set of 60 panels.\n• The series depicts the movement of Black Americans from the rural South to northern cities.\n• Half of the panels are owned by the Museum of Modern Art, and half by the Phillips Collection.",
+    prompt: "The student wants to describe the subject of The Migration Series. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Jacob Lawrence was an American painter who completed a 60-panel series in 1941.", "Lawrence's The Migration Series depicts Black Americans moving from the South to northern cities.", "Jacob Lawrence completed The Migration Series, a set of 60 panels, in 1941.", "Half of The Migration Series is owned by MoMA and half by the Phillips Collection."],
+    answer: 1,
+    explanation: "Only the sentence explaining what the series depicts describes its subject.",
+  },
+  {
+    id: "ei-727",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Sourdough bread is made with a starter rather than commercial yeast.\n• A starter is a mixture of flour and water that collects wild yeast and bacteria.\n• The bacteria produce lactic acid, which gives sourdough its tangy flavor.\n• Some starters have been kept alive for more than 100 years.",
+    prompt: "The student wants to explain what gives sourdough its distinctive taste. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Sourdough bread is made with a starter rather than with commercial yeast.", "Some sourdough starters have been kept alive for more than 100 years.", "A sourdough starter is a mixture of flour and water that collects wild yeast.", "Bacteria in a sourdough starter produce lactic acid, which gives the bread its tangy flavor."],
+    answer: 3,
+    explanation: "Only the sentence about lactic acid explains the bread's distinctive taste.",
+  },
+  {
+    id: "ei-728",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Wangari Maathai was a Kenyan environmental activist.\n• She founded the Green Belt Movement in 1977.\n• The movement has planted more than 50 million trees.\n• In 2004, she won the Nobel Peace Prize.",
+    prompt: "The student wants to highlight the scale of the Green Belt Movement's work. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Wangari Maathai was a Kenyan environmental activist and Nobel Prize winner.", "Kenyan activist Wangari Maathai founded the Green Belt Movement in 1977.", "Maathai's Green Belt Movement has planted more than 50 million trees.", "Wangari Maathai, founder of the Green Belt Movement, won the 2004 Nobel Peace Prize."],
+    answer: 2,
+    explanation: "The scale of the movement's work is shown by the number of trees planted, which only one choice mentions.",
+  },
+  {
+    id: "ei-729",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "To make the poster, Priya first sketched her design in pencil. ______ she traced over the lines with black ink.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "Afterward,", "For example,", "However,"],
+    answer: 1,
+    explanation: "Tracing over the lines follows sketching. \"Afterward\" signals that order.",
+  },
+  {
+    id: "ei-730",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Jupiter is the largest planet in our solar system. ______ more than 1,300 Earths could fit inside it.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Otherwise,", "In fact,", "Instead,", "However,"],
+    answer: 1,
+    explanation: "The second sentence emphasizes just how large Jupiter is. \"In fact\" signals that strengthening detail.",
+  },
+  {
+    id: "ei-731",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• A team of engineers built a solar-powered water purifier.\n• It costs about $20 to make.\n• It can clean about 10 liters of water per day.\n• It is designed for rural communities without electricity.",
+    prompt: "The student wants to emphasize that the purifier is suited to communities with limited resources. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The $20 solar purifier needs no electricity, which suits rural communities.", "The solar-powered purifier can clean about 10 liters of water per day.", "Engineers built a solar-powered water purifier that cleans 10 liters daily.", "A team of engineers built a water purifier that can clean 10 liters a day."],
+    answer: 0,
+    explanation: "Limited resources call for low cost and no need for electricity. Only one choice highlights both.",
+  },
+  {
+    id: "ei-732",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Mount Vesuvius erupted in 79 CE.\n• Ash buried the Roman cities of Pompeii and Herculaneum.\n• The ash preserved buildings, artwork, and everyday objects.\n• Excavations since the 1700s have given historians detailed knowledge of Roman daily life.",
+    prompt: "The student wants to explain why the eruption is valuable to historians. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Excavations at Pompeii and Herculaneum have been taking place since the 1700s.", "Ash from Mount Vesuvius buried the Roman cities of Pompeii and Herculaneum.", "Mount Vesuvius erupted in 79 CE, burying the Roman cities of Pompeii and Herculaneum.", "By preserving buildings and objects, Vesuvius's ash revealed details of Roman daily life."],
+    answer: 3,
+    explanation: "The goal is to explain why the eruption matters to historians. Only one choice connects the preserved remains to knowledge of Roman life.",
+  },
+  {
+    id: "ei-733",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• A study tracked 500 commuters in two cities.\n• City X has a large network of protected bike lanes; City Y has very few.\n• In City X, 22 percent of commuters biked to work.\n• In City Y, 4 percent of commuters biked to work.",
+    prompt: "The student wants to compare bike commuting rates in the two cities. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["In City X, 22 percent of commuters biked to work, compared with 4 percent in City Y.", "A study tracked 500 commuters in two cities with very different numbers of bike lanes.", "City X has a large network of protected bike lanes, while City Y has very few lanes.", "In City X, which has many protected bike lanes, 22 percent of commuters biked to work."],
+    answer: 0,
+    explanation: "A comparison of rates needs both cities' percentages. Only one choice gives both.",
+  },
+  {
+    id: "ei-734",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Bees are important pollinators of crops. ______ many bats and birds pollinate flowering plants, especially in the tropics.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In other words,", "As a result,", "Likewise,", "Instead,"],
+    answer: 2,
+    explanation: "Bats and birds play a role similar to that of bees. \"Likewise\" signals that similarity. The pollination by bats doesn't result from bees, and it isn't a restatement.",
+  },
+  {
+    id: "ei-735",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The scientist checked the results three times. ______ she asked a colleague to repeat the experiment.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "Then,", "Nonetheless,", "In contrast,"],
+    answer: 1,
+    explanation: "Asking a colleague comes after checking the results. \"Then\" signals that sequence.",
+  },
+  {
+    id: "ei-736",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "For decades, historians assumed that medieval European peasants rarely traveled more than a few miles from home. Records from pilgrimage routes and trade fairs, ______ show that many ordinary people journeyed hundreds of miles during their lifetimes.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["however,", "therefore,", "in other words,", "moreover,"],
+    answer: 0,
+    explanation: "The records contradict the historians' assumption, so a contrasting transition is needed. \"Moreover\" adds, \"therefore\" shows a result, and \"in other words\" restates.",
+  },
+  {
+    id: "ei-737",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The town's only bridge was damaged in the flood. ______ residents had to drive 40 minutes to reach the nearest grocery store.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In contrast,", "For instance,", "Likewise,", "As a result,"],
+    answer: 3,
+    explanation: "The long drive is a consequence of the bridge being damaged. \"As a result\" signals that cause-and-effect relationship.",
+  },
+  {
+    id: "ei-738",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Venus is the second planet from the Sun.\n• Its surface temperature is about 870°F.\n• This makes it the hottest planet in the solar system.\n• Mercury is closer to the Sun but is not as hot.",
+    prompt: "The student wants to explain which planet is the hottest in the solar system. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["At about 870°F, Venus is the hottest planet in the solar system.", "Mercury is the planet closest to the Sun, but it is not as hot as Venus.", "Venus and Mercury are the two planets that orbit closest to the Sun.", "Venus is the second planet from the Sun, just beyond Mercury."],
+    answer: 0,
+    explanation: "Only the sentence that names Venus as the hottest planet and gives its temperature accomplishes the goal.",
+  },
+  {
+    id: "ei-739",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Ruth Bader Ginsburg served on the U.S. Supreme Court from 1993 to 2020.\n• Before becoming a justice, she argued six gender discrimination cases before the Court.\n• She won five of those six cases.\n• She co-founded the Women's Rights Project at the ACLU.",
+    prompt: "The student wants to emphasize Ginsburg's success as a lawyer before she joined the Court. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Before joining the Court, Ginsburg won five of the six cases she argued before it.", "Before joining the Court, Ginsburg argued six gender discrimination cases.", "Ruth Bader Ginsburg co-founded the Women's Rights Project at the ACLU.", "Ruth Bader Ginsburg served as a Supreme Court justice from 1993 until 2020."],
+    answer: 0,
+    explanation: "Her success as a lawyer is shown by her record of five wins out of six cases. A sentence that mentions only that she argued the cases leaves out the success.",
+  },
+  {
+    id: "ei-740",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Phillis Wheatley was born in West Africa around 1753.\n• She was enslaved and brought to Boston as a child.\n• In 1773, she published Poems on Various Subjects, Religious and Moral.\n• She was the first African American woman to publish a book of poetry.",
+    prompt: "The student wants to emphasize the historical significance of Wheatley's 1773 book. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Wheatley's 1773 book made her the first African American woman to publish a book of poetry.", "In 1773, Phillis Wheatley published Poems on Various Subjects, Religious and Moral.", "Phillis Wheatley, who was enslaved in Boston, published a book of poems in 1773.", "Phillis Wheatley was born in West Africa around 1753 and brought to Boston as a child."],
+    answer: 0,
+    explanation: "The book's significance is that it was the first by an African American woman poet. Only one choice states that.",
+  },
+  {
+    id: "ei-741",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Squids and octopuses can change the color of their skin in a fraction of a second. ______ chameleons need several seconds or even minutes to complete a color change.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For example,", "In addition,", "As a result,", "By comparison,"],
+    answer: 3,
+    explanation: "The chameleon's slower change is being compared with the cephalopods' speed. \"By comparison\" signals that comparison.",
+  },
+  {
+    id: "ei-742",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Venus flytrap is native to a small region of North and South Carolina.\n• It traps insects with hinged leaves that snap shut.\n• The trap closes only if trigger hairs are touched twice within about 20 seconds.\n• This prevents the plant from wasting energy on raindrops or debris.",
+    prompt: "The student wants to explain how the flytrap avoids closing unnecessarily. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Venus flytrap, native to the Carolinas, traps insects with hinged leaves that snap shut.", "The Venus flytrap is native to a small region of North and South Carolina.", "A flytrap closes only if touched twice in about 20 seconds, so it ignores raindrops and debris.", "The Venus flytrap's hinged leaves have trigger hairs that cause them to snap shut."],
+    answer: 2,
+    explanation: "The goal is to explain how it avoids unnecessary closing. Only one choice describes the two-touch mechanism and its purpose.",
+  },
+  {
+    id: "ei-743",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Bamboo is a type of grass.\n• Some species can grow up to 35 inches in a single day.\n• Bamboo is used to build houses, furniture, and bridges.\n• It is native to every continent except Europe and Antarctica.",
+    prompt: "The student wants to emphasize how quickly bamboo grows. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Bamboo is a type of grass.", "Some species of bamboo can grow up to 35 inches in a single day.", "Bamboo is used to build houses, furniture, and bridges.", "Bamboo is native to every continent except Europe and Antarctica."],
+    answer: 1,
+    explanation: "Only the sentence giving the 35-inch-per-day figure addresses growth speed.",
+  },
+  {
+    id: "ei-744",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The novelist wrote her first three books in longhand on yellow legal pads. ______ she switched to a typewriter, claiming it helped her write faster.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For example,", "In other words,", "Similarly,", "Later,"],
+    answer: 3,
+    explanation: "The switch to a typewriter came after the first three books. \"Later\" signals that shift in time.",
+  },
+  {
+    id: "ei-745",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Owls hunt mostly at night. Hawks, ______ hunt mostly during the day.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["similarly,", "for example,", "as a result,", "by contrast,"],
+    answer: 3,
+    explanation: "Hawks' daytime hunting is the opposite of owls' nighttime hunting. \"By contrast\" signals that difference.",
+  },
+  {
+    id: "ei-746",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Many desert plants store water in thick stems. The saguaro cactus, ______ can hold hundreds of gallons of water after a heavy rain.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["meanwhile,", "in contrast,", "however,", "for example,"],
+    answer: 3,
+    explanation: "The saguaro is a specific instance of a desert plant that stores water in its stem. \"For example\" introduces that illustration.",
+  },
+  {
+    id: "ei-747",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• A survey asked 1,200 teenagers how they get their news.\n• 48 percent said social media was their main source.\n• 21 percent said television.\n• Only 6 percent said print newspapers.",
+    prompt: "The student wants to emphasize how few teenagers rely mainly on print newspapers. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Nearly half of the teenagers surveyed said social media was their main source.", "Of the teenagers surveyed, 21 percent got their news mainly from television.", "Only 6 percent of the teenagers surveyed relied mainly on print newspapers.", "A survey asked 1,200 teenagers how they usually get their news each day."],
+    answer: 2,
+    explanation: "Only the sentence with the 6 percent figure addresses print newspapers.",
+  },
+  {
+    id: "ei-748",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Wind turbines convert the energy of moving air into electricity.\n• Offshore turbines are built in bodies of water, usually the ocean.\n• Winds over the ocean are generally stronger and steadier than winds over land.\n• Offshore turbines are more expensive to build and maintain.",
+    prompt: "The student wants to present an advantage of offshore wind turbines. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Offshore wind turbines are more expensive to build and maintain than turbines on land.", "Wind turbines, including offshore ones, convert the energy of moving air into electricity.", "Offshore wind turbines are built in bodies of water, usually in the ocean.", "Offshore turbines benefit from ocean winds, which are stronger and steadier than winds on land."],
+    answer: 3,
+    explanation: "Only the sentence about stronger, steadier winds presents an advantage; the cost is a disadvantage.",
+  },
+  {
+    id: "ei-749",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Some economists argue that raising the minimum wage leads to job losses. ______ several studies of neighboring states with different wage laws have found little or no difference in employment.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Thus,", "Likewise,", "Specifically,", "However,"],
+    answer: 3,
+    explanation: "The studies' findings challenge the economists' argument. \"However\" signals that contrast.",
+  },
+  {
+    id: "ei-750",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Honeybees communicate the location of food through a \"waggle dance.\" The angle of the dance shows the direction of the food relative to the sun. ______ the length of the dance indicates how far away the food is.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Nevertheless,", "As a result,", "Instead,", "Similarly,"],
+    answer: 3,
+    explanation: "The length of the dance is a second, parallel piece of information the dance conveys. \"Similarly\" signals that parallel; the length isn't caused by the angle.",
+  },
+  {
+    id: "ei-751",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Lake Baikal is in Siberia, Russia.\n• It is the deepest lake in the world, at about 5,400 feet.\n• It holds about 20 percent of the world's unfrozen fresh surface water.\n• It is more than 25 million years old.",
+    prompt: "The student wants to emphasize how old Lake Baikal is. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Lake Baikal is in Siberia, Russia.", "Lake Baikal is more than 25 million years old.", "Lake Baikal holds about 20 percent of the world's unfrozen fresh surface water.", "Lake Baikal is the deepest lake in the world."],
+    answer: 1,
+    explanation: "Only the sentence about its age of more than 25 million years addresses the goal.",
+  },
+  {
+    id: "ei-752",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Gabriel García Márquez was a Colombian writer.\n• His most famous novel is One Hundred Years of Solitude.\n• The novel was published in 1967.\n• He won the Nobel Prize in Literature in 1982.",
+    prompt: "The student wants to identify García Márquez's most famous novel and when it was published. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Gabriel García Márquez was a Colombian writer who won the Nobel Prize in 1982.", "One Hundred Years of Solitude is the most famous novel by García Márquez.", "García Márquez's most famous novel, One Hundred Years of Solitude, appeared in 1967.", "Colombian writer Gabriel García Márquez won the Nobel Prize in Literature in 1982."],
+    answer: 2,
+    explanation: "Only the sentence naming the novel and giving its publication year accomplishes both parts of the goal.",
+  },
+  {
+    id: "ei-753",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The axolotl is a salamander native to lakes near Mexico City.\n• It can regrow lost limbs, parts of its heart, and even parts of its brain.\n• Scientists study axolotls to learn how tissue regeneration works.\n• Wild axolotls are critically endangered because of pollution and habitat loss.",
+    prompt: "The student wants to explain why scientists are interested in axolotls. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Pollution and habitat loss have made wild axolotls, found near Mexico City, critically endangered.", "Scientists study axolotls, which can regrow limbs and organs, to learn how regeneration works.", "Axolotls, which live in lakes near Mexico City, are studied by scientists around the world.", "The axolotl, a salamander native to lakes near Mexico City, is now critically endangered."],
+    answer: 1,
+    explanation: "Only the sentence linking the axolotl's regenerative abilities to scientists' research explains their interest.",
+  },
+  {
+    id: "ei-754",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Most metals expand when heated. ______ a steel bridge is longer on a hot summer day than on a cold winter night, which is why engineers include expansion joints in its design.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Thus,", "In contrast,", "Previously,", "Nevertheless,"],
+    answer: 0,
+    explanation: "The bridge's change in length is a consequence of the general rule about metals. \"Thus\" signals that application.",
+  },
+  {
+    id: "ei-755",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Some volcanoes erupt violently, sending ash miles into the sky. ______ Hawaii's Kilauea usually erupts gently, with lava flowing slowly down its slopes.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In addition,", "As a result,", "By contrast,", "Similarly,"],
+    answer: 2,
+    explanation: "Kilauea's gentle eruptions differ from violent ones. \"By contrast\" signals that difference.",
+  },
+  {
+    id: "ei-756",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Early telescopes produced blurry images because different colors of light focused at slightly different points. In the 1750s, optician John Dollond combined two kinds of glass in a single lens. ______ telescopes could produce much sharper images.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Despite this innovation,", "With this innovation,", "Unlike this innovation,", "Before this innovation,"],
+    answer: 1,
+    explanation: "Dollond's lens led to sharper images. \"With this innovation\" signals that it made the improvement possible; the other choices imply the opposite or the wrong timing.",
+  },
+  {
+    id: "ei-757",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "In the 1800s, many doctors did not wash their hands between patients. ______ infections spread quickly in hospitals, especially in maternity wards.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["In contrast,", "Likewise,", "Nonetheless,", "Consequently,"],
+    answer: 3,
+    explanation: "The spread of infections resulted from doctors not washing their hands. \"Consequently\" signals that result.",
+  },
+  {
+    id: "ei-758",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The recipe calls for fresh basil. ______ dried basil can be used if fresh basil isn't available.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Therefore,", "In addition,", "However,", "Similarly,"],
+    answer: 2,
+    explanation: "The second sentence offers an exception to the first. \"However\" signals that contrast.",
+  },
+  {
+    id: "ei-759",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Shirley Chisholm was elected to the U.S. House of Representatives in 1968.\n• She was the first Black woman elected to Congress.\n• In 1972, she ran for the Democratic presidential nomination.\n• Her campaign slogan was \"Unbought and Unbossed.\"",
+    prompt: "The student wants to emphasize that Chisholm broke barriers more than once. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Shirley Chisholm, elected to Congress in 1968, campaigned with the slogan \"Unbought and Unbossed.\"", "Shirley Chisholm was elected to the House of Representatives in 1968, representing New York.", "The first Black woman elected to Congress, Chisholm later sought the 1972 presidential nomination.", "In 1972, Shirley Chisholm campaigned with the slogan \"Unbought and Unbossed.\""],
+    answer: 2,
+    explanation: "Breaking barriers more than once requires two firsts or milestones. Only one choice combines her election to Congress with her presidential run.",
+  },
+  {
+    id: "ei-760",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The ancient city of Petra is in present-day Jordan.\n• It was built by the Nabataeans, who were skilled traders.\n• Many of its buildings were carved directly into rose-colored sandstone cliffs.\n• The Nabataeans built an advanced system of channels and cisterns to collect rainwater.",
+    prompt: "The student wants to highlight the Nabataeans' engineering skill. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Petra's rose-colored sandstone cliffs give the city in present-day Jordan its color.", "The Nabataeans built channels and cisterns to collect rainwater for desert Petra.", "The Nabataeans, skilled traders, carved many of Petra's buildings into sandstone cliffs.", "Petra, in present-day Jordan, was built by the Nabataeans, who were skilled traders."],
+    answer: 1,
+    explanation: "Engineering skill is best shown by the water system. The other choices highlight trading, location, or the color of the rock.",
+  },
+  {
+    id: "ei-761",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "Before the invention of refrigeration, people preserved food in many ways. Fish was often salted or smoked, ______ fruit was dried in the sun or cooked into jam.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["unless", "so", "because", "while"],
+    answer: 3,
+    explanation: "The two clauses describe parallel preservation methods for different foods. \"While\" links these comparable facts; \"because\" and \"so\" imply cause, and \"unless\" implies a condition.",
+  },
+  {
+    id: "ei-762",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Sahara is the largest hot desert in the world.\n• It covers about 3.6 million square miles.\n• That is roughly the size of the United States.\n• Only about 25 percent of the Sahara is covered in sand dunes.",
+    prompt: "The student wants to correct a common misconception about the Sahara. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Sahara is the largest hot desert in the world, covering about 3.6 million square miles.", "The Sahara covers about 3.6 million square miles, roughly the size of the United States.", "The Sahara, the world's largest hot desert, is roughly the size of the United States.", "Despite its image as endless dunes, only about 25 percent of the Sahara is sand."],
+    answer: 3,
+    explanation: "Only the sentence about the small share of sand dunes addresses a misconception.",
+  },
+  {
+    id: "ei-763",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "It rained all morning. ______ the soccer game was moved to the afternoon.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["For example,", "Therefore,", "However,", "Similarly,"],
+    answer: 1,
+    explanation: "Moving the game is a consequence of the rain. \"Therefore\" signals that result.",
+  },
+  {
+    id: "ei-764",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• The violinist practiced the concerto for six hours a day.\n• She had only three weeks to learn it.\n• Her teacher had told her the piece usually takes months to master.\n• She performed it without a single mistake.",
+    prompt: "The student wants to emphasize how quickly the violinist mastered the concerto. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The violinist mastered in three weeks a concerto that usually takes months.", "The violinist performed the difficult concerto without a single mistake.", "The violinist's teacher said the concerto usually takes months to master.", "The violinist practiced the concerto for six hours a day for three weeks."],
+    answer: 0,
+    explanation: "Contrasting the usual months with her three weeks emphasizes her speed. The other choices give only part of that picture.",
+  },
+  {
+    id: "ei-765",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The blue whale is the largest animal known to have ever lived.\n• It can grow to about 100 feet long.\n• It feeds mainly on tiny shrimp-like animals called krill.\n• It can eat about 4 tons of krill a day.",
+    prompt: "The student wants to contrast the blue whale's size with the size of its food. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The blue whale is the largest animal known to have ever lived on Earth.", "The blue whale can eat about 4 tons of krill, its main food, every day.", "The blue whale grows to about 100 feet long but feeds mainly on tiny krill.", "Krill, the blue whale's main food, are shrimp-like animals found in the sea."],
+    answer: 2,
+    explanation: "The contrast requires both the whale's huge size and the tiny size of its food. Only one sentence includes both.",
+  },
+  {
+    id: "ei-766",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Sea otters often float on their backs while they eat. ______ they use their bellies as tables, placing shellfish on their chests and cracking them open with rocks.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Instead,", "In fact,", "Nevertheless,", "However,"],
+    answer: 1,
+    explanation: "The second sentence adds a striking detail that builds on the first. \"In fact\" signals that elaboration. \"However,\" \"Instead,\" and \"Nevertheless\" signal contrast, which doesn't fit.",
+  },
+  {
+    id: "ei-767",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Glaciers in the Alps have been shrinking for more than a century.\n• Since 1850, they have lost about 60 percent of their volume.\n• The melting has accelerated since the 1980s.\n• Some smaller glaciers have disappeared entirely.",
+    prompt: "The student wants to emphasize that the rate of glacier loss is increasing. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Some smaller glaciers in the Alps have already disappeared entirely.", "Alpine glaciers have been shrinking since the 1800s, and the melting has sped up since the 1980s.", "Since 1850, Alpine glaciers have lost about 60 percent of their volume.", "Glaciers in the Alps have been shrinking for more than a century."],
+    answer: 1,
+    explanation: "An increasing rate means acceleration. Only the choice noting that melting has sped up since the 1980s addresses the rate.",
+  },
+  {
+    id: "ei-768",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The architect Zaha Hadid was known for buildings with dramatic, flowing curves. Her design for the London Aquatics Centre, ______ features a roof shaped like a wave that seems to ripple over the pool below.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["nonetheless,", "instead,", "for instance,", "however,"],
+    answer: 2,
+    explanation: "The Aquatics Centre is a specific example of Hadid's curving designs. \"For instance\" introduces it.",
+  },
+  {
+    id: "ei-769",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 2,
+    passage: "The new law requires all restaurants to post calorie counts on their menus. Supporters say it will help diners make healthier choices. ______ critics argue that it will raise costs for small businesses.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Likewise,", "For example,", "On the other hand,", "Therefore,"],
+    answer: 2,
+    explanation: "The critics' view contrasts with the supporters' view. \"On the other hand\" signals that opposing perspective.",
+  },
+  {
+    id: "ei-770",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Chess originated in India around the 6th century CE.\n• It spread to Persia and then to Europe.\n• The modern rules were set in the 15th century.\n• Today, millions of people play chess online.",
+    prompt: "The student wants to describe how chess spread from its place of origin. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Chess originated in India around the 6th century CE.", "Chess began in India and spread to Persia and then to Europe.", "The modern rules of chess were set in Europe in the 15th century.", "Today, millions of people around the world play chess online."],
+    answer: 1,
+    explanation: "The goal is to describe how chess spread. Only the sentence tracing its path from India to Persia to Europe does this.",
+  },
+  {
+    id: "ei-771",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Andes is the longest continental mountain range in the world.\n• It runs about 4,300 miles along the western coast of South America.\n• It passes through seven countries.\n• Its highest peak is Aconcagua, at 22,838 feet.",
+    prompt: "The student wants to identify the highest peak in the Andes. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Andes is the longest continental mountain range in the world.", "Aconcagua, at 22,838 feet, is the highest peak in the Andes.", "The Andes passes through seven countries.", "The Andes runs about 4,300 miles along South America's western coast."],
+    answer: 1,
+    explanation: "Only the sentence naming Aconcagua and its height identifies the highest peak.",
+  },
+  {
+    id: "ei-772",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Tardigrades are tiny animals about 0.5 millimeters long.\n• They are sometimes called \"water bears.\"\n• They can survive temperatures from near absolute zero to above 300°F.\n• They have been found on every continent.",
+    prompt: "The student wants to emphasize how hardy tardigrades are. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Tardigrades are tiny animals, only about 0.5 millimeters long, found worldwide.", "Tardigrades, sometimes called \"water bears,\" are found on every continent.", "Known by the nickname \"water bears,\" tardigrades measure about half a millimeter.", "Tardigrades can survive temperatures ranging from near absolute zero to above 300°F."],
+    answer: 3,
+    explanation: "Hardiness means the ability to survive harsh conditions. Only the sentence about the extreme temperature range shows that.",
+  },
+  {
+    id: "ei-773",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The club planned to meet in the library. ______ the library was closed for repairs, so the members met in the cafeteria.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["However,", "For instance,", "Therefore,", "Likewise,"],
+    answer: 0,
+    explanation: "The library's closure contrasts with the plan. \"However\" signals that contrast.",
+  },
+  {
+    id: "ei-774",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Many species of cicada spend most of their lives underground as nymphs.\n• Periodical cicadas emerge every 13 or 17 years.\n• Both 13 and 17 are prime numbers.\n• Some scientists think prime-numbered cycles help cicadas avoid predators with shorter, regular cycles.",
+    prompt: "The student wants to present a hypothesis about cicadas' life cycles. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Periodical cicadas spend 13 or 17 years underground before they emerge.", "Periodical cicadas emerge every 13 or 17 years, both of which are prime numbers.", "Some scientists think cicadas' prime-numbered cycles help them avoid predators.", "Many cicadas spend most of their lives underground as nymphs before emerging."],
+    answer: 2,
+    explanation: "A hypothesis is a proposed explanation. Only one choice states what some scientists think explains the cycles.",
+  },
+  {
+    id: "ei-775",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Researchers studied two groups of tomato plants.\n• Group A was watered with rainwater; Group B was watered with tap water.\n• After eight weeks, Group A plants were on average 15 percent taller.\n• The researchers concluded that rainwater may promote faster growth in tomatoes.",
+    prompt: "The student wants to present the study's conclusion. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Researchers watered one group of tomato plants with rainwater and one with tap water.", "After eight weeks, the plants watered with rainwater were 15 percent taller on average.", "Since rainwater-fed tomatoes grew taller, researchers concluded rainwater may speed growth.", "Researchers compared two groups of tomato plants, labeled Group A and Group B, for eight weeks."],
+    answer: 2,
+    explanation: "Only the sentence stating what the researchers concluded, along with the result supporting it, presents the conclusion.",
+  },
+  {
+    id: "ei-776",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Scientists placed motion-activated cameras in a national park.\n• Over one year, the cameras recorded 34 species of mammals.\n• Seven of the species had never before been documented in the park.\n• One of the new species was a rare spotted cat.",
+    prompt: "The student wants to emphasize the study's new findings. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Over one year, the park's motion-activated cameras recorded 34 species of mammals.", "The study used motion-activated cameras to record mammals in a national park.", "Of the 34 mammal species recorded, seven had never been documented in the park.", "Scientists placed motion-activated cameras throughout a national park for one year."],
+    answer: 2,
+    explanation: "\"New findings\" refers to species not documented before. Only one choice mentions the seven newly documented species.",
+  },
+  {
+    id: "ei-777",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• Ada Lovelace was an English mathematician born in 1815.\n• She worked with Charles Babbage on his design for a mechanical computer.\n• She wrote what is considered the first computer program.\n• A programming language, Ada, is named after her.",
+    prompt: "The student wants to emphasize Ada Lovelace's contribution to computing. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["Ada Lovelace worked with Charles Babbage on his mechanical computer.", "A programming language called Ada is named after Ada Lovelace.", "Ada Lovelace wrote what is considered the first computer program.", "Ada Lovelace was an English mathematician who was born in 1815."],
+    answer: 2,
+    explanation: "Writing the first computer program is her contribution; the other sentences give background or a later tribute.",
+  },
+  {
+    id: "ei-778",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "Leo forgot his umbrella at home. ______ he got soaked walking to school.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["On the other hand,", "In addition,", "As a result,", "For example,"],
+    answer: 2,
+    explanation: "Getting soaked follows from forgetting the umbrella. \"As a result\" signals that consequence.",
+  },
+  {
+    id: "ei-779",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The bakery ran out of flour on Tuesday morning. ______ it could not make any bread until a new shipment arrived that afternoon.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Similarly,", "Consequently,", "In contrast,", "For instance,"],
+    answer: 1,
+    explanation: "Being unable to bake follows from running out of flour. \"Consequently\" signals that result.",
+  },
+  {
+    id: "ei-780",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Transitions",
+    difficulty: 1,
+    passage: "The museum was crowded on Saturday. ______ the line to see the dinosaur exhibit stretched out the front door.",
+    prompt: "Which choice completes the text with the most logical transition?",
+    choices: ["Indeed,", "Otherwise,", "Instead,", "Still,"],
+    answer: 0,
+    explanation: "The long line reinforces the claim that the museum was crowded. \"Indeed\" signals that emphasis.",
+  },
+  {
+    id: "ei-781",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 2,
+    passage: "While researching a topic, a student has taken the following notes:\n• Two species of bird, the Galápagos finch and the Hawaiian honeycreeper, have been studied extensively.\n• Both groups descended from a single ancestral species that arrived on the islands.\n• Over time, each group evolved many species with differently shaped beaks.\n• The beak shapes match the foods available on different islands.",
+    prompt: "The student wants to emphasize a similarity between the two bird groups. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Galápagos finch and the Hawaiian honeycreeper have both been studied extensively.", "Hawaiian honeycreepers evolved beaks shaped to match the foods on different islands.", "The Galápagos finch and the Hawaiian honeycreeper live on different island chains.", "Both bird groups descended from one ancestor and evolved beaks suited to different foods."],
+    answer: 3,
+    explanation: "The goal is to show what the groups share. Only one choice describes their common pattern of descent and evolution; noting that they live on different island chains points out a difference instead.",
+  },
+  {
+    id: "ei-782",
+    module: "rw",
+    domain: "Expression of Ideas",
+    skill: "Rhetorical Synthesis",
+    difficulty: 1,
+    passage: "While researching a topic, a student has taken the following notes:\n• The Eiffel Tower was completed in 1889.\n• It was built for the World's Fair in Paris.\n• Many artists at first criticized its design.\n• Today it is one of the most visited monuments in the world.",
+    prompt: "The student wants to contrast early reactions to the Eiffel Tower with its later popularity. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    choices: ["The Eiffel Tower, completed in 1889, is one of the most visited monuments in the world.", "The Eiffel Tower was completed in 1889 for the World's Fair held in Paris that year.", "When it was built for the 1889 World's Fair, many artists criticized the tower's design.", "Once criticized by many artists, the Eiffel Tower is now among the most visited monuments."],
+    answer: 3,
+    explanation: "The goal requires both the early criticism and the later popularity. Only one sentence includes both.",
   },
 );

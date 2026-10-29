@@ -17,7 +17,7 @@ QUESTIONS.push(
       "Although fireflies, anglerfish, and bobtail squid all produce light through a reaction involving luciferin, they use it for different purposes: attracting mates, luring prey, and hiding from predators."
     ],
     answer: 3,
-    explanation: "The goal requires both a similarity (the shared chemical mechanism) and a difference (the various uses). Only the first choice states both. The second and fourth state only similarities, and the third states only differences between two organisms."
+    explanation: "The goal requires both a similarity (the shared chemical mechanism) and a difference (the various uses). Only the correct answer states both. The choice about luciferin and the choice comparing the squid with the anglerfish state only similarities, and the choice listing what each organism uses light for states only differences."
   },
   {
     id: "ei-h2",
@@ -34,7 +34,7 @@ QUESTIONS.push(
       "Before about 320,000 years ago, people at a site in the Olorgesailie Basin made large, heavy hand axes, and more than 500 stone tools have been found there."
     ],
     answer: 2,
-    explanation: "The goal is to describe how the newer tools differed from the older ones. Only the first choice contrasts the newer tools (smaller, precisely shaped, made of distant obsidian) with the earlier hand axes. The other choices describe the excavation or only one set of tools."
+    explanation: "The goal is to describe how the newer tools differed from the older ones. Only the correct answer contrasts the newer tools (smaller, precisely shaped, made of distant obsidian) with the earlier hand axes. The other choices describe the excavation or only one set of tools."
   },
   {
     id: "ei-h3",
@@ -51,7 +51,7 @@ QUESTIONS.push(
       "Widely taught in high schools and colleges, Kindred has sold more than half a million copies since it was first published in 1979."
     ],
     answer: 1,
-    explanation: "The goal is to introduce the novel to an unfamiliar audience and indicate its popularity. The first choice gives the author, title, date, and premise, and mentions its sales and use in schools. The others omit either the premise or the evidence of popularity."
+    explanation: "The goal is to introduce the novel to an unfamiliar audience and indicate its popularity. The correct answer gives the author, title, date, and premise, and mentions its sales and use in schools. The others omit either the premise or the evidence of popularity."
   },
   {
     id: "ei-h4",
@@ -68,7 +68,7 @@ QUESTIONS.push(
       "Researchers who studied two groups of honeybees concluded that a common pesticide, used at levels typical of farm fields, impairs bees' ability to navigate."
     ],
     answer: 0,
-    explanation: "The goal is to present the study's conclusion along with the evidence for it. Only the first choice states both the finding (30% less likely to return) and the conclusion (impaired navigation). The others describe the method without the result or conclusion."
+    explanation: "The goal is to present the study's conclusion along with the evidence for it. Only the correct answer states both the finding (30% less likely to return) and the conclusion (impaired navigation). The others describe the method without the result or conclusion."
   },
   {
     id: "ei-h5",
@@ -85,7 +85,7 @@ QUESTIONS.push(
       "In 2015, researchers used duplicate seeds stored at the Svalbard Global Seed Vault to replace collections lost when a gene bank in Syria was damaged during the war there."
     ],
     answer: 3,
-    explanation: "The goal is to give an example of the vault fulfilling its purpose. Only the first choice describes a specific instance (2015, Syria) in which stored seeds replaced lost collections. The others describe the vault's location or design."
+    explanation: "The goal is to give an example of the vault fulfilling its purpose. Only the correct answer describes a specific instance (2015, Syria) in which stored seeds replaced lost collections. The others describe the vault's location or design."
   },
   {
     id: "ei-h6",
@@ -102,7 +102,7 @@ QUESTIONS.push(
       "Mangrove forests grow along tropical coastlines, where their dense, tangled roots slow incoming waves and help store large amounts of carbon."
     ],
     answer: 2,
-    explanation: "The goal calls for highlighting the contrast between mangroves' value and their loss. Only the first choice includes both the benefits and the decline. The others give only benefits or only the loss."
+    explanation: "The goal calls for highlighting the contrast between mangroves' value and their loss. Only the correct answer includes both the benefits and the decline. The others give only benefits or only the loss."
   },
   {
     id: "ei-h7",
@@ -119,7 +119,7 @@ QUESTIONS.push(
       "Like many church musicians of her era, Hildegard of Bingen, a Benedictine abbess, composed liturgical songs—more than seventy in all."
     ],
     answer: 1,
-    explanation: "The goal is to emphasize what made Hildegard unusual among medieval composers. Only the first choice explicitly contrasts her with typical, anonymous composers of the period."
+    explanation: "The goal is to emphasize what made Hildegard unusual among medieval composers. Only the correct answer explicitly contrasts her with typical, anonymous composers of the period."
   },
   {
     id: "ei-h8",
@@ -136,7 +136,7 @@ QUESTIONS.push(
       "Tardigrades, which are only about 0.5 millimeters long, survive extreme conditions by entering a dehydrated state called a tun."
     ],
     answer: 0,
-    explanation: "The goal requires both the mechanism (the tun state) and a dramatic illustration of survival. Only the first choice explains how they survive and gives the space experiment as evidence."
+    explanation: "The goal requires both the mechanism (the tun state) and a dramatic illustration of survival. Only the correct answer explains how they survive and gives the space experiment as evidence."
   },
   {
     id: "ei-h9",
@@ -153,7 +153,7 @@ QUESTIONS.push(
       "Medellín's outdoor escalators, built in 2011, cut what was once a climb equivalent to 28 stories into a six-minute ride for residents of Comuna 13."
     ],
     answer: 3,
-    explanation: "The goal is to emphasize the escalators' practical benefit to residents. Only the first choice compares the old climb with the new six-minute ride. The others mention the escalators' existence, location, or tourist appeal."
+    explanation: "The goal is to emphasize the escalators' practical benefit to residents. Only the correct answer compares the old climb with the new six-minute ride. The others mention the escalators' existence, location, or tourist appeal."
   },
   {
     id: "ei-h10",
@@ -170,7 +170,7 @@ QUESTIONS.push(
       "When an object was named while children were actively playing with it, 90% of the three-year-olds in Tanaka's study identified it correctly a week later."
     ],
     answer: 2,
-    explanation: "The goal is to compare the results of the two conditions. Only the first choice presents both percentages and identifies what distinguished the conditions."
+    explanation: "The goal is to compare the results of the two conditions. Only the correct answer presents both percentages and identifies what distinguished the conditions."
   },
   {
     id: "ei-h11",
@@ -187,7 +187,7 @@ QUESTIONS.push(
       "Built during the Ming dynasty (1368–1644), the best-preserved sections of the Great Wall of China are among the most visited."
     ],
     answer: 1,
-    explanation: "The goal is to correct a misconception about the wall. Only the first choice directly states that it is not a single wall and gives supporting details."
+    explanation: "The goal is to correct a misconception about the wall. Only the correct answer directly states that it is not a single wall and gives supporting details."
   },
   {
     id: "ei-h12",
@@ -204,7 +204,7 @@ QUESTIONS.push(
       "Mount Everest's peak is about 8,849 meters above sea level, while the Mariana Trench is the deepest known part of Earth's oceans."
     ],
     answer: 0,
-    explanation: "The goal is to convey the depth of the trench by comparison with Everest. Only the first choice gives both measurements and states the comparison. The last choice mentions both but gives no depth for the trench, so no comparison can be made."
+    explanation: "The goal is to convey the depth of the trench by comparison with Everest. Only the correct answer gives both measurements and states the comparison. The choice giving Everest's height and calling the trench the deepest part of the oceans mentions both but gives no depth for the trench, so no comparison can be made."
   },
   {
     id: "ei-h13",
@@ -221,7 +221,7 @@ QUESTIONS.push(
       "Kusama's Infinity Mirror Rooms, which create an illusion of endless space, drew over 160,000 visitors to a 2017 exhibition."
     ],
     answer: 3,
-    explanation: "The goal is to describe the rooms and show their popularity. Only the first choice describes what the rooms are and gives the attendance figure."
+    explanation: "The goal is to describe the rooms and show their popularity. Only the correct answer describes what the rooms are and gives the attendance figure."
   },
   {
     id: "ei-h14",
@@ -238,7 +238,7 @@ QUESTIONS.push(
       "Each stretch of coastline has a slightly different magnetic field, and sea turtles return to the beaches where they hatched to lay their eggs."
     ],
     answer: 2,
-    explanation: "The goal is to explain a possible answer to the question of how turtles navigate. Only the first choice explains the magnetic-signature hypothesis."
+    explanation: "The goal is to explain a possible answer to the question of how turtles navigate. Only the correct answer explains the magnetic-signature hypothesis."
   },
   {
     id: "ei-h15",
@@ -255,7 +255,7 @@ QUESTIONS.push(
       "Written in an unknown script, the fifteenth-century Voynich manuscript is illustrated with drawings of plants unlike any known species."
     ],
     answer: 1,
-    explanation: "The goal is to emphasize that the manuscript remains a mystery despite expert attempts to decode it. Only the first choice mentions the attempts and their lack of success."
+    explanation: "The goal is to emphasize that the manuscript remains a mystery despite expert attempts to decode it. Only the correct answer mentions the attempts and their lack of success."
   },
   {
     id: "ei-h16",
@@ -272,7 +272,7 @@ QUESTIONS.push(
       "City A installed cool roofs on 10% of its buildings, while City B installed them on 40% of its buildings."
     ],
     answer: 0,
-    explanation: "The goal is to show that more cool roofs produced greater cooling. Only the first choice pairs each city's coverage with its temperature drop, revealing the relationship."
+    explanation: "The goal is to show that more cool roofs produced greater cooling. Only the correct answer pairs each city's coverage with its temperature drop, revealing the relationship."
   },
   {
     id: "ei-h17",
@@ -289,7 +289,7 @@ QUESTIONS.push(
       "Kintsugi, the Japanese art of repairing pottery with gold-flecked lacquer, highlights cracks rather than hiding them, reflecting a philosophy that finds beauty in imperfection."
     ],
     answer: 3,
-    explanation: "The goal is to explain the connection between the technique and its underlying philosophy. Only the first choice describes the technique and links it to wabi-sabi's appreciation of imperfection."
+    explanation: "The goal is to explain the connection between the technique and its underlying philosophy. Only the correct answer describes the technique and links it to wabi-sabi's appreciation of imperfection."
   },
   {
     id: "ei-h18",
@@ -306,7 +306,7 @@ QUESTIONS.push(
       "Students in a control group learned fractions with pie diagrams, a common method, while an experimental group tried a newer approach using number lines."
     ],
     answer: 2,
-    explanation: "The goal is to present the study's results. Only the first choice reports the outcome, including the average difference and where it was largest."
+    explanation: "The goal is to present the study's results. Only the correct answer reports the outcome, including the average difference and where it was largest."
   },
   {
     id: "ei-h19",
@@ -323,7 +323,7 @@ QUESTIONS.push(
       "In 1843, Ada Lovelace published notes about Charles Babbage's Analytical Engine, a proposed mechanical computer that was never built."
     ],
     answer: 1,
-    explanation: "The goal is to explain why Lovelace is considered a pioneer of computing. Only the first choice describes her notes and their significance as the first program."
+    explanation: "The goal is to explain why Lovelace is considered a pioneer of computing. Only the correct answer describes her notes and their significance as the first program."
   },
   {
     id: "ei-h20",
@@ -340,7 +340,7 @@ QUESTIONS.push(
       "Researchers studying red foxes in England compared the diets of urban and rural foxes and also measured the length and width of their snouts."
     ],
     answer: 0,
-    explanation: "The goal requires linking diet differences to physical differences. Only the first choice presents both the dietary difference and the snout difference, along with the proposed explanation connecting them."
+    explanation: "The goal requires linking diet differences to physical differences. Only the correct answer presents both the dietary difference and the snout difference, along with the proposed explanation connecting them."
   },
   {
     id: "ei-h21",
@@ -357,7 +357,7 @@ QUESTIONS.push(
       "About a third of Pompeii remains unexcavated, partly because archaeologists want to leave areas for future researchers with better technology."
     ],
     answer: 3,
-    explanation: "The goal is to explain why part of Pompeii remains unexcavated. Only the first choice gives the proportion unexcavated and the archaeologists' reason."
+    explanation: "The goal is to explain why part of Pompeii remains unexcavated. Only the correct answer gives the proportion unexcavated and the archaeologists' reason."
   },
   {
     id: "ei-h22",
@@ -374,7 +374,7 @@ QUESTIONS.push(
       "A 2018 study found that ballooning spiders, which release silk threads to float into the air, respond to Earth's electric field."
     ],
     answer: 2,
-    explanation: "The goal is to show how new evidence challenged an earlier assumption. Only the first choice states the earlier belief and the study's contradicting evidence."
+    explanation: "The goal is to show how new evidence challenged an earlier assumption. Only the correct answer states the earlier belief and the study's contradicting evidence."
   },
   {
     id: "ei-h23",
@@ -391,7 +391,7 @@ QUESTIONS.push(
       "Pablo Neruda, a Chilean poet who received the Nobel Prize in Literature in 1971, published Twenty Love Poems and a Song of Despair in 1924."
     ],
     answer: 1,
-    explanation: "The goal is to emphasize Neruda's early success. Only the first choice highlights his age and the collection's sales, contrasting it with his much later Nobel Prize."
+    explanation: "The goal is to emphasize Neruda's early success. Only the correct answer highlights his age and the collection's sales, contrasting it with his much later Nobel Prize."
   },
   {
     id: "ei-h24",
@@ -408,7 +408,7 @@ QUESTIONS.push(
       "The European Union's 2021 ban on single-use plastic straws, plates, and cutlery encouraged alternatives made of paper, bamboo, and wood."
     ],
     answer: 0,
-    explanation: "The goal is to explain the ban's purpose and the problem it addresses. Only the first choice gives both the purpose and the evidence of the problem."
+    explanation: "The goal is to explain the ban's purpose and the problem it addresses. Only the correct answer gives both the purpose and the evidence of the problem."
   },
   {
     id: "ei-h25",
@@ -425,7 +425,7 @@ QUESTIONS.push(
       "Smoke from 2023 Quebec wildfires caused hazardous air in New York City, more than 600 kilometers away."
     ],
     answer: 3,
-    explanation: "The goal is to illustrate, with an example, the distance smoke can travel. Only the first choice gives a specific case with the distance involved."
+    explanation: "The goal is to illustrate, with an example, the distance smoke can travel. Only the correct answer gives a specific case with the distance involved."
   },
   {
     id: "ei-h26",
@@ -442,7 +442,7 @@ QUESTIONS.push(
       "Papa amarilla is more susceptible to a fungal disease called late blight than common potato varieties grown at lower altitudes."
     ],
     answer: 2,
-    explanation: "The goal is to present both a strength and a weakness of the variety. Only the first choice mentions frost resistance and susceptibility to late blight."
+    explanation: "The goal is to present both a strength and a weakness of the variety. Only the correct answer mentions frost resistance and susceptibility to late blight."
   },
   {
     id: "ei-h27",
@@ -459,7 +459,7 @@ QUESTIONS.push(
       "Set in an Igbo village before and during British colonization, Things Fall Apart was published in 1958 by the Nigerian author Chinua Achebe."
     ],
     answer: 1,
-    explanation: "The goal is to explain Achebe's motivation for writing the novel. Only the first choice describes the novel and identifies what it was responding to."
+    explanation: "The goal is to explain Achebe's motivation for writing the novel. Only the correct answer describes the novel and identifies what it was responding to."
   },
   {
     id: "ei-h28",
@@ -476,7 +476,7 @@ QUESTIONS.push(
       "Patients in Group 2, whose windows faced a brick wall, were compared with patients in Group 1, whose windows faced a grove of trees."
     ],
     answer: 0,
-    explanation: "The goal is to summarize the study's findings comparing the two groups. Only the first choice states both outcomes and identifies both conditions."
+    explanation: "The goal is to summarize the study's findings comparing the two groups. Only the correct answer states both outcomes and identifies both conditions."
   },
   {
     id: "ei-h29",
@@ -493,7 +493,7 @@ QUESTIONS.push(
       "Axolotls, which can regrow limbs and even parts of their brains, are valuable to science—yet critically endangered in the wild."
     ],
     answer: 3,
-    explanation: "The goal is to contrast the axolotl's scientific value with its endangered status. Only the first choice includes both."
+    explanation: "The goal is to contrast the axolotl's scientific value with its endangered status. Only the correct answer includes both."
   },
   {
     id: "ei-h30",
@@ -510,7 +510,7 @@ QUESTIONS.push(
       "After 1993, the Hubble Space Telescope produced some of the sharpest images of space ever taken and has been used in more than 19,000 papers."
     ],
     answer: 2,
-    explanation: "The goal is to describe the problem and how it was solved. Only the first choice includes the flaw, the repair, and the result."
+    explanation: "The goal is to describe the problem and how it was solved. Only the correct answer includes the flaw, the repair, and the result."
   },
   {
     id: "ei-h31",
@@ -527,7 +527,7 @@ QUESTIONS.push(
       "Elephants, dolphins, and magpies, like the chimpanzees first tested in 1970, have passed the mirror test."
     ],
     answer: 1,
-    explanation: "The goal is to indicate which animals have and have not passed the test. Only the first choice names both groups."
+    explanation: "The goal is to indicate which animals have and have not passed the test. Only the correct answer names both groups."
   },
   {
     id: "ei-h32",
@@ -544,7 +544,7 @@ QUESTIONS.push(
       "Bamboo has a tensile strength comparable to that of steel and has been used for construction in parts of Asia for thousands of years."
     ],
     answer: 0,
-    explanation: "The goal is to argue that bamboo is a sustainable building material. Only the first choice combines its strength (suitability for building) with its regrowth (sustainability)."
+    explanation: "The goal is to argue that bamboo is a sustainable building material. Only the correct answer combines its strength (suitability for building) with its regrowth (sustainability)."
   },
   {
     id: "ei-h33",
@@ -561,7 +561,7 @@ QUESTIONS.push(
       "An Arctic tern flies about 70,900 kilometers a year, so over a thirty-year lifetime it may travel the equivalent of three round trips to the Moon."
     ],
     answer: 3,
-    explanation: "The goal is to convey the immense distances terns travel. Only the first choice gives the annual distance and the vivid Moon comparison."
+    explanation: "The goal is to convey the immense distances terns travel. Only the correct answer gives the annual distance and the vivid Moon comparison."
   },
   {
     id: "ei-h34",
@@ -578,7 +578,7 @@ QUESTIONS.push(
       "Like Rosa Parks, Claudette Colvin refused to give up her bus seat to a white passenger in Montgomery, Alabama, in 1955."
     ],
     answer: 2,
-    explanation: "The goal is to emphasize that Colvin acted before Parks yet received little recognition. Only the first choice includes the timing relative to Parks and the decades of neglect."
+    explanation: "The goal is to emphasize that Colvin acted before Parks yet received little recognition. Only the correct answer includes the timing relative to Parks and the decades of neglect."
   },
   {
     id: "ei-h35",
@@ -612,7 +612,7 @@ QUESTIONS.push(
       "With twelve to sixteen types of color receptors, compared with three in humans, mantis shrimp have the most complex eyes known."
     ],
     answer: 0,
-    explanation: "The goal is to present the surprising finding. Only the first choice juxtaposes the large number of receptors with their poorer color discrimination."
+    explanation: "The goal is to present the surprising finding. Only the correct answer juxtaposes the large number of receptors with their poorer color discrimination."
   },
   {
     id: "ei-h37",
@@ -629,7 +629,7 @@ QUESTIONS.push(
       "Ibn Battuta's Rihla, his account of some thirty years of travel across Africa and Asia, remains a key source for historians of the fourteenth century."
     ],
     answer: 3,
-    explanation: "The goal is to emphasize the Rihla's historical significance. Only the first choice identifies the book and explains its value to historians."
+    explanation: "The goal is to emphasize the Rihla's historical significance. Only the correct answer identifies the book and explains its value to historians."
   },
   {
     id: "ei-h38",
@@ -646,7 +646,7 @@ QUESTIONS.push(
       "Water from the Jordan River is diverted for agriculture in the region around the Dead Sea, a salt lake ten times saltier than the ocean."
     ],
     answer: 2,
-    explanation: "The goal is to explain a cause of the Dead Sea's decline. Only the first choice gives both the decline and its cause."
+    explanation: "The goal is to explain a cause of the Dead Sea's decline. Only the correct answer gives both the decline and its cause."
   },
   {
     id: "ei-h39",
@@ -663,7 +663,7 @@ QUESTIONS.push(
       "Researchers tested participants' memory of a list of 20 words both immediately after studying and one week later."
     ],
     answer: 1,
-    explanation: "The goal is to show that the advantage of walking appeared only over time. Only the first choice contrasts the identical immediate results with the different results a week later."
+    explanation: "The goal is to show that the advantage of walking appeared only over time. Only the correct answer contrasts the identical immediate results with the different results a week later."
   },
   {
     id: "ei-h40",
@@ -680,7 +680,7 @@ QUESTIONS.push(
       "Lichens are composite organisms that can grow in harsh places, from bare rock to Antarctic stones."
     ],
     answer: 0,
-    explanation: "The goal is to explain a practical use of lichens. Only the first choice describes their use in monitoring air quality and why they are suited to it."
+    explanation: "The goal is to explain a practical use of lichens. Only the correct answer describes their use in monitoring air quality and why they are suited to it."
   },
   {
     id: "ei-h41",
@@ -697,7 +697,7 @@ QUESTIONS.push(
       "Thousands of volunteers mailed the OED quotations showing how words were used; one alone sent more than 10,000."
     ],
     answer: 3,
-    explanation: "The goal is to emphasize the role of public volunteers. Only the first choice describes the volunteers' contributions and gives an example of their scale."
+    explanation: "The goal is to emphasize the role of public volunteers. Only the correct answer describes the volunteers' contributions and gives an example of their scale."
   },
   {
     id: "ei-h42",
@@ -714,7 +714,7 @@ QUESTIONS.push(
       "Chimpanzees in Gabon use stones to crack open hard-shelled nuts, a technique that young chimpanzees take years to master."
     ],
     answer: 2,
-    explanation: "The goal is to describe how young chimpanzees acquire the skill. Only the first choice explains the learning process and its duration."
+    explanation: "The goal is to describe how young chimpanzees acquire the skill. Only the correct answer explains the learning process and its duration."
   },
   {
     id: "ei-h43",
@@ -731,7 +731,7 @@ QUESTIONS.push(
       "The Trans-Siberian Railway, which connects Moscow in the west with Vladivostok in the east, was built between 1891 and 1916."
     ],
     answer: 1,
-    explanation: "The goal is to convey the railway's length vividly. Only the first choice gives the length and illustrates it with the time zones and travel time."
+    explanation: "The goal is to convey the railway's length vividly. Only the correct answer gives the length and illustrates it with the time zones and travel time."
   },
   {
     id: "ei-h44",
@@ -748,7 +748,7 @@ QUESTIONS.push(
       "Supporters of reviving the woolly mammoth by editing elephant DNA argue that the animals could help restore Arctic grasslands."
     ],
     answer: 0,
-    explanation: "The goal is to present both sides of the debate. Only the first choice includes the supporters' and critics' main arguments."
+    explanation: "The goal is to present both sides of the debate. Only the correct answer includes the supporters' and critics' main arguments."
   },
   {
     id: "ei-h45",
@@ -765,7 +765,7 @@ QUESTIONS.push(
       "Sher-Gil moved from European academic conventions to a flat, vivid, Mughal-influenced style after settling in India in 1934."
     ],
     answer: 3,
-    explanation: "The goal is to describe how her style changed. Only the first choice describes both the earlier European style and the later Mughal-influenced style. The others describe only her background, only her later subjects, or only her early style."
+    explanation: "The goal is to describe how her style changed. Only the correct answer describes both the earlier European style and the later Mughal-influenced style. The others describe only her background, only her later subjects, or only her early style."
   },
   {
     id: "ei-h46",
@@ -782,7 +782,7 @@ QUESTIONS.push(
       "Because nut-eaters exercised more and smoked less, researchers adjusted their analysis of heart-disease risk to account for these differences."
     ],
     answer: 2,
-    explanation: "The goal is to show that the benefit persisted after other factors were considered. Only the first choice reports the adjusted 14% figure along with the factors controlled. The second gives the unadjusted figure and leaves open whether exercise and smoking explain it."
+    explanation: "The goal is to show that the benefit persisted after other factors were considered. Only the correct answer reports the adjusted 14% figure along with the factors controlled. The choice reporting a 20% lower risk gives the unadjusted figure and leaves open whether exercise and smoking explain it."
   },
   {
     id: "ei-h47",
@@ -799,7 +799,7 @@ QUESTIONS.push(
       "ALMA, an array of 66 radio antennas, is one of several major observatories in Chile's extremely dry Atacama Desert."
     ],
     answer: 1,
-    explanation: "The goal is to show two different ways scientists use the desert. Only the first choice mentions both rover testing and astronomy. The others focus on the desert's dryness or only on astronomy."
+    explanation: "The goal is to show two different ways scientists use the desert. Only the correct answer mentions both rover testing and astronomy. The others focus on the desert's dryness or only on astronomy."
   },
   {
     id: "ei-h48",
@@ -816,7 +816,7 @@ QUESTIONS.push(
       "The Inca, who did not use wheeled vehicles, built a road network that crossed what are now Peru, Ecuador, Bolivia, Chile, Argentina, and Colombia."
     ],
     answer: 0,
-    explanation: "The goal is to emphasize how quickly information moved. Only the first choice gives the speed of the chasquis (240 kilometers a day). The third mentions the runners but not their speed."
+    explanation: "The goal is to emphasize how quickly information moved. Only the correct answer gives the speed of the chasquis (240 kilometers a day). The choice about chasquis carrying messages along the 40,000-kilometer network mentions the runners but not their speed."
   },
   {
     id: "ei-h49",
@@ -833,7 +833,7 @@ QUESTIONS.push(
       "During a 1977 drought, when only large, hard seeds remained, the thick-beaked Species A declined far less (20%) than the narrow-beaked Species B (85%)."
     ],
     answer: 3,
-    explanation: "The goal is to suggest that beak shape affected survival. Only the first choice links each species' beak type to its population loss under drought conditions."
+    explanation: "The goal is to suggest that beak shape affected survival. Only the correct answer links each species' beak type to its population loss under drought conditions."
   },
   {
     id: "ei-h50",
@@ -850,7 +850,7 @@ QUESTIONS.push(
       "Sound travels faster in materials whose particles are tightly bound, such as steel, than in materials such as air or water."
     ],
     answer: 2,
-    explanation: "The goal is to explain why listening to a rail works. Only the first choice connects the speed difference in steel and air to the practice of listening to tracks."
+    explanation: "The goal is to explain why listening to a rail works. Only the correct answer connects the speed difference in steel and air to the practice of listening to tracks."
   },
   {
     id: "ei-h51",
@@ -867,7 +867,7 @@ QUESTIONS.push(
       "Scientists of Mary Anning's time often published her findings without credit, and she was barred from the Geological Society of London."
     ],
     answer: 1,
-    explanation: "The goal is to contrast her treatment during her life with her later recognition. Only the first choice includes both. The third and fourth each give only one side."
+    explanation: "The goal is to contrast her treatment during her life with her later recognition. Only the correct answer includes both. The choice about the Royal Society naming her in 2010 and the choice about her findings being published without credit each give only one side."
   },
   {
     id: "ei-h52",
@@ -884,7 +884,7 @@ QUESTIONS.push(
       "Participants who were asked to remember a seven-digit number chose chocolate cake over fruit salad 63% of the time."
     ],
     answer: 0,
-    explanation: "The goal is to present the evidence and conclusion together. Only the first choice gives both groups' results and the researchers' interpretation. The fourth gives one group's result without the comparison."
+    explanation: "The goal is to present the evidence and conclusion together. Only the correct answer gives both groups' results and the researchers' interpretation. The choice reporting that seven-digit participants chose cake 63% of the time gives one group's result without the comparison."
   },
   {
     id: "ei-h53",
@@ -901,7 +901,7 @@ QUESTIONS.push(
       "The Great Pyramid's stepped look today results from the removal of most of its smooth white limestone casing in the 1300s CE for use in Cairo's buildings."
     ],
     answer: 3,
-    explanation: "The goal is to explain why the pyramid looks different today. Only the first choice links the removal of the casing stones to its current stepped appearance."
+    explanation: "The goal is to explain why the pyramid looks different today. Only the correct answer links the removal of the casing stones to its current stepped appearance."
   },
   {
     id: "ei-h54",
@@ -918,7 +918,7 @@ QUESTIONS.push(
       "Researchers concluded that dogs' ability to understand human pointing may be largely inherited rather than learned through experience."
     ],
     answer: 2,
-    explanation: "The goal is to present the evidence for the conclusion. Only the first choice explains that inexperienced puppies performed as well as adults, which is what supports the claim that the ability is inherited."
+    explanation: "The goal is to present the evidence for the conclusion. Only the correct answer explains that inexperienced puppies performed as well as adults, which is what supports the claim that the ability is inherited."
   },
   {
     id: "ei-h55",
@@ -935,7 +935,7 @@ QUESTIONS.push(
       "Investigators studied the Great Molasses Flood, in which a storage tank holding 8.7 million liters of molasses burst in Boston in 1919."
     ],
     answer: 1,
-    explanation: "The goal is to identify the cause of the disaster. Only the first choice explains why the tank burst (poor construction and lack of testing)."
+    explanation: "The goal is to identify the cause of the disaster. Only the correct answer explains why the tank burst (poor construction and lack of testing)."
   },
   {
     id: "ei-h56",
@@ -952,7 +952,7 @@ QUESTIONS.push(
       "Each spring, beekeepers transport hives to California, which produces about 80% of the world's almonds."
     ],
     answer: 0,
-    explanation: "The goal is to convey the scale of the almond pollination effort. Only the first choice includes the number of hives and their share of all U.S. hives."
+    explanation: "The goal is to convey the scale of the almond pollination effort. Only the correct answer includes the number of hives and their share of all U.S. hives."
   },
   {
     id: "ei-h57",
@@ -969,7 +969,7 @@ QUESTIONS.push(
       "Madagascar has no woodpeckers, but the aye-aye finds larvae the same way: by tapping on bark."
     ],
     answer: 3,
-    explanation: "The goal is to compare the aye-aye with woodpeckers. Only the first choice links the two, noting that the aye-aye uses a similar method where woodpeckers are absent."
+    explanation: "The goal is to compare the aye-aye with woodpeckers. Only the correct answer links the two, noting that the aye-aye uses a similar method where woodpeckers are absent."
   },
   {
     id: "ei-h58",
@@ -986,7 +986,7 @@ QUESTIONS.push(
       "For years, many of Zaha Hadid's designs, such as those with sweeping curves, were considered impossible to build."
     ],
     answer: 2,
-    explanation: "The goal is to explain how technology affected her career. Only the first choice links computer modeling to the eventual construction of her designs."
+    explanation: "The goal is to explain how technology affected her career. Only the correct answer links computer modeling to the eventual construction of her designs."
   },
   {
     id: "ei-h59",
@@ -1003,7 +1003,7 @@ QUESTIONS.push(
       "Light from galaxies moving away from Earth shifts toward red, a phenomenon that astronomers have studied extensively."
     ],
     answer: 1,
-    explanation: "The goal is to explain how astronomers use the Doppler effect to learn about the universe. Only the first choice links the effect to redshift and the conclusion that the universe is expanding."
+    explanation: "The goal is to explain how astronomers use the Doppler effect to learn about the universe. Only the correct answer links the effect to redshift and the conclusion that the universe is expanding."
   },
   {
     id: "ei-h60",
@@ -1020,7 +1020,7 @@ QUESTIONS.push(
       "Researchers studying the Bajau and a nearby group that does not dive identified a gene variant linked to spleen size."
     ],
     answer: 0,
-    explanation: "The goal is to present evidence of a physical adaptation to diving. Only the first choice compares the Bajau's spleen size with that of a non-diving group and connects it to diving."
+    explanation: "The goal is to present evidence of a physical adaptation to diving. Only the correct answer compares the Bajau's spleen size with that of a non-diving group and connects it to diving."
   },
   {
     id: "ei-h61",
@@ -1037,7 +1037,7 @@ QUESTIONS.push(
       "Past counts by the project's volunteers helped scientists document the Eurasian collared-dove's spread across North America."
     ],
     answer: 3,
-    explanation: "The goal is to give a specific example of how scientists have used the data. Only the first choice describes such a case (the collared-dove's spread)."
+    explanation: "The goal is to give a specific example of how scientists have used the data. Only the correct answer describes such a case (the collared-dove's spread)."
   },
   {
     id: "ei-h62",
@@ -1054,7 +1054,7 @@ QUESTIONS.push(
       "Covering about 150,000 square kilometers, the Pantanal in South America is the largest tropical wetland on Earth."
     ],
     answer: 2,
-    explanation: "The goal is to emphasize the severity of the 2020 fires. Only the first choice gives both the extent of the burned area and the number of animals killed."
+    explanation: "The goal is to emphasize the severity of the 2020 fires. Only the correct answer gives both the extent of the burned area and the number of animals killed."
   },
   {
     id: "ei-h63",
@@ -1071,7 +1071,7 @@ QUESTIONS.push(
       "Kazuo Ishiguro's novel Never Let Me Go, published in 2005, is narrated by a young woman at a boarding school with a dark secret."
     ],
     answer: 1,
-    explanation: "The goal is to identify a similarity between the novels' narrators. Only the first choice states what the narrators have in common. The third choice describes only how they differ."
+    explanation: "The goal is to identify a similarity between the novels' narrators. Only the correct answer states what the narrators have in common. The choice contrasting the butler with the boarding-school narrator describes only how they differ."
   },
   {
     id: "ei-h64",
@@ -1088,7 +1088,7 @@ QUESTIONS.push(
       "Researchers placed small cameras on the backs of emperor penguins, which dove to depths of more than 500 meters."
     ],
     answer: 0,
-    explanation: "The goal is to explain how penguins can stay underwater so long. Only the first choice links the slowing heart rate to conserving oxygen and to the length of dives."
+    explanation: "The goal is to explain how penguins can stay underwater so long. Only the correct answer links the slowing heart rate to conserving oxygen and to the length of dives."
   },
   {
     id: "ei-h65",
@@ -1105,7 +1105,7 @@ QUESTIONS.push(
       "Since the stone repeated its decree in readable Greek, Champollion could use it to decipher hieroglyphs in 1822."
     ],
     answer: 3,
-    explanation: "The goal is to explain why the stone was useful for deciphering hieroglyphs. Only the first choice connects the readable Greek text to Champollion's decipherment."
+    explanation: "The goal is to explain why the stone was useful for deciphering hieroglyphs. Only the correct answer connects the readable Greek text to Champollion's decipherment."
   },
   {
     id: "ei-h66",
@@ -1122,7 +1122,7 @@ QUESTIONS.push(
       "Some downtown business owners initially opposed the city's $15 peak-hour fee for cars, fearing it would reduce customers."
     ],
     answer: 2,
-    explanation: "The goal is to show the fee's effect on traffic. Only the first choice gives the traffic and bus-speed results."
+    explanation: "The goal is to show the fee's effect on traffic. Only the correct answer gives the traffic and bus-speed results."
   },
   {
     id: "ei-h67",
@@ -1139,7 +1139,7 @@ QUESTIONS.push(
       "Until a living coelacanth was caught off South Africa in 1938, scientists knew the fish only from fossils and believed it extinct."
     ],
     answer: 1,
-    explanation: "The goal is to explain why the coelacanth interests scientists who study the evolution of land animals. Only the first choice mentions the limb-like fins and the close relationship to land animals."
+    explanation: "The goal is to explain why the coelacanth interests scientists who study the evolution of land animals. Only the correct answer mentions the limb-like fins and the close relationship to land animals."
   },
   {
     id: "ei-h68",
@@ -1156,7 +1156,7 @@ QUESTIONS.push(
       "Some colonists doubted that Phillis Wheatley had written the poems in Poems on Various Subjects, Religious and Moral."
     ],
     answer: 0,
-    explanation: "The goal is to show the obstacles Wheatley faced in being recognized as an author. Only the first choice includes both her achievement and the examination she had to undergo."
+    explanation: "The goal is to show the obstacles Wheatley faced in being recognized as an author. Only the correct answer includes both her achievement and the examination she had to undergo."
   },
   {
     id: "ei-h69",
@@ -1173,7 +1173,7 @@ QUESTIONS.push(
       "Unlike traditional concrete, whose cement accounts for about 8% of global CO₂ emissions, a startup's new concrete absorbs CO₂ as it hardens—and costs about the same."
     ],
     answer: 3,
-    explanation: "The goal is to emphasize that the new concrete is both environmentally better and affordable. Only the first choice contrasts its carbon absorption with traditional concrete's emissions and notes its comparable cost."
+    explanation: "The goal is to emphasize that the new concrete is both environmentally better and affordable. Only the correct answer contrasts its carbon absorption with traditional concrete's emissions and notes its comparable cost."
   },
   {
     id: "ei-h70",
@@ -1190,7 +1190,7 @@ QUESTIONS.push(
       "Recognition of unfamiliar faces was below 50% whether photos were shown for 100 milliseconds or 33 milliseconds."
     ],
     answer: 2,
-    explanation: "The goal is to compare familiar and unfamiliar faces. Only the first choice gives results for both types. The second compares durations rather than familiarity."
+    explanation: "The goal is to compare familiar and unfamiliar faces. Only the correct answer gives results for both types. The choice giving familiar-face recognition at 100 versus 33 milliseconds compares durations rather than familiarity."
   },
   {
     id: "ei-h71",
@@ -1207,7 +1207,7 @@ QUESTIONS.push(
       "Using radiocarbon dating of eye-lens proteins, researchers estimated that the oldest Greenland shark they studied was about 392 years old."
     ],
     answer: 1,
-    explanation: "The goal is to emphasize the shark's slow pace of life. Only the first choice mentions the slow growth and very late maturity, along with its great age."
+    explanation: "The goal is to emphasize the shark's slow pace of life. Only the correct answer mentions the slow growth and very late maturity, along with its great age."
   },
   {
     id: "ei-h72",
@@ -1224,7 +1224,7 @@ QUESTIONS.push(
       "Doctors took samples of Henrietta Lacks's cancer cells in 1951 without her knowledge or consent."
     ],
     answer: 0,
-    explanation: "The goal is to highlight both the scientific value and the ethical problem. Only the first choice includes the cells' contributions and the lack of consent and disclosure."
+    explanation: "The goal is to highlight both the scientific value and the ethical problem. Only the correct answer includes the cells' contributions and the lack of consent and disclosure."
   },
   {
     id: "ei-h73",
@@ -1241,7 +1241,7 @@ QUESTIONS.push(
       "The antibiotic raised infected mice's survival to 95% (versus 10% untreated) but has not yet been tested in humans."
     ],
     answer: 3,
-    explanation: "The goal is to present the promising result while noting a limitation. Only the first choice includes both. The second gives only the result."
+    explanation: "The goal is to present the promising result while noting a limitation. Only the correct answer includes both. The choice reporting 95% versus 10% survival gives only the result."
   },
   {
     id: "ei-h74",
@@ -1258,7 +1258,7 @@ QUESTIONS.push(
       "Earlier churches needed thick walls to support their roofs, while Gothic cathedrals had thinner, taller walls."
     ],
     answer: 2,
-    explanation: "The goal is to explain how flying buttresses made large windows possible. Only the first choice traces the chain from transferred weight to thinner walls to room for windows."
+    explanation: "The goal is to explain how flying buttresses made large windows possible. Only the correct answer traces the chain from transferred weight to thinner walls to room for windows."
   },
   {
     id: "ei-h75",
@@ -1275,7 +1275,7 @@ QUESTIONS.push(
       "Since the first heart transplant in 1967, survival rates for heart transplant patients have risen above 80%."
     ],
     answer: 1,
-    explanation: "The goal is to explain how a drug changed outcomes. Only the first choice connects the problem (rejection), the drug, and the improved survival."
+    explanation: "The goal is to explain how a drug changed outcomes. Only the correct answer connects the problem (rejection), the drug, and the improved survival."
   },
   {
     id: "ei-h76",
@@ -1292,7 +1292,7 @@ QUESTIONS.push(
       "A 2016 study examined the satisfaction of commuters who walked or cycled, took public transit, or drove to work."
     ],
     answer: 0,
-    explanation: "The goal is to emphasize the study's finding about mode versus length. Only the first choice includes that comparison along with the ranking."
+    explanation: "The goal is to emphasize the study's finding about mode versus length. Only the correct answer includes that comparison along with the ranking."
   },
   {
     id: "ei-h77",
@@ -1309,7 +1309,7 @@ QUESTIONS.push(
       "Hokusai's The Great Wave became popular in Europe after the 1850s and influenced Monet and van Gogh."
     ],
     answer: 3,
-    explanation: "The goal is to describe the print's impact outside Japan. Only the first choice describes its popularity in Europe and its influence on European artists."
+    explanation: "The goal is to describe the print's impact outside Japan. Only the correct answer describes its popularity in Europe and its influence on European artists."
   },
   {
     id: "ei-h78",
@@ -1326,7 +1326,7 @@ QUESTIONS.push(
       "Researchers compared the effects of afternoon naps lasting 20 minutes with those of naps lasting 60 minutes."
     ],
     answer: 2,
-    explanation: "The goal is to explain why a shorter nap may be better than a longer one. Only the first choice contrasts both nap lengths and links grogginess to deep sleep."
+    explanation: "The goal is to explain why a shorter nap may be better than a longer one. Only the correct answer contrasts both nap lengths and links grogginess to deep sleep."
   },
   {
     id: "ei-h79",
@@ -1343,7 +1343,7 @@ QUESTIONS.push(
       "Mechanical clocks appeared in Europe more than a thousand years after the Antikythera mechanism was made around 100 BCE."
     ],
     answer: 1,
-    explanation: "The goal is to emphasize how advanced the device was for its time. Only the first choice states both what it did and that nothing comparable existed for more than a millennium."
+    explanation: "The goal is to emphasize how advanced the device was for its time. Only the correct answer states both what it did and that nothing comparable existed for more than a millennium."
   },
   {
     id: "ei-h80",
@@ -1360,7 +1360,7 @@ QUESTIONS.push(
       "Researchers who studied dogs and wolves raised by humans examined whether eye contact affected oxytocin levels."
     ],
     answer: 0,
-    explanation: "The goal is to explain why researchers linked the effect to domestication. Only the first choice includes the comparison with wolves, which is the evidence for that conclusion."
+    explanation: "The goal is to explain why researchers linked the effect to domestication. Only the correct answer includes the comparison with wolves, which is the evidence for that conclusion."
   },
   {
     id: "ei-h81",
@@ -1377,7 +1377,7 @@ QUESTIONS.push(
       "Long credited partly to her brother—her Easter Sonata was identified as hers only in 2010—Fanny's music is now widely performed."
     ],
     answer: 3,
-    explanation: "The goal is to contrast the past misattribution of her work with her present recognition. Only the first choice includes both."
+    explanation: "The goal is to contrast the past misattribution of her work with her present recognition. Only the correct answer includes both."
   },
   {
     id: "ei-h82",
@@ -1394,7 +1394,7 @@ QUESTIONS.push(
       "John Snow, a physician in London, believed that cholera spread through contaminated water rather than through the air."
     ],
     answer: 2,
-    explanation: "The goal is to summarize how Snow's investigation supported his theory. Only the first choice includes his method (mapping), his finding (clustering), and the result of his intervention."
+    explanation: "The goal is to summarize how Snow's investigation supported his theory. Only the correct answer includes his method (mapping), his finding (clustering), and the result of his intervention."
   },
   {
     id: "ei-h83",
@@ -1411,7 +1411,7 @@ QUESTIONS.push(
       "Oak trees produce acorns in highly variable amounts, with enormous crops in mast years and very few in other years."
     ],
     answer: 1,
-    explanation: "The goal is to describe a consequence of mast years for human health. Only the first choice traces the link from acorns to mice to Lyme-disease ticks."
+    explanation: "The goal is to describe a consequence of mast years for human health. Only the correct answer traces the link from acorns to mice to Lyme-disease ticks."
   },
   {
     id: "ei-h84",
@@ -1428,7 +1428,7 @@ QUESTIONS.push(
       "The U.S. Navy did not adopt the frequency-hopping system that Hedy Lamarr co-invented with George Antheil during World War II."
     ],
     answer: 0,
-    explanation: "The goal is to emphasize the surprising long-term importance of an invention by someone known for something else. Only the first choice identifies her fame, the invention's early neglect, and its later impact."
+    explanation: "The goal is to emphasize the surprising long-term importance of an invention by someone known for something else. Only the correct answer identifies her fame, the invention's early neglect, and its later impact."
   },
   {
     id: "ei-h85",
@@ -1445,7 +1445,7 @@ QUESTIONS.push(
       "When real caterpillars arrived, plants that had heard chewing recordings made more defensive chemicals than plants kept in silence."
     ],
     answer: 3,
-    explanation: "The goal is to present the key result. Only the first choice compares the two groups' responses to real caterpillars."
+    explanation: "The goal is to present the key result. Only the correct answer compares the two groups' responses to real caterpillars."
   },
   {
     id: "ei-h86",
@@ -1462,7 +1462,7 @@ QUESTIONS.push(
       "Researchers compared rereading and self-quizzing, two common methods that students use to study vocabulary."
     ],
     answer: 2,
-    explanation: "The goal is to recommend one method based on the results. Only the first choice compares the outcomes of the two methods."
+    explanation: "The goal is to recommend one method based on the results. Only the correct answer compares the outcomes of the two methods."
   },
   {
     id: "ei-h87",
@@ -1479,7 +1479,7 @@ QUESTIONS.push(
       "Conservationists moved all of New Zealand's kākāpō, a flightless parrot species, to islands free of predators."
     ],
     answer: 1,
-    explanation: "The goal is to show that conservation efforts worked. Only the first choice links the efforts to the population increase."
+    explanation: "The goal is to show that conservation efforts worked. Only the correct answer links the efforts to the population increase."
   },
   {
     id: "ei-h88",
@@ -1496,7 +1496,7 @@ QUESTIONS.push(
       "Bread mold, Penicillium, and mushrooms are all fungi, which absorb nutrients from their surroundings."
     ],
     answer: 0,
-    explanation: "The goal is to explain why fungi are no longer considered plants. Only the first choice gives both reasons: they don't photosynthesize and they're genetically closer to animals."
+    explanation: "The goal is to explain why fungi are no longer considered plants. Only the correct answer gives both reasons: they don't photosynthesize and they're genetically closer to animals."
   },
   {
     id: "ei-h89",
@@ -1513,7 +1513,7 @@ QUESTIONS.push(
       "Goodall's 1960 observation of a chimpanzee shaping a twig to fish for termites challenged the belief that only humans make tools."
     ],
     answer: 3,
-    explanation: "The goal is to explain the significance of her observation. Only the first choice connects what she saw to the challenge it posed to prevailing beliefs."
+    explanation: "The goal is to explain the significance of her observation. Only the correct answer connects what she saw to the challenge it posed to prevailing beliefs."
   },
   {
     id: "ei-h90",
@@ -1530,7 +1530,7 @@ QUESTIONS.push(
       "About 6,000 to 11,000 years ago, the Sahara Desert was much wetter than it is today."
     ],
     answer: 2,
-    explanation: "The goal is to use evidence from human artifacts to show the Sahara was once wetter. Only the first choice connects the rock art to the wetter period."
+    explanation: "The goal is to use evidence from human artifacts to show the Sahara was once wetter. Only the correct answer connects the rock art to the wetter period."
   },
   {
     id: "ei-h91",
@@ -1547,7 +1547,7 @@ QUESTIONS.push(
       "Engineers designed Zimbabwe's Eastgate Centre, which has no conventional air conditioning, with a ventilation system inspired by the air channels in termite mounds."
     ],
     answer: 1,
-    explanation: "The goal is to show the practical benefit of imitating nature. Only the first choice links the termite-inspired design to its energy savings."
+    explanation: "The goal is to show the practical benefit of imitating nature. Only the correct answer links the termite-inspired design to its energy savings."
   },
   {
     id: "ei-h92",
@@ -1564,7 +1564,7 @@ QUESTIONS.push(
       "Researcher B found no significant difference in achievement between students in classes of 22 and classes of 25."
     ],
     answer: 0,
-    explanation: "The goal is to explain why the studies' different conclusions might not conflict. The first choice shows that they examined different class sizes and differed in scale, which could account for the different results."
+    explanation: "The goal is to explain why the studies' different conclusions might not conflict. The correct answer shows that they examined different class sizes and differed in scale, which could account for the different results."
   },
   {
     id: "ei-h93",
@@ -1581,7 +1581,7 @@ QUESTIONS.push(
       "Despite English being spoken in both countries, ASL is unrelated to BSL; it descends partly from French Sign Language, brought by teacher Laurent Clerc in 1817."
     ],
     answer: 3,
-    explanation: "The goal is to explain a surprising fact about ASL's origins. Only the first choice highlights the surprise (ASL unrelated to BSL despite shared English) and explains the French connection."
+    explanation: "The goal is to explain a surprising fact about ASL's origins. Only the correct answer highlights the surprise (ASL unrelated to BSL despite shared English) and explains the French connection."
   },
   {
     id: "ei-h94",
@@ -1598,7 +1598,7 @@ QUESTIONS.push(
       "Scientists studying a 375-million-year-old fossil found in 2004 consider Tiktaalik a transitional form."
     ],
     answer: 2,
-    explanation: "The goal is to explain why Tiktaalik is considered transitional. Only the first choice shows it has both fish and land-animal features. The last choice states the conclusion without the evidence."
+    explanation: "The goal is to explain why Tiktaalik is considered transitional. Only the correct answer shows it has both fish and land-animal features. The choice saying scientists consider Tiktaalik a transitional form states the conclusion without the evidence."
   },
   {
     id: "ei-h95",
@@ -1615,7 +1615,7 @@ QUESTIONS.push(
       "Typical homes exchange their indoor air with outdoor air several times a day through normal ventilation."
     ],
     answer: 1,
-    explanation: "The goal is to explain why lab results don't apply to homes. Only the first choice contrasts the lab result with the number of plants needed in a real home."
+    explanation: "The goal is to explain why lab results don't apply to homes. Only the correct answer contrasts the lab result with the number of plants needed in a real home."
   },
   {
     id: "ei-h96",
@@ -1632,7 +1632,7 @@ QUESTIONS.push(
       "Editors who published Emily Dickinson's poems during her lifetime worked on fewer than a dozen of them."
     ],
     answer: 0,
-    explanation: "The goal is to explain how readers came to see her poems as she wrote them. Only the first choice describes the editors' changes and the later restoration."
+    explanation: "The goal is to explain how readers came to see her poems as she wrote them. Only the correct answer describes the editors' changes and the later restoration."
   },
   {
     id: "ei-h97",
@@ -1649,7 +1649,7 @@ QUESTIONS.push(
       "Volcanic rocks record the magnetic field's direction as they cool, preserving evidence of past reversals."
     ],
     answer: 3,
-    explanation: "The goal is to explain how scientists know about past reversals. Only the first choice describes the evidence (volcanic rocks) and how it records the field."
+    explanation: "The goal is to explain how scientists know about past reversals. Only the correct answer describes the evidence (volcanic rocks) and how it records the field."
   },
   {
     id: "ei-h98",
@@ -1666,7 +1666,7 @@ QUESTIONS.push(
       "Gold has been found at Great Zimbabwe, a city built between the 11th and 15th centuries."
     ],
     answer: 2,
-    explanation: "The goal is to provide evidence of long-distance trade. Only the first choice cites goods from China and Persia and draws that conclusion."
+    explanation: "The goal is to provide evidence of long-distance trade. Only the correct answer cites goods from China and Persia and draws that conclusion."
   },
   {
     id: "ei-h99",
@@ -1683,7 +1683,7 @@ QUESTIONS.push(
       "Velcro, patented in 1955, has hooks on one strip and loops on another strip."
     ],
     answer: 1,
-    explanation: "The goal is to explain how nature inspired the invention. Only the first choice connects the burrs' hooks to Velcro's design."
+    explanation: "The goal is to explain how nature inspired the invention. Only the correct answer connects the burrs' hooks to Velcro's design."
   },
   {
     id: "ei-h100",
@@ -1700,7 +1700,7 @@ QUESTIONS.push(
       "Researchers measured cortisol, a stress hormone, in nurses working 12-hour and 8-hour shifts."
     ],
     answer: 0,
-    explanation: "The goal is to present a complicated picture with a downside and an upside. Only the first choice includes both the higher stress and the higher satisfaction."
+    explanation: "The goal is to present a complicated picture with a downside and an upside. Only the correct answer includes both the higher stress and the higher satisfaction."
   },
   {
     id: "ei-h101",
@@ -1717,7 +1717,7 @@ QUESTIONS.push(
       "Ocean acidification, which hampers shell-building, has led some Pacific Northwest oyster hatcheries to buffer their water chemically."
     ],
     answer: 3,
-    explanation: "The goal is to show how acidification affects human activity. Only the first choice describes a human response (hatcheries buffering water) to its effects."
+    explanation: "The goal is to show how acidification affects human activity. Only the correct answer describes a human response (hatcheries buffering water) to its effects."
   },
   {
     id: "ei-h102",
@@ -1734,7 +1734,7 @@ QUESTIONS.push(
       "Srinivasa Ramanujan, who grew up in India, had little formal training in mathematics."
     ],
     answer: 2,
-    explanation: "The goal is to emphasize his lasting influence. Only the first choice notes that his work is still being proved and applied."
+    explanation: "The goal is to emphasize his lasting influence. Only the correct answer notes that his work is still being proved and applied."
   },
   {
     id: "ei-h103",
@@ -1751,7 +1751,7 @@ QUESTIONS.push(
       "Before the town replaced its traffic lights with a roundabout, there were 41 crashes at the intersection over three years, 9 of which caused injuries, compared with 30 afterward."
     ],
     answer: 1,
-    explanation: "The goal is to show both the result and a reason for it. Only the first choice gives the drop in injury crashes and the explanation."
+    explanation: "The goal is to show both the result and a reason for it. Only the correct answer gives the drop in injury crashes and the explanation."
   },
   {
     id: "ei-h104",
@@ -1768,7 +1768,7 @@ QUESTIONS.push(
       "In the 1940s, the Harlem apartment of jazz pianist Mary Lou Williams was well known among musicians."
     ],
     answer: 0,
-    explanation: "The goal is to emphasize her role in the development of bebop. Only the first choice describes her mentoring of bebop musicians and her role as host."
+    explanation: "The goal is to emphasize her role in the development of bebop. Only the correct answer describes her mentoring of bebop musicians and her role as host."
   },
   {
     id: "ei-h105",
@@ -1785,7 +1785,7 @@ QUESTIONS.push(
       "Only music with lyrics hurt reading scores (by 12%), perhaps because lyrics compete with reading for language processing."
     ],
     answer: 3,
-    explanation: "The goal is to explain which type of music affected comprehension and why. Only the first choice identifies the type, the effect, and the proposed reason."
+    explanation: "The goal is to explain which type of music affected comprehension and why. Only the correct answer identifies the type, the effect, and the proposed reason."
   },
   {
     id: "ei-h106",
@@ -1802,7 +1802,7 @@ QUESTIONS.push(
       "Scientists have inserted spider-silk genes into silkworms, which are raised on silk farms."
     ],
     answer: 2,
-    explanation: "The goal is to explain how scientists addressed a problem. Only the first choice presents both the problem (spiders can't be farmed) and the solution."
+    explanation: "The goal is to explain how scientists addressed a problem. Only the correct answer presents both the problem (spiders can't be farmed) and the solution."
   },
   {
     id: "ei-h107",
@@ -1819,7 +1819,7 @@ QUESTIONS.push(
       "The earliest known members of the genus Homo date to about 2.8 million years ago."
     ],
     answer: 1,
-    explanation: "The goal is to explain why the find challenged the idea that Homo made the first tools. Only the first choice compares the tools' age with the earliest Homo fossils."
+    explanation: "The goal is to explain why the find challenged the idea that Homo made the first tools. Only the correct answer compares the tools' age with the earliest Homo fossils."
   },
   {
     id: "ei-h108",
@@ -1836,7 +1836,7 @@ QUESTIONS.push(
       "Bats' immune systems are of interest to scientists because bats carry viruses that sicken other mammals."
     ],
     answer: 0,
-    explanation: "The goal is to present a hypothesis linking flight and viral tolerance. Only the first choice states the proposed connection. The third mentions both facts but doesn't connect them."
+    explanation: "The goal is to present a hypothesis linking flight and viral tolerance. Only the correct answer states the proposed connection. The choice saying bats carry viruses and their temperature rises in flight mentions both facts but doesn't connect them."
   },
   {
     id: "ei-h109",
@@ -1853,7 +1853,7 @@ QUESTIONS.push(
       "One Hundred Years of Solitude exemplifies magical realism, mixing realistic detail with fantastic events like a woman rising to heaven while folding laundry."
     ],
     answer: 3,
-    explanation: "The goal is to illustrate magical realism with an example from the novel. Only the first choice defines the style and gives a specific example."
+    explanation: "The goal is to illustrate magical realism with an example from the novel. Only the correct answer defines the style and gives a specific example."
   },
   {
     id: "ei-h110",
@@ -1870,7 +1870,7 @@ QUESTIONS.push(
       "Plantation forests, with trees averaging 30 years old, grew faster than old-growth forests did."
     ],
     answer: 2,
-    explanation: "The goal is to present an advantage of each forest type. Only the first choice gives the plantations' faster absorption and the old-growth forests' greater storage."
+    explanation: "The goal is to present an advantage of each forest type. Only the correct answer gives the plantations' faster absorption and the old-growth forests' greater storage."
   },
   {
     id: "ei-h111",
@@ -1887,7 +1887,7 @@ QUESTIONS.push(
       "The Soil Conservation Service, created in 1935, was a response to severe dust storms on the Great Plains."
     ],
     answer: 1,
-    explanation: "The goal is to describe causes and responses. Only the first choice includes both the causes (plowing, drought) and the remedies (windbreaks, contour plowing)."
+    explanation: "The goal is to describe causes and responses. Only the correct answer includes both the causes (plowing, drought) and the remedies (windbreaks, contour plowing)."
   },
   {
     id: "ei-h112",
@@ -1904,7 +1904,7 @@ QUESTIONS.push(
       "An octopus arm can continue to react to touch even after it has been severed from the body."
     ],
     answer: 0,
-    explanation: "The goal is to explain what \"distributed\" intelligence means. Only the first choice explains that neurons are concentrated in the arms and that arms act independently."
+    explanation: "The goal is to explain what \"distributed\" intelligence means. Only the correct answer explains that neurons are concentrated in the arms and that arms act independently."
   },
   {
     id: "ei-h113",
@@ -1921,7 +1921,7 @@ QUESTIONS.push(
       "Steam trains on the early Underground filled tunnels with smoke, so some stations had openings to let it out—a problem electric trains, from 1890, avoided."
     ],
     answer: 3,
-    explanation: "The goal is to describe a problem with early trains and how it was later addressed. Only the first choice includes both the smoke problem and the electric solution."
+    explanation: "The goal is to describe a problem with early trains and how it was later addressed. Only the correct answer includes both the smoke problem and the electric solution."
   },
   {
     id: "ei-h114",
@@ -1938,7 +1938,7 @@ QUESTIONS.push(
       "Researcher Nalini Nadkarni found that some trees absorb nutrients from high above the ground."
     ],
     answer: 2,
-    explanation: "The goal is to present a finding and its broader significance. Only the first choice includes the aerial roots and what they reveal about canopies."
+    explanation: "The goal is to present a finding and its broader significance. Only the correct answer includes the aerial roots and what they reveal about canopies."
   },
   {
     id: "ei-h115",
@@ -1955,7 +1955,7 @@ QUESTIONS.push(
       "A tsunami warning system that began operating in the Indian Ocean in 2006 uses seismic sensors and ocean buoys."
     ],
     answer: 1,
-    explanation: "The goal is to explain how the 2004 disaster led to change. Only the first choice describes the missing system and the new system created afterward."
+    explanation: "The goal is to explain how the 2004 disaster led to change. Only the correct answer describes the missing system and the new system created afterward."
   },
   {
     id: "ei-h116",
@@ -1972,7 +1972,7 @@ QUESTIONS.push(
       "Bee brains, which contain fewer than one million neurons, are much smaller than primate brains."
     ],
     answer: 0,
-    explanation: "The goal is to emphasize how surprising the finding is. Only the first choice combines the bees' small brains, their behavior, and the earlier belief about zero."
+    explanation: "The goal is to emphasize how surprising the finding is. Only the correct answer combines the bees' small brains, their behavior, and the earlier belief about zero."
   },
   {
     id: "ei-h117",
@@ -1989,7 +1989,7 @@ QUESTIONS.push(
       "Green roofs cost about twice as much to install, but they can last twice as long and cut heating and cooling costs."
     ],
     answer: 3,
-    explanation: "The goal is to address the cost objection. Only the first choice acknowledges the higher cost and offers financial counterpoints."
+    explanation: "The goal is to address the cost objection. Only the correct answer acknowledges the higher cost and offers financial counterpoints."
   },
   {
     id: "ei-h118",
@@ -2006,7 +2006,7 @@ QUESTIONS.push(
       "Augusta Savage founded the Savage Studio of Arts and Crafts in Harlem after being rejected from a program in France."
     ],
     answer: 2,
-    explanation: "The goal is to emphasize her influence as a teacher. Only the first choice names her notable students."
+    explanation: "The goal is to emphasize her influence as a teacher. Only the correct answer names her notable students."
   },
   {
     id: "ei-h119",
@@ -2023,7 +2023,7 @@ QUESTIONS.push(
       "Without new sediment, the land in the Mississippi River delta sinks and erodes over time."
     ],
     answer: 1,
-    explanation: "The goal is to explain the engineers' solution and the problem it addresses. Only the first choice connects levees to the loss of sediment and describes the diversion channels."
+    explanation: "The goal is to explain the engineers' solution and the problem it addresses. Only the correct answer connects levees to the loss of sediment and describes the diversion channels."
   },
   {
     id: "ei-h120",
@@ -2040,7 +2040,7 @@ QUESTIONS.push(
       "Earthquake sensors on Japan's Shinkansen automatically stop trains when they detect tremors."
     ],
     answer: 0,
-    explanation: "The goal is to emphasize the system's safety record. Only the first choice gives the record and a safety feature contributing to it."
+    explanation: "The goal is to emphasize the system's safety record. Only the correct answer gives the record and a safety feature contributing to it."
   },
   {
     id: "ei-h121",
@@ -2057,7 +2057,7 @@ QUESTIONS.push(
       "Handwriting students, forced to summarize rather than copy, outscored typists on conceptual questions, though the groups tied on factual ones."
     ],
     answer: 3,
-    explanation: "The goal is to present the findings with an explanation. Only the first choice gives the conceptual advantage, the tie on factual questions, and the reason (summarizing)."
+    explanation: "The goal is to present the findings with an explanation. Only the correct answer gives the conceptual advantage, the tie on factual questions, and the reason (summarizing)."
   },
   {
     id: "ei-h122",
@@ -2074,7 +2074,7 @@ QUESTIONS.push(
       "Marie Curie discovered polonium and named it after Poland, the country where she was born."
     ],
     answer: 2,
-    explanation: "The goal is to explain the political significance of the name. Only the first choice includes Poland's divided status and Curie's intention."
+    explanation: "The goal is to explain the political significance of the name. Only the correct answer includes Poland's divided status and Curie's intention."
   },
   {
     id: "ei-h123",
@@ -2091,7 +2091,7 @@ QUESTIONS.push(
       "In some villages, fog-harvesting nets collect hundreds of liters of water each day for residents."
     ],
     answer: 1,
-    explanation: "The goal is to explain how the beetle has benefited humans. Only the first choice links the beetle's design to the nets and their output."
+    explanation: "The goal is to explain how the beetle has benefited humans. Only the correct answer links the beetle's design to the nets and their output."
   },
   {
     id: "ei-h124",
@@ -2108,7 +2108,7 @@ QUESTIONS.push(
       "Children who were given a puppet to care for shared more stickers afterward than children who were not."
     ],
     answer: 0,
-    explanation: "The goal is to present a finding along with its limitation. Only the first choice includes the increase in sharing and the fact that it didn't last."
+    explanation: "The goal is to present a finding along with its limitation. Only the correct answer includes the increase in sharing and the fact that it didn't last."
   },
   {
     id: "ei-h125",
@@ -2125,7 +2125,7 @@ QUESTIONS.push(
       "Scientists found that warmer Gulf waters made Hurricane Harvey's record rainfall over Houston about 15% heavier."
     ],
     answer: 3,
-    explanation: "The goal is to show a connection between warm water and rainfall. Only the first choice states the scientists' finding that warmer water increased Harvey's rainfall."
+    explanation: "The goal is to show a connection between warm water and rainfall. Only the correct answer states the scientists' finding that warmer water increased Harvey's rainfall."
   },
   {
     id: "ei-h126",
@@ -2142,7 +2142,7 @@ QUESTIONS.push(
       "Beehive fences cost less than electric fences and use bees that elephants try to avoid."
     ],
     answer: 2,
-    explanation: "The goal is to emphasize two benefits for farmers. Only the first choice includes both the reduction in raids and the honey income."
+    explanation: "The goal is to emphasize two benefits for farmers. Only the correct answer includes both the reduction in raids and the honey income."
   },
   {
     id: "ei-h127",
@@ -2159,7 +2159,7 @@ QUESTIONS.push(
       "The Amazon River's banks shift frequently because of the seasonal flooding that occurs there."
     ],
     answer: 1,
-    explanation: "The goal is to explain why there are no bridges. Only the first choice gives reasons for the absence of bridges."
+    explanation: "The goal is to explain why there are no bridges. Only the correct answer gives reasons for the absence of bridges."
   },
   {
     id: "ei-h128",
@@ -2176,7 +2176,7 @@ QUESTIONS.push(
       "In medieval Europe, books were copied by hand, so producing a book required a great deal of time."
     ],
     answer: 0,
-    explanation: "The goal is to contrast the speed of the two methods. Only the first choice compares the time required for hand copying with the press's daily output."
+    explanation: "The goal is to contrast the speed of the two methods. Only the correct answer compares the time required for hand copying with the press's daily output."
   },
   {
     id: "ei-h129",
@@ -2193,7 +2193,7 @@ QUESTIONS.push(
       "Like Earth, Mars has seasons because of its tilt, but with a 687-day year, each Martian season lasts about twice as long."
     ],
     answer: 3,
-    explanation: "The goal is to give both a similarity and a difference. Only the first choice states that both planets have tilt-driven seasons and that Martian seasons are longer."
+    explanation: "The goal is to give both a similarity and a difference. Only the correct answer states that both planets have tilt-driven seasons and that Martian seasons are longer."
   },
   {
     id: "ei-h130",
@@ -2210,7 +2210,7 @@ QUESTIONS.push(
       "Researchers tested drivers in a simulator and found that those talking on a hands-free phone missed twice as many traffic signals as undistracted drivers did."
     ],
     answer: 2,
-    explanation: "The goal is to explain why the two kinds of conversation had different effects. Only the first choice gives the explanation (passengers adjust to traffic)."
+    explanation: "The goal is to explain why the two kinds of conversation had different effects. Only the correct answer gives the explanation (passengers adjust to traffic)."
   },
   {
     id: "ei-h131",
@@ -2227,7 +2227,7 @@ QUESTIONS.push(
       "The Nazca Lines, which include designs of animals, are best seen from the air or from nearby hills."
     ],
     answer: 1,
-    explanation: "The goal is to explain why the lines still exist. Only the first choice gives the reason for their preservation."
+    explanation: "The goal is to explain why the lines still exist. Only the correct answer gives the reason for their preservation."
   },
   {
     id: "ei-h132",
@@ -2244,7 +2244,7 @@ QUESTIONS.push(
       "Millet, a crop that tolerates drought and poor soil, was the focus of the International Year of Millets."
     ],
     answer: 0,
-    explanation: "The goal is to argue that millet suits dry regions. Only the first choice compares water needs and notes drought tolerance."
+    explanation: "The goal is to argue that millet suits dry regions. Only the correct answer compares water needs and notes drought tolerance."
   },
   {
     id: "ei-h133",
@@ -2261,7 +2261,7 @@ QUESTIONS.push(
       "Because similarly fit participants stopped near whatever time they expected, researchers concluded that expectations shape endurance."
     ],
     answer: 3,
-    explanation: "The goal is to present the conclusion with its supporting evidence. Only the first choice notes that participants were equally fit (ruling out fitness) and that they stopped near their expected times."
+    explanation: "The goal is to present the conclusion with its supporting evidence. Only the correct answer notes that participants were equally fit (ruling out fitness) and that they stopped near their expected times."
   },
   {
     id: "ei-h134",
@@ -2278,7 +2278,7 @@ QUESTIONS.push(
       "In 1976, the canoe Hōkūleʻa sailed from Hawaii to Tahiti across thousands of kilometers of ocean."
     ],
     answer: 2,
-    explanation: "The goal is to explain the significance of the Hōkūleʻa voyage. Only the first choice links it to disproving the accidental-settlement claim."
+    explanation: "The goal is to explain the significance of the Hōkūleʻa voyage. Only the correct answer links it to disproving the accidental-settlement claim."
   },
   {
     id: "ei-h135",
@@ -2295,7 +2295,7 @@ QUESTIONS.push(
       "DNA studies showed that the quagga, which was hunted to extinction by 1883, was a type of zebra."
     ],
     answer: 1,
-    explanation: "The goal is to explain why the breeding project is possible. Only the first choice connects the DNA finding (quagga as plains-zebra subspecies) to the project's approach."
+    explanation: "The goal is to explain why the breeding project is possible. Only the correct answer connects the DNA finding (quagga as plains-zebra subspecies) to the project's approach."
   },
   {
     id: "ei-h136",
@@ -2312,7 +2312,7 @@ QUESTIONS.push(
       "Sleep helps the brain consolidate memories, which is important for students preparing for exams."
     ],
     answer: 0,
-    explanation: "The goal is to challenge a common belief. Only the first choice states the belief and the evidence against it."
+    explanation: "The goal is to challenge a common belief. Only the correct answer states the belief and the evidence against it."
   },
   {
     id: "ei-h137",
@@ -2329,7 +2329,7 @@ QUESTIONS.push(
       "By closing only when a trigger hair is touched twice within about 20 seconds, the flytrap avoids wasting energy on raindrops or debris."
     ],
     answer: 3,
-    explanation: "The goal is to explain how the flytrap avoids false triggers. Only the first choice describes the two-touch mechanism and its purpose."
+    explanation: "The goal is to explain how the flytrap avoids false triggers. Only the correct answer describes the two-touch mechanism and its purpose."
   },
   {
     id: "ei-h138",
@@ -2346,7 +2346,7 @@ QUESTIONS.push(
       "A report written in 1999 warned of the risk of a large landslide on the hill near Oso, Washington."
     ],
     answer: 2,
-    explanation: "The goal is to show that warnings preceded the disaster and that action followed only afterward. Only the first choice includes both."
+    explanation: "The goal is to show that warnings preceded the disaster and that action followed only afterward. Only the correct answer includes both."
   },
   {
     id: "ei-h139",
@@ -2363,7 +2363,7 @@ QUESTIONS.push(
       "Marine iguanas of the Galápagos have special glands near their noses."
     ],
     answer: 1,
-    explanation: "The goal is to explain how the iguana deals with a challenge of its diet. Only the first choice includes both the challenge (swallowing salt) and the solution."
+    explanation: "The goal is to explain how the iguana deals with a challenge of its diet. Only the correct answer includes both the challenge (swallowing salt) and the solution."
   },
   {
     id: "ei-h140",
@@ -6443,7 +6443,7 @@ QUESTIONS.push(
       "A 2020 joint survey by China and Nepal measured Mount Everest at 8,848.86 meters, nearly nine meters more than the figure Indian surveyors reported in 1856."
     ],
     answer: 0,
-    explanation: "The correct choice gives the reasons for the variation. The choice beginning \"Everest's height was measured…\" shows that the measurements varied but not why, the choice beginning \"A 2020 joint survey…\" reports a single measurement, and the choice beginning \"Because of tectonic activity…\" gives a factor (rising) that the notes don't present as the reason the measurements differ."
+    explanation: "The correct answer gives the reasons for the variation. The choice beginning \"Everest's height was measured…\" shows that the measurements varied but not why, the choice beginning \"A 2020 joint survey…\" reports a single measurement, and the choice beginning \"Because of tectonic activity…\" gives a factor (rising) that the notes don't present as the reason the measurements differ."
   },
   {
     id: "ei-h380",
@@ -6681,7 +6681,7 @@ QUESTIONS.push(
       "Taken together, the studies suggest that lyrics, rather than music itself, interfere with reading: instrumental music had no effect, while music with lyrics reduced comprehension."
     ],
     answer: 3,
-    explanation: "The correct choice synthesizes both findings into one conclusion about lyrics. The choice beginning \"A 2015 study found…\" presents the studies as conflicting by omitting the lyrics distinction, the choice beginning \"Both a 2015 study…\" describes methods, and the choice beginning \"A 2019 study found…\" reports one study only."
+    explanation: "The correct answer synthesizes both findings into one conclusion about lyrics. The choice beginning \"A 2015 study found…\" presents the studies as conflicting by omitting the lyrics distinction, the choice beginning \"Both a 2015 study…\" describes methods, and the choice beginning \"A 2019 study found…\" reports one study only."
   },
   {
     id: "ei-h394",
@@ -7208,7 +7208,7 @@ QUESTIONS.push(
       "There are two competing theories that explain why the Leaning Tower of Pisa leans, one involving soil and one involving foundations."
     ],
     answer: 2,
-    explanation: "The current view holds both factors responsible, as only the correct choice states. The fourth wrongly presents the theories as competing, the choice beginning \"One theory holds that…\" gives one theory, and the choice beginning \"Stabilization work carried out…\" concerns stabilization."
+    explanation: "The current view holds both factors responsible, as only the correct answer states. The choice about two competing theories wrongly presents them as competing, the choice beginning \"One theory holds that…\" gives one theory, and the choice beginning \"Stabilization work carried out…\" concerns stabilization."
   },
   {
     id: "ei-h425",
@@ -7242,7 +7242,7 @@ QUESTIONS.push(
       "A Clark's nutcracker can hide up to 30,000 seeds in a single season and recover many of them months later, even under snow, while unrecovered seeds grow into trees."
     ],
     answer: 2,
-    explanation: "Only the correct choice links the behavior (recovering seeds) to the brain feature. The choice beginning \"A Clark's nutcracker can…\" describes behavior alone, the fourth the brain alone, and the choice beginning \"Seeds that Clark's nutcrackers…\" an ecological effect."
+    explanation: "Only the correct answer links the behavior (recovering seeds) to the brain feature. The choice beginning \"A Clark's nutcracker can…\" describes behavior alone, the choice about the enlarged hippocampus in some birds the brain alone, and the choice beginning \"Seeds that Clark's nutcrackers…\" an ecological effect."
   },
   {
     id: "ei-h427",
@@ -7259,7 +7259,7 @@ QUESTIONS.push(
       "A 2019 map found that about 23% of Baltimore residents lived in areas lacking supermarkets within a quarter mile, and the city has used it to target grocery programs."
     ],
     answer: 2,
-    explanation: "A disparity requires comparing a group with the overall rate. Only the correct choice does this. The choice beginning \"A 2019 map found…\" gives the overall rate alone, and the others describe the map or its use."
+    explanation: "A disparity requires comparing a group with the overall rate. Only the correct answer does this. The choice beginning \"A 2019 map found…\" gives the overall rate alone, and the others describe the map or its use."
   },
   {
     id: "ei-h428",
@@ -7582,7 +7582,7 @@ QUESTIONS.push(
       "Two historians studied the causes of the 1929 stock market crash, each emphasizing a different factor that contributed to the collapse of prices."
     ],
     answer: 2,
-    explanation: "Only the correct choice states the point of agreement. The choices beginning \"Historian A emphasized excessive…\" and \"Two historians studied the…\" describe differences, and the choice beginning \"Historian A and Historian…\" gives one historian's view."
+    explanation: "Only the correct answer states the point of agreement. The choices beginning \"Historian A emphasized excessive…\" and \"Two historians studied the…\" describe differences, and the choice beginning \"Historian A and Historian…\" gives one historian's view."
   },
   {
     id: "ei-h447",

@@ -231,7 +231,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "What is the value of cos(17π/6)?",
     choices: [
       "√3/2",
@@ -503,7 +503,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 138°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "159",
@@ -551,7 +551,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In the xy-plane, the terminal side of an angle of 11π/4 radians in standard position intersects the unit circle at point P. What is the y-coordinate of P?",
     choices: [
       "−√2/2",
@@ -871,7 +871,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "What is the value of sin(8π/3)?",
     choices: [
       "−√3/2",
@@ -1143,7 +1143,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 72°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "126",
@@ -1399,7 +1399,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Circles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(x − 1)² + (y + 3)² = 3721<br><br>The point (12, 57) lies on the circle with the given equation in the xy-plane. Line t is tangent to the circle at this point. What is the y-coordinate of the y-intercept of line t?",
     choices: [
       "296/5",
@@ -1463,7 +1463,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 156°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "168",
@@ -1511,7 +1511,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In the xy-plane, the terminal side of an angle of 17π/6 radians in standard position intersects the unit circle at point P. What is the x-coordinate of P?",
     choices: [
       "√3/2",
@@ -1783,7 +1783,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 146°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "163",
@@ -2039,7 +2039,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Circles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(x + 2)² + (y + 3)² = 169<br><br>The point (3, 9) lies on the circle with the given equation in the xy-plane. Line t is tangent to the circle at this point. What is the y-coordinate of the y-intercept of line t?",
     choices: [
       "41/4",
@@ -2103,7 +2103,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 104°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "142",
@@ -2359,7 +2359,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Circles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(x + 2)² + (y − 2)² = 1369<br><br>The point (−14, 37) lies on the circle with the given equation in the xy-plane. Line t is tangent to the circle at this point. What is the y-coordinate of the y-intercept of line t?",
     choices: [
       "209/5",
@@ -2423,7 +2423,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the bisectors of angles B and C intersect at point P inside the triangle. If the measure of angle BPC is 137°, what is the measure, in degrees, of angle A?",
     choices: [
       "94",
@@ -2743,7 +2743,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the bisectors of angles B and C intersect at point P inside the triangle. If the measure of angle BPC is 131°, what is the measure, in degrees, of angle A?",
     choices: [
       "82",
@@ -3063,7 +3063,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 98°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "139",
@@ -3703,7 +3703,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the bisectors of angles B and C intersect at point P inside the triangle. If the measure of angle BPC is 156°, what is the measure, in degrees, of angle A?",
     choices: [
       "132",
@@ -3959,7 +3959,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Circles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(x − 2)² + (y − 2)² = 169<br><br>The point (−3, 14) lies on the circle with the given equation in the xy-plane. Line t is tangent to the circle at this point. What is the y-coordinate of the y-intercept of line t?",
     choices: [
       "61/4",
@@ -4023,7 +4023,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the measure of angle A is 54°. The bisectors of angles B and C intersect at point P. What is the measure, in degrees, of angle BPC?",
     choices: [
       "117",
@@ -4279,7 +4279,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Circles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(x + 4)² + (y + 3)² = 625<br><br>The point (3, −27) lies on the circle with the given equation in the xy-plane. Line t is tangent to the circle at this point. What is the y-coordinate of the y-intercept of line t?",
     choices: [
       "−223/8",
@@ -4343,7 +4343,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Triangle angles",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "In triangle ABC, the bisectors of angles B and C intersect at point P inside the triangle. If the measure of angle BPC is 107°, what is the measure, in degrees, of angle A?",
     choices: [
       "34",
@@ -4391,7 +4391,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Geometry and Trigonometry",
     skill: "Right triangle trigonometry",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "What is the value of cos(13π/6)?",
     choices: [
       "−√3/2",

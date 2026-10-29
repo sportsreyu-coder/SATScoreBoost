@@ -40,7 +40,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text describes Voss's stylistic departure and notes both negative and positive reactions to it, matching choice A. It takes no side, so B and C are unsupported, and it never summarizes a plot.",
+      "The text describes Voss's stylistic departure and notes both negative and positive reactions to it, matching the correct answer. It takes no side, so the claims that mystery novels are inferior or that the text criticizes disappointed fans are unsupported, and it never summarizes a plot.",
   },
   {
     id: "ii-3",
@@ -60,7 +60,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about coral adapting to heat across generations. Choice A directly ties prior exposure to warmth with greater heat tolerance, supporting the adaptation hypothesis.",
+      "The claim is about coral adapting to heat across generations. The correct answer directly ties prior exposure to warmth with greater heat tolerance, supporting the adaptation hypothesis.",
   },
   {
     id: "ii-4",
@@ -80,7 +80,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns accident reduction. Only choice A links the bike lanes to fewer injuries, and the drop is notable precisely because it occurred even as ridership increased.",
+      "The claim concerns accident reduction. Only the correct answer links the bike lanes to fewer injuries, and the drop is notable precisely because it occurred even as ridership increased.",
   },
   {
     id: "ii-5",
@@ -100,7 +100,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim links practice-test frequency to higher scores. Choice A directly reports the 14-point gap between the two groups, which is the evidence supporting the claim.",
+      "The claim links practice-test frequency to higher scores. The correct answer directly reports the 14-point gap between the two groups, which is the evidence supporting the claim.",
   },
   {
     id: "ii-6",
@@ -119,7 +119,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is comparative: the new diet caused greater weight loss. Only choice A states the actual difference in pounds lost between the two groups.",
+      "The claim is comparative: the new diet caused greater weight loss. Only the correct answer states the actual difference in pounds lost between the two groups.",
   },
   {
     id: "ii-7",
@@ -176,7 +176,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage's point is that sourcing obsidian chemically has shown trade networks were more extensive than once believed — the opposite of choice C, and beyond the narrower details in B and D.",
+      "The passage's point is that sourcing obsidian chemically has shown trade networks were more extensive than once believed — the opposite of the claim that early excavators correctly predicted the trade's extent, and broader than the narrow details about obsidian's sharpness or where volcanic glass is found.",
   },
   {
     id: "ii-10",
@@ -271,7 +271,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "A gap between a claim of 'perfect clarity' and a shifting retelling suggests unreliable memory, without requiring the stronger, unsupported claims in B, C, or D.",
+      "A gap between a claim of 'perfect clarity' and a shifting retelling suggests unreliable memory, without requiring the stronger, unsupported claims that she is deliberately lying, that every character doubts her, or that the events never happened.",
   },
   {
     id: "ii-15",
@@ -290,7 +290,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage's point is a correction of assumptions: deep-sea vent life thrives on chemical, not solar, energy — precisely what choice A states.",
+      "The passage's point is a correction of assumptions: deep-sea vent life thrives on chemical, not solar, energy — precisely what the correct answer states.",
   },
   {
     id: "ii-16",
@@ -309,7 +309,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim compares two specific approaches to writing practice; only choice A directly measures and compares outcomes for both groups.",
+      "The claim compares two specific approaches to writing practice; only the correct answer directly measures and compares outcomes for both groups.",
   },
   {
     id: "ii-17",
@@ -404,7 +404,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states recent translators 'increasingly opted for' prioritizing spirit and rhythm over literal fidelity — the trend described in choice A.",
+      "The passage states recent translators 'increasingly opted for' prioritizing spirit and rhythm over literal fidelity — the trend described in the correct answer.",
   },
   {
     id: "ii-22",
@@ -423,7 +423,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A links a documented range expansion to warming temperatures, directly supporting the climate-driven range-shift claim.",
+      "Only the correct answer links a documented range expansion to warming temperatures, directly supporting the climate-driven range-shift claim.",
   },
   {
     id: "ii-23",
@@ -461,7 +461,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Coaches specifically credit accessibility 'more than any single champion's fame,' directly supporting choice A's claim about the cause of chess's growth.",
+      "Coaches specifically credit accessibility 'more than any single champion's fame,' directly supporting the correct answer's claim about the cause of chess's growth.",
   },
   {
     id: "ii-25",
@@ -480,7 +480,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts — water savings and preserved yield — and only choice A reports data addressing both, matching the study's actual figures.",
+      "The claim has two parts — water savings and preserved yield — and only the correct answer reports data addressing both, matching the study's actual figures.",
   },
   {
     id: "ii-26",
@@ -556,7 +556,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text's sole focus is describing the seed-library lending program, matching choice A; none of the other choices reflect its content.",
+      "The text's sole focus is describing the seed-library lending program, matching the correct answer; none of the other choices reflect its content.",
   },
   {
     id: "ii-30",
@@ -651,7 +651,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the precise gradient finding led historians to credit Romans with more sophisticated hydraulics than 'earlier scholars assumed,' matching choice A; choice D contradicts this reversal.",
+      "The passage states the precise gradient finding led historians to credit Romans with more sophisticated hydraulics than 'earlier scholars assumed,' matching the correct answer; the claim that historians have always recognized Roman hydraulic sophistication contradicts this reversal.",
   },
   {
     id: "ii-35",
@@ -691,7 +691,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim links sleep duration to exam performance, and only choice A reports the actual point gap between the two sleep groups.",
+      "The claim links sleep duration to exam performance, and only the correct answer reports the actual point gap between the two sleep groups.",
   },
   {
     id: "ii-37",
@@ -729,7 +729,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage directly states Ito 'describes silence as a compositional tool as deliberate and expressive as any note,' matching choice A.",
+      "The passage directly states Ito 'describes silence as a compositional tool as deliberate and expressive as any note,' matching the correct answer.",
   },
   {
     id: "ii-39",
@@ -768,7 +768,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about increased participation, and only choice A reports the actual before-and-after participation rates.",
+      "The claim is about increased participation, and only the correct answer reports the actual before-and-after participation rates.",
   },
   {
     id: "ii-41",
@@ -806,7 +806,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text describes Ade's revival project and the surprising historical influence of these plays, matching choice A; it does not compare eras' quality or summarize a specific plot.",
+      "The text describes Ade's revival project and the surprising historical influence of these plays, matching the correct answer; it does not compare eras' quality or summarize a specific plot.",
   },
   {
     id: "ii-43",
@@ -844,7 +844,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim needs both a higher output figure and a near-zero cost increase; only the first choice pairs the correct figures (6.8% more electricity, under 1% more cost), while swapping 6.8% onto cost or reversing cost's direction misapplies the study's own numbers, and the development timeline isn't part of either measured outcome.",
+      "The claim needs both a higher output figure and a near-zero cost increase; only the correct answer pairs the correct figures (6.8% more electricity, under 1% more cost), while swapping 6.8% onto cost or reversing cost's direction misapplies the study's own numbers, and the development timeline isn't part of either measured outcome.",
   },
   {
     id: "ii-45",
@@ -920,7 +920,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts — reduced traffic and minimal harm to business — and only choice A provides data on both.",
+      "The claim has two parts — reduced traffic and minimal harm to business — and only the correct answer provides data on both.",
   },
   {
     id: "ii-49",
@@ -958,7 +958,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states Kwan's images reveal 'a passage of time' invisible to 'the human eye, limited to an instant,' directly matching choice A.",
+      "The passage states Kwan's images reveal 'a passage of time' invisible to 'the human eye, limited to an instant,' directly matching the correct answer.",
   },
   {
     id: "ii-51",
@@ -1034,7 +1034,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage describes the petition-driven expansion and its result — rising ridership among lower-income residents — matching choice A.",
+      "The passage describes the petition-driven expansion and its result — rising ridership among lower-income residents — matching the correct answer.",
   },
   {
     id: "ii-55",
@@ -1111,7 +1111,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage contrasts slow, centralized grid extension with quickly installed microgrids serving a few dozen households — matching choice A's emphasis on speed and scale.",
+      "The passage contrasts slow, centralized grid extension with quickly installed microgrids serving a few dozen households — matching the correct answer's emphasis on speed and scale.",
   },
   {
     id: "ii-59",
@@ -1149,7 +1149,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the actual difference in stress-score reduction between the meditation group and the comparison group.",
+      "The claim is comparative, and only the correct answer reports the actual difference in stress-score reduction between the meditation group and the comparison group.",
   },
   {
     id: "ii-61",
@@ -1187,7 +1187,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text moves from initial reluctance to a meaningful drop in landfill waste and friendly neighborhood competition, matching choice A; the other choices contradict or overstate details.",
+      "The text moves from initial reluctance to a meaningful drop in landfill waste and friendly neighborhood competition, matching the correct answer; the other choices contradict or overstate details.",
   },
   {
     id: "ii-63",
@@ -1244,7 +1244,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns increased spending by SNAP shoppers, and only choice A reports the actual before-and-after spending figures.",
+      "The claim concerns increased spending by SNAP shoppers, and only the correct answer reports the actual before-and-after spending figures.",
   },
   {
     id: "ii-66",
@@ -1263,7 +1263,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage stresses that Nandi tested with both groups 'rather than designing for one audience and adapting... afterward,' matching choice A; the others misstate the target audience or reception.",
+      "The passage stresses that Nandi tested with both groups 'rather than designing for one audience and adapting... afterward,' matching the correct answer; the others misstate the target audience or reception.",
   },
   {
     id: "ii-67",
@@ -1282,7 +1282,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since turtles with widely different routes and feeding grounds still nested within the same window, their timing appears unrelated to route or location, supporting choice A.",
+      "Since turtles with widely different routes and feeding grounds still nested within the same window, their timing appears unrelated to route or location, supporting the correct answer.",
   },
   {
     id: "ii-68",
@@ -1320,7 +1320,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the difference in water-use change between app users and non-users.",
+      "The claim is comparative, and only the correct answer reports the difference in water-use change between app users and non-users.",
   },
   {
     id: "ii-70",
@@ -1339,7 +1339,7 @@ QUESTIONS.push(
       ],
     answer: 0,
     explanation:
-      "The passage highlights both the opportunity (preserved artifacts) and the urgency (rapid decay once exposed), matching choice A; the other choices contradict stated details.",
+      "The passage highlights both the opportunity (preserved artifacts) and the urgency (rapid decay once exposed), matching the correct answer; the other choices contradict stated details.",
   },
   {
     id: "ii-71",
@@ -1416,7 +1416,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text's focus throughout is describing how bookstore podcasts draw new, sometimes distant, customers, matching choice A; none of the other choices reflect its content.",
+      "The text's focus throughout is describing how bookstore podcasts draw new, sometimes distant, customers, matching the correct answer; none of the other choices reflect its content.",
   },
   {
     id: "ii-75",
@@ -1492,7 +1492,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage explicitly states the pattern arises from a simple rule with 'no central coordination at all,' directly matching choice A and contradicting choice B.",
+      "The passage explicitly states the pattern arises from a simple rule with 'no central coordination at all,' directly matching the correct answer and contradicting the claim of a centralized signal.",
   },
   {
     id: "ii-79",
@@ -1549,7 +1549,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about a change in the on-time return rate, and only choice A reports the actual before-and-after percentages.",
+      "The claim is about a change in the on-time return rate, and only the correct answer reports the actual before-and-after percentages.",
   },
   {
     id: "ii-82",
@@ -1702,7 +1702,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns reduced fire injuries, and only choice A reports the actual before-and-after injury counts.",
+      "The claim concerns reduced fire injuries, and only the correct answer reports the actual before-and-after injury counts.",
   },
   {
     id: "ii-90",
@@ -1721,7 +1721,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage links the tool library directly to residents finally completing postponed repairs, matching choice A; the other choices contradict stated details.",
+      "The passage links the tool library directly to residents finally completing postponed repairs, matching the correct answer; the other choices contradict stated details.",
   },
   {
     id: "ii-91",
@@ -1797,7 +1797,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the flood-reduction effect was a surprise 'the original planning documents had not anticipated,' matching choice A and contradicting choice D.",
+      "The passage states the flood-reduction effect was a surprise 'the original planning documents had not anticipated,' matching the correct answer and contradicting the claim that officials planned for flood reduction from the outset.",
   },
   {
     id: "ii-95",
@@ -1816,7 +1816,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Because the price cut and marketing campaign coincided with the new director's arrival, the renewal increase cannot be confidently attributed to the director alone, unlike the overreaching claim in choice B.",
+      "Because the price cut and marketing campaign coincided with the new director's arrival, the renewal increase cannot be confidently attributed to the director alone, unlike the overreaching claim that the director is solely responsible.",
   },
   {
     id: "ii-96",
@@ -1873,7 +1873,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states Lindqvist views impermanence as the sculpture's 'defining feature,' not a limitation, directly matching choice A and contradicting choices B and D.",
+      "The passage states Lindqvist views impermanence as the sculpture's 'defining feature,' not a limitation, directly matching the correct answer and contradicting the claims that the sculptures are meant to stay unchanged or that Lindqvist sees melting as a failure.",
   }
 );
 
@@ -1895,7 +1895,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the fungus itself produces the glow (not a symbiotic organism) and that researchers believe it may help disperse spores via insects, matching choice A; B and C contradict stated details, and D contradicts the proposed purpose.",
+      "The passage states the fungus itself produces the glow (not a symbiotic organism) and that researchers believe it may help disperse spores via insects, matching the correct answer; the claims that all log mushrooms glow or that insects produce the glow contradict stated details, and the claim that the glow serves no purpose contradicts the proposed one.",
   },
   {
     id: "ii-100",
@@ -1934,7 +1934,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts—higher earnings and little reduction in available rides—and only choice A reports data addressing both figures.",
+      "The claim has two parts—higher earnings and little reduction in available rides—and only the correct answer reports data addressing both figures.",
   },
   {
     id: "ii-102",
@@ -1972,7 +1972,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage credits the trust's permanent land ownership with keeping homes affordable despite rising prices nearby, matching choice A and contradicting the other choices' details.",
+      "The passage credits the trust's permanent land ownership with keeping homes affordable despite rising prices nearby, matching the correct answer and contradicting the other choices' details.",
   },
   {
     id: "ii-104",
@@ -2050,7 +2050,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states Abadi now selects woods 'deliberately to produce the unpredictable effects she wants,' matching choice A and directly contradicting choices B and D.",
+      "The passage states Abadi now selects woods 'deliberately to produce the unpredictable effects she wants,' matching the correct answer and directly contradicting the claims that she avoids wood ash glazes or sees their variation as an unsolved flaw.",
   },
   {
     id: "ii-108",
@@ -2089,7 +2089,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns overall sales growth, and only choice A reports the actual increase in combined sales after the second location opened.",
+      "The claim concerns overall sales growth, and only the correct answer reports the actual increase in combined sales after the second location opened.",
   },
   {
     id: "ii-110",
@@ -2127,7 +2127,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage concludes that consistent spacing suggests routes were engineered around 'sustainable daily travel distances rather than simply following the most direct path,' directly matching choice A and contradicting choice C.",
+      "The passage concludes that consistent spacing suggests routes were engineered around 'sustainable daily travel distances rather than simply following the most direct path,' directly matching the correct answer and contradicting the claim that routes always followed the shortest distance.",
   },
   {
     id: "ii-112",
@@ -2166,7 +2166,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts—reduced emissions and firms remaining in the region—and only choice A supplies data addressing both outcomes.",
+      "The claim has two parts—reduced emissions and firms remaining in the region—and only the correct answer supplies data addressing both outcomes.",
   },
   {
     id: "ii-114",
@@ -2204,7 +2204,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states Soto attributes candid interviews to trust 'rather than any technical skill,' directly matching choice A and contradicting choice B.",
+      "The passage states Soto attributes candid interviews to trust 'rather than any technical skill,' directly matching the correct answer and contradicting the claim that she values technical skill over trust.",
   },
   {
     id: "ii-116",
@@ -2243,7 +2243,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the actual difference in score gains between course participants and the comparison group.",
+      "The claim is comparative, and only the correct answer reports the actual difference in score gains between course participants and the comparison group.",
   },
   {
     id: "ii-118",
@@ -2281,7 +2281,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage contrasts early advocates' expectations with the 'more modest effects' found by longer-term studies, matching choice A and contradicting choices C and D.",
+      "The passage contrasts early advocates' expectations with the 'more modest effects' found by longer-term studies, matching the correct answer and contradicting the claims that early advocates predicted the exact impact or that most borrowers see dramatic income gains.",
   },
   {
     id: "ii-120",
@@ -2340,7 +2340,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since colonies struggle to survive without the fungus even with abundant leaves, the fungus itself—not the leaves directly—appears essential to survival, contradicting choices B and D.",
+      "Since colonies struggle to survive without the fungus even with abundant leaves, the fungus itself—not the leaves directly—appears essential to survival, contradicting the claims that the ants eat the leaves directly or that leaf availability is the greatest survival factor.",
   },
   {
     id: "ii-123",
@@ -2359,7 +2359,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage shows officials expected graffiti reduction but found residents valued a different, unanticipated benefit—identity—matching choice A and contradicting choice D's claim about original intent.",
+      "The passage shows officials expected graffiti reduction but found residents valued a different, unanticipated benefit—identity—matching the correct answer and contradicting the claim that officials commissioned the murals to create local identity from the start.",
   },
   {
     id: "ii-124",
@@ -2398,7 +2398,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns increased donations, and only choice A reports the actual before-and-after donation amounts.",
+      "The claim concerns increased donations, and only the correct answer reports the actual before-and-after donation amounts.",
   },
   {
     id: "ii-126",
@@ -2436,7 +2436,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage describes online clips bringing in new viewers who now travel to see live shows, matching choice A and contradicting the other choices' details.",
+      "The passage describes online clips bringing in new viewers who now travel to see live shows, matching the correct answer and contradicting the other choices' details.",
   },
   {
     id: "ii-128",
@@ -2474,7 +2474,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the contrast between the booth location's rising renewal rate and the unchanged sister location's steady rate.",
+      "The claim is comparative, and only the correct answer reports the contrast between the booth location's rising renewal rate and the unchanged sister location's steady rate.",
   },
   {
     id: "ii-130",
@@ -2512,7 +2512,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage explicitly frames origami as 'a decorative paper-folding tradition' that 'became a practical solution' to an engineering need, matching choice A and contradicting B and D.",
+      "The passage explicitly frames origami as 'a decorative paper-folding tradition' that 'became a practical solution' to an engineering need, matching the correct answer and contradicting the claims that the panels can't be folded with origami patterns or that engineers abandoned the approach.",
   },
   {
     id: "ii-132",
@@ -2550,7 +2550,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim requires both faster delivery and no significant rise in failures, and only choice A reports data on both measures.",
+      "The claim requires both faster delivery and no significant rise in failures, and only the correct answer reports data on both measures.",
   },
   {
     id: "ii-134",
@@ -2588,7 +2588,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage attributes the shift toward fruit specifically to placement, 'without changing the menu or prices,' directly matching choice A and contradicting choices B and D.",
+      "The passage attributes the shift toward fruit specifically to placement, 'without changing the menu or prices,' directly matching the correct answer and contradicting the claims that fruit got cheaper or that choices were unaffected.",
   },
   {
     id: "ii-136",
@@ -2666,7 +2666,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage shows the team shifting from a replacement plan to stabilization once they recognized the cracks' visual role, matching choice A and contradicting choices B and C.",
+      "The passage shows the team shifting from a replacement plan to stabilization once they recognized the cracks' visual role, matching the correct answer and contradicting the claims that every cracked panel was replaced or that the cracks didn't affect the light.",
   },
   {
     id: "ii-140",
@@ -2705,7 +2705,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns improved retention, and only choice A reports the actual before-and-after retention percentages.",
+      "The claim concerns improved retention, and only the correct answer reports the actual before-and-after retention percentages.",
   },
   {
     id: "ii-142",
@@ -2724,7 +2724,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since thicker varnish consistently corresponds to earlier (underlying) carvings, varnish thickness appears to track relative age, supporting choice A rather than the reversed or contradicted alternatives.",
+      "Since thicker varnish consistently corresponds to earlier (underlying) carvings, varnish thickness appears to track relative age, supporting the correct answer rather than the reversed or contradicted alternatives.",
   },
   {
     id: "ii-143",
@@ -2782,7 +2782,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about cost and capacity to serve more patients, and only choice A reports the dramatic difference in cost and production time between the two methods.",
+      "The claim is about cost and capacity to serve more patients, and only the correct answer reports the dramatic difference in cost and production time between the two methods.",
   },
   {
     id: "ii-146",
@@ -2820,7 +2820,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the folklorist 'realized' the origin stories were 'just as historically valuable' as the songs, matching choice A and contradicting choices B and D.",
+      "The passage states the folklorist 'realized' the origin stories were 'just as historically valuable' as the songs, matching the correct answer and contradicting the claims that recordings matter more than spoken accounts or that the folklorist stopped recording songs.",
   },
   {
     id: "ii-148",
@@ -2897,7 +2897,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states crafters are drawn 'less by nostalgia than by the appeal of producing a tangible... object,' directly matching choice A and contradicting choice D.",
+      "The passage states crafters are drawn 'less by nostalgia than by the appeal of producing a tangible... object,' directly matching the correct answer and contradicting the claim that nostalgia is the main draw.",
   },
   {
     id: "ii-152",
@@ -2935,7 +2935,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns increased participation, and only choice A reports the actual before-and-after participation rates.",
+      "The claim concerns increased participation, and only the correct answer reports the actual before-and-after participation rates.",
   },
   {
     id: "ii-154",
@@ -2973,7 +2973,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage shows an expectation of fading demand proven wrong by steady winter sales, leading to a permanent menu change, matching choice A and contradicting choices B and D.",
+      "The passage shows an expectation of fading demand proven wrong by steady winter sales, leading to a permanent menu change, matching the correct answer and contradicting the claims that sales dropped as expected or that cold brew was always meant to be permanent.",
   },
   {
     id: "ii-156",
@@ -3050,7 +3050,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states Park believes perceived spontaneity 'is what keeps audiences emotionally engaged,' matching choice A and directly contradicting choices B, C, and D.",
+      "The passage states Park believes perceived spontaneity 'is what keeps audiences emotionally engaged,' matching the correct answer and directly contradicting the claims that Park choreographs every movement, that audiences can't tell planned from improvised movement, or that improvisation disengages audiences.",
   },
   {
     id: "ii-160",
@@ -3108,7 +3108,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states trees linked by fungal networks 'sometimes behave more like parts of a single, cooperating system,' matching choice A and contradicting the pure-competition claim in choice B.",
+      "The passage states trees linked by fungal networks 'sometimes behave more like parts of a single, cooperating system,' matching the correct answer and contradicting the claim that trees only compete and never cooperate.",
   },
   {
     id: "ii-163",
@@ -3127,7 +3127,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text traces how automation 'replaced nearly every keeper,' ending a once-essential profession, matching choice A; it offers no safety comparison or criticism of keepers.",
+      "The text traces how automation 'replaced nearly every keeper,' ending a once-essential profession, matching the correct answer; it offers no safety comparison or criticism of keepers.",
   },
   {
     id: "ii-164",
@@ -3146,7 +3146,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the boxes 'create small, recurring reasons' for neighbors to interact, in addition to exchanging books, matching choice A.",
+      "The passage states the boxes 'create small, recurring reasons' for neighbors to interact, in addition to exchanging books, matching the correct answer.",
   },
   {
     id: "ii-165",
@@ -3184,7 +3184,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage says the effects go 'well beyond fresh vegetables' to include new social connections and lower reported crime, matching choice A.",
+      "The passage says the effects go 'well beyond fresh vegetables' to include new social connections and lower reported crime, matching the correct answer.",
   },
   {
     id: "ii-167",
@@ -3203,7 +3203,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage notes subscribers 'cook more often' despite higher per-meal costs, directly matching choice A and contradicting the cost claim in choice B.",
+      "The passage notes subscribers 'cook more often' despite higher per-meal costs, directly matching the correct answer and contradicting the claim that meal kits are always cheaper than groceries.",
   },
   {
     id: "ii-168",
@@ -3222,7 +3222,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage describes a shift from dismissal to classroom use, with teachers crediting graphic novels for deepening comprehension, matching choice A and contradicting choice B's 'always.'",
+      "The passage describes a shift from dismissal to classroom use, with teachers crediting graphic novels for deepening comprehension, matching the correct answer and contradicting the claim that educators have always considered graphic novels equal to traditional books.",
   },
   {
     id: "ii-169",
@@ -3241,7 +3241,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage highlights the direct grower-to-customer connection and the claim that it keeps money local, matching choice A.",
+      "The passage highlights the direct grower-to-customer connection and the claim that it keeps money local, matching the correct answer.",
   },
   {
     id: "ii-170",
@@ -3279,7 +3279,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage describes a trade-off and explicitly says 'neither drivers nor regulators agree,' matching the divided-opinion framing in choice A.",
+      "The passage describes a trade-off and explicitly says 'neither drivers nor regulators agree,' matching the divided-opinion framing in the correct answer.",
   },
   {
     id: "ii-172",
@@ -3298,7 +3298,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage links the rise of open offices directly to rising headphone sales and workers' need to concentrate, matching choice A.",
+      "The passage links the rise of open offices directly to rising headphone sales and workers' need to concentrate, matching the correct answer.",
   },
   {
     id: "ii-173",
@@ -3317,7 +3317,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage explains that origami folding patterns solve a design problem conventional hinges struggle with, matching choice A and contradicting choice C.",
+      "The passage explains that origami folding patterns solve a design problem conventional hinges struggle with, matching the correct answer and contradicting the claim that conventional hinges work better.",
   },
   {
     id: "ii-174",
@@ -3355,7 +3355,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states members join 'less for the desk itself... than for the built-in sense of community,' directly matching choice A and contradicting choice B.",
+      "The passage states members join 'less for the desk itself... than for the built-in sense of community,' directly matching the correct answer and contradicting the claim that cost is the main reason members choose these spaces.",
   },
   {
     id: "ii-176",
@@ -3374,7 +3374,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage describes a shift away from correction-based methods toward reward-based ones, now preferred by many trainers, matching choice A.",
+      "The passage describes a shift away from correction-based methods toward reward-based ones, now preferred by many trainers, matching the correct answer.",
   },
   {
     id: "ii-177",
@@ -3393,7 +3393,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the fees created 'a new bottleneck the airlines had not anticipated,' directly matching choice A and contradicting choices C and D.",
+      "The passage states the fees created 'a new bottleneck the airlines had not anticipated,' directly matching the correct answer and contradicting the claims that airlines anticipated the carry-on increase or that boarding got faster.",
   },
   {
     id: "ii-178",
@@ -3431,7 +3431,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage credits the apps with increased ridership by letting riders time their walk rather than wait indefinitely, matching choice A and contradicting choices B and C.",
+      "The passage credits the apps with increased ridership by letting riders time their walk rather than wait indefinitely, matching the correct answer and contradicting the claims that riders preferred waiting without schedule information or that ridership fell on every route.",
   },
   {
     id: "ii-180",
@@ -3450,7 +3450,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since most thermostats stayed on default settings and bills barely changed, the text implies the device alone isn't enough—customization likely matters, as choice A concludes without the overreach of choice B.",
+      "Since most thermostats stayed on default settings and bills barely changed, the text implies the device alone isn't enough—customization likely matters, as the correct answer concludes without the overreach of claiming smart thermostats can never reduce bills.",
   },
   {
     id: "ii-181",
@@ -3469,7 +3469,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since the catalog grew while each subscriber's range of topics narrowed, the feed itself—not the available content—appears to be narrowing exposure, matching choice A.",
+      "Since the catalog grew while each subscriber's range of topics narrowed, the feed itself—not the available content—appears to be narrowing exposure, matching the correct answer.",
   },
   {
     id: "ii-182",
@@ -3488,7 +3488,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Selling out for three years shows demand is not the issue; the owner's stated concern about quality control explains the small scale, matching choice A.",
+      "Selling out for three years shows demand is not the issue; the owner's stated concern about quality control explains the small scale, matching the correct answer.",
   },
   {
     id: "ii-183",
@@ -3507,7 +3507,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The gap between the 90% survey claim and the under-50% actual filing rate implies stated intentions and real behavior diverge, matching choice A rather than the identical-measurement claim in choice D.",
+      "The gap between the 90% survey claim and the under-50% actual filing rate implies stated intentions and real behavior diverge, matching the correct answer rather than the claim that the survey and the logs measure identical behavior.",
   },
   {
     id: "ii-184",
@@ -3526,7 +3526,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since easier access raised turnout among older voters but barely moved younger voters, something beyond mere accessibility appears to affect younger turnout, matching choice A.",
+      "Since easier access raised turnout among older voters but barely moved younger voters, something beyond mere accessibility appears to affect younger turnout, matching the correct answer.",
   },
   {
     id: "ii-185",
@@ -3545,7 +3545,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Customers paid more for customization yet canceled less, suggesting the customization itself, not just price, drives retention, matching choice A and contradicting choice B's opposite claim.",
+      "Customers paid more for customization yet canceled less, suggesting the customization itself, not just price, drives retention, matching the correct answer and contradicting the opposite claim that customers who pay more always cancel sooner.",
   },
   {
     id: "ii-186",
@@ -3564,7 +3564,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since book-sale margins 'barely cover rent' while other revenue sources make up nearly half of income, the store's survival appears to depend on that additional revenue, matching choice A.",
+      "Since book-sale margins 'barely cover rent' while other revenue sources make up nearly half of income, the store's survival appears to depend on that additional revenue, matching the correct answer.",
   },
   {
     id: "ii-187",
@@ -3602,7 +3602,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Membership tripled while average spending per member fell, suggesting the easier, free program drew in a different, lower-spending group than the old fee-based one, matching choice A.",
+      "Membership tripled while average spending per member fell, suggesting the easier, free program drew in a different, lower-spending group than the old fee-based one, matching the correct answer.",
   },
   {
     id: "ii-189",
@@ -3640,7 +3640,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since the strongest jolts occur during hunting in poor visibility rather than during predator encounters, the discharge appears primarily suited to locating and striking prey, matching choice A.",
+      "Since the strongest jolts occur during hunting in poor visibility rather than during predator encounters, the discharge appears primarily suited to locating and striking prey, matching the correct answer.",
   },
   {
     id: "ii-191",
@@ -3659,7 +3659,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "While the overall average retirement age rose as intended, workers in demanding jobs increasingly used disability provisions to retire early instead, suggesting the policy's effect varies by occupation, matching choice A.",
+      "While the overall average retirement age rose as intended, workers in demanding jobs increasingly used disability provisions to retire early instead, suggesting the policy's effect varies by occupation, matching the correct answer.",
   },
   {
     id: "ii-192",
@@ -3697,7 +3697,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since locations with more kiosks saw both lower staffing costs and higher inventory losses, the savings appear to come with an offsetting cost, matching choice A rather than the unrelated claim in choice D.",
+      "Since locations with more kiosks saw both lower staffing costs and higher inventory losses, the savings appear to come with an offsetting cost, matching the correct answer rather than the claim that inventory losses are unrelated to the number of kiosks.",
   },
   {
     id: "ii-194",
@@ -3716,7 +3716,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Synchronization fell near the lighting even though population counts held steady, suggesting the light disrupts the signaling behavior specifically rather than the fireflies' numbers, matching choice A.",
+      "Synchronization fell near the lighting even though population counts held steady, suggesting the light disrupts the signaling behavior specifically rather than the fireflies' numbers, matching the correct answer.",
   },
   {
     id: "ii-195",
@@ -3735,7 +3735,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since the independence-encouraged group showed greater resilience despite no meaningful difference in grades, the link to resilience appears real but separate from academic performance, matching choice A.",
+      "Since the independence-encouraged group showed greater resilience despite no meaningful difference in grades, the link to resilience appears real but separate from academic performance, matching the correct answer.",
   },
   {
     id: "ii-196",
@@ -4046,7 +4046,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is comparative, and only choice A reports the actual cavity averages (0.8 versus 1.9) showing the new toothpaste's advantage.",
+      "The claim is comparative, and only the correct answer reports the actual cavity averages (0.8 versus 1.9) showing the new toothpaste's advantage.",
   },
   {
     id: "ii-212",
@@ -4065,7 +4065,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns reduced solo commuting, and only choice A reports the actual before-and-after percentages showing that drop.",
+      "The claim concerns reduced solo commuting, and only the correct answer reports the actual before-and-after percentages showing that drop.",
   },
   {
     id: "ii-213",
@@ -4084,7 +4084,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about reduced lead levels, and only choice A reports the actual before-and-after measurements showing the decrease.",
+      "The claim is about reduced lead levels, and only the correct answer reports the actual before-and-after measurements showing the decrease.",
   },
   {
     id: "ii-214",
@@ -4122,7 +4122,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns cost-effectiveness per download, and only choice A reports the actual per-download costs for both campaigns while noting the download totals were similar.",
+      "The claim concerns cost-effectiveness per download, and only the correct answer reports the actual per-download costs for both campaigns while noting the download totals were similar.",
   },
   {
     id: "ii-216",
@@ -4142,7 +4142,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to teen patrons, and only choice A contrasts the large increase among teens with the minimal change among adult patrons.",
+      "The claim is about a benefit specific to teen patrons, and only the correct answer contrasts the large increase among teens with the minimal change among adult patrons.",
   },
   {
     id: "ii-217",
@@ -4161,7 +4161,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts—reduced pesticide use and preserved yield—and only choice A reports data addressing both figures.",
+      "The claim has two parts—reduced pesticide use and preserved yield—and only the correct answer reports data addressing both figures.",
   },
   {
     id: "ii-218",
@@ -4180,7 +4180,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim requires both reduced wait times and stable costs, and only choice A reports data on both measures from the same period.",
+      "The claim requires both reduced wait times and stable costs, and only the correct answer reports data on both measures from the same period.",
   },
   {
     id: "ii-219",
@@ -4218,7 +4218,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is that UVA blocking differs despite identical SPF labels, and only choice A reports the actual UVA-blocking percentages distinguishing the two products.",
+      "The claim is that UVA blocking differs despite identical SPF labels, and only the correct answer reports the actual UVA-blocking percentages distinguishing the two products.",
   },
   {
     id: "ii-221",
@@ -4276,7 +4276,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim involves both reduced noise and fewer complaints, and only choice A reports the actual decibel and complaint figures showing both drops.",
+      "The claim involves both reduced noise and fewer complaints, and only the correct answer reports the actual decibel and complaint figures showing both drops.",
   },
   {
     id: "ii-224",
@@ -4295,7 +4295,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about reduced cart abandonment, and only choice A reports the actual before-and-after abandonment rates tied to the checkout simplification.",
+      "The claim is about reduced cart abandonment, and only the correct answer reports the actual before-and-after abandonment rates tied to the checkout simplification.",
   },
   {
     id: "ii-225",
@@ -4314,7 +4314,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the nonprofit model freed the theater 'from the pressure to turn a profit,' allowing screenings that would not fill enough seats commercially, matching choice A and contradicting choice D.",
+      "The passage states the nonprofit model freed the theater 'from the pressure to turn a profit,' allowing screenings that would not fill enough seats commercially, matching the correct answer and contradicting the claim that the theater now earns more profit.",
   },
   {
     id: "ii-226",
@@ -4333,7 +4333,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage traces mycelium leather from being 'criticized for tearing easily' to becoming 'durable enough for handbags and shoes,' matching choice A and contradicting choice D.",
+      "The passage traces mycelium leather from being 'criticized for tearing easily' to becoming 'durable enough for handbags and shoes,' matching the correct answer and contradicting the claim that it remains too fragile for any commercial product.",
   },
   {
     id: "ii-227",
@@ -4352,7 +4352,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text describes the department's volunteer shortage and how social media recruitment nearly doubled its roster, matching choice A; it never discusses paid staffing or technique comparisons.",
+      "The text describes the department's volunteer shortage and how social media recruitment nearly doubled its roster, matching the correct answer; it never discusses paid staffing or technique comparisons.",
   },
   {
     id: "ii-228",
@@ -4371,7 +4371,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states sighted visitors 'also begun requesting the guided tours,' showing the service benefits both groups, matching choice A and contradicting choice B.",
+      "The passage states sighted visitors 'also begun requesting the guided tours,' showing the service benefits both groups, matching the correct answer and contradicting the claim that only blind or low-vision visitors attend the tours.",
   },
   {
     id: "ii-229",
@@ -4390,7 +4390,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage credits cameras with patrolling 'far more streets per day' while noting they 'eliminated the discretion officers once used,' matching the trade-off in choice A and contradicting choice D.",
+      "The passage credits cameras with patrolling 'far more streets per day' while noting they 'eliminated the discretion officers once used,' matching the trade-off in the correct answer and contradicting the claim that human officers covered more streets per day.",
   },
   {
     id: "ii-230",
@@ -4409,7 +4409,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage shows a reexamination finding Kessler's handwriting 'throughout the key derivations,' prompting a call for equal credit, matching choice A and contradicting choices B and C.",
+      "The passage shows a reexamination finding Kessler's handwriting 'throughout the key derivations,' prompting a call for equal credit, matching the correct answer and contradicting the claims that Kessler always received equal credit or that the notebooks show no outside contributions.",
   },
   {
     id: "ii-231",
@@ -4428,7 +4428,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states developers 'stress that the tool is intended only to narrow down possibilities,' not to confirm edibility without expert review, matching choice A and contradicting choices B and D.",
+      "The passage states developers 'stress that the tool is intended only to narrow down possibilities,' not to confirm edibility without expert review, matching the correct answer and contradicting the claims that the app guarantees safety or was designed to replace trained mycologists.",
   },
   {
     id: "ii-232",
@@ -4447,7 +4447,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage credits smaller, more efficient jets with restoring service to towns 'abandoned' by larger carriers, matching choice A and contradicting choice D's reversal of the stated comparison.",
+      "The passage credits smaller, more efficient jets with restoring service to towns 'abandoned' by larger carriers, matching the correct answer and contradicting the reversed claim that smaller jets need more empty seats to break even.",
   },
   {
     id: "ii-233",
@@ -4466,7 +4466,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states attendance 'rose substantially' and many attendees 'would not have come at all' under standard pricing, even as the average ticket payment fell, matching choice A and contradicting choice B.",
+      "The passage states attendance 'rose substantially' and many attendees 'would not have come at all' under standard pricing, even as the average ticket payment fell, matching the correct answer and contradicting the claim that average revenue per ticket increased.",
   },
   {
     id: "ii-234",
@@ -4485,7 +4485,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage attributes the sharp drop in illegal dumping to transparent bags making 'contents now visible,' matching choice A and directly contradicting choice B.",
+      "The passage attributes the sharp drop in illegal dumping to transparent bags making 'contents now visible,' matching the correct answer and directly contradicting the claim that transparent bags made dumping harder to detect.",
   },
   {
     id: "ii-235",
@@ -4504,7 +4504,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states that after removing the fee, 'average visit length tripled, and overall revenue rose,' matching choice A and directly contradicting choices B and C.",
+      "The passage states that after removing the fee, 'average visit length tripled, and overall revenue rose,' matching the correct answer and directly contradicting the claims that revenue fell or that customers left more quickly.",
   },
   {
     id: "ii-236",
@@ -4523,7 +4523,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states supertitles allowed listeners to 'connect more fully with both elements at once,' reversing the earlier worry about distraction, matching choice A and contradicting choice B.",
+      "The passage states supertitles allowed listeners to 'connect more fully with both elements at once,' reversing the earlier worry about distraction, matching the correct answer and contradicting the claim that supertitles distract from the music.",
   },
   {
     id: "ii-237",
@@ -4542,7 +4542,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states teachers saw students engage 'far more' with touchable casts than with the earlier photographs and videos, matching choice A and contradicting choice D's reversal.",
+      "The passage states teachers saw students engage 'far more' with touchable casts than with the earlier photographs and videos, matching the correct answer and contradicting the reversed claim that photographs produced more engagement than the casts.",
   },
   {
     id: "ii-238",
@@ -4656,7 +4656,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since the loaves varied despite 'identical measurements' every time, the differing humidity between seasons is the most reasonable factor explaining the change, contradicting choices B, C, and D.",
+      "Since the loaves varied despite 'identical measurements' every time, the differing humidity between seasons is the most reasonable factor explaining the change, not a seasonal recipe change, varying measurements, or the claim that humidity has no effect at all.",
   },
   {
     id: "ii-244",
@@ -4675,7 +4675,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since cards carried 'no discount or special pricing' yet books sold faster, the recommendation itself—not price—appears to drive the difference, contradicting choice B.",
+      "Since cards carried 'no discount or special pricing' yet books sold faster, the recommendation itself—not price—appears to drive the difference, contradicting the claim that customers only buy discounted books.",
   },
   {
     id: "ii-245",
@@ -4694,7 +4694,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since the classes share the 'same instructors' and identical pricing, timing is the one factor left to explain the attendance gap, contradicting choices B and C.",
+      "Since the classes share the 'same instructors' and identical pricing, timing is the one factor left to explain the attendance gap, ruling out the claims that evening instructors are more skilled or that morning classes cost more.",
   },
   {
     id: "ii-246",
@@ -4713,7 +4713,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since sales rise before the storm 'regardless of whether' an outage occurs, purchases appear driven by anticipation rather than actual outages, contradicting choices B and C.",
+      "Since sales rise before the storm 'regardless of whether' an outage occurs, purchases appear driven by anticipation rather than actual outages, contradicting the claims that outages always follow forecasts or that these sales stay constant all year.",
   },
   {
     id: "ii-247",
@@ -4732,7 +4732,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since staff rotated between rooms yet the music rooms still showed calmer behavior, the music itself—not staff differences—appears linked to the calming effect, contradicting choices B and D.",
+      "Since staff rotated between rooms yet the music rooms still showed calmer behavior, the music itself—not staff differences—appears linked to the calming effect, contradicting the claims that silent rooms had less experienced staff or that music had no measurable effect.",
   },
   {
     id: "ii-248",
@@ -4751,7 +4751,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since adding bins did nothing but signage alone raised the recycling rate, confusion about sorting—not bin availability—appears to have been the limiting factor, contradicting choices B and D.",
+      "Since adding bins did nothing but signage alone raised the recycling rate, confusion about sorting—not bin availability—appears to have been the limiting factor, contradicting the claims that more bins is always most effective or that signage had no effect.",
   },
   {
     id: "ii-249",
@@ -4770,7 +4770,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Because attendees also had higher homework completion, that overlapping factor makes it hard to credit office hours alone for the grade gap, contradicting the sole-cause claim in choice B.",
+      "Because attendees also had higher homework completion, that overlapping factor makes it hard to credit office hours alone for the grade gap, contradicting the claim that office hours are the sole cause.",
   },
   {
     id: "ii-250",
@@ -4789,7 +4789,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since habitat and animal populations 'remain the same every day,' the gap in reports more plausibly reflects visitor numbers than actual wildlife activity, contradicting choices B and D.",
+      "Since habitat and animal populations 'remain the same every day,' the gap in reports more plausibly reflects visitor numbers than actual wildlife activity, contradicting the claims that wildlife is more active on weekends or that animal populations change by day of the week.",
   },
   {
     id: "ii-251",
@@ -4808,7 +4808,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Bugs fell while a new kind of complaint—about undocumented changes—rose, suggesting the new approach traded one problem for another, contradicting choices B and C.",
+      "Bugs fell while a new kind of complaint—about undocumented changes—rose, suggesting the new approach traded one problem for another, contradicting the claims that no support tickets came in or that bugs increased.",
   },
   {
     id: "ii-252",
@@ -4827,7 +4827,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since reachable patients were also disproportionately those with stable housing, that overlapping factor could partly explain the result, contradicting the sole-cause claim in choice B.",
+      "Since reachable patients were also disproportionately those with stable housing, that overlapping factor could partly explain the result, contradicting the claim that the call is definitely the only factor.",
   },
   {
     id: "ii-253",
@@ -4846,7 +4846,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Since brightness was 'similar' but only the blue-toned city saw complaints rise, color tone specifically—not LEDs generally—appears linked to the effect, contradicting choice B.",
+      "Since brightness was 'similar' but only the blue-toned city saw complaints rise, color tone specifically—not LEDs generally—appears linked to the effect, contradicting the claim that LEDs of any color tone disrupt sleep.",
   },
   {
     id: "ii-254",
@@ -4865,7 +4865,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Despite sharply lower wait times, satisfaction rose only slightly, and guests described needing to 'constantly check the app,' suggesting that burden offset some of the benefit, contradicting choices B and D.",
+      "Despite sharply lower wait times, satisfaction rose only slightly, and guests described needing to 'constantly check the app,' suggesting that burden offset some of the benefit, contradicting the claims that satisfaction improved dramatically or that guests' behavior didn't change.",
   },
   {
     id: "ii-255",
@@ -5245,7 +5245,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns increased long-term adoption success, and only choice A reports the actual before-and-after six-month retention rates.",
+      "The claim concerns increased long-term adoption success, and only the correct answer reports the actual before-and-after six-month retention rates.",
   },
   {
     id: "ii-275",
@@ -5264,7 +5264,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about reduced missed appointments, and only choice A reports the actual before-and-after missed-appointment rates.",
+      "The claim is about reduced missed appointments, and only the correct answer reports the actual before-and-after missed-appointment rates.",
   },
   {
     id: "ii-276",
@@ -5283,7 +5283,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns an extended operating season, and only choice A reports the actual before-and-after season lengths.",
+      "The claim concerns an extended operating season, and only the correct answer reports the actual before-and-after season lengths.",
   },
   {
     id: "ii-277",
@@ -5302,7 +5302,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about reduced call length, and only choice A reports the actual before-and-after average call times.",
+      "The claim is about reduced call length, and only the correct answer reports the actual before-and-after average call times.",
   },
   {
     id: "ii-278",
@@ -5321,7 +5321,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts—reduced damage and minimal added weight—and only choice A reports data addressing both figures.",
+      "The claim has two parts—reduced damage and minimal added weight—and only the correct answer reports data addressing both figures.",
   },
   {
     id: "ii-279",
@@ -5341,7 +5341,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to first-generation students, and only choice A contrasts their large graduation-rate increase with the much smaller change among other students.",
+      "The claim is about a benefit specific to first-generation students, and only the correct answer contrasts their large graduation-rate increase with the much smaller change among other students.",
   },
   {
     id: "ii-280",
@@ -5361,7 +5361,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to left-turn collisions, and only choice A contrasts their sharp decline with the roughly unchanged rate of other collisions.",
+      "The claim is about a benefit specific to left-turn collisions, and only the correct answer contrasts their sharp decline with the roughly unchanged rate of other collisions.",
   },
   {
     id: "ii-281",
@@ -5381,7 +5381,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about a benefit specific to long-commute subscribers, and only choice A contrasts their large viewing increase with the minimal change among short-commute subscribers.",
+      "The claim is about a benefit specific to long-commute subscribers, and only the correct answer contrasts their large viewing increase with the minimal change among short-commute subscribers.",
   },
   {
     id: "ii-282",
@@ -5400,7 +5400,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is that sales were not meaningfully affected, and only choice A reports the actual sales figures showing the minimal change.",
+      "The claim is that sales were not meaningfully affected, and only the correct answer reports the actual sales figures showing the minimal change.",
   },
   {
     id: "ii-283",
@@ -5419,7 +5419,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts—reduced fraud and minimal increase in false declines—and only choice A reports data addressing both figures.",
+      "The claim has two parts—reduced fraud and minimal increase in false declines—and only the correct answer reports data addressing both figures.",
   },
   {
     id: "ii-284",
@@ -5555,7 +5555,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text explains the restorers' shift from replacing all tiles to intentionally preserving stable cracks for historical authenticity, matching choice A.",
+      "The text explains the restorers' shift from replacing all tiles to intentionally preserving stable cracks for historical authenticity, matching the correct answer.",
   },
   {
     id: "ii-291",
@@ -5593,7 +5593,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Sales held steady because customers valued curated recommendations and events the chain did not offer, matching choice A. The other choices are unsupported or false.",
+      "Sales held steady because customers valued curated recommendations and events the chain did not offer, matching the correct answer. The other choices are unsupported or false.",
   },
   {
     id: "ii-293",
@@ -5612,7 +5612,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage emphasizes that first-year birds complete the journey 'without ever having made the trip before, relying on innate rather than learned cues,' matching choice A.",
+      "The passage emphasizes that first-year birds complete the journey 'without ever having made the trip before, relying on innate rather than learned cues,' matching the correct answer.",
   },
   {
     id: "ii-294",
@@ -5631,7 +5631,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text shows that Dubois's injury led her to specialize in accessible design, work now studied as a model, which matches choice A.",
+      "The text shows that Dubois's injury led her to specialize in accessible design, work now studied as a model, which matches the correct answer.",
   },
   {
     id: "ii-295",
@@ -5669,7 +5669,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the process can 'recover over 90%' of cobalt and nickel that would otherwise require mining, matching choice A.",
+      "The passage states the process can 'recover over 90%' of cobalt and nickel that would otherwise require mining, matching the correct answer.",
   },
   {
     id: "ii-297",
@@ -5688,7 +5688,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text contrasts the old assumption with ledger evidence that the pass carried 'a third of all regional trade year-round,' matching choice A.",
+      "The text contrasts the old assumption with ledger evidence that the pass carried 'a third of all regional trade year-round,' matching the correct answer.",
   },
   {
     id: "ii-298",
@@ -5707,7 +5707,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states firing temperature 'mattered far less than humidity,' and pieces fired under different humidity levels produced different finishes, matching choice A.",
+      "The passage states firing temperature 'mattered far less than humidity,' and pieces fired under different humidity levels produced different finishes, matching the correct answer.",
   },
   {
     id: "ii-299",
@@ -5726,7 +5726,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text describes the cactus's pleated surface as a water-storage adaptation allowing year-long survival on one rainfall, matching choice A.",
+      "The text describes the cactus's pleated surface as a water-storage adaptation allowing year-long survival on one rainfall, matching the correct answer.",
   },
   {
     id: "ii-300",
@@ -5992,7 +5992,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Both sales and return rates rose together, suggesting customers ordered more speculatively once returns became free, matching choice A.",
+      "Both sales and return rates rose together, suggesting customers ordered more speculatively once returns became free, matching the correct answer.",
   },
   {
     id: "ii-314",
@@ -6012,7 +6012,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns germination speed, and only choice A reports a direct speed comparison tied to sound exposure.",
+      "The claim concerns germination speed, and only the correct answer reports a direct speed comparison tied to sound exposure.",
   },
   {
     id: "ii-315",
@@ -6032,7 +6032,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The hypothesis concerns a delay in falling asleep, and only choice A directly measures that delay in relation to screen exposure.",
+      "The hypothesis concerns a delay in falling asleep, and only the correct answer directly measures that delay in relation to screen exposure.",
   },
   {
     id: "ii-316",
@@ -6052,7 +6052,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns memory recall after exercise, and only choice A directly compares recall between an exercise group and a rest group.",
+      "The claim concerns memory recall after exercise, and only the correct answer directly compares recall between an exercise group and a rest group.",
   },
   {
     id: "ii-317",
@@ -6072,7 +6072,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about the primary source of prosperity, and only choice A directly compares trade revenue to farmland income.",
+      "The claim is about the primary source of prosperity, and only the correct answer directly compares trade revenue to farmland income.",
   },
   {
     id: "ii-318",
@@ -6092,7 +6092,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly contradicts the claim by showing the new support performed worse despite the same cost, undermining both parts of the claim.",
+      "Only the correct answer directly contradicts the claim by showing the new support performed worse despite the same cost, undermining both parts of the claim.",
   },
   {
     id: "ii-319",
@@ -6112,7 +6112,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns long-term retention, and only choice A directly compares delayed retention scores between the two teaching methods.",
+      "The claim concerns long-term retention, and only the correct answer directly compares delayed retention scores between the two teaching methods.",
   },
   {
     id: "ii-320",
@@ -6132,7 +6132,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly compares perceived juiciness between rested and unrested steak, which is exactly what the claim concerns.",
+      "Only the correct answer directly compares perceived juiciness between rested and unrested steak, which is exactly what the claim concerns.",
   },
   {
     id: "ii-321",
@@ -6172,7 +6172,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly shows both halves of the claim: earnings rising and employment staying stable.",
+      "Only the correct answer directly shows both halves of the claim: earnings rising and employment staying stable.",
   },
   {
     id: "ii-323",
@@ -6192,7 +6192,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly addresses both parts of the claim: more sediment removed and flow rate unchanged.",
+      "Only the correct answer directly addresses both parts of the claim: more sediment removed and flow rate unchanged.",
   },
   {
     id: "ii-324",
@@ -6212,7 +6212,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly compares weekend visits before and after the extended hours, which is the evidence the claim requires.",
+      "Only the correct answer directly compares weekend visits before and after the extended hours, which is the evidence the claim requires.",
   },
   {
     id: "ii-325",
@@ -6232,7 +6232,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly ties the timing of seat assignment to the rate of seating-related complaints, matching the claim.",
+      "Only the correct answer directly ties the timing of seat assignment to the rate of seating-related complaints, matching the claim.",
   },
   {
     id: "ii-326",
@@ -6252,7 +6252,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly contradicts both parts of the claim: it shows production falling and efficiency staying flat.",
+      "Only the correct answer directly contradicts both parts of the claim: it shows production falling and efficiency staying flat.",
   },
   {
     id: "ii-327",
@@ -6272,7 +6272,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly compares vegetable consumption between residents with and without access to a garden.",
+      "Only the correct answer directly compares vegetable consumption between residents with and without access to a garden.",
   },
   {
     id: "ii-328",
@@ -6292,7 +6292,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly compares injury rates between the new and previous shoe designs, matching the claim.",
+      "Only the correct answer directly compares injury rates between the new and previous shoe designs, matching the claim.",
   },
   {
     id: "ii-329",
@@ -6312,7 +6312,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly compares visitor engagement between tours led by trained and untrained docents.",
+      "Only the correct answer directly compares visitor engagement between tours led by trained and untrained docents.",
   },
   {
     id: "ii-330",
@@ -6332,7 +6332,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly compares soil nutrient levels between rotated and non-rotated fields, matching the farmer's claim.",
+      "Only the correct answer directly compares soil nutrient levels between rotated and non-rotated fields, matching the farmer's claim.",
   },
   {
     id: "ii-331",
@@ -6352,7 +6352,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A shows the weekend gain was offset by a weekday decline, suggesting a shift rather than genuine growth, which undermines the claim.",
+      "Only the correct answer shows the weekend gain was offset by a weekday decline, suggesting a shift rather than genuine growth, which undermines the claim.",
   },
   {
     id: "ii-332",
@@ -6372,7 +6372,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns flashcards raising scores, and only choice A reports the actual 15-point gap between the two groups.",
+      "The claim concerns flashcards raising scores, and only the correct answer reports the actual 15-point gap between the two groups.",
   },
   {
     id: "ii-333",
@@ -6392,7 +6392,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the actual difference in daily output between coated and uncoated panels under cloudy conditions.",
+      "Only the correct answer reports the actual difference in daily output between coated and uncoated panels under cloudy conditions.",
   },
   {
     id: "ii-334",
@@ -6412,7 +6412,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after comparison of weekly checkout averages that supports the claim.",
+      "Only the correct answer reports the direct before-and-after comparison of weekly checkout averages that supports the claim.",
   },
   {
     id: "ii-335",
@@ -6432,7 +6432,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after comparison of commute times, which is the evidence for the claim.",
+      "Only the correct answer reports the direct before-and-after comparison of commute times, which is the evidence for the claim.",
   },
   {
     id: "ii-336",
@@ -6452,7 +6452,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is specifically that revenue gains outweigh labor costs, and only choice A directly compares the two dollar figures.",
+      "The claim is specifically that revenue gains outweigh labor costs, and only the correct answer directly compares the two dollar figures.",
   },
   {
     id: "ii-337",
@@ -6472,7 +6472,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim specifically concerns landfill waste, and only choice A directly reports the drop in landfill waste itself.",
+      "The claim specifically concerns landfill waste, and only the correct answer directly reports the drop in landfill waste itself.",
   },
   {
     id: "ii-338",
@@ -6492,7 +6492,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the actual 27-bushel yield gap between the two fertilizers, which is the direct support for the claim.",
+      "Only the correct answer reports the actual 27-bushel yield gap between the two fertilizers, which is the direct support for the claim.",
   },
   {
     id: "ii-339",
@@ -6511,7 +6511,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim has two parts, and only choice A directly shows both: reduced handling time and unchanged satisfaction.",
+      "The claim has two parts, and only the correct answer directly shows both: reduced handling time and unchanged satisfaction.",
   },
   {
     id: "ii-340",
@@ -6570,7 +6570,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the renewal-rate comparison between class attendees and non-attendees, the direct evidence for the claim.",
+      "Only the correct answer reports the renewal-rate comparison between class attendees and non-attendees, the direct evidence for the claim.",
   },
   {
     id: "ii-343",
@@ -6589,7 +6589,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A compares the percentage value increase near the park to the increase elsewhere in the city, directly supporting the claim.",
+      "Only the correct answer compares the percentage value increase near the park to the increase elsewhere in the city, directly supporting the claim.",
   },
   {
     id: "ii-344",
@@ -6609,7 +6609,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after comparison of on-time rates that supports the claim.",
+      "Only the correct answer reports the direct before-and-after comparison of on-time rates that supports the claim.",
   },
   {
     id: "ii-345",
@@ -6649,7 +6649,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after attendance comparison, which is the evidence for the claim.",
+      "Only the correct answer reports the direct before-and-after attendance comparison, which is the evidence for the claim.",
   },
   {
     id: "ii-347",
@@ -6669,7 +6669,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the injury drop alongside roughly constant work hours, directly supporting the claim.",
+      "Only the correct answer reports the injury drop alongside roughly constant work hours, directly supporting the claim.",
   },
   {
     id: "ii-348",
@@ -6689,7 +6689,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct month-over-month listen-count comparison that supports the claim.",
+      "Only the correct answer reports the direct month-over-month listen-count comparison that supports the claim.",
   },
   {
     id: "ii-349",
@@ -6709,7 +6709,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A directly reports both halves of the claim: a water-use reduction with essentially no change in yield.",
+      "Only the correct answer directly reports both halves of the claim: a water-use reduction with essentially no change in yield.",
   },
   {
     id: "ii-350",
@@ -6728,7 +6728,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after ridership comparison, which is the evidence for the claim.",
+      "Only the correct answer reports the direct before-and-after ridership comparison, which is the evidence for the claim.",
   },
   {
     id: "ii-351",
@@ -6747,7 +6747,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text explains how seed libraries function: members borrow seeds and replenish the collection by growing some for seed, matching choice A. The other choices are unsupported or contradicted by details in the passage.",
+      "The text explains how seed libraries function: members borrow seeds and replenish the collection by growing some for seed, matching the correct answer. The other choices are unsupported or contradicted by details in the passage.",
   },
   {
     id: "ii-352",
@@ -6786,7 +6786,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns a reduction in turnover. Only choice A reports the actual before-and-after turnover percentages, which is the direct evidence for the claim.",
+      "The claim concerns a reduction in turnover. Only the correct answer reports the actual before-and-after turnover percentages, which is the direct evidence for the claim.",
   },
   {
     id: "ii-354",
@@ -6824,7 +6824,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text highlights two effects of automation: the loss of the keeper profession and the loss of weather and rescue help, matching choice A. The passage never claims automation is unreliable, that danger has ended, or that keeping remains common.",
+      "The text highlights two effects of automation: the loss of the keeper profession and the loss of weather and rescue help, matching the correct answer. The passage never claims automation is unreliable, that danger has ended, or that keeping remains common.",
   },
   {
     id: "ii-356",
@@ -6863,7 +6863,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A presents the direct before-and-after visit counts tied to the change in hours, which is the evidence needed to support the claim.",
+      "Only the correct answer presents the direct before-and-after visit counts tied to the change in hours, which is the evidence needed to support the claim.",
   },
   {
     id: "ii-358",
@@ -6901,7 +6901,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage states the events are free, reduce waste, and teach skills, matching choice A. It never mentions automobiles, replacing professional shops, or charging fees.",
+      "The passage states the events are free, reduce waste, and teach skills, matching the correct answer. It never mentions automobiles, replacing professional shops, or charging fees.",
   },
   {
     id: "ii-360",
@@ -6939,7 +6939,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A provides the before-and-after score comparison tied to the added recess time, which is the evidence for the claim.",
+      "Only the correct answer provides the before-and-after score comparison tied to the added recess time, which is the evidence for the claim.",
   },
   {
     id: "ii-362",
@@ -6977,7 +6977,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The text's point is that tracking revealed longer, doubted flights, matching choice A. It doesn't claim all birds are tracked, and it contradicts B and D, which misstate the findings.",
+      "The text's point is that tracking revealed longer, doubted flights, matching the correct answer. It never claims all migratory birds are tracked, and it contradicts the claims that songbirds can't survive long ocean flights or that fat reserves don't matter.",
   },
   {
     id: "ii-364",
@@ -7015,7 +7015,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after attendance rates connected to the reminder texts, which is the evidence supporting the claim.",
+      "Only the correct answer reports the direct before-and-after attendance rates connected to the reminder texts, which is the evidence supporting the claim.",
   },
   {
     id: "ii-366",
@@ -7053,7 +7053,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage ties the fiber-optic expansion to new opportunities in work, education, and healthcare, matching choice A. It states the opposite of B, and D contradicts the passage's claim that telehealth was 'impractical' before.",
+      "The passage ties the fiber-optic expansion to new opportunities in work, education, and healthcare, matching the correct answer. It never claims satellite internet is faster, and the claim that telehealth was already common contradicts the passage's claim that telehealth was 'impractical' before.",
   },
   {
     id: "ii-368",
@@ -7111,7 +7111,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The architect's argument is specifically that character, beyond cost, drove demand, matching choice A. Choice B contradicts the passage, C is only part of the picture the architect downplays, and D is never discussed.",
+      "The architect's argument is specifically that character, beyond cost, drove demand, matching the correct answer. The claim that tenants prefer brand-new buildings contradicts the passage, lower conversion cost is only the part of the picture the architect downplays, and the strength of timber beams is never discussed.",
   },
   {
     id: "ii-371",
@@ -7149,7 +7149,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim requires both a sugar increase and stable yield. Only choice A reports data on both outcomes, with yield essentially unchanged.",
+      "The claim requires both a sugar increase and stable yield. Only the correct answer reports data on both outcomes, with yield essentially unchanged.",
   },
   {
     id: "ii-373",
@@ -7187,7 +7187,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage emphasizes the chef's grandmother and family history as the true source of her approach, distinguishing it from trend-following, matching choice A. Choices B and C contradict the passage, and D is never stated.",
+      "The passage emphasizes the chef's grandmother and family history as the true source of her approach, distinguishing it from trend-following, matching the correct answer. The claims that she learned fermentation in culinary school or that fermented vegetables are a recent invention contradict the passage, and it never says she abandoned French techniques.",
   },
   {
     id: "ii-375",
@@ -7225,7 +7225,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after infection rates, and notes the drop occurred even as surgery volume rose slightly, which strengthens the link to the campaign rather than reduced caseload.",
+      "Only the correct answer reports the direct before-and-after infection rates, and notes the drop occurred even as surgery volume rose slightly, which strengthens the link to the campaign rather than reduced caseload.",
   },
   {
     id: "ii-377",
@@ -7263,7 +7263,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage contrasts the policy's original intent, cooling costs, with its biggest actual effect, street-level cooling, matching choice A. It contradicts B and C, and D is never mentioned.",
+      "The passage contrasts the policy's original intent, cooling costs, with its biggest actual effect, street-level cooling, matching the correct answer. It contradicts the claims that the policy produced no benefits or was designed to cool streets, and it never mentions owners refusing to comply.",
   },
   {
     id: "ii-379",
@@ -7301,7 +7301,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the before-and-after emissions data tied to the carpool option's introduction, which is the direct evidence for the claim.",
+      "Only the correct answer reports the before-and-after emissions data tied to the carpool option's introduction, which is the direct evidence for the claim.",
   },
   {
     id: "ii-381",
@@ -7339,7 +7339,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage traces a shift from a flight-first assumption to an insulation-or-display-first view, matching choice A. Choices B and C overstate single explanations, and D contradicts the passage's description of a long-held different assumption.",
+      "The passage traces a shift from a flight-first assumption to an insulation-or-display-first view, matching the correct answer. The claims that all dinosaurs could fly or that feathers evolved only for display overstate single explanations, and the claim that paleontologists always agreed on insulation contradicts the passage's description of a long-held different assumption.",
   },
   {
     id: "ii-383",
@@ -7377,7 +7377,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim is about energy use per loaf. Only choice A reports the direct before-and-after energy figures per loaf while noting output held steady, which is the needed evidence.",
+      "The claim is about energy use per loaf. Only the correct answer reports the direct before-and-after energy figures per loaf while noting output held steady, which is the needed evidence.",
   },
   {
     id: "ii-385",
@@ -7415,7 +7415,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage explicitly attributes the shift to supply and cost problems with diesel rather than environmental motives, matching choice A. Choices B, C, and D contradict details in the passage.",
+      "The passage explicitly attributes the shift to supply and cost problems with diesel rather than environmental motives, matching the correct answer. The claims that the island still relies mainly on diesel, that activism drove the change, or that solar and wind proved less reliable all contradict details in the passage.",
   },
   {
     id: "ii-387",
@@ -7453,7 +7453,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A reports the direct before-and-after cost figures, strengthened by noting the drop occurred despite slightly more streetlights, which is the evidence needed to support the claim.",
+      "Only the correct answer reports the direct before-and-after cost figures, strengthened by noting the drop occurred despite slightly more streetlights, which is the evidence needed to support the claim.",
   },
   {
     id: "ii-389",
@@ -7491,7 +7491,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage emphasizes the linguist's priority on living, spoken use by children over mere archiving, matching choice A. Choices B, C, and D contradict stated details.",
+      "The passage emphasizes the linguist's priority on living, spoken use by children over mere archiving, matching the correct answer. The claims that the linguist values archiving over teaching, that the language already has many young speakers, or that the linguist has given up all contradict stated details.",
   },
   {
     id: "ii-391",
@@ -7568,7 +7568,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage notes disagreement about effect but agreement that the blend is intentional, matching choice A. Choice B overstates with 'unanimously,' C misstates the setting since court intrigue is historical, and D contradicts 'deliberate rather than accidental.'",
+      "The passage notes disagreement about effect but agreement that the blend is intentional, matching the correct answer. The claim that critics unanimously think the comedy ruins the drama overstates, the claim that she abandoned historical subjects misstates the setting since court intrigue is historical, and the claim of an editing mistake contradicts 'deliberate rather than accidental.'",
   },
   {
     id: "ii-395",
@@ -7606,7 +7606,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "Only choice A presents the direct before-and-after graduation-rate comparison for the specific group targeted by the program, which is the evidence needed to support the claim.",
+      "Only the correct answer presents the direct before-and-after graduation-rate comparison for the specific group targeted by the program, which is the evidence needed to support the claim.",
   },
   {
     id: "ii-397",
@@ -7625,7 +7625,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The passage contrasts the fee's intended effect of less congestion with its larger actual effect of more transit use, matching choice A. The other choices contradict details given in the passage.",
+      "The passage contrasts the fee's intended effect of less congestion with its larger actual effect of more transit use, matching the correct answer. The other choices contradict details given in the passage.",
   },
   {
     id: "ii-398",
@@ -7837,7 +7837,7 @@ QUESTIONS.push(
     ],
     answer: 0,
     explanation:
-      "The claim concerns increased species diversity. Only choice A reports the direct before-and-after species counts, strengthened by noting some species were new to the whole region, which is the needed evidence.",
+      "The claim concerns increased species diversity. Only the correct answer reports the direct before-and-after species counts, strengthened by noting some species were new to the whole region, which is the needed evidence.",
   },
   {
     id: "ii-409",
@@ -11265,7 +11265,7 @@ QUESTIONS.push(
     prompt: "Which choice best supports her claim?",
     choices: ["Cleaner A plates had 12 colonies and Cleaner B plates had 4, both far below the 85 on untreated plates.","Cleaner B plates had 4 colonies.","Untreated plates had 85 colonies.","Three treatments were used."],
     answer: 0,
-    explanation: "Both are far below the control, and B is lower than A.",
+    explanation: "Both cleaners' counts (12 and 4) are far below the 85 on untreated plates, and Cleaner B's count is lower than Cleaner A's; the other choices give only one figure or a fact about the setup.",
   },
   {
     id: "ii-650",
@@ -11566,5 +11566,1505 @@ QUESTIONS.push(
     choices: ["'We began the hike at dawn.'", "'My legs ached and my lungs burned, but when the clouds parted at the summit, I forgot every step it had cost me.'", "'The trail was marked with orange flags.'", "'I packed two liters of water.'"],
     answer: 1,
     explanation: "The quotation acknowledges difficulty but emphasizes the reward.",
+  },
+  {
+    id: "ii-675",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Archaeologists excavating a Roman villa in England found coins from many different parts of the Roman Empire, including Egypt and Syria. They also found pottery made in Spain and glass made in Italy. These findings suggest that the villa's residents ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["had access to goods from distant parts of the empire.", "were born in Egypt or Syria before moving to England.", "made all of their own pottery and glass at the villa.", "rarely used money to pay for the goods they needed."],
+    answer: 0,
+    explanation: "Coins and goods from faraway regions suggest trade connections. Owning such coins doesn't mean the residents were born there.",
+  },
+  {
+    id: "ii-676",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "The Japanese art of kintsugi repairs broken pottery with lacquer mixed with gold. Rather than hiding the cracks, kintsugi highlights them, turning the repair into part of the object's beauty. Many people see the practice as a reminder that damage and history can add value rather than take it away.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Kintsugi is a method of repairing pottery so that its cracks are hidden.", "Kintsugi was once common in Japan but is no longer practiced there today.", "Kintsugi uses lacquer mixed with gold to make new pottery from scratch.", "Kintsugi treats the repair of broken pottery as adding beauty and meaning."],
+    answer: 3,
+    explanation: "The text explains that kintsugi highlights cracks and gives them value. It doesn't hide them.",
+  },
+  {
+    id: "ii-677",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "A study found that people who kept a gratitude journal, writing down three things they were thankful for each day, reported feeling happier after a month than people who did not keep one. The study suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["keeping any kind of daily journal can be harmful.", "writing every day makes most people feel tired.", "focusing on positive things may improve mood.", "people who are already happy never keep journals."],
+    answer: 2,
+    explanation: "Journal keepers felt happier, suggesting that focusing on gratitude may lift mood.",
+  },
+  {
+    id: "ii-678",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A literary critic argues that in the novel The Orchard, the narrator's feelings about her hometown change from resentment to affection over the course of the story.",
+    prompt: "Which pair of quotations from the novel would best support the critic's argument?",
+    choices: ["Early: \"I counted the days until I could leave this dull town behind.\" Late: \"Only now do I see how much this place has given me.\"", "Early: \"My grandfather planted the orchard the year he arrived.\" Late: \"The apple trees bloomed in May.\"", "Early: \"I loved the town's quiet streets as a girl.\" Late: \"I still love its quiet streets.\"", "Early: \"I hated the long, gray winters here.\" Late: \"I hate those winters still.\""],
+    answer: 0,
+    explanation: "The critic claims a shift from resentment to affection. Only one pair shows dislike early and appreciation late.",
+  },
+  {
+    id: "ii-679",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Riding a bike to school has many benefits. It gives students exercise, cuts down on car traffic near schools, and can be faster than waiting for a bus.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Biking to school is dangerous.", "All students should be required to bike to school.", "Buses are always slower than bikes.", "Biking to school offers several advantages."],
+    answer: 3,
+    explanation: "The text lists benefits of biking to school. It doesn't say biking should be required.",
+  },
+  {
+    id: "ii-680",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Weekly Hours of Physical Activity and Reported Mood</caption><thead><tr><th>Hours of activity</th><th>Students reporting good mood (%)</th></tr></thead><tbody><tr><td>0–1</td><td>48</td></tr><tr><td>2–3</td><td>61</td></tr><tr><td>4–5</td><td>72</td></tr><tr><td>6 or more</td><td>74</td></tr></tbody></table>A health researcher noted that students who were more active generally reported good moods more often, although the increase leveled off at the highest activity levels.",
+    prompt: "Which choice best uses data from the table to support the researcher's note?",
+    choices: ["74% of students with 6 or more hours of activity reported good moods.", "Good moods rose from 48% to 61% to 72% with more activity, then only to 74%.", "More students with 4–5 hours reported good moods than those with 2–3 hours.", "Students with 0–1 hours of activity were least likely to report good moods."],
+    answer: 1,
+    explanation: "The note has two parts: an overall rise and a leveling off. Only one choice shows both the steady increase and the small final gain.",
+  },
+  {
+    id: "ii-681",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Library Programs: Average Attendance</caption><thead><tr><th>Program</th><th>Before advertising</th><th>After advertising</th></tr></thead><tbody><tr><td>Story time</td><td>18</td><td>21</td></tr><tr><td>Coding club</td><td>9</td><td>27</td></tr><tr><td>Book club</td><td>12</td><td>14</td></tr></tbody></table>The library's director argues that advertising had the greatest impact on the coding club.",
+    prompt: "Which choice best uses data from the table to support the director's argument?",
+    choices: ["Coding club attendance tripled, from 9 to 27, while others rose by 2 or 3.", "Coding club attendance after advertising was 27, the highest of any program.", "Book club attendance rose from 12 to 14 people after the advertising began.", "Story time had the highest average attendance before the advertising began."],
+    answer: 0,
+    explanation: "The greatest impact is shown by comparing the coding club's increase with the other programs' smaller increases.",
+  },
+  {
+    id: "ii-682",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Economists once believed that people always make rational decisions about money. But psychologist Daniel Kahneman showed that people often rely on mental shortcuts that lead to predictable errors. For example, people tend to fear losing $100 more than they value gaining $100, even though the amounts are the same.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Economists have always understood that people make irrational choices about money.", "People tend to value gaining $100 more than they fear losing the same amount.", "Daniel Kahneman was an economist whose work confirmed that people act rationally.", "Research has shown that predictable biases often shape people's financial decisions."],
+    answer: 3,
+    explanation: "The text contrasts the old belief in rational decisions with Kahneman's findings about predictable errors. The example reverses one of the wrong choices.",
+  },
+  {
+    id: "ii-683",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "An art historian claims that the painter Kerry James Marshall deliberately includes Black figures in scenes traditionally dominated by white subjects in Western art.",
+    prompt: "Which finding, if true, would most directly support the art historian's claim?",
+    choices: ["Marshall, who was born in Alabama in 1955, grew up partly in Los Angeles.", "Marshall has said he paints Black figures in classic scenes to correct their absence from art history.", "Marshall's paintings are often very large, some more than ten feet wide.", "Many major museums have purchased Marshall's paintings for their collections."],
+    answer: 1,
+    explanation: "Marshall's own statement of intent directly supports the claim that the choice is deliberate.",
+  },
+  {
+    id: "ii-684",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "The city recently replaced its old streetlights with LED lights. The new lights use about half as much electricity and last much longer. City officials expect the change to save millions of dollars over the next ten years.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["City officials had originally planned to remove all the streetlights.", "The city's new LED streetlights should save energy and money.", "The new LED lights cost more to run than the city's old lights.", "The city's new LED streetlights are much brighter than the old ones."],
+    answer: 1,
+    explanation: "The text describes LED lights' lower energy use and expected savings.",
+  },
+  {
+    id: "ii-685",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Many cities have started planting \"pocket forests\"—small, dense patches of native trees, sometimes no larger than a tennis court. Because the trees are planted close together, they grow quickly as they compete for light. Within a few years, these tiny forests can provide shade, absorb rainwater, and attract birds and insects.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Trees grow more slowly when they are planted close together in small spaces.", "Pocket forests are usually much larger than tennis courts and take decades to grow.", "Pocket forests are planted mainly to provide wood for nearby city residents.", "Small, dense urban forests can quickly provide several environmental benefits."],
+    answer: 3,
+    explanation: "The text describes pocket forests and the benefits they provide within a few years.",
+  },
+  {
+    id: "ii-686",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "Biologists hypothesize that the bright red patches on the wings of male red-winged blackbirds help them defend their territories.",
+    prompt: "Which finding, if true, would most directly support the biologists' hypothesis?",
+    choices: ["Female red-winged blackbirds do not have the red wing patches that males have.", "Red-winged blackbirds are found in marshes throughout most of North America.", "Males with bright red patches sing more often in the spring than in the fall.", "Males whose red patches were dyed black lost their territories far more often."],
+    answer: 3,
+    explanation: "Covering the patches led to territory loss, which directly ties the patches to territorial defense.",
+  },
+  {
+    id: "ii-687",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A researcher claims that drinking water before meals can help people eat less.",
+    prompt: "Which finding, if true, would most directly support the researcher's claim?",
+    choices: ["Lunch is often the busiest meal of the day at restaurants in large cities.", "Drinking enough water each day is important for keeping the body hydrated.", "People who drank two glasses of water before lunch ate 13 percent fewer calories.", "Many people say they prefer drinking cold water to warm water with meals."],
+    answer: 2,
+    explanation: "Only the finding about eating fewer calories after drinking water supports the claim.",
+  },
+  {
+    id: "ii-688",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Honeybee colonies make decisions as a group. When a colony needs a new home, scout bees inspect possible sites and return to perform dances advertising them. Other scouts visit the sites, and over time more bees dance for the best location. Once enough scouts favor one site, the swarm moves there.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Honeybee colonies choose new homes through a collective process.", "A single queen bee decides where the colony will move next.", "Honeybee colonies prefer to stay in the same home for their whole lives.", "Scout bees never return to a site that another scout has visited."],
+    answer: 0,
+    explanation: "The text explains how many scouts gradually reach agreement, a group decision.",
+  },
+  {
+    id: "ii-689",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A student argues that the author of an essay values hard work.",
+    prompt: "Which quotation from the essay would best support the student's argument?",
+    choices: ["\"Nothing I am proud of came easily; every success took long hours.\"", "\"I enjoy traveling to new places and meeting people from other cultures.\"", "\"My favorite season has always been autumn, when the leaves change.\"", "\"I grew up in a small town in Ohio, the youngest of four children.\""],
+    answer: 0,
+    explanation: "Only the quotation about success built on long hours expresses the value of hard work.",
+  },
+  {
+    id: "ii-690",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Survival of Seedlings After One Year (%)</caption><thead><tr><th>Seedling type</th><th>Watered weekly</th><th>Not watered</th></tr></thead><tbody><tr><td>Oak</td><td>82</td><td>41</td></tr><tr><td>Maple</td><td>76</td><td>52</td></tr><tr><td>Pine</td><td>88</td><td>79</td></tr></tbody></table>A forester concluded that pine seedlings are less dependent on weekly watering than oak or maple seedlings are.",
+    prompt: "Which choice best uses data from the table to support the forester's conclusion?",
+    choices: ["Oak seedlings that were watered weekly had a survival rate of 82%.", "Without watering, pine survival fell only 9 points, but oak fell 41 and maple 24.", "Pine seedlings had the highest survival rate when watered weekly, at 88%.", "Unwatered maple seedlings survived at a higher rate (52%) than unwatered oaks (41%)."],
+    answer: 1,
+    explanation: "The conclusion is about dependence on watering, which is shown by how much survival drops without water. Pine's small drop compared with the others' large drops supports it.",
+  },
+  {
+    id: "ii-691",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "An ecologist claims that a new fence is keeping deer out of the forest preserve.",
+    prompt: "Which finding, if true, would most directly support the ecologist's claim?",
+    choices: ["The fence around the preserve is eight feet tall and made of strong wire.", "Deer are common throughout the region, including in towns near the preserve.", "Cameras recorded 200 deer in the preserve before the fence was built and 12 after.", "The preserve is home to many kinds of birds as well as foxes and rabbits."],
+    answer: 2,
+    explanation: "The sharp drop in deer after the fence was built supports the claim.",
+  },
+  {
+    id: "ii-692",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Commute Time (minutes)</caption><thead><tr><th>City</th><th>2010</th><th>2020</th></tr></thead><tbody><tr><td>City P</td><td>24</td><td>31</td></tr><tr><td>City Q</td><td>28</td><td>27</td></tr><tr><td>City R</td><td>22</td><td>29</td></tr></tbody></table>A transportation analyst noted that, of the three cities, only City Q saw its average commute time decrease from 2010 to 2020.",
+    prompt: "Which choice best uses data from the table to support the analyst's statement?",
+    choices: ["City Q had the longest average commute of the three cities in 2010, at 28 minutes.", "City R's average commute rose by 7 minutes, from 22 minutes to 29 minutes.", "City P had the longest average commute of the three cities in 2020, at 31 minutes.", "City Q's commute fell from 28 to 27 minutes, while P's and R's each rose by 7."],
+    answer: 3,
+    explanation: "To show that only City Q decreased, the data must show City Q falling and both other cities rising.",
+  },
+  {
+    id: "ii-693",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Moths are drawn to artificial lights at night. Ecologists recently found that moth populations near brightly lit highways have declined more than populations in darker rural areas. Because many plants rely on moths for pollination, these findings suggest that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["plants near highways produce more seeds than plants elsewhere.", "moths prefer to live near highways.", "plants near brightly lit areas may be pollinated less often.", "artificial lights help moths find flowers."],
+    answer: 2,
+    explanation: "Fewer moths near bright lights means fewer pollinators, so plants there may be pollinated less.",
+  },
+  {
+    id: "ii-694",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Arctic terns fly from the Arctic to Antarctica every year. When it is winter in the Arctic, it is summer in Antarctica. Terns can therefore ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["experience two summers each year.", "avoid flying over oceans.", "stay in the Arctic all year.", "live only in cold winter weather."],
+    answer: 0,
+    explanation: "Flying between the poles lets terns follow summer, so they experience two summers a year.",
+  },
+  {
+    id: "ii-695",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A scientist claims that a new fertilizer helps tomato plants produce more fruit.",
+    prompt: "Which finding, if true, would most directly support the scientist's claim?",
+    choices: ["The new fertilizer costs less than most other brands sold in garden stores.", "The new fertilizer is made from recycled materials and is safe for home gardens.", "Tomato plants need plenty of sunlight and regular watering to produce fruit.", "Plants given the new fertilizer produced 40 percent more tomatoes than unfertilized plants."],
+    answer: 3,
+    explanation: "Only the finding about the number of tomatoes addresses fruit production.",
+  },
+  {
+    id: "ii-696",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Although deserts receive little rain, many desert plants have adapted to make the most of it. Some cacti have shallow, widespread roots that quickly absorb water after a storm. Others, like mesquite trees, grow roots more than 100 feet deep to reach underground water.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Mesquite trees can grow only near rivers, where water is plentiful.", "Desert plants have adapted so that they no longer need water to survive.", "Desert plants have developed different root systems to obtain scarce water.", "All desert plants grow deep roots to reach water far underground."],
+    answer: 2,
+    explanation: "The text gives two contrasting root strategies that help plants get water in deserts.",
+  },
+  {
+    id: "ii-697",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Hours Volunteered per Month</caption><thead><tr><th>Group</th><th>Before program</th><th>After program</th></tr></thead><tbody><tr><td>Students</td><td>3.2</td><td>6.5</td></tr><tr><td>Retirees</td><td>8.4</td><td>8.9</td></tr><tr><td>Working adults</td><td>2.1</td><td>2.4</td></tr></tbody></table>Organizers of a volunteering program concluded that the program was especially successful at increasing volunteering among students.",
+    prompt: "Which choice best uses data from the table to support the organizers' conclusion?",
+    choices: ["Retirees volunteered more hours than any other group both before and after.", "Students volunteered 6.5 hours per month after the program was introduced.", "Students doubled their hours, from 3.2 to 6.5, while others rose by under an hour.", "Working adults volunteered 2.4 hours a month after the program, up from 2.1."],
+    answer: 2,
+    explanation: "To show the program worked especially well for students, their gain must be compared with the smaller gains of other groups.",
+  },
+  {
+    id: "ii-698",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A researcher suggests that cats can recognize their owners' voices.",
+    prompt: "Which finding, if true, would most directly support the researcher's suggestion?",
+    choices: ["Cats reacted more to their owners' voices than to strangers' voices.", "Cats can see well in dim light, which helps them hunt at night.", "Some cats meow much more often than others, especially when they are hungry.", "Cats sleep for about 15 hours a day and are most active at dawn and dusk."],
+    answer: 0,
+    explanation: "A stronger reaction to owners' voices than to strangers' suggests recognition.",
+  },
+  {
+    id: "ii-699",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "For many years, scientists assumed that the deep ocean floor was nearly lifeless, since sunlight cannot reach it. Then, in 1977, researchers exploring hydrothermal vents near the Galápagos Islands discovered thriving communities of giant tube worms, clams, and crabs. These animals depend not on sunlight but on bacteria that convert chemicals from the vents into energy.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["A discovery showed that deep-sea life can thrive on chemical energy instead of sunlight.", "Giant tube worms are the largest animals that live anywhere in the deep ocean.", "Sunlight reaches the deep ocean floor near the hydrothermal vents of the Galápagos.", "Most scientists still believe that the deep ocean floor is nearly lifeless."],
+    answer: 0,
+    explanation: "The text describes how the vent communities overturned the idea of a lifeless deep sea and explains their chemical energy source.",
+  },
+  {
+    id: "ii-700",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "The following text is from a 1904 short story. When Mr. Pell entered the shop, the clerk straightened his tie, hid his newspaper, and hurried to greet him. When other customers came in, the clerk barely looked up. It can most reasonably be inferred that the clerk ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["regards Mr. Pell as more important than other customers.", "dislikes his job at the shop and wants to leave it.", "has never seen Mr. Pell in the shop before that day.", "is a close friend of Mr. Pell's from outside the shop."],
+    answer: 0,
+    explanation: "The clerk's special attention to Mr. Pell, compared with his indifference to others, shows he considers Mr. Pell important. Friendship isn't indicated.",
+  },
+  {
+    id: "ii-701",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "A museum's records show that visits to its dinosaur exhibit doubled after a popular dinosaur movie came out. Visits to its other exhibits stayed about the same. This suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["the movie may have increased interest in the dinosaur exhibit.", "the museum closed its other exhibits after the movie came out.", "visitors stopped coming to the museum's other exhibits entirely.", "the dinosaur movie was filmed inside the museum's exhibit."],
+    answer: 0,
+    explanation: "Only the dinosaur exhibit's visits rose after the movie, suggesting the movie sparked interest in it.",
+  },
+  {
+    id: "ii-702",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "When wolves were reintroduced to Yellowstone National Park in 1995, they did more than reduce the elk population. Elk began avoiding open valleys where they were easy targets, allowing willow and aspen trees to regrow along streams. The trees, in turn, provided habitat for beavers and songbirds.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The return of wolves to Yellowstone set off a chain of ecosystem changes.", "Beavers returned to Yellowstone first and caused the streamside trees to regrow.", "Elk populations in Yellowstone increased after the wolves were brought back.", "Wolves were removed from Yellowstone in 1995 to protect the elk population."],
+    answer: 0,
+    explanation: "The text traces a chain of effects from wolves to elk behavior to trees to other animals.",
+  },
+  {
+    id: "ii-703",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Astronomers have observed that a distant star dims slightly at regular intervals every 12 days. Each dimming lasts a few hours. One explanation is that a planet is orbiting the star. If this explanation is correct, the planet most likely ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["orbits the star once every few hours rather than every 12 days.", "gives off its own light, which outshines the star at times.", "is larger than the star itself and blocks all of its light.", "passes in front of the star once every 12 days."],
+    answer: 3,
+    explanation: "Regular dimming every 12 days suggests a planet blocking some starlight on each 12-day orbit. The few hours are the length of each pass, not the orbit.",
+  },
+  {
+    id: "ii-704",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "For years, the empty lot on Pine Street was full of trash. Then a group of neighbors cleaned it up and planted vegetables. Now the lot is a community garden where families grow tomatoes, beans, and peppers.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Neighbors turned an empty lot into a community garden.", "The city plans to build new houses on the lot on Pine Street.", "Tomatoes grow more easily in city gardens than beans or peppers.", "Most families on Pine Street were not interested in gardening."],
+    answer: 0,
+    explanation: "The text describes the lot's transformation from a trash-filled space to a garden.",
+  },
+  {
+    id: "ii-705",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "The following text is adapted from a 1911 novel. Mrs. Wilcox walked slowly across the lawn, stopping now and then to touch a flower or straighten a fallen branch. She did not seem to be in a hurry to go anywhere. To her, the garden was not a place to pass through but a place to belong.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Mrs. Wilcox is a professional gardener.", "Mrs. Wilcox is looking for something she lost in the garden.", "Mrs. Wilcox has a deep, unhurried connection to the garden.", "Mrs. Wilcox dislikes spending time outdoors."],
+    answer: 2,
+    explanation: "Her slow movements and the final sentence (\"a place to belong\") show her close bond with the garden.",
+  },
+  {
+    id: "ii-706",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Writer Lin-Manuel Miranda was inspired to create the musical Hamilton after reading a biography of Alexander Hamilton on vacation. He saw in Hamilton's story—an immigrant who rose through ambition and writing—themes that fit naturally with hip-hop, a genre often centered on personal struggle and wordplay.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Miranda wrote a biography of Alexander Hamilton before creating his musical.", "Hip-hop rarely deals with themes of personal struggle, ambition, or wordplay.", "Miranda saw parallels between Hamilton's life and hip-hop that inspired him.", "Alexander Hamilton was a musician who wrote songs about his own life."],
+    answer: 2,
+    explanation: "The text explains that Miranda connected Hamilton's story to hip-hop's themes.",
+  },
+  {
+    id: "ii-707",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "The following text is from a short story. When the phone rang, Grandpa leaped from his chair faster than anyone had seen him move in years. \"That must be Lucy,\" he said, grinning. Lucy was his granddaughter, who had moved overseas. It can most reasonably be inferred that Grandpa ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["was very eager to hear from Lucy.", "was annoyed by the phone ringing.", "did not want to talk to Lucy.", "was expecting a call from his doctor."],
+    answer: 0,
+    explanation: "Leaping up quickly and grinning shows his excitement about hearing from Lucy.",
+  },
+  {
+    id: "ii-708",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Lemonade Stand Sales</caption><thead><tr><th>Day</th><th>Cups sold</th></tr></thead><tbody><tr><td>Friday</td><td>35</td></tr><tr><td>Saturday</td><td>80</td></tr><tr><td>Sunday</td><td>64</td></tr></tbody></table>The students noticed that they sold more than twice as many cups on Saturday as on Friday.",
+    prompt: "Which choice best uses data from the table to support this observation?",
+    choices: ["The students sold more cups on Sunday than on Friday.", "The students sold 80 cups on Saturday and 35 cups on Friday.", "The students sold 80 cups on Saturday and 64 cups on Sunday.", "The students sold 64 cups on Sunday."],
+    answer: 1,
+    explanation: "80 is more than twice 35, so only the choice comparing Saturday with Friday supports the observation.",
+  },
+  {
+    id: "ii-709",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "In a study, two groups of shoppers were shown the same jar of jam. One group was told the jam was made by a small family farm; the other was told nothing about its origin. Shoppers in the first group said they would pay about 20 percent more for the jam. The study suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["shoppers always prefer to buy the cheapest product on the shelf.", "information about a product's origin can affect how people value it.", "jam made on family farms tastes better than jam made by companies.", "most shoppers do not read the labels on the products they buy."],
+    answer: 1,
+    explanation: "The jam was the same, so the difference in willingness to pay must come from the origin information. Nothing shows the taste differed.",
+  },
+  {
+    id: "ii-710",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A student claims that the short story's narrator distrusts his neighbor.",
+    prompt: "Which quotation from the story would best support the student's claim?",
+    choices: ["\"Mr. Grady often worked in his garden on Saturday mornings.\"", "\"I lived on Elm Street for ten years, two doors down from Mr. Grady.\"", "\"Mr. Grady's house, painted bright yellow, stood right across from mine.\"", "\"Whenever Mr. Grady smiled at me, I checked to make sure my wallet was still in my pocket.\""],
+    answer: 3,
+    explanation: "Checking his wallet whenever the neighbor smiles shows the narrator's distrust.",
+  },
+  {
+    id: "ii-711",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "In winter, Arctic foxes grow thick white fur that helps them stay warm and blend in with the snow. In summer, their fur turns brown or gray to match the rocks and plants around them.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The Arctic fox's fur changes with the seasons to help it survive.", "Arctic foxes keep the same white fur throughout the year.", "Arctic foxes hunt only during the winter, when their fur is white.", "Arctic foxes live mainly in warm places with little snow."],
+    answer: 0,
+    explanation: "The text describes how the fox's fur changes color and thickness to match each season.",
+  },
+  {
+    id: "ii-712",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "Some anthropologists argue that early humans in East Africa traded with distant groups as long as 300,000 years ago.",
+    prompt: "Which finding, if true, would most directly support this argument?",
+    choices: ["Tools from a 300,000-year-old Kenyan site were made of obsidian from over 50 miles away.", "Obsidian is a type of volcanic glass that breaks into pieces with sharp edges.", "Early humans in East Africa used sharp stone tools for cutting meat and plants.", "Some 300,000-year-old sites in Kenya contain animal bones along with tools."],
+    answer: 0,
+    explanation: "Tools made from distant materials suggest exchange with faraway groups.",
+  },
+  {
+    id: "ii-713",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Sculptor Edmonia Lewis, born in 1844 to an Ojibwe mother and a Haitian father, moved to Rome in 1865 to pursue her art. At the time, few women—and even fewer women of color—were able to work as professional sculptors. Lewis not only succeeded but earned international recognition, with works such as The Death of Cleopatra drawing large crowds at the 1876 Centennial Exhibition in Philadelphia.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Edmonia Lewis overcame major barriers to win international fame as a sculptor.", "Edmonia Lewis was the first sculptor of any kind to work professionally in Rome.", "The Death of Cleopatra was the only sculpture that Lewis ever exhibited publicly.", "Most professional sculptors working in the 1860s were women of color like Lewis."],
+    answer: 0,
+    explanation: "The text emphasizes the obstacles Lewis faced and her international success. The other choices misstate details.",
+  },
+  {
+    id: "ii-714",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A historian claims that the town grew quickly after the railroad arrived in 1870.",
+    prompt: "Which finding, if true, would most directly support the historian's claim?",
+    choices: ["The town's railroad station, built in 1870, was made of red brick.", "Many other towns in the region also had railroads by the 1870s.", "The town's population rose from about 800 in 1870 to more than 6,000 in 1880.", "The town's first school opened in 1850, twenty years before the railroad."],
+    answer: 2,
+    explanation: "A large population increase after 1870 directly supports rapid growth.",
+  },
+  {
+    id: "ii-715",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Most volcanic eruptions release ash that blocks some sunlight. After the 1991 eruption of Mount Pinatubo in the Philippines, average global temperatures dropped by about 1°F over the next two years before returning to earlier levels. This suggests that the eruption's effect on climate was ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["to raise global temperatures.", "limited to the Philippines.", "permanent.", "significant but temporary."],
+    answer: 3,
+    explanation: "Temperatures fell worldwide and then returned to earlier levels, so the effect was real but short-lived.",
+  },
+  {
+    id: "ii-716",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Before the transcontinental railroad was completed in 1869, traveling from New York to San Francisco could take months by wagon or ship. Afterward, the same journey took about a week. The railroad also made it far cheaper to ship goods across the country, helping businesses reach new markets.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The transcontinental railroad greatly cut travel times and shipping costs.", "Few people chose to travel on the transcontinental railroad after 1869.", "The railroad made the trip from New York to San Francisco take months.", "The transcontinental railroad was completed well before the year 1860."],
+    answer: 0,
+    explanation: "The text contrasts months of travel before with a week after and notes cheaper shipping.",
+  },
+  {
+    id: "ii-717",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "The axolotl, a type of salamander from Mexico, can regrow lost body parts. If it loses a leg, it can grow a new one in a few weeks. It can even repair parts of its heart and brain.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The axolotl loses its legs more often than other salamanders do.", "The axolotl has a remarkable ability to regrow parts of its body.", "The axolotl's brain is larger than the brains of most other salamanders.", "The axolotl is the only kind of salamander that is native to Mexico."],
+    answer: 1,
+    explanation: "Every detail in the text describes the axolotl's ability to regrow body parts.",
+  },
+  {
+    id: "ii-718",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Daily Screen Time (hours)</caption><thead><tr><th>Age group</th><th>Weekdays</th><th>Weekends</th></tr></thead><tbody><tr><td>8–12</td><td>4.4</td><td>6.1</td></tr><tr><td>13–18</td><td>7.2</td><td>8.9</td></tr></tbody></table>A researcher noted that both age groups spent more time on screens on weekends than on weekdays.",
+    prompt: "Which choice best uses data from the table to support the researcher's note?",
+    choices: ["Teens ages 13–18 averaged 8.9 hours on weekends, more than any other group.", "Children ages 8–12 averaged 4.4 hours on weekdays, the least of any group.", "Ages 8–12 rose from 4.4 to 6.1 hours on weekends, and teens from 7.2 to 8.9.", "Teens spent more time on screens on weekdays than children did on weekends."],
+    answer: 2,
+    explanation: "The note is about both age groups, so the data must show weekend time exceeding weekday time for each group.",
+  },
+  {
+    id: "ii-719",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Many people assume that introverts dislike being around others. But researchers say introversion is better understood as a preference for quieter, less stimulating settings. Introverts may enjoy socializing, but they often need time alone afterward to recharge.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Introverts recharge after socializing by spending more time in crowds.", "Introverts dislike being around others and never enjoy socializing.", "Most people are introverts who need time alone after socializing.", "Introversion is a preference for less stimulation, not a dislike of people."],
+    answer: 3,
+    explanation: "The text corrects the assumption about introverts and redefines introversion as a preference for quiet settings.",
+  },
+  {
+    id: "ii-720",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "The following text is adapted from a 1915 novel. Agnes folded the letter carefully and placed it in the drawer with the others, all unopened. She had not opened a letter from her brother in three years, yet she had not thrown a single one away. It can most reasonably be inferred that Agnes ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["has forgotten that she has a brother at all.", "reads each letter as soon as it arrives.", "has conflicted feelings about her brother.", "wants her brother to stop writing to her."],
+    answer: 2,
+    explanation: "Not opening the letters suggests distance, but keeping them all suggests she still cares, so her feelings are mixed. Nothing shows she wants him to stop.",
+  },
+  {
+    id: "ii-721",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Weight of Newborn Sea Turtles (grams)</caption><thead><tr><th>Nest temperature</th><th>Weight</th></tr></thead><tbody><tr><td>27°C</td><td>24.1</td></tr><tr><td>29°C</td><td>22.8</td></tr><tr><td>31°C</td><td>20.5</td></tr></tbody></table>Researchers studying sea turtle nests found that hatchlings from warmer nests tended to be ______",
+    prompt: "Which choice most effectively uses data from the table to complete the statement?",
+    choices: ["lighter, with average weights falling from 24.1 grams to 20.5 grams.", "lighter at 29°C than at 31°C, though heaviest of all at 27°C.", "heavier, with average weights rising from 20.5 grams to 24.1 grams.", "about the same weight, averaging close to 22.8 grams at each temperature."],
+    answer: 0,
+    explanation: "Weight decreases as temperature rises, from 24.1 to 22.8 to 20.5 grams.",
+  },
+  {
+    id: "ii-722",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "For centuries, the origins of the Stonehenge bluestones puzzled researchers, since the nearest similar rock is about 150 miles away in Wales. Using chemical analysis, geologists recently matched several bluestones to specific outcrops in the Preseli Hills, confirming that the stones were transported over a remarkable distance.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The bluestones used at Stonehenge were quarried from rock near the site itself.", "Researchers still have no idea where the Stonehenge bluestones came from.", "Chemical analysis confirmed that some Stonehenge stones came from distant Wales.", "Stonehenge was originally built in Wales and later moved to its current site."],
+    answer: 2,
+    explanation: "The text describes how geologists traced the bluestones to Wales, resolving a long-standing question.",
+  },
+  {
+    id: "ii-723",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Annual Snowfall (inches)</caption><thead><tr><th>Town</th><th>1990s</th><th>2010s</th></tr></thead><tbody><tr><td>Alder</td><td>62</td><td>48</td></tr><tr><td>Birch</td><td>55</td><td>51</td></tr><tr><td>Cedar</td><td>70</td><td>44</td></tr></tbody></table>A climate scientist observed that snowfall declined in all three towns but declined most sharply in Cedar.",
+    prompt: "Which choice best uses data from the table to support the scientist's observation?",
+    choices: ["Cedar had the most snowfall of the three towns in the 1990s, at 70 inches.", "Snowfall fell 26 inches in Cedar, compared with 14 in Alder and 4 in Birch.", "Birch had the most snowfall of the three towns in the 2010s, at 51 inches.", "Alder's snowfall fell from 62 inches in the 1990s to 48 in the 2010s."],
+    answer: 1,
+    explanation: "Only the choice comparing the declines in all three towns shows that each declined and Cedar declined most.",
+  },
+  {
+    id: "ii-724",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Germination Rate of Seeds (%)</caption><thead><tr><th>Storage condition</th><th>After 1 year</th><th>After 5 years</th></tr></thead><tbody><tr><td>Room temperature</td><td>91</td><td>38</td></tr><tr><td>Refrigerated</td><td>94</td><td>80</td></tr><tr><td>Frozen</td><td>93</td><td>89</td></tr></tbody></table>A botanist claims that freezing preserves seeds' ability to sprout better over time than the other storage methods tested.",
+    prompt: "Which choice best uses data from the table to support the botanist's claim?",
+    choices: ["All three groups of seeds had germination rates above 90% after one year of storage.", "After one year, refrigerated seeds had the highest germination rate of the three groups, at 94%.", "Seeds stored at room temperature still germinated at 91% after one year of storage.", "After five years, frozen seeds germinated at 89%, versus 80% refrigerated and 38% at room temperature."],
+    answer: 3,
+    explanation: "The claim is about preservation over time, so the five-year results are key. Frozen seeds had the highest rate after five years.",
+  },
+  {
+    id: "ii-725",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Some species of ants grow fungus gardens, feeding them leaves and eating the fungus that grows. Scientists have found that the ants also carry bacteria on their bodies that produce chemicals harmful to molds that attack the fungus. The bacteria most likely help the ants by ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["protecting their food supply from harmful molds.", "making the fungus grow without needing any leaves.", "helping the ants digest leaves without the fungus.", "attracting more ants from other colonies to theirs."],
+    answer: 0,
+    explanation: "The bacteria harm molds that attack the fungus, which the ants eat, so they protect the ants' food.",
+  },
+  {
+    id: "ii-726",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A student argues that the novel's main character, Ella, is brave.",
+    prompt: "Which quotation from the novel would best support the student's argument?",
+    choices: ["\"Ella's house stood alone at the end of a long, quiet road outside of town.\"", "\"Ella's favorite color was blue, the color of the lake behind her house.\"", "\"Though her hands shook, Ella stepped into the dark cave to find her lost brother.\"", "\"Ella liked to sit by the fire in the evening and read her favorite books.\""],
+    answer: 2,
+    explanation: "Entering a dark cave despite fear shows bravery. The other quotations describe unrelated details.",
+  },
+  {
+    id: "ii-727",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "In the 1960s, many experts predicted that global food production would not keep up with population growth, leading to widespread famine. Instead, new crop varieties, fertilizers, and irrigation methods—often called the Green Revolution—dramatically increased harvests. Between 1960 and 2000, wheat yields in developing countries roughly tripled.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Population growth slowed sharply after the 1960s, reducing the demand for food.", "Wheat was the only crop whose yields were affected by the Green Revolution.", "Widespread famine occurred in the 1960s, just as experts had predicted.", "Agricultural advances allowed food production to exceed earlier predictions."],
+    answer: 3,
+    explanation: "The text contrasts the famine predictions with the large production increases from the Green Revolution.",
+  },
+  {
+    id: "ii-728",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "On Monday, the river near the town was calm and low. After three days of heavy rain upstream, the river rose over its banks and flooded several roads. The flooding was most likely caused by ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["a long drought in the region.", "the heavy rain that fell upstream.", "people building new roads nearby.", "the river freezing over that week."],
+    answer: 1,
+    explanation: "The river rose after days of heavy upstream rain, so the rain likely caused the flooding.",
+  },
+  {
+    id: "ii-729",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Bird Species Recorded at Three Wetland Sites</caption><thead><tr><th>Site</th><th>Before restoration</th><th>After restoration</th></tr></thead><tbody><tr><td>Site 1</td><td>34</td><td>51</td></tr><tr><td>Site 2</td><td>29</td><td>30</td></tr><tr><td>Site 3</td><td>41</td><td>63</td></tr></tbody></table>An ecologist claims that restoration had the largest effect on bird diversity at Site 3.",
+    prompt: "Which choice best uses data from the table to support the ecologist's claim?",
+    choices: ["Site 3 had the most species before restoration, with 41 species.", "Site 2 had 30 species after restoration, up from 29 species before.", "Site 3 gained 22 species, compared with 17 at Site 1 and 1 at Site 2.", "Site 1's number of species rose by 17, from 34 to 51 species."],
+    answer: 2,
+    explanation: "The largest effect is the largest increase. Site 3's gain of 22 is the biggest. Having the most species beforehand doesn't show the effect of restoration.",
+  },
+  {
+    id: "ii-730",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Coffee was first grown in Ethiopia. From there, it spread to Yemen, where people began roasting and brewing the beans. By the 1600s, coffeehouses had opened across the Middle East and Europe.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["People in Yemen grew coffee beans but did not drink coffee.", "Coffeehouses opened in the Middle East but were banned in Europe.", "Coffee spread from Ethiopia to many parts of the world over time.", "Coffee was first grown in Europe and spread to Ethiopia in the 1600s."],
+    answer: 2,
+    explanation: "The text traces coffee's spread from Ethiopia through Yemen to the Middle East and Europe.",
+  },
+  {
+    id: "ii-731",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "A city installed speed cameras on ten streets. Over the following year, accidents on those streets fell by 30 percent. However, accidents also fell by 25 percent on similar streets without cameras during the same period. This suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["the cameras alone caused the entire 30 percent drop in accidents.", "factors other than the cameras may explain much of the drop.", "the cameras caused accidents to increase on nearby streets.", "accidents actually rose throughout the city during that year."],
+    answer: 1,
+    explanation: "Since accidents fell nearly as much without cameras, much of the decline likely came from other causes.",
+  },
+  {
+    id: "ii-732",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Average Hours of Sleep per Night</caption><thead><tr><th>Age group</th><th>Hours</th></tr></thead><tbody><tr><td>6–12 years</td><td>9.5</td></tr><tr><td>13–18 years</td><td>8.1</td></tr><tr><td>19–30 years</td><td>7.3</td></tr></tbody></table>A researcher notes that, in the study, average sleep decreased as age increased.",
+    prompt: "Which choice best uses data from the table to support the researcher's statement?",
+    choices: ["Children ages 6–12 averaged 9.5 hours, the most of any age group.", "Sleep fell from 9.5 hours (ages 6–12) to 8.1 (13–18) to 7.3 (19–30).", "Adults ages 19–30 averaged 7.3 hours of sleep, less than 8 hours.", "Teens ages 13–18 averaged 8.1 hours of sleep per night in the study."],
+    answer: 1,
+    explanation: "Only the choice showing all three groups demonstrates the decrease across ages.",
+  },
+  {
+    id: "ii-733",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A city planner claims that adding more trees to a neighborhood can make it cooler in the summer.",
+    prompt: "Which finding, if true, would most directly support the planner's claim?",
+    choices: ["Some residents of the neighborhood dislike raking the trees' leaves in the fall.", "Streets with many trees were 5°F cooler on summer afternoons than streets with few trees.", "The neighborhood's tree-lined streets include many houses built before 1950.", "Trees on the neighborhood's streets provide homes for many species of birds."],
+    answer: 1,
+    explanation: "Only the temperature comparison connects trees with cooler summer conditions.",
+  },
+  {
+    id: "ii-734",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Marie Curie was the first person to win Nobel Prizes in two different sciences: physics in 1903 and chemistry in 1911. Her research on radioactivity changed both fields and led to new medical treatments.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Marie Curie was the only scientist of her time to study radioactivity.", "Marie Curie won Nobel Prizes in physics and in medicine.", "Marie Curie's research on radioactivity had little effect on medicine.", "Marie Curie's research won her Nobel Prizes in two sciences."],
+    answer: 3,
+    explanation: "The text highlights her two Nobel Prizes and the impact of her research.",
+  },
+  {
+    id: "ii-735",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "When the town library started lending tools, residents were surprised by how popular the program became. Within a year, people had borrowed drills, ladders, and garden tools more than 3,000 times. Many said the program saved them money and helped them finish home projects.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The library stopped lending books so that it would have room to store tools.", "Before the program, residents had rarely been able to finish home projects.", "The library's tool-lending program became popular and useful to residents.", "Drills were borrowed more often than any other tool the library offered."],
+    answer: 2,
+    explanation: "The text describes how often tools were borrowed and how residents benefited. The other choices aren't stated.",
+  },
+  {
+    id: "ii-736",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "In many cities, the number of people working from home rose sharply after 2020. During the same period, sales at downtown lunch restaurants fell, while sales at restaurants in residential neighborhoods increased. These trends suggest that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["some lunch spending may have moved from downtown to residential areas.", "people who work from home prefer to cook every meal themselves.", "people in these cities stopped eating lunch at restaurants after 2020.", "downtown restaurants lost customers because of poor food quality."],
+    answer: 0,
+    explanation: "With fewer people downtown and more at home, lunch spending likely moved to residential areas. The rising neighborhood sales rule out the other options.",
+  },
+  {
+    id: "ii-737",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Animals Seen During a Park Survey</caption><thead><tr><th>Animal</th><th>Number seen</th></tr></thead><tbody><tr><td>Deer</td><td>18</td></tr><tr><td>Rabbits</td><td>42</td></tr><tr><td>Foxes</td><td>5</td></tr><tr><td>Turkeys</td><td>23</td></tr></tbody></table>Park rangers reported that foxes were the least commonly seen animal in the survey.",
+    prompt: "Which choice best uses data from the table to support the rangers' report?",
+    choices: ["18 deer were seen, which was fewer than the number of turkeys.", "More turkeys (23) were seen than deer (18) during the survey.", "Only 5 foxes were seen, fewer than any other animal listed.", "42 rabbits were seen, more than any other animal in the survey."],
+    answer: 2,
+    explanation: "5 is the smallest number in the table.",
+  },
+  {
+    id: "ii-738",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Hummingbirds have the highest metabolic rate of any bird, burning energy extremely quickly. At night, many hummingbirds enter a state called torpor, in which their body temperature and heart rate drop dramatically. Torpor most likely helps hummingbirds ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["fly faster during the day while they are feeding.", "stay cool when the weather is very hot.", "find more flowers to feed on during the night.", "conserve energy when they cannot feed."],
+    answer: 3,
+    explanation: "Burning energy quickly and being unable to feed at night means they need to save energy; lowering heart rate and temperature does that.",
+  },
+  {
+    id: "ii-739",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Books Read by Students in One Month</caption><thead><tr><th>Student</th><th>Books read</th></tr></thead><tbody><tr><td>Ana</td><td>6</td></tr><tr><td>Ben</td><td>3</td></tr><tr><td>Chloe</td><td>8</td></tr><tr><td>David</td><td>4</td></tr></tbody></table>A teacher noticed that one student read more books than any other student in the class last month.",
+    prompt: "Which choice best uses data from the table to identify that student?",
+    choices: ["Chloe, who read 8 books", "Ana, who read 6 books", "David, who read 4 books", "Ben, who read 3 books"],
+    answer: 0,
+    explanation: "Chloe's 8 books is the highest number in the table.",
+  },
+  {
+    id: "ii-740",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "A survey of a city's residents found that people who lived within a 10-minute walk of a park visited parks about four times as often as people who lived farther away. City planners who want more residents to use parks would therefore most likely ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["consider building parks in neighborhoods that lack them.", "build all new parks at the edges of the city.", "close the parks that are farthest from residents' homes.", "reduce the number of sidewalks that lead to existing parks."],
+    answer: 0,
+    explanation: "If closeness increases park visits, building parks near more homes would increase use.",
+  },
+  {
+    id: "ii-741",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Votes for School Mascot</caption><thead><tr><th>Mascot</th><th>Votes</th></tr></thead><tbody><tr><td>Hawks</td><td>145</td></tr><tr><td>Tigers</td><td>212</td></tr><tr><td>Wolves</td><td>198</td></tr></tbody></table>The student council announced that the Tigers won the mascot vote.",
+    prompt: "Which choice best uses data from the table to support the announcement?",
+    choices: ["The Tigers got 212 votes, more than the Hawks (145) or Wolves (198).", "The Wolves and the Hawks together received more votes than the Tigers.", "The Wolves received 198 votes, more than the Hawks received (145).", "The Hawks received the fewest votes of the three mascots, with 145."],
+    answer: 0,
+    explanation: "Only the choice comparing the Tigers' votes with both other mascots shows they won.",
+  },
+  {
+    id: "ii-742",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Average Length of Fish Species (centimeters)</caption><thead><tr><th>Species</th><th>Length</th></tr></thead><tbody><tr><td>Species A</td><td>12</td></tr><tr><td>Species B</td><td>30</td></tr><tr><td>Species C</td><td>18</td></tr></tbody></table>A biologist states that Species B is the longest of the three species.",
+    prompt: "Which choice best uses data from the table to support the statement?",
+    choices: ["Species C averages 18 centimeters, 6 more than Species A.", "Species A averages 12 centimeters, the shortest of the three.", "Species B averages 30 cm, longer than Species A (12) and C (18).", "Species C, at 18 centimeters, is longer than Species A."],
+    answer: 2,
+    explanation: "Only the choice comparing Species B with both others shows it is the longest.",
+  },
+  {
+    id: "ii-743",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A psychologist claims that people are more likely to remember information if they explain it to someone else.",
+    prompt: "Which finding, if true, would most directly support the psychologist's claim?",
+    choices: ["Teachers often have to explain the same material several times to a class.", "Students who reviewed alone finished their review faster than those who taught.", "Students who taught a lesson to a classmate scored higher a week later than solo reviewers.", "Many students say that they prefer studying with friends to studying alone."],
+    answer: 2,
+    explanation: "Only the comparison of test scores between explainers and solo reviewers supports the claim.",
+  },
+  {
+    id: "ii-744",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "Researchers studying Atlantic puffins hypothesize that warming ocean temperatures have reduced the number of small fish the birds feed to their chicks, leading to lower chick survival rates.",
+    prompt: "Which finding, if true, would most directly support the researchers' hypothesis?",
+    choices: ["In warmer years, puffin parents brought fewer fish to their nests, and fewer chicks survived.", "Puffin colonies are found on rocky islands throughout the North Atlantic Ocean.", "Chick survival rates were similar in years with warm and cool surface waters.", "Puffins can dive more than 200 feet below the surface to catch the fish they eat."],
+    answer: 0,
+    explanation: "The hypothesis links warmer water, fewer fish, and lower chick survival. Only one finding connects all three. Similar survival rates in warm and cool years would weaken the hypothesis instead.",
+  },
+  {
+    id: "ii-745",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Pets Owned by Students in a Class</caption><thead><tr><th>Pet</th><th>Number of students</th></tr></thead><tbody><tr><td>Dog</td><td>12</td></tr><tr><td>Cat</td><td>9</td></tr><tr><td>Fish</td><td>4</td></tr><tr><td>Bird</td><td>2</td></tr></tbody></table>A student wants to show that dogs were the most common pet in the class.",
+    prompt: "Which choice best uses data from the table to accomplish this goal?",
+    choices: ["Twelve students owned dogs, more than owned any other pet.", "Four students owned fish, and two students owned birds.", "More students owned cats (9) than owned fish (4).", "Nine students owned cats, more than owned fish or birds."],
+    answer: 0,
+    explanation: "Twelve is the largest number, so only that choice shows dogs were most common.",
+  },
+  {
+    id: "ii-746",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Yield of Corn by Planting Density (bushels per acre)</caption><thead><tr><th>Plants per acre</th><th>Field A</th><th>Field B</th></tr></thead><tbody><tr><td>20,000</td><td>140</td><td>135</td></tr><tr><td>30,000</td><td>175</td><td>170</td></tr><tr><td>40,000</td><td>168</td><td>160</td></tr></tbody></table>An agronomist concluded that, in both fields, yield was highest at a density of 30,000 plants per acre.",
+    prompt: "Which choice best uses data from the table to support the agronomist's conclusion?",
+    choices: ["At 40,000 plants per acre, Field A yielded 168 bushels and Field B yielded 160.", "Both fields yielded the most at 30,000 plants per acre: 175 and 170 bushels.", "At 20,000 plants per acre, Field B yielded 135 bushels, its lowest yield.", "Field A had a higher yield than Field B at every one of the three densities."],
+    answer: 1,
+    explanation: "Only the choice showing that 30,000 produced the highest yield in both fields supports the conclusion.",
+  },
+  {
+    id: "ii-747",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Researchers studying an ancient settlement found large numbers of fish bones and fishing hooks in the oldest layers of soil. In the newer layers, fish bones were rare, while the bones of sheep and goats became common. These findings suggest that, over time, the settlement's residents ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["moved the settlement closer to the sea to fish more easily.", "raised sheep and goats long before they began to fish.", "shifted from relying mainly on fishing to raising animals.", "stopped eating meat and turned to growing crops instead."],
+    answer: 2,
+    explanation: "Fish remains dominate the older layers and livestock bones the newer ones, suggesting a shift from fishing to herding. The order of the layers also rules out the idea that herding came first.",
+  },
+  {
+    id: "ii-748",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "The library's new reading program offers prizes to students who read ten books over the summer. Last year, before the program existed, 40 students read ten books. This year, 115 students did. This suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["most students dislike reading during the summer months.", "the library now has fewer books than it did last year.", "the library plans to end the program after next year.", "the prizes may have encouraged more students to read."],
+    answer: 3,
+    explanation: "The number of students reading ten books rose sharply after prizes were offered, suggesting the program helped.",
+  },
+  {
+    id: "ii-749",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A team of economists claims that a city's new public transit pass, which offers unlimited rides for a flat monthly fee, has encouraged more residents to use buses and trains.",
+    prompt: "Which finding, if true, would most directly support the economists' claim?",
+    choices: ["Most residents who bought the pass already rode transit daily before it existed.", "After the pass was introduced, ridership rose 18 percent while the population held steady.", "The city added three new bus routes in the year before the pass was introduced.", "The monthly pass costs less than a monthly parking permit in the downtown area."],
+    answer: 1,
+    explanation: "A large rise in ridership without population growth supports the claim. Finding that pass buyers were already daily riders would suggest the pass didn't change behavior.",
+  },
+  {
+    id: "ii-750",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A student claims that in the play, the character Marcus hides his true feelings from his family.",
+    prompt: "Which quotation would best support the student's claim?",
+    choices: ["Marcus tells his younger sister, \"Don't worry, I'll help you pack your room.\"", "Marcus admits to his father, \"I'm worried about leaving all of my friends.\"", "Marcus says cheerfully, \"At least our new house has a big backyard.\"", "Marcus tells his mother, \"I'm thrilled about the move,\" then, alone, says, \"I dread it.\""],
+    answer: 3,
+    explanation: "Saying he's thrilled to his mother but admitting dread in private shows him hiding his feelings. Telling his father he's worried shows the opposite.",
+  },
+  {
+    id: "ii-751",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A sociologist claims that people who live in neighborhoods with more parks tend to feel more connected to their neighbors.",
+    prompt: "Which finding, if true, would most directly weaken the sociologist's claim?",
+    choices: ["Residents of park-rich neighborhoods felt about as connected to neighbors as other residents.", "Residents of neighborhoods with many parks exercised more often than other residents.", "Residents who visited parks often said that they enjoyed the fresh air and quiet.", "Parks were more common in the city's newer neighborhoods than in its older ones."],
+    answer: 0,
+    explanation: "To weaken the claim, evidence must show no link between parks and connection. Only the finding of similar connection levels does that.",
+  },
+  {
+    id: "ii-752",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Cactus plants store water in their thick stems. They also have spines instead of wide, flat leaves, which helps reduce water loss. These features suggest that cactuses are well suited to ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["places with very little sunlight.", "places with heavy rainfall every day.", "growing underwater.", "places where water is scarce."],
+    answer: 3,
+    explanation: "Storing water and reducing water loss are adaptations for dry places.",
+  },
+  {
+    id: "ii-753",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Plastic Recycled by a City (tons)</caption><thead><tr><th>Year</th><th>Plastic collected</th><th>Plastic recycled</th></tr></thead><tbody><tr><td>2019</td><td>5,000</td><td>1,500</td></tr><tr><td>2021</td><td>5,200</td><td>2,600</td></tr><tr><td>2023</td><td>5,100</td><td>3,570</td></tr></tbody></table>A city report claims that the city became much more effective at recycling the plastic it collected from 2019 to 2023.",
+    prompt: "Which choice best uses data from the table to support the report's claim?",
+    choices: ["The city collected 5,200 tons of plastic in 2021, more than in any other year.", "The city recycled 30% of the plastic it collected in 2019 but 70% in 2023.", "The city recycled 2,600 tons of plastic in 2021.", "The city collected about the same amount of plastic in 2019 and 2023."],
+    answer: 1,
+    explanation: "Effectiveness at recycling collected plastic means the share recycled. 1,500/5,000 = 30% and 3,570/5,100 = 70%, a large improvement.",
+  },
+  {
+    id: "ii-754",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A geologist claims that a nearby lake was formed by a glacier.",
+    prompt: "Which finding, if true, would most directly support the geologist's claim?",
+    choices: ["The lake freezes over every winter and stays frozen for several months.", "The lake is deeper than most other lakes in the surrounding region.", "Rocks around the lake show long, parallel scratches typical of glaciers.", "The lake is home to several species of fish, including trout and perch."],
+    answer: 2,
+    explanation: "Glacial scratches in the rock are direct evidence of past glacier activity. A lake freezing doesn't show how it formed.",
+  },
+  {
+    id: "ii-755",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "The bakery usually sells out of its cinnamon rolls by 9:00 a.m. On Saturday, though, there were still cinnamon rolls left at noon. Saturday was also the day of a big snowstorm that kept many people at home. The bakery likely ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["made fewer cinnamon rolls than usual that Saturday.", "stopped selling its cinnamon rolls before noon.", "raised the price of its cinnamon rolls that weekend.", "had fewer customers than usual because of the storm."],
+    answer: 3,
+    explanation: "The storm kept people home, so fewer customers likely explains the leftover rolls.",
+  },
+  {
+    id: "ii-756",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Biologists have found that some trees in a forest share nutrients through underground networks of fungi. Older, larger trees appear to send sugars to young seedlings growing in their shade. This suggests that seedlings in shaded areas may ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["not need any sunlight at all in order to grow.", "harm the older trees by taking too many of their nutrients.", "grow faster than young trees growing in full sunlight.", "get help from older trees that offsets their limited sunlight."],
+    answer: 3,
+    explanation: "Shaded seedlings get less light to make their own sugar, so sugars from older trees can help them. Nothing shows they outgrow sunlit trees or need no light.",
+  },
+  {
+    id: "ii-757",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "In the novel Harbor Lights, a critic argues, the town of Port Vell is portrayed as a place that resists change.",
+    prompt: "Which quotation from the novel would best support the critic's argument?",
+    choices: ["\"When a company proposed a modern dock, the town voted it down, as it had every new idea.\"", "\"Each morning, the harbor was crowded with fishing boats heading out to sea.\"", "\"Many young people moved to Port Vell in those years to start new businesses.\"", "\"Port Vell's old stone lighthouse could be seen for miles along the coast.\""],
+    answer: 0,
+    explanation: "Rejecting every new idea for fifty years shows resistance to change. Young people moving in to start businesses suggests the opposite.",
+  },
+  {
+    id: "ii-758",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Owls can turn their heads about 270 degrees. Unlike humans, owls cannot move their eyes within their sockets. Owls most likely turn their heads so far because ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["their eyes are too small for them to see well at night.", "they prefer to sleep with their heads facing backward.", "they cannot hear well enough to locate prey by sound.", "they must move their heads to look in different directions."],
+    answer: 3,
+    explanation: "Since owls can't move their eyes, they must turn their heads to look around.",
+  },
+  {
+    id: "ii-759",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Maria's houseplant had been wilting for days. After she moved it from a dark corner to a sunny windowsill, its leaves perked up within a week. This suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["the plant was a type that grows best in dark places.", "the plant had been getting too much water in the corner.", "the plant needed more light than it had been getting.", "the windowsill was too cold for the plant to grow well."],
+    answer: 2,
+    explanation: "The plant improved after moving to a sunnier spot, so it likely needed more light.",
+  },
+  {
+    id: "ii-760",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A student claims that the poem's speaker misses her childhood home.",
+    prompt: "Which quotation from the poem would best support the student's claim?",
+    choices: ["\"The clock strikes twelve, and then is still, / and the house grows dark.\"", "\"I dream of the porch where I once sat, / and wake to find it gone.\"", "\"The city lights are bright tonight / along the busy street.\"", "\"I walk to work along the river / as the morning fog lifts.\""],
+    answer: 1,
+    explanation: "Dreaming of a past porch and finding it gone expresses longing for home.",
+  },
+  {
+    id: "ii-761",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Price of a Gallon of Milk</caption><thead><tr><th>Year</th><th>Price</th></tr></thead><tbody><tr><td>2000</td><td>$2.78</td></tr><tr><td>2010</td><td>$3.32</td></tr><tr><td>2020</td><td>$3.54</td></tr></tbody></table>An economist noted that the price of milk rose more between 2000 and 2010 than between 2010 and 2020.",
+    prompt: "Which choice best uses data from the table to support the economist's note?",
+    choices: ["The price of milk was $2.78 in 2000 and had risen to $3.54 by 2020.", "The price of a gallon of milk rose in each of the two decades shown.", "The price of a gallon of milk was $3.54 in 2020, its highest level shown.", "The price rose $0.54 from 2000 to 2010 but only $0.22 from 2010 to 2020."],
+    answer: 3,
+    explanation: "Comparing the two increases ($0.54 versus $0.22) directly supports the note.",
+  },
+  {
+    id: "ii-762",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "In one region, farmers who planted rows of wildflowers alongside their crop fields found that fewer of their crops were damaged by insect pests. The wildflowers attracted ladybugs and wasps, which feed on those pests. This suggests that the wildflowers reduced crop damage by ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["releasing chemicals that kill all insects.", "replacing the crops as a food source for people.", "drawing in insects that prey on crop pests.", "shading the crops from the sun."],
+    answer: 2,
+    explanation: "The flowers attracted predators of the pests, which likely reduced the pests and thus the damage.",
+  },
+  {
+    id: "ii-763",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Many people think bats are blind. In fact, all bats can see, and some see quite well. Many bats also use echolocation, making sounds and listening to the echoes to find food in the dark.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Bats rely only on their eyesight to find food in the dark.", "Bats are not blind, and many also use sound to find food.", "Bats are the only animals that use echolocation to find food.", "Most people are afraid of bats because they think bats are blind."],
+    answer: 1,
+    explanation: "The text corrects the belief that bats are blind and adds that many use echolocation.",
+  },
+  {
+    id: "ii-764",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Rainfall in a Town (inches)</caption><thead><tr><th>Season</th><th>Rainfall</th></tr></thead><tbody><tr><td>Winter</td><td>11</td></tr><tr><td>Spring</td><td>9</td></tr><tr><td>Summer</td><td>3</td></tr><tr><td>Fall</td><td>7</td></tr></tbody></table>A student claims that summer is the town's driest season.",
+    prompt: "Which choice best uses data from the table to support the student's claim?",
+    choices: ["Summer had only 3 inches of rain, less than any other season.", "Fall had 7 inches of rain, which was less than spring had.", "Spring had 9 inches of rain, which was more than fall had.", "Winter had 11 inches of rain, more than any other season."],
+    answer: 0,
+    explanation: "3 inches is the lowest value, so summer is the driest season.",
+  },
+  {
+    id: "ii-765",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "Astronomer Priya Natarajan argues that some of the earliest black holes formed directly from collapsing clouds of gas rather than from the remains of dead stars.",
+    prompt: "Which finding, if true, would most directly support Natarajan's argument?",
+    choices: ["Very large black holes existed so early that stars would not have had time to form and die.", "Most black holes in today's universe are much smaller than the earliest ones were.", "Stars that collapse into black holes are usually many times larger than the Sun.", "Large clouds of gas are common in many galaxies that astronomers observe today."],
+    answer: 0,
+    explanation: "If large black holes existed before stars could have formed and died, they likely formed another way, such as from collapsing gas.",
+  },
+  {
+    id: "ii-766",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Squirrels bury thousands of nuts each fall to eat during the winter. They don't find all of them, though. The forgotten nuts often sprout, and over time they grow into new trees. In this way, squirrels help forests spread.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["By burying nuts they later forget, squirrels help new trees grow.", "Squirrels remember where they bury nearly every nut they store each year.", "Forests would be unable to grow at all if squirrels stopped burying nuts.", "Squirrels survive the winter by eating only the nuts they buried in the fall."],
+    answer: 0,
+    explanation: "The text explains that forgotten nuts sprout into trees, so squirrels help forests spread. It doesn't say forests depend entirely on squirrels.",
+  },
+  {
+    id: "ii-767",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "In a study of 300 households, researchers found that families who ate dinner together at least four times a week reported stronger relationships and lower stress. The researchers caution, however, that families who already get along well may simply be more likely to eat together.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Family dinners are linked to stronger relationships, but the cause is unclear.", "Eating dinner together causes families to get along better and feel less stress.", "The study found no connection between family dinners and lower stress levels.", "Most families in the study ate dinner together at least four times every week."],
+    answer: 0,
+    explanation: "The text reports an association and then a caution that the cause could run the other way. Claiming dinners \"cause\" better relationships overstates the finding.",
+  },
+  {
+    id: "ii-768",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A student claims that regular exercise helps people sleep better.",
+    prompt: "Which finding, if true, would most directly support the student's claim?",
+    choices: ["Exercising for 30 minutes a day can improve heart health and lower blood pressure.", "People who exercise regularly often prefer to do so in the morning rather than at night.", "Many people find it hard to find the energy to exercise after a long day of work.", "People who exercised 30 minutes a day fell asleep faster and slept longer than others."],
+    answer: 3,
+    explanation: "The claim links exercise to better sleep. Only the finding about falling asleep faster and sleeping longer addresses sleep.",
+  },
+  {
+    id: "ii-769",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A biologist hypothesizes that a certain flower attracts more bees when it is purple than when it is white.",
+    prompt: "Which finding, if true, would most directly support the biologist's hypothesis?",
+    choices: ["In a field with both colors, bees visited purple flowers three times as often as white ones.", "Bees in the field visited many kinds of flowers besides the purple and white ones.", "White flowers of this species bloom earlier in the spring than purple flowers do.", "Purple flowers of this species grow taller than white ones and produce more nectar."],
+    answer: 0,
+    explanation: "The hypothesis compares bee visits to the two colors. Only the finding about visits does so.",
+  },
+  {
+    id: "ii-770",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A student claims that in the poem \"Winter Field,\" the speaker finds hope in a bleak setting.",
+    prompt: "Which quotation from the poem would best support the student's claim?",
+    choices: ["\"The wind cuts sharp across the field, / and nothing moves for miles.\"", "\"No bird sings in the gray, still air / above the empty road.\"", "\"Beneath the frozen, broken ground, / a green shoot waits for spring.\"", "\"The snow lies deep on every fence / and buries every path.\""],
+    answer: 2,
+    explanation: "The green shoot waiting under frozen ground is an image of hope in a bleak scene. The other lines describe only bleakness.",
+  },
+  {
+    id: "ii-771",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Average Monthly Rent for a One-Bedroom Apartment</caption><thead><tr><th>Neighborhood</th><th>2018</th><th>2023</th></tr></thead><tbody><tr><td>Eastside</td><td>$1,100</td><td>$1,250</td></tr><tr><td>Riverside</td><td>$950</td><td>$1,400</td></tr><tr><td>Hilltop</td><td>$1,300</td><td>$1,360</td></tr></tbody></table>A housing reporter wrote that Riverside, once the least expensive of the three neighborhoods, had become the most expensive by 2023.",
+    prompt: "Which choice best uses data from the table to support the reporter's statement?",
+    choices: ["Hilltop had the highest rent of the three neighborhoods in 2018, at $1,300.", "Riverside had the lowest rent in 2018 ($950) and the highest in 2023 ($1,400).", "Eastside's rent rose by $150, from $1,100 in 2018 to $1,250 in 2023.", "Riverside's rent increased by $450 from 2018 to 2023, more than the others."],
+    answer: 1,
+    explanation: "The statement has two parts: least expensive in 2018 and most expensive in 2023. Only one choice shows both.",
+  },
+  {
+    id: "ii-772",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Favorite Lunch Choice</caption><thead><tr><th>Food</th><th>Students</th></tr></thead><tbody><tr><td>Pizza</td><td>64</td></tr><tr><td>Tacos</td><td>58</td></tr><tr><td>Salad</td><td>21</td></tr><tr><td>Soup</td><td>17</td></tr></tbody></table>A student claims that pizza and tacos were both much more popular than salad or soup.",
+    prompt: "Which choice best uses data from the table to support the student's claim?",
+    choices: ["Pizza received 64 votes, the most of any lunch choice in the table.", "Tacos received 58 votes, while soup received only 17 votes.", "Pizza (64) and tacos (58) each got about three times the votes of salad or soup.", "Salad received 21 votes, slightly more than soup, which received 17."],
+    answer: 2,
+    explanation: "Only the choice comparing both pizza and tacos with both salad and soup supports the claim.",
+  },
+  {
+    id: "ii-773",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A marine scientist argues that coral reefs near protected areas recover faster from bleaching events than reefs in unprotected areas.",
+    prompt: "Which finding, if true, would most directly support the scientist's argument?",
+    choices: ["Many tourists visit reefs in protected areas to see their colorful fish.", "Bleaching events on coral reefs have become more common over the past 30 years.", "Protected areas often limit fishing and boating near the reefs they contain.", "After the same bleaching event, coral recovered to 80% in protected areas but 45% elsewhere."],
+    answer: 3,
+    explanation: "Only the comparison of recovery rates after the same event addresses the argument.",
+  },
+  {
+    id: "ii-774",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Many people believe that the Great Wall of China is visible from space with the naked eye. Astronauts, however, report that it is very difficult to see from low Earth orbit, because the wall is narrow and its color is similar to the surrounding land.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Despite a popular belief, the Great Wall is very hard to see from space.", "The Great Wall is the only human-made object that can be seen from space.", "The Great Wall is wider than most highways, so it stands out from space.", "Astronauts report that they can easily see the Great Wall from low orbit."],
+    answer: 0,
+    explanation: "The text corrects a popular belief with astronauts' reports and explains why the wall is hard to see.",
+  },
+  {
+    id: "ii-775",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "Researchers gave two groups of students the same math problems. One group was told the problems were \"a fun puzzle challenge\"; the other was told they were \"a test of math ability.\" The first group solved more problems correctly. The researchers suggest that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["students in the first group were simply better at math.", "students should never be given tests in their classes.", "puzzles are generally easier to solve than math problems.", "the way a task is described can affect performance on it."],
+    answer: 3,
+    explanation: "Since the problems were the same, the difference in performance likely came from how the task was described.",
+  },
+  {
+    id: "ii-776",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "Researchers claim that a type of seaweed added to cattle feed reduces the amount of methane the animals produce.",
+    prompt: "Which finding, if true, would most directly weaken the researchers' claim?",
+    choices: ["The seaweed added to the feed is grown in warm coastal waters.", "Cattle given feed with the seaweed produced about the same amount of methane as cattle given ordinary feed.", "Cattle given the seaweed feed gained weight at a normal rate.", "Methane released by cattle is a powerful greenhouse gas."],
+    answer: 1,
+    explanation: "Equal methane output with and without seaweed would undercut the claim.",
+  },
+  {
+    id: "ii-777",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "Early in her career, astronomer Vera Rubin noticed that stars at the edges of galaxies moved just as fast as stars near the centers. According to existing theories, outer stars should have moved more slowly. Her observations provided some of the strongest evidence for dark matter, an invisible substance that makes up most of the matter in the universe.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Rubin showed that dark matter makes up a small fraction of the universe.", "Rubin's observations of star speeds provided key evidence for dark matter.", "Rubin's observations confirmed existing theories about galaxies' motion.", "Rubin discovered that outer stars move more slowly than inner stars."],
+    answer: 1,
+    explanation: "Rubin's unexpected findings contradicted theory and supported the existence of dark matter.",
+  },
+  {
+    id: "ii-778",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Scientists found fossils of sea creatures high in the Himalaya mountains. Sea creatures live in the ocean. This suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["sea creatures were once able to climb high mountains.", "the Himalaya are the oldest mountains on Earth.", "the ocean is rising quickly around the Himalaya today.", "the rock in these mountains was once under the ocean."],
+    answer: 3,
+    explanation: "Ocean fossils in mountain rock suggest that the rock was once underwater.",
+  },
+  {
+    id: "ii-779",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "The following text is from a short story. Theo had practiced his speech for weeks. But when he stepped onto the stage and saw hundreds of faces staring back at him, every word disappeared from his mind.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The audience left the room before Theo was able to speak.", "Theo enjoyed speaking in front of large crowds of people.", "Although he had prepared, Theo forgot his speech on stage.", "Theo forgot his speech because he had not practiced it."],
+    answer: 2,
+    explanation: "Theo practiced for weeks but forgot the words when he saw the crowd.",
+  },
+  {
+    id: "ii-780",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 2,
+    passage: "In the 1800s, many scientists believed that disease was caused by \"bad air.\" When cities built sewer systems to carry waste away, rates of diseases like cholera dropped sharply, even though the air in the cities was still polluted by factories. These results suggest that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["polluted air from factories was the main cause of cholera.", "cholera was more closely linked to waste than to polluted air.", "the new sewer systems also made the city air cleaner.", "cholera declined for reasons that had nothing to do with sewers."],
+    answer: 1,
+    explanation: "Cholera fell when waste was removed but the air stayed polluted, pointing to waste, not air, as the key factor.",
+  },
+  {
+    id: "ii-781",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Some birds, like crows and ravens, are very good at solving problems. In experiments, crows have used sticks to pull food out of narrow tubes. Some have even bent wires into hooks to reach a treat.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Crows prefer using sticks to bending wires when solving problems.", "Crows and ravens eat mainly insects that they pull from tubes.", "Crows and ravens are skilled problem solvers.", "All birds are able to use tools to reach food in experiments."],
+    answer: 2,
+    explanation: "The examples of using sticks and bending wires show crows' problem-solving skills. The text doesn't say all birds use tools.",
+  },
+  {
+    id: "ii-782",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Percentage of Adults Who Read at Least One Book in the Past Year</caption><thead><tr><th>Year</th><th>Print books</th><th>E-books</th><th>Audiobooks</th></tr></thead><tbody><tr><td>2012</td><td>65</td><td>23</td><td>13</td></tr><tr><td>2016</td><td>65</td><td>28</td><td>14</td></tr><tr><td>2021</td><td>65</td><td>30</td><td>23</td></tr></tbody></table>A researcher claims that from 2012 to 2021, the share of adults who read print books stayed steady while the share using audiobooks grew substantially.",
+    prompt: "Which choice best uses data from the table to support the researcher's claim?",
+    choices: ["The share of adults using audiobooks rose only slightly, to 14%, by 2016.", "The share of adults using e-books rose from 23% in 2012 to 30% in 2021.", "Print reading held at 65% from 2012 to 2021, while audiobook use rose from 13% to 23%.", "In 2021, more adults read print books (65%) than listened to audiobooks (23%)."],
+    answer: 2,
+    explanation: "The claim has two parts: steady print reading and substantial audiobook growth. Only one choice addresses both.",
+  },
+  {
+    id: "ii-783",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Students Who Bike to School</caption><thead><tr><th>Year</th><th>Number of students</th></tr></thead><tbody><tr><td>2019</td><td>40</td></tr><tr><td>2020</td><td>55</td></tr><tr><td>2021</td><td>71</td></tr><tr><td>2022</td><td>90</td></tr></tbody></table>The principal said that the number of students who bike to school has grown every year since 2019.",
+    prompt: "Which choice best uses data from the table to support the principal's statement?",
+    choices: ["55 students biked to school in 2020, up from 40 in 2019.", "The number rose each year: 40, then 55, then 71, then 90.", "More students biked in 2021 (71) than in 2019 (40).", "90 students biked to school in 2022, the most of any year."],
+    answer: 1,
+    explanation: "Only the choice giving each year shows growth every year.",
+  },
+  {
+    id: "ii-784",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Test Scores by Study Method</caption><thead><tr><th>Study method</th><th>Average score (%)</th></tr></thead><tbody><tr><td>Rereading notes</td><td>68</td></tr><tr><td>Highlighting</td><td>66</td></tr><tr><td>Practice testing</td><td>84</td></tr><tr><td>Summarizing</td><td>73</td></tr></tbody></table>A psychologist suggests that students who quiz themselves tend to perform better than those who use other common study methods.",
+    prompt: "Which choice best uses data from the table to support the psychologist's suggestion?",
+    choices: ["Students who summarized averaged 73%, which was higher than students who highlighted (66%).", "Practice testing averaged 84%, beating rereading (68%), highlighting (66%), and summarizing (73%).", "Students who reread their notes averaged 68%, slightly higher than students who highlighted.", "Students who highlighted averaged 66%, the lowest score of any of the four study methods."],
+    answer: 1,
+    explanation: "Practice testing is quizzing oneself. Only the choice comparing it with all other methods supports the suggestion.",
+  },
+  {
+    id: "ii-785",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A teacher claims that students learn vocabulary better when they use new words in their own sentences.",
+    prompt: "Which finding, if true, would most directly support the teacher's claim?",
+    choices: ["Students said that they enjoyed learning new words more than doing grammar exercises.", "The vocabulary list included 20 words, each with a definition and an example.", "Students who wrote sentences with new words remembered more of them a week later.", "Most students already knew several of the words on the list before the lesson began."],
+    answer: 2,
+    explanation: "Only the finding that writing sentences led to better memory supports the claim.",
+  },
+  {
+    id: "ii-786",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "In the school garden, the tomato plants near the fence grew tall and produced many tomatoes. The plants under the large oak tree stayed small and produced few. Since tomatoes need plenty of sunlight, the plants under the tree probably ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["received less sunlight than the plants near the fence.", "were watered too often by the students in the garden.", "were a different kind of vegetable than the others.", "were planted later in the year than the other plants."],
+    answer: 0,
+    explanation: "Tomatoes need sun, and a large tree casts shade, so the plants under it likely got less light.",
+  },
+  {
+    id: "ii-787",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 2,
+    passage: "When the poet Joy Harjo was named U.S. Poet Laureate in 2019, she became the first Native American to hold the position. During her three terms, she created a national project that mapped poems by Native writers across the country, aiming to bring wider attention to their work.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Joy Harjo used her historic role as Poet Laureate to promote Native poets.", "Joy Harjo was the first person in history to serve three terms as Poet Laureate.", "Native American poets were already widely read before Harjo's mapping project.", "Joy Harjo stopped writing her own poetry after she was named Poet Laureate."],
+    answer: 0,
+    explanation: "The text notes her historic appointment and her project to promote Native poets.",
+  },
+  {
+    id: "ii-788",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Museum Visitors</caption><thead><tr><th>Month</th><th>Visitors</th></tr></thead><tbody><tr><td>June</td><td>4,200</td></tr><tr><td>July</td><td>5,800</td></tr><tr><td>August</td><td>5,100</td></tr></tbody></table>The museum director said that July was the busiest month of the summer.",
+    prompt: "Which choice best uses data from the table to support the director's statement?",
+    choices: ["The museum had 4,200 visitors in June, its first month of summer.", "August had 5,100 visitors, which was more than June had.", "The museum had 5,800 visitors in July, more than in June or August.", "The museum had 5,100 visitors in August and 4,200 in June."],
+    answer: 2,
+    explanation: "5,800 is the largest number of visitors shown.",
+  },
+  {
+    id: "ii-789",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Energy Sources for a Town's Electricity (%)</caption><thead><tr><th>Source</th><th>2015</th><th>2023</th></tr></thead><tbody><tr><td>Coal</td><td>48</td><td>22</td></tr><tr><td>Natural gas</td><td>30</td><td>35</td></tr><tr><td>Solar</td><td>5</td><td>24</td></tr><tr><td>Wind</td><td>17</td><td>19</td></tr></tbody></table>A town official stated that solar power had replaced much of the town's coal power between 2015 and 2023.",
+    prompt: "Which choice best uses data from the table to support the official's statement?",
+    choices: ["Coal's share fell from 48% to 22% while solar's rose from 5% to 24%.", "Natural gas's share rose from 30% to 35%, the most of any source in 2023.", "In 2023, solar provided 24% of the town's electricity, more than wind did.", "Wind's share changed little from 2015 to 2023, rising from 17% to 19%."],
+    answer: 0,
+    explanation: "To support the idea that solar replaced coal, the data must show coal falling and solar rising.",
+  },
+  {
+    id: "ii-790",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Lena's soccer team practiced passing drills every day for a month. In their next game, they completed many more passes than they had earlier in the season. This suggests that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["the team's opponents were stronger than they were earlier.", "the passing drills may have improved the team's passing.", "the team had lost every game it played during that month.", "the team had practiced shooting instead of passing drills."],
+    answer: 1,
+    explanation: "More completed passes after a month of passing drills suggests the practice helped.",
+  },
+  {
+    id: "ii-791",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Trees Planted by Volunteers</caption><thead><tr><th>Year</th><th>Trees planted</th></tr></thead><tbody><tr><td>2020</td><td>150</td></tr><tr><td>2021</td><td>220</td></tr><tr><td>2022</td><td>310</td></tr><tr><td>2023</td><td>180</td></tr></tbody></table>The volunteer group planted the most trees in 2022.",
+    prompt: "Which choice best uses data from the table to support this statement?",
+    choices: ["The group planted 220 trees in 2021, up from 150 trees in 2020.", "The group planted more trees in 2021 than it had in 2020.", "The group planted 310 trees in 2022, more than in any other year.", "The group planted 180 trees in 2023, more than it did in 2020."],
+    answer: 2,
+    explanation: "310 is the largest value in the table.",
+  },
+  {
+    id: "ii-792",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A nutrition researcher hypothesizes that people eat more when food is served on larger plates.",
+    prompt: "Which finding, if true, would most directly support the researcher's hypothesis?",
+    choices: ["The buffet in the study offered more than 30 dishes at every meal.", "Diners given 12-inch plates ate about 50 percent more than diners given 8-inch plates.", "Diners at the buffet said that they preferred plates in different colors.", "Larger plates are more expensive for restaurants to buy and to wash."],
+    answer: 1,
+    explanation: "Eating more with larger plates directly supports the hypothesis.",
+  },
+  {
+    id: "ii-793",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 2,
+    passage: "A historian argues that the spread of affordable bicycles in the 1890s gave many women greater independence.",
+    prompt: "Which finding, if true, would most directly support the historian's argument?",
+    choices: ["Bicycle factories employed thousands of workers in American cities in the 1890s.", "Bicycles made in the 1890s were much heavier than most modern bicycles.", "Bicycle racing became a popular spectator sport in the United States in the 1890s.", "1890s diaries show many women describing how bicycles let them travel on their own."],
+    answer: 3,
+    explanation: "Women's own accounts of traveling independently by bicycle directly support the argument.",
+  },
+  {
+    id: "ii-794",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 1,
+    passage: "<table class=\"data-table\"><caption>Average Daily High Temperature (°F)</caption><thead><tr><th>Month</th><th>Temperature</th></tr></thead><tbody><tr><td>March</td><td>54</td></tr><tr><td>April</td><td>63</td></tr><tr><td>May</td><td>72</td></tr><tr><td>June</td><td>81</td></tr></tbody></table>A student claims that the average daily high temperature increased each month from March to June.",
+    prompt: "Which choice best uses data from the table to support the student's claim?",
+    choices: ["The temperature rose each month: 54°F, 63°F, 72°F, and then 81°F.", "The temperature was 63°F in April, which was warmer than in March.", "The temperature was 72°F in May, nine degrees cooler than in June.", "The temperature reached 81°F in June, the warmest month in the table."],
+    answer: 0,
+    explanation: "Only the choice giving all four months shows a steady increase from March through June.",
+  },
+  {
+    id: "ii-795",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Inferences",
+    difficulty: 1,
+    passage: "Jamal noticed that the puddles on his street froze overnight. When he checked the thermometer in the morning, it read 25°F. Water freezes at 32°F. Jamal could reasonably conclude that ______",
+    prompt: "Which choice most logically completes the text?",
+    choices: ["the puddles were made of something other than water.", "it would most likely snow later in the day.", "the thermometer had been broken during the night.", "the temperature had dropped below freezing during the night."],
+    answer: 3,
+    explanation: "The puddles froze and the temperature was 25°F, below water's freezing point, so it got below freezing overnight.",
+  },
+  {
+    id: "ii-796",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Quantitative)",
+    difficulty: 2,
+    passage: "<table class=\"data-table\"><caption>Share of Trips by Mode in a City (%)</caption><thead><tr><th>Mode</th><th>2012</th><th>2022</th></tr></thead><tbody><tr><td>Car</td><td>71</td><td>58</td></tr><tr><td>Bus or train</td><td>16</td><td>19</td></tr><tr><td>Bicycle</td><td>4</td><td>12</td></tr><tr><td>Walking</td><td>9</td><td>11</td></tr></tbody></table>A city planner argued that, of the alternatives to driving, cycling grew the most between 2012 and 2022.",
+    prompt: "Which choice best uses data from the table to support the planner's argument?",
+    choices: ["Walking's share of trips rose from 9% in 2012 to 11% in 2022, a gain of 2 points.", "Cycling rose from 4% to 12%, more than transit (16% to 19%) or walking (9% to 11%).", "The share of trips taken by car fell by 13 points, from 71% in 2012 to 58% in 2022.", "In 2022, more trips were taken by bus or train (19%) than by bicycle (12%)."],
+    answer: 1,
+    explanation: "The argument compares growth among alternatives to driving. Cycling's 8-point gain is larger than the gains for transit and walking. Car trips aren't an alternative to driving.",
+  },
+  {
+    id: "ii-797",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "The ancient Maya built large cities in what is now Mexico and Central America. They developed a writing system, studied the stars, and created an accurate calendar. Many of their pyramids and temples still stand today.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["The ancient Maya built their cities only in what is now Mexico.", "The ancient Maya had an advanced civilization with many achievements.", "The Maya studied the stars but never created an accurate calendar.", "Most Maya pyramids and temples were built in the last few centuries."],
+    answer: 1,
+    explanation: "The text lists Maya achievements in building, writing, astronomy, and timekeeping.",
+  },
+  {
+    id: "ii-798",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Central Ideas and Details",
+    difficulty: 1,
+    passage: "Pianist Teresa Carreño began performing when she was just eight years old. As a child, she played for President Abraham Lincoln at the White House. She went on to tour the world and became one of the most famous pianists of her time.",
+    prompt: "Which choice best states the main idea of the text?",
+    choices: ["Teresa Carreño was the piano teacher of President Abraham Lincoln.", "Teresa Carreño was a child performer who became a world-famous pianist.", "Teresa Carreño stopped performing in public once she grew up.", "Teresa Carreño was hired to write music for the White House."],
+    answer: 1,
+    explanation: "The text traces Carreño from childhood performer to world-famous pianist.",
+  },
+  {
+    id: "ii-799",
+    module: "rw",
+    domain: "Information and Ideas",
+    skill: "Command of Evidence (Textual)",
+    difficulty: 1,
+    passage: "A researcher claims that a new app helps people save money.",
+    prompt: "Which finding, if true, would most directly support the researcher's claim?",
+    choices: ["App users saved $400 more over six months than similar people who didn't use it.", "Many users said that the app was easy to use and well designed.", "The app is available in 12 languages and works on most smartphones.", "The app was downloaded more than one million times in its first year."],
+    answer: 0,
+    explanation: "Only the comparison showing more savings for app users supports the claim.",
   },
 );

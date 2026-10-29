@@ -39,7 +39,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3<sup>2x</sup> − 108(3<sup>x</sup>) + 2187 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "108",
@@ -199,7 +199,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 3x³ + ax² − 2x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 3, the remainder is −91, and p(1) = −7. What is the value of ab?",
     choices: [
       "−8",
@@ -247,7 +247,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 2</sup> − 2<sup>x − 2</sup> = 30, what is the value of 4<sup>x</sup>?",
     choices: [
       "64",
@@ -263,7 +263,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −7 ≤ x ≤ −4. What is the value of b?",
     choices: [
       "−22",
@@ -359,7 +359,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 12(2<sup>x</sup>) + 32 = 0<br><br>What is the greatest solution to the given equation?",
     choices: [
       "12",
@@ -519,7 +519,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 3x³ + ax² + 3x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 2, the remainder is 37, and p(3) = 102. What is the value of a + b?",
     choices: [
       "3",
@@ -567,7 +567,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 2</sup> − 3<sup>x − 1</sup> = 2106, what is the value of 3<sup>x + 1</sup>?",
     choices: [
       "729",
@@ -583,7 +583,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is 5 ≤ x ≤ 10. What is the value of c?",
     choices: [
       "−150",
@@ -593,22 +593,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are 5 and 10, and the expression equals 3(x − 5)(x − 10) (the parabola opens upward, so it is ≤ 0 between its zeros). Expanding gives 3x² − 45x + 150, so b = −45 and c = 150."
-  },
-  {
-    id: "adv-h38",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture is halved every 21 hours. At time t = 0, there are 480 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "480(1/2)<sup>t/21</sup>",
-      "480(1/2)<sup>7/8t</sup>",
-      "480(1/2)<sup>t/7/8</sup>",
-      "480(1/2)<sup>21t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 1/2 once every 21 hours. Since t is measured in days, 21 hours is 7/8 days, so the number of periods after t days is t/7/8. Therefore N(t) = 480(1/2)<sup>t/7/8</sup>. Using t/21 would treat t as hours."
   },
   {
     id: "adv-h39",
@@ -679,7 +663,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 20(2<sup>x</sup>) + 64 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "20",
@@ -791,7 +775,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to ∛(x<sup>5</sup>) · ∜(x<sup>3</sup>), where x > 0?",
     choices: [
       "x<sup>11/12</sup>",
@@ -839,7 +823,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 2x³ + ax² + 2x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 2, the remainder is −18, and p(−1) = −11. What is the value of a + b?",
     choices: [
       "−30",
@@ -887,7 +871,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 1</sup> − 2<sup>x − 1</sup> = 6, what is the value of 4<sup>x</sup>?",
     choices: [
       "16",
@@ -903,7 +887,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −1 ≤ x ≤ 3. What is the value of c?",
     choices: [
       "−3",
@@ -913,22 +897,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are −1 and 3, and the expression equals −1(x + 1)(x − 3) (the parabola opens downward, so it is ≥ 0 between its zeros). Expanding gives −x² + 2x + 3, so b = 2 and c = 3."
-  },
-  {
-    id: "adv-h58",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture is halved every 9 hours. At time t = 0, there are 800 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "800(1/2)<sup>t/9</sup>",
-      "800(1/2)<sup>3/8t</sup>",
-      "800(1/2)<sup>t/3/8</sup>",
-      "800(1/2)<sup>9t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 1/2 once every 9 hours. Since t is measured in days, 9 hours is 3/8 days, so the number of periods after t days is t/3/8. Therefore N(t) = 800(1/2)<sup>t/3/8</sup>. Using t/9 would treat t as hours."
   },
   {
     id: "adv-h59",
@@ -999,7 +967,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3<sup>2x</sup> − 36(3<sup>x</sup>) + 243 = 0<br><br>What is the greatest solution to the given equation?",
     choices: [
       "36",
@@ -1159,7 +1127,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 3x³ + ax² + x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 2, the remainder is 31, and p(−1) = −11. What is the value of ab?",
     choices: [
       "−7",
@@ -1207,7 +1175,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 1</sup> − 3<sup>x − 1</sup> = 72, what is the value of 9<sup>x</sup>?",
     choices: [
       "729",
@@ -1223,7 +1191,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −4 ≤ x ≤ 6. What is the value of b+c?",
     choices: [
       "22",
@@ -1319,7 +1287,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 24(2<sup>x</sup>) + 128 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "24",
@@ -1431,7 +1399,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to <sup>5</sup>√(x<sup>2</sup>) · <sup>6</sup>√(x<sup>4</sup>), where x > 0?",
     choices: [
       "x<sup>−4/15</sup>",
@@ -1479,7 +1447,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² − x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 1, the remainder is −5, and p(2) = −8. What is the value of a + b?",
     choices: [
       "6",
@@ -1527,7 +1495,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 2</sup> − 3<sup>x − 2</sup> = 240, what is the value of 3<sup>x + 1</sup>?",
     choices: [
       "81",
@@ -1543,7 +1511,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−2x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is 3 ≤ x ≤ 11. What is the value of b+c?",
     choices: [
       "94",
@@ -1553,22 +1521,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are 3 and 11, and the expression equals −2(x − 3)(x − 11) (the parabola opens downward, so it is ≥ 0 between its zeros). Expanding gives −2x² + 28x − 66, so b = 28 and c = −66, and b + c = −38."
-  },
-  {
-    id: "adv-h98",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture triples every 4 hours. At time t = 0, there are 1600 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "1600(3)<sup>t/4</sup>",
-      "1600(3)<sup>1/6t</sup>",
-      "1600(3)<sup>t/1/6</sup>",
-      "1600(3)<sup>4t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 3 once every 4 hours. Since t is measured in days, 4 hours is 1/6 days, so the number of periods after t days is t/1/6. Therefore N(t) = 1600(3)<sup>t/1/6</sup>. Using t/4 would treat t as hours."
   },
   {
     id: "adv-h99",
@@ -1639,7 +1591,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 6(2<sup>x</sup>) + 8 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "6",
@@ -1799,7 +1751,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 3x³ + ax² − 4x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 3, the remainder is −23, and p(−2) = 0. What is the value of ab?",
     choices: [
       "−2",
@@ -1847,7 +1799,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 3</sup> − 2<sup>x − 2</sup> = 62, what is the value of 4<sup>x</sup>?",
     choices: [
       "64",
@@ -1863,7 +1815,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−2x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −4 ≤ x ≤ 3. What is the value of b+c?",
     choices: [
       "−26",
@@ -1873,22 +1825,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are −4 and 3, and the expression equals −2(x + 4)(x − 3) (the parabola opens downward, so it is ≥ 0 between its zeros). Expanding gives −2x² − 2x + 24, so b = −2 and c = 24, and b + c = 22."
-  },
-  {
-    id: "adv-h118",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture triples every 6 hours. At time t = 0, there are 480 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "480(3)<sup>t/6</sup>",
-      "480(3)<sup>1/4t</sup>",
-      "480(3)<sup>t/1/4</sup>",
-      "480(3)<sup>6t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 3 once every 6 hours. Since t is measured in days, 6 hours is 1/4 days, so the number of periods after t days is t/1/4. Therefore N(t) = 480(3)<sup>t/1/4</sup>. Using t/6 would treat t as hours."
   },
   {
     id: "adv-h119",
@@ -1959,7 +1895,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 6(2<sup>x</sup>) + 8 = 0<br><br>What is the product of the solutions to the given equation?",
     choices: [
       "6",
@@ -2071,7 +2007,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to <sup>5</sup>√(x<sup>2</sup>) ÷ <sup>6</sup>√(x<sup>3</sup>), where x > 0?",
     choices: [
       "x<sup>9/10</sup>",
@@ -2119,7 +2055,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² + 5x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 1, the remainder is 3, and p(2) = 33. What is the value of a + b?",
     choices: [
       "14",
@@ -2167,7 +2103,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 2</sup> − 2<sup>x − 1</sup> = 14, what is the value of 4<sup>x</sup>?",
     choices: [
       "16",
@@ -2183,7 +2119,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−2x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is 3 ≤ x ≤ 9. What is the value of b+c?",
     choices: [
       "78",
@@ -2193,22 +2129,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are 3 and 9, and the expression equals −2(x − 3)(x − 9) (the parabola opens downward, so it is ≥ 0 between its zeros). Expanding gives −2x² + 24x − 54, so b = 24 and c = −54, and b + c = −30."
-  },
-  {
-    id: "adv-h138",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture triples every 8 hours. At time t = 0, there are 200 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "200(3)<sup>t/8</sup>",
-      "200(3)<sup>1/3t</sup>",
-      "200(3)<sup>t/1/3</sup>",
-      "200(3)<sup>8t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 3 once every 8 hours. Since t is measured in days, 8 hours is 1/3 days, so the number of periods after t days is t/1/3. Therefore N(t) = 200(3)<sup>t/1/3</sup>. Using t/8 would treat t as hours."
   },
   {
     id: "adv-h139",
@@ -2279,7 +2199,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 24(2<sup>x</sup>) + 128 = 0<br><br>What is the product of the solutions to the given equation?",
     choices: [
       "24",
@@ -2391,7 +2311,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to ∜(x) · <sup>6</sup>√(x<sup>4</sup>), where x > 0?",
     choices: [
       "x<sup>−5/12</sup>",
@@ -2439,7 +2359,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 3x³ + ax² + 5x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 1, the remainder is 13, and p(−3) = −123. What is the value of a + b?",
     choices: [
       "−36",
@@ -2487,7 +2407,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 1</sup> − 3<sup>x − 1</sup> = 72, what is the value of 3<sup>x + 1</sup>?",
     choices: [
       "81",
@@ -2503,7 +2423,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −1 ≤ x ≤ 5. What is the value of b+c?",
     choices: [
       "1",
@@ -2513,22 +2433,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are −1 and 5, and the expression equals (x + 1)(x − 5) (the parabola opens upward, so it is ≤ 0 between its zeros). Expanding gives x² − 4x − 5, so b = −4 and c = −5, and b + c = −9."
-  },
-  {
-    id: "adv-h158",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture doubles every 6 hours. At time t = 0, there are 320 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "320(2)<sup>t/6</sup>",
-      "320(2)<sup>1/4t</sup>",
-      "320(2)<sup>t/1/4</sup>",
-      "320(2)<sup>6t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 2 once every 6 hours. Since t is measured in days, 6 hours is 1/4 days, so the number of periods after t days is t/1/4. Therefore N(t) = 320(2)<sup>t/1/4</sup>. Using t/6 would treat t as hours."
   },
   {
     id: "adv-h159",
@@ -2599,7 +2503,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3<sup>2x</sup> − 84(3<sup>x</sup>) + 243 = 0<br><br>What is the product of the solutions to the given equation?",
     choices: [
       "84",
@@ -2711,7 +2615,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to <sup>5</sup>√(x<sup>4</sup>) ÷ ∜(x<sup>2</sup>), where x > 0?",
     choices: [
       "x<sup>13/10</sup>",
@@ -2759,7 +2663,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² + 2x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 2, the remainder is 33, and p(−1) = 6. What is the value of ab?",
     choices: [
       "9",
@@ -2807,7 +2711,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 1</sup> − 2<sup>x − 1</sup> = 12, what is the value of 2<sup>x + 1</sup>?",
     choices: [
       "16",
@@ -2823,7 +2727,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −7 ≤ x ≤ −2. What is the value of c?",
     choices: [
       "−42",
@@ -2833,22 +2737,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are −7 and −2, and the expression equals 3(x + 7)(x + 2) (the parabola opens upward, so it is ≤ 0 between its zeros). Expanding gives 3x² + 27x + 42, so b = 27 and c = 42."
-  },
-  {
-    id: "adv-h178",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture doubles every 10 hours. At time t = 0, there are 960 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "960(2)<sup>t/10</sup>",
-      "960(2)<sup>5/12t</sup>",
-      "960(2)<sup>t/5/12</sup>",
-      "960(2)<sup>10t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 2 once every 10 hours. Since t is measured in days, 10 hours is 5/12 days, so the number of periods after t days is t/5/12. Therefore N(t) = 960(2)<sup>t/5/12</sup>. Using t/10 would treat t as hours."
   },
   {
     id: "adv-h179",
@@ -2919,7 +2807,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "5<sup>2x</sup> − 6(5<sup>x</sup>) + 5 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "6",
@@ -3079,7 +2967,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² − 6x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 2, the remainder is −26, and p(−3) = −61. What is the value of ab?",
     choices: [
       "−4",
@@ -3127,7 +3015,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 2</sup> − 2<sup>x − 1</sup> = 28, what is the value of 2<sup>x + 1</sup>?",
     choices: [
       "16",
@@ -3143,7 +3031,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−2x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is 3 ≤ x ≤ 10. What is the value of b?",
     choices: [
       "−26",
@@ -3239,7 +3127,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3<sup>2x</sup> − 4(3<sup>x</sup>) + 3 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "4",
@@ -3351,7 +3239,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to <sup>5</sup>√(x<sup>4</sup>) ÷ √(x), where x > 0?",
     choices: [
       "x<sup>13/10</sup>",
@@ -3399,7 +3287,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² − x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 1, the remainder is −7, and p(3) = 25. What is the value of ab?",
     choices: [
       "−7",
@@ -3447,7 +3335,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 2</sup> − 3<sup>x − 2</sup> = 2160, what is the value of 9<sup>x</sup>?",
     choices: [
       "59049",
@@ -3463,7 +3351,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "3x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −6 ≤ x ≤ 4. What is the value of b+c?",
     choices: [
       "78",
@@ -3473,22 +3361,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are −6 and 4, and the expression equals 3(x + 6)(x − 4) (the parabola opens upward, so it is ≤ 0 between its zeros). Expanding gives 3x² + 6x − 72, so b = 6 and c = −72, and b + c = −66."
-  },
-  {
-    id: "adv-h218",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture doubles every 16 hours. At time t = 0, there are 960 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "960(2)<sup>t/16</sup>",
-      "960(2)<sup>2/3t</sup>",
-      "960(2)<sup>t/2/3</sup>",
-      "960(2)<sup>16t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 2 once every 16 hours. Since t is measured in days, 16 hours is 2/3 days, so the number of periods after t days is t/2/3. Therefore N(t) = 960(2)<sup>t/2/3</sup>. Using t/16 would treat t as hours."
   },
   {
     id: "adv-h219",
@@ -3559,7 +3431,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2<sup>2x</sup> − 24(2<sup>x</sup>) + 128 = 0<br><br>What is the greatest solution to the given equation?",
     choices: [
       "24",
@@ -3719,7 +3591,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² + 2x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x − 3, the remainder is 79, and p(1) = 1. What is the value of a + b?",
     choices: [
       "−48",
@@ -3767,7 +3639,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 2<sup>x + 1</sup> − 2<sup>x − 1</sup> = 12, what is the value of 4<sup>x</sup>?",
     choices: [
       "64",
@@ -3783,7 +3655,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is −2 ≤ x ≤ 7. What is the value of b+c?",
     choices: [
       "−9",
@@ -3793,22 +3665,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are −2 and 7, and the expression equals −1(x + 2)(x − 7) (the parabola opens downward, so it is ≥ 0 between its zeros). Expanding gives −x² + 5x + 14, so b = 5 and c = 14, and b + c = 19."
-  },
-  {
-    id: "adv-h238",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture triples every 8 hours. At time t = 0, there are 960 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "960(3)<sup>t/8</sup>",
-      "960(3)<sup>1/3t</sup>",
-      "960(3)<sup>t/1/3</sup>",
-      "960(3)<sup>8t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 3 once every 8 hours. Since t is measured in days, 8 hours is 1/3 days, so the number of periods after t days is t/1/3. Therefore N(t) = 960(3)<sup>t/1/3</sup>. Using t/8 would treat t as hours."
   },
   {
     id: "adv-h239",
@@ -3879,7 +3735,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "5<sup>2x</sup> − 26(5<sup>x</sup>) + 25 = 0<br><br>What is the product of the solutions to the given equation?",
     choices: [
       "26",
@@ -3991,7 +3847,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to ∜(x<sup>7</sup>) · ∛(x<sup>5</sup>), where x > 0?",
     choices: [
       "x<sup>1/12</sup>",
@@ -4039,7 +3895,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = x³ + ax² − 5x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 2, the remainder is 26, and p(−3) = 37. What is the value of a + b?",
     choices: [
       "20",
@@ -4087,7 +3943,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 2</sup> − 3<sup>x − 1</sup> = 78, what is the value of 3<sup>x + 1</sup>?",
     choices: [
       "27",
@@ -4103,7 +3959,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "−2x² + bx + c ≥ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is 1 ≤ x ≤ 6. What is the value of c?",
     choices: [
       "12",
@@ -4113,22 +3969,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are 1 and 6, and the expression equals −2(x − 1)(x − 6) (the parabola opens downward, so it is ≥ 0 between its zeros). Expanding gives −2x² + 14x − 12, so b = 14 and c = −12."
-  },
-  {
-    id: "adv-h258",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture triples every 12 hours. At time t = 0, there are 800 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "800(3)<sup>t/12</sup>",
-      "800(3)<sup>1/2t</sup>",
-      "800(3)<sup>t/1/2</sup>",
-      "800(3)<sup>12t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 3 once every 12 hours. Since t is measured in days, 12 hours is 1/2 days, so the number of periods after t days is t/1/2. Therefore N(t) = 800(3)<sup>t/1/2</sup>. Using t/12 would treat t as hours."
   },
   {
     id: "adv-h259",
@@ -4199,7 +4039,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "5<sup>2x</sup> − 26(5<sup>x</sup>) + 25 = 0<br><br>What is the sum of the solutions to the given equation?",
     choices: [
       "26",
@@ -4311,7 +4151,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponents",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Which expression is equivalent to ∜(x<sup>5</sup>) · <sup>6</sup>√(x<sup>5</sup>), where x > 0?",
     choices: [
       "x<sup>5/12</sup>",
@@ -4359,7 +4199,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Polynomial functions",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "p(x) = 2x³ + ax² + 5x + b<br><br>In the polynomial p, a and b are constants. When p(x) is divided by x + 2, the remainder is −60, and p(1) = −9. What is the value of ab?",
     choices: [
       "−16",
@@ -4407,7 +4247,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "If 3<sup>x + 2</sup> − 3<sup>x − 1</sup> = 234, what is the value of 9<sup>x</sup>?",
     choices: [
       "729",
@@ -4423,7 +4263,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Quadratic inequalities",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "2x² + bx + c ≤ 0<br><br>In the given inequality, b and c are constants. The solution set of the inequality is 3 ≤ x ≤ 13. What is the value of b+c?",
     choices: [
       "−110",
@@ -4433,22 +4273,6 @@ QUESTIONS.push(
     ],
     answer: 3,
     explanation: "The solution set is the interval between the zeros, so the zeros are 3 and 13, and the expression equals 2(x − 3)(x − 13) (the parabola opens upward, so it is ≤ 0 between its zeros). Expanding gives 2x² − 32x + 78, so b = −32 and c = 78, and b + c = 46."
-  },
-  {
-    id: "adv-h278",
-    module: "math",
-    domain: "Advanced Math",
-    skill: "Exponential functions",
-    difficulty: 3,
-    prompt: "The number of cells in a culture is halved every 15 hours. At time t = 0, there are 2400 cells. Which function gives the number of cells, N(t), t days after time t = 0?",
-    choices: [
-      "2400(1/2)<sup>t/15</sup>",
-      "2400(1/2)<sup>5/8t</sup>",
-      "2400(1/2)<sup>t/5/8</sup>",
-      "2400(1/2)<sup>15t</sup>"
-    ],
-    answer: 2,
-    explanation: "The quantity is multiplied by 1/2 once every 15 hours. Since t is measured in days, 15 hours is 5/8 days, so the number of periods after t days is t/5/8. Therefore N(t) = 2400(1/2)<sup>t/5/8</sup>. Using t/15 would treat t as hours."
   },
   {
     id: "adv-h279",
@@ -4599,7 +4423,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/25)<sup>x − 2</sup> = 125<sup>x − 2</sup> · (1/5)<br><br>What value of x satisfies the given equation?",
     choices: [
       "11/5",
@@ -5063,7 +4887,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/9)<sup>x − 1</sup> = 81<sup>x − 2</sup> · 3<br><br>What value of x satisfies the given equation?",
     choices: [
       "5/2",
@@ -5191,7 +5015,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/2)<sup>x − 1</sup> = 4<sup>x + 5</sup> · (1/2)<br><br>What value of x satisfies the given equation?",
     choices: [
       "−10/3",
@@ -5303,7 +5127,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/9)<sup>x − 1</sup> = 27<sup>x − 4</sup> · 3<br><br>What value of x satisfies the given equation?",
     choices: [
       "9/5",
@@ -5319,7 +5143,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/9)<sup>x + 3</sup> = 81<sup>x + 4</sup> · 3<br><br>What value of x satisfies the given equation?",
     choices: [
       "−23/6",
@@ -5367,7 +5191,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/9)<sup>x</sup> = 3<sup>x − 3</sup> · (1/9)<br><br>What value of x satisfies the given equation?",
     choices: [
       "1",
@@ -5511,7 +5335,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/5)<sup>x + 1</sup> = 125<sup>x</sup> · (1/25)<br><br>What value of x satisfies the given equation?",
     choices: [
       "1/4",
@@ -5943,7 +5767,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/3)<sup>x + 1</sup> = 9<sup>x + 5</sup> · 3<br><br>What value of x satisfies the given equation?",
     choices: [
       "−10",
@@ -6311,7 +6135,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/81)<sup>x</sup> = 9<sup>x</sup> · 9<br><br>What value of x satisfies the given equation?",
     choices: [
       "1",
@@ -6423,7 +6247,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/16)<sup>x − 1</sup> = 4<sup>x − 3</sup> · (1/4)<br><br>What value of x satisfies the given equation?",
     choices: [
       "5/3",
@@ -6599,7 +6423,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/125)<sup>x − 4</sup> = 5<sup>x − 2</sup> · 5<br><br>What value of x satisfies the given equation?",
     choices: [
       "11/2",
@@ -6839,7 +6663,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/3)<sup>x − 5</sup> = 9<sup>x − 4</sup> · 9<br><br>What value of x satisfies the given equation?",
     choices: [
       "13/3",
@@ -7255,7 +7079,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/81)<sup>x + 3</sup> = 27<sup>x − 1</sup> · (1/9)<br><br>What value of x satisfies the given equation?",
     choices: [
       "−1",
@@ -7303,7 +7127,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/25)<sup>x − 2</sup> = 125<sup>x − 1</sup> · 25<br><br>What value of x satisfies the given equation?",
     choices: [
       "1",
@@ -7335,7 +7159,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Advanced Math",
     skill: "Exponential equations",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "(1/5)<sup>x + 1</sup> = 125<sup>x − 4</sup> · (1/5)<br><br>What value of x satisfies the given equation?",
     choices: [
       "7/2",

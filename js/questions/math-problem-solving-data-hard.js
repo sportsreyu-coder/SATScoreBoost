@@ -119,7 +119,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, pipes A and B can fill the tank in 5/3 hours. Working alone, pipe A can fill the tank in 10 hours. How many hours would it take pipe B, working alone, to fill the tank?",
     choices: [
       "2",
@@ -199,7 +199,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 7 defective batteries and 4 working batteries. Two batteries are selected at random without replacement. What is the probability that at least one of them is defective?",
     choices: [
       "6/55",
@@ -375,7 +375,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, pipes A and B can fill the tank in 40/9 hours. Working alone, pipe A can fill the tank in 10 hours. How many hours would it take pipe B, working alone, to fill the tank?",
     choices: [
       "8",
@@ -455,7 +455,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 4 vanilla cupcakes and 4 chocolate cupcakes. Two cupcakes are selected at random, one after the other, without replacement. What is the probability that both are vanilla?",
     choices: [
       "1/4",
@@ -711,7 +711,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 4 vanilla cupcakes and 7 chocolate cupcakes. Two cupcakes are selected at random without replacement. What is the probability that at least one of them is vanilla?",
     choices: [
       "21/55",
@@ -967,7 +967,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A bag contains 4 red marbles and 6 blue marbles. Two marbles are selected at random without replacement. What is the probability that one is red and the other is blue?",
     choices: [
       "4/15",
@@ -1143,7 +1143,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, printers A and B can print the order in 42/13 minutes. Working alone, printer A can print the order in 6 minutes. How many minutes would it take printer B, working alone, to print the order?",
     choices: [
       "7",
@@ -1223,7 +1223,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 3 vanilla cupcakes and 4 chocolate cupcakes. Two cupcakes are selected at random without replacement. What is the probability that at least one of them is vanilla?",
     choices: [
       "2/7",
@@ -1399,7 +1399,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, pipes A and B can fill the tank in 28/11 hours. Working alone, pipe A can fill the tank in 4 hours. How many hours would it take pipe B, working alone, to fill the tank?",
     choices: [
       "7",
@@ -1479,7 +1479,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 4 defective batteries and 3 working batteries. Two batteries are selected at random without replacement. What is the probability that at least one of them is defective?",
     choices: [
       "1/7",
@@ -1735,7 +1735,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 8 defective batteries and 8 working batteries. Two batteries are selected at random without replacement. What is the probability that one is defective and the other is working?",
     choices: [
       "4/15",
@@ -1911,7 +1911,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, printers A and B can print the order in 18/11 minutes. Working alone, printer A can print the order in 2 minutes. How many minutes would it take printer B, working alone, to print the order?",
     choices: [
       "9",
@@ -1991,7 +1991,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 2 vanilla cupcakes and 7 chocolate cupcakes. Two cupcakes are selected at random without replacement. What is the probability that one is vanilla and the other is chocolate?",
     choices: [
       "7/36",
@@ -2247,7 +2247,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 3 vanilla cupcakes and 6 chocolate cupcakes. Two cupcakes are selected at random, one after the other, without replacement. What is the probability that both are vanilla?",
     choices: [
       "1/9",
@@ -2503,7 +2503,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 5 defective batteries and 4 working batteries. Two batteries are selected at random without replacement. What is the probability that one is defective and the other is working?",
     choices: [
       "5/18",
@@ -2679,7 +2679,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, printers A and B can print the order in 10/3 minutes. Working alone, printer A can print the order in 10 minutes. How many minutes would it take printer B, working alone, to print the order?",
     choices: [
       "5",
@@ -2759,7 +2759,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A bag contains 8 red marbles and 3 blue marbles. Two marbles are selected at random, one after the other, without replacement. What is the probability that both are red?",
     choices: [
       "64/121",
@@ -3015,7 +3015,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A bag contains 2 red marbles and 8 blue marbles. Two marbles are selected at random without replacement. What is the probability that one is red and the other is blue?",
     choices: [
       "8/45",
@@ -3271,7 +3271,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 4 defective batteries and 6 working batteries. Two batteries are selected at random without replacement. What is the probability that at least one of them is defective?",
     choices: [
       "1/3",
@@ -3527,7 +3527,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 4 vanilla cupcakes and 3 chocolate cupcakes. Two cupcakes are selected at random, one after the other, without replacement. What is the probability that both are vanilla?",
     choices: [
       "16/49",
@@ -3783,7 +3783,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 7 defective batteries and 2 working batteries. Two batteries are selected at random without replacement. What is the probability that at least one of them is defective?",
     choices: [
       "1/36",
@@ -3959,7 +3959,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Rates and units",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "Working together at constant rates, printers A and B can print the order in 44/15 hours. Working alone, printer A can print the order in 4 hours. How many hours would it take printer B, working alone, to print the order?",
     choices: [
       "11",
@@ -4039,7 +4039,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 6 defective batteries and 4 working batteries. Two batteries are selected at random without replacement. What is the probability that one is defective and the other is working?",
     choices: [
       "4/15",
@@ -4295,7 +4295,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A tray contains 4 vanilla cupcakes and 6 chocolate cupcakes. Two cupcakes are selected at random without replacement. What is the probability that at least one of them is vanilla?",
     choices: [
       "1/3",
@@ -4551,7 +4551,7 @@ QUESTIONS.push(
     module: "math",
     domain: "Problem-Solving and Data Analysis",
     skill: "Probability",
-    difficulty: 3,
+    difficulty: 4,
     prompt: "A box contains 2 defective batteries and 4 working batteries. Two batteries are selected at random without replacement. What is the probability that one is defective and the other is working?",
     choices: [
       "4/15",

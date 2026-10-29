@@ -36,7 +36,7 @@ const QUESTIONS = [
     ],
     answer: 0,
     explanation:
-      "The claim is specifically about reduced grocery spending. Only choice A provides quantitative evidence tying garden participation to lower spending on food.",
+      "The claim is specifically about reduced grocery spending. Only the correct answer provides quantitative evidence tying garden participation to lower spending on food.",
   },
   {
     id: "rw-3",
@@ -97,7 +97,7 @@ const QUESTIONS = [
     ],
     answer: 0,
     explanation:
-      "The passage contrasts the old 'dark age' view with recent scholarship showing intellectual vibrancy. Choice A captures that reframing; the others overstate details or contradict the text.",
+      "The passage contrasts the old 'dark age' view with recent scholarship showing intellectual vibrancy. The correct answer captures that reframing; the others overstate details or contradict the text.",
   },
   {
     id: "rw-7",

@@ -1945,7 +1945,7 @@ QUESTIONS.push(
     module: "rw",
     domain: "Craft and Structure",
     skill: "Words in Context",
-    difficulty: 3,
+    difficulty: 4,
     passage: "The council's response to the flooding was criticized as ______; officials waited nearly a week before sending aid to the hardest-hit neighborhoods.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
     choices: [
@@ -3288,7 +3288,7 @@ QUESTIONS.push(
     module: "rw",
     domain: "Craft and Structure",
     skill: "Words in Context",
-    difficulty: 3,
+    difficulty: 4,
     passage: "Although the scientist's theory was ______ when she first proposed it, it is now taught in introductory biology courses as established fact.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
     choices: [
@@ -4852,7 +4852,7 @@ QUESTIONS.push(
     module: "rw",
     domain: "Craft and Structure",
     skill: "Words in Context",
-    difficulty: 3,
+    difficulty: 4,
     passage: "The chef's approach to Peruvian cuisine is ______: she preserves the techniques her grandmother taught her while freely incorporating ingredients from Japan, Italy, and West Africa.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
     choices: [
@@ -5073,7 +5073,7 @@ QUESTIONS.push(
     module: "rw",
     domain: "Craft and Structure",
     skill: "Words in Context",
-    difficulty: 3,
+    difficulty: 4,
     passage: "Many of the town's residents regard the annual festival as ______, an event so long established that few can imagine the summer without it.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
     choices: [
@@ -5872,7 +5872,7 @@ QUESTIONS.push(
     module: "rw",
     domain: "Craft and Structure",
     skill: "Words in Context",
-    difficulty: 3,
+    difficulty: 4,
     passage: "The play's humor is ______; its jokes depend on references to obscure eighteenth-century politics, and few modern audience members understand them without footnotes.",
     prompt: "Which choice completes the text with the most logical and precise word or phrase?",
     choices: [

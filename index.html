@@ -195,10 +195,10 @@
         <div class="l-feature-row">
           <span class="l-feature-num">03</span>
           <div>
-            <span class="l-feature-title">A live module timer</span>
-            <span class="l-feature-body">Each module runs on the clock, with a warning as time gets short and the option to hide the countdown when it's in your head more than on the screen. Sessions end the way real modules do.</span>
+            <span class="l-feature-title">A per-question timer</span>
+            <span class="l-feature-body">The clock at the top tracks how long you spend on each question, so you can see where your time actually goes. Hide it whenever it's more distracting than helpful.</span>
           </div>
-          <span class="l-feature-tag">5-minute warning</span>
+          <span class="l-feature-tag">Pacing insight</span>
         </div>
         <div class="l-feature-row">
           <span class="l-feature-num">04</span>
@@ -300,7 +300,6 @@
       </div>
     </div>
 
-    <div class="time-warning-toast" id="timeWarningToast">⏰ 5 minutes remaining</div>
 
     <div class="exam-body" id="examBody"><!-- question renders here --></div>
 
@@ -376,18 +375,6 @@
     </div>
   </div>
 
-  <!-- ===================== SESSION SIZE MODAL ===================== -->
-  <div id="sessionSizeModal" class="modal-overlay hidden">
-    <div class="modal">
-      <h3>How many questions?</h3>
-      <p id="sessionSizeSub">Choose how many to practice.</p>
-      <div class="session-size-options" id="sessionSizeOptions"></div>
-      <div class="modal-actions">
-        <button class="btn btn-ghost" id="sessionSizeCancel">Cancel</button>
-      </div>
-    </div>
-  </div>
-
   <!-- ===================== SHARE RESULTS MODAL ===================== -->
   <div id="shareModal" class="modal-overlay hidden">
     <div class="modal share-modal">
@@ -454,6 +441,25 @@
   <script src="js/questions/math-problem-solving-data-hard.js"></script>
   <script src="js/questions/math-geometry-trig.js"></script>
   <script src="js/questions/math-geometry-trig-hard.js"></script>
+  <script src="js/questions/bluebook-calibrated.js"></script>
+  <script src="js/question-tiers.js"></script>
+  <script src="js/choice-explanations/questions.js"></script>
+  <script src="js/choice-explanations/rw-information-ideas.js"></script>
+  <script src="js/choice-explanations/rw-information-ideas-hard.js"></script>
+  <script src="js/choice-explanations/rw-craft-structure.js"></script>
+  <script src="js/choice-explanations/rw-craft-structure-hard.js"></script>
+  <script src="js/choice-explanations/rw-expression-ideas.js"></script>
+  <script src="js/choice-explanations/rw-expression-ideas-hard.js"></script>
+  <script src="js/choice-explanations/rw-conventions.js"></script>
+  <script src="js/choice-explanations/rw-conventions-hard.js"></script>
+  <script src="js/choice-explanations/math-algebra.js"></script>
+  <script src="js/choice-explanations/math-algebra-hard.js"></script>
+  <script src="js/choice-explanations/math-advanced-math.js"></script>
+  <script src="js/choice-explanations/math-advanced-math-hard.js"></script>
+  <script src="js/choice-explanations/math-problem-solving-data.js"></script>
+  <script src="js/choice-explanations/math-problem-solving-data-hard.js"></script>
+  <script src="js/choice-explanations/math-geometry-trig.js"></script>
+  <script src="js/choice-explanations/math-geometry-trig-hard.js"></script>
   <script src="js/diagnostics.js"></script>
   <script src="js/lessons.js"></script>
   <script src="js/lessons/rw-information-ideas.js"></script>
@@ -464,6 +470,7 @@
   <script src="js/lessons/math-advanced-math.js"></script>
   <script src="js/lessons/math-problem-solving-data.js"></script>
   <script src="js/lessons/math-geometry-trig.js"></script>
+  <script src="js/lessons/study-plans.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabaseClient.js"></script>
   <script src="js/questions-remote.js"></script>

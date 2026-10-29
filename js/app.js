@@ -2,6 +2,10 @@
 (function () {
   "use strict";
 
+  // Display names for q.difficulty (1–4); tier 4 is the beyond-SAT Extra
+  // Hard set from js/question-tiers.js.
+  const DIFFICULTY_LABELS = ["Easy", "Medium", "Hard", "Extra Hard"];
+
   // ---- State ----
   const state = {
     module: null,      // "rw" | "math" | "mixed" | "diagnostic" | "full-diagnostic"
@@ -19,9 +23,8 @@
     current: 0,
     eliminating: false,
     timer: null,
-    secondsLeft: 0,
-    timerHidden: false,   // user's "hide timer" preference, overridden once time is low
-    timeWarningShown: false, // whether the 5-minute toast has fired for this module
+    questionElapsed: {}, // qIndex -> total seconds spent on that question (header stopwatch)
+    timerHidden: false,   // user's "hide timer" preference
     breakTimer: null,
     breakSecondsLeft: 0,
     pillWindowStart: 0, // first index shown in the footer's question-pill strip
@@ -34,7 +37,9 @@
     categoryLabel: null,  // set when practicing a single Question Bank category
     categoryDomain: null, // the domain string, so "retry" can restart the same category
     bankTab: "math",      // "math" | "rw" — which Question Bank subject tab is showing
-    lessonsTab: "rw",     // "rw" | "math" — which Lessons subject tab is showing
+    lessonsTab: "rw",     // "rw" | "math" | "plans" — which Lessons tab is showing
+    lessonsPlan: "easy",  // which lesson plan is open on the "plans" tab (STUDY_PLANS id)
+    planStep: null,       // open lesson-plan step: { planId, week, step, questions, picks }
     lessonsFreeOnly: false, // true = Lessons list is filtered down to free-tier lessons only
     bankDifficulty: new Set(), // selected difficulty filters (1/2/3); empty = show all
     domainFilter: null,   // set when practicing a single domain from the Study Plan
@@ -71,7 +76,6 @@
   };
 
   const SECONDS_PER_Q = 90;
-  const TIME_WARNING_SECONDS = 300; // shows the red "5 minutes remaining" warning
   const PILL_WINDOW = 10; // how many question pills are visible at once
   const SAVED_SESSION_KEY = "sat_saved_session"; // snapshot of an exam left mid-way, so it can be resumed
   const DIAG_INDEX_KEY = "sat_diag_index"; // last diagnostic index, for rotation
@@ -242,11 +246,10 @@
   // Both the free Full-Length Practice Test (state.module === "diagnostic") and the
   // Pro Full Scale Test (state.module === "full-diagnostic") run the same
   // 4-module shape — RW Module 1/2, a break, then Math Module 1/2 — just at
-  // different sizes and timings. See diagModuleDurations()/diagModuleLabels().
+  // different sizes. See diagModuleLabels().
   const DIAG_MODULE_KEYS = ["rw1", "rw2", "math1", "math2"];
 
-  // Free Full-Length Practice Test: real digital SAT per-module structure and timing.
-  const PRACTICE_SAT_MODULE_DURATIONS = [32 * 60, 32 * 60, 35 * 60, 35 * 60];
+  // Free Full-Length Practice Test: real digital SAT per-module structure.
   const PRACTICE_SAT_MODULE_LABELS = [
     "Reading & Writing — Module 1",
     "Reading & Writing — Module 2",
@@ -254,9 +257,7 @@
     "Math — Module 2",
   ];
 
-  // Pro Full Scale Test: 50 questions/module (100/subject, 200 total), so
-  // modules run longer — scaled from the real test's per-question pacing.
-  const FULL_SCALE_MODULE_DURATIONS = [60 * 60, 60 * 60, 80 * 60, 80 * 60];
+  // Pro Full Scale Test: 50 questions/module (100/subject, 200 total).
   const FULL_SCALE_MODULE_LABELS = [
     "Reading & Writing — Module 1",
     "Reading & Writing — Module 2 (Adaptive)",
@@ -342,21 +343,55 @@
   // correct-answer index remapped, so the correct option isn't always "A".
   function shuffleChoices(q) {
     const order = shuffle(q.choices.map((_, i) => i));
+    const why = choiceExplanationsFor(q);
     return {
       ...q,
       choices: order.map((i) => q.choices[i]),
       answer: order.indexOf(q.answer),
+      choiceExplanations: why ? order.map((i) => why[i]) : null,
     };
+  }
+
+  // Per-choice "why this is wrong" rationales, aligned with q.choices
+  // (null at the correct answer). Supabase rows carry them inline; the
+  // static bank keeps them in js/choice-explanations/*.js keyed by id.
+  function choiceExplanationsFor(q) {
+    const why = q.choiceExplanations ||
+      (typeof CHOICE_EXPLANATIONS !== "undefined" ? CHOICE_EXPLANATIONS[q.id] : null);
+    return Array.isArray(why) && why.length === q.choices.length ? why : null;
+  }
+
+  // "Why the other choices are wrong" block under an explanation. The
+  // student's own wrong pick is listed first and flagged.
+  function choiceExplanationsHTML(q, selected) {
+    const why = choiceExplanationsFor(q);
+    if (!why) return "";
+    const letters = ["A", "B", "C", "D"];
+    const order = q.choices.map((_, ci) => ci).filter((ci) => ci !== q.answer && why[ci]);
+    if (!order.length) return "";
+    const picked = order.indexOf(selected);
+    if (picked > 0) order.unshift(order.splice(picked, 1)[0]);
+    const items = order
+      .map(
+        (ci) => `
+          <li class="why-wrong-item ${ci === selected ? "picked" : ""}">
+            <span class="why-wrong-letter">${letters[ci]}</span>
+            <span class="why-wrong-text">${ci === selected ? `<strong>Your answer:</strong> ` : ""}${formatMathText(why[ci])}</span>
+          </li>`
+      )
+      .join("");
+    return `
+      <div class="why-wrong">
+        <span class="why-wrong-label">Why the other choices are wrong</span>
+        <ul class="why-wrong-list">${items}</ul>
+      </div>`;
   }
 
   // Shared by every single-module practice entry point (mixed/rw/math,
   // a Question Bank category, a Study Plan domain, or a Lessons skill):
   // takes an already-filtered pool, optionally caps it to `count`
   // questions, then shuffles/sorts/starts it. `count` of null/undefined
-  // means "use the whole pool" — only the Dashboard's open-ended "mixed"
-  // practice does that; every filtered entry point asks the student first
-  // via openSessionSizePicker so a single bank category doesn't silently
-  // start a multi-hour, whole-bank timer.
+  // means "use the whole pool" — students can end the session at any point.
   function beginPracticeSession(fullPool, count, meta) {
     let pool = shuffle(fullPool);
     if (count && count < pool.length) pool = pool.slice(0, count);
@@ -381,7 +416,7 @@
     state.current = 0;
     state.eliminating = false;
     state.pillWindowStart = 0;
-    state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.questionElapsed = {};
     state.timerHidden = false;
 
     startTimer();
@@ -391,46 +426,11 @@
     updateModuleName();
   }
 
-  // Lets the student choose a set size instead of always starting the
-  // entire filtered pool (e.g. all 351 questions in a domain, with a
-  // multi-hour timer to match). Presets below the pool size plus "All".
-  function openSessionSizePicker(poolLength, label, onPick) {
-    const modal = document.getElementById("sessionSizeModal");
-    const sub = document.getElementById("sessionSizeSub");
-    const optionsEl = document.getElementById("sessionSizeOptions");
-    sub.textContent = `${label ? label + " — " : ""}${poolLength} question${poolLength === 1 ? "" : "s"} available. Choose how many to practice.`;
-
-    const presets = [10, 20, 40].filter((n) => n < poolLength);
-    presets.push(poolLength);
-    optionsEl.innerHTML = presets
-      .map(
-        (n) =>
-          `<button type="button" class="session-size-btn" data-size="${n}">${n === poolLength ? `All (${n})` : n}</button>`
-      )
-      .join("");
-
-    function handleClick(e) {
-      const btn = e.target.closest("[data-size]");
-      if (!btn) return;
-      cleanup();
-      onPick(Number(btn.dataset.size));
-    }
-    function cleanup() {
-      modal.classList.add("hidden");
-      optionsEl.removeEventListener("click", handleClick);
-    }
-    optionsEl.addEventListener("click", handleClick);
-    document.getElementById("sessionSizeCancel").onclick = cleanup;
-    modal.classList.remove("hidden");
-  }
-
   function startModule(module, domain) {
     if (domain) {
       const pool = QUESTIONS.filter((q) => q.module === module && q.domain === domain);
       if (!pool.length) return;
-      openSessionSizePicker(pool.length, domain, (count) => {
-        beginPracticeSession(pool, count, { module, domainFilter: domain });
-      });
+      beginPracticeSession(pool, null, { module, domainFilter: domain });
       return;
     }
     const pool = module === "mixed" ? QUESTIONS : QUESTIONS.filter((q) => q.module === module);
@@ -438,26 +438,36 @@
   }
 
   // ---- Question Bank: practice a single category on its own ----
+  // The questions a bank card would start under the current difficulty
+  // filter. Extra Hard (tier 4) lives outside QUESTIONS and only joins the
+  // pool when its chip is selected; no chips selected means Easy–Hard.
+  function bankPool(mod, domain) {
+    const source = state.bankDifficulty.has(4) ? QUESTIONS.concat(EXTRA_HARD_QUESTIONS) : QUESTIONS;
+    let pool = source.filter((q) => q.module === mod && q.domain === domain);
+    if (state.bankDifficulty.size) pool = pool.filter((q) => state.bankDifficulty.has(q.difficulty));
+    return pool;
+  }
+
   function startBankCategory(mod, domain, label) {
-    let pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain);
-    if (state.bankDifficulty.size) {
-      pool = pool.filter((q) => state.bankDifficulty.has(q.difficulty));
-    }
+    const pool = bankPool(mod, domain);
     if (!pool.length) return; // filters excluded every question — nothing to start
 
-    openSessionSizePicker(pool.length, label || domain, (count) => {
-      beginPracticeSession(pool, count, { module: mod, categoryLabel: label || domain, categoryDomain: domain });
-    });
+    beginPracticeSession(pool, null, { module: mod, categoryLabel: label || domain, categoryDomain: domain });
   }
 
   // ---- Lessons: practice just the questions matching one specific skill ----
-  function startSkillPractice(mod, domain, skill) {
-    const pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill);
+  // An optional `difficulty` (1/2/3, from a lesson plan) narrows the pool to
+  // that tier, falling back to the whole skill if the tier is empty.
+  function startSkillPractice(mod, domain, skill, difficulty) {
+    let pool = QUESTIONS.filter((q) => q.module === mod && q.domain === domain && q.skill === skill);
+    if (difficulty) {
+      const tiered = pool.filter((q) => q.difficulty === difficulty);
+      if (tiered.length) pool = tiered;
+    }
     if (!pool.length) return;
 
-    openSessionSizePicker(pool.length, skill, (count) => {
-      beginPracticeSession(pool, count, { module: mod, categoryLabel: skill, categoryDomain: domain, skillFilter: skill });
-    });
+    const label = difficulty ? `${skill} · ${DIFFICULTY_LABELS[difficulty - 1]}` : skill;
+    beginPracticeSession(pool, null, { module: mod, categoryLabel: label, categoryDomain: domain, skillFilter: skill });
   }
 
   // Counts questions in a domain by difficulty, ignoring the active filter —
@@ -468,6 +478,7 @@
       easy: qs.filter((q) => q.difficulty === 1).length,
       med: qs.filter((q) => q.difficulty === 2).length,
       hard: qs.filter((q) => q.difficulty === 3).length,
+      extra: EXTRA_HARD_QUESTIONS.filter((q) => q.module === mod && q.domain === domain).length,
       total: qs.length,
     };
   }
@@ -475,9 +486,7 @@
   // Same count, but respecting the current difficulty filter — this is the
   // number of questions a click on the card would actually start.
   function bankFilteredCount(mod, domain) {
-    let qs = QUESTIONS.filter((q) => q.module === mod && q.domain === domain);
-    if (state.bankDifficulty.size) qs = qs.filter((q) => state.bankDifficulty.has(q.difficulty));
-    return qs.length;
+    return bankPool(mod, domain).length;
   }
 
   function renderBank() {
@@ -496,7 +505,7 @@
 
     const cardsHTML = cats
       .map((c) => {
-        const { easy, med, hard, total } = bankDomainCounts(tab, c.key);
+        const { easy, med, hard, extra, total } = bankDomainCounts(tab, c.key);
         const shown = bankFilteredCount(tab, c.key);
         const empty = shown === 0;
         const pct = (n) => (total ? (n / total) * 100 : 0);
@@ -514,6 +523,7 @@
                 <span><i class="tier-dot foundational"></i>${easy} Easy</span>
                 <span><i class="tier-dot core"></i>${med} Medium</span>
                 <span><i class="tier-dot challenge"></i>${hard} Hard</span>
+                ${extra ? `<span class="tier-extra">+${extra} Extra Hard</span>` : ""}
               </div>
             </div>
             ${empty ? `<span class="bank-soon">No questions yet</span>` : `<span class="bank-cta">Practice →</span>`}
@@ -538,8 +548,9 @@
             ${diffChip(1, "Easy")}
             ${diffChip(2, "Medium")}
             ${diffChip(3, "Hard")}
+            ${diffChip(4, "Extra Hard")}
           </div>
-          <p class="filter-hint">Leave all unselected to include every difficulty.</p>
+          <p class="filter-hint">Leave all unselected to include Easy through Hard. Extra Hard goes beyond the real SAT, so it only appears when you pick it.</p>
         </aside>
       </div>
     `;
@@ -722,16 +733,12 @@
     loadDiagModule(0);
   }
 
-  function diagModuleDurations() {
-    return state.diagKind === "full-scale" ? FULL_SCALE_MODULE_DURATIONS : PRACTICE_SAT_MODULE_DURATIONS;
-  }
-
   function diagModuleLabels() {
     return state.diagKind === "full-scale" ? FULL_SCALE_MODULE_LABELS : PRACTICE_SAT_MODULE_LABELS;
   }
 
   // Loads one module of the active diagnostic (Full-Length Practice Test or Full
-  // Scale Test) as its own timed session.
+  // Scale Test) as its own session.
   function loadDiagModule(moduleIndex) {
     state.fdModuleIndex = moduleIndex;
     state.questions = state.fdModules[moduleIndex];
@@ -745,7 +752,7 @@
     state.current = 0;
     state.eliminating = false;
     state.pillWindowStart = 0;
-    state.secondsLeft = diagModuleDurations()[moduleIndex];
+    state.questionElapsed = {};
 
     startTimer();
     show("exam");
@@ -959,51 +966,37 @@
   }
 
   // ---- Timer ----
+  // The header shows a stopwatch for the question on screen: it counts up the
+  // total time spent on that question across every visit, rather than a
+  // module countdown.
   function startTimer() {
     clearInterval(state.timer);
-    state.timeWarningShown = false;
-    document.getElementById("timeWarningToast").classList.remove("show");
     state.timer = setInterval(() => {
-      state.secondsLeft--;
+      const i = state.current;
+      state.questionElapsed[i] = (state.questionElapsed[i] || 0) + 1;
       renderTimer();
-      if (state.secondsLeft <= 0) {
-        clearInterval(state.timer);
-        finishExam();
-      }
     }, 1000);
     renderTimer();
   }
 
   function renderTimer() {
-    const h = Math.floor(state.secondsLeft / 3600);
-    const m = Math.floor((state.secondsLeft % 3600) / 60);
-    const s = state.secondsLeft % 60;
+    const elapsed = state.questionElapsed[state.current] || 0;
+    const h = Math.floor(elapsed / 3600);
+    const m = Math.floor((elapsed % 3600) / 60);
+    const sec = elapsed % 60;
     const el = document.getElementById("timer");
     const text = h > 0
-      ? `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
-      : `${m}:${String(s).padStart(2, "0")}`;
+      ? `${h}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`
+      : `${m}:${String(sec).padStart(2, "0")}`;
 
-    const urgent = state.secondsLeft <= TIME_WARNING_SECONDS;
-    const concealed = state.timerHidden && !urgent;
+    const concealed = state.timerHidden;
     el.textContent = concealed ? "⏱" : text;
-    el.classList.toggle("low", urgent);
     el.classList.toggle("timer-concealed", concealed);
+    el.title = concealed ? "Timer hidden" : "Time on this question";
 
     const hideBtn = document.getElementById("timerHideBtn");
-    hideBtn.disabled = urgent;
     hideBtn.textContent = concealed ? "Show" : "Hide";
-    hideBtn.title = urgent ? "Timer shown automatically inside 5 minutes" : (concealed ? "Show timer" : "Hide timer");
-
-    if (urgent && !state.timeWarningShown) {
-      state.timeWarningShown = true;
-      showTimeWarningToast();
-    }
-  }
-
-  function showTimeWarningToast() {
-    const toast = document.getElementById("timeWarningToast");
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 5000);
+    hideBtn.title = concealed ? "Show timer" : "Hide timer";
   }
 
   // ---- Render current question ----
@@ -1017,6 +1010,7 @@
     if (state.answers[i] === undefined && !state.questionStartTimes[i]) {
       state.questionStartTimes[i] = Date.now();
     }
+    renderTimer();
 
     const passageHTML = q.passage
       ? `<div class="passage">${q.passage}</div>`
@@ -1077,6 +1071,7 @@
         <div class="explanation ${correct ? "" : "wrong"}">
           <span class="tag">${tag}</span>
           ${formatMathText(q.explanation)}
+          ${choiceExplanationsHTML(q, selected)}
           ${reasonHTML}
         </div>`;
     }
@@ -1084,7 +1079,7 @@
     body.innerHTML = `
       <div class="q-meta">
         <span class="q-num">${i + 1}</span>
-        <span class="q-skill">${q.skill} · ${["Easy", "Medium", "Hard"][q.difficulty - 1]}</span>
+        <span class="q-skill">${q.skill} · ${DIFFICULTY_LABELS[q.difficulty - 1]}</span>
         <button class="mark-flag ${state.marked[i] ? "marked" : ""}" id="markBtn">
           ${state.marked[i] ? "★" : "☆"} Mark for Review
         </button>
@@ -1698,6 +1693,319 @@
       </div>`;
   }
 
+  // ---- Lessons: Lesson Plans ----
+  // Week-by-week plans for the 800 / 1200 / 1500+ score bands (data in
+  // js/lessons/study-plans.js). Each step resolves a lesson title to its
+  // place in LESSONS and pairs it with a drill at the plan's difficulty.
+  // Checked-off steps use the same progress storage as the rest of the app.
+  const PLAN_PROGRESS_KEY = "sat_study_plan_done";
+
+  function planProgress() {
+    try {
+      return JSON.parse(progressStore().getItem(progressKey(PLAN_PROGRESS_KEY)) || "{}");
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function setPlanStepDone(stepId, done) {
+    const prog = planProgress();
+    if (done) prog[stepId] = 1;
+    else delete prog[stepId];
+    try {
+      progressStore().setItem(progressKey(PLAN_PROGRESS_KEY), JSON.stringify(prog));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function findLessonByTitle(title) {
+    for (const group of LESSONS) {
+      const index = group.lessons.findIndex((l) => l.title === title);
+      if (index !== -1) return { group, lesson: group.lessons[index], index };
+    }
+    return null;
+  }
+
+  const PLAN_QUIZ_SIZE = 5;
+
+  // Every step in a plan, in order, so a step view can link to the next one.
+  function planStepList(plan) {
+    const list = [];
+    plan.weeks.forEach((week, wi) =>
+      week.lessons.forEach((title, si) => {
+        const found = findLessonByTitle(title);
+        if (found) list.push({ week: wi, step: si, title, ...found });
+      })
+    );
+    return list;
+  }
+
+  // Picks the step's practice set: questions on the lesson's skill at the
+  // plan's difficulty, topped up from the nearest other tier if that tier
+  // is thin. Choices are shuffled so the answer isn't always A.
+  function pickPlanQuestions(group, skill, difficulty) {
+    const pool = QUESTIONS.filter((q) => q.module === group.module && q.domain === group.domain && q.skill === skill);
+    const byDistance = (d) => shuffle(pool.filter((q) => Math.abs(q.difficulty - difficulty) === d));
+    return [...byDistance(0), ...byDistance(1), ...byDistance(2)].slice(0, PLAN_QUIZ_SIZE).map(shuffleChoices);
+  }
+
+  function openPlanStep(planId, week, step) {
+    const plan = STUDY_PLANS.find((p) => p.id === planId);
+    const found = plan && findLessonByTitle((plan.weeks[week] || { lessons: [] }).lessons[step]);
+    if (!found) return;
+    state.planStep = {
+      planId,
+      week,
+      step,
+      questions: pickPlanQuestions(found.group, found.lesson.skill, plan.difficulty),
+      picks: [],
+    };
+    state.lessonChatLog = [];
+    renderLessons();
+    window.scrollTo(0, 0);
+  }
+
+  function planQuizHTML(ps, plan) {
+    const letters = ["A", "B", "C", "D"];
+    const answered = ps.picks.filter((p) => p !== undefined).length;
+    const correct = ps.questions.reduce((n, q, i) => n + (ps.picks[i] === q.answer ? 1 : 0), 0);
+    const items = ps.questions
+      .map((q, qi) => {
+        const pick = ps.picks[qi];
+        const done = pick !== undefined;
+        const choices = q.choices
+          .map((c, ci) => {
+            const cls = ["choice"];
+            if (done && ci === q.answer) cls.push("correct");
+            else if (done && ci === pick) cls.push("incorrect");
+            return `<button type="button" class="${cls.join(" ")}" data-plan-pick="${qi}:${ci}" ${done ? "disabled" : ""}>
+              <span class="letter">${letters[ci]}</span><span class="ctext">${formatMathText(c)}</span>
+            </button>`;
+          })
+          .join("");
+        const explanation = done
+          ? `<div class="explanation ${pick === q.answer ? "" : "wrong"}">
+              <span class="tag">${pick === q.answer ? "✓ Correct" : `✕ Incorrect: the answer is ${letters[q.answer]}`}</span>
+              ${formatMathText(q.explanation)}
+              ${choiceExplanationsHTML(q, pick)}
+            </div>`
+          : "";
+        return `
+          <div class="plan-quiz-q">
+            <div class="q-meta"><span class="q-num">${qi + 1}</span><span class="q-skill">${DIFFICULTY_LABELS[q.difficulty - 1]}</span></div>
+            ${q.passage ? `<div class="passage">${q.passage}</div>` : ""}
+            <div class="prompt">${formatMathText(q.prompt)}</div>
+            <div class="choices">${choices}</div>
+            ${explanation}
+          </div>`;
+      })
+      .join("");
+
+    let resultHTML = "";
+    if (ps.questions.length && answered === ps.questions.length) {
+      const passed = correct >= Math.ceil(ps.questions.length * 0.8);
+      resultHTML = `
+        <div class="plan-quiz-result ${passed ? "passed" : ""}">
+          <strong>${correct} / ${ps.questions.length} correct.</strong>
+          ${
+            passed
+              ? "Skill checked off. Move on to the next step."
+              : "Not quite there yet. Reread the key concepts and common mistakes above, then try a fresh set."
+          }
+          <div class="plan-quiz-result-actions">
+            <button type="button" class="btn ${passed ? "btn-ghost" : "btn-primary"} btn-sm" data-plan-retry>Try a new set</button>
+          </div>
+        </div>`;
+    }
+
+    return `
+      <div class="plan-quiz">
+        <h2>Practice: check your understanding</h2>
+        <p class="plan-quiz-sub">${ps.questions.length} ${plan.level === "Easy" ? "" : `${plan.level} `}questions on this skill. Pick an answer to see the explanation right away.</p>
+        ${items || `<p class="plan-quiz-sub">No practice questions are available for this skill yet.</p>`}
+        ${resultHTML}
+      </div>`;
+  }
+
+  function renderPlanStep() {
+    const ps = state.planStep;
+    const plan = STUDY_PLANS.find((p) => p.id === ps.planId);
+    const list = plan ? planStepList(plan) : [];
+    const pos = list.findIndex((x) => x.week === ps.week && x.step === ps.step);
+    const el = document.getElementById("lessons");
+    if (pos === -1) {
+      state.planStep = null;
+      renderLessons();
+      return;
+    }
+    const { group, lesson, title } = list[pos];
+    const next = list[pos + 1];
+    const premium = !!(window.Auth && window.Auth.isPremium());
+    const user = window.Auth && window.Auth.getCurrentUser();
+    const locked = lesson.tier === "pro" && !premium;
+    const stepId = `${plan.id}:${ps.week}:${title}`;
+    const isDone = !!planProgress()[stepId];
+    const moreCount = QUESTIONS.filter(
+      (q) => q.module === group.module && q.domain === group.domain && q.skill === lesson.skill && q.difficulty === plan.difficulty
+    ).length;
+
+    const lessonHTML = locked
+      ? `<div class="lesson-locked-card">
+          ${ICON_GRADCAP}
+          <h2>This lesson is part of ScoreBoost Pro</h2>
+          <p>Upgrade to read the full deep-dive lesson for this step. The practice problems below are free either way.</p>
+          ${
+            user
+              ? `<button class="btn btn-primary" data-action="upgrade-premium">Upgrade to Premium →</button>`
+              : `<button class="btn btn-primary" data-action="open-auth">Log in to upgrade →</button>`
+          }
+        </div>`
+      : lessonBodyHTML(lesson.content);
+
+    el.innerHTML = `
+      <button class="lesson-back" data-plan-back>← Back to ${escapeHtml(plan.title)}</button>
+      <span class="eyebrow">${plan.title} · Week ${ps.week + 1} · Step ${pos + 1} of ${list.length}</span>
+      <h1 class="section-title">${escapeHtml(lesson.title)}</h1>
+      <p class="plan-step-week">This week: ${escapeHtml(plan.weeks[ps.week].goal)}</p>
+
+      <div class="plan-step-section-label">Lesson</div>
+      ${lessonHTML}
+
+      ${planQuizHTML(ps, plan)}
+
+      <div class="results-actions lesson-actions">
+        ${
+          moreCount
+            ? `<button type="button" class="btn btn-ghost" data-practice-skill="${escapeHtml(lesson.skill)}" data-practice-domain="${escapeHtml(group.domain)}" data-practice-module="${group.module}" data-practice-difficulty="${plan.difficulty}">Practice more (${moreCount}) →</button>`
+            : ""
+        }
+        ${
+          next
+            ? `<button type="button" class="btn ${isDone ? "btn-primary" : "btn-ghost"}" data-plan-open="${next.week}:${next.step}">Next step: ${escapeHtml(next.lesson.title)} →</button>`
+            : `<button type="button" class="btn btn-primary" data-plan-back>Finish plan →</button>`
+        }
+      </div>
+    `;
+
+    el.querySelectorAll("[data-plan-pick]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const [qi, ci] = btn.dataset.planPick.split(":").map(Number);
+        if (ps.picks[qi] !== undefined) return;
+        ps.picks[qi] = ci;
+        const total = ps.questions.length;
+        if (ps.picks.filter((p) => p !== undefined).length === total) {
+          const correct = ps.questions.reduce((n, q, i) => n + (ps.picks[i] === q.answer ? 1 : 0), 0);
+          if (correct >= Math.ceil(total * 0.8)) setPlanStepDone(stepId, true);
+        }
+        const y = window.scrollY;
+        renderLessons();
+        window.scrollTo(0, y);
+      });
+    });
+    el.querySelectorAll("[data-plan-retry]").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        ps.questions = pickPlanQuestions(group, lesson.skill, plan.difficulty);
+        ps.picks = [];
+        renderLessons();
+        el.querySelector(".plan-quiz")?.scrollIntoView();
+      })
+    );
+    bindPlanNav(el);
+  }
+
+  function bindPlanNav(el) {
+    el.querySelectorAll("[data-plan-open]").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        const [w, st] = btn.dataset.planOpen.split(":").map(Number);
+        openPlanStep(state.lessonsPlan, w, st);
+      })
+    );
+    el.querySelectorAll("[data-plan-back]").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        state.planStep = null;
+        state.lessonChatLog = [];
+        renderLessons();
+      })
+    );
+  }
+
+  function studyPlansHTML(premium) {
+    if (typeof STUDY_PLANS === "undefined" || !STUDY_PLANS.length) return "";
+    const plan = STUDY_PLANS.find((p) => p.id === state.lessonsPlan) || STUDY_PLANS[0];
+    const prog = planProgress();
+    const pickerHTML = STUDY_PLANS.map((p) => {
+      const ids = p.weeks.flatMap((w, wi) => w.lessons.map((t) => `${p.id}:${wi}:${t}`));
+      const done = ids.filter((id) => prog[id]).length;
+      return `
+        <button type="button" class="plan-pick ${p.id === plan.id ? "active" : ""}" data-study-plan="${p.id}">
+          <span class="plan-pick-level plan-${p.id}">${p.level}</span>
+          <span class="plan-pick-target">${p.target}</span>
+          <span class="plan-pick-title">${p.title}</span>
+          <span class="plan-pick-progress">${done}/${ids.length} steps</span>
+        </button>`;
+    }).join("");
+
+    const weeksHTML = plan.weeks
+      .map((week, wi) => {
+        const steps = week.lessons
+          .map((title, si) => {
+            const found = findLessonByTitle(title);
+            if (!found) return "";
+            const { group, lesson } = found;
+            const stepId = `${plan.id}:${wi}:${title}`;
+            const locked = lesson.tier === "pro" && !premium;
+            const tagHTML =
+              lesson.tier === "free"
+                ? `<span class="lesson-chip-tag free">Free</span>`
+                : `<span class="lesson-chip-tag pro ${locked ? "locked" : ""}">${locked ? ICON_LOCK_SM : ""}Pro</span>`;
+            return `
+              <li class="plan-step ${prog[stepId] ? "done" : ""}">
+                <input type="checkbox" class="plan-step-check" data-plan-done="${escapeHtml(stepId)}" ${prog[stepId] ? "checked" : ""} aria-label="Mark ${escapeHtml(title)} done">
+                <div class="plan-step-body">
+                  <div class="plan-step-title">${escapeHtml(title)}</div>
+                  <div class="plan-step-meta">${group.module === "math" ? "Math" : "Reading &amp; Writing"} · ${escapeHtml(group.domain)} ${tagHTML}</div>
+                </div>
+                <div class="plan-step-actions">
+                  <button type="button" class="btn ${prog[stepId] ? "btn-ghost" : "btn-primary"} btn-sm" data-plan-open="${wi}:${si}">${prog[stepId] ? "Review" : "Start"} lesson →</button>
+                </div>
+              </li>`;
+          })
+          .join("");
+        return `
+          <div class="plan-week">
+            <div class="plan-week-head">
+              <span class="plan-week-num">Week ${wi + 1}</span>
+              <h3>${escapeHtml(week.title)}</h3>
+            </div>
+            <p class="plan-week-goal">${escapeHtml(week.goal)}</p>
+            <ol class="plan-steps">${steps}</ol>
+          </div>`;
+      })
+      .join("");
+
+    return `
+      <p class="section-sub plan-intro">Pick the plan for your target score. Each step teaches one skill with a full lesson, then checks it with practice problems at the plan's difficulty. Get 4 of 5 right and the step is checked off for you.</p>
+      <div class="plan-picker">${pickerHTML}</div>
+
+      <div class="plan-overview">
+        <div class="plan-overview-main">
+          <span class="eyebrow">${plan.level} · Target ${plan.target}</span>
+          <h2>${plan.title}</h2>
+          <p class="plan-audience">${plan.audience}</p>
+          <p>${plan.summary}</p>
+          <p class="plan-weekly"><strong>Schedule:</strong> ${plan.weekly}</p>
+        </div>
+        <div class="readiness-card plan-habits">
+          <h3>How to study this plan</h3>
+          <ul>${plan.habits.map((h) => `<li>${h}</li>`).join("")}</ul>
+        </div>
+      </div>
+
+      <div class="plan-weeks">${weeksHTML}</div>
+
+      <div class="plan-checkpoint"><strong>Checkpoint:</strong> ${plan.checkpoint}</div>
+    `;
+  }
+
   function renderLessons() {
     const user = window.Auth && window.Auth.getCurrentUser();
     const premium = !!(window.Auth && window.Auth.isPremium());
@@ -1705,6 +2013,10 @@
 
     if (state.activeLesson) {
       renderLessonDetail(state.activeLesson.domain, state.activeLesson.index);
+      return;
+    }
+    if (state.planStep) {
+      renderPlanStep();
       return;
     }
 
@@ -1777,13 +2089,24 @@
           <button class="bank-tab ${state.lessonsTab === "math" ? "active" : ""}" data-lessons-tab="math">
             ${ICON_CALCULATOR} Math
           </button>
+          <button class="bank-tab ${state.lessonsTab === "plans" ? "active" : ""}" data-lessons-tab="plans">
+            ${ICON_GRADCAP} Lesson Plans
+          </button>
         </div>
-        <button class="btn btn-ghost btn-sm lessons-free-toggle ${freeOnly ? "active" : ""}" data-lessons-free-toggle>
+        ${
+          state.lessonsTab === "plans"
+            ? ""
+            : `<button class="btn btn-ghost btn-sm lessons-free-toggle ${freeOnly ? "active" : ""}" data-lessons-free-toggle>
           ${freeOnly ? "Show all lessons" : "Show all free lessons"}
-        </button>
+        </button>`
+        }
       </div>
 
-      <div class="lessons-domains">${groups.map(domainGroup).join("")}</div>
+      ${
+        state.lessonsTab === "plans"
+          ? studyPlansHTML(premium)
+          : `<div class="lessons-domains">${groups.map(domainGroup).join("")}</div>`
+      }
 
       ${testDayReadinessHTML()}
     `;
@@ -1795,12 +2118,67 @@
       });
     });
 
+    document.querySelectorAll("[data-study-plan]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.lessonsPlan = btn.dataset.studyPlan;
+        renderLessons();
+      });
+    });
+
+    bindPlanNav(el);
+
+    document.querySelectorAll("[data-plan-done]").forEach((box) => {
+      box.addEventListener("change", () => {
+        setPlanStepDone(box.dataset.planDone, box.checked);
+        renderLessons();
+      });
+    });
+
     document.querySelectorAll("[data-lessons-free-toggle]").forEach((btn) => {
       btn.addEventListener("click", () => {
         state.lessonsFreeOnly = !state.lessonsFreeOnly;
         renderLessons();
       });
     });
+  }
+
+  // The teaching part of a lesson (summary, concepts, deep dive, worked
+  // example, common mistakes), shared by the lesson page and plan steps.
+  function lessonBodyHTML(c) {
+    const conceptsHTML = c.concepts.map((x) => `<li>${x}</li>`).join("");
+    const mistakesHTML = c.mistakes.map((x) => `<li>${x}</li>`).join("");
+    const letters = ["A", "B", "C", "D"];
+    const choicesHTML = c.example.choices
+      .map(
+        (choice, i) =>
+          `<li class="${i === c.example.correctIndex ? "correct" : ""}">
+            <span class="ex-letter">${letters[i]}</span>${choice}${i === c.example.correctIndex ? " ✓" : ""}
+          </li>`
+      )
+      .join("");
+    const deepDiveHTML =
+      c.deepDive && c.deepDive.length
+        ? `<h3>Going deeper</h3>
+           <div class="lesson-deepdive">${c.deepDive.map((p) => `<p>${p}</p>`).join("")}</div>`
+        : "";
+    return `
+      <p class="lesson-summary">${c.summary}</p>
+
+      <h3>Key concepts</h3>
+      <ul class="lesson-list">${conceptsHTML}</ul>
+
+      ${deepDiveHTML}
+
+      <h3>Worked example</h3>
+      <div class="lesson-example">
+        <p class="ex-prompt">${c.example.prompt.replace(/\n/g, "<br>")}</p>
+        <ul class="ex-choices">${choicesHTML}</ul>
+        <p class="ex-walkthrough">${c.example.walkthrough}</p>
+      </div>
+
+      <h3>Common mistakes</h3>
+      <ul class="lesson-list">${mistakesHTML}</ul>
+    `;
   }
 
   function renderLessonDetail(domain, index) {
@@ -1843,41 +2221,7 @@
       ? `<button class="btn btn-primary" data-practice-skill="${escapeHtml(skill)}" data-practice-domain="${escapeHtml(domain)}" data-practice-module="${group.module}">Practice this skill (${count}) →</button>`
       : "";
 
-    const c = lesson.content;
-    const conceptsHTML = c.concepts.map((x) => `<li>${x}</li>`).join("");
-    const mistakesHTML = c.mistakes.map((x) => `<li>${x}</li>`).join("");
-    const letters = ["A", "B", "C", "D"];
-    const choicesHTML = c.example.choices
-      .map(
-        (choice, i) =>
-          `<li class="${i === c.example.correctIndex ? "correct" : ""}">
-            <span class="ex-letter">${letters[i]}</span>${choice}${i === c.example.correctIndex ? " ✓" : ""}
-          </li>`
-      )
-      .join("");
-    const deepDiveHTML =
-      c.deepDive && c.deepDive.length
-        ? `<h3>Going deeper</h3>
-           <div class="lesson-deepdive">${c.deepDive.map((p) => `<p>${p}</p>`).join("")}</div>`
-        : "";
-    const bodyHTML = `
-      <p class="lesson-summary">${c.summary}</p>
-
-      <h3>Key concepts</h3>
-      <ul class="lesson-list">${conceptsHTML}</ul>
-
-      ${deepDiveHTML}
-
-      <h3>Worked example</h3>
-      <div class="lesson-example">
-        <p class="ex-prompt">${c.example.prompt.replace(/\n/g, "<br>")}</p>
-        <ul class="ex-choices">${choicesHTML}</ul>
-        <p class="ex-walkthrough">${c.example.walkthrough}</p>
-      </div>
-
-      <h3>Common mistakes</h3>
-      <ul class="lesson-list">${mistakesHTML}</ul>
-    `;
+    const bodyHTML = lessonBodyHTML(lesson.content);
 
     el.innerHTML = `
       <button class="lesson-back" data-lesson-back>← Back to Lessons</button>
@@ -3944,6 +4288,36 @@
     if (masteredIds.length) advanceMistakes(masteredIds);
     if (pacingSamples.length) appendPacingLog(pacingSamples);
     markTimedModuleToday();
+    syncAttemptsToSupabase(pairs);
+  }
+
+  // Mirrors the session's answers into public.question_attempts (see
+  // supabase/attempts.sql): the chosen answer, whether it was right, and
+  // the tagged miss reason. Signed-in accounts only, fire-and-forget —
+  // localStorage above stays the source of truth for the app's own views.
+  function syncAttemptsToSupabase(pairs) {
+    const user = window.Auth && window.Auth.getCurrentUser();
+    if (!user || !user.id || !window.supabaseClient) return;
+    const rows = pairs
+      .filter(({ selected }) => selected !== undefined)
+      .map(({ q, selected, reason, timeSec }) => {
+        const correct = selected === q.answer;
+        return {
+          user_id: user.id,
+          question_id: q.id,
+          selected_choice: selected,
+          is_correct: correct,
+          miss_reason: !correct && MISTAKE_REASONS[reason] ? reason : null,
+          time_sec: typeof timeSec === "number" ? timeSec : null,
+        };
+      });
+    if (!rows.length) return;
+    window.supabaseClient
+      .from("question_attempts")
+      .insert(rows)
+      .then(({ error }) => {
+        if (error) console.warn("Couldn't save attempts to Supabase:", error.message);
+      });
   }
 
   // Builds a practice set from whatever's due on the redo queue right now
@@ -3952,7 +4326,7 @@
     const due = dueMistakes();
     const pool = due
       .slice(0, 5)
-      .map((m) => QUESTIONS.find((q) => q.id === m.id))
+      .map((m) => QUESTIONS.find((q) => q.id === m.id) || EXTRA_HARD_QUESTIONS.find((q) => q.id === m.id))
       .filter(Boolean)
       .map(shuffleChoices);
     if (!pool.length) {
@@ -3977,7 +4351,7 @@
     state.current = 0;
     state.eliminating = false;
     state.pillWindowStart = 0;
-    state.secondsLeft = pool.length * SECONDS_PER_Q;
+    state.questionElapsed = {};
     state.timerHidden = false;
 
     startTimer();
@@ -5680,7 +6054,7 @@
       eliminated: serializeEliminated(state.eliminated),
       marked: state.marked,
       current: state.current,
-      secondsLeft: state.secondsLeft,
+      questionElapsed: state.questionElapsed,
       timerHidden: state.timerHidden,
       categoryLabel: state.categoryLabel,
       categoryDomain: state.categoryDomain,
@@ -5723,7 +6097,7 @@
     state.eliminated = deserializeEliminated(snap.eliminated);
     state.marked = snap.marked || {};
     state.current = snap.current || 0;
-    state.secondsLeft = snap.secondsLeft || 0;
+    state.questionElapsed = snap.questionElapsed || {};
     state.timerHidden = !!snap.timerHidden;
     state.categoryLabel = snap.categoryLabel || null;
     state.categoryDomain = snap.categoryDomain || null;
@@ -5805,7 +6179,7 @@
         else if (nav === "bank") renderBank();
         else if (nav === "studyPlan") { dailyPlanEditing = false; renderStudyPlan(); }
         else if (nav === "dashboard") { dashGoalEditing = false; renderDashboard(); }
-        else if (nav === "lessons") { state.activeLesson = null; state.lessonChatLog = []; renderLessons(); }
+        else if (nav === "lessons") { state.activeLesson = null; state.planStep = null; state.lessonChatLog = []; renderLessons(); }
         else if (nav === "games") { stopActiveGame(); renderGamesHub(); }
         else if (nav === "profile") renderProfile();
         else if (nav === "classroom") renderClassroom();
@@ -5845,7 +6219,8 @@
         startSkillPractice(
           practiceSkillBtn.dataset.practiceModule,
           practiceSkillBtn.dataset.practiceDomain,
-          practiceSkillBtn.dataset.practiceSkill
+          practiceSkillBtn.dataset.practiceSkill,
+          Number(practiceSkillBtn.dataset.practiceDifficulty) || undefined
         );
         return;
       }
